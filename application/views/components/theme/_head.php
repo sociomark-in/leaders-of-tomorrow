@@ -14,7 +14,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/') ?>favicon-16x16.png">
 <link rel="manifest" href="<?= base_url('assets/images/') ?>site.webmanifest">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -46,13 +47,16 @@
 
 <!-- Plugin: JQuery daterangepicker  -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.css"/>
 <!-- Plugin: JQuery daterangepicker  -->
 
 <!-- Plugin: JQuery select2 -->
-<script type="text/javascript" src="<?= base_url("assets") ?>/vendors/select2/select2.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?= base_url("assets") ?>/vendors/select2/select2.min.css" />
-<!-- Plugin: JQuery daterangepicker  -->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<link rel="stylesheet" href="<?= base_url("assets/css/") ?>select2-custom.min.css">
+<!-- Plugin: JQuery select2  -->
 
 <!-- inject:css -->
 <link rel="stylesheet" href="<?= base_url("assets") ?>/fonts/feather-font/css/iconfont.css">
