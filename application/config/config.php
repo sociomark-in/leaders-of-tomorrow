@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/leaders-of-tomorrow/';
+$config['base_url'] = 'https://test.apogeedigitech.in/times/leaders-of-tomorrow/';
 
 /*
 |--------------------------------------------------------------------------
