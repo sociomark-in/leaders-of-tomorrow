@@ -46,7 +46,7 @@
 						<li>
 							<hr class="dropdown-divider">
 						</li>
-						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li>
+						<!-- <li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li> -->
 					</ul>
 				</li>
 				<li class="nav-item d-none">
