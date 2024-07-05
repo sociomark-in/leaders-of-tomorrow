@@ -15,6 +15,13 @@ class MY_Loader extends CI_Loader
 		$this->view('layout/_2', $vars);
 	}
 	
+	public function award_page($view, $vars = array(), $return = FALSE)
+	{
+		$this->view('layout/_1', $vars);
+		$this->view("awards/" . $view, $vars);
+		$this->view('layout/_2', $vars);
+	}
+	
 	public function onboarding_view($view, $vars = array(), $return = FALSE)
 	{
 		$this->view('layout/_1', $vars);

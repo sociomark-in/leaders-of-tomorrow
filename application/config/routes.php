@@ -50,6 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'PagesController';
+$route['history'] = 'HistoryController';
+$route['gallery'] = 'GalleryController';
+$route['all-cities'] = 'CityController';
+$route['history/season-(:any)'] = 'HistoryController/season_single/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
 

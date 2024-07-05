@@ -1,4 +1,3 @@
-
 <!-- core:js -->
 <!-- <script src="<?= base_url("assets") ?>/vendors/core/core.js"></script> -->
 <!-- endinject -->
@@ -16,3 +15,11 @@
 <script src="<?= base_url("assets") ?>/js/app.js"></script>
 <script src="<?= base_url("assets") ?>/js/dashboard-light.js"></script>
 <!-- End custom js for this page -->
+
+
+<script>
+	AOS.init({
+		duration: 800,
+		easing: "ease-in-out"
+	});
+</script>

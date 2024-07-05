@@ -1,3 +1,4 @@
+<?php $this->load->view('components/theme/partials/_partners'); ?>
 <!-- partial:partials/_footer.html -->
 <?php $this->load->view('components/theme/partials/_footer'); ?>
 <!-- partial -->
@@ -10,7 +11,7 @@
 <?php
 if ($this->session->userdata('first_user')) :
 ?>
-	
+
 <?php endif ?>
 
 </body>

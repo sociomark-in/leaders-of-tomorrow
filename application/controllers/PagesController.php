@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once APPPATH . "controllers/BaseController.php";
+class PagesController extends BaseController {
 
-class PagesController extends CI_Controller {
-
-	public $data;
 	public function index()
 	{
 		$this->load->page('home', $this->data);

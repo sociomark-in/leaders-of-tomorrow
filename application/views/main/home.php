@@ -1,771 +1,296 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js" integrity="sha512-bE0ncA3DKWmKaF3w5hQjCq7ErHFiPdH2IGjXRyXXZSOokbimtUuufhgeDPeQPs51AI4XsqDZUK7qvrPZ5xboZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="<?= base_url("assets/vendors/") ?>jquery-steps/jquery.steps.css">
-
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/jquery.inputmask.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/js/dropify.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/css/dropify.min.css" rel="stylesheet">
 <main>
-	<section>
+	<section class="p-0">
+		<div class="pseudo-kv">
+			<div class="media-content">
+				<video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" muted autoplay loop></video>
+			</div>
+		</div>
+	</section>
+	<section class="" id="about">
 		<div class="container">
-			<div class="my-3 my-md-4">
-				<?= form_open_multipart('api/new-nominee', ['id' => "formWizard"]) ?>
-					<!-- First Step -->
-					<h2>Organization Details</h2>
-					<fieldset>
-						<div class=" mb-3">
-							<legend>Organization Details</legend>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut nulla nunc. Maecenas arcu sem, hendrerit a tempor quis,
-								sagittis accumsan tellus. In hac habitasse platea dictumst. Donec a semper dui. Nunc eget quam libero. Nam at felis metus.
-								Nam tellus dolor, tristique ac tempus nec, iaculis quis nisi.</p>
-						</div>
-						<div class="row m-0">
-							<div class="col-xl-6 col-lg-4 col-12">
-								<div class="mb-3">
-									<label for="nameInput">Name of Organization</label>
-									<input type="text" class="form-control" id="nameInput" required>
-									<span class="form-text">As per the business registration certificate issued by the Govt. of India</span>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="industryTypeSelect" class="form-label">Type of Industry</label>
-									<select name="" class="" id="industryTypeSelect">
-										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="">Select <?= $i ?></option>
-										<?php endfor ?>
-									</select>
-									<script>
-										$("#industryTypeSelect").select2({
-											theme: "bootstrap-5",
-										});
-									</script>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="businessTypeSelect" class="form-label">Business Segment</label>
-									<select name="" class="" id="businessTypeSelect">
-										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="">Select <?= $i ?></option>
-										<?php endfor ?>
-									</select>
-									<script>
-										$("#businessTypeSelect").select2({
-											theme: "bootstrap-5",
-										});
-									</script>
-								</div>
-							</div>
+			<div class="row align-items-center">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+					<div class="media-content" data-aos="fade-right">
+						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-xl-7 col-lg-6 col-12">
+					<div class="section-title" data-aos="fade-left">
+						<h2><span>Leaders of Tomorrow Season 12</span></h2>
+					</div>
+					<div class="desc">
+						<p data-aos="fade-left" data-aos-delay="400">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nam rem eum necessitatibus et maiores tempora nisi vel officia corporis porro quibusdam dolore beatae autem ea quae asperiores in incidunt, veritatis consequuntur, quia tenetur laudantium quam ipsa. Consequuntur eaque quos iusto sit, sunt ullam tempore ratione provident? Magni, iusto mollitia.
+						</p>
+						<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="">
+		<div class="container">
+			<div class="row align-items-center flex-row-reverse">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+					<div class="media-content" data-aos="fade-left">
+						<img src="https://placehold.co/1500x2000" alt="" class="w-100">
+					</div>
+				</div>
+				<div class="col-xl-7 col-lg-6 col-12">
+					<div class="text-content text-lg" data-aos="fade-right">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-							<div class="col-xl-2 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="companyIncDateInput" class="form-label">Incorporation Date</label>
-									<input type="text" class="form-control" id="companyIncDateInput" min="01/02/2000" required>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="websiteInput" class="form-label">Company Website URL</label>
-									<input type="url" class="form-control" id="websiteInput" placeholder="https://">
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="phoneInput" class="form-label">UDYAM MSME Number</label>
-									<input type="text" class="form-control" id="phoneInput" placeholder="UDYAM-XY-07-1234567" required data-inputmask-alias="AAAAA-AA-99-9999999">
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="phoneInput" class="form-label">CIN Number</label>
-									<input type="text" class="form-control" id="phoneInput" placeholder="U67190TN2014PTC096178" required data-inputmask-alias="A99999AA9999AAA999999">
-								</div>
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="participationStateSelect" class="form-label">Participating State <img src="<?= base_url('assets/images/icons/') ?>laoding.gif" height="20" alt=""></label>
-									<select name="" class="" id="participationStateSelect">
-										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="">Select <?= $i ?></option>
-										<?php endfor ?>
-									</select>
-									<script>
-										$("#participationStateSelect").select2({
-											theme: "bootstrap-5",
-										});
-									</script>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="participationCitySelect" class="form-label">Participating City <img src="<?= base_url('assets/images/icons/') ?>laoding.gif" height="20" alt=""></label>
-									<select name="" class="" id="participationCitySelect">
-										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="">Select <?= $i ?></option>
-										<?php endfor ?>
-									</select>
-									<script>
-										$("#participationCitySelect").select2({
-											theme: "bootstrap-5",
-										});
-									</script>
-								</div>
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="businessTypeSelect" class="form-label">Business Type</label>
-									<div class="row">
-										<div class="col-auto">
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="business_type" value="" id="flexCheckDefault">
-												<label class="form-check-label" for="flexCheckDefault">
-													Medium
-												</label>
-											</div>
+	<section id="live">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="media-content">
+						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="categories">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>All Categories</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper categorySwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 10; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<a href="javascript:void(0)" class="speaker-tile featured rounded-circle image-bg">
+										<div class="desc text-center">
+											<h5>Lorem ipsum dolor sit.</h5>
 										</div>
-										<div class="col-auto">
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="business_type" value="" id="flexCheckDefault">
-												<label class="form-check-label" for="flexCheckDefault">
-													Small
-												</label>
-											</div>
-										</div>
-									</div>
+									</a>
 								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="businessStaffCountSelect" class="form-label">No. Of Employees <img src="<?= base_url('assets/images/icons/') ?>laoding.gif" height="20" alt=""></label>
-									<select name="" class="" id="businessStaffCountSelect">
-										<option value="" selected></option>
-										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="">Select <?= $i ?></option>
-										<?php endfor ?>
-									</select>
-									<script>
-										$("#businessStaffCountSelect").select2({
-											theme: "bootstrap-5",
-										});
-									</script>
-								</div>
-							</div>
-
-							<div class="col-xl-6 col-lg-4 col-12">
-								<div class="mb-3">
-									<label for="cpNameInput">Contact Person Name</label>
-									<input type="text" class="form-control" id="cpNameInput" required>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="emailInput" class="form-label">Email address</label>
-									<input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
-								</div>
-							</div>
-							<div class="col-xl-2 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="phoneInput" class="form-label">Contact Number</label>
-									<input type="text" class="form-control" id="phoneInput" placeholder="(+091) 999-999-9999" required data-inputmask-alias="(+999) 999-999-9999">
-								</div>
-							</div>
-
-							<div class="mb-3">
-								<div class="bg-light p-3">
-									<h5>Instructions</h5>
-									<ul class="">
-										<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-										<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-										<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-										<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									</ul>
-								</div>
-							</div>
+							<?php endfor ?>
 						</div>
-					</fieldset>
-
-					<!-- Second Step - Financial Achievements -->
-					<h2>Financial Achievements</h2>
-					<fieldset>
-						<div class=" mb-3">
-							<legend>Financial Achievements of Recent 3 Years:</legend>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut nulla nunc. Maecenas arcu sem, hendrerit a tempor quis,
-								sagittis accumsan tellus. In hac habitasse platea dictumst. Donec a semper dui. Nunc eget quam libero. Nam at felis metus.
-								Nam tellus dolor, tristique ac tempus nec, iaculis quis nisi.</p>
+					</div>
+					<script>
+						new Swiper(".categorySwiper", {
+							slidesPerView: 1,
+							grid: {
+								rows: 1,
+								fill: 'row'
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+									grid: {
+										rows: 2,
+									},
+								},
+								1024: {
+									slidesPerView: 3,
+									spaceBetween: 50,
+									grid: {
+										rows: 2,
+									},
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 30,
+									grid: {
+										rows: 2,
+									},
+								},
+							},
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="speakers">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>List of Speakers</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper speakerSwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 10; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<a href="<?= base_url('speaker/single') ?>" class="speaker-tile">
+										<div class="photo mb-3">
+											<img src="https://placehold.co/288x360" alt="">
+										</div>
+										<div class="desc text-center">
+											<h5>Lorem ipsum dolor sit.</h5>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+										</div>
+									</a>
+								</div>
+							<?php endfor ?>
 						</div>
-						<div class="row m-0 d-none">
-							<div class="col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="customRange3" class="form-label">Revenue Turnover 2023:</label>
-									<div class="wrapper" class="form-range">
-										<div class="slider-wrapper px-3 mb-3">
-											<div class="evaluation-slider" aria-controls="#valuation2023"></div>
-										</div>
-										<div class="row g-0">
-											<div class="col-auto">
-												<div class="input-group">
-													<span class="input-group-text">&#8377;</span>
-													<input type="text" class="form-control" id="valuation2023" disabled placeholder="Slide to Choose." />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="customRange3" class="form-label">Revenue Turnover 2022:</label>
-									<div class="wrapper" class="form-range">
-										<div class="slider-wrapper px-3 mb-3">
-											<div class="evaluation-slider" aria-controls="#valuation2022"></div>
-										</div>
-										<div class="row g-0">
-											<div class="col-auto">
-												<div class="input-group">
-													<span class="input-group-text">&#8377;</span>
-													<input type="text" class="form-control" id="valuation2022" disabled placeholder="Slide to Choose." />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="customRange3" class="form-label">Revenue Turnover 2021:</label>
-									<div class="wrapper" class="form-range">
-										<div class="slider-wrapper px-3 mb-3">
-											<div class="evaluation-slider" aria-controls="#valuation2021"></div>
-										</div>
-										<div class="row g-0">
-											<div class="col-auto">
-												<div class="input-group">
-													<span class="input-group-text">&#8377;</span>
-													<input type="text" class="form-control" id="valuation2021" disabled placeholder="Slide to Choose." />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<script>
-								var nf = new Intl.NumberFormat('en-in', {
-									style: 'currency',
-									currency: 'INR',
-									minimumFractionDigits: 2,
-									maximumFractionDigits: 2
-								});
-								$(".evaluation-slider").each((index, elem) => {
-									$(elem).slider({
-										range: 'min',
-										min: 5000000,
-										max: 500000000,
-										step: 5000000,
-										value: 5000000,
-										slide: function(event, ui) {
-											// $(".to").val(nf.format(parseInt(ui.value)));
-											$($(elem).attr('aria-controls')).val(parseInt(ui.value).toLocaleString());
-										}
-									});
-								});
-							</script>
+					</div>
+					<script>
+						new Swiper(".speakerSwiper", {
+							slidesPerView: 1,
+							grid: {
+								rows: 1,
+								fill: 'row'
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+									grid: {
+										rows: 2,
+									},
+								},
+								1024: {
+									slidesPerView: 3,
+									spaceBetween: 50,
+									grid: {
+										rows: 2,
+									},
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 30,
+									grid: {
+										rows: 2,
+									},
+								},
+							},
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="agenda" class="d-none">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="section-title text-center mb-3 mb-md-5">
+						<h2><span>Programme Agenda</span></h2>
+					</div>
+				</div>
+				<div class="col-xl-8 col-lg-10 col-12">
+					<div class="swiper agendaSwiper">
+						<div class="swiper-wrapper" id="agendaPages">
+							<a class="swiper-slide" href="https://placehold.co/2250x4000/jpg">
+								<picture>
+									<source srcset="https://placehold.co/2250x4000/jpg" type="image/jpg">
+									<img src="https://placehold.co/2250x4000/jpg" alt="" class="w-100">
+								</picture>
+							</a>
+							<a class="swiper-slide" href="https://placehold.co/2250x4000/jpg">
+								<picture>
+									<source srcset="https://placehold.co/2250x4000/jpg" type="image/jpg">
+									<img src="https://placehold.co/2250x4000/jpg" alt="" class="w-100">
+								</picture>
+							</a>
 						</div>
-						<div class="row m-0 mb-3">
-							<div class="col-12">
-								<label for="" class="form-label">Revenue Turnover <strong>(in &#8377; Cr.)</strong>:</label>
-							</div>
-							<div class="col-12">
-								<div class="list-group">
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2022 - 2023</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 1 Cr. </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														1 Cr. to 10 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10 Cr. to 25 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25 Cr. to 50 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														50 Cr. to 100 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 100 Cr.</label>
-												</div>
-											</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+					<script type="text/javascript">
+						new Swiper(".agendaSwiper", {
+							navigation: {
+								nextEl: ".agendaSwiper .swiper-button-next",
+								prevEl: ".agendaSwiper .swiper-button-prev",
+							},
+							slidesPerView: 1,
+							breakpoints: {
+								1024: {
+									slidesPerView: 2,
+									spaceBetween: 30,
+								}
+							}
+						});
+						lightGallery(document.getElementById('agendaPages'), {
+							plugins: [lgZoom, lgThumbnail],
+							speed: 500,
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="awards">
+		<div class="container">
+			<div class="row justify-content-center g-4">
+				<div class="col-xl-8 col-lg-10 col-12">
+					<div class="section-title text-center">
+						<h2><span>Season 12 Awards</span></h2>
+					</div>
+					<div class="">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt inventore voluptas quaerat eum modi, corporis iure distinctio saepe ratione possimus nisi aliquam iusto explicabo libero in tenetur debitis. Velit, quibusdam.
+						</p>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="media-content">
+						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="articles" class="pt-0">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>Articles & Publications</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper articleSwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 10; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<a href="<?= base_url('speaker/single') ?>" class="article-tile">
+										<div class="photo">
+											<img class="w-100" src="https://placehold.co/1279x720" alt="">
 										</div>
-									</div>
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2021 - 2022</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 1 Cr. </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														1 Cr. to 10 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10 Cr. to 25 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25 Cr. to 50 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														50 Cr. to 100 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 100 Cr.</label>
-												</div>
-											</div>
+										<div class="desc">
+											<h5>Lorem ipsum dolor sit.</h5>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
 										</div>
-									</div>
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2020 - 2021</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 1 Cr. </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														1 Cr. to 10 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10 Cr. to 25 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25 Cr. to 50 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														50 Cr. to 100 Cr.</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 100 Cr.</label>
-												</div>
-											</div>
-										</div>
-									</div>
+									</a>
 								</div>
-							</div>
+							<?php endfor ?>
 						</div>
-						<div class="row m-0 mb-3">
-							<div class="col-12">
-								<label for="" class="form-label">Revenue Growth <strong>(in %)</strong>:</label>
-							</div>
-							<div class="col-12">
-								<div class="list-group">
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2022 - 2023</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 5% </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														5% to 10%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10% to 25%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25% to 50%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 50%</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2021 - 2022</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 5% </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														5% to 10%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10% to 25%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25% to 50%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 50%</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="list-group-item">
-										<div class="row">
-											<div class="col-xl-2 col-lg-3">
-												<label for=""><strong>FY 2020 - 2021</strong></label>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														< 5% </label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														5% to 10%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														10% to 25%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														25% to 50%</label>
-												</div>
-											</div>
-											<div class="col-auto">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-													<label class="form-check-label" for="flexRadioDefault1">
-														> 50%</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							<div class="bg-light p-3">
-								<h5>Instructions</h5>
-								<ul class="">
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-								</ul>
-								<small class="text-muted">*Note: The shortlisted participants will have to submit the copy of the audited financials for the past 2 years</small>
-							</div>
-						</div>
-					</fieldset>
-
-					<!-- Third Step - Case Studies -->
-					<h2>Third Step</h2>
-					<fieldset>
-						<legend>Third Step</legend>
-						<p>Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo,
-							pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat.
-							Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris
-							venenatis.</p>
-					</fieldset>
-
-					<!-- Fourth Step - Document Uploads -->
-					<h2>Document Uploads</h2>
-					<fieldset>
-						<legend>Fourth Step</legend>
-						<div class="row">
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" name="doc1" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" name="doc2" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="mb-3">
-									<label for="" class="form-label">File</label>
-									<input type="file" class="dropify" data-default-file="" data-max-file-size="50K" data-allowed-file-extensions="pdf" />
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							<div class="bg-light p-3">
-								<h5>Instructions</h5>
-								<ul class="">
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto minima debitis necessitatibus, ratione facilis tenetur quos voluptatem tempora nobis.</li>
-								</ul>
-							</div>
-						</div>
-					</fieldset>
-
-					<!-- Fifth Step - Declaration -->
-					<h2>Declaration</h2>
-					<fieldset>
-						<legend>Declaration</legend>
-						<div class="row">
-							<div class="col-lg-6 col-12">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									<label class="form-check-label" for="flexCheckChecked">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-									</label>
-								</div>
-							</div>
-							<div class="col-lg-6 col-12">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									<label class="form-check-label" for="flexCheckChecked">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-									</label>
-								</div>
-							</div>
-							<div class="col-lg-6 col-12">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									<label class="form-check-label" for="flexCheckChecked">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-									</label>
-								</div>
-							</div>
-							<div class="col-lg-6 col-12">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									<label class="form-check-label" for="flexCheckChecked">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius repellendus consectetur harum cupiditate velit nobis ut doloribus ducimus expedita tempora, maxime sapiente reiciendis incidunt hic ab obcaecati aspernatur perspiciatis ipsum ullam consequatur! Esse vero, natus unde repellendus enim tempora?
-										</p>
-									</label>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</form>
+					</div>
+					<script>
+						new Swiper(".articleSwiper", {
+							slidesPerView: 1,
+							breakpoints: {
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								1024: {
+									slidesPerView: 3,
+									spaceBetween: 40,
+								},
+							},
+						})
+					</script>
+				</div>
 			</div>
 		</div>
 	</section>
 </main>
-<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
-<!-- Custom js for this page -->
-<script>
-	var form = $("#formWizard");
-	form.validate({
-		errorPlacement: function errorPlacement(error, element) {
-			element.before(error);
-		},
-		rules: {
-			confirm: {
-				equalTo: "#password"
-			}
-		}
-	});
-	form.steps({
-		headerTag: "h2",
-		bodyTag: "fieldset",
-		transitionEffect: "slideLeft",
-		onStepChanging: function(event, currentIndex, newIndex) {
-			form.validate().settings.ignore = ":disabled,:hidden";
-			return form.valid();
-		},
-		onFinishing: function(event, currentIndex) {
-			form.validate().settings.ignore = ":disabled";
-			return form.valid();
-		},
-		onFinished: function(event, currentIndex) {
-			$("#formWizard").submit()
-		}
-	});
-	$(":input").inputmask();
-	$("input#companyIncDateInput").datepicker({
-		changeMonth: true,
-		changeYear: true,
-
-		dateFormat: 'dd-mm-yy',
-		maxDate: '-30Y',
-		minDate: '-100Y',
-		inline: true
-	});
-
-	$('.dropify').dropify({
-		error: {
-			'fileSize': 'The file size is too big ({{ value }} max).',
-			'minWidth': 'The image width is too small ({{ value }}}px min).',
-			'maxWidth': 'The image width is too big ({{ value }}}px max).',
-			'minHeight': 'The image height is too small ({{ value }}}px min).',
-			'maxHeight': 'The image height is too big ({{ value }}px max).',
-			'imageFormat': 'The image format is not allowed ({{ value }} only).'
-		}
-	});
-</script>
-<!-- End custom js for this page -->
