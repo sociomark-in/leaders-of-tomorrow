@@ -13,7 +13,7 @@ class CityController extends BaseController
 		$this->load->page('cities/home', $this->data);
 	}
 
-	public function season_single($number)
+	public function city_single($number)
 	{
 		switch ($number) {
 			case 'mumbai':

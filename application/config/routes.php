@@ -53,9 +53,16 @@ $route['default_controller'] = 'PagesController';
 $route['history'] = 'HistoryController';
 $route['gallery'] = 'GalleryController';
 $route['all-cities'] = 'CityController';
+$route['city/(:any)'] = 'CityController/city_single/$1';
 $route['history/season-(:any)'] = 'HistoryController/season_single/$1';
 
+$route['login'] = 'auth/LoginController/single';
+$route['multi-login'] = 'auth/LoginController/multi';
+
+$route['account/(:any)'] = 'AccountController';
+
 $route['api/new-nominee'] = 'NomineeController/add';
+$route['api/participant/login'] = 'api/auth/SSOController/participant_login';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

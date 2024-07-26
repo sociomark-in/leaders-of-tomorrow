@@ -69,8 +69,17 @@ footer {
 
 .section {
 	padding: calc(max(5%, 2rem)) 0;
+	width: 100%;
 }
 main {
+	&.w-fullscreen{
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 	section {
 		padding: calc(max(5%, 2rem)) 0;
 		.pseudo-kv {
@@ -164,6 +173,7 @@ nav.navbar {
 		}
 	}
 }
+
 .btn {
 	border-radius: 0;
 	padding: 0.5rem 1rem;
@@ -198,6 +208,12 @@ nav.navbar {
 		--bs-btn-disabled-color: #000;
 		--bs-btn-disabled-bg: #{$color-red};
 		--bs-btn-disabled-border-color: #{$color-red};
+	}
+}
+
+form{
+	.form-control{
+		border-radius: 0;
 	}
 }
 
@@ -244,6 +260,18 @@ nav.navbar {
 			}
 		}
 	}
+}
+
+.plain-card{
+	background-color: white;
+	.card-body{
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+}
+
+.signup-widget{
+	min-height: calc(max(500px, 60vmin));
 }
 
 .gallery-masonry {

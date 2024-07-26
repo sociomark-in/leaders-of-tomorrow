@@ -10,7 +10,14 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
 	<?php $this->load->view('components/theme/_head'); ?>
-	<title><?= $page['title']??= APP_NAME ?></title>
+	<title><?= (isset($page['title']))? $page['title']: APP_NAME ?></title>
 </head>
 
 <body>
+	<div class="main-wrapper">
+
+		<div class="page-wrapper">
+
+			<!-- partial:partials/_navbar.html -->
+			<?php $this->load->view('components/panel/partials/_navbar'); ?>
+			<!-- partial -->
