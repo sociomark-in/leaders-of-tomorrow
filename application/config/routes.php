@@ -53,8 +53,10 @@ $route['default_controller'] = 'PagesController';
 $route['history'] = 'HistoryController';
 $route['gallery'] = 'GalleryController';
 $route['all-cities'] = 'CityController';
-$route['city/(:any)'] = 'CityController/city_single/$1';
 $route['history/season-(:any)'] = 'HistoryController/season_single/$1';
+
+$route['city/(:any)'] = 'CityController/city_single/$1';
+$route['city/(:any)/register'] = 'CityController/registration/$1';
 
 $route['login'] = 'auth/LoginController/single';
 $route['multi-login'] = 'auth/LoginController/multi';

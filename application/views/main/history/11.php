@@ -1,8 +1,17 @@
 <main>
-	<section class="py-3 py-md-5">
+	<section class="section pb-md-0">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-xl-6 col-lg-8 col-md-10 col-12">
+				<div class="col-12">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+							<li class="breadcrumb-item"><a href="<?= base_url('history') ?>">All Seasons</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Season 11</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-xl-auto col-lg-8 col-md-10 col-12">
 					<div class="page-title">
 						<div class="row align-items-center justify-content-center">
 							<div class="col-auto">
@@ -17,6 +26,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="" id="about">
 		<div class="container">
 			<div class="row align-items-center">
@@ -92,7 +102,7 @@
 								<div class="swiper-slide p-3">
 									<div class="speaker-tile normal">
 										<div class="photo mb-3">
-											<img src="https://placehold.co/288x360" alt="">
+											<img src="https://placehold.co/288x360" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5>Lorem ipsum dolor sit.</h5>
@@ -141,7 +151,7 @@
 								<div class="swiper-slide p-3">
 									<div class="speaker-tile normal">
 										<div class="photo mb-3">
-											<img src="https://placehold.co/288x360" alt="">
+											<img src="https://placehold.co/288x360" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5>Lorem ipsum dolor sit.</h5>

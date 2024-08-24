@@ -1,11 +1,36 @@
 <footer class="">
+	<section class="section bg-black-0" id="times-influence">
+		<div class="container">
+			<div class="wrapp">
+				<div class="section-title text-center">
+					<h2><span>About Times Influence</span></h2>
+				</div>
+
+				<!-- End Title -->
+				<div class="row-fluid flex">
+					<div class="text text-center">
+						<p class="nexa-font"> Times Influence is a Content Thinktank founded on the pillars of Insight, Innovation, and Inspiration. Through our marquee properties, we have brought the nation’s opinion shapers and influencers together to collaborate and define the path to progress for the nation.</p>
+						<hr class="border-color-red border-2" style="width: 253px; margin: 23px auto;">
+						<p><strong>Prestigious initiatives by Times Network </strong></p>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="row justify-content-center g-3 g-md-4">
+					<div data-aos="fade-up" class="col-md-auto col-6"><img height="150" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></div>
+					<div data-aos="fade-up" data-aos-delay="100" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>2.png" alt="client logo"></div>
+					<div data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>4.png" alt="client logo"></div>
+					<div data-aos="fade-up" data-aos-delay="300" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>5.png" alt="client logo"></div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="py-3">
 		<div class="container">
 			<div class="main-footer">
 				<div class="row gy-4">
 					<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 						<div class="mb-3">
-						<img src="<?= base_url("assets/images/") ?>main-light.png" height="40" alt="">
+							<img src="<?= base_url("assets/images/") ?>main-light.png" height="40" alt="">
 						</div>
 						<div class="">
 							<p class="text-sm">
@@ -18,16 +43,16 @@
 							<h6>Quick Links</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">
-									<a class="nav-link" href="#">Home</a>
+									<a class="nav-link" href="<?= base_url() ?>">Home</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">About</a>
+									<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Previous Seasons</a>
+									<a class="nav-link" href="<?= base_url('history') ?>">Previous Seasons</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Articles</a>
+									<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
 								</li>
 							</ul>
 						</div>
@@ -36,17 +61,11 @@
 						<div class="">
 							<h6>Season 12</h6>
 							<ul class="footer-nav nav flex-column">
-								<li class="nav-item">
-									<a class="nav-link" href="#">All Categories</a>
+								<li class="nav-item d-none">
+									<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">All Cities</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Gallery</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Register</a>
+									<a class="nav-link" href="<?= base_url('all-cities') ?>">All Cities</a>
 								</li>
 							</ul>
 						</div>
@@ -56,16 +75,19 @@
 							<h6>Season 12 Awards</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">
-									<a class="nav-link" href="#">Register / Login</a>
+									<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">All Categories</a>
+									<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Awards</a>
+									<a class="nav-link" href="<?= base_url() ?>">All Categories</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Gallery</a>
+									<a class="nav-link" href="<?= base_url() ?>">Awards</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="<?= base_url() ?>">Gallery</a>
 								</li>
 							</ul>
 						</div>
@@ -75,87 +97,32 @@
 							<h6>All Seasons</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">
-									<a class="nav-link" href="#">Season 11</a>
+									<a class="nav-link" href="<?= base_url() ?>">Season 11</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Season 10</a>
+									<a class="nav-link" href="<?= base_url() ?>">Season 10</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Season 9</a>
+									<a class="nav-link" href="<?= base_url() ?>">Season 9</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Season 8</a>
+									<a class="nav-link" href="<?= base_url() ?>">Season 8</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Other Seasons</a>
+									<a class="nav-link" href="<?= base_url() ?>">Other Seasons</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-12">
 						<div class="">
-							<h6>Participating Cities</h6>
+							<h6>Springboard Cities</h6>
 							<ul class="footer-nav nav">
-								<li class="nav-item">
-									<a class="nav-link" href="#">Delhi</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Surat</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Chennai</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Hyderabad</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Ranchi</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Pune</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Bengaluru</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Udaipur</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Ahmedabad</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Coimbatore</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Nagpur</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Goa</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Thiruvanathapuram</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Guwahati</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Dehradun</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Kolkata</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Bhubaneswar</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Bhopal</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Lucknow</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Mumbai</a>
-								</li>
+								<?php foreach ($springboards as $key => $sb) : ?>
+									<li class="nav-item">
+										<a class="nav-link" href="#"><?= $sb['name'] ?></a>
+									</li>
+								<?php endforeach ?>
 							</ul>
 						</div>
 					</div>
@@ -170,12 +137,17 @@
 					<ul class="nav g-4">
 						<li class="nav-item">
 							<h3 class="mb-0">
-								<a class="nav-link text-white" href="#"><i class="fa-brands fa-instagram"></i></a>
+								<a class="nav-link text-white" href="https://in.linkedin.com/company/et-now-lot" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
 							</h3>
 						</li>
 						<li class="nav-item">
 							<h3 class="mb-0">
-								<a class="nav-link text-white" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+								<a class="nav-link text-white" href="https://www.instagram.com/etnow_lot" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+							</h3>
+						</li>
+						<li class="nav-item">
+							<h3 class="mb-0">
+								<a class="nav-link text-white" href="https://x.com/ETNOW_LOT" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
 							</h3>
 						</li>
 						<li class="nav-item">

@@ -6,6 +6,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="" id="about">
 		<div class="container">
 			<div class="row align-items-center">
@@ -20,14 +21,15 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nam rem eum necessitatibus et maiores tempora nisi vel officia corporis porro quibusdam dolore beatae autem ea quae asperiores in incidunt, veritatis consequuntur, quia tenetur laudantium quam ipsa. Consequuntur eaque quos iusto sit, sunt ullam tempore ratione provident? Magni, iusto mollitia.
+							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - “Powering Entrepreneurs for the Global Stage.” Airing daily from Monday to Friday on ET Now at 7.30 pm
 						</p>
-						<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<section class="">
 		<div class="container">
 			<div class="row align-items-center flex-row-reverse">
@@ -38,8 +40,9 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="text-content text-lg" data-aos="fade-right">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+						<p>
+							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - “Powering Entrepreneurs for the Global Stage.” Airing daily from Monday to Friday on ET Now at 7.30 pm, Leaders of Tomorrow will also host 15 on-ground Springboards across various cities in India. These springboards will serve as a launchpad for success, encapsulating the essence of India's growth story by covering opportunities across India. Springboards will also provide a platform for the top MSMEs in each city, playing a crucial role in propelling India’s smaller businesses toward success and empowering the leaders of tomorrow. At each of our Springboard, we will feature some of the most inspiring business leaders from each city, who will share their experiences and insights, motivating the audience, viewers and entrepreneurs with their success stories.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -57,7 +60,8 @@
 			</div>
 		</div>
 	</section>
-	<section id="categories">
+
+	<section id="categories" class="d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -68,7 +72,7 @@
 				<div class="col-12">
 					<div class="swiper categorySwiper">
 						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 10; $i++) : ?>
+							<?php for ($i = 0; $i < 14; $i++) : ?>
 								<div class="swiper-slide p-3">
 									<a href="javascript:void(0)" class="speaker-tile featured rounded-circle image-bg">
 										<div class="desc text-center">
@@ -81,7 +85,7 @@
 					</div>
 					<script>
 						new Swiper(".categorySwiper", {
-							slidesPerView: 1,
+							slidesPerView: 2,
 							grid: {
 								rows: 1,
 								fill: 'row'
@@ -115,119 +119,21 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers">
+
+	<section id="cities" class="pt-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>List of Speakers</span></h2>
+						<h2><span>All Cities</span></h2>
 					</div>
 				</div>
-				<div class="col-12">
-					<div class="swiper speakerSwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 10; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<a href="<?= base_url('speaker/single') ?>" class="speaker-tile">
-										<div class="photo mb-3">
-											<img src="https://placehold.co/288x360" alt="">
-										</div>
-										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-										</div>
-									</a>
-								</div>
-							<?php endfor ?>
-						</div>
-					</div>
-					<script>
-						new Swiper(".speakerSwiper", {
-							slidesPerView: 1,
-							grid: {
-								rows: 1,
-								fill: 'row'
-							},
-							breakpoints: {
-								640: {
-									slidesPerView: 2,
-									spaceBetween: 20,
-									grid: {
-										rows: 2,
-									},
-								},
-								1024: {
-									slidesPerView: 3,
-									spaceBetween: 50,
-									grid: {
-										rows: 2,
-									},
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-									grid: {
-										rows: 2,
-									},
-								},
-							},
-						})
-					</script>
-				</div>
+				<?php $this->load->view('components/theme/partials/widget/_all_cities');?>
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="d-none">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-12">
-					<div class="section-title text-center mb-3 mb-md-5">
-						<h2><span>Programme Agenda</span></h2>
-					</div>
-				</div>
-				<div class="col-xl-8 col-lg-10 col-12">
-					<div class="swiper agendaSwiper">
-						<div class="swiper-wrapper" id="agendaPages">
-							<a class="swiper-slide" href="https://placehold.co/2250x4000/jpg">
-								<picture>
-									<source srcset="https://placehold.co/2250x4000/jpg" type="image/jpg">
-									<img src="https://placehold.co/2250x4000/jpg" alt="" class="w-100">
-								</picture>
-							</a>
-							<a class="swiper-slide" href="https://placehold.co/2250x4000/jpg">
-								<picture>
-									<source srcset="https://placehold.co/2250x4000/jpg" type="image/jpg">
-									<img src="https://placehold.co/2250x4000/jpg" alt="" class="w-100">
-								</picture>
-							</a>
-						</div>
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-					<script type="text/javascript">
-						new Swiper(".agendaSwiper", {
-							navigation: {
-								nextEl: ".agendaSwiper .swiper-button-next",
-								prevEl: ".agendaSwiper .swiper-button-prev",
-							},
-							slidesPerView: 1,
-							breakpoints: {
-								1024: {
-									slidesPerView: 2,
-									spaceBetween: 30,
-								}
-							}
-						});
-						lightGallery(document.getElementById('agendaPages'), {
-							plugins: [lgZoom, lgThumbnail],
-							speed: 500,
-						});
-					</script>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="awards">
+
+	<section id="awards" class="d-none">
 		<div class="container">
 			<div class="row justify-content-center g-4">
 				<div class="col-xl-8 col-lg-10 col-12">
@@ -248,6 +154,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section id="articles" class="pt-0">
 		<div class="container">
 			<div class="row g-3">

@@ -1,9 +1,25 @@
 $color-white: #efefef;
 $color-black: #1c1c1c;
+$color-black-0: #000000;
 $color-red: #b72026;
 $color-yellow: #ffde3f;
 $color-yellow-2: #cf8b2c;
 $color-orange: #f05c27;
+
+$colors: "white" $color-white, "black" $color-black, "red" $color-red, "black-0" $color-black-0,
+	"yellow" $color-yellow, "orange" $color-orange;
+
+@each $class, $color in $colors{
+	.bg-#{$class}{
+		background-color: $color !important;
+	}
+	.text-#{$class}{
+		color: $color !important;
+	}
+	.border-color-#{$class}{
+		border-color: $color !important;
+	}
+}
 
 ::selection {
 	color: $color-black;
@@ -21,6 +37,17 @@ h3,
 h4 {
 	text-transform: uppercase;
 	font-weight: 700;
+}
+
+form{
+	label.error{
+		color: red;
+		font-size: 0.8rem;
+	}
+	.form-control{
+		&[required]{
+		}
+	}
 }
 
 body {
@@ -72,7 +99,8 @@ footer {
 	width: 100%;
 }
 main {
-	&.w-fullscreen{
+	position: relative;
+	&.w-fullscreen {
 		width: 100%;
 		height: 100vh;
 		display: flex;
@@ -94,7 +122,7 @@ main {
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: url("../images/kv-white.png") no-repeat,
+				background: url("../images/ilu-white.png") no-repeat,
 					rgba($color: #000000, $alpha: 0.6);
 				background-size: auto min(60vmin, 40vmax);
 				background-position: center;
@@ -121,7 +149,16 @@ main {
 }
 @media screen and (min-width: 600px) {
 	.text-lg {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
+	}
+}
+
+.springboard-register{
+	.banner-image{
+		border-radius: 1.3rem;
+		border: 0.5rem solid #fff;
+		background-color: #fff;
+		overflow: hidden;
 	}
 }
 
@@ -137,6 +174,9 @@ nav.navbar {
 		right: 0;
 		border-top: 4px solid $color-red;
 		border-radius: 0;
+		.dropdown-item {
+			white-space: inherit;
+		}
 	}
 	ul.navbar-nav {
 		.nav-item {
@@ -211,8 +251,8 @@ nav.navbar {
 	}
 }
 
-form{
-	.form-control{
+form {
+	.form-control {
 		border-radius: 0;
 	}
 }
@@ -221,6 +261,64 @@ form{
 	cursor: url("../images/icons/cursor-sm.png"), auto;
 	a {
 		cursor: url("../images/icons/cursor-sm.png"), auto !important;
+	}
+	.hero-slide {
+		background: url("https://placehold.co/1920x1080") no-repeat;
+		background-position: center;
+		height: calc(100vh - 100px);
+		width: 100%;
+		overflow: hidden;
+		padding: calc(max(7%, 2rem)) 0;
+		.text-content {
+			margin-bottom: 2rem;
+			padding: 1rem;
+			h2 {
+				font-size: calc(max(5vmin, 2.2rem));
+				font-weight: 700;
+			}
+			h3 {
+				font-size: calc(max(4vmin, 2rem));
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.hero-slide {
+		background: url("https://placehold.co/1920x1080") no-repeat;
+		background-position: center;
+		height: calc(100vh - 100px);
+		width: 100%;
+		overflow: hidden;
+		padding: calc(max(7%, 2rem)) 0;
+		position: relative;
+		.element {
+			position: absolute;
+			z-index: 0;
+			left: 0;
+			top: 0;
+			width: calc(min(50%, 400px));
+		}
+		.media-content {
+			position: relative;
+			z-index: 1;
+		}
+		.text-content {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 60%;
+			margin-bottom: 2rem;
+			h2 {
+				font-size: calc(max(5vmin, 2.2rem));
+				font-weight: 700;
+			}
+			h3 {
+				font-size: calc(max(4vmin, 2rem));
+				font-weight: 400;
+			}
+		}
 	}
 }
 .page-title {
@@ -262,15 +360,15 @@ form{
 	}
 }
 
-.plain-card{
+.plain-card {
 	background-color: white;
-	.card-body{
+	.card-body {
 		padding: 1rem;
 		border-radius: 0.5rem;
 	}
 }
 
-.signup-widget{
+.signup-widget {
 	min-height: calc(max(500px, 60vmin));
 }
 
@@ -307,6 +405,25 @@ form{
 	}
 }
 
+.tile {
+	.photo {
+		padding: 5px;
+		border-radius: 0.35rem;
+		&.rounded-circle {
+			border-radius: 50%;
+			width: 100%;
+			aspect-ratio: 1;
+			display: grid;
+			place-items: center;
+			padding: 0;
+			overflow: hidden;
+		}
+		img {
+			object-fit: cover;
+		}
+	}
+}
+
 .speaker-tile,
 .interactive-tile {
 	&.rounded-circle {
@@ -317,6 +434,7 @@ form{
 		display: grid;
 		place-items: center;
 		padding: 0.5rem;
+		overflow: hidden;
 		h5 {
 			font-size: 1.2rem;
 		}
@@ -326,6 +444,16 @@ form{
 		background-size: cover;
 		background-position: center;
 	}
+
+	&:not(.normal) {
+		&:hover {
+			.photo {
+				box-shadow: 0 0 0 5px $color-yellow;
+			}
+		}
+	}
+}
+.speaker-tile {
 	h5 {
 		text-transform: uppercase;
 		font-weight: 600;
@@ -335,20 +463,6 @@ form{
 	p {
 		font-size: 12px;
 		color: rgba($color-black, 0.8);
-	}
-	.photo {
-		padding: 5px;
-		border-radius: 0.35rem;
-		img {
-			width: 100%;
-		}
-	}
-	&:not(.normal) {
-		&:hover {
-			.photo {
-				box-shadow: 0 0 0 5px $color-yellow;
-			}
-		}
 	}
 }
 .article-tile {
@@ -378,11 +492,20 @@ form{
 		z-index: 2;
 	}
 
-	&:hover{
+	&:hover {
 		box-shadow: 0 0 3px 3px $color-yellow-2, 0 0 0 8px $color-yellow;
 	}
 }
 
+
 .steps ul {
 	display: flex;
+}
+
+/* SpirngBoards */
+.footer-lineart {
+	height: 200px;
+	width: 100%;
+	background: url("../images/icons/city/mumbai-lineart-color.png") repeat-x;
+	background-size: contain;
 }

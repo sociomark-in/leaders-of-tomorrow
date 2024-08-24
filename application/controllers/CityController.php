@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/BaseController.php";
 class CityController extends BaseController
 {
@@ -10,19 +10,34 @@ class CityController extends BaseController
 	}
 	public function index()
 	{
-		$this->load->page('cities/home', $this->data);
+		$this->load->page('city/home', $this->data);
 	}
 
-	public function city_single($number)
+	public function city_single($city)
 	{
-		switch ($number) {
+		switch ($city) {
 			case 'mumbai':
-				$this->load->page('cities/mumbai', $this->data);
+				$this->data['city'] = [
+					'name' => "Mumbai"
+				];
+				$this->load->city_view('mumbai', $this->data);
 				break;
 
 			default:
-				redirect('cities');
+				redirect('all-cities');
 				break;
+		}
+	}
+	public function registration($city)
+	{
+		foreach ($this->springboards as $key => $sb) {
+			if (strtolower($sb['name']) == $city) {
+				$this->data['city'] = $sb;
+				$this->load->city_view('register', $this->data);
+				break;
+			} else {
+				redirect('all-cities');
+			}
 		}
 	}
 }

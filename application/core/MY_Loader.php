@@ -24,8 +24,8 @@ class MY_Loader extends CI_Loader
 	
 	public function city_view($view, $vars = array(), $return = FALSE)
 	{
-		$this->view('layout/_1', $vars);
-		$this->view("city/" . $view, $vars);
+		$this->view('layout/_1_sb', $vars);
+		$this->view("main/city/" . $view, $vars);
 		$this->view('layout/_2', $vars);
 	}
 

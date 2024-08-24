@@ -15,9 +15,6 @@
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url("#categories") ?>">Categories</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('all-cities') ?>">All Cities</a>
 				</li>
 				<li class="nav-item dropdown">
@@ -35,7 +32,7 @@
 						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Miscellaneous Menu
 					</a>
@@ -53,19 +50,16 @@
 					<a class="nav-link disabled" aria-disabled="true">Disabled</a>
 				</li>
 			</ul>
-			<div class="row">
+			<div class="row d-none">
 				<div class="col-md-auto">
-					<ul class="navbar-nav align-items-center">
+					<ul class="navbar-nav align-items-center g-4">
 						<li class="nav-item">
 							<a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
 								<?= $location ??= "Choose A City" ?>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Login</a>
-						</li>
-						<li class="nav-item">
-							<a class="btn btn-red text-uppercase" href="#">Register</a>
+							<a class="btn btn-red text-uppercase" href="#">Login</a>
 						</li>
 					</ul>
 				</div>
