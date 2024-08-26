@@ -16,7 +16,7 @@
 					</div>
 				</div>
 				<div class="row justify-content-center g-3 g-md-4">
-					<div data-aos="fade-up" class="col-md-auto col-6"><img height="150" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></div>
+					<div data-aos="fade-up" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></div>
 					<div data-aos="fade-up" data-aos-delay="100" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>2.png" alt="client logo"></div>
 					<div data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>4.png" alt="client logo"></div>
 					<div data-aos="fade-up" data-aos-delay="300" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>5.png" alt="client logo"></div>
@@ -119,9 +119,19 @@
 							<h6>Springboard Cities</h6>
 							<ul class="footer-nav nav">
 								<?php foreach ($springboards as $key => $sb) : ?>
+									<?php switch($sb['name']):
+									case 'Mumbai':
+									?>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
+									</li>
+									<?php break; ?>
+									<?php default: ?>
 									<li class="nav-item">
 										<a class="nav-link" href="#"><?= $sb['name'] ?></a>
 									</li>
+									<?php break; ?>
+								    <?php endswitch ?>
 								<?php endforeach ?>
 							</ul>
 						</div>
@@ -148,11 +158,6 @@
 						<li class="nav-item">
 							<h3 class="mb-0">
 								<a class="nav-link text-white" href="https://x.com/ETNOW_LOT" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-							</h3>
-						</li>
-						<li class="nav-item">
-							<h3 class="mb-0">
-								<a class="nav-link text-white" href="#"><i class="fa-brands fa-youtube"></i></a>
 							</h3>
 						</li>
 					</ul>

@@ -10,7 +10,7 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Mumbai",
 				'theme' => "Galvanizing India’s MSMEs to Seize Global Opportunities",
-				'date' => '2024-08-24',
+				'date' => '2024-08-29',
 			],
 			[
 				'name' => "Lucknow",

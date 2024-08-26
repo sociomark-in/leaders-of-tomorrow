@@ -83,8 +83,8 @@
 <script>
 	var timer;
 
-	var compareDate = new Date();
-	compareDate.setDate(compareDate.getDate() + 7); //just for this demo today + 7 days
+	var compareDate = new Date("August 29, 2024 17:00:00");
+	compareDate.setDate(compareDate.getDate()); //just for this demo today + 7 days
 
 	timer = setInterval(function() {
 		timeBetweenDates(compareDate);

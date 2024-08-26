@@ -37,11 +37,11 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Leaders of Tomorrow Season 12</span></h2>
+						<h2><span>Galvanizing India’s MSMEs to Seize Global Opportunities</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							In today's rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - “Powering Entrepreneurs for the Global Stage.” Airing daily from Monday to Friday on ET Now at 7.30 pm
+							In today's rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - <strong class="text-red">Powering Entrepreneurs for the Global Stage.</strong> Airing daily from Monday to Friday on ET Now at 7.30 pm
 						</p>
 						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
@@ -59,21 +59,21 @@
 					We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India. 
 				</p>
 				<p data-aos="fade-up" data-aos-delay="200">
-					Aligning with our theme “Powering Entrepreneurs for the Global Stage”, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
+					Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
 				</p>
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
-				<div class="col-12">
-					<div class="section-title">
+				<div class="col-xl-4 col-lg-6 col-12">
+					<div class="section-title mb-3">
 						<h2><span>Agenda</span></h2>
 					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-12">
 					<div class="text-content">
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
 						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
 						<a href="#" class="btn btn-yellow">Download PDF<i class="ms-2 fa-solid fa-arrow-down"></i></a>
 					</div>
@@ -123,7 +123,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
