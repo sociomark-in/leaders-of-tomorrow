@@ -140,53 +140,92 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<div class="swiper speakerSwiper">
-						<div class="swiper-wrapper">
-							<?php foreach ($city['speakers'] as $key => $speaker) : ?>
-								<div class="swiper-slide p-3" data-aos="fade-left">
-									<a href="javascript:void(0)" class="speaker-tile normal">
-										<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
-										<div class="speaker-photo rounded-circle mb-3">
-											<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+					<div class="row align-items-center">
+						<div class="col-xl-3 col-lg-6 col-12">
+						<div class="swiper guestSwiper">
+								<div class="swiper-wrapper">
+									<?php foreach ($city['guests'] as $key => $speaker) : ?>
+										<div class="swiper-slide p-3" data-aos="fade-left">
+											<a href="javascript:void(0)" class="speaker-tile normal">
+												<div class="">
+													<h4 class="text-red text-center">Chief Guest</h4>
+												</div>
+												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
+												<div class="speaker-photo rounded-circle mb-3">
+													<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+												</div>
+												<div class="desc text-center">
+													<h5><?= $speaker['name'] ?></h5>
+													<p><?= $speaker['description'] ?></p>
+												</div>
+											</a>
 										</div>
-										<div class="desc text-center">
-											<h5><?= $speaker['name'] ?></h5>
-											<p><?= $speaker['description'] ?></p>
-										</div>
-									</a>
+									<?php endforeach ?>
 								</div>
-							<?php endforeach ?>
+								<div class="swiper-button-next swiper-button-red"></div>
+								<div class="swiper-button-prev swiper-button-red"></div>
+							</div>
+							<script>
+								new Swiper(".guestSwiper", {
+									navigation: {
+										nextEl: ".guestSwiper .swiper-button-next",
+										prevEl: ".guestSwiper .swiper-button-prev",
+									},
+									slidesPerView: 1,
+									
+								})
+							</script>
 						</div>
-						<div class="swiper-button-next swiper-button-red"></div>
-						<div class="swiper-button-prev swiper-button-red"></div>
+						<div class="col-xl-9 col-lg-6 col-12">
+							<div class="swiper speakerSwiper">
+								<div class="swiper-wrapper">
+									<?php foreach ($city['speakers'] as $key => $speaker) : ?>
+										<div class="swiper-slide p-3" data-aos="fade-left">
+											<a href="javascript:void(0)" class="speaker-tile normal">
+												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
+												<div class="speaker-photo rounded-circle mb-3">
+													<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+												</div>
+												<div class="desc text-center">
+													<h5><?= $speaker['name'] ?></h5>
+													<p><?= $speaker['description'] ?></p>
+												</div>
+											</a>
+										</div>
+									<?php endforeach ?>
+								</div>
+								<div class="swiper-button-next swiper-button-red"></div>
+								<div class="swiper-button-prev swiper-button-red"></div>
+							</div>
+							<script>
+								new Swiper(".speakerSwiper", {
+									navigation: {
+										nextEl: ".speakerSwiper .swiper-button-next",
+										prevEl: ".speakerSwiper .swiper-button-prev",
+									},
+									slidesPerView: 1,
+									grid: {
+										rows: 1,
+										fill: 'row'
+									},
+									breakpoints: {
+										640: {
+											slidesPerView: 2,
+											spaceBetween: 20,
+										},
+										1024: {
+											slidesPerView: 3,
+											spaceBetween: 50,
+										},
+										1400: {
+											slidesPerView: 4,
+											spaceBetween: 20,
+										},
+									},
+								})
+							</script>
+						</div>
 					</div>
-					<script>
-						new Swiper(".speakerSwiper", {
-							navigation: {
-								nextEl: ".speakerSwiper .swiper-button-next",
-								prevEl: ".speakerSwiper .swiper-button-prev",
-							},
-							slidesPerView: 1,
-							grid: {
-								rows: 1,
-								fill: 'row'
-							},
-							breakpoints: {
-								640: {
-									slidesPerView: 2,
-									spaceBetween: 20,
-								},
-								1024: {
-									slidesPerView: 3,
-									spaceBetween: 50,
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-								},
-							},
-						})
-					</script>
 				</div>
 			</div>
 		</div>

@@ -105,13 +105,13 @@
 
 	<section id="springboards" class="pt-0">
 		<div class="container">
-			<div class="row align-items-center flex-row-reverse mb-3 mb-md-5">
-				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+			<div class="row g-3 align-items-center flex-row-reverse mb-3 mb-md-5">
+				<div class="col-xl-5 offset-xl-2 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-left">
 						<img src="<?= base_url('assets/images/cities/') ?>kv.jpg" alt="" class="w-100">
 					</div>
 				</div>
-				<div class="col-xl-5 offset-xl-2 col-lg-6 col-12">
+				<div class="col-xl-5 col-lg-6 col-12">
 					<div class="section-title">
 						<h2><span>Springboards</span></h2>
 					</div>
@@ -122,9 +122,6 @@
 						<a href="<?= base_url('all-cities') ?>" class="btn btn-red">All Springboards</a>
 					</div>
 				</div>
-			</div>
-			<div class="row g-3">
-				<?php $this->load->view('components/theme/partials/widget/_all_cities'); ?>
 			</div>
 		</div>
 	</section>
@@ -162,19 +159,18 @@
 				<div class="col-12">
 					<div class="swiper articleSwiper">
 						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 10; $i++) : ?>
+							<?php foreach ($articles as $key => $article) : ?>
 								<div class="swiper-slide p-3">
-									<a href="<?= base_url('speaker/single') ?>" class="article-tile">
+									<a href="<?= $article['redirect'] ?>" target="_blank" class="article-tile">
 										<div class="photo">
-											<img class="w-100" src="https://placehold.co/1279x720" alt="">
+											<img class="w-100" src="<?= $article['thumb'] ?>" alt="">
 										</div>
 										<div class="desc">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+											<h5><?= $article['title'] ?></h5>
 										</div>
 									</a>
 								</div>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</div>
 					</div>
 					<script>

@@ -21,7 +21,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#gallery">Gallery</a>
 				</li>
 				<li class="nav-item">
@@ -30,7 +30,7 @@
 			</ul>
 			<ul class="navbar-nav gap-2">
 				<li class="nav-item">
-					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Attend the Event</a>
+					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
 				</li>
 			</ul>
 		</div>

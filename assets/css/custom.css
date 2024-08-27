@@ -561,6 +561,8 @@ form .form-control {
   bottom: 1rem;
   right: 1rem;
   width: 3rem;
+  display: grid;
+  place-items: center;
   aspect-ratio: 1;
   background-color: #b72026;
   color: #efefef;

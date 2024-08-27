@@ -54,6 +54,15 @@
 								<li class="nav-item">
 									<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="<?= base_url('misc/terms-of-use') ?>">Terms of Use</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="<?= base_url('misc/disclaimer') ?>">Disclaimer</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -116,19 +125,20 @@
 							<h6>Springboard Cities</h6>
 							<ul class="footer-nav nav">
 								<?php foreach ($springboards as $key => $sb) : ?>
-									<?php switch($sb['name']):
-									case 'Mumbai':
+									<?php switch ($sb['name']):
+										case 'Mumbai':
 									?>
-									<li class="nav-item">
-										<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
-									</li>
-									<?php break; ?>
-									<?php default: ?>
-									<li class="nav-item">
-										<a class="nav-link" href="#"><?= $sb['name'] ?></a>
-									</li>
-									<?php break; ?>
-								    <?php endswitch ?>
+											<li class="nav-item">
+												<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
+											</li>
+											<?php break; ?>
+										<?php
+										default: ?>
+											<li class="nav-item">
+												<a class="nav-link" href="#"><?= $sb['name'] ?></a>
+											</li>
+											<?php break; ?>
+									<?php endswitch ?>
 								<?php endforeach ?>
 							</ul>
 						</div>

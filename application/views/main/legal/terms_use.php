@@ -1,6 +1,20 @@
 <main>
 	<section class="section">
 		<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-auto col-lg-8 col-md-10 col-12">
+				<div class="page-title mb-3 mb-md-5">
+					<div class="row align-items-center justify-content-center">
+						<div class="col-auto">
+							<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
+						</div>
+						<div class="col-auto">
+							<h1>Terms of Use</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 			<div class="post-body">
 				<p>
 					These Terms of Use govern your use of the websites, content and community services offered through <a href="www.leadersoftomorrow.co.in" target="_blank">www.leadersoftomorrow.co.in</a> ("<b>Website / Site</b>"). You (the user) agree to access the Site, subject to the terms and conditions of use as set out here.
@@ -98,7 +112,7 @@
 				<p>
 					You agree to defend, indemnify, and hold BCCL, its officers, directors, employees, agents, licensors, and suppliers, harmless from and against any claims, actions or demands, liabilities and settlements including without limitation, reasonable legal and accounting fees, resulting from, or alleged to result from: (a) your use of the Site, (b) any User Content you post or upload, (c) your use of or reliance on any User Content, or (d) your violation of these Terms and Conditions.
 				</p>
-				
+
 				<h4>Termination of Account</h4>
 				<p>
 					BCCL reserves its right to refuse service, restrict, suspend, terminate your account; (Terminate this Agreement; Terminate or suspend your access to the BCCL's Websites; Refuse, move or remove for any reason any Content / Image that you submit on or through the Services; Refuse, move, or remove any Content / Image that is available on or through the Services; Deactivate or delete your accounts and all related information and files in your account; Establish general practices and limits concerning use of the Services) at any time and, remove or edit contents or cancel orders (entered by you) in its sole discretion with or without cause, and with or without any prior notice for any violation of the Terms of Use. Upon such termination or suspension, your right to use the BCCL's Websites will immediately cease.
@@ -134,10 +148,6 @@
 				<p>
 					Part of the Site contains advertising information or promotion material or other material submitted to BCCL by third parties. Responsibility for ensuring that material submitted for inclusion on Site complies with applicable International and National law is exclusively on the party providing the information/material. Your correspondence or business dealings with, or participation in promotions of, advertisers other than BCCL found on or through the Website, including payment and delivery of related goods or services, and any other terms, conditions, warranties or representations associated with such dealings, are solely between you and such advertiser. BCCL will not be responsible or liable for any claim, error, omission, inaccuracy in advertising material or any loss or damage of any sort incurred as the result of any such dealings or as the result of the presence of such non- BCCL advertisers on the Website. BCCL reserves the right to omit, suspend or change the position of any advertising material submitted for insertion. Acceptance of advertisements on the Site will be subject to these terms and conditions.
 				</p>
-				<p>
-
-				</p>
-
 
 				<h4>Data Protection</h4>
 				<p>

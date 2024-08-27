@@ -1,3 +1,9 @@
+<?php
+$dateObj = date_create_from_format("Y-m-d H:i:s", $city['date']);
+$date = date_format($dateObj, 'F j, Y');
+$time = date_format($dateObj, 'h:i A');
+?>
+
 <main>
 	<section class="springboard-register pb-0">
 		<div class="container">
@@ -20,7 +26,7 @@
 										<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
 									</div>
 									<div class="col-auto">
-										<h1>Registration</h1>
+										<h1>Register Now</h1>
 									</div>
 								</div>
 							</div>
@@ -34,11 +40,6 @@
 						<div class="card-body">
 							<div class="mb-3">
 								<h2 class="text-red"><?= $city['name'] ?> Springboard</span></h2>
-							</div>
-							<div class="mb-3">
-								<p>
-									<strong>Date:&nbsp;</strong><?= $city['date'] ?>
-								</p>
 							</div>
 							<div class="mb-3">
 								<p class="text-uppercase text-lg mb-1">Event Starts In</p>
@@ -56,12 +57,16 @@
 						<h2><span> <?= $city['theme'] ?></span></h2>
 					</div>
 					<div class="text-content">
-						<p data-aos="fade-up">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae minus neque quae non sint ratione, mollitia id, adipisci quos earum. Fugit ullam qui culpa nostrum iusto praesentium dolores dolore.
-						</p>
-						<p data-aos="fade-up">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae minus neque quae non sint ratione, mollitia id, adipisci quos earum. Fugit ullam qui culpa nostrum iusto praesentium dolores dolore.
-						</p>
+						<div class="card event-ticket">
+							<div class="card-body">
+								<p>
+									<strong>Date:&nbsp;</strong><?php print_r($date) ?>
+								</p>
+								<p>
+									<strong>Time:&nbsp;</strong><?php print_r($time) ?>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

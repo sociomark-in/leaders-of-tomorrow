@@ -1,5 +1,19 @@
 <main>
 	<section class="section">
+		<div class="row justify-content-center">
+			<div class="col-xl-auto col-lg-8 col-md-10 col-12">
+				<div class="page-title mb-3 mb-md-5">
+					<div class="row align-items-center justify-content-center">
+						<div class="col-auto">
+							<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
+						</div>
+						<div class="col-auto">
+							<h1>Disclaimer</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="post-body">
 				<p>
