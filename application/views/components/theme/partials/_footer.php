@@ -16,10 +16,11 @@
 					</div>
 				</div>
 				<div class="row justify-content-center g-3 g-md-4">
-					<div data-aos="fade-up" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></div>
-					<div data-aos="fade-up" data-aos-delay="100" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>2.png" alt="client logo"></div>
-					<div data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>4.png" alt="client logo"></div>
-					<div data-aos="fade-up" data-aos-delay="300" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>5.png" alt="client logo"></div>
+					<a href="https://www.timesnowsummit.com/" target="_blank" data-aos="fade-up" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></a>
+					<a href="javascript:void(0)" target="_blank" data-aos="fade-up" data-aos-delay="100" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>2.png" alt="client logo"></a>
+					<a href="https://www.tnics.in/" target="_blank" data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>3.png" alt="client logo"></a>
+					<a href="https://www.theamazingindians.com/" target="_blank" data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>4.png" alt="client logo"></a>
+					<a href="javascript:void(0)" target="_blank" data-aos="fade-up" data-aos-delay="300" class="col-md-auto col-6"><img height="120" src="<?= base_url('assets/images/logos/ip/') ?>5.png" alt="client logo"></a>
 				</div>
 			</div>
 		</div>
