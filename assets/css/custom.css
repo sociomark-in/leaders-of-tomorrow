@@ -293,6 +293,30 @@ form .form-control {
 .swiper {
   cursor: url("../images/icons/cursor-sm.png"), auto;
 }
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  top: 35%;
+}
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  background-size: contain !important;
+  background-position: center !important;
+}
+.swiper .swiper-button-next.swiper-button-red::after {
+  background: url("../images/icons/red-right.png") no-repeat;
+}
+.swiper .swiper-button-next.swiper-button-yellow::after {
+  background: url("../images/icons/yellow-right.png") no-repeat;
+}
+.swiper .swiper-button-prev.swiper-button-red::after {
+  background: url("../images/icons/red-left.png") no-repeat;
+}
+.swiper .swiper-button-prev.swiper-button-yellow::after {
+  background: url("../images/icons/yellow-left.png") no-repeat;
+}
 .swiper a {
   cursor: url("../images/icons/cursor-sm.png"), auto !important;
 }
@@ -380,6 +404,9 @@ form .form-control {
   left: 0;
   width: max(8rem, 30%);
   height: 0.25rem;
+  background-color: #b72026;
+}
+.section-title.text-white h2 > span::after {
   background-color: #ffde3f;
 }
 .section-title.text-center h2 > span::after {
@@ -523,6 +550,19 @@ form .form-control {
 .footer-lineart {
   height: 200px;
   width: 100%;
-  background: url("../images/icons/city/mumbai-lineart-color.png") repeat-x;
+  background-repeat: repeat-x;
   background-size: contain;
+  background-position: left bottom;
+}
+
+#scrollToTop {
+  position: fixed;
+  z-index: 999;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-color: #b72026;
+  color: #efefef;
+  border-radius: 0.25rem;
 }

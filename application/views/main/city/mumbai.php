@@ -26,6 +26,21 @@
 			</div>
 		</div>
 	</section>
+	<section class="section pb-0" id="about">
+		<div class="container">
+			<div class="text-content text-lg mb-3 mb-md-5">
+				<p data-aos="fade-up">
+					MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
+				</p>
+				<p data-aos="fade-up" data-aos-delay="100">
+					We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India.
+				</p>
+				<p data-aos="fade-up" data-aos-delay="200">
+					Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
+				</p>
+			</div>
+		</div>
+	</section>
 
 	<section class="section">
 		<div class="container">
@@ -41,26 +56,15 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							In today's rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - <strong class="text-red">Powering Entrepreneurs for the Global Stage.</strong> Airing daily from Monday to Friday on ET Now at 7.30 pm
+							Set against the vibrant backdrop of Mumbai, MSMEs play a crucial role in driving innovation, employment and exports, making them the lifeblood of the nation's growth.
+						</p>
+
+						<p data-aos="fade-left" data-aos-delay="400">
+							Join us at #LOTSpringboard Mumbai as we delve into the challenges and opportunities shaping the future of MSMEs in India. Explore how policy support, streamlined regulations, and digitization are empowering entrepreneurs to make their mark on the global stage.
 						</p>
 						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section p-0" id="about">
-		<div class="container">
-			<div class="text-content text-lg mb-3 mb-md-5">
-				<p data-aos="fade-up">
-					MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development. 
-				</p>
-				<p data-aos="fade-up" data-aos-delay="100">
-					We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India. 
-				</p>
-				<p data-aos="fade-up" data-aos-delay="200">
-					Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
-				</p>
 			</div>
 		</div>
 	</section>
@@ -105,6 +109,10 @@
 					</div>
 					<script>
 						new Swiper(".agendaSwiper", {
+							navigation: {
+								nextEl: ".agendaSwiper .swiper-button-next",
+								prevEl: ".agendaSwiper .swiper-button-prev",
+							},
 							slidesPerView: 1,
 							spaceBetween: 20,
 							breakpoints: {
@@ -123,34 +131,41 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0">
+	<section id="speakers" class="">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>List of Speakers</span></h2>
+						<h2><span>Speakers</span></h2>
 					</div>
 				</div>
 				<div class="col-12">
 					<div class="swiper speakerSwiper">
 						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 10; $i++) : ?>
+							<?php foreach ($city['speakers'] as $key => $speaker) : ?>
 								<div class="swiper-slide p-3" data-aos="fade-left">
-									<a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal">
-										<div class="photo rounded-circle mb-3">
-											<img src="<?= base_url('assets/images/cities/') ?>person.png" class="w-100" alt="">
+									<a href="javascript:void(0)" class="speaker-tile normal">
+										<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
+										<div class="speaker-photo rounded-circle mb-3">
+											<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 										</div>
 										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+											<h5><?= $speaker['name'] ?></h5>
+											<p><?= $speaker['description'] ?></p>
 										</div>
 									</a>
 								</div>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</div>
+						<div class="swiper-button-next swiper-button-red"></div>
+						<div class="swiper-button-prev swiper-button-red"></div>
 					</div>
 					<script>
 						new Swiper(".speakerSwiper", {
+							navigation: {
+								nextEl: ".speakerSwiper .swiper-button-next",
+								prevEl: ".speakerSwiper .swiper-button-prev",
+							},
 							slidesPerView: 1,
 							grid: {
 								rows: 1,
@@ -160,23 +175,14 @@
 								640: {
 									slidesPerView: 2,
 									spaceBetween: 20,
-									grid: {
-										rows: 2,
-									},
 								},
 								1024: {
 									slidesPerView: 3,
 									spaceBetween: 50,
-									grid: {
-										rows: 2,
-									},
 								},
 								1400: {
 									slidesPerView: 5,
 									spaceBetween: 30,
-									grid: {
-										rows: 2,
-									},
 								},
 							},
 						})
@@ -185,7 +191,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="gallery" class="section">
+	<section id="gallery" class="section d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -197,7 +203,7 @@
 					<div class="swiper gallerySwiper">
 						<div class="swiper-wrapper gallery-masonry" id="galleryMasonry">
 							<?php for ($i = 0; $i < 20; $i++) : ?>
-								<a class="swiper-slide tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i*10 ?>" href="https://placehold.co/1500x1000/jpg">
+								<a class="swiper-slide tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="https://placehold.co/1500x1000/jpg">
 									<figure>
 										<picture>
 											<source srcset="https://placehold.co/250x167/webp" type="image/webp">
@@ -228,7 +234,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="footer-lineart mumbai repeat-x">
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
 
 	</div>
 </main>

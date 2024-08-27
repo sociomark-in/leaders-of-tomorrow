@@ -2,7 +2,7 @@
 	<section class="section bg-black-0" id="times-influence">
 		<div class="container">
 			<div class="wrapp">
-				<div class="section-title text-center">
+				<div class="section-title text-center text-white">
 					<h2><span>About Times Influence</span></h2>
 				</div>
 
@@ -48,7 +48,7 @@
 								<li class="nav-item">
 									<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item d-none">
 									<a class="nav-link" href="<?= base_url('history') ?>">Previous Seasons</a>
 								</li>
 								<li class="nav-item">
@@ -65,7 +65,7 @@
 									<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('all-cities') ?>">All Cities</a>
+									<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
 								</li>
 							</ul>
 						</div>
@@ -75,41 +75,38 @@
 							<h6>Season 12 Awards</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
+									<a class="nav-link" href="javascript:void(0)">Register</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
+									<a class="nav-link" href="javascript:void(0)">Login</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">All Categories</a>
+									<a class="nav-link" href="javascript:void(0)">All Categories</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Awards</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Gallery</a>
+									<a class="nav-link" href="javascript:void(0)">Awards</a>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6">
+					<div class="col-xl-2 col-lg-4 col-md-6 col-6 d-none">
 						<div class="">
 							<h6>All Seasons</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Season 11</a>
+									<a class="nav-link" href="javascript:void(0)">Season 11</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Season 10</a>
+									<a class="nav-link" href="javascript:void(0)">Season 10</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Season 9</a>
+									<a class="nav-link" href="javascript:void(0)">Season 9</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Season 8</a>
+									<a class="nav-link" href="javascript:void(0)">Season 8</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Other Seasons</a>
+									<a class="nav-link" href="javascript:void(0)">Other Seasons</a>
 								</li>
 							</ul>
 						</div>
@@ -169,7 +166,7 @@
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-auto">
-					<p class="mb-0">Copyright &copy; <?= date('Y') ?>. <a href=""><?= APP_NAME ?></a></p>
+					<p class="mb-0">Copyright &copy; <?= date('Y') ?>. Bennett Coleman and Company Limited (Television Division)</p>
 				</div>
 			</div>
 		</div>

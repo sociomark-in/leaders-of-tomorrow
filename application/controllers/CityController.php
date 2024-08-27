@@ -18,7 +18,51 @@ class CityController extends BaseController
 		switch ($city) {
 			case 'mumbai':
 				$this->data['city'] = [
-					'name' => "Mumbai"
+					'name' => "Mumbai",
+					'guests' => [
+						[
+							'photo' => "Devendra_Fadnavis.png",
+							'name' => "Devendra Fadnavis",
+							'description' => "Deputy Chief Minister, Maharashtra",
+						],
+					],
+					'speakers' => [
+						[
+							'photo' => "Chinmay_Dhoble.png",
+							'name' => "Chinmay Dhoble",
+							'description' => "Head, Retail Liabilities & Branch Banking, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Dr_A_Velumani.png",
+							'name' => "Dr A Velumani",
+							'description' => "Creator, Thyrocare ",
+						],
+						[
+							'photo' => "Ajay_Thakur.png",
+							'name' => "Ajay Thakur",
+							'description' => "CEO & Managing Partner , TGI SME Capital Advisors LLP",
+						],
+						[
+							'photo' => "Amisha_Vora.png",
+							'name' => "Amisha Vora",
+							'description' => "Chairperson & MD, PL Capital",
+						],
+						[
+							'photo' => "Aisshwarya_DKS_Hegde.png",
+							'name' => "Aisshwarya DKS Hegde",
+							'description' => "Edupreneur, Trustee Secretary, National Education Foundation",
+						],
+						[
+							'photo' => "Sushma_Morthania.png",
+							'name' => "Sushma Morthania",
+							'description' => "Director General, India SME Forum",
+						],
+						[
+							'photo' => "Pankaj_Mathpal.png",
+							'name' => "Pankaj Mathpal",
+							'description' => "Founder & MD, Optima Money Managers",
+						],
+					]
 				];
 				$this->load->city_view('mumbai', $this->data);
 				break;
@@ -34,6 +78,18 @@ class CityController extends BaseController
 			if (strtolower($sb['name']) == $city) {
 				$this->data['city'] = $sb;
 				$this->load->city_view('register', $this->data);
+				break;
+			} else {
+				redirect('all-cities');
+			}
+		}
+	}
+	public function rsvp_thankyou($city)
+	{
+		foreach ($this->springboards as $key => $sb) {
+			if (strtolower($sb['name']) == $city) {
+				$this->data['city'] = $sb;
+				$this->load->city_view('thankyou', $this->data);
 				break;
 			} else {
 				redirect('all-cities');

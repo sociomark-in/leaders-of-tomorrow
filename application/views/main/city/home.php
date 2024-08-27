@@ -1,5 +1,5 @@
 <main>
-	<section class="p-0">
+	<section class="p-0 d-none">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
 				<?php for ($i=0; $i < count($springboards); $i++) : ?>
@@ -65,9 +65,10 @@
 			})
 		</script>
 	</section>
+
 	<section class="py-3 py-md-5">
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="row justify-content-center mb-3 mb-md-5">
 				<div class="col-xl-6 col-lg-8 col-md-10 col-12">
 					<div class="page-title">
 						<div class="row align-items-center justify-content-center">
@@ -75,9 +76,23 @@
 								<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
 							</div>
 							<div class="col-auto">
-								<h1>All Cities</h1>
+								<h1>Springboards</h1>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center flex-row-reverse mb-3 mb-md-5">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+					<div class="media-content" data-aos="fade-left">
+						<img src="https://placehold.co/1500x1500" alt="" class="w-100">
+					</div>
+				</div>
+				<div class="col-xl-7 col-lg-6 col-12">
+					<div class="text-content text-lg" data-aos="fade-right">
+						<p>
+							Leaders of Tomorrow will also host 15 on-ground Springboards across various cities in India. These springboards will serve as a launchpad for success, encapsulating the essence of India's growth story by covering opportunities across India. Springboards will also provide a platform for the top MSMEs in each city, playing a crucial role in propelling India’s smaller businesses toward success and empowering the leaders of tomorrow. At each of our Springboard, we will feature some of the most inspiring business leaders from each city, who will share their experiences and insights, motivating the audience, viewers and entrepreneurs with their success stories.
+						</p>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 <main>
-	<section class="springboard-register">
+	<section class="springboard-register pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-12">
@@ -11,16 +11,29 @@
 						</ol>
 					</nav>
 				</div>
-				<div class="col-xl-9 col-lg-8 col-12">
-					<div class="wrap banner-image">
-						<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/') ?>banner.jpg" alt="" class="w-100">
+				<div class="col-12 pt-0 section">
+					<div class="row g-3 mb-3 mb-md-4 justify-content-center">
+						<div class="col-xl-6 col-lg-8 col-md-10 col-12">
+							<div class="page-title">
+								<div class="row align-items-center justify-content-center">
+									<div class="col-auto">
+										<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
+									</div>
+									<div class="col-auto">
+										<h1>Registration</h1>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-4 col-12">
-					<div class="card bg-transparent">
+			</div>
+			<div class="row flex-row-reverse g-3 justify-content-center">
+				<div class="col-xl-4 col-lg-6 col-12">
+					<div class="card bg-transparent" data-aos="fade-left">
 						<div class="card-body">
 							<div class="mb-3">
-								<h2 class="text-red"><?= $city['name'] ?> Springboard</h2>
+								<h2 class="text-red"><?= $city['name'] ?> Springboard</span></h2>
 							</div>
 							<div class="mb-3">
 								<p>
@@ -29,57 +42,52 @@
 							</div>
 							<div class="mb-3">
 								<p class="text-uppercase text-lg mb-1">Event Starts In</p>
-								<h3 class="m-0"><span id="days"></span>D&nbsp;:&nbsp;<span id="hours"></span>H&nbsp;:&nbsp;<span id="minutes"></span>M&nbsp;:&nbsp;<span id="seconds"></span>S</h3>
+								<h3 class="m-0"><span id="days">00</span>D&nbsp;:&nbsp;<span id="hours">00</span>H&nbsp;:&nbsp;<span id="minutes">00</span>M&nbsp;:&nbsp;<span id="seconds">00</span>S</h3>
 							</div>
 							<div class="">
-								<button class="btn btn-red w-100" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</button>
+								<!-- <button class="btn btn-red w-100" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</button> -->
+								<a href="#register" class="btn btn-red w-100">Register Now</a>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-xl-6 col-lg-8 col-md-10 col-12">
-					<div class="section">
-						<div class="row mb-3 mb-md-4">
-							<div class="col-12">
-								<div class="page-title">
-									<div class="row align-items-center justify-content-center">
-										<div class="col-auto">
-											<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
-										</div>
-										<div class="col-auto">
-											<h1>Registration</h1>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php
-						$form['id'] = "registerForm";
-						$this->load->view('components/theme/partials/widget/register_atendee', $form);
-						?>
+				<div class="col-xl-8 col-lg-6 col-12">
+					<div class="section-title mb-3" data-aos="fade-right">
+						<h2><span> <?= $city['theme'] ?></span></h2>
+					</div>
+					<div class="text-content">
+						<p data-aos="fade-up">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae minus neque quae non sint ratione, mollitia id, adipisci quos earum. Fugit ullam qui culpa nostrum iusto praesentium dolores dolore.
+						</p>
+						<p data-aos="fade-up">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae minus neque quae non sint ratione, mollitia id, adipisci quos earum. Fugit ullam qui culpa nostrum iusto praesentium dolores dolore.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-</main>
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg modal-fullscreen-md-down">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="registerModalLabel">Register to attend <?= $city['name'] ?> Springboard</h1>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<?php
-				$form['id'] = "registerFormPopup";
-				$this->load->view('components/theme/partials/widget/register_atendee', $form);
-				?>
+	<section class="section" id="register">
+		<div class="container">
+			<div class="row g-3 justify-content-center">
+				<div class="col-12">
+					<div class="section-title mb-3">
+						<h2><span>Register to attend <?= $city['name'] ?> Springboard</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<?php
+					$form['id'] = "registerForm";
+					$this->load->view('components/theme/partials/widget/register_attendee_horizontal', $form);
+					?>
+				</div>
 			</div>
 		</div>
+	</section>
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
+
 	</div>
-</div>
+</main>
 <script>
 	var timer;
 

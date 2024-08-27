@@ -2,7 +2,9 @@
 	<section class="p-0">
 		<div class="pseudo-kv">
 			<div class="media-content">
-				<video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" muted autoplay loop></video>
+				<video poster="<?= base_url('assets/video/') ?>banner-kv-poster.png" muted autoplay loop>
+					<source src="<?= base_url('assets/video/') ?>banner-kv.mp4">
+				</video>
 			</div>
 		</div>
 	</section>
@@ -12,7 +14,7 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=FHjpRisiSidQNmqV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -30,26 +32,7 @@
 		</div>
 	</section>
 
-	<section class="">
-		<div class="container">
-			<div class="row align-items-center flex-row-reverse">
-				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
-					<div class="media-content" data-aos="fade-left">
-						<img src="https://placehold.co/1500x2000" alt="" class="w-100">
-					</div>
-				</div>
-				<div class="col-xl-7 col-lg-6 col-12">
-					<div class="text-content text-lg" data-aos="fade-right">
-						<p>
-							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - “Powering Entrepreneurs for the Global Stage.” Airing daily from Monday to Friday on ET Now at 7.30 pm, Leaders of Tomorrow will also host 15 on-ground Springboards across various cities in India. These springboards will serve as a launchpad for success, encapsulating the essence of India's growth story by covering opportunities across India. Springboards will also provide a platform for the top MSMEs in each city, playing a crucial role in propelling India’s smaller businesses toward success and empowering the leaders of tomorrow. At each of our Springboard, we will feature some of the most inspiring business leaders from each city, who will share their experiences and insights, motivating the audience, viewers and entrepreneurs with their success stories.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="live">
+	<section id="live" class="d-none">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -120,15 +103,28 @@
 		</div>
 	</section>
 
-	<section id="cities" class="pt-0">
+	<section id="springboards" class="pt-0">
 		<div class="container">
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>All Cities</span></h2>
+			<div class="row align-items-center flex-row-reverse mb-3 mb-md-5">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+					<div class="media-content" data-aos="fade-left">
+						<img src="<?= base_url('assets/images/cities/') ?>kv.jpg" alt="" class="w-100">
 					</div>
 				</div>
-				<?php $this->load->view('components/theme/partials/widget/_all_cities');?>
+				<div class="col-xl-5 offset-xl-2 col-lg-6 col-12">
+					<div class="section-title">
+						<h2><span>Springboards</span></h2>
+					</div>
+					<div class="text-content" data-aos="fade-right">
+						<p>
+							In the dynamic landscape of business, seizing growth opportunities isn't just about being proactive-it's about being prepared. Season 12 of India's longest running show for SMEs and MSMEs is here to empower entrepreneurs to achieve their business goals and seize every opportunity not just locally but on the global stage.
+						</p>
+						<a href="<?= base_url('all-cities') ?>" class="btn btn-red">All Springboards</a>
+					</div>
+				</div>
+			</div>
+			<div class="row g-3">
+				<?php $this->load->view('components/theme/partials/widget/_all_cities'); ?>
 			</div>
 		</div>
 	</section>
@@ -160,7 +156,7 @@
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>Articles & Publications</span></h2>
+						<h2><span>Articles</span></h2>
 					</div>
 				</div>
 				<div class="col-12">

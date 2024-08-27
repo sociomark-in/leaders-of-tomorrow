@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= base_url() ?>">
-			<img src="<?= base_url() ?>assets/images/logo.png" alt="LOT Logo" height="50">
+			<img src="<?= base_url() ?>assets/images/main.png" alt="LOT Logo" height="40">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -15,9 +15,15 @@
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('all-cities') ?>">All Cities</a>
+					<a class="nav-link" href="<?= base_url('#springboards') ?>">Springboards</a>
 				</li>
-				<li class="nav-item dropdown">
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
+				</li>
+				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Previous Seasons
 					</a>
@@ -45,9 +51,6 @@
 						</li>
 						<!-- <li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li> -->
 					</ul>
-				</li>
-				<li class="nav-item d-none">
-					<a class="nav-link disabled" aria-disabled="true">Disabled</a>
 				</li>
 			</ul>
 			<div class="row d-none">
