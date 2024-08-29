@@ -23,3 +23,4 @@
 		easing: "ease-in-out"
 	});
 </script>
+<span id="siteseal" class="d-none"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=PeHXMqMQjkqFYop0JHyACsiq70VeHTnUjKPUbgwyRXqsc3RwnfNjJ03TShDu"></script></span>

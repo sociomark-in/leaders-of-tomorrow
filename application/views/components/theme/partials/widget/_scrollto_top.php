@@ -1,1 +1,1 @@
-<a class="d-block" href="#" id="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+<a class="" href="#" id="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>

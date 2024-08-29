@@ -1,4 +1,7 @@
 <main>
+    <div class="d-block d-md-none fixed-mobile">
+			<a class="btn btn-red p-2 py-4 text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
+		</div>
 	<section class="section pb-md-0">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -47,7 +50,7 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=FHjpRisiSidQNmqV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -62,7 +65,7 @@
 						<p data-aos="fade-left" data-aos-delay="400">
 							Join us at #LOTSpringboard Mumbai as we delve into the challenges and opportunities shaping the future of MSMEs in India. Explore how policy support, streamlined regulations, and digitization are empowering entrepreneurs to make their mark on the global stage.
 						</p>
-						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
+						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
 				</div>
 			</div>
@@ -71,36 +74,24 @@
 	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
-				<div class="col-xl-4 col-lg-6 col-12">
-					<div class="section-title mb-3">
+				<div class="col-xl-9 col-lg-10 col-12">
+					<div class="section-title text-center mb-3">
 						<h2><span>Agenda</span></h2>
 					</div>
-					<div class="text-content">
+					<div class="text-content d-none">
 						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque aliquam libero natus accusamus earum numquam illum quidem eum suscipit facere?</p>
-						<a href="#" class="btn btn-yellow">Download PDF<i class="ms-2 fa-solid fa-arrow-down"></i></a>
+						<a target="_blank" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda.pdf" ?>" class="btn btn-yellow">Download PDF<i class="ms-2 fa-solid fa-arrow-down"></i></a>
 					</div>
 				</div>
-				<div class="col-xl-8 col-lg-6 col-md-11 col-12">
+				<div class="col-xl-6 col-lg-6 col-md-11 col-12">
 					<div class="swiper agendaSwiper">
 						<div class="swiper-wrapper" id="agendaPages">
-							<a class="swiper-slide mb-2" href="https://placehold.co/595x842/jpg">
+							<a class="swiper-slide mb-2" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>">
 								<figure>
 									<picture>
-										<source srcset="https://placehold.co/595x842/webp" type="image/webp">
-										<source srcset="https://placehold.co/595x842/jpg" type="image/jpg">
-										<img class="w-100" src="https://placehold.co/595x842/jpg" alt="" loading="lazy">
-									</picture>
-									<figcaption></figcaption>
-								</figure>
-							</a>
-							<a class="swiper-slide mb-2" href="https://placehold.co/595x842/jpg">
-								<figure>
-									<picture>
-										<source srcset="https://placehold.co/595x842/webp" type="image/webp">
-										<source srcset="https://placehold.co/595x842/jpg" type="image/jpg">
-										<img class="w-100" src="https://placehold.co/595x842/jpg" alt="" loading="lazy">
+										<!-- <source srcset="https://placehold.co/595x842/webp" type="image/webp"> -->
+										<source srcset="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>" type="image/jpg">
+										<img class="w-100" src="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>" alt="" loading="lazy">
 									</picture>
 									<figcaption></figcaption>
 								</figure>
@@ -113,7 +104,7 @@
 								nextEl: ".agendaSwiper .swiper-button-next",
 								prevEl: ".agendaSwiper .swiper-button-prev",
 							},
-							slidesPerView: 1,
+							slidesPerView: $(".agendaSwiper .swiper-slide").length,
 							spaceBetween: 20,
 							breakpoints: {
 								640: {
@@ -147,11 +138,11 @@
 									<?php foreach ($city['guests'] as $key => $speaker) : ?>
 										<div class="swiper-slide p-3" data-aos="fade-left">
 											<a href="javascript:void(0)" class="speaker-tile normal">
-												<div class="">
+												<div class="speaker-title">
 													<h4 class="text-red text-center">Chief Guest</h4>
 												</div>
 												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
-												<div class="speaker-photo rounded-circle mb-3">
+												<div class="speaker-photo mb-3">
 													<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">

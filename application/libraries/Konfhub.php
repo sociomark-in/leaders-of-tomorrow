@@ -44,7 +44,7 @@ class Konfhub
 		$this->request = $data;
 
 		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'https://api.konfhub.com/event/'. $event_id .'/waitlist?is_waitlist=true',
+			CURLOPT_URL => 'https://api.konfhub.com/event/'. $event_id .'/waitlist?is_waitlist=false',
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,

@@ -9,6 +9,19 @@ $color-orange: #f05c27;
 $colors: "white" $color-white, "black" $color-black, "red" $color-red,
 	"black-0" $color-black-0, "yellow" $color-yellow, "orange" $color-orange;
 
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.spin {
+	animation: spin 15s infinite linear;
+}
+
 @each $class, $color in $colors {
 	.bg-#{$class} {
 		background-color: $color !important;
@@ -51,8 +64,12 @@ form {
 }
 
 body {
-	background: url("../images/backgrounds/business.png"), $color-white;
-	background-size: 600px;
+	// background: url("../images/backgrounds/business.png"), $color-white;
+	// background-size: 600px;
+	background: url("../images/backgrounds/sky.gif"), $color-white;
+	// background: $color-white;
+	background-size: cover;
+	background-attachment: fixed;
 	font-family: "Poppins", sans-serif;
 	cursor: url("../images/icons/cursor-sm.png"), auto;
 }
@@ -92,6 +109,10 @@ footer {
 			}
 		}
 	}
+}
+
+section{
+	overflow: hidden;
 }
 
 .section {
@@ -151,6 +172,11 @@ main {
 	.text-lg {
 		font-size: 1.3rem;
 	}
+}
+
+.full-screen {
+	width: 100%;
+	height: 100vh;
 }
 
 .springboard-register {
@@ -214,6 +240,16 @@ nav.navbar {
 	}
 }
 
+.fixed-mobile {
+	display: block;
+	position: fixed;
+	z-index: 999;
+	right: 0rem;
+	top: 50%;
+	writing-mode: vertical-lr;
+	transform: scale(-1) translateY(50%);
+}
+
 .btn {
 	border-radius: 0;
 	padding: 0.5rem 1rem;
@@ -257,43 +293,42 @@ form {
 	}
 }
 
-.swiper {
-	.swiper-button-next,
-	.swiper-button-prev {
-		top: 35%;
+.swiper-button-next,
+.swiper-button-prev {
+	&::after {
+		content: "";
+		height: 2rem;
+		width: 2rem;
+		background-size: contain !important;
+		background-position: center !important;
+	}
+}
+.swiper-button-next {
+	&.swiper-button-red {
 		&::after {
-			content: "";
-			height: 2rem;
-			width: 2rem;
-			background-size: contain !important;
-			background-position: center !important;
+			background: url("../images/icons/red-right.png") no-repeat;
 		}
 	}
-	.swiper-button-next {
-		&.swiper-button-red {
-			&::after {
-				background: url("../images/icons/red-right.png") no-repeat;
-			}
-		}
-		&.swiper-button-yellow {
-			&::after {
-				background: url("../images/icons/yellow-right.png") no-repeat;
-			}
+	&.swiper-button-yellow {
+		&::after {
+			background: url("../images/icons/yellow-right.png") no-repeat;
 		}
 	}
-	
-	.swiper-button-prev {
-		&.swiper-button-red {
-			&::after {
-				background: url("../images/icons/red-left.png") no-repeat;
-			}
-		}
-		&.swiper-button-yellow {
-			&::after {
-				background: url("../images/icons/yellow-left.png") no-repeat;
-			}
+}
+
+.swiper-button-prev {
+	&.swiper-button-red {
+		&::after {
+			background: url("../images/icons/red-left.png") no-repeat;
 		}
 	}
+	&.swiper-button-yellow {
+		&::after {
+			background: url("../images/icons/yellow-left.png") no-repeat;
+		}
+	}
+}
+.swiper {
 	cursor: url("../images/icons/cursor-sm.png"), auto;
 	a {
 		cursor: url("../images/icons/cursor-sm.png"), auto !important;
@@ -315,6 +350,40 @@ form {
 			h3 {
 				font-size: calc(max(4vmin, 2rem));
 				font-weight: 400;
+			}
+		}
+	}
+
+	&.guestSwiper,
+	&.speakerSwiper {
+		.swiper-button-next,
+		.swiper-button-prev {
+			top: 30%;
+		}
+	}
+	&.guestSwiper {
+		.swiper-wrapper {
+			.swiper-slide {
+				.speaker-title {
+					h4 {
+						font-size: 2.5rem;
+						font-weight: 600;
+					}
+				}
+				.speaker-photo {
+					background-color: $color-yellow;
+					border-radius: 1rem;
+					overflow: hidden;
+				}
+				.desc {
+					h5 {
+						font-size: 1.5rem;
+					}
+					p {
+						font-size: 0.9rem;
+						color: $color-black-0;
+					}
+				}
 			}
 		}
 	}
@@ -362,7 +431,7 @@ form {
 	h1 {
 		text-transform: uppercase;
 		font-weight: 700;
-		font-size: calc(max(7vmin, 3rem));
+		font-size: calc(max(7vmin, 2.5rem));
 	}
 }
 .section-title {
@@ -557,7 +626,7 @@ form {
 	background-position: left bottom;
 }
 
-#scrollToTop{
+#scrollToTop {
 	position: fixed;
 	z-index: 999;
 	bottom: 1rem;

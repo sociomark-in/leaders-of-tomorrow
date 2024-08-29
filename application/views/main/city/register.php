@@ -1,7 +1,7 @@
 <?php
 $dateObj = date_create_from_format("Y-m-d H:i:s", $city['date']);
-$date = date_format($dateObj, 'F j, Y');
-$time = date_format($dateObj, 'h:i A');
+$dateTime = date_format($dateObj, 'F j, Y h:i A');
+$venue = $city['venue'];
 ?>
 
 <main>
@@ -34,7 +34,28 @@ $time = date_format($dateObj, 'h:i A');
 					</div>
 				</div>
 			</div>
-			<div class="row flex-row-reverse g-3 justify-content-center">
+			<div class="row g-3 justify-content-center align-items-end">
+				<div class="col-xl-8 col-lg-6 col-12">
+					<div class="section-title mb-3 mb-md-5" data-aos="fade-right">
+						<h2><span> <?= $city['theme'] ?></span></h2>
+					</div>
+					<div class="text-content">
+						<div class="card event-ticket">
+							<div class="card-body">
+								<div class="row g-3">
+									<div class="col-lg-6 col-12">
+										<p class="mb-0">Date & Time</p>
+										<h3 class="text-red"><?php print_r($dateTime) ?></h3>
+									</div>
+									<div class="col-lg-6 col-12">
+										<p class="mb-0">Venue</p>
+										<h3 class="text-red"><?php print_r($venue) ?></h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="col-xl-4 col-lg-6 col-12">
 					<div class="card bg-transparent" data-aos="fade-left">
 						<div class="card-body">
@@ -52,23 +73,7 @@ $time = date_format($dateObj, 'h:i A');
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-8 col-lg-6 col-12">
-					<div class="section-title mb-3" data-aos="fade-right">
-						<h2><span> <?= $city['theme'] ?></span></h2>
-					</div>
-					<div class="text-content">
-						<div class="card event-ticket">
-							<div class="card-body">
-								<p>
-									<strong>Date:&nbsp;</strong><?php print_r($date) ?>
-								</p>
-								<p>
-									<strong>Time:&nbsp;</strong><?php print_r($time) ?>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</section>
@@ -77,7 +82,7 @@ $time = date_format($dateObj, 'h:i A');
 			<div class="row g-3 justify-content-center">
 				<div class="col-12">
 					<div class="section-title mb-3">
-						<h2><span>Register to attend <?= $city['name'] ?> Springboard</span></h2>
+						<h2><span>Register to attend</h2>
 					</div>
 				</div>
 				<div class="col-12">

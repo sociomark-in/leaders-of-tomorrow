@@ -17,7 +17,7 @@ class RegistrationAPI extends CI_Controller
 	public function new_waitlist()
 	{
 		$this->request = $this->input->post();
-		
+
 		foreach ($this->events as $city => $key) {
 			if (strtolower($this->request['event_city']) == $city) {
 				$this->e = [
@@ -33,19 +33,21 @@ class RegistrationAPI extends CI_Controller
 			"name" => $this->request['name'],
 			"email_id" => $this->request['email'],
 			"custom_forms" => [
-				"45681" => $this->request['organization']['name'],
-				"45682" => $this->request['organization']['designation'],
 				"46261" => $this->request['organization']['size'],
 				"46262" => $this->request['organization']['department'],
 				"46263" => $this->request['organization']['turnover'],
 				"46264" => $this->request['organization']['industry'],
 				"46678" => $this->request['message'],
-				"46723" => "+91 " . $this->request['contact']
 			],
-			"whatsapp_number" => $this->request['contact'],
+			"organisation" => $this->request['organization']['name'],
+			"designation" => $this->request['organization']['designation'],
+			"phone_number" => $this->request['contact'],
+			"whatsapp_number" => $this->request['whatsapp'],
+			"dial_code" => "+91",
+			"country_code" => "in",
 			"wa_dial_code" => "+91",
 			"wa_country_code" => "in",
-			"whatsapp_consent" => true,
+			"whatsapp_consent" => ($this->request['whatsapp_consent'] == 'on')? true : false,
 			"email_verification_status" => 1,
 			"phone_number_verified" => 4,
 			"is_subscriber" => true

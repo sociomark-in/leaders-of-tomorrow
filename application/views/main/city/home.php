@@ -82,16 +82,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="row align-items-center flex-row-reverse mb-3 mb-md-5">
-				<div class="col-xl-5 offset-xl-1 col-lg-6 col-md-6 col-12">
-					<div class="media-content" data-aos="fade-left">
-						<img src="<?= base_url('assets/images/cities/') ?>kv.jpg" alt="" class="w-100">
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6 col-12">
+			<div class="row align-items-center mb-3 mb-md-5">
+				<div class="col-12">
 					<div class="text-content text-lg" data-aos="fade-right">
 						<p>
-							In the dynamic landscape of business, seizing growth opportunities isn't just about being proactive-it's about being prepared. Season 12 of India's longest running show for SMEs and MSMEs is here to empower entrepreneurs to achieve their business goals and seize every opportunity not just locally but on the global stage.
+							Leaders of Tomorrow Springboards is a dynamic series of ground events spanning 15 cities, designed to catapult your business to new heights. This innovative platform brings together renowned experts and business owners, fostering a collaborative environment where ideas are exchanged, challenges are addressed, and opportunities are seized. By converging with like-minded individuals and industry thought leaders, you'll gain invaluable insights, practical advice, and actionable strategies to propel your growth trajectory into the future. Join us at LOT Springboard and unlock the potential for your business to thrive in an ever-evolving landscape.
 						</p>
 					</div>
 				</div>

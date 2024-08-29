@@ -1,3 +1,15 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 15s infinite linear;
+}
+
 .bg-white {
   background-color: #efefef !important;
 }
@@ -98,8 +110,9 @@ form label.error {
   font-size: 0.8rem;
 }
 body {
-  background: url("../images/backgrounds/business.png"), #efefef;
-  background-size: 600px;
+  background: url("../images/backgrounds/sky.gif"), #efefef;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: "Poppins", sans-serif;
   cursor: url("../images/icons/cursor-sm.png"), auto;
 }
@@ -131,6 +144,10 @@ footer .footer-nav .nav-item .nav-link:hover {
 }
 footer .footer-nav .nav-item .nav-link:active, footer .footer-nav .nav-item .nav-link:focus {
   color: #ffde3f;
+}
+
+section {
+  overflow: hidden;
 }
 
 .section {
@@ -195,6 +212,11 @@ main section .pseudo-kv::after {
     font-size: 1.3rem;
   }
 }
+.full-screen {
+  width: 100%;
+  height: 100vh;
+}
+
 .springboard-register .banner-image {
   border-radius: 1.3rem;
   border: 0.5rem solid #fff;
@@ -249,6 +271,16 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   right: 0rem;
 }
 
+.fixed-mobile {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  right: 0rem;
+  top: 50%;
+  writing-mode: vertical-lr;
+  transform: scale(-1) translateY(50%);
+}
+
 .btn {
   border-radius: 0;
   padding: 0.5rem 1rem;
@@ -290,32 +322,31 @@ form .form-control {
   border-radius: 0;
 }
 
-.swiper {
-  cursor: url("../images/icons/cursor-sm.png"), auto;
-}
-.swiper .swiper-button-next,
-.swiper .swiper-button-prev {
-  top: 35%;
-}
-.swiper .swiper-button-next::after,
-.swiper .swiper-button-prev::after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   content: "";
   height: 2rem;
   width: 2rem;
   background-size: contain !important;
   background-position: center !important;
 }
-.swiper .swiper-button-next.swiper-button-red::after {
+
+.swiper-button-next.swiper-button-red::after {
   background: url("../images/icons/red-right.png") no-repeat;
 }
-.swiper .swiper-button-next.swiper-button-yellow::after {
+.swiper-button-next.swiper-button-yellow::after {
   background: url("../images/icons/yellow-right.png") no-repeat;
 }
-.swiper .swiper-button-prev.swiper-button-red::after {
+
+.swiper-button-prev.swiper-button-red::after {
   background: url("../images/icons/red-left.png") no-repeat;
 }
-.swiper .swiper-button-prev.swiper-button-yellow::after {
+.swiper-button-prev.swiper-button-yellow::after {
   background: url("../images/icons/yellow-left.png") no-repeat;
+}
+
+.swiper {
+  cursor: url("../images/icons/cursor-sm.png"), auto;
 }
 .swiper a {
   cursor: url("../images/icons/cursor-sm.png"), auto !important;
@@ -339,6 +370,27 @@ form .form-control {
 .swiper .hero-slide .text-content h3 {
   font-size: max(4vmin, 2rem);
   font-weight: 400;
+}
+.swiper.guestSwiper .swiper-button-next,
+.swiper.guestSwiper .swiper-button-prev, .swiper.speakerSwiper .swiper-button-next,
+.swiper.speakerSwiper .swiper-button-prev {
+  top: 30%;
+}
+.swiper.guestSwiper .swiper-wrapper .swiper-slide .speaker-title h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.swiper.guestSwiper .swiper-wrapper .swiper-slide .speaker-photo {
+  background-color: #ffde3f;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.swiper.guestSwiper .swiper-wrapper .swiper-slide .desc h5 {
+  font-size: 1.5rem;
+}
+.swiper.guestSwiper .swiper-wrapper .swiper-slide .desc p {
+  font-size: 0.9rem;
+  color: #000000;
 }
 
 @media screen and (min-width: 768px) {
@@ -384,7 +436,7 @@ form .form-control {
 .page-title h1 {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: max(7vmin, 3rem);
+  font-size: max(7vmin, 2.5rem);
 }
 
 .section-title h2 {

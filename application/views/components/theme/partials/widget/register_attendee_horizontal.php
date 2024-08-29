@@ -21,6 +21,22 @@
 	</div>
 	<div class="col-lg-6 col-12">
 		<div class="">
+			<div class="mb-2 form-check">
+				<input type="checkbox" name="whatsapp_consent" class="form-check-input">
+				<label class="form-check-label" for="exampleCheck1">WhatsApp Consent</label>
+			</div>
+			<input type="text" maxlength="10" minlength="10" name="whatsapp" class="form-control d-none">
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('input[name=whatsapp_consent]').on("click", () => {
+				$('input[name=whatsapp]').toggleClass('d-none');
+			})
+		})
+	</script>
+	<div class="col-lg-6 col-12">
+		<div class="">
 			<label for="" class="form-label">Organization</label>
 			<input type="text" name="organization[name]" class="form-control" minlength="5" required>
 		</div>
@@ -103,6 +119,12 @@
 		<div class="">
 			<label for="" class="form-label">What are you expecting from this event?</label>
 			<textarea name="message" minlength="50" id="" rows="5" class="form-control" required></textarea>
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="mb-3 form-check">
+			<input type="checkbox" name="consent" required class="form-check-input">
+			<label class="form-check-label" for="exampleCheck1">By submitting this form, you agree to share your contact details with the partners of the event</label>
 		</div>
 	</div>
 	<div class="col-12">
