@@ -1,5 +1,5 @@
 <footer class="">
-	<section class="section bg-black-0" id="times-influence">
+	<section class="section bg-black-0 blank" id="times-influence">
 		<div class="container">
 			<div class="wrapp">
 				<div class="section-title text-center text-white">

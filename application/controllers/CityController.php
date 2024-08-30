@@ -34,7 +34,7 @@ class CityController extends BaseController
 						],
 						[
 							'photo' => "Dr_A_Velumani.png",
-							'name' => "Dr A Velumani",
+							'name' => "Dr. A Velumani",
 							'description' => "Creator, Thyrocare ",
 						],
 						[
@@ -66,6 +66,25 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('mumbai', $this->data);
 				break;
+			
+
+			default:
+				redirect('all-cities');
+				break;
+		}
+	}
+	public function city_gallery($city)
+	{
+		switch ($city) {
+			case 'mumbai':
+				$this->data['city'] = [
+					'name' => "Mumbai",
+					'gallery' => [
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			
 
 			default:
 				redirect('all-cities');

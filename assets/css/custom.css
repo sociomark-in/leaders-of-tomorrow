@@ -114,13 +114,14 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
-  cursor: url("../images/icons/cursor-sm.png"), auto;
+  cursor: url("../images/icons/cursor-sm.png"), auto !important;
 }
 
 footer {
   background-color: #1c1c1c;
   color: #efefef !important;
-  border-top: 5px solid #b72026;
+  position: relative;
+  border-top: 0.6rem solid #b72026;
 }
 footer a {
   color: #ffde3f;
@@ -169,6 +170,7 @@ main.w-fullscreen {
 }
 main section {
   padding: max(5%, 2rem) 0;
+  position: relative;
 }
 main section .pseudo-kv {
   position: relative;
@@ -226,7 +228,7 @@ main section .pseudo-kv::after {
 
 nav.navbar {
   background-color: white;
-  position: sticky;
+  position: fixed;
   z-index: 999;
   top: 0;
   left: 0;
@@ -451,7 +453,6 @@ form .form-control {
 }
 .section-title h2 > span::after {
   content: "";
-  position: absolute;
   bottom: -0.5rem;
   left: 0;
   width: max(8rem, 30%);
@@ -529,6 +530,33 @@ form .form-control {
      object-fit: cover;
 }
 
+.city-tile .photo {
+  position: relative;
+}
+.city-tile .photo.rounded-circle {
+  overflow: visible;
+}
+.city-tile .photo::after {
+  position: absolute;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1c1c1c;
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.city-tile.upcoming .photo::after {
+  content: "Upcoming";
+  background-color: #ffde3f;
+}
+.city-tile.end .photo::after {
+  content: "Ended";
+  background-color: gray;
+}
+
 .speaker-tile.rounded-circle,
 .interactive-tile.rounded-circle {
   border-radius: 50%;
@@ -566,14 +594,25 @@ form .form-control {
   color: rgba(28, 28, 28, 0.8);
 }
 
+.article-tile {
+  position: relative;
+}
 .article-tile .desc {
   background-color: white;
   padding: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 5px solid #b72026;
 }
 .article-tile .desc p {
   color: #1c1c1c;
+}
+.article-tile::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.4rem;
+  background-color: #b72026;
 }
 
 .featured {

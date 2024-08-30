@@ -64,19 +64,18 @@ form {
 }
 
 body {
-	// background: url("../images/backgrounds/business.png"), $color-white;
-	// background-size: 600px;
 	background: url("../images/backgrounds/sky.gif"), $color-white;
-	// background: $color-white;
 	background-size: cover;
 	background-attachment: fixed;
 	font-family: "Poppins", sans-serif;
-	cursor: url("../images/icons/cursor-sm.png"), auto;
+	cursor: url("../images/icons/cursor-sm.png"), auto !important;
 }
 footer {
 	background-color: $color-black;
 	color: $color-white !important;
-	border-top: 5px solid $color-red;
+	position: relative;
+	border-top: 0.6rem solid $color-red;
+
 	a {
 		color: $color-yellow;
 	}
@@ -111,7 +110,7 @@ footer {
 	}
 }
 
-section{
+section {
 	overflow: hidden;
 }
 
@@ -131,6 +130,8 @@ main {
 	}
 	section {
 		padding: calc(max(5%, 2rem)) 0;
+		position: relative;
+
 		.pseudo-kv {
 			position: relative;
 			overflow: hidden;
@@ -190,7 +191,7 @@ main {
 
 nav.navbar {
 	background-color: white;
-	position: sticky;
+	position: fixed;
 	z-index: 999;
 	top: 0;
 	left: 0;
@@ -444,10 +445,9 @@ form {
 			width: fit-content;
 			&::after {
 				content: "";
-				position: absolute;
 				bottom: -0.5rem;
 				left: 0;
-				width: calc(max(8rem, 30%));
+				width: max(8rem, 30%);
 				height: 0.25rem;
 				background-color: $color-red;
 			}
@@ -538,6 +538,43 @@ form {
 	}
 }
 
+.city-tile {
+	.photo {
+		position: relative;
+		&.rounded-circle {
+			overflow: visible;
+		}
+		&::after {
+			position: absolute;
+			bottom: 0rem;
+			left: 50%;
+			transform: translateX(-50%);
+			color: $color-black;
+			border-radius: 0.2rem;
+			padding: 0.1rem 0.4rem;
+			font-size: 0.8rem;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+	&.upcoming {
+		.photo {
+			&::after {
+				content: "Upcoming";
+				background-color: $color-yellow;
+			}
+		}
+	}
+	&.end {
+		.photo {
+			&::after {
+				content: "Ended";
+				background-color: gray;
+			}
+		}
+	}
+}
+
 .speaker-tile,
 .interactive-tile {
 	&.rounded-circle {
@@ -582,6 +619,7 @@ form {
 	}
 }
 .article-tile {
+	position: relative;
 	.photo {
 	}
 	.desc {
@@ -591,7 +629,15 @@ form {
 		background-color: white;
 		padding: 1rem;
 		padding-bottom: 0.5rem;
-		border-bottom: 5px solid $color-red;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 0.4rem;
+		background-color: $color-red;
 	}
 }
 .featured {

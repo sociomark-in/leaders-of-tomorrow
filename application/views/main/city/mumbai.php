@@ -1,7 +1,7 @@
 <main>
-    <div class="d-block d-md-none fixed-mobile">
+	<!--<div class="d-block d-md-none fixed-mobile">
 			<a class="btn btn-red p-2 py-4 text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
-		</div>
+		</div>-->
 	<section class="section pb-md-0">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -29,23 +29,27 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0" id="about">
+	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
-				<p data-aos="fade-up">
-					MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
-				</p>
-				<p data-aos="fade-up" data-aos-delay="100">
-					We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India.
-				</p>
-				<p data-aos="fade-up" data-aos-delay="200">
-					Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
-				</p>
+				<div class="glass-card card">
+					<div class="card-body">
+						<p data-aos="fade-up">
+							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
+						</p>
+						<p data-aos="fade-up" data-aos-delay="100">
+							We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India.
+						</p>
+						<p data-aos="fade-up" data-aos-delay="200">
+							Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -71,7 +75,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-0">
+	<!-- <section id="agenda" class="section pb-0 d-none">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -86,12 +90,11 @@
 				<div class="col-xl-6 col-lg-6 col-md-11 col-12">
 					<div class="swiper agendaSwiper">
 						<div class="swiper-wrapper" id="agendaPages">
-							<a class="swiper-slide mb-2" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>">
+							<a class="swiper-slide mb-2" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg" ?>">
 								<figure>
 									<picture>
-										<!-- <source srcset="https://placehold.co/595x842/webp" type="image/webp"> -->
-										<source srcset="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>" type="image/jpg">
-										<img class="w-100" src="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg"?>" alt="" loading="lazy">
+										<source srcset="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg" ?>" type="image/jpg">
+										<img class="w-100" src="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg" ?>" alt="" loading="lazy">
 									</picture>
 									<figcaption></figcaption>
 								</figure>
@@ -121,7 +124,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<section id="speakers" class="">
 		<div class="container">
 			<div class="row g-3">
@@ -133,7 +136,7 @@
 				<div class="col-12">
 					<div class="row align-items-center">
 						<div class="col-xl-3 col-lg-6 col-12">
-						<div class="swiper guestSwiper">
+							<div class="swiper guestSwiper">
 								<div class="swiper-wrapper">
 									<?php foreach ($city['guests'] as $key => $speaker) : ?>
 										<div class="swiper-slide p-3" data-aos="fade-left">
@@ -163,7 +166,7 @@
 										prevEl: ".guestSwiper .swiper-button-prev",
 									},
 									slidesPerView: 1,
-									
+
 								})
 							</script>
 						</div>
@@ -217,49 +220,6 @@
 							</script>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="gallery" class="section d-none">
-		<div class="container">
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>Key Moments</span></h2>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="swiper gallerySwiper">
-						<div class="swiper-wrapper gallery-masonry" id="galleryMasonry">
-							<?php for ($i = 0; $i < 20; $i++) : ?>
-								<a class="swiper-slide tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="https://placehold.co/1500x1000/jpg">
-									<figure>
-										<picture>
-											<source srcset="https://placehold.co/250x167/webp" type="image/webp">
-											<source srcset="https://placehold.co/250x167/jpg" type="image/jpg">
-											<img class="w-100" src="https://placehold.co/250x167/jpg" alt="" loading="lazy">
-										</picture>
-										<figcaption></figcaption>
-									</figure>
-								</a>
-							<?php endfor ?>
-						</div>
-					</div>
-					<script>
-						new Swiper(".gallerySwiper", {
-							slidesPerView: 5,
-							spaceBetween: 20,
-							grid: {
-								rows: 3,
-								fill: "row"
-							}
-						})
-						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
-							plugins: [lgZoom, lgThumbnail],
-							speed: 500,
-						});
-					</script>
 				</div>
 			</div>
 		</div>

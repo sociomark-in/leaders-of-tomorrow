@@ -16,85 +16,85 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Lucknow",
 				'theme' => "Lucknow: Charting Uttar Pradesh’s Trillion-Dollar Journey",
-				'date' => '2024-08-24',
+				'date' => '2024-09-13',
 				'venue' => ""
 			],
 			[
 				'name' => "Chandigarh",
 				'theme' => "Chandigarh: A Case Study For Ease Of Doing Business",
-				'date' => '2024-08-24',
+				'date' => '2024-09-27',
 				'venue' => ""
 			],
 			[
 				'name' => "Delhi NCR",
 				'theme' => "Delhi: Spotlight on India's Startup Capital",
-				'date' => '2024-08-24',
+				'date' => '2024-10-18',
 				'venue' => ""
 			],
 			[
 				'name' => "Ahmedabad",
 				'theme' => "Ahmedabad: The Gateway to India's Shanghai Dream",
-				'date' => '2024-08-24',
+				'date' => '2024-11-08',
 				'venue' => ""
 			],
 			[
 				'name' => "Bengaluru",
 				'theme' => "Mastering Business, Gender and Leadership",
-				'date' => '2024-08-24',
+				'date' => '2024-11-22',
 				'venue' => ""
 			],
 			[
 				'name' => "Chennai",
 				'theme' => "Chennai: Driving Global Blueprint for Industrial Excellence",
-				'date' => '2024-08-24',
+				'date' => '2024-12-06',
 				'venue' => ""
 			],
 			[
 				'name' => "Pune",
 				'theme' => "Pune: Building a Future-Ready Workforce",
-				'date' => '2024-08-24',
+				'date' => '2024-12-20',
 				'venue' => ""
 			],
 			[
 				'name' => "Kolkata",
 				'theme' => "Kolkata: Bridging Tradition, Commerce & Innovation",
-				'date' => '2024-08-24',
+				'date' => '2025-01-17',
 				'venue' => ""
 			],
 			[
 				'name' => "Kochi",
 				'theme' => "Kerala: Spotlight on Kerala's Knowledge Economy",
-				'date' => '2024-08-24',
+				'date' => '2025-01-31',
 				'venue' => ""
 			],
 			[
 				'name' => "Hyderabad",
 				'theme' => "Hyderabad: India's Manufacturing Hotbed & SEZ Capital",
-				'date' => '2024-08-24',
+				'date' => '2025-02-14',
 				'venue' => ""
 			],
 			[
 				'name' => "Nagpur",
 				'theme' => "Nagpur: Leading Maharashtra's Industrial Excellence",
-				'date' => '2024-08-24',
+				'date' => '2025-02-28',
 				'venue' => ""
 			],
 			[
 				'name' => "Jaipur",
 				'theme' => "Jaipur: Powering Rajasthan's Global Tourism Vision",
-				'date' => '2024-08-24',
+				'date' => '2025-03-21',
 				'venue' => ""
 			],
 			[
 				'name' => "Goa",
 				'theme' => "Goa: Evolving economy beyond tourist footfall",
-				'date' => '2024-08-24',
+				'date' => '2025-04-04',
 				'venue' => ""
 			],
 			[
 				'name' => "Indore",
 				'theme' => "Indore: Setting the Benchmark for India's Sustainability Vision",
-				'date' => '2024-08-24',
+				'date' => '2025-04-25',
 				'venue' => ""
 			],
 		];

@@ -1,3 +1,13 @@
+<?php
+$c_n = "all-cities";
+foreach ($springboards as $key => $city) {
+	if(date_format(date_create($city['date']), 'Y-m-d') > date('Y-m-d')){
+		$c_n = strtolower($city['name']);
+		break;
+	}
+}
+?>
+
 <main>
 	<section class="p-0 d-none">
 		<div class="pseudo-kv">
@@ -8,11 +18,14 @@
 			</div>
 		</div>
 	</section>
-	<section class="p-0">
+	<section class="p-0 blank-all">
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-xl-5 col-lg-6 col-12">
-					<img class="w-100" src="<?= base_url('assets/images/') ?>ilu.png" alt="">
+					<div class="" data-aos="fade-right">
+						<img class="w-100" src="<?= base_url('assets/images/') ?>ilu.png" alt="">
+					</div>
+					<!--<img class="w-100" src="<?= base_url('assets/images/') ?>ilu2.gif" alt="">-->
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="media-content">
@@ -42,7 +55,7 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for season 12 - <strong class="text-red">Powering Entrepreneurs for the Global Stage.</strong> Airing daily from Monday to Friday on ET Now at 7.30 pm
+							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for Season&nbsp;12 - <strong class="text-red">Powering Entrepreneurs for the Global Stage.</strong> Airing daily from Monday to Friday on ET Now at 7.30 pm
 						</p>
 						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
@@ -122,18 +135,19 @@
 		</div>
 	</section>
 
-	<section id="springboards" class="pt-0">
+	<section id="springboards" class="p-0">
 		<div class="container">
 			<div class="row g-3 align-items-center flex-row-reverse mb-3 mb-md-5">
 				<div class="col-12">
 					<div class="section-title">
 						<h2><span>Springboards</span></h2>
 					</div>
-					<div class="text-content" data-aos="fade-right">
-						<p>
+					<div class="text-content">
+						<p data-aos="fade-up">
 							Leaders of Tomorrow Springboards is a dynamic series of ground events spanning 15 cities, designed to catapult your business to new heights. This innovative platform brings together renowned experts and business owners, fostering a collaborative environment where ideas are exchanged, challenges are addressed, and opportunities are seized. By converging with like-minded individuals and industry thought leaders, you'll gain invaluable insights, practical advice, and actionable strategies to propel your growth trajectory into the future. Join us at LOT Springboard and unlock the potential for your business to thrive in an ever-evolving landscape.
 						</p>
-						<a href="<?= base_url('all-cities') ?>" class="btn btn-red">All Springboards</a>
+						<a href="<?= base_url('city/' . $c_n) ?>" data-aos="fade-right" class="btn btn-yellow btn-hover-red">Upcoming Springboard</a>
+						<a href="<?= base_url('all-cities') ?>" data-aos="fade-right" data-aos-delay="100" class="btn btn-red">All Springboards</a>
 					</div>
 				</div>
 			</div>
@@ -142,15 +156,22 @@
 
 	<section id="awards" class="">
 		<div class="container">
-			<div class="row justify-content-center g-4">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>Leaders of Tomorrow Awards</span></h2>
-					</div>
-					<div class="">
-						<p>
-							The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
-						</p>
+			<div class="glass-card card">
+				<div class="card-body">
+					<div class="row justify-content-center g-4">
+						<div class="col-12">
+							<div class="section-title">
+								<h2><span>Awards</span></h2>
+							</div>
+							<div class="">
+								<p data-aos="fade-up">
+									The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
+								</p>
+								<p data-aos="fade-up">
+									More information about Categories and Participation process will be released soon.
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -183,8 +204,8 @@
 								<?php endforeach ?>
 							</div>
 						</div>
-						<div class="swiper-button-next swiper-button-yellow"></div>
-						<div class="swiper-button-prev swiper-button-yellow"></div>
+						<div class="swiper-button-next swiper-button-red"></div>
+						<div class="swiper-button-prev swiper-button-red"></div>
 					</div>
 					<script>
 						new Swiper(".articleSwiper", {

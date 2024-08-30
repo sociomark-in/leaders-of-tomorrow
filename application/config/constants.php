@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
-defined('APP_NAME') OR define('APP_NAME', "Leaders Of Tomorrow");
+defined('APP_NAME') OR define('APP_NAME', "Leaders of Tomorrow");
 
 /*
 |--------------------------------------------------------------------------

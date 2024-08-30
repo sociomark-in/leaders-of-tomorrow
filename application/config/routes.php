@@ -58,6 +58,7 @@ $route['history/season-(:any)'] = 'HistoryController/season_single/$1';
 $route['misc/(:any)'] = 'LegalController/misc/$1';
 
 $route['city/(:any)'] = 'CityController/city_single/$1';
+$route['city/(:any)/gallery'] = 'CityController/city_gallery/$1';
 $route['city/(:any)/register'] = 'CityController/registration/$1';
 $route['city/(:any)/rsvp/thank-you'] = 'CityController/rsvp_thankyou/$1';
 
