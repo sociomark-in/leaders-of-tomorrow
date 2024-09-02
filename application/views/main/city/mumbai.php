@@ -10,7 +10,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
 							<li class="breadcrumb-item"><a href="<?= base_url('all-cities') ?>">All Cities</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Mumbai</li>
+							<li class="breadcrumb-item active" aria-current="page"><?= $city['name'] ?></li>
 						</ol>
 					</nav>
 				</div>
@@ -21,7 +21,7 @@
 								<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
 							</div>
 							<div class="col-auto">
-								<h1>Mumbai Springboard</h1>
+								<h1><?= $city['name'] ?> Springboard</h1>
 							</div>
 						</div>
 					</div>

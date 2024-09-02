@@ -67,7 +67,7 @@ $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 $route['login'] = 'auth/LoginController/single';
 $route['multi-login'] = 'auth/LoginController/multi';
 
-$route['account/(:any)'] = 'AccountController';
+$route['dashboard'] = 'AccountController';
 
 $route['api/new-nominee'] = 'NomineeController/add';
 $route['api/participant/login'] = 'api/auth/SSOController/participant_login';

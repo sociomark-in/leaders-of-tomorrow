@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/leaders-of-tomorrow/apps/socioengage/';
+$config['base_url'] = 'http://localhost/times-now/leaders-of-tomorrow/apps/socioengage/';
 
 /*
 |--------------------------------------------------------------------------

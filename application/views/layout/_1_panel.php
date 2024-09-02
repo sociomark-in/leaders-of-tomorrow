@@ -9,12 +9,16 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 
 <head>
-	<?php $this->load->view('components/theme/_head'); ?>
+	<?php $this->load->view('components/panel/_head'); ?>
 	<title><?= (isset($page['title']))? $page['title']: APP_NAME ?></title>
 </head>
 
 <body>
 	<div class="main-wrapper">
+
+		<!-- partial:partials/_sidebar.html -->
+		<?php $this->load->view('components/panel/partials/_sidebar'); ?>
+		<!-- partial -->
 
 		<div class="page-wrapper">
 

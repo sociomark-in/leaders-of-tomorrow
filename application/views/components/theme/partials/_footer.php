@@ -81,8 +81,8 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6">
-						<div class="d-none">
+					<div class="col-xl-2 col-lg-4 col-md-6 col-6 d-none"> 
+						<div class="">
 							<h6>Season 12 Awards</h6>
 							<ul class="footer-nav nav flex-column">
 								<li class="nav-item">

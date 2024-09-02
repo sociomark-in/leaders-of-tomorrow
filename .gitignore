@@ -18,3 +18,5 @@ application/logs/*
 /vendor/
 
 *.zip
+
+client_secret.json

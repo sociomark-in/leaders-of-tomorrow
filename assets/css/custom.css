@@ -147,17 +147,15 @@ footer .footer-nav .nav-item .nav-link:active, footer .footer-nav .nav-item .nav
   color: #ffde3f;
 }
 
-section {
-  overflow: hidden;
-}
-
 .section {
   padding: max(5%, 2rem) 0;
   width: 100%;
 }
 
 main {
+  margin-top: 70px;
   position: relative;
+  overflow: hidden;
   min-height: 400px;
 }
 main.w-fullscreen {

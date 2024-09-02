@@ -110,16 +110,14 @@ footer {
 	}
 }
 
-section {
-	overflow: hidden;
-}
-
 .section {
 	padding: calc(max(5%, 2rem)) 0;
 	width: 100%;
 }
 main {
+	margin-top: 70px;
 	position: relative;
+	overflow: hidden;
 	&.w-fullscreen {
 		width: 100%;
 		height: 100vh;
@@ -218,6 +216,7 @@ nav.navbar {
 		}
 	}
 }
+
 .highlight-nav {
 	background-color: $color-red;
 	padding: 0 0.25rem;

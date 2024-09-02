@@ -14,6 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 defined('APP_NAME') OR define('APP_NAME', "Leaders of Tomorrow");
 
+defined('GOOGLE_OAUTH_CLIENT_ID') OR define('GOOGLE_OAUTH_CLIENT_ID', "973841660802-aocg2s8viu5sopiu7etlevigtutfb4bt");
+defined('GOOGLE_OAUTH_CLIENT_SECRET') OR define('GOOGLE_OAUTH_CLIENT_SECRET', "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");
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes

@@ -13,7 +13,7 @@ $venue = $city['venue'];
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
 							<li class="breadcrumb-item"><a href="<?= base_url('all-cities') ?>">All Cities</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Mumbai</li>
+							<li class="breadcrumb-item active" aria-current="page"><?= $city['name'] ?></li>
 						</ol>
 					</nav>
 				</div>
@@ -57,7 +57,7 @@ $venue = $city['venue'];
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-6 col-12">
-					<div class="card bg-transparent" data-aos="fade-left">
+					<div class="card glass-card pb-4" data-aos="fade-left">
 						<div class="card-body">
 							<div class="mb-3">
 								<h2 class="text-red"><?= $city['name'] ?> Springboard</span></h2>
