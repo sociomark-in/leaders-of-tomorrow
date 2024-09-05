@@ -51,23 +51,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'PagesController';
 // $route[''] = 'ViewsController/soon';
-$route['history'] = 'HistoryController';
-$route['gallery'] = 'GalleryController';
-$route['all-cities'] = 'CityController';
-$route['history/season-(:any)'] = 'HistoryController/season_single/$1';
-$route['misc/(:any)'] = 'LegalController/misc/$1';
+$route['history'] = 'main/HistoryController';
+$route['gallery'] = 'main/GalleryController';
+$route['all-cities'] = 'main/CityController';
+$route['history/season-(:any)'] = 'main/HistoryController/season_single/$1';
+$route['misc/(:any)'] = 'main/OtherPagesController/misc/$1';
+$route['sitemap'] = 'main/OtherPagesController/sitemap';
 
-$route['city/(:any)'] = 'CityController/city_single/$1';
-$route['city/(:any)/gallery'] = 'CityController/city_gallery/$1';
-$route['city/(:any)/register'] = 'CityController/registration/$1';
-$route['city/(:any)/rsvp/thank-you'] = 'CityController/rsvp_thankyou/$1';
+/* All Springboards */
+$route['city/(:any)'] = 'main/CityController/city_single/$1';
+$route['city/(:any)/gallery'] = 'main/CityController/city_gallery/$1';
+$route['city/(:any)/register'] = 'main/CityController/registration/$1';
+$route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
 
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
+/* All Springboards */
+
+/* Awards */
+$route['awards'] = 'awards/AwardsController/home';
+$route['categories'] = 'awards/AwardsController/categories';
+/* Awards */
 
 $route['login'] = 'auth/LoginController/single';
 $route['multi-login'] = 'auth/LoginController/multi';
 
-$route['dashboard'] = 'AccountController';
+$route['dashboard'] = 'awards/AccountController';
+$route['dashboard/my-profile'] = 'awards/AccountController/profile';
+$route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
+$route['dashboard/applications'] = 'awards/NominationsController';
+$route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
+
+$route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
 $route['api/participant/login'] = 'api/auth/SSOController/participant_login';

@@ -54,6 +54,9 @@ class PagesController extends BaseController
 				'redirect' => "https://www.etnownews.com/videos/what-are-the-45-day-msme-payment-rules-and-what-should-you-be-aware-of-tp-ostwal-ashok-singhal-video-108934365"
 			],
 		];
+		$this->data['page'] = [
+			'title' => APP_NAME . " " .date('Y'). " • " . "Powering Entrepreneurs for the Global Stage",
+		];
 		$this->load->page('home', $this->data);
 	}
 }

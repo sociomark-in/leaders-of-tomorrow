@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/BaseController.php";
-class LegalController extends BaseController
+class OtherPagesController extends BaseController
 {
 	public function __construct()
 	{
@@ -25,5 +25,9 @@ class LegalController extends BaseController
 				show_404();
 				break;
 		}
+	}
+
+	public function sitemap() {
+		$this->load->view('sitemap');
 	}
 }

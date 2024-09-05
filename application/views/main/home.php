@@ -156,7 +156,7 @@ foreach ($springboards as $key => $city) {
 
 	<section id="awards" class="">
 		<div class="container">
-			<div class="glass-card card">
+			<div class="glass-card">
 				<div class="card-body">
 					<div class="row justify-content-center g-4">
 						<div class="col-12">

@@ -1,3 +1,7 @@
+<?php
+
+use phpseclib3\Crypt\EC\BaseCurves\Base;
+?>
 <nav class="navbar navbar-expand-lg">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= base_url() ?>">
@@ -14,15 +18,6 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('#articles') ?>">News</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
-				</li>
 				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Previous Seasons
@@ -37,6 +32,15 @@
 						</li>
 						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li>
 					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('#articles') ?>">News</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
 				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,16 +57,14 @@
 					</ul>
 				</li>
 			</ul>
-			<div class="row d-none">
+			<div class="row">
 				<div class="col-md-auto">
 					<ul class="navbar-nav align-items-center g-4">
 						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-								<?= $location ??= "Choose A City" ?>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="btn btn-red text-uppercase" href="#">Login</a>
+							<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
+							<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+							Awards&nbsp;2024
+						</a>
 						</li>
 					</ul>
 				</div>

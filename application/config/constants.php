@@ -11,11 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | of this setting
 |
 */
-defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
-defined('APP_NAME') OR define('APP_NAME', "Leaders of Tomorrow");
+defined('SHOW_DEBUG_BACKTRACE') 		OR define('SHOW_DEBUG_BACKTRACE', TRUE);
+defined('APP_NAME') 					OR define('APP_NAME', "Leaders of Tomorrow");
 
-defined('GOOGLE_OAUTH_CLIENT_ID') OR define('GOOGLE_OAUTH_CLIENT_ID', "973841660802-aocg2s8viu5sopiu7etlevigtutfb4bt");
-defined('GOOGLE_OAUTH_CLIENT_SECRET') OR define('GOOGLE_OAUTH_CLIENT_SECRET', "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");
+defined('GOOGLE_OAUTH_CLIENT_ID') 		OR define('GOOGLE_OAUTH_CLIENT_ID', "973841660802-aocg2s8viu5sopiu7etlevigtutfb4bt");
+defined('GOOGLE_OAUTH_CLIENT_SECRET') 	OR define('GOOGLE_OAUTH_CLIENT_SECRET', "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");
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
@@ -29,10 +29,10 @@ defined('GOOGLE_OAUTH_CLIENT_SECRET') OR define('GOOGLE_OAUTH_CLIENT_SECRET', "G
 | always be used to set the mode correctly.
 |
 */
-defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
-defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
-defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
-defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
+defined('FILE_READ_MODE')  	OR define('FILE_READ_MODE', 0644);
+defined('FILE_WRITE_MODE') 	OR define('FILE_WRITE_MODE', 0666);
+defined('DIR_READ_MODE')   	OR define('DIR_READ_MODE', 0755);
+defined('DIR_WRITE_MODE')  	OR define('DIR_WRITE_MODE', 0755);
 
 /*
 |--------------------------------------------------------------------------

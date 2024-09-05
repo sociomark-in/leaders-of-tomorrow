@@ -1,8 +1,8 @@
 <main>
-	<!--<div class="d-block d-md-none fixed-mobile">
-			<a class="btn btn-red p-2 py-4 text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
-		</div>-->
-	<section class="section pb-md-0">
+	<div class="d-block d-md-none fixed-mobile">
+		<a class="btn btn-red p-2 py-4 text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
+	</div>
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12">
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-md-0 blank" id="about">
+	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
 				<div class="glass-card card">
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-md-0">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-md-0">
+	<section id="agenda" class="section d-none pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -124,7 +124,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-md-0">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -145,7 +145,7 @@
 												</div>
 												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
 												<div class="speaker-photo mb-3">
-													<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">
 													<h5><?= $speaker['name'] ?></h5>
@@ -177,7 +177,7 @@
 											<a href="javascript:void(0)" class="speaker-tile normal">
 												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
 												<div class="speaker-photo rounded-circle mb-3">
-													<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">
 													<h5><?= $speaker['name'] ?></h5>
@@ -223,6 +223,7 @@
 			</div>
 		</div>
 	</section>
+
 	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
 
 	</div>

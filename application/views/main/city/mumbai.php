@@ -32,7 +32,7 @@
 	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
-				<div class="glass-card card">
+				<div class="glass-card">
 					<div class="card-body">
 						<p data-aos="fade-up">
 							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 	</section> -->
-	<section id="speakers" class="">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -220,6 +220,79 @@
 							</script>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="gallery">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>Key Moments</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper gallerySwiper">
+						<div class="gallery-masonry swiper-wrapper">
+							<?php for ($i = 1; $i <= 5; $i++) : ?>
+								<div class="swiper-slide tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>">
+									<figure>
+										<picture>
+											<!-- <source srcset="https://placehold.co/250x167/webp" type="image/webp"> -->
+											<source srcset="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/thumbs/'  . $i . '.jpg') ?>" type="image/jpg">
+											<img class="w-100" src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/thumbs/'  . $i . '.jpg') ?>" alt="" loading="lazy">
+										</picture>
+										<figcaption></figcaption>
+									</figure>
+								</div>
+							<?php endfor ?>
+							
+						</div>
+					</div>
+					<script>
+						new Swiper(".gallerySwiper", {
+							slidesPerView: 2,
+							spaceBetween: 20,
+							grid: {
+								rows: 1,
+								fill: "row"
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 3,
+									spaceBetween: 20,
+									grid: {
+										rows: 3,
+										fill: "row"
+									},
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 50,
+									grid: {
+										rows: 3,
+										fill: "row"
+									},
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 20,
+									grid: {
+										rows: 1,
+										fill: "column"
+									},
+								},
+							},
+						})
+						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
+							plugins: [lgZoom, lgThumbnail],
+							speed: 500,
+						});
+					</script>
+				</div>
+				<div class="col-12">
+					<a href="<?= base_url('city/' . strtolower($city['name'])  . '/gallery') ?>" class="btn btn-red">View More</a>
 				</div>
 			</div>
 		</div>

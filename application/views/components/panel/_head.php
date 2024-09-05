@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 <!-- End fonts -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/images/') ?>apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/') ?>favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/') ?>favicon-16x16.png">
-<link rel="manifest" href="<?= base_url('assets/images/') ?>site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/images/favicons/') ?>apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/favicons/') ?>favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/favicons/') ?>favicon-16x16.png">
+<link rel="manifest" href="<?= base_url('assets/images/favicons/') ?>site.webmanifest">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -23,11 +23,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <!-- core:css -->
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/vendors/core/core.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>vendors/core/core.css">
 <!-- endinject -->
 
 <!-- Plugin css for this page -->
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/vendors/flatpickr/flatpickr.min.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>vendors/flatpickr/flatpickr.min.css">
 
 <link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet"> 
 <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
@@ -51,22 +51,23 @@
 <!-- Plugin: JQuery daterangepicker  -->
 
 <!-- Plugin: JQuery select2 -->
-<script type="text/javascript" src="<?= base_url("assets/panel/") ?>/vendors/select2/select2.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?= base_url("assets/panel/") ?>/vendors/select2/select2.min.css" />
+<script type="text/javascript" src="<?= base_url("assets/panel/") ?>vendors/select2/select2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?= base_url("assets/panel/") ?>vendors/select2/select2.min.css" />
 <!-- Plugin: JQuery daterangepicker  -->
 
 <!-- inject:css -->
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/fonts/feather-font/css/iconfont.css">
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/vendors/flag-icon-css/css/flag-icon.min.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>fonts/feather-font/css/iconfont.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>vendors/flag-icon-css/css/flag-icon.min.css">
 <!-- endinject -->
 
 <!-- Layout styles -->
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/css/demo1/style.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/demo1/style.css">
 <!-- End layout styles -->
 
-<link rel="shortcut icon" href="<?= base_url("assets/panel/") ?>/images/favicon.png" />
+<link rel="shortcut icon" href="<?= base_url("assets/panel/") ?>images/favicon.png" />
 
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>/css/custom.min.css">
+<!-- <link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/custom.min.css"> -->
+<link rel="stylesheet" href="<?= base_url("assets/") ?>css/panel.min.css">
 
 <?php switch (explode(base_url(), current_url())[1]):
 	case 'dashboard': ?>

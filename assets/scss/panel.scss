@@ -1,0 +1,31 @@
+.card .card-title {
+	font-weight: 700;
+}
+h1,
+h2,
+h3 {
+	font-weight: 800;
+}
+h4,h5{
+	font-weight: 700;
+}
+.btn-icon {
+	&-prepend {
+		display: flex;
+		align-items: center;
+		.icon{
+			margin-right: 0.5rem;
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+	&-append {
+		display: flex;
+		align-items: center;
+		.icon{
+			margin-left: 0.5rem;
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+}

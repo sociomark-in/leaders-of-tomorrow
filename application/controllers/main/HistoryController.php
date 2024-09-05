@@ -10,11 +10,17 @@ class HistoryController extends BaseController
 	}
 	public function index()
 	{
+		$this->data['page'] = [
+			'title' => "All Previous Seasons" . " • " . APP_NAME,
+		];
 		$this->load->page('history/home', $this->data);
 	}
 
 	public function season_single($number)
 	{
+		$this->data['page'] = [
+			'title' => "Season " . $number . " • " . APP_NAME,
+		];
 		switch ($number) {
 			case '11':
 				$this->data['partners'] = [

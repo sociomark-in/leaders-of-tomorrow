@@ -285,6 +285,24 @@ nav.navbar {
 		--bs-btn-disabled-bg: #{$color-red};
 		--bs-btn-disabled-border-color: #{$color-red};
 	}
+	&.btn-icon-prepend,
+		&.btn-icon-append{
+			.icon{
+				height: 1.3rem;
+				aspect-ratio: 1;
+				object-fit: contain;
+			}
+		}
+	&.btn-icon-prepend{
+		.icon{
+			margin-right: 0.5rem;
+		}
+	}
+	&.btn-icon-append{
+		.icon{
+			margin-left: 0.5rem;
+		}
+	}
 }
 
 form {
@@ -444,6 +462,7 @@ form {
 			width: fit-content;
 			&::after {
 				content: "";
+				position: absolute;
 				bottom: -0.5rem;
 				left: 0;
 				width: max(8rem, 30%);
@@ -490,13 +509,12 @@ form {
 	columns: 2;
 	img {
 		width: 100%;
-		object-fit: contain;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	figure {
 		width: 100%;
-		overflow: hidden;
-		border-radius: 1rem;
 		figcaption {
 		}
 	}
@@ -507,9 +525,14 @@ form {
 		columns: 3;
 	}
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
 	.gallery-masonry {
 		columns: 4;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.gallery-masonry {
+		columns: 5;
 	}
 }
 @media screen and (min-width: 1640px) {
@@ -535,6 +558,21 @@ form {
 			object-fit: cover;
 		}
 	}
+	&.gallery-tile {
+		border: 0.2rem solid $color-red;
+		padding: 0.25rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		display: inline-block;
+		&:hover{
+			border-color: $color-yellow-2;
+		}
+		figure{
+			border-radius: 0.55rem;
+			overflow: hidden;
+			margin: 0;
+		}
+	}
 }
 
 .city-tile {
@@ -556,10 +594,10 @@ form {
 			text-transform: uppercase;
 		}
 	}
-	&.upcoming {
+	&.ongoing {
 		.photo {
 			&::after {
-				content: "Upcoming";
+				content: "Ongoing";
 				background-color: $color-yellow;
 			}
 		}

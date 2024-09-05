@@ -1,4 +1,5 @@
 <footer class="">
+
 	<section class="section bg-black-0 blank" id="times-influence">
 		<div class="container">
 			<div class="wrapp">
@@ -29,123 +30,135 @@
 	<section class="py-3">
 		<div class="container">
 			<div class="main-footer">
-				<div class="row gy-4">
-					<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-						<div class="mb-3">
-							<img src="<?= base_url("assets/images/") ?>main-light.png" height="40" alt="">
-						</div>
-						<div class="">
-							<p class="text-sm">
-								ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success.
-							</p>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6">
-						<div class="">
-							<h6>Quick Links</h6>
-							<ul class="footer-nav nav flex-column">
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url() ?>">Home</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
-								</li>
-								<li class="nav-item d-none">
-									<a class="nav-link" href="<?= base_url('history') ?>">Previous Seasons</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('misc/terms-of-use') ?>">Terms of Use</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('misc/disclaimer') ?>">Disclaimer</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6">
-						<div class="">
-							<h6>Season 12</h6>
-							<ul class="footer-nav nav flex-column">
-								<li class="nav-item d-none">
-									<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6 d-none"> 
-						<div class="">
-							<h6>Season 12 Awards</h6>
-							<ul class="footer-nav nav flex-column">
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Register</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Login</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">All Categories</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Awards</a>
-								</li>
-							</ul>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="row g-4">
+							<div class="col-xl-6 col-lg-12 col-12">
+								<div class="mb-3">
+									<img src="<?= base_url("assets/images/") ?>main-light.png" height="40" alt="">
+								</div>
+								<div class="">
+									<p class="text-sm">
+										ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success.
+									</p>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-6">
+								<div class="">
+									<h6>Quick Links</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item d-none">
+											<a class="nav-link" href="<?= base_url('history') ?>">Previous Seasons</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/terms-of-use') ?>">Terms of Use</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/disclaimer') ?>">Disclaimer</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('sitemap') ?>">Sitemap</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-6">
+								<div class="">
+									<h6>Season 12</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url() ?>">Home</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
+										</li>
+										<li class="nav-item d-none">
+											<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-4 col-md-6 col-6 d-none">
-						<div class="">
-							<h6>All Seasons</h6>
-							<ul class="footer-nav nav flex-column">
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Season 11</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Season 10</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Season 9</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Season 8</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:void(0)">Other Seasons</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="">
-							<h6>Springboard Cities</h6>
-							<ul class="footer-nav nav">
-								<?php foreach ($springboards as $key => $sb) : ?>
-									<?php switch ($sb['name']):
-										case 'Mumbai':
-									?>
-											<li class="nav-item">
-												<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
-											</li>
-											<?php break; ?>
-										<?php
-										default: ?>
-											<li class="nav-item">
-												<a class="nav-link" href="#"><?= $sb['name'] ?></a>
-											</li>
-											<?php break; ?>
-									<?php endswitch ?>
-								<?php endforeach ?>
-							</ul>
+					<div class="col-lg-6">
+						<div class="row g-4">
+							<div class="col-12">
+								<div class="">
+									<h6>Springboard Cities</h6>
+									<ul class="footer-nav nav">
+										<?php foreach ($springboards as $key => $sb) : ?>
+											<?php switch ($sb['name']):
+												case 'Mumbai':
+											?>
+													<li class="nav-item">
+														<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
+													</li>
+													<?php break; ?>
+												<?php
+												default: ?>
+													<li class="nav-item">
+														<a class="nav-link" href="#"><?= $sb['name'] ?></a>
+													</li>
+													<?php break; ?>
+											<?php endswitch ?>
+										<?php endforeach ?>
+									</ul>
+								</div>
+							</div>
+							<div class="d-none col-xl-2 col-lg-4 col-md-6 col-6">
+								<div class="">
+									<h6>Season 12 Awards</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Register</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Login</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">All Categories</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Awards</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="d-none col-xl-2 col-lg-4 col-md-6 col-6">
+								<div class="">
+									<h6>All Seasons</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Season 11</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Season 10</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Season 9</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Season 8</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Other Seasons</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>

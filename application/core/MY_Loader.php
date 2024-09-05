@@ -31,7 +31,17 @@ class MY_Loader extends CI_Loader
 
 	public function panel_view($view, $vars = array(), $return = FALSE){
 		$this->view('layout/_1_panel', $vars);
-		$this->view('panel/' . $view, $vars);
+		$this->view('panel/participant/' . $view, $vars);
+		$this->view('layout/_2_panel', $vars);
+	}
+	public function admin_view($view, $vars = array(), $return = FALSE){
+		$this->view('layout/_1_panel', $vars);
+		$this->view('panel/admin/' . $view, $vars);
+		$this->view('layout/_2_panel', $vars);
+	}
+	public function moderator_view($view, $vars = array(), $return = FALSE){
+		$this->view('layout/_1_panel', $vars);
+		$this->view('panel/moderator/' . $view, $vars);
 		$this->view('layout/_2_panel', $vars);
 	}
 

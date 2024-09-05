@@ -11,9 +11,8 @@ class NomineeController extends CI_Controller
 	{
 		$config['upload_path'] = FCPATH . '/uploads/';
 		$config['allowed_types'] = 'pdf';
-		$config['max_size']     = '100';
+		$config['max_size'] = '100';
 
-		
 		foreach ($_FILES as $key => $file) {
 			$new_name = time() ."_" . random_string(). "_" . $file['name'];
 			$config['file_name'] = $new_name;
@@ -21,7 +20,7 @@ class NomineeController extends CI_Controller
 
 			if (!$this->upload->do_upload($key)) {
 				$this->upload->display_errors();
-			} 
+			}
 		}
 	}
 }

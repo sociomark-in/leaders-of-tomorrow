@@ -7,16 +7,24 @@ class CityController extends BaseController
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('directory');
 	}
 	public function index()
 	{
+		$this->data['page'] = [
+			'title' => "All Springboards" . " • " . APP_NAME . " " .date('Y'),
+		];
 		$this->load->page('city/home', $this->data);
 	}
 
 	public function city_single($city)
 	{
+		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
 		switch ($city) {
 			case 'mumbai':
+				$this->data['page'] = [
+					'title' => "Mumbai Springboard" . " • " . APP_NAME . " " .date('Y'),
+				];
 				$this->data['city'] = [
 					'name' => "Mumbai",
 					'guests' => [
@@ -64,7 +72,12 @@ class CityController extends BaseController
 						],
 					]
 				];
+				$this->load->city_view('mumbai', $this->data);
+				break;
 			case 'lucknow':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " .date('Y'),
+				];
 				$this->data['city'] = [
 					'name' => "Lucknow",
 					'guests' => [
@@ -114,7 +127,7 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('lucknow', $this->data);
 				break;
-			
+
 
 			default:
 				redirect('all-cities');
@@ -123,19 +136,24 @@ class CityController extends BaseController
 	}
 	public function city_gallery($city)
 	{
-		$this->load->helper('directory');
 
 		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
 		switch ($city) {
 			case 'mumbai':
+				$this->data['page'] = [
+					'title' => "Mumbai Springboard Gallery" . " • " . APP_NAME . " " .date('Y'),
+				];
 				$this->data['city']['name'] = "Mumbai";
 				$this->load->city_view('gallery', $this->data);
 				break;
-			case 'lucknow':
+			/* case 'lucknow':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " .date('Y'),
+				];
 				$this->data['city']['name'] = "Lucknow";
 				$this->load->city_view('gallery', $this->data);
-				break;
-			
+				break; */
+
 
 			default:
 				redirect('all-cities');
@@ -145,13 +163,21 @@ class CityController extends BaseController
 	public function registration($city)
 	{
 		foreach ($this->springboards as $key => $sb) {
+			$status = 0;
 			if (strtolower($sb['name']) == $city) {
+				$status = 1;
 				$this->data['city'] = $sb;
-				$this->load->city_view('register', $this->data);
 				break;
-			} else {
-				redirect('all-cities');
 			}
+		}
+		if ($status) {
+			$this->data['city'] = $sb;
+			$this->data['page'] = [
+				'title' => $sb['name'] . " Springboard Registrations" . " • " . APP_NAME . " " .date('Y'),
+			];
+			$this->load->city_view('register', $this->data);
+		} else {
+			redirect('city/' . $city);
 		}
 	}
 	public function rsvp_thankyou($city)
@@ -159,10 +185,13 @@ class CityController extends BaseController
 		foreach ($this->springboards as $key => $sb) {
 			if (strtolower($sb['name']) == $city) {
 				$this->data['city'] = $sb;
+				$this->data['page'] = [
+					'title' => "Thank You for Registering to " . $sb['name'] . " Springboard" . " • " . APP_NAME . " " .date('Y'),
+				];
 				$this->load->city_view('thankyou', $this->data);
 				break;
 			} else {
-				redirect('all-cities');
+				redirect('city/' . $city);
 			}
 		}
 	}

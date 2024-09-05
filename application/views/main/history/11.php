@@ -58,9 +58,13 @@
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
-					<div class="text-content text-lg" data-aos="fade-right">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+					<div class="card glass-card">
+						<div class="card-body">
+							<div class="text-content text-lg" data-aos="fade-right">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

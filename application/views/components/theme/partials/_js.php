@@ -20,7 +20,8 @@
 <script>
 	AOS.init({
 		duration: 800,
-		easing: "ease-in-out"
+		easing: "ease-in-out",
+		once: true,
 	});
 </script>
 <span id="siteseal" class="d-none"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=PeHXMqMQjkqFYop0JHyACsiq70VeHTnUjKPUbgwyRXqsc3RwnfNjJ03TShDu"></script></span>

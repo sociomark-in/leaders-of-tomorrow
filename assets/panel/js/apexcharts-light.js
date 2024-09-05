@@ -5,7 +5,7 @@ $(function() {
   'use strict';
 
   var colors = {
-    primary        : "#6571ff",
+    primary        : "#f05c27",
     secondary      : "#7987a1",
     success        : "#05a34a",
     info           : "#66d1d1",
@@ -106,8 +106,6 @@ $(function() {
   }
   // Apex Line chart end
 
-
-
   // Apex Bar chart start
   if ($('#apexBar').length) {
     var options = {
@@ -177,9 +175,6 @@ $(function() {
     apexBarChart.render();
   }
   // Apex Bar chart end
-
-
-
 
   // Apex Area chart start
   if ($('#apexArea').length) {
@@ -298,9 +293,6 @@ $(function() {
   }
   // Apex Area chart end
 
-
-
-
   // Apex Mixed chart start
   if ($('#apexMixed').length) {
     var options = {
@@ -410,9 +402,6 @@ $(function() {
   }
   // Apex Mixed chart end
 
-
-
-
   // Apex Donut chart start
   if ($('#apexDonut').length) {
     var options = {
@@ -456,9 +445,6 @@ $(function() {
   }
   // Apex Donut chart start
 
-
-
-  
   // Apex Pie chart end
   if ($('#apexPie').length) {
     var options = {
@@ -501,9 +487,6 @@ $(function() {
     chart.render();  
   }
   // Apex Pie chart end
-
-
-
 
   // Apex Heat chart start
   if ($('#apexHeatMap').length) {
@@ -650,9 +633,6 @@ $(function() {
   }
   // Apex Heat chart end
 
-
-
-
   // Apex Radar chart start
   if ($('#apexRadar').length) {
     var options = {
@@ -748,9 +728,6 @@ $(function() {
   }
   // Apex Radar chart end
 
-
-
-  
   // Apex Scatter chart start
   if ($('#apexScatter').length) {
     var options = {
@@ -838,9 +815,6 @@ $(function() {
     chart.render();
   }
   // Apex Scatter chart end
-
-
-
 
   // Apex Radialbar chart start
   if ($('#apexRadialBar').length) {

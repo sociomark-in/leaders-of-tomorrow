@@ -10,6 +10,9 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
 	<?php $this->load->view('components/theme/_head'); ?>
+	<meta name="description" content=<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>>
+	<meta name="og:description" content=<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>>
+	<meta name="og:image" content="<?= (isset($page['thumb']))? $page['thumb'] : base_url("assets/images/favicon.png") ?>">
 	<title><?= (isset($page['title']))? $page['title']: APP_NAME ?></title>
 </head>
 

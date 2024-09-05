@@ -25,22 +25,22 @@ switch ($city['name']) {
 					<a class="btn btn-red text-uppercase" href="<?= base_url('all-cities') ?>">All Springboards</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#about">About</a>
+					<a class="nav-link" href="#about">About</a>
 				</li>
 				<li class="nav-item <?= $class ?>">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
+					<a class="nav-link" href="#agenda">Agenda</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
+					<a class="nav-link" href="#speakers">Speakers</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name']) . "/gallery") ?>">Gallery</a>
+					<a class="nav-link" href="#gallery">Gallery</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
+					<a class="nav-link" href="#partners">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav gap-2 d-none">
+			<ul class="navbar-nav gap-2 <?= $class ?>">
 				<li class="nav-item">
 					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
 				</li>

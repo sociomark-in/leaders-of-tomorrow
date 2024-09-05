@@ -18,6 +18,7 @@
 				</a>
 			</li>
 
+
 			<!-- Nominations -->
 			<li class="nav-item nav-category">Nominations Management</li>
 			<!-- Access Level: jury -->
@@ -42,8 +43,9 @@
 
 			<!-- Access Level: admin -->
 
+
 			<li class="nav-item nav-category">User Management</li>
-			<!-- <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
 					<i class="link-icon" data-feather="users"></i>
 					<span class="link-title">Jury Panel</span>
@@ -59,11 +61,11 @@
 						</li>
 					</ul>
 				</div>
-			</li> -->
+			</li>
 
 			<li class="nav-item">
 				<a href="dashboard.html" class="nav-link">
-				<i class="link-icon" data-feather="users"></i>
+					<i class="link-icon" data-feather="users"></i>
 					<span class="link-title">Users</span>
 				</a>
 			</li>
@@ -89,6 +91,7 @@
 					<span class="link-title">Documentation</span>
 				</a>
 			</li>
+
 		</ul>
 	</div>
 </nav>

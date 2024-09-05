@@ -1,4 +1,5 @@
 <?= form_open('api/v2/rsvp/register', ['id' => $id]) ?>
+<input type="hidden" name="utm" value='<?= json_encode($this->input->get()) ?>'>
 <input type="hidden" name="event_city" value="<?= $city['name'] ?>">
 <div class="row g-3">
 	<div class="col-lg-6 col-12">
