@@ -49,42 +49,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'PagesController';
-// $route[''] = 'ViewsController/soon';
-$route['history'] = 'main/HistoryController';
-$route['gallery'] = 'main/GalleryController';
-$route['all-cities'] = 'main/CityController';
-$route['history/season-(:any)'] = 'main/HistoryController/season_single/$1';
-$route['misc/(:any)'] = 'main/OtherPagesController/misc/$1';
-$route['sitemap'] = 'main/OtherPagesController/sitemap';
+$route['default_controller'] = 'AccountController';
 
-/* All Springboards */
-$route['city/(:any)'] = 'main/CityController/city_single/$1';
-$route['city/(:any)/gallery'] = 'main/CityController/city_gallery/$1';
-$route['city/(:any)/register'] = 'main/CityController/registration/$1';
-$route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
+$route['login'] = 'pages/login';
+$route['logout'] = 'auth/logout';
 
-$route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
-/* All Springboards */
+$route['api-auth-login'] = 'auth/login';
+$route['api-auth-register'] = 'auth/register';
 
-/* Awards */
-$route['awards'] = 'awards/AwardsController/home';
-$route['categories'] = 'awards/AwardsController/categories';
-/* Awards */
 
-$route['login'] = 'auth/LoginController/single';
-$route['multi-login'] = 'auth/LoginController/multi';
+$route['register'] = 'dashboard/register';
 
-// $route['dashboard'] = 'awards/AccountController';
-// $route['dashboard/my-profile'] = 'awards/AccountController/profile';
-// $route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
-// $route['dashboard/applications'] = 'awards/NominationsController';
-// $route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
-
-// $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
-
-$route['api/new-nominee'] = 'NomineeController/add';
-$route['api/participant/login'] = 'api/auth/SSOController/participant_login';
+$route['entry/(:any)'] = "EntriesController/single_detail/$1";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
