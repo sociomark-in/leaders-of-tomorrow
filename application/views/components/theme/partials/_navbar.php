@@ -57,7 +57,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</ul>
 				</li>
 			</ul>
-			<div class="row">
+			<div class="row d-none">
 				<div class="col-md-auto">
 					<ul class="navbar-nav align-items-center g-4">
 						<li class="nav-item">

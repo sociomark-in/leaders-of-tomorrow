@@ -6,7 +6,7 @@ class PanelController extends CI_Controller
 	{
 		parent::__construct();
 		$session = [
-			'role' => ''
+			'role' => 'admin'
 		];
 		$this->session->set_userdata('user', $session);
 	}

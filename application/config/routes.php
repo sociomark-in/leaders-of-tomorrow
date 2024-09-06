@@ -75,13 +75,13 @@ $route['categories'] = 'awards/AwardsController/categories';
 $route['login'] = 'auth/LoginController/single';
 $route['multi-login'] = 'auth/LoginController/multi';
 
-// $route['dashboard'] = 'awards/AccountController';
-// $route['dashboard/my-profile'] = 'awards/AccountController/profile';
-// $route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
-// $route['dashboard/applications'] = 'awards/NominationsController';
-// $route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
+$route['dashboard'] = 'awards/AccountController';
+$route['dashboard/my-profile'] = 'awards/AccountController/profile';
+$route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
+$route['dashboard/applications'] = 'awards/NominationsController';
+$route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
 
-// $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
+$route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
 $route['api/participant/login'] = 'api/auth/SSOController/participant_login';

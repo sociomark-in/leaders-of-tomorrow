@@ -1,7 +1,7 @@
 <main>
-	<div class="d-block d-md-none fixed-mobile">
+	<!-- <div class="d-block d-md-none fixed-mobile">
 		<a class="btn btn-red p-2 py-4 text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
-	</div>
+	</div> -->
 	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -29,26 +29,42 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 blank" id="about">
+	<section class="pb-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-10 col-12">
+					<div class="media-content springboard-banner">
+						<div class="wrap">
+							<picture>
+								<source srcset="" type="image/">
+								<img class="w-100" src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/banner.jpg') ?>" alt="<?= $city['name'] ?> Banner">
+							</picture>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section pb-0 blank d-none" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
-				<div class="glass-card card">
+				<div class="glass-card">
 					<div class="card-body">
 						<p data-aos="fade-up">
-							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae minima veritatis cum hic sunt obcaecati quas cupiditate iste, ipsam sint. Delectus unde commodi sapiente! Facilis dignissimos eaque porro asperiores alias?
 						</p>
 						<p data-aos="fade-up" data-aos-delay="100">
-							We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, ipsum earum fugiat laudantium quibusdam quo.
 						</p>
 						<p data-aos="fade-up" data-aos-delay="200">
-							Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel corporis esse doloremque placeat eum eaque optio culpa obcaecati qui. Totam voluptatibus velit, provident laborum eos atque minima fugiat esse, alias inventore, eaque necessitatibus perferendis ex! Laborum aut obcaecati nisi.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0">
+	<section class="section pb-0 d-none">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -58,15 +74,15 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Galvanizing India’s MSMEs to Seize Global Opportunities</span></h2>
+						<h2><span>Charting Uttar Pradesh’s Trillion-Dollar Journey</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Set against the vibrant backdrop of Mumbai, MSMEs play a crucial role in driving innovation, employment and exports, making them the lifeblood of the nation's growth.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minima, consequuntur eius impedit quas cupiditate? Suscipit, odio? Corrupti, veritatis blanditiis!
 						</p>
 
 						<p data-aos="fade-left" data-aos-delay="400">
-							Join us at #LOTSpringboard Mumbai as we delve into the challenges and opportunities shaping the future of MSMEs in India. Explore how policy support, streamlined regulations, and digitization are empowering entrepreneurs to make their mark on the global stage.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo sit nostrum! Cumque dolorem id eos iusto! Quas, laborum animi sit nulla alias molestias voluptas numquam odit aliquid, consectetur reiciendis.
 						</p>
 						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a>
 					</div>
@@ -74,7 +90,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section d-none pb-0">
+	<section id="agenda" class="section pb-0 d-none">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -124,7 +140,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0">
+	<section id="speakers" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -148,8 +164,8 @@
 													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">
-													<h5><?= $speaker['name'] ?></h5>
-													<p><?= $speaker['description'] ?></p>
+													<h5>Lorem, ipsum dolor.</h5>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 												</div>
 											</a>
 										</div>
@@ -180,8 +196,8 @@
 													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">
-													<h5><?= $speaker['name'] ?></h5>
-													<p><?= $speaker['description'] ?></p>
+													<h5>Lorem, ipsum dolor.</h5>
+													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 												</div>
 											</a>
 										</div>
@@ -223,7 +239,78 @@
 			</div>
 		</div>
 	</section>
-
+	<section id="gallery" class="d-none">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>Key Moments</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper gallerySwiper">
+						<div class="gallery-masonry swiper-wrapper">
+							<?php for ($i = 1; $i <= 5; $i++) : ?>
+								<div class="swiper-slide tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>">
+									<figure>
+										<picture>
+											<source srcset="https://placehold.co/250x167/webp" type="image/webp">
+											<source srcset="https://placehold.co/250x167/webp" type="image/jpg">
+											<img class="w-100" src="https://placehold.co/250x167/webp" alt="" loading="lazy">
+										</picture>
+										<figcaption></figcaption>
+									</figure>
+								</div>
+							<?php endfor ?>
+						</div>
+					</div>
+					<script>
+						new Swiper(".gallerySwiper", {
+							slidesPerView: 2,
+							spaceBetween: 20,
+							grid: {
+								rows: 1,
+								fill: "row"
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 3,
+									spaceBetween: 20,
+									grid: {
+										rows: 3,
+										fill: "row"
+									},
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 50,
+									grid: {
+										rows: 3,
+										fill: "row"
+									},
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 20,
+									grid: {
+										rows: 1,
+										fill: "column"
+									},
+								},
+							},
+						})
+						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
+							plugins: [lgZoom, lgThumbnail],
+							speed: 500,
+						});
+					</script>
+				</div>
+				<div class="col-12 d-none">
+					<a href="<?= base_url('city/' . strtolower($city['name'])  . '/gallery') ?>" class="btn btn-red">View More</a>
+				</div>
+			</div>
+		</div>
+	</section>
 	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
 
 	</div>

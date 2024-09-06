@@ -1,7 +1,8 @@
 <?php
 $dateObj = date_create_from_format("Y-m-d H:i:s", $city['date']);
 $dateTime = date_format($dateObj, 'F j, Y h:i A');
-$venue = $city['venue'];
+$venue = ($city['venue'] == "") ? "Yet to be decided!" : $city['venue'];
+
 ?>
 
 <main>
@@ -13,7 +14,8 @@ $venue = $city['venue'];
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
 							<li class="breadcrumb-item"><a href="<?= base_url('all-cities') ?>">All Cities</a></li>
-							<li class="breadcrumb-item active" aria-current="page"><?= $city['name'] ?></li>
+							<li class="breadcrumb-item"><a href="<?= base_url('city/' . strtolower($city['name'])) ?>"><?= $city['name'] ?></a></li>
+							<li class="breadcrumb-item active" aria-current="page">Registration</li>
 						</ol>
 					</nav>
 				</div>
@@ -45,11 +47,11 @@ $venue = $city['venue'];
 								<div class="row g-3">
 									<div class="col-lg-6 col-12">
 										<p class="mb-0">Date & Time</p>
-										<h3 class="text-red"><?php print_r($dateTime) ?></h3>
+										<h3 class="text-red"><?= $dateTime ?></h3>
 									</div>
 									<div class="col-lg-6 col-12">
 										<p class="mb-0">Venue</p>
-										<h3 class="text-red"><?php print_r($venue) ?></h3>
+										<h3 class="text-red"><?= $venue ?></h3>
 									</div>
 								</div>
 							</div>

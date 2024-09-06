@@ -20,8 +20,8 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up" data-aos-delay="300">
-			<a href="javascript:void(0)" class="nav-link text-dark text-center d-block">
+		<<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up" data-aos-delay="300">
+			<a href="https://brandbuzzventures.com/" target="_blank" class="nav-link text-dark text-center d-block">
 				<p class="mb-3">
 					Associate Partner
 				</p>
