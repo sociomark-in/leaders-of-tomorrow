@@ -73,6 +73,7 @@ $route['categories'] = 'awards/AwardsController/categories';
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
+$route['register'] = 'auth/LoginController/single';
 $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['dashboard'] = 'awards/AccountController';

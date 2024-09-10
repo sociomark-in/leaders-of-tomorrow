@@ -2,12 +2,20 @@
 
 switch ($city['name']) {
 	case 'Mumbai':
-	case 'Lucknow':
 		$class = "d-none";
 		break;
 	
 	default:
 		$class = "d-block";
+		break;
+}
+switch ($city['name']) {
+	case 'dsf':
+		$active = "d-none";
+		break;
+	
+	default:
+		$active = "d-block d-md-inline-block";
 		break;
 }
 ?>
@@ -25,20 +33,20 @@ switch ($city['name']) {
 				<li class="nav-item me-md-3">
 					<a class="btn btn-red text-uppercase" href="<?= base_url('all-cities') ?>">All Springboards</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#about">About</a>
+				<li class="nav-item  <?= $active ?>">
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#about">About</a>
 				</li>
 				<li class="nav-item <?= $class ?>">
-					<a class="nav-link" href="#agenda">Agenda</a>
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#speakers">Speakers</a>
+				<li class="nav-item <?= $active ?>">
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#gallery">Gallery</a>
+				<li class="nav-item <?= $active ?>">
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#gallery">Gallery</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#partners">Partners</a>
+				<li class="nav-item <?= $active ?>">
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav gap-2 <?= $class ?>">

@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="pb-0">
+	<section class="pb-0 d-none">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
@@ -64,12 +64,13 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=FHjpRisiSidQNmqV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+					<iframe class="w-100" src="https://www.youtube.com/embed/4yf12kND24M?si=qKW2DbJPtPVS7qyf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -78,13 +79,13 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minima, consequuntur eius impedit quas cupiditate? Suscipit, odio? Corrupti, veritatis blanditiis!
+						    Seated in the heart of the State, MSMEs in Lucknow are driving Uttar Pradesh towards its <strong class="text-red">$1&nbsp;Trillion</strong> economy goal.
 						</p>
 
 						<p data-aos="fade-left" data-aos-delay="400">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo sit nostrum! Cumque dolorem id eos iusto! Quas, laborum animi sit nulla alias molestias voluptas numquam odit aliquid, consectetur reiciendis.
+							Join us at #LOTSpringboard Lucknow to see how the logistics and industrial hub is shaping a future full of opportunities.
 						</p>
-						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a>
+						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
 				</div>
 			</div>
@@ -140,7 +141,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0 d-none">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

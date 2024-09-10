@@ -24,12 +24,12 @@
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-xl-8 col-lg-10 col-12">
-								<div class="section-title mb-3 text-center">
+								<div class="section-title mb-3">
 									<h2><span>Thank you for expressing interest in attending the event!</span></h2>
 								</div>
 								<div class="text-content mb-3 mb-md-5">
 									<p>
-										Please note that your registration is pending for approval by our organizing team. You will receive a confirmation email with further details from <a href="mailto:response@timesnetwork">response@timesnetwork</a>.in once your registration has been approved.
+										Please note that your registration is pending for approval by our organizing team. You will receive a confirmation email with further details from <a href="mailto:response@timesnetwork.in">response@timesnetwork.in</a> once your registration has been approved.
 									</p>
 								</div>
 								<div class="text-center">

@@ -190,8 +190,6 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('thankyou', $this->data);
 				break;
-			} else {
-				redirect('city/' . $city);
 			}
 		}
 	}

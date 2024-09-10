@@ -10,8 +10,8 @@ class RegistrationAPI extends CI_Controller
 		$this->events = [
 			// "mumbai" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
 			"mumbai" => "f08c5088-2794-4f27-923c-2058132e1b28",
-			"lucknow" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
-			// "lucknow" => "2c0b2539-3941-4d00-b52d-27b22b2850e2",
+			// "lucknow" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
+			"lucknow" => "4f18fda6-f8a7-4da4-a6a2-4d77c04b85bd",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -42,16 +42,17 @@ class RegistrationAPI extends CI_Controller
 			"name" => $this->request['name'],
 			"email_id" => $this->request['email'],
 			"custom_forms" => [
-				"46261" => $this->request['organization']['size'],
-				"46262" => $this->request['organization']['department'],
-				"46263" => $this->request['organization']['turnover'],
-				"46264" => $this->request['organization']['industry'],
-				"46678" => $this->request['message'],
+				"47138" => $this->request['organization']['department'],
+				"47137" => $this->request['organization']['turnover'],
+				"47136" => $this->request['organization']['industry'],
+				"47565" => $this->request['website'],
+				"47135" => $this->request['message'],
 			],
 			"organisation" => $this->request['organization']['name'],
 			"designation" => $this->request['organization']['designation'],
 			"phone_number" => $this->request['contact'],
 			"whatsapp_number" => $this->request['whatsapp'],
+			"linkedin_url" => $this->request['linkedin'],
 			"dial_code" => "+91",
 			"country_code" => "in",
 			"wa_dial_code" => "+91",
@@ -61,9 +62,10 @@ class RegistrationAPI extends CI_Controller
 			"phone_number_verified" => 4,
 			"is_subscriber" => true
 		];
-
+		
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);
-
+		
+		
 		if (!array_key_exists('error', $this->response)) {
 			$data = [
 				"name" => $this->request['name'],

@@ -38,6 +38,18 @@
 	</script>
 	<div class="col-lg-6 col-12">
 		<div class="">
+			<label for="" class="form-label">LinkedIn URL</label>
+			<input type="url" name="linkedin" placeholder="https://www.linkedin.com/" class="form-control" required>
+		</div>
+	</div>
+	<div class="col-lg-6 col-12">
+		<div class="">
+			<label for="" class="form-label">Organization Website URL</label>
+			<input type="url" name="website" class="form-control" required>
+		</div>
+	</div>
+	<div class="col-lg-6 col-12">
+		<div class="">
 			<label for="" class="form-label">Organization</label>
 			<input type="text" name="organization[name]" class="form-control" minlength="5" required>
 		</div>
@@ -48,20 +60,7 @@
 			<input type="text" name="organization[designation]" class="form-control" minlength="5" required>
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-6 col-12">
-		<div class="">
-			<label for="" class="form-label">No. Of. Employees</label>
-			<select name="organization[size]" id="" class="form-select" required>
-				<option value="">Select</option>
-				<option value="1-50">1-50</option>
-				<option value="51-250">51-250</option>
-				<option value="251-1000">251-1000</option>
-				<option value="1001-5000">1001-5000</option>
-				<option value="5000+1">5000 and above</option>
-			</select>
-		</div>
-	</div>
-	<div class="col-lg-3 col-md-6 col-12">
+	<div class="col-lg-4 col-md-6 col-12">
 		<div class="">
 			<label for="" class="form-label">Department / Area of Work</label>
 			<select name="organization[department]" id="" class="form-select" required>
@@ -75,7 +74,7 @@
 			</select>
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-6 col-12">
+	<div class="col-lg-4 col-md-6 col-12">
 		<div class="">
 			<label for="" class="form-label">Organization Turnover</label>
 			<select name="organization[turnover]" id="" class="form-select" required>
@@ -89,7 +88,7 @@
 			</select>
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-6 col-12">
+	<div class="col-lg-4 col-md-6 col-12">
 		<div class="">
 			<label for="" class="form-label">Industry</label>
 			<select name="organization[industry]" id="" class="form-select" required>
@@ -125,7 +124,7 @@
 	<div class="col-12">
 		<div class="mb-3 form-check">
 			<input type="checkbox" name="consent" required class="form-check-input">
-			<label class="form-check-label" for="exampleCheck1">By submitting this form, you agree to share your contact details with the partners of the event</label>
+			<label class="form-check-label" for="exampleCheck1">By submitting this form, you agree to share your contact details with the partners of this event. You further agree to be bound by the rules and regulations in respect of the event that may be published on this website or communicated to you from time to time.</label>
 		</div>
 	</div>
 	<div class="col-12">
@@ -137,6 +136,9 @@
 <script>
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("linkedinurl_regex", function(value, element) {
+		return this.optional(element) || /^(https?:\/\/)?(www\.)?linkedin\.com\//i.test(value);
 	})
 	$.validator.addMethod("letters", function(value, element) {
 		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
@@ -154,6 +156,9 @@
 			},
 			contact: {
 				numbers: true
+			},
+			linkedin:{
+				linkedinurl_regex: true
 			}
 		},
 		messages: {
@@ -165,6 +170,9 @@
 			},
 			contact: {
 				numbers: 'Please enter a valid contact number'
+			},
+			linkedin:{
+				linkedinurl_regex: 'Not a valid LinkedIn URL'
 			}
 		}
 	})
