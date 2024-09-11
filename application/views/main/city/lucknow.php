@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="pb-0 d-none">
+	<section class="pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
@@ -91,7 +91,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-0 d-none">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -151,42 +151,7 @@
 				</div>
 				<div class="col-12">
 					<div class="row align-items-center">
-						<div class="col-xl-3 col-lg-6 col-12">
-							<div class="swiper guestSwiper">
-								<div class="swiper-wrapper">
-									<?php foreach ($city['guests'] as $key => $speaker) : ?>
-										<div class="swiper-slide p-3" data-aos="fade-left">
-											<a href="javascript:void(0)" class="speaker-tile normal">
-												<div class="speaker-title">
-													<h4 class="text-red text-center">Chief Guest</h4>
-												</div>
-												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
-												<div class="speaker-photo mb-3">
-													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
-												</div>
-												<div class="desc text-center">
-													<h5>Lorem, ipsum dolor.</h5>
-													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-												</div>
-											</a>
-										</div>
-									<?php endforeach ?>
-								</div>
-								<div class="swiper-button-next swiper-button-red"></div>
-								<div class="swiper-button-prev swiper-button-red"></div>
-							</div>
-							<script>
-								new Swiper(".guestSwiper", {
-									navigation: {
-										nextEl: ".guestSwiper .swiper-button-next",
-										prevEl: ".guestSwiper .swiper-button-prev",
-									},
-									slidesPerView: 1,
-
-								})
-							</script>
-						</div>
-						<div class="col-xl-9 col-lg-6 col-12">
+						<div class="col-12">
 							<div class="swiper speakerSwiper">
 								<div class="swiper-wrapper">
 									<?php foreach ($city['speakers'] as $key => $speaker) : ?>
@@ -194,11 +159,11 @@
 											<a href="javascript:void(0)" class="speaker-tile normal">
 												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
 												<div class="speaker-photo rounded-circle mb-3">
-													<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 												</div>
 												<div class="desc text-center">
-													<h5>Lorem, ipsum dolor.</h5>
-													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+													<h5><?= $speaker['name'] ?></h5>
+													<p><?= $speaker['description'] ?></p>
 												</div>
 											</a>
 										</div>
@@ -224,11 +189,11 @@
 											spaceBetween: 20,
 										},
 										1024: {
-											slidesPerView: 3,
+											slidesPerView: 4,
 											spaceBetween: 50,
 										},
 										1400: {
-											slidesPerView: 4,
+											slidesPerView: 5,
 											spaceBetween: 20,
 										},
 									},

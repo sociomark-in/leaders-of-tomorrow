@@ -29,6 +29,22 @@
 			</div>
 		</div>
 	</section>
+	<section class="pb-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-10 col-12">
+					<div class="media-content springboard-banner">
+						<div class="wrap">
+							<picture>
+								<source srcset="" type="image/">
+								<img class="w-100" src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/banner.jpg') ?>" alt="<?= $city['name'] ?> Banner">
+							</picture>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">

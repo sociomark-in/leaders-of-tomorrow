@@ -109,6 +109,16 @@ form label.error {
   color: red;
   font-size: 0.8rem;
 }
+form .form-check-input:checked {
+  background-color: #b72026;
+  border-color: #b72026;
+}
+form .form-check-input:focus {
+  border-color: rgba(183, 32, 38, 0.5);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(183, 32, 38, 0.2);
+}
+
 body {
   background: url("../images/backgrounds/sky.gif"), #efefef;
   background-size: cover;
@@ -301,6 +311,20 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   border-radius: 0;
   padding: 0.5rem 1rem;
 }
+.btn.btn-loading::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.2rem;
+  left: -0.4rem;
+  transform: scale(1.5);
+  height: 1rem;
+  aspect-ratio: 1;
+  background: url("../images/icons/laoding.gif") no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: brightness(4);
+}
 .btn.btn-yellow {
   --bs-btn-color: #1c1c1c;
   --bs-btn-bg: #ffde3f;
@@ -421,6 +445,30 @@ form .form-control {
   color: #000000;
 }
 
+.wizard .steps ul {
+  padding: 0;
+}
+.wizard > .content > .body {
+  width: 100% !important;
+}
+.wizard .actions ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.wizard .actions ul li:first-child a {
+  background: #b6b6b6;
+  color: #1c1c1c;
+}
+.wizard .actions ul li:nth-child(2) a {
+  background: #ffde3f;
+  color: #1c1c1c;
+}
+.wizard .actions ul li:last-child a {
+  background: #b72026;
+  color: #efefef;
+}
+
 @media screen and (min-width: 768px) {
   .hero-slide {
     background: url("https://placehold.co/1920x1080") no-repeat;
@@ -500,6 +548,17 @@ form .form-control {
 .plain-card .card-body {
   padding: 1rem;
   border-radius: 0.5rem;
+}
+
+.radio-card input + label {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.radio-card input[type=radio]:checked + label {
+  box-shadow: 0 0 0 2px rgba(183, 32, 38, 0.4);
+}
+.radio-card .card {
+  border-radius: 0.25rem;
 }
 
 .signup-widget {

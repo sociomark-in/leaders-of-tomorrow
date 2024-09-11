@@ -17,7 +17,7 @@ class BaseController extends CI_Controller
 				'name' => "Lucknow",
 				'theme' => "Lucknow: Charting Uttar Pradesh’s Trillion-Dollar Journey",
 				'date' => '2024-09-13 17:00:00',
-				'venue' => ""
+				'venue' => "Hilton Garden Inn, Lucknow"
 			],
 			[
 				'name' => "Chandigarh",

@@ -80,48 +80,36 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Lucknow",
-					'guests' => [
-						[
-							'photo' => "Devendra_Fadnavis.png",
-							'name' => "Devendra Fadnavis",
-							'description' => "Deputy Chief Minister, Maharashtra",
-						],
-					],
 					'speakers' => [
 						[
-							'photo' => "Chinmay_Dhoble.png",
-							'name' => "Chinmay Dhoble",
-							'description' => "Head, Retail Liabilities & Branch Banking, IDFC FIRST Bank",
+							'photo' => "Bhavesh_Jatania.png",
+							'name' => "Bhavesh Jatania",
+							'description' => "Head - Startup Banking, IDFC FIRST Bank",
 						],
 						[
-							'photo' => "Dr_A_Velumani.png",
-							'name' => "Dr. A Velumani",
-							'description' => "Creator, Thyrocare ",
+							'photo' => "Jayant_Krishna.png",
+							'name' => "Jayant Krishna",
+							'description' => "Senior Fellow & Former CEO, CSIS, National Skill Development Corporation",
 						],
 						[
-							'photo' => "Ajay_Thakur.png",
-							'name' => "Ajay Thakur",
-							'description' => "CEO & Managing Partner , TGI SME Capital Advisors LLP",
+							'photo' => "Vinamra_Agarwal.png",
+							'name' => "Vinamra Agarwal",
+							'description' => "Joint MD, Technical Associates",
 						],
 						[
-							'photo' => "Amisha_Vora.png",
-							'name' => "Amisha Vora",
-							'description' => "Chairperson & MD, PL Capital",
+							'photo' => "Jyotsna_Kaur_Habibullah.png",
+							'name' => "Jyotsna Kaur Habibullah",
+							'description' => "CEO, Lucknow Farmers Market",
 						],
 						[
-							'photo' => "Aisshwarya_DKS_Hegde.png",
-							'name' => "Aisshwarya DKS Hegde",
-							'description' => "Edupreneur, Trustee Secretary, National Education Foundation",
+							'photo' => "Anuj_Agarwal.png",
+							'name' => "Anuj Agarwal",
+							'description' => "MD, Gyan Dairy",
 						],
 						[
-							'photo' => "Sushma_Morthania.png",
-							'name' => "Sushma Morthania",
-							'description' => "Director General, India SME Forum",
-						],
-						[
-							'photo' => "Pankaj_Mathpal.png",
-							'name' => "Pankaj Mathpal",
-							'description' => "Founder & MD, Optima Money Managers",
+							'photo' => "Aditya_Sharma.png",
+							'name' => "Aditya Sharma",
+							'description' => "Founder, Capital Tree",
 						],
 					]
 				];
@@ -164,7 +152,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city) {
+			if (strtolower($sb['name']) == $city && $city == 'lucknow') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
