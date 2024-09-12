@@ -18,4 +18,9 @@ class LoginController extends BaseController
 	public function multi(){
 		$this->load->mini_view('multilogin');
 	}
+
+	public function logout(){
+		unset($_SESSION['nomination_user']);
+		redirect('login');
+	}
 }

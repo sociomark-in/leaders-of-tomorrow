@@ -12,7 +12,7 @@
 											<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
 										</div>
 										<div class="col-auto">
-											<h1>Thank You</h1>
+											<h1>Registration Pending</h1>
 										</div>
 									</div>
 								</div>
@@ -25,7 +25,7 @@
 						<div class="row justify-content-center">
 							<div class="col-xl-8 col-lg-10 col-12">
 								<div class="section-title mb-3">
-									<h2><span>Thank you for expressing interest in attending the event!</span></h2>
+									<h2><span>Thank you for expressing your interest in attending the event!</span></h2>
 								</div>
 								<div class="text-content mb-3 mb-md-5">
 									<p>
@@ -33,7 +33,7 @@
 									</p>
 								</div>
 								<div class="text-center">
-									<a href="<?= base_url() ?>" class="btn btn-red"> Return To Home</a>
+									<a href="<?= base_url('city/' . strtolower($city['name'])) ?>" class="btn btn-red">Back To <?= $city['name'] ?></a>
 								</div>
 							</div>
 						</div>

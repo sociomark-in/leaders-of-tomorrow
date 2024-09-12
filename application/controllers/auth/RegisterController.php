@@ -9,8 +9,10 @@ class RegisterController extends BaseController{
 	}
 
 	public function index(){
-		$this->data['page']['title'] = "Awards Registration" ." • " .  APP_NAME . " " .date('Y');
-		$this->load->page('register', $this->data);
+		$this->data['page'] =[
+			'title' => "Register". " • " . APP_NAME . " " .date('Y')
+		];
+		$this->load->mini_view('register', $this->data);
 	}
 }
 

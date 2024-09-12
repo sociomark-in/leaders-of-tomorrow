@@ -48,7 +48,7 @@ class MY_Loader extends CI_Loader
 
 	public function mini_view($view, $vars = array(), $return = FALSE){
 		$this->view('layout/_1_mini', $vars);
-		$this->view('panel/' . $view, $vars);
+		$this->view($view, $vars);
 		$this->view('layout/_2_mini', $vars);
 	}
 

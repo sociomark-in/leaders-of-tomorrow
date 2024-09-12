@@ -64,7 +64,6 @@ $route['city/(:any)/gallery'] = 'main/CityController/city_gallery/$1';
 $route['city/(:any)/register'] = 'main/CityController/registration/$1';
 $route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
 
-$route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 /* All Springboards */
 
 /* Awards */
@@ -73,9 +72,11 @@ $route['categories'] = 'awards/AwardsController/categories';
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
+$route['logout'] = 'auth/LoginController/logout';
 $route['register'] = 'auth/RegisterController';
 $route['multi-login'] = 'auth/LoginController/multi';
 
+$route['nominate'] = 'awards/AccountController/nominate';
 $route['dashboard'] = 'awards/AccountController';
 $route['dashboard/my-profile'] = 'awards/AccountController/profile';
 $route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
@@ -85,7 +86,10 @@ $route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1
 $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
-$route['api/participant/login'] = 'api/auth/SSOController/participant_login';
+$route['api/v2/participant/register'] = 'api/auth/SSOController/participant_register';
+$route['api/v2/participant/login'] = 'api/auth/SSOController/participant_login';
+$route['api/v2/participant/nominate'] = 'api/auth/SSOController/participant_nominate';
+$route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

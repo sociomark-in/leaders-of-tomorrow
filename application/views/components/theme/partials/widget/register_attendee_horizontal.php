@@ -10,13 +10,13 @@
 	</div>
 	<div class="col-lg-6 col-12">
 		<div class="">
-			<label for="" class="form-label">Email</label>
+			<label for="" class="form-label">Email Address</label>
 			<input type="email" name="email" class="form-control" required>
 		</div>
 	</div>
 	<div class="col-lg-6 col-12">
 		<div class="">
-			<label for="" class="form-label">Contact Number</label>
+			<label for="" class="form-label">Phone Number</label>
 			<input type="text" maxlength="10" minlength="10" name="contact" class="form-control" required>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 		<div class="">
 			<div class="mb-2 form-check">
 				<input type="checkbox" name="whatsapp_consent" class="form-check-input">
-				<label class="form-check-label" for="exampleCheck1">WhatsApp Consent</label>
+				<label class="form-check-label" for="exampleCheck1">I would like to receive ticket and event updates over WhatsApp</label>
 			</div>
 			<input type="text" maxlength="10" minlength="10" name="whatsapp" class="form-control d-none">
 		</div>

@@ -45,19 +45,16 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 blank d-none" id="about">
+	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
 				<div class="glass-card">
 					<div class="card-body">
 						<p data-aos="fade-up">
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae minima veritatis cum hic sunt obcaecati quas cupiditate iste, ipsam sint. Delectus unde commodi sapiente! Facilis dignissimos eaque porro asperiores alias?
-						</p>
-						<p data-aos="fade-up" data-aos-delay="100">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, ipsum earum fugiat laudantium quibusdam quo.
+							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
 						</p>
 						<p data-aos="fade-up" data-aos-delay="200">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel corporis esse doloremque placeat eum eaque optio culpa obcaecati qui. Totam voluptatibus velit, provident laborum eos atque minima fugiat esse, alias inventore, eaque necessitatibus perferendis ex! Laborum aut obcaecati nisi.
+							Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
 						</p>
 					</div>
 				</div>
@@ -103,7 +100,7 @@
 						<a target="_blank" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda.pdf" ?>" class="btn btn-yellow">Download PDF<i class="ms-2 fa-solid fa-arrow-down"></i></a>
 					</div>
 				</div>
-				<div class="col-xl-6 col-lg-6 col-md-11 col-12">
+				<div class="col-xl-8 col-lg-10 col-12">
 					<div class="swiper agendaSwiper">
 						<div class="swiper-wrapper" id="agendaPages">
 							<a class="swiper-slide mb-2" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg" ?>">

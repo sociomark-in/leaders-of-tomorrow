@@ -325,6 +325,15 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   background-position: center;
   filter: brightness(4);
 }
+.btn.btn-facebook {
+  background-color: #1877F2;
+  color: white;
+}
+.btn.btn-google {
+  border-color: #1c1c1c;
+  background-color: white;
+  color: #1c1c1c;
+}
 .btn.btn-yellow {
   --bs-btn-color: #1c1c1c;
   --bs-btn-bg: #ffde3f;

@@ -295,6 +295,17 @@ nav.navbar {
 			filter: brightness(4);
 		}
 	}
+
+	&.btn-facebook{
+		background-color: #1877F2;
+		color: white;
+	}
+	&.btn-google{
+		border-color: $color-black;
+		background-color: white;
+		color: $color-black;
+	}
+
 	&.btn-yellow {
 		--bs-btn-color: #{$color-black};
 		--bs-btn-bg: #{$color-yellow};

@@ -18,4 +18,14 @@ class AccountController extends PanelController
 				break;
 		}
 	}
+
+	public function nominate(){
+		if(isset($_SESSION['nomination_user'])){
+			$this->data['user'] = $_SESSION['nomination_user'];
+		} else {
+			redirect('login');
+		}
+		$this->data['page']['title'] = "Awards Registration" ." • " .  APP_NAME . " " .date('Y');
+		$this->load->page('register', $this->data);
+	}
 }

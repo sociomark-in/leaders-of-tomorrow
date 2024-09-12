@@ -53,9 +53,6 @@
 						<p data-aos="fade-up">
 							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
 						</p>
-						<p data-aos="fade-up" data-aos-delay="100">
-							We plan to host our inaugural Springboard in Mumbai with insightful discussions focusing on the broader topics affecting MSMEs in India.
-						</p>
 						<p data-aos="fade-up" data-aos-delay="200">
 							Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
 						</p>

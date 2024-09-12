@@ -11,14 +11,14 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="mx-0 mx-md-4 collapse navbar-collapse w-100 justify-content-between" id="navbarNav">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav gap-2">
 				<!-- <li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="#">Home</a>
 				</li> -->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
-				<li class="nav-item dropdown d-none">
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Previous Seasons
 					</a>
@@ -42,6 +42,12 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
+				<li class="nav-item">
+					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
+						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+						Awards&nbsp;2024
+					</a>
+				</li>
 				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Miscellaneous Menu
@@ -57,15 +63,28 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</ul>
 				</li>
 			</ul>
+			<div class="row">
+				<div class="col-md-auto">
+					<ul class="navbar-nav align-items-center g-4">
+						<?php if (isset($_SESSION['nomination_user'])) : ?>
+							<li class="nav-item">
+								<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('logout') ?>">Logout</a>
+							</li>
+						<?php else: ?>
+							<li class="nav-item">
+								<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
+							</li>
+						<?php endif ?>
+					</ul>
+				</div>
+			</div>
 			<div class="row d-none">
 				<div class="col-md-auto">
 					<ul class="navbar-nav align-items-center g-4">
-						<li class="nav-item">
-							<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
-							<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
-							Awards&nbsp;2024
-						</a>
-						</li>
+
 					</ul>
 				</div>
 			</div>
