@@ -52,6 +52,17 @@ h4 {
 	font-weight: 700;
 }
 
+p {
+	&.wrapped {
+		width: 100%;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
 form {
 	label.error {
 		color: red;
@@ -242,6 +253,29 @@ nav.navbar {
 		}
 	}
 }
+.nav {
+	&[role="tablist"] {
+		gap: 1rem;
+		&.nav-pills {
+			.nav-item {
+				.nav-link {
+					color: $color-black;
+					border: 1px solid $color-black;
+					border-radius: 0;
+					&:active {
+						box-shadow: 0 0 0 0.25rem rgba($color-red, 0.3);
+					}
+					&.active {
+						border-color: $color-red;
+						padding: 0.5rem 1rem;
+						background-color: $color-red;
+						color: $color-white;
+					}
+				}
+			}
+		}
+	}
+}
 
 .highlight-nav {
 	background-color: $color-red;
@@ -296,11 +330,11 @@ nav.navbar {
 		}
 	}
 
-	&.btn-facebook{
-		background-color: #1877F2;
+	&.btn-facebook {
+		background-color: #1877f2;
 		color: white;
 	}
-	&.btn-google{
+	&.btn-google {
 		border-color: $color-black;
 		background-color: white;
 		color: $color-black;
@@ -468,27 +502,27 @@ form {
 			}
 		}
 	}
-	&>.content{
-		&>.body{
+	& > .content {
+		& > .body {
 			width: 100% !important;
 		}
 	}
 	.actions {
 		ul {
 			li {
-				a{
+				a {
 					display: block;
 					padding: 0.5rem 1rem;
 					text-decoration: none;
 				}
 				&:first-child {
-					a{
+					a {
 						background: #b6b6b6;
 						color: $color-black;
 					}
 				}
-				&:nth-child(2){
-					a{
+				&:nth-child(2) {
+					a {
 						background: $color-yellow;
 						color: $color-black;
 					}
@@ -597,21 +631,21 @@ form {
 	}
 }
 
-.radio-card{
-	input{
-		&+label{
+.radio-card {
+	input {
+		& + label {
 			border-radius: 0.25rem;
 			overflow: hidden;
 		}
-		&[type=radio]{
-			&:checked{
-				&+label{
+		&[type="radio"] {
+			&:checked {
+				& + label {
 					box-shadow: 0 0 0 2px rgba($color-red, 0.4);
 				}
 			}
 		}
 	}
-	.card{
+	.card {
 		border-radius: 0.25rem;
 	}
 }

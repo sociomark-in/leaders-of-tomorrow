@@ -27,7 +27,7 @@
 		</div>
 	</section>
 
-	<section class="" id="about">
+	<section class="pb-0 d-none" id="about">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="">
+	<section class="d-none">
 		<div class="container">
 			<div class="row align-items-center flex-row-reverse">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -65,6 +65,89 @@
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore consequatur recusandae accusamus deleniti perferendis saepe fugit dolorem illum quis consectetur odio officia libero consequuntur, ducimus voluptas voluptates veritatis quam nostrum! Adipisci, animi ipsa? Incidunt distinctio reprehenderit cum magni aspernatur?</p>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="pb-0">
+		<div class="container">
+			<div class="row justify-content-center g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>All Springboards</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<ul class="nav nav-pills" id="myTab" role="tablist">
+						<?php foreach ($hcities as $key => $city) : ?>
+							<?php if ($key == 0): ?>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="<?= strtolower($city['name']) ?>" data-bs-toggle="tab" data-bs-target="#<?= strtolower($city['name']) ?>-pane" type="button" role="tab" aria-controls="<?= strtolower($city['name']) ?>-pane" aria-selected="true"><?= $city['name'] ?></button>
+								</li>
+							<?php else: ?>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="<?= strtolower($city['name']) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= strtolower($city['name']) ?>-tab-pane" type="button" role="tab" aria-controls="<?= strtolower($city['name']) ?>-tab-pane" aria-selected="false"><?= $city['name'] ?></button>
+								</li>
+							<?php endif ?>
+						<?php endforeach ?>
+					</ul>
+					<div class="tab-content py-3" id="myTabContent">
+						<?php foreach ($hcities as $key => $city) : ?>
+							<?php if ($key == 0): ?>
+								<div class="tab-pane fade show active" id="<?= strtolower($city['name']) ?>-pane" role="tabpanel" aria-labelledby="<?= strtolower($city['name']) ?>" tabindex="0">
+									<div class="row align-items-center">
+										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+											<div class="media-content" data-aos="fade-right">
+												<iframe class="w-100" src="https://www.youtube.com/embed/<?= $city['promo'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+											</div>
+										</div>
+										<div class="col-xl-7 col-lg-6 col-12">
+											<div class="desc">
+												<p class="wrapped" data-aos="fade-left" data-aos-delay="400"><?= $city['text'] ?></p>
+												<div class="row">
+													<div class="col-md-auto">
+														<p class="mb-2">Date:</p>
+														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
+													</div>
+													<div class="col-md-auto">
+														<p class="mb-2">Venue:</p>
+														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
+													</div>
+												</div>
+												<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php else: ?>
+								<div class="tab-pane fade" id="<?= strtolower($city['name']) ?>-tab-pane" role="tabpanel" aria-labelledby="<?= strtolower($city['name']) ?>-tab" tabindex="0">
+									<div class="row align-items-center">
+										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+											<div class="media-content" data-aos="fade-right">
+												<iframe class="w-100" src="https://www.youtube.com/embed/<?= $city['promo'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+											</div>
+										</div>
+										<div class="col-xl-7 col-lg-6 col-12">
+											<div class="desc">
+												<p class="wrapped" data-aos="fade-left" data-aos-delay="400"><?= $city['text'] ?></p>
+												<div class="row">
+													<div class="col-md-auto">
+														<p class="mb-2">Date:</p>
+														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
+													</div>
+													<div class="col-md-auto">
+														<p class="mb-2">Venue:</p>
+														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
+													</div>
+												</div>
+												<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php endif ?>
+						<?php endforeach ?>
 					</div>
 				</div>
 			</div>
@@ -91,7 +174,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pt-0">
+	<section id="speakers" class="d-none pt-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -140,7 +223,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="juries" class="p-0">
+	<section id="juries" class="d-none p-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

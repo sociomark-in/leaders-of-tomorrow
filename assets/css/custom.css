@@ -105,6 +105,15 @@ h4 {
   font-weight: 700;
 }
 
+p.wrapped {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 form label.error {
   color: red;
   font-size: 0.8rem;
@@ -276,6 +285,24 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   color: #ffde3f;
 }
 
+.nav[role=tablist] {
+  gap: 1rem;
+}
+.nav[role=tablist].nav-pills .nav-item .nav-link {
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+  border-radius: 0;
+}
+.nav[role=tablist].nav-pills .nav-item .nav-link:active {
+  box-shadow: 0 0 0 0.25rem rgba(183, 32, 38, 0.3);
+}
+.nav[role=tablist].nav-pills .nav-item .nav-link.active {
+  border-color: #b72026;
+  padding: 0.5rem 1rem;
+  background-color: #b72026;
+  color: #efefef;
+}
+
 .highlight-nav {
   background-color: #b72026;
   padding: 0 0.25rem;
@@ -326,7 +353,7 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   filter: brightness(4);
 }
 .btn.btn-facebook {
-  background-color: #1877F2;
+  background-color: #1877f2;
   color: white;
 }
 .btn.btn-google {
