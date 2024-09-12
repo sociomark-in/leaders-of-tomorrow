@@ -1,3 +1,37 @@
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="<?= base_url("assets") ?>/vendors/flatpickr/flatpickr.min.css">
+
+<link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.css" integrity="sha512-qc0GepkUB5ugt8LevOF/K2h2lLGIloDBcWX8yawu/5V8FXSxZLn3NVMZskeEyOhlc6RxKiEj6QpSrlAoL1D3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.js" integrity="sha512-vIqZt7ReO939RQssENNbZ+Iu3j0CSsgk41nP3AYabLiIFajyebORlk7rKPjGddmO1FQkbuOb2EVK6rJkiHsmag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="<?= base_url() ?>assets/js/apexcharts-light.js"></script>
+<!-- End plugin css for this page -->
+
+<!-- Plugin: JQuery daterangepicker  -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.css" />
+<!-- Plugin: JQuery daterangepicker  -->
+
+<!-- Plugin: JQuery select2 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<link rel="stylesheet" href="<?= base_url("assets/css/") ?>select2-custom.min.css">
+<!-- Plugin: JQuery select2  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js" integrity="sha512-bE0ncA3DKWmKaF3w5hQjCq7ErHFiPdH2IGjXRyXXZSOokbimtUuufhgeDPeQPs51AI4XsqDZUK7qvrPZ5xboZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="<?= base_url("assets/vendors/") ?>jquery-steps/jquery.steps.css">
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/jquery.inputmask.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/js/dropify.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/css/dropify.min.css" rel="stylesheet">
+
 <main class="w-fullscreen m-0">
 	<section class="section signup-widget">
 		<div class="container h-100">
@@ -12,50 +46,68 @@
 								<div class="section-title mb-3 mb-md-5">
 									<h2><span>Register for Awards</span></h2>
 								</div>
-								<?= form_open('api/v2/participant/register', ['id' => "registerForm"]) ?>
-								<div class="row g-3 mb-3 mb-md-5">
-									<div class="col-lg-6 col-12">
-										<div class="">
-											<label for="" class="form-label">Name</label>
-											<input type="text" name="name" class="form-control" required>
-										</div>
-									</div>
-									<div class="col-lg-6 col-12">
-										<div class="">
-											<label for="" class="form-label">Contact Number</label>
-											<input type="text" maxlength="10" minlength="10" name="contact" class="form-control" required>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="">
-											<label for="" class="form-label">Email Address</label>
-											<input type="email" name="email" class="form-control" required>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="row g-3 mb-3 align-items-center">
-											<div class="col-auto">
-												<button type="submit" class="btn btn-red">Register</button>
+								<div class="">
+									<style>
+										.wizard>.content {
+											min-height: 300px;
+										}
+									</style>
+									<div class="row g-3 g-md-4">
+										<div class="col-12">
+											<div class="row gx-3">
+												<div class="col-auto">
+													<a href="" type="submit" class="btn btn-google"><i class="fa-brands fa-google"></i>&nbsp;Sign Up with Google</a>
+												</div>
+												<div class="col-auto">
+													<a href="" type="reset" class="btn btn-facebook"><i class="fa-brands fa-facebook-f"></i>&nbsp;Sign Up with Facebook</a>
+												</div>
 											</div>
-											<div class="col-auto">
-												<button type="reset" class="btn btn-secondary">Reset</button>
-											</div>
-											<div class="col">Already Registered? <a href="<?= base_url('login') ?>">Click to Login</a></div>
 										</div>
-									</div>
-									<div class="col-12">
-										<div class="row g-3">
-											<div class="col-auto">
-												<a href="" type="submit" class="btn btn-google"><i class="fa-brands fa-google"></i>&nbsp;Sign Up with Google</a>
-											</div>
-											<div class="col-auto">
-												<a href="" type="reset" class="btn btn-facebook"><i class="fa-brands fa-facebook-f"></i>&nbsp;Sign Up with Facebook</a>
+										<div class="col-12">
+											<div class="row g-1 g-md-2">
+												<div class="col-12">
+													<h5>Lorem ipsum dolor sit.</h5>
+												</div>
+												<div class="col-12">
+													<?= form_open('api/v2/participant/register', ['id' => "formWizard"]) ?>
+													<!-- Third Step - Case Studies -->
+													<input type="hidden" name="user_role" value="participant">
+													<h2>Getting Started</h2>
+													<fieldset>
+														<div class="row g-3 mb-3 mb-md-5">
+															<div class="col-12">
+																<div class="">
+																	<label for="" class="form-label">Email Address</label>
+																	<input type="email" name="email" class="form-control" required>
+																</div>
+															</div>
+														</div>
+													</fieldset>
+
+													<h2>Personal Details</h2>
+													<fieldset>
+														<div class="row g-3 mb-3 mb-md-5">
+															<div class="col-12">
+																<div class="">
+																	<label for="" class="form-label">Name</label>
+																	<input type="text" name="name" class="form-control" required>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="">
+																	<label for="" class="form-label">Contact Number</label>
+																	<input type="text" maxlength="10" minlength="10" name="contact" class="form-control" required>
+																</div>
+															</div>
+														</div>
+													</fieldset>
+
+													<?= form_close() ?>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<input type="hidden" name="user_role" value="participant">
-								<?= form_close() ?>
 							</div>
 							<script>
 								$.validator.addMethod("emailregex", function(value, element) {
@@ -72,22 +124,32 @@
 								});
 								$('#registerForm').validate({
 									rules: {
+										email: {
+											emailregex: true,
+											remote: {
+												url: '<?= base_url() ?>',
+												type: "post",
+												data: {
+													email: function() {
+														return $("#email_address").val();
+													}
+												}
+											},
+										},
 										name: {
 											letters: true,
 										},
-										email: {
-											emailregex: true
-										},
 										contact: {
-											numbers: true
+											numbers: true,
 										},
 										linkedin: {
-											linkedinurl_regex: true
+											linkedinurl_regex: true,
 										}
 									},
 									messages: {
 										email: {
-											emailregex: 'Please enter a valid email address'
+											emailregex: 'Please enter a valid email address',
+											remote: 'Email address already exist. Please try to login.'
 										},
 										name: {
 											letters: 'Please enter a valid name',
@@ -133,3 +195,92 @@
 		</div>
 	</section>
 </main>
+
+<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
+<!-- Custom js for this page -->
+<script>
+	var form = $("#formWizard");
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("linkedinurl_regex", function(value, element) {
+		return this.optional(element) || /^(https?:\/\/)?(www\.)?linkedin\.com\//i.test(value);
+	})
+	$.validator.addMethod("letters", function(value, element) {
+		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+	});
+	$.validator.addMethod("numbers", function(value, element) {
+		return this.optional(element) || /^[0-9]*$/i.test(value);
+	});
+	form.validate({
+		errorPlacement: function errorPlacement(error, element) {
+			element.before(error);
+		},
+		rules: {
+			name: {
+				letters: true,
+			},
+			email: {
+				emailregex: true
+			},
+			contact: {
+				numbers: true
+			},
+			linkedin: {
+				linkedinurl_regex: true
+			}
+		},
+		messages: {
+			email: {
+				emailregex: 'Please enter a valid email address'
+			},
+			name: {
+				letters: 'Please enter a valid name',
+			},
+			contact: {
+				numbers: 'Please enter a valid contact number'
+			},
+			linkedin: {
+				linkedinurl_regex: 'Not a valid LinkedIn URL'
+			}
+		}
+	});
+	form.steps({
+		headerTag: "h2",
+		bodyTag: "fieldset",
+		transitionEffect: "slideLeft",
+		onStepChanging: function(event, currentIndex, newIndex) {
+			form.validate().settings.ignore = ":disabled,:hidden";
+			return form.valid();
+		},
+		onFinishing: function(event, currentIndex) {
+			form.validate().settings.ignore = ":disabled";
+			return form.valid();
+		},
+		onFinished: function(event, currentIndex) {
+			$("#formWizard").submit()
+		}
+	});
+	$(":input").inputmask();
+	$("input#companyIncDateInput").datepicker({
+		changeMonth: true,
+		changeYear: true,
+
+		dateFormat: 'dd-mm-yy',
+		maxDate: '-30Y',
+		minDate: '-100Y',
+		inline: true
+	});
+
+	$('.dropify').dropify({
+		error: {
+			'fileSize': 'The file size is too big ({{ value }} max).',
+			'minWidth': 'The image width is too small ({{ value }}}px min).',
+			'maxWidth': 'The image width is too big ({{ value }}}px max).',
+			'minHeight': 'The image height is too small ({{ value }}}px min).',
+			'maxHeight': 'The image height is too big ({{ value }}px max).',
+			'imageFormat': 'The image format is not allowed ({{ value }} only).'
+		}
+	});
+</script>
+<!-- End custom js for this page -->

@@ -74,6 +74,7 @@ $route['categories'] = 'awards/AwardsController/categories';
 $route['login'] = 'auth/LoginController/single';
 $route['logout'] = 'auth/LoginController/logout';
 $route['register'] = 'auth/RegisterController';
+$route['register/social'] = 'auth/Example';
 $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['nominate'] = 'awards/AccountController/nominate';
