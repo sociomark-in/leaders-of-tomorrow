@@ -12,7 +12,7 @@
 						case 'season-10':
 						case 'season-9':
 						case 'season-8':
-							$this->load->view('components/theme/partials/partners/_season-11');
+							$this->load->view('components/theme/partials/partners/_season-old');
 							break;
 						// Cities
 						case 'mumbai':

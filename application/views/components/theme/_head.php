@@ -50,8 +50,9 @@
 
 
 
-<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> -->
+<!-- Prefetch -->
+<link rel="prefetch" href="<?= base_url('assets/images/backgrounds/sky.gif') ?>" />
+<!-- Prefetch -->
 
 <!-- inject:css -->
 <link rel="stylesheet" href="<?= base_url("assets") ?>/fonts/feather-font/css/iconfont.css">
@@ -66,3 +67,21 @@
 
 <link rel="stylesheet" href="<?= base_url("assets") ?>/css/custom.min.css">
 <!-- <link rel="stylesheet" href="<?= base_url("assets") ?>/css/theme.min.css"> -->
+
+<meta name="title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
+<meta name="description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<?= base_url() ?>" />
+<meta property="og:title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
+<meta property="og:description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
+<meta property="og:image" content="<?= (isset($page['thumb']))? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="<?= base_url() ?>" />
+<meta property="twitter:title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
+<meta property="twitter:description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
+<meta property="twitter:image" content="<?= (isset($page['thumb']))? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
+

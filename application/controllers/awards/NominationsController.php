@@ -1,8 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
-class AccountController extends PanelController
+class NominationsController extends PanelController
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
 	public function index()
 	{
 		switch ($_SESSION['user']['role']) {
@@ -10,26 +14,21 @@ class AccountController extends PanelController
 				$this->load->admin_view('home');
 				break;
 			case 'moderator':
-				$this->load->moderator_view('home');
 				break;
 			default:
-				$this->load->panel_view('home');
-
+				$this->load->moderator_view('home');
 				break;
 		}
 	}
 
-	public function profile_setting_single($type)
+	public function user_side()
 	{
-		switch ($type) {
-			case 'reset-password':
-				$this->load->panel_view('account/reset_pw');
-				break;
-
-			default:
-				show_404();
-				break;
-		}
+		$this->load->panel_view('my_applications');
+	}
+	public function single($slug)
+	{
+		$this->data['id'] = $slug;
+		$this->load->panel_view('application_single', $this->data);
 	}
 
 	public function nominate()

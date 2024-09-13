@@ -1,5 +1,5 @@
 <footer class="">
-	
+
 	<section class="section bg-black-0 blank" id="times-influence">
 		<div class="container">
 			<div class="wrapp">
@@ -13,10 +13,9 @@
 						<p class="nexa-font"> Times Influence is a Content Thinktank founded on the pillars of Insight, Innovation, and Inspiration. Through our marquee properties, we have brought the nation’s opinion shapers and influencers together to collaborate and define the path to progress for the nation.</p>
 						<hr class="border-color-red border-2" style="width: 253px; margin: 23px auto;">
 						<p><strong>Prestigious initiatives by Times Network </strong></p>
-						<p>&nbsp;</p>
 					</div>
 				</div>
-				<div class="row justify-content-center g-3 g-md-4">
+				<div class="row justify-content-center g-3 g-md-4 gap-md-3">
 					<a href="https://www.indiaeconomicconclave.com/" target="_blank" data-aos="fade-up" data-aos-delay="300" class="col-md-auto col-6"><img height="80" src="<?= base_url('assets/images/logos/ip/') ?>6.png" alt="client logo"></a>
 					<a href="https://www.timesnowsummit.com/" target="_blank" data-aos="fade-up" class="col-md-auto col-6"><img height="80" src="<?= base_url('assets/images/logos/ip/') ?>1.png" alt="client logo"></a>
 					<a href="https://www.theamazingindians.com/" target="_blank" data-aos="fade-up" data-aos-delay="200" class="col-md-auto col-6"><img height="80" src="<?= base_url('assets/images/logos/ip/') ?>4.png" alt="client logo"></a>
@@ -27,13 +26,14 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="py-3">
 		<div class="container">
 			<div class="main-footer">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="row g-4">
-							<div class="col-xl-6 col-lg-12 col-12">
+				<div class="row gy-4">
+					<div class="col-12">
+						<div class="row justify-content-between g-4">
+							<div class="col-xl-4 col-lg-12 col-12">
 								<div class="mb-3">
 									<img src="<?= base_url("assets/images/") ?>main-light.png" height="40" alt="">
 								</div>
@@ -43,34 +43,12 @@
 									</p>
 								</div>
 							</div>
-							<div class="col-xl-3 col-lg-6 col-6">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
 								<div class="">
-									<h6>Quick Links</h6>
-									<ul class="footer-nav nav flex-column">
-										<li class="nav-item d-none">
-											<a class="nav-link" href="<?= base_url('history') ?>">Previous Seasons</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('misc/terms-of-use') ?>">Terms of Use</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('misc/disclaimer') ?>">Disclaimer</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('sitemap') ?>">Sitemap</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-6 col-6">
-								<div class="">
-									<h6>Season 12</h6>
+									<h6>Leaders of Tomorrow</h6>
 									<ul class="footer-nav nav flex-column">
 										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url() ?>">Home</a>
+											<a class="nav-link" href="<?= base_url() ?>">Season 12</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
@@ -87,53 +65,7 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="row g-4">
-							<div class="col-12">
-								<div class="">
-									<h6>Springboard Cities</h6>
-									<ul class="footer-nav nav">
-										<?php foreach ($springboards as $key => $sb) : ?>
-											<?php switch ($sb['name']):
-												case 'Mumbai':
-											?>
-													<li class="nav-item">
-														<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
-													</li>
-													<?php break; ?>
-												<?php
-												default: ?>
-													<li class="nav-item">
-														<a class="nav-link" href="#"><?= $sb['name'] ?></a>
-													</li>
-													<?php break; ?>
-											<?php endswitch ?>
-										<?php endforeach ?>
-									</ul>
-								</div>
-							</div>
-							<div class="d-none col-xl-2 col-lg-4 col-md-6 col-6">
-								<div class="">
-									<h6>Season 12 Awards</h6>
-									<ul class="footer-nav nav flex-column">
-										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Register</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Login</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">All Categories</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Awards</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="d-none col-xl-2 col-lg-4 col-md-6 col-6">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>All Seasons</h6>
 									<ul class="footer-nav nav flex-column">
@@ -152,6 +84,66 @@
 										<li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Other Seasons</a>
 										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
+								<div class="">
+									<h6>Season 12 Awards</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Register</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Login</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">All Categories</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="javascript:void(0)">Awards</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
+								<div class="">
+									<h6>Quick Links</h6>
+									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Previous Seasons</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/terms-of-use') ?>">Terms of Use</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('misc/disclaimer') ?>">Disclaimer</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('sitemap') ?>">Sitemap</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-6 col-12">
+								<div class="">
+									<h6>Springboard Cities</h6>
+									<ul class="footer-nav nav">
+										<?php foreach ($springboards as $key => $sb) : ?>
+											<?php if (in_array($sb['name'], ['Mumbai', 'Lucknow'])) :
+											?>
+												<li class="nav-item">
+													<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>
+												</li>
+											<?php else: ?>
+												<li class="nav-item">
+													<a class="nav-link" href="javascript:void(0)"><?= $sb['name'] ?></a>
+												</li>
+											<?php endif ?>
+										<?php endforeach ?>
 									</ul>
 								</div>
 							</div>

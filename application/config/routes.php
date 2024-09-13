@@ -67,8 +67,8 @@ $route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
 /* All Springboards */
 
 /* Awards */
-$route['awards'] = 'awards/AwardsController/home';
-$route['categories'] = 'awards/AwardsController/categories';
+$route['awards'] = 'awards/AwardsController';
+$route['awards/categories'] = 'awards/AwardsController/categories';
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
@@ -79,10 +79,13 @@ $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['nominate'] = 'awards/AccountController/nominate';
 $route['dashboard'] = 'awards/AccountController';
-$route['dashboard/my-profile'] = 'awards/AccountController/profile';
-$route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
+$route['dashboard/my-applications'] = 'awards/NominationsController/user_side';
 $route['dashboard/applications'] = 'awards/NominationsController';
 $route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
+$route['dashboard/my-profile'] = 'awards/AccountController/profile';
+$route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
+$route['dashboard/my-profile/settings'] = 'awards/AccountController/profile_settings';
+$route['dashboard/my-profile/setting/(:any)'] = 'awards/AccountController/profile_setting_single/$1';
 
 $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 

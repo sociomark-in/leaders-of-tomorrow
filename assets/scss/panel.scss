@@ -1,3 +1,6 @@
+$color-light: #e9ecef;
+$color-primary: #106c97;
+$color-danger: #c92f2f;
 .card .card-title {
 	font-weight: 700;
 }
@@ -6,14 +9,15 @@ h2,
 h3 {
 	font-weight: 800;
 }
-h4,h5{
+h4,
+h5 {
 	font-weight: 700;
 }
 .btn-icon {
 	&-prepend {
 		display: flex;
 		align-items: center;
-		.icon{
+		.icon {
 			margin-right: 0.5rem;
 			width: 1rem;
 			height: 1rem;
@@ -22,10 +26,92 @@ h4,h5{
 	&-append {
 		display: flex;
 		align-items: center;
-		.icon{
+		.icon {
 			margin-left: 0.5rem;
 			width: 1rem;
 			height: 1rem;
+		}
+	}
+}
+.process-wizard {
+	gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	margin-left: 4rem;
+	position: relative;
+	--progress-percent: 50%;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		left: -3.1rem;
+		height: 100%;
+		border-radius: 3rem;
+		width: 0.25rem;
+		background-color: $color-light;
+	}
+
+	.step-tile {
+		position: relative;
+		border: 1px solid $color-light;
+		border-radius: 0.25rem;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			z-index: 1;
+			left: -3.1rem;
+			height: calc(100% + 1.5rem);
+			border-radius: 3rem;
+			width: 0.25rem;
+			background-color: $color-light;
+		}
+		&:last-child{
+			&::before{
+				height: 100%;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			top: 0.5rem;
+			left: -3.75rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			display: grid;
+			place-items: center;
+			border-radius: 50%;
+			background-color: $color-light;
+			box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem $color-light;
+		}
+		&.step-ok {
+			&::before{
+				background-color: $color-light;
+			}
+			&::after {
+				background-color: $color-primary;
+				box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem $color-primary;
+			}
+		}
+		&.step-done {
+			&::before{
+				background-color: $color-primary;
+			}
+			&::after {
+				background-color: $color-primary;
+				box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem $color-primary;
+			}
+		}
+		&.step-error {
+			&::before{
+				background-color: $color-danger;
+			}
+			&::after {
+				background-color: $color-danger;
+				box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem $color-danger;
+			}
 		}
 	}
 }

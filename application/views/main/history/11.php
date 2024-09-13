@@ -160,11 +160,6 @@
 					<div class="section-title text-center">
 						<h2><span>Season 11 Awards</span></h2>
 					</div>
-					<div class="">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt inventore voluptas quaerat eum modi, corporis iure distinctio saepe ratione possimus nisi aliquam iusto explicabo libero in tenetur debitis. Velit, quibusdam.
-						</p>
-					</div>
 				</div>
 				<div class="col-12">
 					<div class="media-content">

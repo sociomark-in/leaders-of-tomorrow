@@ -8,7 +8,8 @@ h3 {
   font-weight: 800;
 }
 
-h4, h5 {
+h4,
+h5 {
   font-weight: 700;
 }
 
@@ -29,4 +30,78 @@ h4, h5 {
   margin-left: 0.5rem;
   width: 1rem;
   height: 1rem;
+}
+
+.process-wizard {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
+  position: relative;
+  --progress-percent: 50%;
+}
+.process-wizard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: -3.1rem;
+  height: 100%;
+  border-radius: 3rem;
+  width: 0.25rem;
+  background-color: #e9ecef;
+}
+.process-wizard .step-tile {
+  position: relative;
+  border: 1px solid #e9ecef;
+  border-radius: 0.25rem;
+}
+.process-wizard .step-tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: -3.1rem;
+  height: calc(100% + 1.5rem);
+  border-radius: 3rem;
+  width: 0.25rem;
+  background-color: #e9ecef;
+}
+.process-wizard .step-tile:last-child::before {
+  height: 100%;
+}
+.process-wizard .step-tile::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  left: -3.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem #e9ecef;
+}
+.process-wizard .step-tile.step-ok::before {
+  background-color: #e9ecef;
+}
+.process-wizard .step-tile.step-ok::after {
+  background-color: #106c97;
+  box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem #106c97;
+}
+.process-wizard .step-tile.step-done::before {
+  background-color: #106c97;
+}
+.process-wizard .step-tile.step-done::after {
+  background-color: #106c97;
+  box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem #106c97;
+}
+.process-wizard .step-tile.step-error::before {
+  background-color: #c92f2f;
+}
+.process-wizard .step-tile.step-error::after {
+  background-color: #c92f2f;
+  box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem #c92f2f;
 }

@@ -15,6 +15,7 @@ class LoginController extends BaseController
 		];
 		$this->load->mini_view('login', $this->data);
 	}
+
 	public function multi(){
 		$this->load->mini_view('multilogin');
 	}

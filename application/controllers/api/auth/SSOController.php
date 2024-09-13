@@ -44,7 +44,7 @@ class SSOController extends CI_Controller
 		$this->request = $this->input->post();
 		$data = $this->request;
 		if ($this->User->insert($this->request)) {
-			$this->session->set_userdata('nomination_user', $data);
+			$this->session->set_userdata('awards_panel_user', $data);
 			echo "<pre>";
 			print_r($data);
 		}

@@ -18,6 +18,7 @@ class HistoryController extends BaseController
 
 	public function season_single($number)
 	{
+		$this->data['season'] = $number;
 		$this->data['page'] = [
 			'title' => "Season " . $number . " • " . APP_NAME,
 		];
@@ -25,38 +26,8 @@ class HistoryController extends BaseController
 			case '11':
 				$this->data['partners'] = [
 					[
-						'text' => "Knowledge Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "NGO Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Research Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "An Initiative By",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
 						'text' => "Associate Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Green State Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Education Partner",
-						'logo' => "times.png",
+						'logo' => "idfc.png",
 						'url' => null,
 					],
 				];

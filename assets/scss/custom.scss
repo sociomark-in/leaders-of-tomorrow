@@ -119,6 +119,10 @@ footer {
 		.nav-item {
 			.nav-link {
 				padding-inline-start: 0;
+				font-size: 0.8rem;
+				font-weight: 400;
+				padding: .1rem 0.5rem;
+				padding-left: 0;
 				color: rgba($color-white, 0.7);
 				&:hover {
 					color: $color-white;
@@ -129,6 +133,9 @@ footer {
 				}
 			}
 		}
+	}
+	h6{
+		font-size: 0.9rem;
 	}
 }
 

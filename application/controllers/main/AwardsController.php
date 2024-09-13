@@ -5,7 +5,11 @@ class AwardsController extends BaseController{
 	{
 		parent::__construct();
 	}
-	public function home() {
+	public function index() {
+		$this->data['page'] = [
+			'title' =>  APP_NAME . " Awards • " . APP_NAME,
+			'description' => "",
+		];
 		$this->load->award_page('home', $this->data);
 	}
 }
