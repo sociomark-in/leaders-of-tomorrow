@@ -67,8 +67,10 @@ $route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
 /* All Springboards */
 
 /* Awards */
-$route['awards'] = 'awards/AwardsController';
-$route['awards/categories'] = 'awards/AwardsController/categories';
+$route['awards'] = 'main/AwardsController';
+$route['awards/categories'] = 'main/AwardsController/categories';
+$route['awards/category/(:any)'] = 'main/AwardsController/category_single/$1';
+$route['awards/category/(:any)/nominate'] = 'main/AwardsController/category_nominate/$1';
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
@@ -78,21 +80,24 @@ $route['register/social'] = 'auth/Example';
 $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['nominate'] = 'awards/AccountController/nominate';
-$route['dashboard'] = 'awards/AccountController';
-$route['dashboard/my-applications'] = 'awards/NominationsController/user_side';
-$route['dashboard/applications'] = 'awards/NominationsController';
-$route['dashboard/application/(:any)'] = 'awards/NominationsController/single/$1';
-$route['dashboard/my-profile'] = 'awards/AccountController/profile';
-$route['dashboard/my-profile/edit'] = 'awards/AccountController/profile_edit';
-$route['dashboard/my-profile/settings'] = 'awards/AccountController/profile_settings';
-$route['dashboard/my-profile/setting/(:any)'] = 'awards/AccountController/profile_setting_single/$1';
+$route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate';
+
+$route['dashboard'] = 'panel/AccountController';
+$route['dashboard/my-applications'] = 'panel/NominationsController/user_side';
+$route['dashboard/applications'] = 'panel/NominationsController';
+$route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1';
+$route['dashboard/my-profile'] = 'panel/AccountController/profile';
+$route['dashboard/my-profile/edit'] = 'panel/AccountController/profile_edit';
+$route['dashboard/my-profile/settings'] = 'panel/AccountController/profile_settings';
+$route['dashboard/my-profile/setting/(:any)'] = 'panel/AccountController/profile_setting_single/$1';
 
 $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
-$route['api/v2/participant/register'] = 'api/auth/SSOController/participant_register';
-$route['api/v2/participant/login'] = 'api/auth/SSOController/participant_login';
-$route['api/v2/participant/nominate'] = 'api/auth/SSOController/participant_nominate';
+$route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_register';
+$route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_login';
+$route['api/v2/participant/google-login'] = 'api/auth/SSOController/participant_google_login';
+$route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 
 $route['404_override'] = '';

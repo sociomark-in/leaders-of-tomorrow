@@ -6,6 +6,7 @@ class NominationsController extends PanelController
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('event/awards/CategoryModel');
 	}
 	public function index()
 	{
@@ -31,10 +32,22 @@ class NominationsController extends PanelController
 		$this->load->panel_view('application_single', $this->data);
 	}
 
-	public function nominate()
+	public function nominate($slug)
 	{
+		$category_details = array_merge(
+			json_decode($this->CategoryModel->get_individual(null, ['code' => $code]), true),
+			json_decode($this->CategoryModel->get_msme(null, ['code' => $code]), true)
+		);
+
 		$this->data['user'] = $_SESSION['nomination_user'];
+
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-		$this->load->page('register', $this->data);
+		if(false){
+			// First View
+			$this->load->panel_view('register', $this->data);
+		} else {
+			// Stepped View
+			$this->load->panel_view('register', $this->data);
+		}
 	}
 }

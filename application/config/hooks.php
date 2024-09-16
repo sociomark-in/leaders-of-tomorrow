@@ -11,9 +11,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |	https://codeigniter.com/userguide3/general/hooks.html
 |
 */
-$hook['display_override'][] = array(
-	'class' => '',
-	'function' => 'compress',
-	'filename' => 'minify.php',
-	'filepath' => 'hooks'
-);
+// $hook['display_override'][] = array(
+// 	'class' => '',
+// 	'function' => 'compress',
+// 	'filename' => 'minify.php',
+// 	'filepath' => 'hooks'
+// );

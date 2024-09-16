@@ -6,18 +6,25 @@ function compress()
   $buffer = $CI->output->get_output();
  
    $search = array(
-    '/\n/',            // replace end of line by a space
-    '/\>[^\S ]+/s',        // strip whitespaces after tags, except space
-    '/[^\S ]+\</s',        // strip whitespaces before tags, except space
-       '/(\s)+/s'        // shorten multiple whitespace sequences
-    );
- 
+    '/(\n|^)(\x20+|\t)/',
+    '/(\n|^)\/\/(.*?)(\n|$)/',
+    '/\n/',
+    '/\<\!--.*?-->/',
+    '/(\x20+|\t)/', # Delete multispace (Without \n)
+    '/\>\s+\</', # strip whitespaces between tags
+    '/(\"|\')\s+\>/', # strip whitespaces between quotation ("') and end tags
+    '/=\s+(\"|\')/'); # strip whitespaces between = "'
+
    $replace = array(
-    ' ',
-    '>',
-       '<',
-       '\\1'
-    );
+    "\n",
+    "\n",
+    " ",
+    "",
+    " ",
+    "><",
+    "$1>",
+    "=$1");
+
  
   $buffer = preg_replace($search, $replace, $buffer);
  

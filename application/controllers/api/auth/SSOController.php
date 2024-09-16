@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+require_once APPPATH . '/vendor/autoload.php';
+
+use Google\Service\Oauth2;
 
 class SSOController extends CI_Controller
 {
@@ -47,6 +50,64 @@ class SSOController extends CI_Controller
 			$this->session->set_userdata('awards_panel_user', $data);
 			echo "<pre>";
 			print_r($data);
+		}
+	}
+
+	public function participant_google_login()
+	{
+		// $this->load->library('googlelogin/googleoauthclient');
+		// $this->googleoauthclient->get_login_url();
+
+		$result = $this->db->select(['config_key', 'value'])
+			->where(['config_key' => 'google_client_id'])
+			->or_where(['config_key' => 'google_client_secret'])
+			->get('app_config')->result_array();
+
+		foreach ($result as $key => $row) {
+			$keys[$row['config_key']] = $row['value'];
+		}
+		// init configuration
+
+		$redirectUri = current_url();
+
+		// create Client Request to access Google API
+		$client = new Google_Client();
+		$client->setClientId($keys['google_client_id'] . ".apps.googleusercontent.com");
+		$client->setClientSecret($keys['google_client_secret']);
+
+
+		$client->setRedirectUri($redirectUri);
+		$client->addScope("email");
+		$client->addScope("profile");
+
+		// authenticate code from Google OAuth Flow
+		if (isset($_GET['code'])) {
+			$token = $client->fetchAccessTokenWithAuthCode($_GET['code']); 
+			echo "<pre>";
+			if (!isset($token["error"])) {
+				$client->setAccessToken($token['access_token']);
+
+				// get profile info
+				$google_oauth = new Oauth2($client);
+				$google_account_info = $google_oauth->userinfo->get();
+				$userinfo = [
+					'email' => $google_account_info['email'],
+					'first_name' => $google_account_info['givenName'],
+					'last_name' => $google_account_info['familyName'],
+					'gender' => $google_account_info['gender'],
+					'full_name' => $google_account_info['name'],
+					'picture' => $google_account_info['picture'],
+					'contact' => $google_account_info['contact_number'] ?? null,
+					'verifiedEmail' => $google_account_info['verifiedEmail'],
+					'token' => $google_account_info['id'],
+				  ];
+
+				print_r($userinfo);
+			}
+
+			// now you can use this profile info to create account in your website and make user logged in.
+		} else {
+			echo "<a href='" . $client->createAuthUrl() . "'>Google Login</a>";
 		}
 	}
 }

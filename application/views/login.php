@@ -23,8 +23,40 @@
 									<button type="submit" class="btn btn-red">Login</button>
 								</div>
 								<?= form_close() ?>
+								<div class="mb-2">
 								Forgot Password? <a href="">Click Here to Reset</a>
+								</div>
+								<div class="">
+								Not Registered? <a href="<?= base_url('register') ?>">Click Here to Register</a>
+								</div>
 							</div>
+							<script>
+								$.validator.addMethod("emailregex", function(value, element) {
+									return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+								})
+								$('#loginForm').validate({
+									rules: {
+										useremail: {
+											emailregex: true,
+											remote: {
+												url: '<?= base_url() ?>',
+												type: "post",
+												data: {
+													email: function() {
+														return $("#email_address").val();
+													}
+												}
+											},
+										},
+									},
+									messages: {
+										useremail: {
+											emailregex: 'Please enter a valid email address',
+											remote: 'Email address does not exist. Please register to proceed.'
+										},
+									}
+								})
+							</script>
 							<hr class="mb-1">
 							<div class="row gx-1 justify-content-end">
 								<div class="col-auto">
@@ -57,8 +89,3 @@
 		</div>
 	</section>
 </main>
-<script>
-	if (!$("#loginForm").valid()) {
-		$("#loginForm [type='submit']").addClass('disabled');
-	}
-</script>
