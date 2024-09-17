@@ -31,13 +31,13 @@
 			<li class="nav-item nav-category">Nominations Management</li>
 			<!-- Access Level: jury -->
 			<li class="nav-item">
-				<a href="<?= base_url('nominations') ?>" class="nav-link">
+				<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
 					<i class="link-icon" data-feather="database"></i>
 					<span class="link-title">Nominations</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="<?= base_url('nominations') ?>" class="nav-link">
+				<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
 					<i class="link-icon" data-feather="book"></i>
 					<span class="link-title">Categories</span>
 				</a>

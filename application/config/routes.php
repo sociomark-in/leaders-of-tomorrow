@@ -80,12 +80,21 @@ $route['register/social'] = 'auth/Example';
 $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['nominate'] = 'awards/AccountController/nominate';
-$route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate';
 
+// Participant
 $route['dashboard'] = 'panel/AccountController';
 $route['dashboard/my-applications'] = 'panel/NominationsController/user_side';
+
+$route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate/$1';
+
+// Jury
 $route['dashboard/applications'] = 'panel/NominationsController';
 $route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1';
+
+$route['dashboard/categories'] = 'panel/CategoriesController';
+$route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';
+
+// All
 $route['dashboard/my-profile'] = 'panel/AccountController/profile';
 $route['dashboard/my-profile/edit'] = 'panel/AccountController/profile_edit';
 $route['dashboard/my-profile/settings'] = 'panel/AccountController/profile_settings';
@@ -98,6 +107,7 @@ $route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_
 $route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_login';
 $route['api/v2/participant/google-login'] = 'api/auth/SSOController/participant_google_login';
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
+$route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 
 $route['404_override'] = '';

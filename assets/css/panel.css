@@ -32,6 +32,16 @@ h5 {
   height: 1rem;
 }
 
+.staged-tab-wizard .nav[role=tablist] .nav-item .nav-link.success {
+  background-color: #28a758;
+  color: #efefef;
+}
+.staged-tab-wizard .tab-content .tab-pane.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  filter: saturate(0);
+}
+
 .process-wizard {
   gap: 1rem;
   display: flex;

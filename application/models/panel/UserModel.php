@@ -1,0 +1,36 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class UserModel extends CI_Model
+{
+	private $table;
+	public function __construct()
+	{
+		parent::__construct();
+		$this->table['user'] = 'users';
+		/*
+		Roles:
+		participant		(default)
+		jury
+		admin
+		super-admin
+
+		*/
+	}
+
+	public function insert($data)
+	{
+		return true;
+	}
+
+	public function get($select = null, $where = null)
+	{
+		if (!is_null($select)) {
+			$this->db->select($select);
+		}
+		if (!is_null($where)) {
+			$this->db->where($where);
+		}
+		return json_encode($this->db->get($this->table['user'])->result_array());
+	}
+}

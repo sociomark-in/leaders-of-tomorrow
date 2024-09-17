@@ -1,6 +1,8 @@
+$color-white: #efefef;
 $color-light: #e9ecef;
 $color-primary: #106c97;
 $color-danger: #c92f2f;
+$color-success: #28a758;
 .card .card-title {
 	font-weight: 700;
 }
@@ -33,6 +35,29 @@ h5 {
 		}
 	}
 }
+
+.staged-tab-wizard{
+	.nav[role=tablist]{
+		.nav-item{
+			.nav-link{
+				&.success{
+					background-color: $color-success;
+					color: $color-white;
+				}
+			}
+		}
+	}
+	.tab-content{
+		.tab-pane{
+			&.disabled{
+				pointer-events: none;
+				opacity: 0.7;
+				filter: saturate(0);
+			}
+		}
+	}
+}
+
 .process-wizard {
 	gap: 1rem;
 	display: flex;

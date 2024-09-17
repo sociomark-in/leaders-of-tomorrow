@@ -21,7 +21,7 @@ class LoginController extends BaseController
 	}
 
 	public function logout(){
-		unset($_SESSION['nomination_user']);
+		unset($_SESSION['awards_panel_user']);
 		redirect('login');
 	}
 }

@@ -13,11 +13,6 @@ class SSOController extends CI_Controller
 		$this->load->model('panel/User');
 	}
 
-	public function participant_login()
-	{
-		redirect('profile/' . random_string('alnum', 16));
-	}
-
 	public function validate()
 	{
 		$this->request = $this->input->get();

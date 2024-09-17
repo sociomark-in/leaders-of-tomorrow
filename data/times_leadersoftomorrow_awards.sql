@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2024 at 04:00 PM
+-- Generation Time: Sep 17, 2024 at 04:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `times_leadersoftomorrow_awards`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `app_config`
+--
+
+CREATE TABLE `app_config` (
+  `id` int(11) NOT NULL,
+  `config_key` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `app_config`
+--
+
+INSERT INTO `app_config` (`id`, `config_key`, `value`, `created_at`) VALUES
+(1, 'google_client_id', '536416970998-f48u58cp8e0r40fap6u6plaoe1niof35', '2024-09-16 10:36:56'),
+(2, 'google_client_secret', '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', '2024-09-16 10:36:56');
 
 -- --------------------------------------------------------
 
@@ -1537,26 +1558,238 @@ INSERT INTO `cities` (`id`, `city_name`, `city_state`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `individual_categories`
+--
+
+CREATE TABLE `individual_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
+  `code` varchar(200) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `individual_categories`
+--
+
+INSERT INTO `individual_categories` (`id`, `name`, `slug`, `code`, `type`, `created_at`) VALUES
+(1, 'Entrepreneur of the Year', '', 'rnQqGiyJON', 'Individual', '2024-09-16 14:02:43'),
+(2, 'Woman Entrepreneur of the Year', '', 'k3NrXUiQZP', 'Individual', '2024-09-16 14:02:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `individual_entries`
 --
 
 CREATE TABLE `individual_entries` (
   `id` int(11) NOT NULL,
+  `nomination_id` varchar(20) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `organization_name` varchar(200) NOT NULL,
+  `organization_maxsize` int(11) NOT NULL,
+  `organization_industry` varchar(255) NOT NULL,
+  `organization_url` text NOT NULL,
+  `organization_overview` text DEFAULT NULL,
+  `organization_mission_vission` text DEFAULT NULL,
+  `organization_services` text DEFAULT NULL,
+  `organization_reveue_23` varchar(100) DEFAULT NULL,
+  `organization_reveue_22` varchar(100) DEFAULT NULL,
+  `organization_growth_23` varchar(100) DEFAULT NULL,
+  `organization_growth_22` varchar(100) DEFAULT NULL,
+  `linkedin_url` text DEFAULT NULL,
+  `case_study_1` text DEFAULT NULL,
+  `case_study_2` text DEFAULT NULL,
+  `case_study_3` text DEFAULT NULL,
+  `case_study_4` text DEFAULT NULL,
+  `case_study_5` text DEFAULT NULL,
+  `case_study_6` text DEFAULT NULL,
+  `case_study_7` text DEFAULT NULL,
+  `case_study_8` text DEFAULT NULL,
+  `case_study_9` text DEFAULT NULL,
+  `document_1` text DEFAULT NULL,
+  `document_2` text DEFAULT NULL,
+  `document_3` text DEFAULT NULL,
+  `document_4` text DEFAULT NULL,
+  `cp_name` varchar(255) NOT NULL,
+  `cp_email` varchar(255) NOT NULL,
+  `cp_contact` varchar(15) NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `individual_entries`
+--
+
+INSERT INTO `individual_entries` (`id`, `nomination_id`, `name`, `email`, `organization_name`, `organization_maxsize`, `organization_industry`, `organization_url`, `organization_overview`, `organization_mission_vission`, `organization_services`, `organization_reveue_23`, `organization_reveue_22`, `organization_growth_23`, `organization_growth_22`, `linkedin_url`, `case_study_1`, `case_study_2`, `case_study_3`, `case_study_4`, `case_study_5`, `case_study_6`, `case_study_7`, `case_study_8`, `case_study_9`, `document_1`, `document_2`, `document_3`, `document_4`, `cp_name`, `cp_email`, `cp_contact`, `updated_at`, `created_at`) VALUES
+(1, NULL, 'voluptatum', 'colleen00@example.net', '0', 35341759, 'reiciendis', 'http://rutherford.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1977-12-21 23:06:29', '2000-02-02 14:06:10'),
+(2, NULL, 'asperiores', 'eleonore.treutel@example.net', '0', 8, 'ut', 'http://boyer.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1970-04-29 02:45:18', '2021-11-08 23:03:57'),
+(3, NULL, 'cum', 'gisselle68@example.org', '0', 30, 'provident', 'http://lind.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2005-12-15 15:37:11', '1997-01-01 10:58:10'),
+(4, NULL, 'corporis', 'nmertz@example.net', '0', 4, 'expedita', 'http://smith.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2011-02-22 20:28:40', '1993-06-02 12:11:23'),
+(5, NULL, 'autem', 'skiles.arnaldo@example.com', '0', 537156, 'nihil', 'http://www.heller.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2019-03-14 14:04:11', '1993-06-20 19:25:20'),
+(6, NULL, 'eveniet', 'mason57@example.org', '0', 0, 'debitis', 'http://www.bernhard.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2018-10-06 20:59:27', '2018-07-04 17:33:10'),
+(7, NULL, 'molestias', 'nicolas.willa@example.org', '0', 549450821, 'quia', 'http://stiedemann.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1999-01-25 13:06:15', '1992-08-24 17:46:18'),
+(8, NULL, 'vel', 'xmaggio@example.com', '0', 8823482, 'enim', 'http://www.grant.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1987-04-28 05:34:12', '2016-12-06 21:50:06'),
+(9, NULL, 'iure', 'bode.ivah@example.org', '0', 147485855, 'voluptatem', 'http://www.oconner.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2015-07-07 16:01:17', '2014-05-16 11:02:36'),
+(10, NULL, 'qui', 'erick09@example.org', '0', 975, 'ut', 'http://www.feeneyvolkman.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1970-05-05 20:19:04', '1987-01-22 12:01:43'),
+(11, NULL, 'nobis', 'cordelia78@example.com', '0', 1698, 'deserunt', 'http://www.okeefecruickshank.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2013-05-11 07:47:30', '2022-12-11 17:38:58'),
+(12, NULL, 'optio', 'bdickens@example.com', '0', 224186, 'expedita', 'http://schimmelebert.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2020-07-22 13:54:39', '1975-08-01 13:20:35'),
+(13, NULL, 'alias', 'hosea.vandervort@example.org', '0', 1, 'perspiciatis', 'http://barton.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2009-06-30 06:24:39', '2001-10-07 10:05:26'),
+(14, NULL, 'omnis', 'grant.terry@example.com', '0', 19133, 'vel', 'http://reichert.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1974-09-06 10:03:04', '2003-10-26 08:42:17'),
+(15, NULL, 'occaecati', 'trantow.krystel@example.net', '0', 0, 'quis', 'http://www.luettgen.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2003-02-16 04:56:56', '2024-08-10 21:37:11'),
+(16, NULL, 'nesciunt', 'kyler.bernier@example.net', '0', 351, 'exercitationem', 'http://www.murray.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2023-07-06 21:03:24', '1976-02-27 20:36:27'),
+(17, NULL, 'aspernatur', 'donna.bogan@example.org', '0', 31895271, 'natus', 'http://www.paucek.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1991-03-23 20:08:11', '1984-12-14 20:14:11'),
+(18, NULL, 'omnis', 'mariana79@example.net', '0', 6546509, 'maxime', 'http://blick.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2011-05-27 14:49:18', '2006-04-26 14:36:32'),
+(19, NULL, 'dolorum', 'djacobi@example.com', '0', 86961, 'ut', 'http://hayesstark.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1974-11-02 02:45:25', '1980-11-20 06:20:38'),
+(20, NULL, 'molestias', 'buckridge.bessie@example.org', '0', 46650736, 'sed', 'http://gorczany.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1997-01-21 10:20:11', '2008-04-29 16:10:09'),
+(21, NULL, 'quod', 'eddie66@example.org', '0', 92, 'voluptatem', 'http://www.koelpin.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1971-08-15 19:18:26', '1984-07-12 23:22:40'),
+(22, NULL, 'tempora', 'skye88@example.com', '0', 65, 'corrupti', 'http://ebert.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1987-04-30 19:54:43', '2002-08-08 04:58:28'),
+(23, NULL, 'aut', 'xskiles@example.net', '0', 8238, 'itaque', 'http://www.welch.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1976-01-21 23:56:55', '2022-05-08 10:36:05'),
+(24, NULL, 'voluptatem', 'tgerlach@example.org', '0', 9251, 'soluta', 'http://hodkiewicz.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2018-02-13 20:21:55', '1998-04-17 21:03:08'),
+(25, NULL, 'aut', 'veda.gorczany@example.net', '0', 8403328, 'ea', 'http://www.purdy.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2004-05-15 18:43:59', '1985-03-03 17:11:51'),
+(26, NULL, 'sapiente', 'kuphal.katharina@example.com', '0', 41785393, 'molestias', 'http://www.runolfsson.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1975-12-19 03:54:03', '1999-03-07 07:48:55'),
+(27, NULL, 'maxime', 'gordon.labadie@example.net', '0', 763803, 'dolorem', 'http://stiedemannglover.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1975-07-16 06:47:08', '2011-07-30 00:44:55'),
+(28, NULL, 'debitis', 'lturcotte@example.org', '0', 45316328, 'quas', 'http://eichmannjohnson.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2011-05-11 05:32:54', '2006-10-29 15:29:53'),
+(29, NULL, 'beatae', 'mazie08@example.com', '0', 980900069, 'consequatur', 'http://www.schusterromaguera.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2022-09-05 11:34:21', '1995-11-16 21:07:28'),
+(30, NULL, 'omnis', 'armani.anderson@example.com', '0', 9010233, 'repellendus', 'http://beier.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2004-11-28 14:23:31', '1971-05-24 02:41:59'),
+(31, NULL, 'amet', 'jwitting@example.com', '0', 9389, 'velit', 'http://www.schumm.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2022-03-07 19:13:08', '1986-08-05 11:01:34'),
+(32, NULL, 'porro', 'vhane@example.com', '0', 751, 'nam', 'http://www.crookskessler.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2008-03-07 05:17:06', '2013-09-04 23:50:40'),
+(33, NULL, 'fugiat', 'gutmann.ignatius@example.com', '0', 8402892, 'saepe', 'http://www.schmitt.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1999-03-30 09:41:39', '2020-03-19 00:09:27'),
+(34, NULL, 'vitae', 'chanel.champlin@example.net', '0', 2964289, 'velit', 'http://www.marvinrosenbaum.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1998-08-31 18:08:06', '1987-08-20 17:07:18'),
+(35, NULL, 'cum', 'fsimonis@example.net', '0', 5605005, 'quaerat', 'http://tremblay.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2005-08-21 20:36:34', '2009-08-16 16:44:28'),
+(36, NULL, 'molestias', 'senger.beulah@example.com', '0', 1053, 'labore', 'http://mitchell.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1972-09-23 07:13:25', '1974-08-28 14:52:53'),
+(37, NULL, 'deserunt', 'lilly11@example.com', '0', 9, 'deleniti', 'http://www.bosco.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1975-05-15 10:27:46', '1978-10-06 19:02:51'),
+(38, NULL, 'eos', 'chelsey08@example.org', '0', 49, 'dolorem', 'http://colemiller.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1971-12-12 08:39:16', '1985-11-29 00:05:46'),
+(39, NULL, 'nemo', 'xdietrich@example.com', '0', 193748, 'voluptas', 'http://ohara.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2020-02-27 23:00:25', '2020-10-19 08:08:15'),
+(40, NULL, 'voluptatem', 'fstehr@example.com', '0', 1, 'voluptas', 'http://jenkinshudson.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1998-06-01 23:05:35', '1983-06-12 23:28:14'),
+(41, NULL, 'illo', 'tyundt@example.net', '0', 8642494, 'voluptatem', 'http://mccluremcclure.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2007-01-17 14:34:08', '1997-08-14 22:16:49'),
+(42, NULL, 'omnis', 'rowland86@example.net', '0', 7, 'officia', 'http://www.rolfsonschimmel.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2012-01-28 05:15:21', '1981-06-18 06:05:39'),
+(43, NULL, 'sint', 'cormier.jenifer@example.net', '0', 95146, 'eos', 'http://schowalter.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2021-05-14 18:57:22', '2005-02-12 14:11:02'),
+(44, NULL, 'voluptatibus', 'iliana.sporer@example.net', '0', 692250101, 'cumque', 'http://bode.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1988-02-28 19:23:43', '1984-08-15 20:28:30'),
+(45, NULL, 'deserunt', 'eli.durgan@example.net', '0', 350555283, 'aut', 'http://stark.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2004-08-13 19:54:21', '1989-12-17 06:49:01'),
+(46, NULL, 'nemo', 'owilliamson@example.com', '0', 48, 'quod', 'http://walterdoyle.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1980-12-21 02:08:37', '1981-09-06 04:31:19'),
+(47, NULL, 'quidem', 'electa77@example.com', '0', 8, 'adipisci', 'http://effertz.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1991-08-31 15:33:14', '1981-05-26 16:57:08'),
+(48, NULL, 'nihil', 'bryana58@example.net', '0', 73, 'voluptatem', 'http://www.considine.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2012-07-20 01:49:22', '1972-10-11 11:34:23'),
+(49, NULL, 'perspiciatis', 'joanny.runolfsdottir@example.net', '0', 911, 'autem', 'http://hoppe.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1970-12-20 13:23:00', '1972-02-12 04:43:51'),
+(50, NULL, 'praesentium', 'clemmie65@example.com', '0', 192641, 'qui', 'http://www.turner.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1996-10-15 01:37:37', '1987-12-16 13:42:24'),
+(51, NULL, 'sed', 'elias79@example.org', '0', 0, 'nobis', 'http://www.hellerschiller.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1994-02-05 06:01:19', '2012-06-16 23:01:03'),
+(52, NULL, 'qui', 'xwolf@example.org', '0', 3, 'possimus', 'http://www.bernierbeatty.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1995-03-06 18:20:44', '1978-06-25 19:49:43'),
+(53, NULL, 'odio', 'hwuckert@example.org', '0', 0, 'et', 'http://smithlangworth.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1972-04-11 00:41:22', '1978-10-23 11:20:39'),
+(54, NULL, 'nihil', 'jerald.nikolaus@example.net', '0', 38, 'sit', 'http://grahammoen.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2000-02-18 02:33:48', '1982-10-11 14:55:09'),
+(55, NULL, 'nisi', 'hoppe.eleazar@example.net', '0', 398535, 'quia', 'http://www.reynolds.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1971-02-09 10:05:47', '2008-02-15 09:42:30'),
+(56, NULL, 'est', 'kirlin.raegan@example.com', '0', 17, 'reiciendis', 'http://gibson.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1989-03-21 05:39:36', '1990-12-09 11:18:52'),
+(57, NULL, 'exercitationem', 'erowe@example.net', '0', 114, 'vero', 'http://quigley.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1996-11-18 16:49:24', '1982-03-18 08:46:54'),
+(58, NULL, 'quis', 'uferry@example.com', '0', 398249, 'expedita', 'http://www.greenholt.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2010-03-08 20:26:55', '1978-11-03 07:13:58'),
+(59, NULL, 'repellat', 'roma.haag@example.com', '0', 60, 'omnis', 'http://www.kshlerin.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1989-10-22 15:26:27', '2023-12-02 01:33:27'),
+(60, NULL, 'tempore', 'kennedi.hermiston@example.org', '0', 4, 'nostrum', 'http://graham.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1984-01-04 10:18:17', '2018-03-30 03:25:34'),
+(61, NULL, 'quo', 'rozella53@example.com', '0', 798277, 'ducimus', 'http://hessel.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1975-10-31 22:10:03', '2013-04-24 11:18:39'),
+(62, NULL, 'non', 'jacobs.marcelino@example.org', '0', 0, 'voluptas', 'http://turcotte.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1971-11-03 17:50:13', '1971-11-21 00:39:52'),
+(63, NULL, 'accusantium', 'herzog.ismael@example.com', '0', 9011340, 'qui', 'http://abbott.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2000-08-07 06:35:29', '1985-06-22 14:29:51'),
+(64, NULL, 'temporibus', 'fadel.betty@example.net', '0', 462333, 'sed', 'http://herman.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2023-12-01 13:24:41', '1971-07-13 23:46:09'),
+(65, NULL, 'unde', 'willis.bashirian@example.net', '0', 0, 'et', 'http://www.weber.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1998-06-14 23:06:56', '1980-07-20 15:55:45'),
+(66, NULL, 'id', 'walker.libby@example.com', '0', 856, 'distinctio', 'http://www.zulauf.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2006-07-25 01:46:57', '2002-08-26 15:32:37'),
+(67, NULL, 'ratione', 'zprice@example.org', '0', 0, 'incidunt', 'http://www.kulasbuckridge.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1981-11-05 18:17:30', '1973-06-26 02:13:34'),
+(68, NULL, 'adipisci', 'julien43@example.com', '0', 87, 'id', 'http://manntremblay.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1979-05-06 20:51:11', '2009-01-28 03:42:21'),
+(69, NULL, 'nisi', 'wolff.monica@example.com', '0', 14868597, 'blanditiis', 'http://www.morar.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1982-03-04 07:28:32', '1980-04-20 13:36:08'),
+(70, NULL, 'error', 'donald.renner@example.org', '0', 2, 'quis', 'http://gusikowski.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1972-08-07 18:38:13', '2022-07-27 20:42:23'),
+(71, NULL, 'ratione', 'quinten.luettgen@example.net', '0', 31456513, 'molestiae', 'http://www.bayer.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1988-03-07 04:31:41', '1993-10-28 18:21:39'),
+(72, NULL, 'molestias', 'zhuels@example.com', '0', 7, 'qui', 'http://www.howe.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1987-02-21 05:30:03', '1971-05-20 05:14:14'),
+(73, NULL, 'architecto', 'julio.watsica@example.org', '0', 9122320, 'perspiciatis', 'http://www.morissette.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1973-06-29 23:32:07', '1992-03-07 03:04:54'),
+(74, NULL, 'totam', 'zachariah23@example.org', '0', 18, 'deleniti', 'http://www.block.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2020-04-26 07:52:23', '1974-06-19 02:29:06'),
+(75, NULL, 'dolor', 'conner21@example.org', '0', 1201, 'quis', 'http://murraygreenfelder.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1974-06-22 09:39:00', '1994-05-04 09:41:39'),
+(76, NULL, 'unde', 'aliza23@example.net', '0', 97405, 'vitae', 'http://gutkowski.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1998-04-07 01:50:49', '1995-05-10 17:50:09'),
+(77, NULL, 'voluptatem', 'bauch.devin@example.net', '0', 152, 'necessitatibus', 'http://bashiriancorwin.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2007-05-17 23:33:53', '2003-09-06 11:41:21'),
+(78, NULL, 'omnis', 'marisol44@example.net', '0', 29183, 'tempore', 'http://prosacco.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1973-01-24 23:10:21', '2015-02-06 16:19:42'),
+(79, NULL, 'eius', 'torp.ezekiel@example.net', '0', 2486515, 'sed', 'http://hettingerdurgan.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1981-11-24 15:46:51', '1977-12-01 20:54:42'),
+(80, NULL, 'cupiditate', 'chaim10@example.net', '0', 240, 'molestias', 'http://vandervortbrakus.info/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2016-11-17 20:32:05', '1986-04-12 11:20:19'),
+(81, NULL, 'sed', 'nsauer@example.net', '0', 9, 'maiores', 'http://www.beattyheathcote.biz/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1987-04-26 09:04:15', '1992-05-27 21:28:37'),
+(82, NULL, 'dolores', 'vita52@example.com', '0', 9875, 'ut', 'http://christiansen.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2000-04-05 09:46:48', '2022-06-13 09:58:27'),
+(83, NULL, 'veniam', 'sawayn.karley@example.net', '0', 990317, 'fuga', 'http://hickle.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1983-06-17 14:56:50', '2014-02-10 20:00:31'),
+(84, NULL, 'inventore', 'schinner.hazle@example.org', '0', 3887971, 'ut', 'http://leuschkecrona.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1983-11-13 04:44:45', '2012-04-26 09:48:20'),
+(85, NULL, 'dolorem', 'madelyn.sauer@example.com', '0', 50149, 'et', 'http://leuschke.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1971-05-01 08:18:35', '1973-02-26 13:39:18'),
+(86, NULL, 'omnis', 'xparker@example.com', '0', 8244194, 'similique', 'http://www.strosinlynch.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1981-07-09 22:50:29', '1975-10-15 21:19:36'),
+(87, NULL, 'ratione', 'hreichel@example.net', '0', 397053, 'nihil', 'http://www.parkergerlach.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1970-05-26 21:27:16', '2012-11-10 04:20:45'),
+(88, NULL, 'voluptatem', 'jgoyette@example.net', '0', 4, 'laudantium', 'http://www.sporer.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1973-01-23 18:46:07', '1982-11-08 16:14:20'),
+(89, NULL, 'iusto', 'fskiles@example.org', '0', 320268, 'reiciendis', 'http://www.connlang.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2016-07-16 16:22:56', '1975-08-14 21:59:55'),
+(90, NULL, 'deserunt', 'jacobs.keeley@example.org', '0', 35123, 'suscipit', 'http://www.mcclure.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2001-03-08 18:38:45', '2011-08-22 23:31:38'),
+(91, NULL, 'error', 'breanna.bins@example.com', '0', 784595646, 'alias', 'http://www.sauerwatsica.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1976-07-05 10:31:35', '1975-03-06 15:04:06'),
+(92, NULL, 'omnis', 'tyrell00@example.com', '0', 265742172, 'cupiditate', 'http://www.dubuquemohr.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1970-08-24 22:18:24', '2010-12-10 06:23:44'),
+(93, NULL, 'officia', 'kirsten.kovacek@example.net', '0', 151656, 'laudantium', 'http://www.monahan.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2010-03-21 09:58:16', '2002-02-08 03:14:47'),
+(94, NULL, 'saepe', 'marcelle.mcdermott@example.net', '0', 40368557, 'architecto', 'http://dicki.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2010-05-21 10:02:06', '2008-03-08 12:48:37'),
+(95, NULL, 'possimus', 'bergnaum.roxane@example.org', '0', 13772, 'laudantium', 'http://wintheiser.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2006-06-18 16:23:43', '2022-08-28 19:51:19'),
+(96, NULL, 'expedita', 'iliana86@example.net', '0', 5687026, 'esse', 'http://friesenwindler.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1976-12-20 16:55:35', '2006-07-17 16:21:09'),
+(97, NULL, 'error', 'kari.towne@example.com', '0', 0, 'cumque', 'http://beahan.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1992-10-30 02:39:21', '2021-12-09 18:45:47'),
+(98, NULL, 'velit', 'hahn.verner@example.net', '0', 1223713, 'placeat', 'http://ortiz.com/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1974-05-18 20:24:18', '1970-10-22 13:11:49'),
+(99, NULL, 'qui', 'mwehner@example.org', '0', 102065, 'architecto', 'http://okonmante.net/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '2018-05-14 11:53:05', '2011-05-18 12:56:32'),
+(100, NULL, 'voluptate', 'willow65@example.com', '0', 3, 'quasi', 'http://cartergleichner.org/', NULL, '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '0', '', '1989-12-13 12:18:21', '1980-03-01 19:06:27');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `organization_entries`
+-- Table structure for table `msme_categories`
 --
 
-CREATE TABLE `organization_entries` (
+CREATE TABLE `msme_categories` (
   `id` int(11) NOT NULL,
-  `company_name` int(11) NOT NULL,
-  `company_size` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
+  `code` varchar(200) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `msme_categories`
+--
+
+INSERT INTO `msme_categories` (`id`, `name`, `slug`, `code`, `type`, `created_at`) VALUES
+(1, 'Technology – IT/ITES & Telecommunication', 'alice-asked-we-called-him-tortoise-because-he-taught-us-said-the-young-crab-a-little-three-legged-table-all-made-of-solid-glass-there-was-no-label-this-time-the-queen-to-day-i-should-like', 'IhsHRvgPac', 'MSME', '0000-00-00 00:00:00'),
+(2, 'Automobiles & OEM', 'alice-led-the-way-and-the-other-was-sitting-on-the-spot-this-did-not-like-the-queen-said-the-mock-turtle-said-with-a-table-set-out-under-a-tree-in-the-middle-of-her-age-knew-the-right-size', 'LZuVk4litr', 'MSME', '0000-00-00 00:00:00'),
+(3, 'Health, Wellness and Ayurveda', 'queens-voice-in-the-direction-it-pointed-to-without-trying-to-fix-on-one-the-cook-and-the-two-sides-of-the-sort-said-alice-nothing-whatever-persisted-the-king-the-jury-all-looked-so-good', 'kuxGqjcXVh', 'MSME', '0000-00-00 00:00:00'),
+(4, 'Packaging Products & Solutions', 'gryphon-before-alice-could-think-of-anything-else-chapter-v-advice-from-a-caterpillar-the-caterpillar-was-the-matter-with-it-there-could-be-no-mistake-about-it-it-was-sneezing-and-howling', 'GtVLJQQ7kN', 'MSME', '0000-00-00 00:00:00'),
+(5, 'Travel and Hospitality', 'alice-looked-at-the-window-that-you-wont-thought-alice-itll-never-do-to-ask-perhaps-i-shall-only-look-up-in-spite-of-all-the-time-she-had-nibbled-some-more-of-the-lobster-quadrille-the', 'GJmrlURm3j', 'MSME', '0000-00-00 00:00:00'),
+(6, 'Home & Décor', 'i-know-exclaimed-alice-who-felt-very-curious-sensation-which-puzzled-her-too-much-so-she-set-off-at-once-crowded-round-it-panting-and-asking-but-who-has-won-this-question-the-dodo-in-an', 'q7ggZyQmrG', 'MSME', '0000-00-00 00:00:00'),
+(7, 'Construction & Real Estate', 'white-rabbit-who-said-in-a-whisper-half-afraid-that-it-was-very-like-a-telescope-i-think-that-proved-it-at-all-said-the-march-hare-interrupted-in-a-low-weak-voice-now-i-give-it-up-alice', '65DfrJ6qBr', 'MSME', '0000-00-00 00:00:00'),
+(8, 'EdTech and Skill Development', 'presently-she-began-again-i-should-like-to-be-an-old-turtle-we-used-to-do-how-doth-the-little-and-she-dropped-it-hastily-just-in-time-to-wash-the-things-get-used-to-say-to-this-so-she', 'Eq1qTge670', 'MSME', '0000-00-00 00:00:00'),
+(9, 'Electrical & Electronics', 'cat-were-all-mad-here-im-mad-youre-mad-how-do-you-know-about-this-business-the-king-say-in-a-great-many-more-than-three-your-hair-wants-cutting-said-the-caterpillar-alice-thought', 'lAMhCo9K8N', 'MSME', '0000-00-00 00:00:00'),
+(10, 'Logistics & Service Delivery', 'alice-i-might-as-well-look-and-see-after-some-executions-i-have-done-that-she-thought-but-everythings-curious-today-i-think-i-must-have-prizes-but-who-is-dinah-if-i-might-venture-to-go', 'AIdcuFcm9k', 'MSME', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `msme_entries`
+--
+
+CREATE TABLE `msme_entries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `organization_name` varchar(200) NOT NULL,
+  `organization_maxsize` int(11) NOT NULL,
+  `organization_industry` varchar(255) NOT NULL,
+  `organization_url` text NOT NULL,
+  `organization_overview` text DEFAULT NULL,
+  `organization_mission_vission` text NOT NULL,
+  `organization_services` text NOT NULL,
+  `organization_reveue_23` varchar(100) NOT NULL,
+  `organization_reveue_22` varchar(100) NOT NULL,
+  `organization_growth_23` varchar(100) NOT NULL,
+  `organization_growth_22` varchar(100) NOT NULL,
+  `organization_profit_23` varchar(100) NOT NULL,
+  `organization_profit_22` varchar(100) NOT NULL,
+  `organization_assets_23` varchar(100) NOT NULL,
+  `organization_assets_22` varchar(100) NOT NULL,
+  `organization_der_23` varchar(100) NOT NULL,
+  `organization_der_22` varchar(100) NOT NULL,
+  `linkedin_url` text DEFAULT NULL,
+  `cp_name` varchar(255) NOT NULL,
+  `cp_email` varchar(255) NOT NULL,
+  `cp_contact` varchar(15) NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -1624,14 +1857,39 @@ INSERT INTO `states` (`id`, `title`, `country`, `status`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `useremail` varchar(255) NOT NULL,
   `password` varchar(200) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'participant',
+  `is_email_verified` int(11) NOT NULL,
+  `is_password_reset` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `useremail`, `password`, `role`, `is_email_verified`, `is_password_reset`, `created_at`) VALUES
+(1, 'hemant@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'participant', 0, 0, '2022-08-31 11:07:15'),
+(2, 'kunal@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'jury', 0, 0, '2013-07-24 10:36:06'),
+(3, 'business@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'super-admin', 0, 0, '1978-02-25 18:44:26'),
+(4, 'martin.kessler', 'e037b25721c8e66b7aaabdfd167471179135a5869fea9d304414982e814acdce', 'participant', 0, 0, '1975-01-19 23:03:42'),
+(5, 'wyman.ara', '804336fa528e70279e989ba26db7750894afd98848fbcfce42a967f82edcd2d8', 'participant', 0, 0, '1974-08-03 22:27:24'),
+(6, 'meta.willms', '55af5e2e665e0a7181f4f1e2ee472385318c283af22bb8b89cb70e0498fac3ca', 'participant', 0, 0, '1978-03-27 12:24:51'),
+(7, 'zjakubowski', 'a256c41c4fc268e0a2059fb4b9bad615938acbca3209ce0dd826545122710b86', 'participant', 0, 0, '1995-11-11 13:00:06'),
+(8, 'caroline.flatley', '3402681d68d1f6d28810c0849e386ebd10299f2646caeb13be9dd14100252931', 'participant', 0, 0, '2011-01-07 18:18:50'),
+(9, 'jacobs.avis', '50ad9bb5bc6a9ed6cfc72fde12924db9575454240f5659a5709acde7f72b6fb2', 'participant', 0, 0, '2020-09-07 08:44:14'),
+(10, 'bailey90', '177cec95f095e940f0120757b6e8ff80e7c5d7ba57536208043b5c95ae2a2734', 'participant', 0, 0, '1997-12-11 18:24:36');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `app_config`
+--
+ALTER TABLE `app_config`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `cities`
@@ -1640,15 +1898,28 @@ ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `individual_entries`
+-- Indexes for table `individual_categories`
 --
-ALTER TABLE `individual_entries`
+ALTER TABLE `individual_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `organization_entries`
+-- Indexes for table `individual_entries`
 --
-ALTER TABLE `organization_entries`
+ALTER TABLE `individual_entries`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nomination_id` (`nomination_id`);
+
+--
+-- Indexes for table `msme_categories`
+--
+ALTER TABLE `msme_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `msme_entries`
+--
+ALTER TABLE `msme_entries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1668,21 +1939,39 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `app_config`
+--
+ALTER TABLE `app_config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1638;
 
 --
+-- AUTO_INCREMENT for table `individual_categories`
+--
+ALTER TABLE `individual_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `individual_entries`
 --
 ALTER TABLE `individual_entries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `organization_entries`
+-- AUTO_INCREMENT for table `msme_categories`
 --
-ALTER TABLE `organization_entries`
+ALTER TABLE `msme_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `msme_entries`
+--
+ALTER TABLE `msme_entries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -1695,7 +1984,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

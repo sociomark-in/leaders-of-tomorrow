@@ -5,11 +5,11 @@ class AccountController extends PanelController
 {
 	public function index()
 	{
-		switch ($_SESSION['user']['role']) {
+		switch ($_SESSION['awards_panel_user']['role']) {
 			case 'admin':
 				$this->load->admin_view('home');
 				break;
-			case 'moderator':
+			case 'jury':
 				$this->load->moderator_view('home');
 				break;
 			default:
@@ -34,7 +34,6 @@ class AccountController extends PanelController
 
 	public function nominate()
 	{
-		$this->data['user'] = $_SESSION['nomination_user'];
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 		$this->load->page('register', $this->data);
 	}

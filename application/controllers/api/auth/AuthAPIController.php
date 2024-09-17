@@ -7,12 +7,23 @@ class AuthAPIController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('panel/User');
+		$this->load->model('panel/UserModel');
 	}
 
 	public function participant_login()
 	{
-		redirect('dashboard');
+		$this->request = $this->input->post();
+		$this->data['user'] = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
+		if (count($this->data['user'])) {
+			$user = $this->data['user'];
+			if (hash('md5', hash('sha256', $this->request['password'])) == $user['password']) {
+				$session = $this->data['user'];
+				$this->session->set_userdata('awards_panel_user', $session);
+				redirect('dashboard');
+			} else {
+				redirect('login');
+			}
+		}
 	}
 
 	public function validate()
