@@ -1,7 +1,8 @@
 {
     "require" : {
         "facebook/php-sdk-v4" : "~5.0",
-		"google/apiclient": "^2.15.0"
+		"google/apiclient": "^2.15.0",
+        "clegginabox/pdf-merger": "dev-master"
     },
 	"scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"

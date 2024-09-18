@@ -110,7 +110,7 @@ $tabs = [
 											<div class="col-12 grid-margin stretch-card">
 												<div class="card">
 													<div class="card-body">
-														<?= form_open('api/v2/awards/nomination/single/new') ?>
+														<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
 														<div class="mb-3">
 															<input type="hidden" name="category_id" value="<?= $category['code'] ?>">
 															<input type="hidden" name="application_id" value="<?= $application['id'] ?? null ?>">
