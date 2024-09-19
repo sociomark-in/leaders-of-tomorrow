@@ -1,0 +1,48 @@
+<script type="application/ld+json">
+	{
+		"eventAttendanceMode": "OfflineEventAttendanceMode",
+		"endDate": "2024-09-27T21:00:00",
+		"name": "INDIA TODAY CONCLAVE - Mumbai",
+		"eventStatus": "EventScheduled",
+		"url": "https://subscriptions.intoday.in/conclave/registration",
+		"performer": {
+			"@type": "Organization",
+			"name": "INDIA TODAY CONCLAVE - Mumbai"
+		},
+		"@context": "http://schema.org",
+		"startDate": "2024-09-26T09:00:00",
+		"location": {
+			"@type": "Place",
+			"name": "",
+			"address": "" 
+		}, 
+		"organizer ": { 
+			"@type ": "Organization ", 
+			"
+			name ": "INDIA TODAY ", 
+			"url ": "https: //subscriptions.intoday.in/conclave/registration" 
+		}, 
+		"offers": { 
+			"@type": "AggregateOffer", 
+			"lowPrice": 100000, 
+			"highPrice": 100000, 
+			"availability": "http://schema.org/InStock",
+			"priceCurrency": "INR",
+			"validFrom": "2024-08-01T09:00:00",
+			"offerCount": 1,
+			"offers": [{
+				"@type": "Offer",
+				"availabilityEnds": "2024-03-16T21:00:00",
+				"url": "https://subscriptions.intoday.in/conclave/registration",
+				"name": "Regular Ticket",
+				"availability": "http://schema.org/InStock",
+				"price": 100000,
+				"priceCurrency": "INR",
+				"validFrom": "2024-08-01T09:00:00"
+			}],
+			"url": "https://subscriptions.intoday.in/conclave/registration"
+		},
+		"@type": "Event",
+		"image": "https://akm-img-a-in.tosshub.com/sites/conclave/img/Conclave-1440x1080.jpg",
+		"description": "" }
+</script>

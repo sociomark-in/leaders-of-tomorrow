@@ -48,7 +48,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js" integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Plugin: JQuery Validator  -->
 
+<!-- Schema -->
 
+<!-- Schema -->
 
 <!-- Prefetch -->
 <link rel="prefetch" href="<?= base_url('assets/images/backgrounds/sky.gif') ?>" />
@@ -68,20 +70,19 @@
 <link rel="stylesheet" href="<?= base_url("assets") ?>/css/custom.min.css">
 <!-- <link rel="stylesheet" href="<?= base_url("assets") ?>/css/theme.min.css"> -->
 
-<meta name="title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
-<meta name="description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
+<meta name="title" content="<?= (isset($page['title'])) ? $page['title'] : APP_NAME ?>" />
+<meta name="description" content="<?= (isset($page['desc'])) ? $page['desc'] : "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success." ?>" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="<?= base_url() ?>" />
-<meta property="og:title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
-<meta property="og:description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
-<meta property="og:image" content="<?= (isset($page['thumb']))? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
+<meta property="og:title" content="<?= (isset($page['title'])) ? $page['title'] : APP_NAME ?>" />
+<meta property="og:description" content="<?= (isset($page['desc'])) ? $page['desc'] : "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success." ?>" />
+<meta property="og:image" content="<?= (isset($page['thumb'])) ? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="<?= base_url() ?>" />
-<meta property="twitter:title" content="<?= (isset($page['title']))? $page['title']: APP_NAME ?>" />
-<meta property="twitter:description" content="<?= (isset($page['desc']))? $page['desc']: "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success."?>" />
-<meta property="twitter:image" content="<?= (isset($page['thumb']))? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
-
+<meta property="twitter:title" content="<?= (isset($page['title'])) ? $page['title'] : APP_NAME ?>" />
+<meta property="twitter:description" content="<?= (isset($page['desc'])) ? $page['desc'] : "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success." ?>" />
+<meta property="twitter:image" content="<?= (isset($page['thumb'])) ? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />

@@ -47,6 +47,7 @@ class ComposerStaticInita63b2f4e5930112dcdcd95fb7636109e
         ),
         'F' => 
         array (
+            'Fpdf\\' => 5,
             'Firebase\\JWT\\' => 13,
             'Facebook\\' => 9,
         ),
@@ -109,6 +110,10 @@ class ComposerStaticInita63b2f4e5930112dcdcd95fb7636109e
         'Google\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/apiclient/src',
+        ),
+        'Fpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf',
         ),
         'Firebase\\JWT\\' => 
         array (
