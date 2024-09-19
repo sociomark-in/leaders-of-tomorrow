@@ -31,7 +31,8 @@ $colors: "white" $color-white, "black" $color-black, "red" $color-red,
 }
 
 body {
-	// background: url("../images/backgrounds/business.png"), $color-white;
+	// background: url("../images/backgrounds/box.gif"), $color-white;
+	// background-blend-mode: color-burn;
 	background: url("../images/backgrounds/bg-square.png"), $color-white;
 	background-size: 40px;
 }
