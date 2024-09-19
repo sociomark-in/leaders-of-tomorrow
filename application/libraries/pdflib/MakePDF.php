@@ -1,6 +1,5 @@
 <?php
 
-use Clegginabox\PDFMerger\PDFMerger;
 use Fpdf\Fpdf;
 
 require_once APPPATH . "vendor/autoload.php";
@@ -26,9 +25,36 @@ class MakePDF extends Fpdf
 		parent::__construct();
 	}
 
+	function Header()
+	{
+		// Logo
+		$this->Image(base_url('assets/images/main.png'), 10, 10, 0, 8);
+		// Arial bold 15
+		$this->SetFont('Arial', 'B', 15);
+		// Move to the right
+		$this->Cell(80);
+		// Title
+		$this->Cell(30, 10, 'Application Form', 0, 0, 'C');
+		// Line break
+		$this->Ln(20);
+	}
+
+	function Footer()
+	{
+		// Position at 1.5 cm from bottom
+		$this->SetY(-15);
+		// Arial italic 8
+		$this->SetFont('Arial', 'I', 8);
+		// Page number
+		$this->Cell(97, 10, APP_NAME . ' - Season 12', 0, 0, 'L');
+		$this->Cell(97, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'R');
+	}
+
+
 	public function init($orientation = 'P', $unit = 'mm', $size = 'A4')
 	{
-		$this->pdf = new FPDF($orientation = 'P', $unit = 'mm', $size = 'A4');
+		$this->pdf = new MakePDF($orientation = 'P', $unit = 'mm', $size = 'A4');
+		$this->pdf->AliasNbPages();
 		$this->pdf->AddPage();
 		return $this;
 	}
@@ -42,11 +68,11 @@ class MakePDF extends Fpdf
 	{
 		switch ($layout) {
 			case 'layout-2':
-				include_once __DIR__ . '/layout/2.php'; 
+				include_once __DIR__ . '/layout/2.php';
 				break;
 
 			default:
-				include_once __DIR__ . '/layout/1.php'; 
+				include_once __DIR__ . '/layout/1.php';
 				break;
 		}
 		return $this;

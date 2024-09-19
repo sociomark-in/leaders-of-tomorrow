@@ -1,10 +1,7 @@
 <?php
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->Cell(0, 20, '', 0, 1);
-$this->pdf->Image(base_url('assets/images/main.png'), 10, 10, 0, 10);
 $this->pdf->SetFillColor(183, 32, 38);
 $this->pdf->SetTextColor(255, 255, 255);
-$this->pdf->Cell(1, 6, '', 0, 0, '', true);
 $this->pdf->Cell(0, 6, 'Participating Entity', 0, 1, '', true);
 
 $this->pdf->SetTextColor(25, 25, 25);
@@ -66,7 +63,7 @@ $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFillColor(183, 32, 38);
 $this->pdf->SetTextColor(255, 255, 255);
-$this->pdf->Cell(1, 6, '', 0, 0, '', true);
+
 $this->pdf->Cell(0, 6, 'Financial Details', 0, 1, '', true);
 
 $this->pdf->SetTextColor(183, 32, 38);
@@ -116,10 +113,10 @@ $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFillColor(183, 32, 38);
 $this->pdf->SetTextColor(255, 255, 255);
-$this->pdf->Cell(1, 6, '', 0, 0, '', true);
+
 $this->pdf->Cell(0, 6, 'About the Organization', 0, 1, '', true);
 
-$this->pdf->Cell(0, 4, '', 0, 1, '');
+$this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'Brief Overview of the Company', 0, 1, '');
@@ -149,12 +146,11 @@ $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFillColor(183, 32, 38);
 $this->pdf->SetTextColor(255, 255, 255);
-$this->pdf->Cell(1, 6, '', 0, 0, '', true);
 $this->pdf->Cell(0, 6, 'Case Studies', 0, 1, '', true);
 
 $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->Cell(0, 5, '', 0, 1, '');
+$this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(97, 6, 'Name of the initiative or product/service offering', 0, 0, '');
 $this->pdf->Cell(47, 6, 'Start Date', 0, 0, '');
@@ -202,10 +198,10 @@ $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFillColor(183, 32, 38);
 $this->pdf->SetTextColor(255, 255, 255);
-$this->pdf->Cell(1, 6, '', 0, 0, '', true);
+
 $this->pdf->Cell(0, 6, 'Use of Technology', 0, 1, '', true);
 
-$this->pdf->Cell(0, 4, '', 0, 1, '');
+$this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'How have you leveraged technology while implementing the initiative/product/service?', 0, 1, '');
