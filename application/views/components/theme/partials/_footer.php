@@ -65,7 +65,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
+							<div class="col-xl-auto d-none col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>All Seasons</h6>
 									<ul class="footer-nav nav flex-column">
@@ -87,7 +87,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
+							<div class="col-xl-auto d-none col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>Season 12 Awards</h6>
 									<ul class="footer-nav nav flex-column">
@@ -110,7 +110,7 @@
 								<div class="">
 									<h6>Quick Links</h6>
 									<ul class="footer-nav nav flex-column">
-										<li class="nav-item">
+										<li class="nav-item d-none">
 											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Previous Seasons</a>
 										</li>
 										<li class="nav-item">

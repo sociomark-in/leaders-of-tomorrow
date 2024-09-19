@@ -113,6 +113,57 @@ class CityController extends BaseController
 						],
 					]
 				];
+			case 'chandigarh':
+				$this->data['page'] = [
+					'title' => "Chandigarh Springboard" . " • " . APP_NAME . " " .date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Chandigarh",
+				];
+				$this->load->city_view('chandigarh', $this->data);
+				break;
+
+
+
+			case 'test':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " .date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Lucknow",
+					'speakers' => [
+						[
+							'photo' => "Bhavesh_Jatania.png",
+							'name' => "Bhavesh Jatania",
+							'description' => "Head - Startup Banking, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Jayant_Krishna.png",
+							'name' => "Jayant Krishna",
+							'description' => "Senior Fellow & Former CEO, CSIS, National Skill Development Corporation",
+						],
+						[
+							'photo' => "Vinamra_Agarwal.png",
+							'name' => "Vinamra Agarwal",
+							'description' => "Joint MD, Technical Associates",
+						],
+						[
+							'photo' => "Jyotsna_Kaur_Habibullah.png",
+							'name' => "Jyotsna Kaur Habibullah",
+							'description' => "CEO, Lucknow Farmers Market",
+						],
+						[
+							'photo' => "Anuj_Agarwal.png",
+							'name' => "Anuj Agarwal",
+							'description' => "MD, Gyan Dairy",
+						],
+						[
+							'photo' => "Aditya_Sharma.png",
+							'name' => "Aditya Sharma",
+							'description' => "Founder, Capital Tree",
+						],
+					]
+				];
 				$this->load->city_view('lucknow', $this->data);
 				break;
 
@@ -152,7 +203,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'lucknow') {
+			if (strtolower($sb['name']) == $city && $city == 'chandigarh') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

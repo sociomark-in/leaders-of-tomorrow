@@ -44,7 +44,6 @@ created_at
  */
 class EntriesModel extends CI_Model
 {
-	private $table;
 	public function __construct()
 	{
 		parent::__construct();

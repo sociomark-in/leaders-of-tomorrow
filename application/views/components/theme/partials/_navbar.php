@@ -18,7 +18,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Previous Seasons
 					</a>
@@ -42,7 +42,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
 						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
 						Awards&nbsp;2024
@@ -63,7 +63,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</ul>
 				</li>
 			</ul>
-			<div class="row">
+			<div class="row d-none">
 				<div class="col-md-auto">
 					<ul class="navbar-nav align-items-center g-4">
 						<?php if (isset($_SESSION['nomination_user'])) : ?>

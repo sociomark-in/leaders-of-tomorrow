@@ -10,7 +10,7 @@ switch ($city['name']) {
 		break;
 }
 switch ($city['name']) {
-	case 'dsf':
+	case 'Chandigarh':
 		$active = "d-none";
 		break;
 	
@@ -28,15 +28,18 @@ switch ($city['name']) {
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#springboardNavbarNav" aria-controls="springboardNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="mx-0 mx-md-4 collapse navbar-collapse w-100 justify-content-between" id="springboardNavbarNav">
+		<div class="mx-0 mx-md-4 my-4 my-md-0 collapse navbar-collapse w-100 justify-content-between" id="springboardNavbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item me-md-3">
 					<a class="btn btn-red text-uppercase" href="<?= base_url('all-cities') ?>">All Springboards</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#">Home</a>
+				</li>
 				<li class="nav-item  <?= $active ?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#about">About</a>
 				</li>
-				<li class="nav-item <?= $class ?>">
+				<li class="nav-item <?= $active . " " . $class ?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
 				</li>
 				<li class="nav-item <?= $active ?>">

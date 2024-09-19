@@ -12,6 +12,7 @@ class RegistrationAPI extends CI_Controller
 			"mumbai" => "f08c5088-2794-4f27-923c-2058132e1b28",
 			// "lucknow" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
 			"lucknow" => "4f18fda6-f8a7-4da4-a6a2-4d77c04b85bd",
+			"chandigarh" => "372237d7-c945-4548-b444-3725309b7bd2",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -32,6 +33,14 @@ class RegistrationAPI extends CI_Controller
 		}
 
 		$utm = json_decode($this->request['utm'] ?? "", true);
+		/* 
+		48958	organization['department']
+		48959	organization['turnover']
+		48960	organization['industry']
+		48950	website
+		48961	message
+		48949	consent
+		*/
 
 		$data['registration_details'] = [
 			"utm" => [
@@ -42,11 +51,12 @@ class RegistrationAPI extends CI_Controller
 			"name" => $this->request['name'],
 			"email_id" => $this->request['email'],
 			"custom_forms" => [
-				"47138" => $this->request['organization']['department'],
-				"47137" => $this->request['organization']['turnover'],
-				"47136" => $this->request['organization']['industry'],
-				"47565" => $this->request['website'],
-				"47135" => $this->request['message'],
+				"48958" => $this->request['organization']['department'],
+				"48959" => $this->request['organization']['turnover'],
+				"48960" => $this->request['organization']['industry'],
+				"48950" => $this->request['website'],
+				"48961" => $this->request['message'],
+				"48949" => ($this->request['consent'] == 'on')? "True" : "False",
 			],
 			"organisation" => $this->request['organization']['name'],
 			"designation" => $this->request['organization']['designation'],
@@ -64,8 +74,7 @@ class RegistrationAPI extends CI_Controller
 		];
 		
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);
-		
-		
+
 		if (!array_key_exists('error', $this->response)) {
 			$data = [
 				"name" => $this->request['name'],
@@ -94,7 +103,7 @@ class RegistrationAPI extends CI_Controller
 		} else {
 			// $this->session->set_tempdata(['lot_rsvp_status' => $this->response], NULL, 300);
 			// {"error": {"error_code": "CPTR-4", "error_message": "Duplicate Registration Found", "duplicate_registrations": {"21520": []}, "duplicate_count": 1}}
-			// redirect('city/' . strtolower($this->request['event_city']) . '/register');
+			redirect('city/' . strtolower($this->request['event_city']) . '/register');
 		}
 	}
 	public function new_registration()

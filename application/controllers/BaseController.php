@@ -15,15 +15,15 @@ class BaseController extends CI_Controller
 			],
 			[
 				'name' => "Lucknow",
-				'theme' => "Lucknow: Charting Uttar Pradesh’s Trillion-Dollar Journey",
+				'theme' => "Charting Uttar Pradesh’s Trillion-Dollar Journey",
 				'date' => '2024-09-13 17:00:00',
 				'venue' => "Hilton Garden Inn, Lucknow"
 			],
 			[
 				'name' => "Chandigarh",
-				'theme' => "Chandigarh: A Case Study For Ease Of Doing Business",
-				'date' => '2024-09-27',
-				'venue' => ""
+				'theme' => "A Case Study For Ease Of Doing Business",
+				'date' => '2024-09-27 17:00:00',
+				'venue' => "Hometel, Industrial Area Phase 1, Chandigarh"
 			],
 			[
 				'name' => "Delhi NCR",
