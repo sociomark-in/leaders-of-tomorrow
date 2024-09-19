@@ -11,7 +11,7 @@ class NominationsController extends PanelController
 	}
 	public function index()
 	{
-		$this->load->moderator_view('home');
+		$this->load->moderator_view('applications');
 	}
 
 	public function user_side()

@@ -12,7 +12,7 @@ class CityController extends BaseController
 	public function index()
 	{
 		$this->data['page'] = [
-			'title' => "All Springboards" . " • " . APP_NAME . " " .date('Y'),
+			'title' => "All Springboards" . " • " . APP_NAME . " " . date('Y'),
 		];
 		$this->load->page('city/home', $this->data);
 	}
@@ -23,7 +23,7 @@ class CityController extends BaseController
 		switch ($city) {
 			case 'mumbai':
 				$this->data['page'] = [
-					'title' => "Mumbai Springboard" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Mumbai Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Mumbai",
@@ -76,7 +76,7 @@ class CityController extends BaseController
 				break;
 			case 'lucknow':
 				$this->data['page'] = [
-					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Lucknow",
@@ -115,10 +115,39 @@ class CityController extends BaseController
 				];
 			case 'chandigarh':
 				$this->data['page'] = [
-					'title' => "Chandigarh Springboard" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Chandigarh Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Chandigarh",
+					'guests' => [
+						[
+							'photo' => "",
+							'name' => "Satya Pal Jain",
+							'description' => "Additional Solicitor General of India & Former Member of Lok Sabha Chandigarh",
+						],
+					],
+					'speakers' => [
+						[
+							'photo' => "",
+							'name' => "Naveen Manglani",
+							'description' => "President, Chamber of Chandigarh Industries",
+						],
+						[
+							'photo' => "",
+							'name' => "Heena Kataria",
+							'description' => "Founder & CEO, MerakiAds",
+						],
+						[
+							'photo' => "",
+							'name' => "Vineet Khurana",
+							'description' => "CEO, SACC India",
+						],
+						[
+							'photo' => "",
+							'name' => "Isha Taneja",
+							'description' => "Chair, TiE Chandigarh Women",
+						],
+					]
 				];
 				$this->load->city_view('chandigarh', $this->data);
 				break;
@@ -127,7 +156,7 @@ class CityController extends BaseController
 
 			case 'test':
 				$this->data['page'] = [
-					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Lucknow",
@@ -180,12 +209,12 @@ class CityController extends BaseController
 		switch ($city) {
 			case 'mumbai':
 				$this->data['page'] = [
-					'title' => "Mumbai Springboard Gallery" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Mumbai Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Mumbai";
 				$this->load->city_view('gallery', $this->data);
 				break;
-			/* case 'lucknow':
+				/* case 'lucknow':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " .date('Y'),
 				];
@@ -212,7 +241,7 @@ class CityController extends BaseController
 		if ($status) {
 			$this->data['city'] = $sb;
 			$this->data['page'] = [
-				'title' => $sb['name'] . " Springboard Registrations" . " • " . APP_NAME . " " .date('Y'),
+				'title' => $sb['name'] . " Springboard Registrations" . " • " . APP_NAME . " " . date('Y'),
 			];
 			$this->load->city_view('register', $this->data);
 		} else {
@@ -225,7 +254,7 @@ class CityController extends BaseController
 			if (strtolower($sb['name']) == $city) {
 				$this->data['city'] = $sb;
 				$this->data['page'] = [
-					'title' => "Thank You for Registering to " . $sb['name'] . " Springboard" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Thank You for Registering to " . $sb['name'] . " Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->load->city_view('thankyou', $this->data);
 				break;

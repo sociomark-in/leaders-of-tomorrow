@@ -67,7 +67,7 @@
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-					<iframe class="w-100" src="https://www.youtube.com/embed/4yf12kND24M?si=qKW2DbJPtPVS7qyf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/4yf12kND24M?si=qKW2DbJPtPVS7qyf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -76,7 +76,7 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-						    Seated in the heart of the State, MSMEs in Lucknow are driving Uttar Pradesh towards its <strong class="text-red">$1&nbsp;Trillion</strong> economy goal.
+							Seated in the heart of the State, MSMEs in Lucknow are driving Uttar Pradesh towards its <strong class="text-red">$1&nbsp;Trillion</strong> economy goal.
 						</p>
 
 						<p data-aos="fade-left" data-aos-delay="400">
@@ -138,7 +138,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0 d-none">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -148,7 +148,46 @@
 				</div>
 				<div class="col-12">
 					<div class="row align-items-center">
-						<div class="col-12">
+						<div class="col-xl-3 col-lg-6 col-12">
+							<div class="swiper guestSwiper">
+								<div class="swiper-wrapper">
+									<?php foreach ($city['guests'] as $key => $speaker) : ?>
+										<div class="swiper-slide p-3" data-aos="fade-left">
+											<a href="javascript:void(0)" class="speaker-tile normal">
+												<div class="speaker-title">
+													<h4 class="text-red text-center">Chief Guest</h4>
+												</div>
+												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
+												<div class="speaker-photo mb-3">
+													<?php if ($speaker['photo'] == ""): ?>
+														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<?php else: ?>
+														<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<?php endif ?>
+												</div>
+												<div class="desc text-center">
+													<h5><?= $speaker['name'] ?></h5>
+													<p><?= $speaker['description'] ?></p>
+												</div>
+											</a>
+										</div>
+									<?php endforeach ?>
+								</div>
+								<div class="swiper-button-next swiper-button-red"></div>
+								<div class="swiper-button-prev swiper-button-red"></div>
+							</div>
+							<script>
+								new Swiper(".guestSwiper", {
+									navigation: {
+										nextEl: ".guestSwiper .swiper-button-next",
+										prevEl: ".guestSwiper .swiper-button-prev",
+									},
+									slidesPerView: 1,
+
+								})
+							</script>
+						</div>
+						<div class="col-xl-9 col-lg-6 col-12">
 							<div class="swiper speakerSwiper">
 								<div class="swiper-wrapper">
 									<?php foreach ($city['speakers'] as $key => $speaker) : ?>
@@ -156,7 +195,11 @@
 											<a href="javascript:void(0)" class="speaker-tile normal">
 												<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
 												<div class="speaker-photo rounded-circle mb-3">
-													<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<?php if ($speaker['photo'] == ""): ?>
+														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<?php else: ?>
+														<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+													<?php endif ?>
 												</div>
 												<div class="desc text-center">
 													<h5><?= $speaker['name'] ?></h5>
@@ -186,11 +229,11 @@
 											spaceBetween: 20,
 										},
 										1024: {
-											slidesPerView: 4,
+											slidesPerView: 3,
 											spaceBetween: 50,
 										},
 										1400: {
-											slidesPerView: 5,
+											slidesPerView: 4,
 											spaceBetween: 20,
 										},
 									},
