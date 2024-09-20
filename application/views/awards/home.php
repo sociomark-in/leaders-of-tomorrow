@@ -88,7 +88,7 @@
 						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 							<div class="row g-2">
 								<?php foreach ($categories['msme'] as $key => $category): ?>
-									<div class="col-xxl-3">
+									<div class="col-xxl-4 col-lg-6">
 										<div class="card h-100">
 											<div class="card-body">
 												<div class="row h-100 flex-column justify-content-between">
@@ -100,7 +100,7 @@
 													</div>
 													<div class="col-12">
 														<a href="<?= base_url('dashboard/category/' . $category['code'] . "/nominate") ?>" class="btn btn-red">Apply Now</a>
-														<a href="<?= base_url('category/' . $category['code']) ?>" class="btn">Details</a>
+														<a href="<?= base_url('awards/category/' . $category['code']) ?>" class="btn">Details</a>
 													</div>
 												</div>
 											</div>

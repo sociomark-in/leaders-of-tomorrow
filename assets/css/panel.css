@@ -115,3 +115,21 @@ h5 {
   background-color: #c92f2f;
   box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem #c92f2f;
 }
+
+form .form-control.error,
+form .form-check-input.error,
+form .form-select.error {
+  border-color: rgba(255, 0, 0, 0.3);
+}
+form .form-control.error:focus,
+form .form-check-input.error:focus,
+form .form-select.error:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.2);
+}
+form label {
+  margin-top: 0.25rem;
+}
+form label.error {
+  color: red;
+  font-style: 0.8rem;
+}

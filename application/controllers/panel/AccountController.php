@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
 class AccountController extends PanelController
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
 	public function index()
 	{
 		switch ($_SESSION['awards_panel_user']['role']) {
@@ -13,7 +17,8 @@ class AccountController extends PanelController
 				$this->load->moderator_view('home');
 				break;
 			default:
-				$this->load->panel_view('home');
+				$this->data['my_applications'] = [];
+				$this->load->panel_view('home', $this->data);
 
 				break;
 		}

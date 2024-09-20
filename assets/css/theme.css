@@ -73,6 +73,10 @@ form .form-select.error {
   border-color: rgba(255, 0, 0, 0.3);
   box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.2);
 }
+form label.error {
+  color: red;
+  font-style: 0.8rem;
+}
 
 .btn {
   border-radius: 0;

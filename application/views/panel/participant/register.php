@@ -8,32 +8,6 @@ $stage = 0;
 if ($nomination['stage'] >= 1) {
 	$stage = $nomination['stage'];
 }
-
-$application_id = random_string('numeric', 8);
-
-$tabs = [
-	[
-		'name' => "Business Details",
-		'identifier' => "profile",
-	],
-	[
-		'name' => "Financial Details",
-		'identifier' => "finance",
-	],
-	[
-		'name' => "Case Studies I",
-		'identifier' => "case_1",
-	],
-	[
-		'name' => "Case Studies II",
-		'identifier' => "case_2",
-	],
-	[
-		'name' => "Document Uploads",
-		'identifier' => "uploads",
-	],
-]
-
 ?>
 <main class="page-content">
 	<!-- Alert Message Box -->
@@ -72,11 +46,11 @@ $tabs = [
 									</div>
 								</div>
 								<div class="col">
-									<h2>Lorem ipsum dolor sit amet consectetur.</h2>
+									<h2><?= $category['name'] ?></h2>
 								</div>
 								<div class="col-auto">
 									<div class="row">
-										<a href="" class="btn btn-primary">View Details</a>
+										<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Details</a>
 									</div>
 								</div>
 							</div>
@@ -84,113 +58,12 @@ $tabs = [
 					</div>
 				</div>
 				<div class="col-12">
-					<div class="staged-tab-wizard">
-						<ul class="nav nav-pills gap-3" id="myTab" role="tablist">
-							<?php for ($i = 0; $i < count($tabs); $i++): ?>
-								<?php if ($i == $stage): ?>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link active" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="true"><?= $tabs[$i]['name'] ?></button>
-									</li>
-								<?php elseif ($i < $stage): ?>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link success" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button>
-									</li>
-								<?php else: ?>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link disabled" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button>
-									</li>
-								<?php endif ?>
-							<?php endfor ?>
-						</ul>
-						<div class="tab-content" id="myTabContent">
-							<?php for ($i = 0; $i < count($tabs); $i++): ?>
-								<?php if ($i == $stage): ?>
-									<div class="tab-pane py-3 fade show active" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0">
-										<div class="row">
-											<div class="col-12 grid-margin stretch-card">
-												<div class="card">
-													<div class="card-body">
-														<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
-														<div class="mb-3">
-															<input type="hidden" name="category_id" value="<?= $category['code'] ?>">
-															<input type="hidden" name="application_id" value="<?= $application['id'] ?? null ?>">
-															<input type="hidden" name="utm" value="<?= $utm ?>">
-															<input type="hidden" name="agent_id" value="<?= $this->input->get('agent_id') ?>">
-															<input type="hidden" name="stage" value="<?= $this->input->get('stage') ?>">
-															<?php switch ($tabs[$i]['identifier']) {
-																case 'profile':
-																	$this->load->view('panel/participant/forms/single/profile');
-																	break;
-																case 'finance':
-																	$this->load->view('panel/participant/forms/single/profile');
-																	break;
-																case 'case_1':
-																	$this->load->view('panel/participant/forms/single/profile');
-																	break;
-																case 'case_2':
-																	$this->load->view('panel/participant/forms/single/profile');
-																	break;
-
-																default:
-																	$this->load->view('panel/participant/forms/single/uploads');
-																	# code...
-																	break;
-															} ?>
-														</div>
-														<div class="row g-3">
-															<?php if ($i + 1 == count($tabs)) : ?>
-																<div class="col-md-auto">
-																	<button type="submit" class="btn btn-primary">Save and Submit</button>
-																</div>
-															<?php else: ?>
-																<div class="col-md-auto">
-																	<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
-																</div>
-																<div class="col-md-auto">
-																	<button type="submit" class="btn btn-primary">Save and Next</button>
-																</div>
-															<?php endif ?>
-														</div>
-														<?= form_close() ?>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								<?php else: ?>
-									<div class="tab-pane disabled py-3 fade" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0">
-										<div class="row">
-											<div class="col-12 grid-margin stretch-card">
-												<div class="card">
-													<div class="card-body">
-														<?php switch ($tabs[$i]['identifier']) {
-															case 'profile':
-																$this->load->view('panel/participant/forms/single/profile');
-																break;
-															case 'finance':
-																$this->load->view('panel/participant/forms/single/profile');
-																break;
-															case 'case_1':
-																$this->load->view('panel/participant/forms/single/profile');
-																break;
-															case 'case_2':
-																$this->load->view('panel/participant/forms/single/profile');
-																break;
-
-															default:
-																$this->load->view('panel/participant/forms/single/uploads');
-																# code...
-																break;
-														} ?>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								<?php endif ?>
-							<?php endfor ?>
-						</div>
-					</div>
+					<?php 
+					if (strtolower($category['type']) == 'msme') {
+						include_once APPPATH . '/views/panel/participant/categories/msme.php';
+					} else {
+						include_once APPPATH . '/views/panel/participant/categories/individual.php';
+					}?>
 				</div>
 				<div class="col-12">
 

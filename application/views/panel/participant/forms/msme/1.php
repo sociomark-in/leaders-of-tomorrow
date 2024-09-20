@@ -1,3 +1,10 @@
+<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
+<div class="mb-3">
+	<input type="hidden" name="category_id" value="<?= $category_id ?>">
+	<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
+	<input type="hidden" name="utm" value="<?= $utm ?>">
+	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
+	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Personal Information</h5>
@@ -128,3 +135,13 @@
 			</div>
 		</div>
 	</fieldset>
+</div>
+<div class="row g-3">
+	<div class="col-md-auto">
+		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+	</div>
+	<div class="col-md-auto">
+		<button type="submit" class="btn btn-primary">Save and Next</button>
+	</div>
+</div>
+<?= form_close() ?>

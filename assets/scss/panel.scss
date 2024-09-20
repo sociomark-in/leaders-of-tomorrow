@@ -140,3 +140,23 @@ h5 {
 		}
 	}
 }
+
+form{
+	.form-control,
+	.form-check-input,
+	.form-select{
+		&.error{
+			border-color: rgba(red, 0.3);
+			&:focus{
+				box-shadow: 0 0 0 0.25rem rgba(red, 0.2);
+			}
+		}
+	}
+	label{
+		margin-top: 0.25rem;
+		&.error{
+			color: red;
+			font-style: 0.8rem;
+		}
+	}
+}

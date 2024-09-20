@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xl-8 col-12">
+		<div class="col-xl col-12">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-4 col-12">
+		<div class="col-xl-4 col-12 d-none">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card">

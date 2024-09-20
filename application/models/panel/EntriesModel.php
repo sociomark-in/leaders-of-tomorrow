@@ -1,7 +1,10 @@
 <?php
 
 /* 
+
+Full texts
 id	
+nomination_id	
 name	
 email	
 organization_name	
@@ -32,6 +35,9 @@ document_4
 cp_name	
 cp_email	
 cp_contact	
+stage_status	
+status	
+created_by	
 updated_at	
 created_at
 */
@@ -47,9 +53,9 @@ class EntriesModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table['entries'] = "";
+		$this->table['nominations'] = "";
 	}
-	
+
 	/**
 	 * get
 	 *
@@ -59,17 +65,18 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $where
 	 * @return void
 	 */
-	public function get($select = null, $where = null) {
-		
-		if(!is_null($select)){
+	public function get($select = null, $where = null)
+	{
+
+		if (!is_null($select)) {
 			$this->db->select($select);
 		}
-		if(!is_null($where)){
+		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		return json_encode($this->db->get($this->table['entries'])->result_array());
+		return json_encode($this->db->get($this->table['nominations'])->result_array());
 	}
-	
+
 	/**
 	 * insert
 	 * 
@@ -80,13 +87,24 @@ class EntriesModel extends CI_Model
 	 */
 	public function insert($data)
 	{
-		if ($this->db->insert($this->table['nominations'], $data)) {
+		$this->load->model('event/awards/CategoryModel');
+		$category = array_merge(
+			json_decode($this->CategoryModel->get_individual(null, ['id' => $data['category_id']]), true),
+			json_decode($this->CategoryModel->get_msme(null, ['id' => $data['category_id']]), true)
+		)[0];
+		if ($category['type'] == "Individual") {
+			$table = "individual_entries";
+		} else {
+			$table = "msme_entries";
+		}
+
+		if ($this->db->insert($table, $data)) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * update
 	 *
@@ -99,13 +117,14 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $where
 	 * @return void
 	 */
-	public function update($data, $where) {
+	public function update($data, $where)
+	{
 		// $this->db->set();
-		if(!is_null($where)){
+		if (!is_null($where)) {
 			$this->db->where($where);
 		}
 		$affected_rows = $this->db->update_batch($this->table['nominations'], $data);
-		if($affected_rows > 0){
+		if ($affected_rows > 0) {
 			return $affected_rows;
 		} else {
 			return false;

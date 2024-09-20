@@ -162,7 +162,7 @@
 													<?php if ($speaker['photo'] == ""): ?>
 														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php else: ?>
-														<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+														<img src="<?= base_url('assets/images/cities/'. strtolower($city['name']) .'/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php endif ?>
 												</div>
 												<div class="desc text-center">
@@ -198,7 +198,7 @@
 													<?php if ($speaker['photo'] == ""): ?>
 														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php else: ?>
-														<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+														<img src="<?= base_url('assets/images/cities/'. strtolower($city['name']) .'/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php endif ?>
 												</div>
 												<div class="desc text-center">

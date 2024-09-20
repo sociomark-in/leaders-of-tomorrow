@@ -16,7 +16,8 @@ class NominationsController extends PanelController
 
 	public function user_side()
 	{
-		$this->load->panel_view('my_applications');
+		$this->data['my_applications'] = [];
+		$this->load->panel_view('my_applications', $this->data);
 	}
 
 	public function single($slug)
@@ -33,8 +34,9 @@ class NominationsController extends PanelController
 		);
 
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-		$this->data['category']['code'] = $code;
+		$this->data['category'] = $category_details[0];
 		$this->data['nomination']['stage'] = $this->input->get('stage');
+		$this->data['application']['id'] = date('U') . "-" . random_string('alnum', 4);
 		if (false) {
 			// First View
 			$this->load->panel_view('register', $this->data);

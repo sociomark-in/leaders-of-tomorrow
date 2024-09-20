@@ -102,6 +102,12 @@ form{
 			box-shadow: 0 0 0 0.25rem rgba(red, 0.2);
 		}
 	}
+	label{
+		&.error{
+			color: red;
+			font-style: 0.8rem;
+		}
+	}
 }
 
 .btn {

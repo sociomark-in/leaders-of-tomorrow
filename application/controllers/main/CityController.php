@@ -121,29 +121,29 @@ class CityController extends BaseController
 					'name' => "Chandigarh",
 					'guests' => [
 						[
-							'photo' => "",
+							'photo' => "Satya_Jain.png",
 							'name' => "Satya Pal Jain",
 							'description' => "Additional Solicitor General of India & Former Member of Lok Sabha Chandigarh",
 						],
 					],
 					'speakers' => [
 						[
-							'photo' => "",
+							'photo' => "Naveen_Manglani.png",
 							'name' => "Naveen Manglani",
 							'description' => "President, Chamber of Chandigarh Industries",
 						],
 						[
-							'photo' => "",
+							'photo' => "Heena_Kataria.png",
 							'name' => "Heena Kataria",
 							'description' => "Founder & CEO, MerakiAds",
 						],
 						[
-							'photo' => "",
+							'photo' => "Vineet_Khurana.png",
 							'name' => "Vineet Khurana",
 							'description' => "CEO, SACC India",
 						],
 						[
-							'photo' => "",
+							'photo' => "Isha_Taneja.png",
 							'name' => "Isha Taneja",
 							'description' => "Chair, TiE Chandigarh Women",
 						],

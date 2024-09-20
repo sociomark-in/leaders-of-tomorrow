@@ -19,6 +19,18 @@ class AwardsController extends BaseController
 		$this->load->award_page('home', $this->data);
 	}
 
+	public function categories(){
+		$this->data['categories']['msme'] = json_decode($this->CategoryModel->get_msme(['name', 'code']), true);
+		$this->data['categories']['individual'] = json_decode($this->CategoryModel->get_individual(['name', 'code']), true);
+
+		$this->data['page'] = [
+			'title' =>  "All Categories" . " • " . APP_NAME . " Awards",
+			'description' => "",
+		];
+
+		$this->load->award_page('categories', $this->data);
+	}
+
 	public function category_single($slug)
 	{
 		$category_details = array_merge(
