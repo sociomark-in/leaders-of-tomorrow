@@ -3,13 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
 class AccountController extends PanelController
 {
+	private $user_session;
 	public function __construct()
 	{
 		parent::__construct();
 	}
 	public function index()
 	{
-		switch ($_SESSION['awards_panel_user']['role']) {
+		$this->user_session = $_SESSION['awards_panel_user'];
+		switch ($this->user_session['role']) {
 			case 'admin':
 				$this->load->admin_view('home');
 				break;
@@ -17,6 +19,13 @@ class AccountController extends PanelController
 				$this->load->moderator_view('home');
 				break;
 			default:
+				$this->load->model('panel/EntriesModel');
+				echo $this->user_session;
+				print_r([
+					'individual' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'individual'), true),
+					'msme' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'msme'), true)
+				]);
+				die;
 				$this->data['my_applications'] = [];
 				$this->load->panel_view('home', $this->data);
 
