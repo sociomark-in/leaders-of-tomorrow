@@ -7,6 +7,7 @@ class NominationsController extends PanelController
 	{
 		parent::__construct();
 		$this->load->model('event/awards/CategoryModel');
+		$this->load->model('panel/EntriesModel');
 		$this->data['user'] = $_SESSION['awards_panel_user'];
 	}
 	public function index()

@@ -31,21 +31,21 @@ class NominationAPIController extends CI_Controller
 				"category_id" => $category['id'],
 				"nomination_id" => $this->request['application_id'],
 				"name" => $this->request['applicant']['name'],
-				"designation" => $this->request['applicant']['designation'],
-				"dob" => $this->request['applicant']['dob'],
-				"total_experience" => $this->request['applicant']['experience'],
+				"id_74502" => $this->request['applicant']['designation'],
+				"id_74501" => $this->request['applicant']['dob'],
+				"id_74503" => $this->request['applicant']['experience'],
 				"email" => $_SESSION['awards_panel_user']['useremail'],
 				"organization_name" => $this->request['organization']['name'],
-				"organization_maxsize" => $this->request['organization']['size'],
-				"organization_industry" => $this->request['organization']['type'],
-				"organization_segment" => $this->request['organization']['segment'],
-				"organization_experience" => $this->request['organization']['experience'],
-				"organization_inc_date" => $this->request['organization']['inc_date'],
+				"id_74504" => $this->request['organization']['size'],
+				"id_74505" => $this->request['organization']['type'],
+				"id_74506" => $this->request['organization']['segment'],
+				"id_74507" => $this->request['organization']['inc_date'],
+				"id_74508" => $this->request['organization']['experience'],
 				"organization_url" => $this->request['organization']['website'],
 				"linkedin_url" => $this->request['organization']['linkedin'],
-				"cp_name" => $this->request['contact_person']['name'],
-				"cp_email" => $this->request['contact_person']['email'],
-				"cp_contact" => $this->request['contact_person']['contact'],
+				"id_74529" => $this->request['contact_person']['name'],
+				"id_74530" => $this->request['contact_person']['email'],
+				"id_74531" => $this->request['contact_person']['contact'],
 				"stage_status" => $this->request['stage'],
 				"created_by" =>  $_SESSION['awards_panel_user']['id'],
 			];
@@ -90,5 +90,19 @@ class NominationAPIController extends CI_Controller
 			// Update
 			redirect('dashboard/category/' . $category_id . '/nominate?stage=' . ++$stage);
 		}
+	}
+
+	public function new_bulk()
+	{
+		$this->request = $this->input->post();
+		$this->load->model('event/awards/CategoryModel');
+		$category = array_merge(
+			json_decode($this->CategoryModel->get_individual(null, ['code' => $this->input->post('category_id')]), true),
+			json_decode($this->CategoryModel->get_msme(null, ['code' => $this->input->post('category_id')]), true)
+		)[0];
+		$category_id = $this->input->post('category_id');
+
+		echo "<pre>";
+		print_r($this->request);
 	}
 }

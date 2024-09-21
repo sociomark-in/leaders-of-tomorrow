@@ -20,11 +20,11 @@ class AccountController extends PanelController
 				break;
 			default:
 				$this->load->model('panel/EntriesModel');
-				echo $this->user_session;
+				echo "<pre>";
 				print_r([
-					'individual' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'individual'), true),
-					'msme' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'msme'), true)
-				]);
+						'individual' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'individual'), true), 
+						'msme' => json_decode($this->EntriesModel->get(null, ['created_by' => $this->user_session['id']], 'msme'), true)
+					]);
 				die;
 				$this->data['my_applications'] = [];
 				$this->load->panel_view('home', $this->data);

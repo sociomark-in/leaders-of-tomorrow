@@ -1,0 +1,77 @@
+<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_03']) ?>
+<div class="mb-3">
+	<input type="hidden" name="category_id" value="<?= $category_id ?>">
+	<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
+	<input type="hidden" name="utm" value="<?= $utm ?>">
+	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
+	<input type="hidden" name="stage" value="<?= $stage ?>">
+
+	<fieldset class="mb-3">
+		<legend class="card-title mb-0">
+			<h5>Case Studies (Part 1 / 2)</h5>
+		</legend>
+		<div class="row g-3">
+			<div class="col-12">
+				<div class="">
+					<label for="" class="form-label">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</label>
+					<textarea required name="overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="">
+					<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
+					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="">
+					<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
+					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<div class="row g-3">
+	<div class="col-md-auto">
+		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+	</div>
+	<div class="col-md-auto">
+		<button type="submit" class="btn btn-primary">Save and Next</button>
+	</div>
+</div>
+<?= form_close() ?>
+<script>
+	$.validator.addMethod("wordCount", function(value, element, wordCount) {
+
+		return value.split(' ').length <= wordCount;
+
+	});
+	$("#form_option_03").validate({
+		ignore: [
+			":hidden", ":focus"
+		],
+		rules: {
+			overview: {
+				wordCount: 300
+			},
+			mission_stmt: {
+				wordCount: 300
+			},
+			services_stmt: {
+				wordCount: 300
+			},
+		},
+		messages: {
+			overview: {
+				wordCount: "Error"
+			},
+			mission_stmt: {
+				wordCount: "Error"
+			},
+			services_stmt: {
+				wordCount: "Error"
+			},
+		}
+	});
+</script>

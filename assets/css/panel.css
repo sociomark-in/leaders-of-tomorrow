@@ -35,6 +35,7 @@ h5 {
 .staged-tab-wizard .nav[role=tablist] .nav-item .nav-link.success {
   background-color: #28a758;
   color: #efefef;
+  pointer-events: none;
 }
 .staged-tab-wizard .tab-content .tab-pane.disabled {
   pointer-events: none;

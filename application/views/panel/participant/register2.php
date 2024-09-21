@@ -65,6 +65,9 @@ if ($nomination['stage'] >= 1) {
 						include_once APPPATH . '/views/panel/participant/categories/individual.php';
 					}?>
 				</div>
+				<div class="col-12">
+
+				</div>
 			</div>
 		</div>
 	</div>

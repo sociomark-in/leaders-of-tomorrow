@@ -1,45 +1,95 @@
 <?php
 
 /* 
-
-Full texts
 id	
 nomination_id	
+category_id
 name	
 email	
 organization_name	
-organization_maxsize	
-organization_industry	
 organization_url	
-organization_overview	
-organization_mission_vission	
-organization_services	
-organization_reveue_23	
-organization_reveue_22	
-organization_growth_23	
-organization_growth_22	
 linkedin_url	
-case_study_1	
-case_study_2	
-case_study_3	
-case_study_4	
-case_study_5	
-case_study_6	
-case_study_7	
-case_study_8	
-case_study_9	
-document_1	
-document_2	
-document_3	
-document_4	
-cp_name	
-cp_email	
-cp_contact	
 stage_status	
 status	
 created_by	
 updated_at	
 created_at
+
+
+MSME
+
+75501	organization_maxsize
+75502	organization_industry
+75503	organization_overview	
+75504	organization_address	
+75505 	organization_segment
+75506	organization_funding	
+75507	organization_inc_date
+75508	organization_mission_vision	
+75509	organization_services	
+75510	organization_reveue	
+75511	organization_reveue	
+75512	organization_growth	
+75513	organization_growth	
+75514	organization_profit	
+75515	organization_profit	
+75516	organization_assets	
+75517	organization_assets	
+75518	organization_der	
+75519	organization_der
+75520	initiative_name	
+75521	initiative_start_date	
+75522	initiative_end_date	
+75523	initiative_desc	
+75524	initiative_challenges	
+75525	initiative_strategy	
+75526	initiative_tech	
+75527	initiative_impact	
+75528	initiative_scalability	
+75529	initiative_info	
+75530	document_1
+75531	document_2
+75532	document_3
+75533	document_4
+75534	cp_name	
+75535	cp_email	
+75536	cp_contact	
+
+
+INDIVIDUAL
+
+74501 dob
+74502 designation
+74503 total_experience
+74504 organization_maxsize
+74505 organization_industry
+74506 organization_segment
+74507 organization_inc_date
+74508 organization_experience
+74509 organization_overview
+74510 organization_mission_vission
+74511 organization_services
+74512 organization_reveue_23
+74513 organization_reveue_22
+74514 organization_growth_23
+74515 organization_growth_22
+74516 case_study_1
+74517 case_study_2
+74518 case_study_3
+74519 case_study_4
+74520 case_study_5
+74521 case_study_6
+74522 case_study_7
+74523 case_study_8
+74524 case_study_9
+74525 document_1
+74526 document_2
+74527 document_3
+74528 document_4
+74529 cp_name
+74530 cp_email
+74531 cp_contact
+
 */
 
 
@@ -53,7 +103,7 @@ class EntriesModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table['nominations'] = "";
+		$this->table = "";
 	}
 
 	/**
@@ -65,16 +115,28 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $where
 	 * @return void
 	 */
-	public function get($select = null, $where = null)
+	public function get($select = null, $where = null, $table = 'individual')
 	{
+		switch ($table) {
+			case 'individual':
+				$table = 'individual_entries';
+				break;
 
+			case 'msme':
+				$table = 'msme_entries';
+				break;
+
+			default:
+				$table = 'individual_entries';
+				break;
+		}
 		if (!is_null($select)) {
 			$this->db->select($select);
 		}
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		return json_encode($this->db->get($this->table['nominations'])->result_array());
+		return json_encode($this->db->get($table)->result_array());
 	}
 
 	/**
