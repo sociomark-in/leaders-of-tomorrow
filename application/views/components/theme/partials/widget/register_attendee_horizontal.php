@@ -79,7 +79,8 @@
 			<label for="" class="form-label">Organization Turnover</label>
 			<select name="organization[turnover]" id="" class="form-select" required>
 				<option value="">Select</option>
-				<option value="Below 50 Cr">Below 50 Cr.</option>
+				<option value="Below 20 Cr">Below 20 Cr.</option>
+				<option value="20 Cr - 50 Cr">20 Cr. - 50 Cr.</option>
 				<option value="50 Cr - 100 Cr">50 Cr. - 100 Cr.</option>
 				<option value="100 Cr - 250 Cr">100 Cr. - 250 Cr.</option>
 				<option value="250 Cr - 500 Cr">250 Cr. - 500 Cr.</option>

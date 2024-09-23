@@ -5,6 +5,16 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
+	<!-- 
+		74518 case_study_3
+		74519 case_study_4
+		74520 case_study_5
+		74521 case_study_6
+		74522 case_study_7
+		74523 case_study_8
+		74524 case_study_9
+	 -->
 
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
@@ -14,7 +24,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the key milestones achieved by you as an entrepreneur during your journey. What are you key differentiating factors from your competitors? (Max 150 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
@@ -27,25 +37,25 @@
 						Any other
 
 					</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">How do you envision contributing to the growth of the MSME sector in the coming years? (Max 150 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Why should you win the Award in this category? (Max 50 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc. (Max 100 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>

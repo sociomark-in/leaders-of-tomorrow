@@ -5,6 +5,7 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
 	<fieldset class="mb-3">
 		<div class="mb-3">
@@ -17,39 +18,39 @@
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Name of the initiative or product/service offering</label>
-					<input type="text" name="initiative[name]" class="form-control">
+					<input type="text" name="initiative_name" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-12">
 				<div class="">
 					<label for="" class="form-label">Start Date</label>
-					<input required type="text" data-type="date" name="initiative[start_date]" class="form-control">
+					<input required type="text" data-type="date" name="initiative_start_date" class="form-control">
 					<span class="form-text">(in DD/MM/YYYY)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-12">
 				<div class="">
 					<label for="" class="form-label">End Date</label>
-					<input required type="text" data-type="date" name="initiative[start_date]" class="form-control">
+					<input required type="text" data-type="date" name="initiative_end_date" class="form-control">
 					<span class="form-text">(in DD/MM/YYYY)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service? (Max 200 words)</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_desc" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges? (Max 150 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_challenges" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors. (Max 150 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_strategy" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>

@@ -7,6 +7,8 @@
 $stage = 0;
 if ($nomination['stage'] >= 1) {
 	$stage = $nomination['stage'];
+} else {
+	$application['id'] = date('U') . "-" . random_string('alnum', 4);
 }
 ?>
 <main class="page-content">
@@ -23,7 +25,7 @@ if ($nomination['stage'] >= 1) {
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
-			<h4 class="mb-3 mb-md-0">New Application ( <a href="">#LOTS12-<?= $category['code'] ?>-<?= $application_id ?></a> )</h4>
+			<h4 class="mb-3 mb-md-0">New Application ( <a href="">#LOTS12-<?= $category['code'] ?>-<?= $application['id'] ?></a> )</h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">

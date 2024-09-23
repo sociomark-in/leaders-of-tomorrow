@@ -27,16 +27,16 @@ MSME
 75507	organization_inc_date
 75508	organization_mission_vision	
 75509	organization_services	
-75510	organization_reveue	
-75511	organization_reveue	
-75512	organization_growth	
-75513	organization_growth	
-75514	organization_profit	
-75515	organization_profit	
-75516	organization_assets	
-75517	organization_assets	
-75518	organization_der	
-75519	organization_der
+75510	organization_reveue_23	
+75511	organization_reveue_22	
+75512	organization_growth_23	
+75513	organization_growth_22	
+75514	organization_profit_23	
+75515	organization_profit_22	
+75516	organization_assets_23	
+75517	organization_assets_22	
+75518	organization_der_23	
+75519	organization_der_22
 75520	initiative_name	
 75521	initiative_start_date	
 75522	initiative_end_date	
@@ -147,17 +147,35 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $data
 	 * @return void
 	 */
-	public function insert($data)
+	public function insert($data, $table = 'individual')
 	{
 		$this->load->model('event/awards/CategoryModel');
-		$category = array_merge(
-			json_decode($this->CategoryModel->get_individual(null, ['id' => $data['category_id']]), true),
-			json_decode($this->CategoryModel->get_msme(null, ['id' => $data['category_id']]), true)
-		)[0];
-		if ($category['type'] == "Individual") {
-			$table = "individual_entries";
-		} else {
-			$table = "msme_entries";
+		$c = explode('_', $data['category_id']);
+		switch ($c[1]) {
+			case 'MSME':
+				$category = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
+				break;
+			case 'Individual':
+				$category = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
+				break;
+				
+			default:
+				$category = [];
+				# code...
+				break;
+		}
+		switch (strtolower($category['type'])) {
+			case 'individual':
+				$table = 'individual_entries';
+				break;
+
+			case 'msme':
+				$table = 'msme_entries';
+				break;
+
+			default:
+				$table = 'individual_entries';
+				break;
 		}
 
 		if ($this->db->insert($table, $data)) {
@@ -179,13 +197,27 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $where
 	 * @return void
 	 */
-	public function update($data, $where)
+	public function update($data, $where, $type = 'individual')
 	{
 		// $this->db->set();
+		$this->db->set($data);
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		$affected_rows = $this->db->update_batch($this->table['nominations'], $data);
+		switch (strtolower($type)) {
+			case 'individual':
+				$table = 'individual_entries';
+				break;
+
+			case 'msme':
+				$table = 'msme_entries';
+				break;
+
+			default:
+				$table = 'individual_entries';
+				break;
+		}
+		$affected_rows = $this->db->update($table);
 		if ($affected_rows > 0) {
 			return $affected_rows;
 		} else {

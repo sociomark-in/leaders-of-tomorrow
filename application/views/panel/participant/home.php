@@ -10,19 +10,19 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<?php if (count($my_applications) > 0) : ?>
+					<?php if (count($my_applications['individual']) > 0 || count($my_applications['msme']) > 0) : ?>
 						<div class="row">
-							<?php for ($i = 0; $i < 3; $i++) : ?>
+							<?php foreach ($my_applications['individual'] as $key => $application) : ?>
 								<div class="col-xl-3 col-lg-4 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
 											<div class="card">
 												<div class="card-body">
 													<div class="mb-3">
-														<h5 class="">Lorem ipsum dolor sit. <?= $i ?></h5>
+														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, delectus.</p>
+														<p><span class="badge bg-warning">In Process</span></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -32,13 +32,24 @@
 																<p>
 																	Applied On<br>
 																	<strong>
-																		<?= date('F j, Y') ?>
+																		<?= $application['created_at'] ?>
 																	</strong>
 																</p>
 															</div>
 														</div>
 														<div class="col-auto">
-															<a href="<?= base_url('dashboard/application/' . random_string('alnum', 16)) ?>">View Application</a>
+															<?php
+															if ($application['stage_status'] == "") {
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']);
+															} elseif ($application['stage_status'] >= 1) {
+																# code...
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															} else {
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															}
+
+															?>
+															<a href="<?= $redirect ?>">View Application</a>
 														</div>
 													</div>
 												</div>
@@ -46,27 +57,70 @@
 										</div>
 									</div>
 								</div>
-							<?php endfor ?>
+							<?php endforeach ?>
+							<?php foreach ($my_applications['msme'] as $key => $application) : ?>
+								<div class="col-xl-3 col-lg-4 col-12">
+									<div class="row">
+										<div class="col-12 grid-margin stretch-card">
+											<div class="card">
+												<div class="card-body">
+													<div class="mb-3">
+														<h5 class=""><?= $application['category']['name'] ?></h5>
+													</div>
+													<div class="">
+														<p><span class="badge bg-warning">In Process</span></p>
+													</div>
+												</div>
+												<div class="card-footer">
+													<div class="row justify-content-between">
+														<div class="col">
+															<div class="mb-0 text-sm">
+																<p>
+																	Applied On<br>
+																	<strong>
+																		<?= $application['created_at'] ?>
+																	</strong>
+																</p>
+															</div>
+														</div>
+														<div class="col-auto">
+															<?php
+															if ($application['stage_status'] == "") {
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']);
+															} elseif ($application['stage_status'] >= 1) {
+																# code...
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															} else {
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															}
+
+															?>
+															<a href="<?= $redirect ?>">View Application</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php endforeach ?>
 						</div>
 						<hr class="m-0 mb-3">
 					<?php else : ?>
 					<?php endif ?>
 					<div class="row">
-						<?php for ($i = 0; $i < 10; $i++) : ?>
+						<?php foreach ($rest_categories['msme'] as $key => $category) : ?>
 							<div class="col-xl-3 col-lg-4 col-12">
 								<div class="row">
 									<div class="col-12 grid-margin stretch-card">
 										<div class="card">
 											<div class="card-body pb-3">
 												<div class="mb-3">
-													<h5 class="">Lorem ipsum dolor sit. <?= $i ?></h5>
-												</div>
-												<div class="mb-3">
-													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, delectus.</p>
+													<h5 class=""><?= $category['name'] ?></h5>
 												</div>
 												<div class="">
-													<a href="" class="btn btn-sm btn-primary">Apply Now</a>
-													<a href="" class="btn btn-sm btn-white">View Details</a>
+													<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
+													<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
 												</div>
 											</div>
 											<div class="card-footer">
@@ -76,75 +130,19 @@
 									</div>
 								</div>
 							</div>
-						<?php endfor ?>
-					</div>
-				</div>
-			</div>
-			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="my-categories-tab-pane" role="tabpanel" aria-labelledby="my-categories-tab" tabindex="0">
-					<div class="row">
-						<?php if (count($my_applications) > 0): ?>
-							<?php for ($i = 0; $i < 3; $i++) : ?>
-								<div class="col-xl-3 col-lg-4 col-12">
-									<div class="row">
-										<div class="col-12 grid-margin stretch-card">
-											<div class="card">
-												<div class="card-body">
-													<div class="mb-3">
-														<h5 class="">Lorem ipsum dolor sit. <?= $i ?></h5>
-													</div>
-													<div class="">
-														<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, delectus.</p>
-													</div>
-												</div>
-												<div class="card-footer">
-													<div class="row justify-content-between">
-														<div class="col">
-															<div class="mb-0 text-sm">
-																<p>
-																	Applied On<br>
-																	<strong>
-																		<?= date('F j, Y') ?>
-																	</strong>
-																</p>
-															</div>
-														</div>
-														<div class="col-auto">
-															<a href="<?= base_url('dashboard/application/' . random_string('alnum', 16)) ?>">View Application</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php endfor ?>
-						<?php else: ?>
-							<div class="col-12 grid-margin stretch-card">
-								<div class="alert alert-danger" role="alert">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque! <a href="#" class="alert-link">Click Here to Apply</a>.
-								</div>
-							</div>
-						<?php endif ?>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="all-categories-tab-pane" role="tabpanel" aria-labelledby="all-categories-tab" tabindex="0">
-					<div class="row">
-						<?php for ($i = 0; $i < 10; $i++) : ?>
+						<?php endforeach ?>
+						<?php foreach ($rest_categories['individual'] as $key => $category) : ?>
 							<div class="col-xl-3 col-lg-4 col-12">
 								<div class="row">
 									<div class="col-12 grid-margin stretch-card">
 										<div class="card">
 											<div class="card-body pb-3">
 												<div class="mb-3">
-													<h5 class="">Lorem ipsum dolor sit. <?= $i ?></h5>
-												</div>
-												<div class="mb-3">
-													<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, delectus.</p>
+													<h5 class=""><?= $category['name'] ?></h5>
 												</div>
 												<div class="">
-													<a href="" class="btn btn-sm btn-primary">Apply Now</a>
-													<a href="" class="btn btn-sm btn-white">View Details</a>
+													<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
+													<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
 												</div>
 											</div>
 											<div class="card-footer">
@@ -154,7 +152,7 @@
 									</div>
 								</div>
 							</div>
-						<?php endfor ?>
+						<?php endforeach ?>
 					</div>
 				</div>
 			</div>

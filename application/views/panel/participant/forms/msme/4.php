@@ -5,6 +5,7 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
 	<fieldset class="mb-3">
 		<div class="mb-3">
@@ -17,7 +18,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -36,7 +37,7 @@
 					<label for="" class="form-label">Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
 						(Details should be measurable and generic statements should be avoided) (Max 200 words)
 					</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -58,7 +59,7 @@
 						Plan for raising funds in future
 						Any other
 					</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -75,7 +76,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_info" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>

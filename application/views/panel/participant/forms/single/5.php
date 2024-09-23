@@ -1,4 +1,4 @@
-<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
+<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_05']) ?>
 <div class="mb-3">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">

@@ -43,8 +43,9 @@ $tabs = [
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<?php for ($i = 0; $i < count($tabs); $i++):
-			$data["category_id"] = $category['code'];
+			$data["category_id"] = implode('_', [$category['id'], $category['type']]);
 			$data["application_id"] = $application['id'] ?? null;
+			$data["referrer"] = current_url();
 			$data["utm"] = $utm;
 			$data["agent_id"] = $this->input->get('agent_id');
 			$data["stage"] = $this->input->get('stage');
@@ -83,36 +84,6 @@ $tabs = [
 					</div>
 				</div>
 			<?php else: ?>
-				<div class="tab-pane disabled py-3 fade" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0">
-				<div class="row">
-						<div class="col-12 grid-margin stretch-card">
-							<div class="card">
-								<div class="card-body">
-									<?php
-									switch ($tabs[$i]['identifier']) {
-										case 'profile':
-											$this->load->view('panel/participant/forms/msme/1', $data);
-											break;
-										case 'finance':
-											$this->load->view('panel/participant/forms/msme/2', $data);
-											break;
-										case 'case_1':
-											$this->load->view('panel/participant/forms/msme/3', $data);
-											break;
-										case 'case_2':
-											$this->load->view('panel/participant/forms/msme/4', $data);
-											break;
-
-										default:
-											$this->load->view('panel/participant/forms/msme/5', $data);
-											# code...
-											break;
-									} ?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			<?php endif ?>
 		<?php endfor ?>
 	</div>

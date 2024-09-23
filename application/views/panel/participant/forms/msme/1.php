@@ -1,10 +1,11 @@
-<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
+<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">
 	<input type="hidden" name="category_id" value="<?= $category_id ?>">
 	<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Participating Entity</h5>
@@ -13,13 +14,13 @@
 			<div class="col-xl-5 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Name of the Participating Entity</label>
-					<input type="text" name="organization[name]" class="form-control">
+					<input required type="text" name="organization[name]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Type of Business</label>
-					<select name="organization[type]" id="" class="form-select">
+					<select required name="organization[type]" id="" class="form-select">
 						<option value="">Select Option</option>
 						<?php for ($i = 0; $i < 10; $i++) : ?>
 							<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -30,7 +31,7 @@
 			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Business Segment</label>
-					<select name="organization[segment]" id="" class="form-select">
+					<select required name="organization[segment]" id="" class="form-select">
 						<option value="">Select Option</option>
 						<?php for ($i = 0; $i < 10; $i++) : ?>
 							<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -74,13 +75,13 @@
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input type="text" name="organization[website]" class="form-control">
+					<input required type="text" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input type="text" name="organization[linkedin]" class="form-control">
+					<input required type="text" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -120,3 +121,16 @@
 	</div>
 </div>
 <?= form_close() ?>
+<script>
+	$("#form_option_01").validate({
+		ignore: [
+			":hidden", ":focus"
+		],
+		rules: {
+			//Rules
+		},
+		messages: {
+			//messages
+		}
+	});
+</script>

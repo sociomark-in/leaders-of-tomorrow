@@ -5,7 +5,21 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
-
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
+<!-- 
+	75508	organization_mission_vision	
+	75509	organization_services	
+	75510	organization_reveue_23	
+	75511	organization_reveue_22	
+	75512	organization_growth_23	
+	75513	organization_growth_22	
+	75514	organization_profit_23	
+	75515	organization_profit_22	
+	75516	organization_assets_23	
+	75517	organization_assets_22	
+	75518	organization_der_23	
+	75519	organization_der_22
+ -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Organization Overview</h5>
@@ -14,25 +28,25 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Industry segment of the participating entity</label>
-					<input type="text" name="organization[industry]" class="form-control">
+					<input type="text" name="organization_industry" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
-					<textarea required name="overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_mission_vision" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_services" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -56,7 +70,7 @@
 				Revenue/ Turnover (in INR Crores)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="turnover_24" id="" class="form-select">
+				<select required name="organization_reveue_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -64,7 +78,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="turnover_23" id="" class="form-select">
+				<select required name="organization_reveue_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -75,7 +89,7 @@
 				Revenue Growth (In %)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_24" id="" class="form-select">
+				<select required name="organization_growth_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -83,7 +97,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_23" id="" class="form-select">
+				<select required name="organization_growth_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -94,7 +108,7 @@
 				Net Profit Margin (In %)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_24" id="" class="form-select">
+				<select required name="organization_profit_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -102,7 +116,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_23" id="" class="form-select">
+				<select required name="organization_profit_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -113,7 +127,7 @@
 				Asset Valuation (in INR Crores)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_24" id="" class="form-select">
+				<select required name="organization_assets_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -121,7 +135,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_23" id="" class="form-select">
+				<select required name="organization_assets_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -132,7 +146,7 @@
 				Debt: Equity Ratio
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_24" id="" class="form-select">
+				<select required name="organization_der_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -140,7 +154,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_23" id="" class="form-select">
+				<select required name="organization_der_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>

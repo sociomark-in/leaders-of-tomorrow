@@ -5,7 +5,9 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
+	
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Organization Overview</h5>
@@ -14,19 +16,19 @@
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
-					<textarea required name="overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -50,7 +52,7 @@
 				Revenue/ Turnover (in INR Crores)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="turnover_24" id="" class="form-select">
+				<select required name="finance[turnover_24]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -58,7 +60,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="turnover_23" id="" class="form-select">
+				<select required name="finance[turnover_23]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -69,7 +71,7 @@
 				Revenue Growth (In %)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_24" id="" class="form-select">
+				<select required name="finance[growth_24]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -77,7 +79,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="growth_23" id="" class="form-select">
+				<select required name="finance[growth_23]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>

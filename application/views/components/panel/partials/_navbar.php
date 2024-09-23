@@ -15,8 +15,8 @@
 							<img class="wd-80 ht-80 rounded-circle" src="https://placehold.co/80x80" alt="">
 						</div>
 						<div class="text-center">
-							<p class="tx-16 fw-bolder">Amiah Burton</p>
-							<p class="tx-12 text-muted">amiahburton@gmail.com</p>
+							<p class="tx-16 fw-bolder"><?= $user['useremail'] ?></p>
+							<p class="tx-12 text-muted"><?= $user['role'] ?></p>
 						</div>
 					</div>
 					<ul class="list-unstyled p-1">
@@ -27,7 +27,7 @@
 							</a>
 						</li>
 						<li class="dropdown-item py-2">
-							<a href="<?= base_url("") ?>" class="text-body ms-0">
+							<a href="<?= base_url("logout") ?>" class="text-body ms-0">
 								<i class="me-2 icon-md" data-feather="repeat"></i>
 								<span>Switch User</span>
 							</a>

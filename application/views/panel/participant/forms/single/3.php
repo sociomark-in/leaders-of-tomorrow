@@ -5,7 +5,12 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
-
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
+	<!-- 
+		74516 case_study_1
+		74517 case_study_2
+		74518 case_study_3
+	 -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Case Studies (Part 1 / 2)</h5>
@@ -14,19 +19,19 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</label>
-					<textarea required name="overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
-					<textarea required name="mission_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
-					<textarea required name="services_stmt" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
