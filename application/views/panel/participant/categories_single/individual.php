@@ -35,10 +35,122 @@
 							<div class="col-12 grid-margin stretch-card">
 								<div class="card">
 									<div class="card-body">
+
 										<fieldset class="mb-3">
 											<legend class="card-title mb-0">
 												<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
 											</legend>
+											<div class="row g-3">
+												<div class="col-xl-4 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Full Name of Individual</label>
+														<input type="text" class="form-control" required minlength="10" maxlength="50" name="applicant[name]" value="<?= $application['name'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Designation</label>
+														<input type="text" required maxlength="50" name="applicant[designation]" value="<?= $application['id_74502'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Date of Birth</label>
+														<input type="text" required data-type="date" name="applicant[dob]" value="<?= $application['id_74501'] ?>" class="form-control">
+														<span class="form-text">(in DD/MM/YYYY)</span>
+													</div>
+												</div>
+												<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Total Months of Experience</label>
+														<input type="text" maxlength="50" required name="applicant[experience]" value="<?= $application['id_74503'] ?>" class="form-control">
+														<span class="form-text">As On <?= date('F j, Y') ?></span>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="mb-3">
+											<legend class="card-title mb-0">
+												<h5>Current Organization&nbsp;<span class="text-danger">*</span></h5>
+											</legend>
+											<div class="row g-3">
+												<div class="col-xl-5 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Name of the Current Organization</label>
+														<input required type="text" name="organization[name]" value="<?= $application['organization_name'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Type of Business</label>
+														<input type="text" class="form-control" required name="organization[type]" value="<?= $application['id_74505'] ?>">
+													</div>
+												</div>
+												<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Years of Experience</label>
+														<input required type="text" name="organization[experience]" value="<?= $application['id_74503'] ?>" class="form-control">
+														<span class="form-text">As On <?= date('F j, Y') ?></span>
+													</div>
+												</div>
+												<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Business Segment</label>
+														<input type="text" class="form-control" required name="organization[segment]" value="<?= $application['id_74506'] ?>">
+													</div>
+												</div>
+												<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Company Incorporation</label>
+														<input required type="text" data-type="date" name="organization[inc_date]" value="<?= $application['id_74507'] ?>" class="form-control">
+														<span class="form-text">(in DD/MM/YYYY)</span>
+													</div>
+												</div>
+												<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">No. Of Employees</label>
+														<input type="text" class="form-control" required name="organization[size]" value="<?= $application['id_74504'] ?>">
+														<span class="form-text">(On payroll + On contract)</span>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Website URL</label>
+														<input required type="text" name="organization[website]" value="<?= $application['organization_url'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">LinkedIn URL</label>
+														<input required type="text" name="organization[linkedin]" value="<?= $application['linkedin_url'] ?>" class="form-control">
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="mb-3">
+											<legend class="card-title mb-0">
+												<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span></h5>
+											</legend>
+											<div class="row g-3">
+												<div class="col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Full Name of Individual</label>
+														<input name="contact_person[name]" type="text" value="<?= $application['id_74529'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Email Address</label>
+														<input name="contact_person[email]" type="text" value="<?= $application['id_74530'] ?>" class="form-control">
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6 col-12">
+													<div class="">
+														<label for="" class="form-label">Contact Number</label>
+														<input name="contact_person[contact]" type="text" value="<?= $application['id_74531'] ?>" class="form-control">
+													</div>
+												</div>
+											</div>
 										</fieldset>
 									</div>
 								</div>

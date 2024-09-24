@@ -78,10 +78,36 @@
 															<div class="col-12">
 																<div class="">
 																	<label for="" class="form-label">Email Address</label>
-																	<input type="email" name="email" class="form-control" required>
+																	<input type="email" id="OTPMail" name="email" class="form-control" required>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="">
+																	<button type="button" id="sendOTP" class="btn btn-red">Send OTP</button>
+																	<span class="form-text ms-2 text-success" id="notify"></span>
+																</div>
+															</div>
+															<div class="col-xl-4 col-lg-6 col-12">
+																<div class="">
+																	<label for="" class="form-label">Enter OTP</label>
+																	<input type="text" name="otp" class="form-control" required>
 																</div>
 															</div>
 														</div>
+														<script>
+															$("#sendOTP").on('click', () => {
+																$.ajax({
+																	url: '<?= base_url('api/v2/register/otp/send') ?>',
+																	data: {
+																		'email' : $("input[type=email]").val()
+																	},
+																	success: () => {
+																		$("#sendOTP").attr('disabled', true);
+																		$('#notify').text('OTP has been sent successfully!')
+																	}
+																})
+															})
+														</script>
 													</fieldset>
 
 													<h2>Personal Details</h2>

@@ -25,13 +25,13 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
-					<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
-					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"></textarea>
 				</div>
 			</div>
 		</div>

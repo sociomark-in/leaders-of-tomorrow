@@ -113,6 +113,8 @@ class CityController extends BaseController
 						],
 					]
 				];
+				$this->load->city_view('lucknow', $this->data);
+				break;
 			case 'chandigarh':
 				$this->data['page'] = [
 					'title' => "Chandigarh Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -127,6 +129,11 @@ class CityController extends BaseController
 						],
 					],
 					'speakers' => [
+						[
+							'photo' => "Rohit_Saoji.png",
+							'name' => "Rohit Jagdish Saoji",
+							'description' => "Head, Commercial Banking, IDFC FIRST Bank",
+						],
 						[
 							'photo' => "Naveen_Manglani.png",
 							'name' => "Naveen Manglani",
@@ -204,7 +211,6 @@ class CityController extends BaseController
 	}
 	public function city_gallery($city)
 	{
-
 		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
 		switch ($city) {
 			case 'mumbai':
@@ -214,14 +220,13 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Mumbai";
 				$this->load->city_view('gallery', $this->data);
 				break;
-				/* case 'lucknow':
+			case 'lucknow':
 				$this->data['page'] = [
-					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " .date('Y'),
+					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Lucknow";
 				$this->load->city_view('gallery', $this->data);
-				break; */
-
+				break;
 
 			default:
 				redirect('all-cities');

@@ -39,11 +39,7 @@
 														</div>
 														<div class="col-auto">
 															<?php
-															if ((int)$application['status'] < 4) :
-																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . '/edit');
-															?>
-																<a href="<?= $redirect ?>">Unlock and Edit</a>
-															<?php else :
+															if ((int)$application['status'] < 3) :
 																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
 															?>
 																<a href="<?= $redirect ?>">Complete Application</a>
@@ -83,17 +79,13 @@
 														</div>
 														<div class="col-auto">
 															<div class="col-auto">
-															<?php
-															if ((int)$application['status'] >= 3) :
-																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . '/edit');
-															?>
-																<a href="<?= $redirect ?>">Unlock and Edit</a>
-															<?php else :
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															?>
-																<a href="<?= $redirect ?>">Complete Application</a>
-															<?php endif ?>
-														</div>
+																<?php
+																if ((int)$application['status'] < 3) :
+																	$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																?>
+																	<a href="<?= $redirect ?>">Complete Application</a>
+																<?php endif ?>
+															</div>
 														</div>
 													</div>
 												</div>

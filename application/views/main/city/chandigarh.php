@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 blank d-none" id="about">
+	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
 				<div class="glass-card">
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -72,15 +72,14 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Charting Uttar Pradesh’s Trillion-Dollar Journey</span></h2>
+						<h2><span>The Case Study of Ease of Doing Business</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Seated in the heart of the State, MSMEs in Lucknow are driving Uttar Pradesh towards its <strong class="text-red">$1&nbsp;Trillion</strong> economy goal.
+							The frontrunner of planned urbanisation today faces critical challenges in expanding its business landscape.
 						</p>
-
 						<p data-aos="fade-left" data-aos-delay="400">
-							Join us at #LOTSpringboard Lucknow to see how the logistics and industrial hub is shaping a future full of opportunities.
+							Join us at <strong class="text-red">#LOTSpringboard Chandigarh</strong> to meet policymakers, industry leaders and entrepreneurs to discover how policy support, labour skilling and attracting investment can drive local businesses to innovate and grow on the global stage!
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
@@ -162,7 +161,7 @@
 													<?php if ($speaker['photo'] == ""): ?>
 														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php else: ?>
-														<img src="<?= base_url('assets/images/cities/'. strtolower($city['name']) .'/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+														<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php endif ?>
 												</div>
 												<div class="desc text-center">
@@ -198,7 +197,7 @@
 													<?php if ($speaker['photo'] == ""): ?>
 														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php else: ?>
-														<img src="<?= base_url('assets/images/cities/'. strtolower($city['name']) .'/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+														<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php endif ?>
 												</div>
 												<div class="desc text-center">
@@ -317,7 +316,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart.png')">
 
 	</div>
 </main>

@@ -212,17 +212,43 @@ class NominationAPIController extends CI_Controller
 			}
 		} elseif ($category['type'] == 'Individual') {
 			switch ($stage) {
+				case '':
+					# code...
+					$application_id = $this->input->post('application_id');
+					$data = [
+						"name" => $this->request['applicant']['name'],
+						"email" => $this->request['contact_person']['email'],
+						'organization_url'	=> $this->request['organization']['website'],
+						'linkedin_url'	=> $this->request['organization']['linkedin'],
+						'id_74501'	=> $this->request['applicant']['dob'],
+						'id_74502'	=> $this->request['applicant']['designation'],
+						'id_74503'	=> $this->request['applicant']['experience'],
+						'id_74504'	=> $this->request['organization']['size'],
+						'id_74505 ' => $this->request['organization']['type'],
+						'id_74506 ' => $this->request['organization']['segment'],
+						'id_74507'	=> $this->request['organization']['inc_date'],
+						"id_74529" => $this->request['contact_person']['name'],
+						"id_74530" => $this->request['contact_person']['email'],
+						"id_74531" => $this->request['contact_person']['contact'],
+					];
+					$this->data['category'] =  $category;
+					$this->data['data'] = array_merge($data, $common);
+					if ($this->EntriesModel->insert($this->data['data'])) {
+						// $this->session->set_userdata('application_stage', ++$stage);
+						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+					};
+					break;
 				case '1':
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
-						'id_74503'	=> $this->request['organization']['overview'],			//organization_overview	
-						'id_74508'	=> $this->request['organization']['mission_stmt'],		//organization_mission_vision	
-						'id_74509'	=> $this->request['organization']['services_stmt'],		//organization_services	
-						'id_74510'	=> $this->request['finance']['turnover_24'],			//organization_reveue	
-						'id_74511'	=> $this->request['finance']['turnover_23'],			//organization_reveue	
-						'id_74512'	=> $this->request['finance']['growth_24'],				//organization_growth	
-						'id_74513'	=> $this->request['finance']['growth_23'],				//organization_growth	
+						'id_74509'	=> $this->request['organization']['overview'],			//organization_overview	
+						'id_74510'	=> $this->request['organization']['mission_stmt'],		//organization_mission_vision	
+						'id_74511'	=> $this->request['organization']['services_stmt'],		//organization_services	
+						'id_74512'	=> $this->request['finance']['turnover_24'],			//organization_reveue	
+						'id_74513'	=> $this->request['finance']['turnover_23'],			//organization_reveue	
+						'id_74514'	=> $this->request['finance']['growth_24'],				//organization_growth	
+						'id_74515'	=> $this->request['finance']['growth_23'],				//organization_growth	
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'individual');
@@ -236,9 +262,9 @@ class NominationAPIController extends CI_Controller
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
-						'id_74516'	=> $this->request['case_study_1'],			//organization_overview	
-						'id_74517'	=> $this->request['case_study_2'],		//organization_mission_vision	
-						'id_74518'	=> $this->request['case_study_3'],		//organization_services	
+						'id_74516'	=> $this->request['case_study_1'],
+						'id_74518'	=> $this->request['case_study_3'],
+						'id_74519'	=> $this->request['case_study_4'],	
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'individual');
@@ -252,11 +278,11 @@ class NominationAPIController extends CI_Controller
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
-						'id_74519'	=> $this->request['case_study_4'],			//organization_overview	
 						'id_74520'	=> $this->request['case_study_5'],		//organization_mission_vision	
 						'id_74521'	=> $this->request['case_study_6'],		//organization_services		
 						'id_74522'	=> $this->request['case_study_7'],		//organization_services		
 						'id_74523'	=> $this->request['case_study_8'],		//organization_services	
+						'id_74524'	=> $this->request['case_study_9'],		//organization_services	
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'individual');
@@ -348,29 +374,6 @@ class NominationAPIController extends CI_Controller
 					break;
 
 				default:
-					# code...
-					$application_id = $this->input->post('application_id');
-					$data = [
-						"name" => $this->request['applicant']['name'],
-						"email" => $this->request['contact_person']['email'],
-						'organization_url'	=> $this->request['organization']['website'],
-						'linkedin_url'	=> $this->request['organization']['linkedin'],
-						'id_74501'	=> $this->request['applicant']['dob'],
-						'id_74502'	=> $this->request['applicant']['designation'],
-						'id_74503'	=> $this->request['applicant']['experience'],
-						'id_74504'	=> $this->request['organization']['size'],
-						'id_74506 ' => $this->request['organization']['segment'],
-						'id_74507'	=> $this->request['organization']['inc_date'],
-						"id_74529" => $this->request['contact_person']['name'],
-						"id_74530" => $this->request['contact_person']['email'],
-						"id_74531" => $this->request['contact_person']['contact'],
-					];
-					$this->data['category'] =  $category;
-					$this->data['data'] = array_merge($data, $common);
-					if ($this->EntriesModel->insert($this->data['data'])) {
-						// $this->session->set_userdata('application_stage', ++$stage);
-						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
-					};
 					break;
 			}
 		}

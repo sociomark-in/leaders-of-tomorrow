@@ -60,4 +60,9 @@ class AuthAPIController extends CI_Controller
 			print_r($data);
 		}
 	}
+
+	public function send_otp(){
+		$this->output
+	}
+	public function verify_otp(){}
 }

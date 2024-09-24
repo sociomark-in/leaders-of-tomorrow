@@ -36,7 +36,7 @@
 			<div class="row g-3">
 				<div class="col-12">
 						<div class="gallery-masonry" id="galleryMasonry">
-							<?php for ($i = 1; $i <= 17; $i++) : ?>
+							<?php for ($i = 1; $i <= count($city['gallery']['thumbs\\']); $i++) : ?>
 								<a class="tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/' . $i . '.jpg') ?>">
 									<figure>
 										<picture>

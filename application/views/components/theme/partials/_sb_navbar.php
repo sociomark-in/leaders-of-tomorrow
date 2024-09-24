@@ -2,6 +2,7 @@
 
 switch ($city['name']) {
 	case 'Mumbai':
+	case 'Lucknow':
 		$class = "d-none";
 		break;
 	
