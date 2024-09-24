@@ -27,14 +27,34 @@ class AccountController extends PanelController
 					'individual' => json_decode($this->CategoryModel->get_individual(), true),
 				];
 				$applications = [
-					'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at'], ['created_by' => $this->user_session['id']], 'individual'), true),
-					'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at'], ['created_by' => $this->user_session['id']], 'msme'), true)
+					'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'individual'), true),
+					'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'msme'), true)
 				];
 				if (count($applications['individual']) > 0) {
 					for ($i = 0; $i < count($applications['individual']); $i++) {
 						$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
-						for ($c=0; $c < count($categories['individual']); $c++) { 
-							if($applications['individual'][$i]['category']['id'] == $categories['individual'][$c]['id']){
+						$s = $applications['individual'][$i]['status'];
+						switch ($s) {
+							case '0':
+								$s = 'Rejected';
+								break;
+							case '1':
+								$s = 'Accepted';
+								break;
+							case '2':
+								$s = 'In Review';
+								break;
+							case '3':
+								$s = 'Complete';
+								break;
+							default:
+								$s = 'Draft';
+								# code...
+								break;
+						}
+						$applications['individual'][$i]['status_text'] = $s;
+						for ($c = 0; $c < count($categories['individual']); $c++) {
+							if ($applications['individual'][$i]['category']['id'] == $categories['individual'][$c]['id']) {
 								unset($categories['individual'][$c]);
 							}
 						}
@@ -43,8 +63,28 @@ class AccountController extends PanelController
 				if (count($applications['msme']) > 0) {
 					for ($i = 0; $i < count($applications['msme']); $i++) {
 						$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
-						for ($c=0; $c < count($categories['msme']); $c++) { 
-							if($applications['msme'][$i]['category']['id'] == $categories['msme'][$c]['id']){
+						$s = $applications['msme'][$i]['status'];
+						switch ($s) {
+							case '0':
+								$s = 'Rejected';
+								break;
+							case '1':
+								$s = 'Accepted';
+								break;
+							case '2':
+								$s = 'In Review';
+								break;
+							case '3':
+								$s = 'Complete';
+								break;
+							default:
+								$s = 'Draft';
+								# code...
+								break;
+						}
+						$applications['msme'][$i]['status_text'] = $s;
+						for ($c = 0; $c < count($categories['msme']); $c++) {
+							if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$c]['id']) {
 								unset($categories['msme'][$c]);
 							}
 						}
@@ -52,6 +92,10 @@ class AccountController extends PanelController
 				}
 				$this->data['my_applications'] = $applications;
 				$this->data['rest_categories'] = $categories;
+
+				// echo "<pre>";
+				// print_r($this->data['my_applications']);
+				// die;
 
 				$this->load->panel_view('home', $this->data);
 				break;

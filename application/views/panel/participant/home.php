@@ -22,7 +22,7 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p><span class="badge bg-warning">In Process</span></p>
+														<p><span class="badge bg-warning"><?= $application['status_text'] ?></span></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -39,17 +39,15 @@
 														</div>
 														<div class="col-auto">
 															<?php
-															if ($application['stage_status'] == "") {
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']);
-															} elseif ($application['stage_status'] >= 1) {
-																# code...
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															} else {
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															}
-
+															if ((int)$application['status'] >= 3) :
+																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . '/edit');
 															?>
-															<a href="<?= $redirect ?>">View Application</a>
+																<a href="<?= $redirect ?>">Unlock and Edit</a>
+															<?php else :
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															?>
+																<a href="<?= $redirect ?>">Complete Application</a>
+															<?php endif ?>
 														</div>
 													</div>
 												</div>
@@ -68,7 +66,7 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p><span class="badge bg-warning">In Process</span></p>
+														<p><span class="badge bg-warning"><?= $application['status_text'] ?></span></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -84,18 +82,18 @@
 															</div>
 														</div>
 														<div class="col-auto">
+															<div class="col-auto">
 															<?php
-															if ($application['stage_status'] == "") {
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']);
-															} elseif ($application['stage_status'] >= 1) {
-																# code...
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															} else {
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															}
-
+															if ((int)$application['status'] >= 3) :
+																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . '/edit');
 															?>
-															<a href="<?= $redirect ?>">View Application</a>
+																<a href="<?= $redirect ?>">Unlock and Edit</a>
+															<?php else :
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															?>
+																<a href="<?= $redirect ?>">Complete Application</a>
+															<?php endif ?>
+														</div>
 														</div>
 													</div>
 												</div>

@@ -66,7 +66,7 @@
 		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="submit" class="btn btn-primary">Save and Next</button>
+		<button type="submit" class="btn btn-primary">Confirm and Next</button>
 	</div>
 </div>
 <?= form_close() ?>

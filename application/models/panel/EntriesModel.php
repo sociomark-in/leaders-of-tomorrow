@@ -92,6 +92,15 @@ INDIVIDUAL
 
 */
 
+/*
+status
+0	Rejected
+1	Accepted
+2	In Review
+3	Complete
+4	Draft 
+*/
+
 
 /**
  * EntriesModel

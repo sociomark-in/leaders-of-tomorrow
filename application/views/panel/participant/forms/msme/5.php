@@ -1,4 +1,10 @@
 <?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
+<input type="hidden" name="category_id" value="<?= $category_id ?>">
+<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
+<input type="hidden" name="utm" value="<?= $utm ?>">
+<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
+<input type="hidden" name="stage" value="<?= $stage ?>">
+<input type="hidden" name="referrer" value="<?= $referrer ?>">
 <div class="mb-3">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">

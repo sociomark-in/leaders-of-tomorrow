@@ -117,37 +117,77 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 				case '4':
-					$config['upload_path'] = FCPATH . '/uploads/applications/' . $this->request['application_id'];
+					/* Get Application Data */
+					$application_id = $this->input->post('application_id');
+					$c = explode('_', $this->input->post('category_id'));
+
+					/* Change Application Status */
+
+					/* Set Docket Name */
+					$docket_name = FCPATH . 'uploads/dockets/' . $this->input->post('category_id') . '_' . $this->input->post('application_id') . '_' . time() . '.pdf';
+
+					/* Set Uploads Config */
+					$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
 					$config['allowed_types'] = 'pdf';
 					$config['max_size'] = '250';
 
+
+					/* PDFMerger Docket File Exists Script */
+					if (!file_exists(FCPATH . 'uploads/dockets/')) {
+						mkdir(FCPATH . 'uploads/dockets/', 0777);
+					}
+
+					/* Document Upload Folder Exists Script */
 					if (!file_exists($config['upload_path'])) {
 						mkdir($config['upload_path'], 0777);
 					}
 
+					$update_data = [];
+
 					$pdf = new PDFMerger;
+					$i = 0;
+					$r = random_string();
+					$this->load->library('upload', $config);
 					foreach ($_FILES as $key => $file) {
-						$new_name = time() . "_" . random_string() . "_" . $file['name'];
+						$new_name = time() . "_" . $r . "_" . $file['name'];
 						$config['file_name'] = $new_name;
 
-						// print_r($file['tmp_name']);
-						$tmp = $file['tmp_name'];
-						// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
-						$pdf->addPDF($tmp);
-						// $this->load->library('upload', $config);
+						print_r($new_name);
+						echo "<br>";
 
-						// if (!$this->upload->do_upload($key)) {
-						// 	// An error occurred
-						// 	echo "Error: " . $this->upload->display_errors();
-						// } else {
-						// 	// File uploaded successfully
-						// 	echo "Success: File uploaded as " . $new_name;
-						// }
+
+						/* PDF Merger Script */
+						$tmp = $file['tmp_name'];
+						$pdf->addPDF($tmp);
+						// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
+						/* PDF Merger Script */
+
+						/* File Upload Script */
+						$this->upload->initialize($config);
+						if (!$this->upload->do_upload($key)) {
+							// An error occurred
+							echo "Error: " . $this->upload->display_errors();
+						} else {
+							/* No Error - File Upload Script */
+							/* Data Upload */
+							$update_data['id_7553' . $i] =  base_url(explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name'));
+							$i++;
+						}
 					}
-					$pdf->merge('file',  FCPATH . 'uploads/TEST2.pdf', 'P');
-					die;
-					// Upload
-					redirect('dashboard/category/' . $category_id . '/nominate/complete');
+
+					$update_data['status'] = 3;
+					$update_data['stage_status'] = 5;
+					$rows = $this->EntriesModel->update($update_data, ['nomination_id' => $application_id], strtolower($c[1]));
+
+
+					if ($rows == 0) {
+						redirect($this->request['referrer'] . '?stage=' . $stage);
+					} else {
+						/* PDF Merger Script */
+						$pdf->merge('file', $docket_name, 'P');
+
+						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+					}
 					break;
 
 				default:
@@ -228,37 +268,84 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 				case '4':
-					$config['upload_path'] = FCPATH . '/uploads/applications/' . $this->request['application_id'];
+					echo "<pre>";
+					/* Get Application Data */
+					$application_id = $this->input->post('application_id');
+					$c = explode('_', $this->input->post('category_id'));
+
+					/* Change Application Status */
+
+					/* Set Docket Name */
+					$docket_name = FCPATH . 'uploads/dockets/' . $this->input->post('category_id') . '_' . $this->input->post('application_id') . '_' . time() . '.pdf';
+
+					/* Set Uploads Config */
+					$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
 					$config['allowed_types'] = 'pdf';
 					$config['max_size'] = '250';
 
+
+					/* PDFMerger Docket File Exists Script */
+					if (!file_exists(FCPATH . 'uploads/dockets/')) {
+						mkdir(FCPATH . 'uploads/dockets/', 0777);
+					}
+
+					/* Document Upload Folder Exists Script */
 					if (!file_exists($config['upload_path'])) {
 						mkdir($config['upload_path'], 0777);
 					}
 
+					$update_data = [];
+
 					$pdf = new PDFMerger;
+					$i = 0;
+					$c = [
+						'id_74525',
+						'id_74526',
+						'id_74527',
+						'id_74528',
+					];
+					$r = random_string();
+					$this->load->library('upload', $config);
 					foreach ($_FILES as $key => $file) {
-						$new_name = time() . "_" . random_string() . "_" . $file['name'];
+						$new_name = time() . "_" . $r . "_" . $file['name'];
 						$config['file_name'] = $new_name;
 
-						// print_r($file['tmp_name']);
-						$tmp = $file['tmp_name'];
-						// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
-						$pdf->addPDF($tmp);
-						// $this->load->library('upload', $config);
+						print_r($new_name);
+						echo "<br>";
 
-						// if (!$this->upload->do_upload($key)) {
-						// 	// An error occurred
-						// 	echo "Error: " . $this->upload->display_errors();
-						// } else {
-						// 	// File uploaded successfully
-						// 	echo "Success: File uploaded as " . $new_name;
-						// }
+
+						/* PDF Merger Script */
+						$tmp = $file['tmp_name'];
+						$pdf->addPDF($tmp);
+						// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
+						/* PDF Merger Script */
+
+						/* File Upload Script */
+						$this->upload->initialize($config);
+						if (!$this->upload->do_upload($key)) {
+							// An error occurred
+							echo "Error: " . $this->upload->display_errors();
+						} else {
+							/* No Error - File Upload Script */
+							/* Data Upload */
+							$update_data[$c[$i]] =  base_url(explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name'));
+							$i++;
+						}
 					}
-					$pdf->merge('file',  FCPATH . 'uploads/TEST2.pdf', 'P');
-					die;
-					// Upload
-					redirect('dashboard/category/' . $category_id . '/nominate/complete');
+
+					$update_data['status'] = 3;
+					$update_data['stage_status'] = 4;
+					$rows = $this->EntriesModel->update($update_data, ['nomination_id' => $application_id], strtolower($c[1]));
+
+
+					if ($rows == 0) {
+						redirect($this->request['referrer'] . '?stage=' . $stage);
+					} else {
+						/* PDF Merger Script */
+						$pdf->merge('file', $docket_name, 'P');
+
+						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+					}
 					break;
 
 				default:
@@ -355,5 +442,54 @@ class NominationAPIController extends CI_Controller
 		}
 		echo "<pre>";
 		print_r($category['type']);
+	}
+
+	public function bulk_edit() {
+		
+	}
+
+
+	public function send_email($data, $purpose)
+	{
+		$this->load->library('email/brevomail');
+		$this->brevomail->init();
+
+		$this->brevomail->from('business@sociomark.in', 'Sociomark');
+		$this->brevomail->bcc($data['bcc']);
+
+		switch ($purpose) {
+			case 'value':
+				$this->brevomail->to($data['to']);
+				$this->brevomail->cc($data['cc']);
+				$this->brevomail->subject($data['subject']);
+				$this->brevomail->message($data['body']);
+
+				break;
+
+			default:
+				# generic mail
+				$this->brevomail->to($data['to']);
+				$this->brevomail->cc($data['cc']);
+				$this->brevomail->subject($data['subject']);
+				$this->brevomail->message($data['body']);
+				break;
+		}
+
+		$status = false;
+		if ($this->brevomail->send()) {
+			$status = true;
+			$this->response['status'] = true;
+			$this->response['message'] = 'Email Sent Successfully!';
+		} else {
+			$status = false;
+			$this->response['status'] = false;
+			$this->response['message'] = $this->brevomail->print_debugger();
+		}
+
+		if ($status) {
+			return json_encode($this->response);
+		}
+
+		$this->brevomail->clear(TRUE);
 	}
 }

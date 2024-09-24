@@ -3,12 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
 class NominationsController extends PanelController
 {
+	public $user_session;
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('event/awards/CategoryModel');
 		$this->load->model('panel/EntriesModel');
-		$this->data['user'] = $_SESSION['awards_panel_user'];
+		$this->user_session = $_SESSION['awards_panel_user'];
 	}
 	public function index()
 	{
@@ -18,7 +19,83 @@ class NominationsController extends PanelController
 	public function user_side()
 	{
 		$this->data['my_applications'] = [];
+		$applications = [
+			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'individual'), true),
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'msme'), true)
+		];
+		if (count($applications['individual']) > 0) {
+			for ($i = 0; $i < count($applications['individual']); $i++) {
+				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
+				$s = $applications['individual'][$i]['status'];
+				switch ($s) {
+					case '0':
+						$s = 'Rejected';
+						break;
+					case '1':
+						$s = 'Accepted';
+						break;
+					case '2':
+						$s = 'In Review';
+						break;
+					case '3':
+						$s = 'Complete';
+						break;
+					default:
+						$s = 'Draft';
+						# code...
+						break;
+				}
+				$applications['individual'][$i]['status_text'] = $s;
+			}
+		}
+		if (count($applications['msme']) > 0) {
+			for ($i = 0; $i < count($applications['msme']); $i++) {
+				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+				$s = $applications['msme'][$i]['status'];
+				switch ($s) {
+					case '0':
+						$s = 'Rejected';
+						break;
+					case '1':
+						$s = 'Accepted';
+						break;
+					case '2':
+						$s = 'In Review';
+						break;
+					case '3':
+						$s = 'Complete';
+						break;
+					default:
+						$s = 'Draft';
+						# code...
+						break;
+				}
+				$applications['msme'][$i]['status_text'] = $s;
+			}
+		}
+		$this->data['my_applications'] = $applications;
 		$this->load->panel_view('my_applications', $this->data);
+	}
+
+	public function user_edit($slug){
+		$this->data['id'] = $slug;
+		$application = array_merge(
+			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'individual'), true),
+			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'msme'), true),
+		)[0];
+
+
+		$c = explode("_", $application['category_id']);
+		if ($c[1] == 'Individual') {
+			$category_details = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
+		} elseif ($c[1] == 'MSME') {
+			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
+		}
+		$this->data['category'] = $category_details;
+		$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+		// echo "<pre>";
+		// print_r($this->data);
+		$this->load->panel_view('categories_bulk/'  . strtolower($category_details['type']), $this->data);
 	}
 
 	public function single($slug)
