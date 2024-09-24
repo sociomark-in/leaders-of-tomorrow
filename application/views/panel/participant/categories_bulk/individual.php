@@ -1,12 +1,13 @@
 <main class="page-content">
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div>
-			<h4 class="mb-3 mb-md-0">All Applications</h4>
+			<h4 class="mb-3 mb-md-0">Application for <?= $category['name'] ?> <?= date('Y') ?></h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">My Applications</li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/my-applications') ?>">My Applications</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Edit</li>
 			</ol>
 		</nav>
 	</div>
@@ -29,13 +30,13 @@
 						<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
 						<input type="hidden" name="utm" value="<?= $utm ?>">
 						<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
-						<input type="hidden" name="stage" value="<?= $stage ?>">
+						<input type="hidden" name="stage" value="4">
 						<div class="row">
 							<div class="col-12 grid-margin stretch-card">
 								<div class="card">
 									<div class="card-body">
 
-										<fieldset disabled class="mb-3">
+										<fieldset class="mb-3">
 											<legend class="card-title mb-0">
 												<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
 											</legend>
@@ -68,7 +69,7 @@
 												</div>
 											</div>
 										</fieldset>
-										<fieldset disabled class="mb-3">
+										<fieldset class="mb-3">
 											<legend class="card-title mb-0">
 												<h5>Current Organization&nbsp;<span class="text-danger">*</span></h5>
 											</legend>
@@ -126,7 +127,7 @@
 												</div>
 											</div>
 										</fieldset>
-										<fieldset disabled class="mb-3">
+										<fieldset class="mb-3">
 											<legend class="card-title mb-0">
 												<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span></h5>
 											</legend>

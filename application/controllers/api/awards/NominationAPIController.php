@@ -37,8 +37,6 @@ class NominationAPIController extends CI_Controller
 		$common = [
 			"nomination_id" => $this->request['application_id'],
 			"category_id" => implode('_', [$category['id'], $category['type']]),
-			"name" => $this->request['organization']['name'],
-			"email" => $this->request['contact_person']['email'],
 			"organization_name" => 	$this->request['organization']['name'],
 			"organization_url" => $this->request['organization']['website'],
 			"linkedin_url" => $this->request['organization']['linkedin'],
@@ -51,7 +49,6 @@ class NominationAPIController extends CI_Controller
 				case '1':
 					$nomination_id =  $this->request['application_id'];
 					$data = [
-						"category_id" => implode('_', [$category['id'], $category['type']]),
 						'id_75502'	=> $this->request['organization_industry'],			//organization_industry
 						'id_75503'	=> $this->request['organization_overview'],			//organization_overview	
 						'id_75508'	=> $this->request['organization_mission_vision'],		//organization_mission_vision	
@@ -193,6 +190,8 @@ class NominationAPIController extends CI_Controller
 				default:
 					# code...
 					$data = [
+						"name" => $this->request['organization']['name'],
+						"email" => $this->request['contact_person']['email'],
 						'id_75501'	=> $this->request['organization']['size'],			//organization_maxsize
 						'id_75504'	=> $this->request['organization']['website'],		//organization_address	
 						'id_75505 ' => $this->request['organization']['segment'],		///organization_segment
@@ -350,18 +349,27 @@ class NominationAPIController extends CI_Controller
 
 				default:
 					# code...
+					$application_id = $this->input->post('application_id');
 					$data = [
-						'id_75501'	=> $this->request['organization']['size'],			//organization_maxsize
-						'id_75504'	=> $this->request['organization']['website'],		//organization_address	
-						'id_75505 ' => $this->request['organization']['segment'],		///organization_segment
-						'id_75506'	=> $this->request['organization']['funding'],		//organization_funding	
-						'id_75507'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+						"name" => $this->request['applicant']['name'],
+						"email" => $this->request['contact_person']['email'],
+						'organization_url'	=> $this->request['organization']['website'],
+						'linkedin_url'	=> $this->request['organization']['linkedin'],
+						'id_74501'	=> $this->request['applicant']['dob'],
+						'id_74502'	=> $this->request['applicant']['designation'],
+						'id_74503'	=> $this->request['applicant']['experience'],
+						'id_74504'	=> $this->request['organization']['size'],
+						'id_74506 ' => $this->request['organization']['segment'],
+						'id_74507'	=> $this->request['organization']['inc_date'],
+						"id_74529" => $this->request['contact_person']['name'],
+						"id_74530" => $this->request['contact_person']['email'],
+						"id_74531" => $this->request['contact_person']['contact'],
 					];
 					$this->data['category'] =  $category;
 					$this->data['data'] = array_merge($data, $common);
 					if ($this->EntriesModel->insert($this->data['data'])) {
 						// $this->session->set_userdata('application_stage', ++$stage);
-						redirect('dashboard/category/' . $category_id . '/nominate?stage=' . ++$stage);
+						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					};
 					break;
 			}
@@ -444,8 +452,12 @@ class NominationAPIController extends CI_Controller
 		print_r($category['type']);
 	}
 
-	public function bulk_edit() {
-		
+	public function bulk_edit()
+	{
+		echo "<pre>";
+		print_r($this->input->post());
+		echo "<br>";
+		print_r($_FILES);
 	}
 
 

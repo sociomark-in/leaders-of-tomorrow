@@ -110,7 +110,7 @@ $route['api/v2/participant/google-login'] = 'api/auth/SSOController/participant_
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
 $route['api/v2/awards/nomination/single/new_bulk'] = 'api/awards/NominationAPIController/new_bulk';
-$route['api/v2/awards/nomination/single/bulk_edit'] = 'api/awards/NominationAPIController/new_bulk';
+$route['api/v2/awards/nomination/single/bulk_edit'] = 'api/awards/NominationAPIController/bulk_edit';
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 
 $route['404_override'] = '';

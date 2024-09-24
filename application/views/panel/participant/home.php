@@ -39,7 +39,7 @@
 														</div>
 														<div class="col-auto">
 															<?php
-															if ((int)$application['status'] >= 3) :
+															if ((int)$application['status'] < 4) :
 																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . '/edit');
 															?>
 																<a href="<?= $redirect ?>">Unlock and Edit</a>
