@@ -8,15 +8,29 @@ class TestController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
 	}
-	
+
 	public function pdf()
 	{
 		$this->load->library('pdflib/makepdf');
 		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2')->generate();
 	}
-	
+
+	public function csv()
+	{
+		$this->load->dbutil();
+
+		$query = $this->db->query("SELECT * FROM users");
+		$this->load->helper('file');
+
+		$data = $this->dbutil->csv_from_result($query);
+		if (!write_file('.\file.csv', $data, 'wb')) {
+			echo 'Unable to write the file';
+		} else {
+			echo 'File written!';
+		}
+	}
+
 	public function send()
 	{
 		$this->config->load('brevo_email');

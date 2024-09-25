@@ -38,9 +38,9 @@
 									<table class="table table-striped" id="applicationsTable">
 										<thead>
 											<tr>
-												<th>Name</th>
-												<th>Email</th>
-												<th>id_74529 Number</th>
+												<th>Participant</th>
+												<th>Contact Person</th>
+												<th>Number</th>
 												<th>Category</th>
 												<th>Status</th>
 												<th>Actions</th>
@@ -49,8 +49,16 @@
 										<tbody>
 											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
 												<tr>
-													<td><a href=""><?= $application['name'] ?></a></td>
-													<td><a href="mailto:<?= $application['email'] ?>"><?= $application['email'] ?></a></td>
+													<td>
+														<h5><?= $application['name'] ?></h5>
+														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
+														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
+													</td>
+													<td>
+														<h5><?= $application['id_75534'] ?></h5>
+														<a href="mailto:<?= $application['id_75535'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
+														<a href="tel:<?= $application['id_75536'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
+													</td>
 													<td><a href="<?= $application['organization_url'] ?>"><?= $application['organization_url'] ?></a></td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
@@ -59,12 +67,15 @@
 											<?php endforeach ?>
 											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
 												<tr>
-													<td><a href=""><i class="link-icon px-1 mb-1" data-feather="eye"></i><?= $application['name'] ?></a></td>
+													<td>
+														<h5><?= $application['name'] ?></h5>
+														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
+														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
+													</td>
 													<td>
 														<h5><?= $application['id_74529'] ?></h5>
-														<a class="d-block" href="mailto:"><i class="link-icon px-1 mb-1" data-feather="mail"></i><?= $application['id_74529'] ?></a>
-														<a class="d-block" href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i><?= $application['id_74530'] ?></a>
-														<a class="d-block" href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['id_74531'] ?></a>
+														<a href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
+														<a href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
 													</td>
 													<td>
 														<a class="d-block" href="<?= $application['organization_url'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['organization_url'] ?></a>

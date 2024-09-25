@@ -29,7 +29,7 @@
 <!-- Plugin css for this page -->
 <link rel="stylesheet" href="<?= base_url("assets/panel/") ?>vendors/flatpickr/flatpickr.min.css">
 
-<link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet"> 
+<link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
 <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.css" integrity="sha512-qc0GepkUB5ugt8LevOF/K2h2lLGIloDBcWX8yawu/5V8FXSxZLn3NVMZskeEyOhlc6RxKiEj6QpSrlAoL1D3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -131,3 +131,17 @@
 		<?php break; ?>
 
 <?php endswitch ?>
+
+<!-- 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+	function initGoogleSignIn() {
+		gapi.load('auth2', function() {
+			gapi.auth2.init({
+				client_id: '973841660802-aocg2s8viu5sopiu7etlevigtutfb4bt.apps.googleusercontent.com',
+				scope: 'email profile' // Adjust scopes as needed
+			});
+		});
+	}
+</script> 
+-->

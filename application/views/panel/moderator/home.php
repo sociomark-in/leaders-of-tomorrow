@@ -123,7 +123,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12">
+		<div class="col-12 d-none">
 			<div class="row">
 				<div class="col-xl-9 col-lg-7 col-12">
 					<div class="card">

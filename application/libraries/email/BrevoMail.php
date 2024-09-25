@@ -13,7 +13,7 @@ class BrevoMail extends CI_Email
 		$config['smtp_user'] = $this->CI->config->item('brevo_login');
 		$config['smtp_pass'] = $this->CI->config->item('brevo_password');
 		$config['newline'] = "\r\n";
-		$config['protocol'] = 'sendmail';
+		$config['protocol'] = 'smtp';
 		$config['mailtype'] = 'html';
 		$config['smtp_crypto'] = 'tls';
 		$config['smtp_port'] = $this->CI->config->item('brevo_port');

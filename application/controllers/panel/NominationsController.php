@@ -23,19 +23,19 @@ class NominationsController extends PanelController
 				$s = $applications['individual'][$i]['status'];
 				switch ($s) {
 					case '0':
-						$s = 'Rejected';
+						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = 'Accepted';
+						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = 'In Review';
+						$s = '<span class="badge bg-warning">In Review</span>';
 						break;
 					case '3':
-						$s = 'Complete';
+						$s = '<span class="badge bg-warning">Complete</span>';
 						break;
 					default:
-						$s = 'Draft';
+						$s = '<span class="badge bg-secondary">Draft</span>';
 						# code...
 						break;
 				}
@@ -48,19 +48,19 @@ class NominationsController extends PanelController
 				$s = $applications['msme'][$i]['status'];
 				switch ($s) {
 					case '0':
-						$s = 'Rejected';
+						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = 'Accepted';
+						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = 'In Review';
+						$s = '<span class="badge bg-warning">In Review</span>';
 						break;
 					case '3':
-						$s = 'Complete';
+						$s = '<span class="badge bg-warning">Complete</span>';
 						break;
 					default:
-						$s = 'Draft';
+						$s = '<span class="badge bg-secondary">Draft</span>';
 						# code...
 						break;
 				}
