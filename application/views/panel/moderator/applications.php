@@ -62,7 +62,17 @@
 													<td><a href="<?= $application['organization_url'] ?>"><?= $application['organization_url'] ?></a></td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
-													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Take Action</button></td>
+													<td>
+														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
+														</a>
+														<a href="">
+															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+														</a>
+														<i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i>
+														<i class="link-icon px-1 mb-1 text-success" data-feather="check"></i>
+														<i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i>
+													</td>
 												</tr>
 											<?php endforeach ?>
 											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
@@ -82,7 +92,17 @@
 													</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
-													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Take Action</button></td>
+													<td>
+														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
+														</a>
+														<a href="">
+															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+														</a>
+														<i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i>
+														<i class="link-icon px-1 mb-1 text-success" data-feather="check"></i>
+														<i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i>
+													</td>
 												</tr>
 											<?php endforeach ?>
 										</tbody>
