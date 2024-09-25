@@ -40,21 +40,40 @@
 											<tr>
 												<th>Name</th>
 												<th>Email</th>
-												<th>Contact Number</th>
+												<th>id_74529 Number</th>
 												<th>Category</th>
+												<th>Status</th>
 												<th>Actions</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php for ($i = 0; $i < 20; $i++) : ?>
+											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
 												<tr>
-													<td><a href="">Lorem ipsum dolor sit.</a></td>
-													<td>loremipsumdolor@gmail.com</td>
-													<td>+091 868 986 2375</td>
-													<td>Lorem ipsum dolor sit.</td>
-													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Better</button></td>
+													<td><a href=""><?= $application['name'] ?></a></td>
+													<td><a href="mailto:<?= $application['email'] ?>"><?= $application['email'] ?></a></td>
+													<td><a href="<?= $application['organization_url'] ?>"><?= $application['organization_url'] ?></a></td>
+													<td><?= $application['category']['name'] ?></td>
+													<td><?= $application['status_text'] ?></td>
+													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Take Action</button></td>
 												</tr>
-											<?php endfor ?>
+											<?php endforeach ?>
+											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
+												<tr>
+													<td><a href=""><i class="link-icon px-1 mb-1" data-feather="eye"></i><?= $application['name'] ?></a></td>
+													<td>
+														<h5><?= $application['id_74529'] ?></h5>
+														<a class="d-block" href="mailto:"><i class="link-icon px-1 mb-1" data-feather="mail"></i><?= $application['id_74529'] ?></a>
+														<a class="d-block" href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i><?= $application['id_74530'] ?></a>
+														<a class="d-block" href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['id_74531'] ?></a>
+													</td>
+													<td>
+														<a class="d-block" href="<?= $application['organization_url'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['organization_url'] ?></a>
+													</td>
+													<td><?= $application['category']['name'] ?></td>
+													<td><?= $application['status_text'] ?></td>
+													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Take Action</button></td>
+												</tr>
+											<?php endforeach ?>
 										</tbody>
 									</table>
 									<script>

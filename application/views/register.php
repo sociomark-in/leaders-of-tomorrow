@@ -84,7 +84,7 @@
 															<div class="col-12">
 																<div class="">
 																	<button type="button" id="sendOTP" class="btn btn-red">Send OTP</button>
-																	<span class="form-text ms-2 text-success" id="notify"></span>
+																	<span class="form-text ms-2" id="notify"></span>
 																</div>
 															</div>
 															<div class="col-xl-4 col-lg-6 col-12">
@@ -96,14 +96,29 @@
 														</div>
 														<script>
 															$("#sendOTP").on('click', () => {
+																var email = $("#OTPMail").val();
 																$.ajax({
 																	url: '<?= base_url('api/v2/register/otp/send') ?>',
+																	method: 'POST',
 																	data: {
-																		'email' : $("input[type=email]").val()
+																		'email': email
 																	},
-																	success: () => {
-																		$("#sendOTP").attr('disabled', true);
-																		$('#notify').text('OTP has been sent successfully!')
+																	success: (response) => {
+																		console.log(response);
+																		if (response.status == 'error') {
+																			$('#notify').removeClass('text-success')
+																			$('#notify').text('')
+
+																			$('#notify').addClass('text-danger')
+																			$('#notify').text(response.message)
+																		} else {
+																			$('#notify').removeClass('text-danger')
+																			$('#notify').text('')
+
+																			$("#sendOTP").attr('disabled', true);
+																			$('#notify').addClass('text-success')
+																			$('#notify').text(response.message)
+																		}
 																	}
 																})
 															})
@@ -153,14 +168,25 @@
 										email: {
 											emailregex: true,
 											remote: {
-												url: '<?= base_url() ?>',
+												url: '<?= base_url('') ?>',
+												async: false,
+												type: "post",
+												data: {}
+											},
+										},
+										otp: {
+											normalizer: function(value) {
+												return $.trim(value)
+											},
+											remote: {
+												url: "<?= base_url('api/v2/register/otp/verify') ?>",
 												type: "post",
 												data: {
-													email: function() {
-														return $("#email_address").val();
+													otp: function() {
+														return $("input[name=otp").val();
 													}
 												}
-											},
+											}
 										},
 										name: {
 											letters: true,
@@ -175,6 +201,9 @@
 									messages: {
 										email: {
 											emailregex: 'Please enter a valid email address',
+											remote: 'Email address already exist. Please try to login.'
+										},
+										otp: {
 											remote: 'Email address already exist. Please try to login.'
 										},
 										name: {

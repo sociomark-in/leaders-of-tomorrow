@@ -8,19 +8,19 @@ class TestController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->config->load('brevo_email');
 		
 	}
-
+	
 	public function pdf()
 	{
 		$this->load->library('pdflib/makepdf');
 		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2')->generate();
 	}
-
+	
 	public function send()
 	{
-		$this->load->library('email/brevomail');
+		$this->config->load('brevo_email');
+		$this->load->library('email/BrevoMail');
 		$this->brevomail->init();
 
 		$this->brevomail->from('business@sociomark.in', 'Sociomark');

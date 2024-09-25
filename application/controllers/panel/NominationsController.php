@@ -13,7 +13,63 @@ class NominationsController extends PanelController
 	}
 	public function index()
 	{
-		$this->load->moderator_view('applications');
+		$applications = [
+			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['stage_status' => '4'], 'individual'), true),
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['stage_status' => '4'], 'msme'), true)
+		];
+		if (count($applications['individual']) > 0) {
+			for ($i = 0; $i < count($applications['individual']); $i++) {
+				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
+				$s = $applications['individual'][$i]['status'];
+				switch ($s) {
+					case '0':
+						$s = 'Rejected';
+						break;
+					case '1':
+						$s = 'Accepted';
+						break;
+					case '2':
+						$s = 'In Review';
+						break;
+					case '3':
+						$s = 'Complete';
+						break;
+					default:
+						$s = 'Draft';
+						# code...
+						break;
+				}
+				$applications['individual'][$i]['status_text'] = $s;
+			}
+		}
+		if (count($applications['msme']) > 0) {
+			for ($i = 0; $i < count($applications['msme']); $i++) {
+				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+				$s = $applications['msme'][$i]['status'];
+				switch ($s) {
+					case '0':
+						$s = 'Rejected';
+						break;
+					case '1':
+						$s = 'Accepted';
+						break;
+					case '2':
+						$s = 'In Review';
+						break;
+					case '3':
+						$s = 'Complete';
+						break;
+					default:
+						$s = 'Draft';
+						# code...
+						break;
+				}
+				$applications['msme'][$i]['status_text'] = $s;
+			}
+		}
+		// echo "<pre>";print_r($applications);die;
+		$this->data['all_applications'] = $applications;
+		$this->load->moderator_view('applications', $this->data);
 	}
 
 	public function user_side()
@@ -77,7 +133,8 @@ class NominationsController extends PanelController
 		$this->load->panel_view('my_applications', $this->data);
 	}
 
-	public function user_edit($slug){
+	public function user_edit($slug)
+	{
 		$this->data['id'] = $slug;
 		$application = array_merge(
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'individual'), true),

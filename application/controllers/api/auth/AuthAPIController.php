@@ -61,8 +61,42 @@ class AuthAPIController extends CI_Controller
 		}
 	}
 
-	public function send_otp(){
-		$this->output
+	public function send_otp()
+	{
+		$this->request = $this->input->post();
+		$error = false;
+		if($this->request['email'] == ""){
+			$error = true;
+		}
+		if ($error) {
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode([
+					'status' => 'error',
+					'message' => 'Email Address is Empty',
+				]));
+		} else {
+			$otp = random_int(1000,9999);
+			$this->session->set_tempdata('otp', $otp , 300);
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode([
+					'status' => 'success',
+					'otp' => $otp,
+					'message' => 'OTP Sent Successfully!',
+				]));
+		}
 	}
-	public function verify_otp(){}
+
+	public function verify_otp() {
+		$this->request = $this->input->get();
+		if(isset($this->session->otp)){
+			$otp = $this->session->otp;
+		}
+		if(true){
+			$this->output->set_content_type('application/json')->set_output("false");
+		} else {
+			$this->output->set_content_type('application/json')->set_output("false");
+		}
+	}
 }
