@@ -69,7 +69,7 @@ class NominationsController extends PanelController
 		}
 		// echo "<pre>";print_r($applications);die;
 		$this->data['all_applications'] = $applications;
-		$this->load->moderator_view('applications', $this->data);
+		$this->load->moderator_view('applications/home', $this->data);
 	}
 
 	public function user_side()
@@ -163,7 +163,6 @@ class NominationsController extends PanelController
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'msme'), true),
 		)[0];
 
-
 		$c = explode("_", $application['category_id']);
 		if ($c[1] == 'Individual') {
 			$category_details = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
@@ -172,11 +171,27 @@ class NominationsController extends PanelController
 		}
 		$this->data['category'] = $category_details;
 
-		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-		$this->data['nomination']['stage'] = $this->input->get('stage');
-		$this->data['application']['id'] = $slug;
 
-		$this->load->panel_view('application_single', $this->data);
+		$this->user_session = $_SESSION['awards_panel_user'];
+		switch ($this->user_session['role']) {
+			case 'participant':
+				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
+				$this->data['nomination']['stage'] = $this->input->get('stage');
+				$this->data['application']['id'] = $slug;
+				$this->load->panel_view('application_single', $this->data);
+				break;
+			case 'jury':
+				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
+				$this->data['nomination']['stage'] = $this->input->get('stage');
+				$this->data['application'] = [
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'individual'), true)[0],
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'msme'), true)[0],
+				];
+				$this->load->moderator_view('applications/single', $this->data);
+				break;
+			default:
+				break;
+		}
 	}
 
 	public function nominate($code)

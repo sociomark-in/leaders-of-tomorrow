@@ -7,13 +7,15 @@ require_once APPPATH . "vendor/autoload.php";
 
 class NominationAPIController extends CI_Controller
 {
-	private $request, $response, $data;
+	private $request, $response, $data, $usersession;
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
+		$this->load->model('panel/EmailModel');
 
 		$this->data = [];
+		$this->usersession = $_SESSION['awards_panel_user'];
 		$this->load->model('panel/EntriesModel');
 	}
 
@@ -42,7 +44,7 @@ class NominationAPIController extends CI_Controller
 			"linkedin_url" => $this->request['organization']['linkedin'],
 			"stage_status" => $this->request['stage'],
 			"status" => '4',
-			"created_by" => $_SESSION['awards_panel_user']['id'],
+			"created_by" => $this->usersession['id'],
 		];
 		if ($category['type'] == 'MSME') {
 			switch ($stage) {
@@ -187,7 +189,7 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 
-				default:
+				case '':
 					# code...
 					$data = [
 						"name" => $this->request['organization']['name'],
@@ -208,6 +210,8 @@ class NominationAPIController extends CI_Controller
 						// redirect($this->request['referrer'] . '?stage=' . ++$stage);
 						redirect(base_url('dashboard/application/' . $this->request['application_id'] . '?stage=1') . '?stage=' . ++$stage);
 					};
+					break;
+				default:
 					break;
 			}
 		} elseif ($category['type'] == 'Individual') {
@@ -264,7 +268,7 @@ class NominationAPIController extends CI_Controller
 					$data = [
 						'id_74516'	=> $this->request['case_study_1'],
 						'id_74518'	=> $this->request['case_study_3'],
-						'id_74519'	=> $this->request['case_study_4'],	
+						'id_74519'	=> $this->request['case_study_4'],
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'individual');
@@ -401,7 +405,7 @@ class NominationAPIController extends CI_Controller
 			"linkedin_url" => $this->request['organization']['linkedin'],
 			"stage_status" => '1',
 			"status" => '4',
-			"created_by" => $_SESSION['awards_panel_user']['id'],
+			"created_by" => $this->usersession['id'],
 		];
 		if ($category['type'] == 'MSME') {
 			$data = [
@@ -463,48 +467,68 @@ class NominationAPIController extends CI_Controller
 		print_r($_FILES);
 	}
 
-
-	public function send_email($data, $purpose)
+	public function comment_and_reject()
 	{
-		$this->load->library('email/brevomail');
-		$this->brevomail->init();
-
-		$this->brevomail->from('business@sociomark.in', 'Sociomark');
-		$this->brevomail->bcc($data['bcc']);
-
-		switch ($purpose) {
-			case 'value':
-				$this->brevomail->to($data['to']);
-				$this->brevomail->cc($data['cc']);
-				$this->brevomail->subject($data['subject']);
-				$this->brevomail->message($data['body']);
-
-				break;
-
-			default:
-				# generic mail
-				$this->brevomail->to($data['to']);
-				$this->brevomail->cc($data['cc']);
-				$this->brevomail->subject($data['subject']);
-				$this->brevomail->message($data['body']);
-				break;
+		$this->request = $this->input->post();
+		echo "<pre>";
+		if ($this->usersession['role'] == 'jury') {
+			$data = [
+				'comment' => $this->request['comment'],
+				'nomination_id' => $this->request['application_id'],
+				'created_by' => $this->usersession['id'],
+			];
+			if ($this->CommentModel->insert($data)) {
+				$data = [
+					// 'comment_id' => $this->db->insert_id(),
+					'status' => 2
+				];
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status']), true)[0];
+				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']])) {
+					print_r($data);
+					print_r($this->usersession);
+					print_r($this->request);
+					print_r($nomination);
+				}
+				// $result = $this->EmailModel->send(
+				// 	$nomination['email],
+				// 	'Update - Your Application is Rejected!',
+				// 	'Your Application #' . $this->request['application_id'] . ' is Rejected with a Comment from '. ucfirst($this->usersession['role']) ,
+				// );
+				// print_r($result);
+			}
 		}
+	}
+	public function comment_and_unlock()
+	{
+		$this->load->model('panel/CommentModel');
+		echo "<pre>";
+		$this->request = $this->input->post();
 
-		$status = false;
-		if ($this->brevomail->send()) {
-			$status = true;
-			$this->response['status'] = true;
-			$this->response['message'] = 'Email Sent Successfully!';
-		} else {
-			$status = false;
-			$this->response['status'] = false;
-			$this->response['message'] = $this->brevomail->print_debugger();
+		if ($this->usersession['role'] == 'jury') {
+			$data = [
+				'comment' => $this->request['comment'],
+				'nomination_id' => $this->request['application_id'],
+				'created_by' => $this->usersession['id'],
+			];
+			if ($this->CommentModel->insert($data)) {
+				$data = [
+					// 'comment_id' => $this->db->insert_id(),
+					'status' => 2
+				];
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status']), true)[0];
+				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']])) {
+					print_r($data);
+					print_r($this->usersession);
+					print_r($this->request);
+					print_r($nomination);
+				}
+				// $result = $this->EmailModel->send(
+				// 	$nomination['email],
+				// 	'Update - ' . ucfirst($this->usersession['role']) . ' Added a New Comment',
+				// 	'Your Application #' . $this->request['application_id'] . ' has some Changes suggested by '. ucfirst($this->usersession['role']) . ' Check Your Recent Comments',
+				// );
+				// print_r($result);
+			}
 		}
-
-		if ($status) {
-			return json_encode($this->response);
-		}
-
-		$this->brevomail->clear(TRUE);
 	}
 }

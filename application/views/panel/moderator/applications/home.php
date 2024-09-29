@@ -25,7 +25,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-											Launch demo modal
+											Download<i class="link-icon px-1 mb-1" data-feather="download"></i>
 										</button>
 									</div>
 									<div class="col-auto">
@@ -66,12 +66,12 @@
 														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
 															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
 														</a>
-														<a href="">
+														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'])?>">
 															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 														</a>
-														<i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i>
-														<i class="link-icon px-1 mb-1 text-success" data-feather="check"></i>
-														<i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i>
+														<a href=""><i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i></a>
+														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
+														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
 												</tr>
 											<?php endforeach ?>
@@ -99,9 +99,9 @@
 														<a href="">
 															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 														</a>
-														<i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i>
-														<i class="link-icon px-1 mb-1 text-success" data-feather="check"></i>
-														<i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i>
+														<a href=""><i class="link-icon px-1 mb-1 text-dark" data-feather="mail"></i></a>
+														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
+														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
 												</tr>
 											<?php endforeach ?>
