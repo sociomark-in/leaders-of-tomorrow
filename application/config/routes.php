@@ -115,6 +115,8 @@ $route['api/v2/awards/nomination/single/new_bulk'] = 'api/awards/NominationAPICo
 $route['api/v2/awards/nomination/single/bulk_edit'] = 'api/awards/NominationAPIController/bulk_edit';
 $route['api/v2/awards/nomination/reject_w_comment'] = 'api/awards/NominationAPIController/comment_and_reject';
 $route['api/v2/awards/nomination/unlock_w_comment'] = 'api/awards/NominationAPIController/comment_and_unlock';
+$route['api/v2/awards/nomination/accept'] = 'api/awards/NominationAPIController/accept';
+$route['api/v2/awards/nomination/download'] = 'api/awards/NominationAPIController/download_docket';
 
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 

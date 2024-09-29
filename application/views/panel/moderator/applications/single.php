@@ -32,12 +32,14 @@ if ($nomination['stage'] >= 1) {
 								<div class="col-auto">
 									<div class="row g-3">
 										<div class="col-lg-auto col-12">
-											<?= form_open() ?>
+											<?= form_open('api/v2/awards/nomination/accept') ?>
+											<input type="hidden" name="nomination" value="<?= $application['nomination_id'] ?>">
 											<button type="submit" class="btn d-flex btn-success btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
 											<?= form_close() ?>
 										</div>
 										<div class="col-lg-auto col-12">
-											<?= form_open() ?>
+											<?= form_open('api/v2/awards/nomination/download') ?>
+											<input type="hidden" name="nomination" value="<?= $application['nomination_id'] ?>">
 											<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</button>
 											<?= form_close() ?>
 										</div>

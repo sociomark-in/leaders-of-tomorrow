@@ -467,6 +467,16 @@ class NominationAPIController extends CI_Controller
 		print_r($_FILES);
 	}
 
+	public function accept() {}
+
+	public function download_docket() 
+	{
+		$this->request = $this->input->post();
+		$application = $this->EntriesModel->get(null, ['nomination_id' => $this->request['nomination_id']], strtolower(explode('_', $category['name'])[1]));
+		$this->load->library('pdflib/makepdf');
+		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2', $data = null)->generate();
+	}
+
 	public function comment_and_reject()
 	{
 		$this->request = $this->input->post();
