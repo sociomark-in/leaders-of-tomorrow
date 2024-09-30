@@ -30,7 +30,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section id="gallery" class="section">
 		<div class="container">
 			<div class="row g-3">

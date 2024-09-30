@@ -3,7 +3,8 @@
         "facebook/php-sdk-v4" : "~5.0",
 		"google/apiclient": "^2.15.0",
         "clegginabox/pdf-merger": "dev-master",
-        "fpdf/fpdf": "^1.86"
+        "fpdf/fpdf": "^1.86",
+        "twilio/sdk": "^8.3"
     },
 	"scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"

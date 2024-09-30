@@ -27,19 +27,19 @@ if ($nomination['stage'] >= 1) {
 							<div class="row justify-content-between">
 								<div class="col">
 									<h5 class="card-title">Application for <?= $category['name'] ?></h5>
-									<p><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Categpry Details<i class="mb-1 px-1" data-feather="external-link"></i></a></p>
+									<p><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Category Details<i class="mb-1 px-1" data-feather="external-link"></i></a></p>
 								</div>
 								<div class="col-auto">
 									<div class="row g-3">
 										<div class="col-lg-auto col-12">
 											<?= form_open('api/v2/awards/nomination/accept') ?>
-											<input type="hidden" name="nomination" value="<?= $application['nomination_id'] ?>">
+											<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
 											<button type="submit" class="btn d-flex btn-success btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
 											<?= form_close() ?>
 										</div>
 										<div class="col-lg-auto col-12">
 											<?= form_open('api/v2/awards/nomination/download') ?>
-											<input type="hidden" name="nomination" value="<?= $application['nomination_id'] ?>">
+											<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
 											<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</button>
 											<?= form_close() ?>
 										</div>

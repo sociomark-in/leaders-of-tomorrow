@@ -48,21 +48,43 @@ class NominationAPIController extends CI_Controller
 		];
 		if ($category['type'] == 'MSME') {
 			switch ($stage) {
+				case '':
+					# code...
+					$data = [
+						"name" => $this->request['organization']['name'],
+						"email" => $this->request['contact_person']['email'],
+						'id_75501'	=> $this->request['organization']['size'],			//organization_maxsize
+						'id_75504'	=> $this->request['organization']['website'],		//organization_address	
+						'id_75505 ' => $this->request['organization']['segment'],		///organization_segment
+						'id_75506'	=> $this->request['organization']['funding'],		//organization_funding	
+						'id_75507'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+						'id_75534'	=> $this->request['contact_person']['name'],		//organization_inc_date
+						'id_75535'	=> $this->request['contact_person']['email'],		//organization_inc_date
+						'id_75536'	=> $this->request['contact_person']['contact'],		//organization_inc_date
+					];
+					$this->data['category'] =  $category;
+					$this->data['data'] = array_merge($data, $common);
+					if ($this->EntriesModel->insert($this->data['data'])) {
+						// $this->session->set_userdata('application_stage', ++$stage);
+						// redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						redirect(base_url('dashboard/application/' . $this->request['application_id']) . '?stage=' . ++$stage);
+					};
+					break;
 				case '1':
 					$nomination_id =  $this->request['application_id'];
 					$data = [
-						'id_75502'	=> $this->request['organization_industry'],			//organization_industry
-						'id_75503'	=> $this->request['organization_overview'],			//organization_overview	
-						'id_75508'	=> $this->request['organization_mission_vision'],		//organization_mission_vision	
-						'id_75509'	=> $this->request['organization_services'],		//organization_services	
-						'id_75510'	=> $this->request['organization_reveue_23'],			//organization_reveue	
-						'id_75511'	=> $this->request['organization_reveue_22'],			//organization_reveue	
+						'id_75502'	=> $this->request['organization_industry'],					//organization_industry
+						'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
+						'id_75508'	=> $this->request['organization_mission_vision'],			//organization_mission_vision	
+						'id_75509'	=> $this->request['organization_services'],					//organization_services	
+						'id_75510'	=> $this->request['organization_reveue_23'],				//organization_reveue	
+						'id_75511'	=> $this->request['organization_reveue_22'],				//organization_reveue	
 						'id_75512'	=> $this->request['organization_growth_23'],				//organization_growth	
 						'id_75513'	=> $this->request['organization_growth_22'],				//organization_growth	
 						'id_75514'	=> $this->request['organization_profit_23'],				//organization_profit	
 						'id_75515'	=> $this->request['organization_profit_22'],				//organization_profit	
-						'id_75516'	=> $this->request['organization_assets_23'],			//organization_assets	
-						'id_75517'	=> $this->request['organization_assets_23'],			//organization_assets	
+						'id_75516'	=> $this->request['organization_assets_23'],				//organization_assets	
+						'id_75517'	=> $this->request['organization_assets_22'],				//organization_assets	
 						'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
 						'id_75519'	=> $this->request['organization_der_22'],					//organization_der
 					];
@@ -77,12 +99,12 @@ class NominationAPIController extends CI_Controller
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
-						'id_75520'	=> $this->request['initiative_name'],		//organization_overview	
-						'id_75521'	=> $this->request['initiative_start_date'],		//organization_mission_vision	
-						'id_75522'	=> $this->request['initiative_end_date'],		//organization_services	
-						'id_75523'	=> $this->request['initiative_desc'],		//organization_services	
-						'id_75524'	=> $this->request['initiative_challenges'],		//organization_services	
-						'id_75525'	=> $this->request['initiative_strategy'],		//organization_services	
+						'id_75520'	=> $this->request['initiative_name'],
+						'id_75521'	=> $this->request['initiative_start_date'],
+						'id_75522'	=> $this->request['initiative_end_date'],
+						'id_75523'	=> $this->request['initiative_desc'],
+						'id_75524'	=> $this->request['initiative_challenges'],
+						'id_75525'	=> $this->request['initiative_strategy'],
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'msme');
@@ -95,17 +117,11 @@ class NominationAPIController extends CI_Controller
 				case '3':
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
-					/*
-					75526	initiative_tech	
-					75527	initiative_impact	
-					75528	initiative_scalability	
-					75529	initiative_info	
-					*/
 					$data = [
-						'id_75526'	=> $this->request['initiative_tech'],			//organization_overview	
-						'id_75527'	=> $this->request['initiative_impact'],			//organization_mission_vision	
-						'id_75528'	=> $this->request['initiative_scalability'],	//organization_services	
-						'id_75529'	=> $this->request['initiative_info'],			//organization_services	
+						'id_75526'	=> $this->request['initiative_tech'],			
+						'id_75527'	=> $this->request['initiative_impact'],			
+						'id_75528'	=> $this->request['initiative_scalability'],	
+						'id_75529'	=> $this->request['initiative_info'],			
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'msme');
@@ -151,10 +167,6 @@ class NominationAPIController extends CI_Controller
 						$new_name = time() . "_" . $r . "_" . $file['name'];
 						$config['file_name'] = $new_name;
 
-						print_r($new_name);
-						echo "<br>";
-
-
 						/* PDF Merger Script */
 						$tmp = $file['tmp_name'];
 						$pdf->addPDF($tmp);
@@ -188,29 +200,6 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-
-				case '':
-					# code...
-					$data = [
-						"name" => $this->request['organization']['name'],
-						"email" => $this->request['contact_person']['email'],
-						'id_75501'	=> $this->request['organization']['size'],			//organization_maxsize
-						'id_75504'	=> $this->request['organization']['website'],		//organization_address	
-						'id_75505 ' => $this->request['organization']['segment'],		///organization_segment
-						'id_75506'	=> $this->request['organization']['funding'],		//organization_funding	
-						'id_75507'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-						'id_75534'	=> $this->request['contact_person']['name'],		//organization_inc_date
-						'id_75535'	=> $this->request['contact_person']['email'],		//organization_inc_date
-						'id_75536'	=> $this->request['contact_person']['contact'],		//organization_inc_date
-					];
-					$this->data['category'] =  $category;
-					$this->data['data'] = array_merge($data, $common);
-					if ($this->EntriesModel->insert($this->data['data'])) {
-						// $this->session->set_userdata('application_stage', ++$stage);
-						// redirect($this->request['referrer'] . '?stage=' . ++$stage);
-						redirect(base_url('dashboard/application/' . $this->request['application_id'] . '?stage=1') . '?stage=' . ++$stage);
-					};
-					break;
 				default:
 					break;
 			}
@@ -238,7 +227,6 @@ class NominationAPIController extends CI_Controller
 					$this->data['category'] =  $category;
 					$this->data['data'] = array_merge($data, $common);
 					if ($this->EntriesModel->insert($this->data['data'])) {
-						// $this->session->set_userdata('application_stage', ++$stage);
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					};
 					break;
@@ -297,7 +285,6 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 				case '4':
-					echo "<pre>";
 					/* Get Application Data */
 					$application_id = $this->input->post('application_id');
 					$c = explode('_', $this->input->post('category_id'));
@@ -338,10 +325,6 @@ class NominationAPIController extends CI_Controller
 					foreach ($_FILES as $key => $file) {
 						$new_name = time() . "_" . $r . "_" . $file['name'];
 						$config['file_name'] = $new_name;
-
-						print_r($new_name);
-						echo "<br>";
-
 
 						/* PDF Merger Script */
 						$tmp = $file['tmp_name'];
@@ -467,51 +450,36 @@ class NominationAPIController extends CI_Controller
 		print_r($_FILES);
 	}
 
-	public function accept() {}
+	public function accept()
+	{
+		$this->load->model('panel/CommentModel');
+		$this->request = $this->input->post();
 
-	public function download_docket() 
+		if ($this->usersession['role'] == 'jury') {
+			$data = [
+				'status' => '1',
+			];
+			$nomination = array_merge(
+				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
+			);
+			if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+				redirect('dashboard/applications');
+			}
+		}
+	}
+
+	public function download_docket()
 	{
 		$this->request = $this->input->post();
-		$application = $this->EntriesModel->get(null, ['nomination_id' => $this->request['nomination_id']], strtolower(explode('_', $category['name'])[1]));
+		$application = $this->EntriesModel->get(null, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $category['name'])[1]));
 		$this->load->library('pdflib/makepdf');
 		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2', $data = null)->generate();
 	}
 
 	public function comment_and_reject()
 	{
-		$this->request = $this->input->post();
-		echo "<pre>";
-		if ($this->usersession['role'] == 'jury') {
-			$data = [
-				'comment' => $this->request['comment'],
-				'nomination_id' => $this->request['application_id'],
-				'created_by' => $this->usersession['id'],
-			];
-			if ($this->CommentModel->insert($data)) {
-				$data = [
-					// 'comment_id' => $this->db->insert_id(),
-					'status' => 2
-				];
-				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status']), true)[0];
-				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']])) {
-					print_r($data);
-					print_r($this->usersession);
-					print_r($this->request);
-					print_r($nomination);
-				}
-				// $result = $this->EmailModel->send(
-				// 	$nomination['email],
-				// 	'Update - Your Application is Rejected!',
-				// 	'Your Application #' . $this->request['application_id'] . ' is Rejected with a Comment from '. ucfirst($this->usersession['role']) ,
-				// );
-				// print_r($result);
-			}
-		}
-	}
-	public function comment_and_unlock()
-	{
 		$this->load->model('panel/CommentModel');
-		echo "<pre>";
 		$this->request = $this->input->post();
 
 		if ($this->usersession['role'] == 'jury') {
@@ -522,22 +490,41 @@ class NominationAPIController extends CI_Controller
 			];
 			if ($this->CommentModel->insert($data)) {
 				$data = [
-					// 'comment_id' => $this->db->insert_id(),
-					'status' => 2
+					'status' => '0',
 				];
-				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status']), true)[0];
-				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']])) {
-					print_r($data);
-					print_r($this->usersession);
-					print_r($this->request);
-					print_r($nomination);
+				$nomination = array_merge(
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
+				);
+				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+					redirect('dashboard/applications');
 				}
-				// $result = $this->EmailModel->send(
-				// 	$nomination['email],
-				// 	'Update - ' . ucfirst($this->usersession['role']) . ' Added a New Comment',
-				// 	'Your Application #' . $this->request['application_id'] . ' has some Changes suggested by '. ucfirst($this->usersession['role']) . ' Check Your Recent Comments',
-				// );
-				// print_r($result);
+			}
+		}
+	}
+	public function comment_and_unlock()
+	{
+		$this->load->model('panel/CommentModel');
+		$this->request = $this->input->post();
+
+		if ($this->usersession['role'] == 'jury') {
+			$data = [
+				'comment' => $this->request['comment'],
+				'nomination_id' => $this->request['application_id'],
+				'created_by' => $this->usersession['id'],
+			];
+			if ($this->CommentModel->insert($data)) {
+				$data = [
+					'status' => '2',
+					'stage_status' => '2'
+				];
+				$nomination = array_merge(
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
+				);
+				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+					redirect('dashboard/applications');
+				}
 			}
 		}
 	}

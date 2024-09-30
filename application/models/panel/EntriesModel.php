@@ -96,9 +96,12 @@ INDIVIDUAL
 status
 0	Rejected
 1	Accepted
-2	In Review
+2	Under Review
 3	Complete
-4	Draft 
+4	Draft
+
+5 	To Be Reviewed
+6	Pending for User Action
 */
 
 

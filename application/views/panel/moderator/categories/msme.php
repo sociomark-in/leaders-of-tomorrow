@@ -11,18 +11,525 @@
 	<li class="nav-item" role="presentation">
 		<button class="nav-link" id="casestudy2-tab" data-bs-toggle="tab" data-bs-target="#casestudy2-tab-pane" type="button" role="tab" aria-controls="casestudy2-tab-pane" aria-selected="false">Case Study II</button>
 	</li>
-	<li class="nav-item" role="presentation">
+	<!-- <li class="nav-item" role="presentation">
 		<button class="nav-link" id="casestudy3-tab" data-bs-toggle="tab" data-bs-target="#casestudy3-tab-pane" type="button" role="tab" aria-controls="casestudy3-tab-pane" aria-selected="false">Case Study III</button>
-	</li>
+	</li> -->
 	<li class="nav-item" role="presentation">
 		<button class="nav-link" id="downloads-tab" data-bs-toggle="tab" data-bs-target="#downloads-tab-pane" type="button" role="tab" aria-controls="downloads-tab-pane" aria-selected="false">Document Uploads</button>
 	</li>
 </ul>
 <div class="tab-content" id="myTabContent">
-	<div class="tab-pane fade show active" id="personal-tab-pane" role="tabpanel" aria-labelledby="personal-tab" tabindex="0">...</div>
-	<div class="tab-pane fade" id="organization-tab-pane" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">...</div>
-	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy1-tab" tabindex="0">...</div>
-	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy2-tab" tabindex="0">...</div>
-	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy3-tab" tabindex="0">...</div>
-	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">...</div>
+	<div class="tab-pane fade show active" id="personal-tab-pane" role="tabpanel" aria-labelledby="personal-tab" tabindex="0">
+		<div class="row mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Participating Entity</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-5 col-lg-6">
+											<div class="">
+												<p>Name of the Participating Entity</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Type of Business</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Business Segment</p>
+												<h5><?= $application['id_75505'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Date of Company Incorporation</p>
+												<h5><?= $application['id_75507'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>No. Of Employees</p>
+												<h5><?= $application['id_75501'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Funding Source</p>
+												<h5><?= $application['id_75506'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Website URL</p>
+												<h5><?= $application['organization_url'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>LinkedIn URL</p>
+												<h5><?= $application['linkedin_url'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Contact Person</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Full Name</p>
+												<h5><?= $application['id_75534'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Email Address</p>
+												<h5><?= $application['id_75535'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Contact Number</p>
+												<h5><?= $application['id_75536'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="organization-tab-pane" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">
+		<div class="row mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Organization Overview</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-12">
+											<div class="">
+												<p>Industry segment of the participating entity</p>
+												<h5><?= $application['id_75502'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Brief Overview of the Company</p>
+												<h5><?= $application['id_75503'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Mission & Vision</p>
+												<h5><?= $application['id_75508'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Products / Services Offered</p>
+												<h5><?= $application['id_75509'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Financial Details</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-12">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th></th>
+														<th>FY 2023</th>
+														<th>FY 2022</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Revenue/ Turnover (in INR Crores)</td>
+														<td>
+															<h5><?= $application['id_75510'] ?></h5>
+														</td>
+														<td>
+															<h5><?= $application['id_75511'] ?></h5>
+														</td>
+													</tr>
+													<tr>
+														<td>Revenue Growth (In %)</td>
+														<td>
+															<h5><?= $application['id_75512'] ?></h5>
+														</td>
+														<td>
+															<h5><?= $application['id_75513'] ?></h5>
+														</td>
+													</tr>
+													<tr>
+														<td>Net Profit Margin (In %)</td>
+														<td>
+															<h5><?= $application['id_75514'] ?></h5>
+														</td>
+														<td>
+															<h5><?= $application['id_75515'] ?></h5>
+														</td>
+													</tr>
+													<tr>
+														<td>Asset Valuation (in INR Crores)</td>
+														<td>
+															<h5><?= $application['id_75516'] ?></h5>
+														</td>
+														<td>
+															<h5><?= $application['id_75517'] ?></h5>
+														</td>
+													</tr>
+													<tr>
+														<td>Debt: Equity Ratio</td>
+														<td>
+															<h5><?= $application['id_75518'] ?></h5>
+														</td>
+														<td>
+															<h5><?= $application['id_75519'] ?></h5>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy1-tab" tabindex="0">
+		<div class="row mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Initiative / Product / Service</h5>
+									</legend>
+									<p class="mb-3">(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
+									<div class="row g-3">
+										<div class="col-lg-6">
+											<div class="">
+												<p>Name of the initiative or product/service offering</p>
+												<h5><?= $application['id_75520'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Start Date</p>
+												<h5><?= $application['id_75521'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>End Date</p>
+												<h5><?= $application['id_75522'] ?></h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<p>Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service? </p>
+												<h5><?= $application['id_75523'] ?></h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<p>Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges? </p>
+												<h5><?= $application['id_75524'] ?></h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<p>Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors. (Max 150 words)</p>
+												<h5><?= $application['id_75525'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="casestudy2-tab-pane" role="tabpanel" aria-labelledby="casestudy2-tab" tabindex="0">
+		<div class="row mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<div class="row g-3">
+										<div class="col-12">
+											<legend class="card-title mb-0">
+												<h5>Use of Technology</h5>
+											</legend>
+											<p>How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</p>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<h5><?= $application['id_75526'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-12">
+								<fieldset class="">
+									<div class="row g-3">
+										<div class="col-12">
+											<legend class="card-title mb-0">
+												<h5>Impact of the innovation/ initiative</h5>
+											</legend>
+											<p>
+
+												Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
+												<br>(Details should be measurable and generic statements should be avoided) (Max 200 words)
+											</p>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<h5><?= $application['id_75527'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-12">
+								<fieldset class="">
+									<div class="row g-3">
+										<div class="col-12">
+											<legend class="card-title mb-0">
+												<h5>Sustainability &amp; Scalability</h5>
+											</legend>
+											<p>Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters (max 200 words)
+												Growth plan for next 2-3 years
+												Growth plan for the initiative or product/ service offering
+												Plan for raising funds in future
+												Any other
+											</p>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<h5><?= $application['id_75528'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-12">
+								<fieldset class="">
+								<div class="row g-3">
+										<div class="col-12">
+											<legend class="card-title mb-0">
+												<h5>Additional Information</h5>
+											</legend>
+											<p>Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</p>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<h5><?= $application['id_75529'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="tab-pane fade" id="casestudy3-tab-pane" role="tabpanel" aria-labelledby="casestudy3-tab" tabindex="0">
+		<div class="row g-3 mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Participating Entity</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-5 col-lg-6">
+											<div class="">
+												<p>Name of the Participating Entity</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Type of Business</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Business Segment</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Date of Company Incorporation</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>No. Of Employees</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Funding Source</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Website URL</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>LinkedIn URL</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Contact Person</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Full Name</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="">
+												<p>Email Address</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Contact Number</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="tab-pane fade" id="downloads-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">
+		<div class="row g-3 mt-2">
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Document Uploads</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>MSME Certificate</p>
+												<h5><a class="link-icon" href="<?= $application['id_75530'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Company Incorporation Certificate</p>
+												<h5><a class="link-icon" href="<?= $application['id_75531'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Impact assessment report as on March 31, 2023</p>
+												<h5><a class="link-icon" href="<?= $application['id_75532'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Any other Collaterals</p>
+												<h5><a class="link-icon" href="<?= $application['id_75533'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

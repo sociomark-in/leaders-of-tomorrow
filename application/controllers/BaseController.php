@@ -26,6 +26,12 @@ class BaseController extends CI_Controller
 				'venue' => "Hometel, Industrial Area Phase 1, Chandigarh"
 			],
 			[
+				'name' => "Hyderabad",
+				'theme' => "Hyderabad: India's Manufacturing Hotbed & SEZ Capital",
+				'date' => '2024-10-10',
+				'venue' => ""
+			],
+			[
 				'name' => "Delhi NCR",
 				'theme' => "Delhi: Spotlight on India's Startup Capital",
 				'date' => '2024-10-18',
@@ -65,12 +71,6 @@ class BaseController extends CI_Controller
 				'name' => "Kochi",
 				'theme' => "Kerala: Spotlight on Kerala's Knowledge Economy",
 				'date' => '2025-01-31',
-				'venue' => ""
-			],
-			[
-				'name' => "Hyderabad",
-				'theme' => "Hyderabad: India's Manufacturing Hotbed & SEZ Capital",
-				'date' => '2025-02-14',
 				'venue' => ""
 			],
 			[

@@ -50,4 +50,22 @@ class TestController extends CI_Controller
 		}
 		$this->brevomail->clear(TRUE);
 	}
+
+	public function sms()
+	{
+		$this->load->library('twilio/smsclient');
+		$response = $this->smsclient->send();
+		echo "<pre>";
+		print_r($response->sid);
+	}
+
+	public function verify()
+	{
+		$code = $this->input->get('code');
+		$number = $this->input->get('number');
+		$this->load->library('twilio/smsclient');
+		$response = $this->smsclient->verify($code, $number);
+		echo "<pre>";
+		print_r($response);
+	}
 }

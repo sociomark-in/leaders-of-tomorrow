@@ -3,9 +3,10 @@
 switch ($city['name']) {
 	case 'Mumbai':
 	case 'Lucknow':
+	case 'Chandigarh':
 		$class = "d-none";
 		break;
-	
+
 	default:
 		$class = "d-block";
 		break;
@@ -14,7 +15,7 @@ switch ($city['name']) {
 	case 'Chandigarh':
 		$active = "d-none";
 		break;
-	
+
 	default:
 		$active = "d-block d-md-inline-block";
 		break;

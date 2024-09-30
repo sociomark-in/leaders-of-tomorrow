@@ -14,8 +14,8 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['stage_status' => '4'], 'individual'), true),
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['stage_status' => '4'], 'msme'), true)
+			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], null, 'individual'), true),
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], null, 'msme'), true)
 		];
 		if (count($applications['individual']) > 0) {
 			for ($i = 0; $i < count($applications['individual']); $i++) {
@@ -29,10 +29,10 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-warning">In Review</span>';
+						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete</span>';
+						$s = '<span class="badge bg-warning">Complete & In Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -54,10 +54,10 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-warning">In Review</span>';
+						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete</span>';
+						$s = '<span class="badge bg-warning">Complete & In Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -67,7 +67,6 @@ class NominationsController extends PanelController
 				$applications['msme'][$i]['status_text'] = $s;
 			}
 		}
-		// echo "<pre>";print_r($applications);die;
 		$this->data['all_applications'] = $applications;
 		$this->load->moderator_view('applications/home', $this->data);
 	}
@@ -183,10 +182,10 @@ class NominationsController extends PanelController
 			case 'jury':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $this->input->get('stage');
-				$this->data['application'] = [
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'individual'), true)[0],
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'msme'), true)[0],
-				];
+				$this->data['application'] = array_merge(
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'msme'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'individual'), true),
+				)[0];
 				$this->load->moderator_view('applications/single', $this->data);
 				break;
 			default:
