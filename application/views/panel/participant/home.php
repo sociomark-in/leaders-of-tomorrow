@@ -22,7 +22,7 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p><span class="badge bg-warning"><?= $application['status_text'] ?></span></p>
+														<p><?= $application['status_text'] ?></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -39,11 +39,18 @@
 														</div>
 														<div class="col-auto">
 															<?php
-															if ((int)$application['status'] < 3) :
-																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+															switch ((int)$application['status']) {
+																case '4':
+																	$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																	$text = "Complete Application";
+																	break;
+
+																default:
+																	# code...
+																	break;
+															}
 															?>
-																<a href="<?= $redirect ?>">Complete Application</a>
-															<?php endif ?>
+															<a href="<?= $redirect ?>"><?= $text ?></a>
 														</div>
 													</div>
 												</div>
@@ -62,7 +69,7 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p><span class="badge bg-warning"><?= $application['status_text'] ?></span></p>
+														<p><?= $application['status_text'] ?></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -80,11 +87,23 @@
 														<div class="col-auto">
 															<div class="col-auto">
 																<?php
-																if ((int)$application['status'] < 3) :
-																	$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																switch ($application['status']) {
+																	case '2':
+																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
+																		$text = "Edit Application";
+																		break;
+																	case '4':
+																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																		$text = "Complete Application";
+																		break;
+
+																	default:
+																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
+																		$text = "";
+																		break;
+																}
 																?>
-																	<a href="<?= $redirect ?>">Complete Application</a>
-																<?php endif ?>
+																<a href="<?= $redirect ?>"><?= $text ?></a>
 															</div>
 														</div>
 													</div>
@@ -97,9 +116,17 @@
 						</div>
 						<hr class="m-0 mb-3">
 					<?php else : ?>
+						<div class="row justify-content-center">
+							<div class="col-md-auto">
+								<img src="<?= base_url('assets/images/panel/icons/') ?>applications-empty.png" alt="">
+							</div>
+						</div>
+						<hr class="m-0 mb-3">
 					<?php endif ?>
 					<div class="row">
-						<?php foreach ($rest_categories['msme'] as $key => $category) : ?>
+						<?php foreach ($rest_categories['msme'] as $key => $category) :
+							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
+						?>
 							<div class="col-xl-3 col-lg-4 col-12">
 								<div class="row">
 									<div class="col-12 grid-margin stretch-card">
@@ -114,14 +141,16 @@
 												</div>
 											</div>
 											<div class="card-footer">
-												<p class="mb-0 text-sm text-muted">Last Date to Apply <?= date('F j, Y') ?></p>
+												<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						<?php endforeach ?>
-						<?php foreach ($rest_categories['individual'] as $key => $category) : ?>
+						<?php foreach ($rest_categories['individual'] as $key => $category) :
+							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
+						?>
 							<div class="col-xl-3 col-lg-4 col-12">
 								<div class="row">
 									<div class="col-12 grid-margin stretch-card">
@@ -136,13 +165,14 @@
 												</div>
 											</div>
 											<div class="card-footer">
-												<p class="mb-0 text-sm text-muted">Last Date to Apply <?= date('F j, Y') ?></p>
+												<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						<?php endforeach ?>
+
 					</div>
 				</div>
 			</div>

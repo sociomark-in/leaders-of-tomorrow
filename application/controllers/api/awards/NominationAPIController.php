@@ -118,10 +118,10 @@ class NominationAPIController extends CI_Controller
 					$nomination_id = $this->request['application_id'];
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
-						'id_75526'	=> $this->request['initiative_tech'],			
-						'id_75527'	=> $this->request['initiative_impact'],			
-						'id_75528'	=> $this->request['initiative_scalability'],	
-						'id_75529'	=> $this->request['initiative_info'],			
+						'id_75526'	=> $this->request['initiative_tech'],
+						'id_75527'	=> $this->request['initiative_impact'],
+						'id_75528'	=> $this->request['initiative_scalability'],
+						'id_75529'	=> $this->request['initiative_info'],
 						'stage_status' => $stage
 					];
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $nomination_id], 'msme');
@@ -366,7 +366,9 @@ class NominationAPIController extends CI_Controller
 		}
 	}
 
-	public function new_bulk()
+	public function new_bulk() {}
+
+	public function bulk_edit()
 	{
 		$this->request = $this->input->post();
 		$this->load->model('event/awards/CategoryModel');
@@ -375,79 +377,95 @@ class NominationAPIController extends CI_Controller
 			json_decode($this->CategoryModel->get_individual(null, ['code' => $category_id]), true),
 			json_decode($this->CategoryModel->get_msme(null, ['code' => $category_id]), true)
 		)[0];
-
-
-
-		$common = [
-			"nomination_id" => $this->request['application_id'],
-			"category_id" => $category['id'],
-			"name" => $this->request['organization']['name'],
-			"email" => $this->request['contact_person']['email'],
-			"organization_name" => 	$this->request['organization']['name'],
-			"organization_url" => $this->request['organization']['website'],
-			"linkedin_url" => $this->request['organization']['linkedin'],
-			"stage_status" => '1',
-			"status" => '4',
-			"created_by" => $this->usersession['id'],
-		];
+		$application_id = $this->request['application_id'];
+		$common = [];
 		if ($category['type'] == 'MSME') {
 			$data = [
-				'id_75501'	=> $this->request['organization']['size'],			//organization_maxsize
-				'id_75502'	=> $this->request['organization']['industry'],			//organization_industry
-				'id_75503'	=> $this->request['organization']['overview'],			//organization_overview	
-				'id_75504'	=> $this->request['organization']['website'],			//organization_address	
-				'id_75505 ' => $this->request['organization']['segment'],				//organization_segment
-				'id_75506'	=> $this->request['organization']['funding'],			//organization_funding	
-				'id_75507'	=> $this->request['organization']['inc_date'],			//organization_inc_date
-				'id_75508'	=> $this->request['organization']['mission_stmt'],			//organization_mission_vision	
-				'id_75509'	=> $this->request['organization']['services_stmt'],			//organization_services	
-				'id_75510'	=> $this->request['finance']['turnover_24'],			//organization_reveue	
-				'id_75511'	=> $this->request['finance']['turnover_23'],			//organization_reveue	
-				'id_75512'	=> $this->request['finance']['growth_24'],			//organization_growth	
-				'id_75513'	=> $this->request['finance']['growth_23'],			//organization_growth	
-				'id_75514'	=> $this->request['finance']['margin_24'],			//organization_profit	
-				'id_75515'	=> $this->request['finance']['margin_23'],			//organization_profit	
-				'id_75516'	=> $this->request['finance']['valuation_24'],			//organization_assets	
-				'id_75517'	=> $this->request['finance']['valuation_23'],			//organization_assets	
-				'id_75518'	=> $this->request['finance']['der_24'],			//organization_der	
-				'id_75519'	=> $this->request['finance']['der_23'],			//organization_der
-				'id_75520'	=> $this->request['initiative']['name'],			//initiative_name	
-				'id_75521'	=> $this->request['initiative']['start_date'],			//initiative_start_date	
-				'id_75522'	=> $this->request['initiative']['end_date'],			//initiative_end_date	
-				'id_75523'	=> $this->request['initiative']['description'],			//initiative_desc	
-				'id_75524'	=> $this->request['initiative']['challenges'],			//initiative_challenges	
-				'id_75525'	=> $this->request['initiative']['strategy'],			//initiative_strategy	
-				'id_75526'	=> $this->request['initiative']['technology'],			//initiative_tech	
-				'id_75527'	=> $this->request['initiative']['impact'],			//initiative_impact	
-				'id_75528'	=> $this->request['initiative']['scalalbility'],			//initiative_scalability	
-				'id_75529'	=> $this->request['initiative']['additional'],			//initiative_info	
-				// '75530'	=> 			//document_1
-				// '75531'	=> 			//document_2
-				// '75532'	=> 			//document_3
-				// '75533'	=> 			//document_4
-				'id_75534'	=> $this->request['contact_person']['name'],			//cp_name	
-				'id_75535'	=> $this->request['contact_person']['email'],			//cp_email	
-				'id_75536'	=> $this->request['contact_person']['contact'],			//cp_contact	
+				'id_75503'	=> $this->request['organization']['overview'],
+				'id_75505 ' => $this->request['organization']['industry'],
+				'id_75508'	=> $this->request['organization']['mission_stmt'],
+				'id_75509'	=> $this->request['organization']['services_stmt'],
+				'id_75520'	=> $this->request['initiative']['name'],
+				'id_75521'	=> $this->request['initiative']['start_date'],
+				'id_75522'	=> $this->request['initiative']['end_date'],
+				'id_75523'	=> $this->request['initiative']['description'],
+				'id_75524'	=> $this->request['initiative']['challenges'],
+				'id_75525'	=> $this->request['initiative']['strategy'],
+				'id_75526'	=> $this->request['initiative']['technology'],
+				'id_75527'	=> $this->request['initiative']['impact'],
+				'id_75528'	=> $this->request['initiative']['scalalbility'],
+				'id_75529'	=> $this->request['initiative']['additional'],
+				'status'	=> '3',
 			];
 		} elseif ($category['type'] == "Individual") {
 		}
 
-		$this->data = array_merge($data, $common);
-		if ($this->EntriesModel->insert($this->data, strtolower($category['type']))) {
-			echo "SUCESS";
+		/* Set Docket Name */
+		$docket_name = FCPATH . 'uploads/dockets/' . $this->input->post('category_id') . '_' . $this->input->post('application_id') . '_' . time() . '.pdf';
+
+		/* Set Uploads Config */
+		$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
+		$config['allowed_types'] = 'pdf';
+		$config['max_size'] = '250';
+
+
+		/* PDFMerger Docket File Exists Script */
+		if (!file_exists(FCPATH . 'uploads/dockets/')) {
+			mkdir(FCPATH . 'uploads/dockets/', 0777);
+		}
+
+		/* Document Upload Folder Exists Script */
+		if (!file_exists($config['upload_path'])) {
+			mkdir($config['upload_path'], 0777);
+		}
+
+		$update_data = [];
+
+		$pdf = new PDFMerger;
+		$i = 0;
+		$c = [
+			'id_74525',
+			'id_74526',
+			'id_74527',
+			'id_74528',
+		];
+		$r = random_string();
+		$this->load->library('upload', $config);
+		
+		foreach ($_FILES as $key => $file) {
+			if ($file['size'] != 0) {
+				$new_name = time() . "_" . $r . "_" . $file['name'];
+				$config['file_name'] = $new_name;
+
+				/* PDF Merger Script */
+				$tmp = $file['tmp_name'];
+				$pdf->addPDF($tmp);
+				// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
+				/* PDF Merger Script */
+
+				/* File Upload Script */
+				$this->upload->initialize($config);
+				if (!$this->upload->do_upload($key)) {
+					// An error occurred
+					echo "Error: " . $this->upload->display_errors();
+				} else {
+					/* No Error - File Upload Script */
+					/* Data Upload */
+					$update_data[$c[$i]] =  base_url(explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name'));
+					$i++;
+				}
+				/* File Upload Script */
+			}
+		}
+
+		$this->data = array_merge($data, $common, $update_data);
+		if ($this->EntriesModel->update($this->data, ['nomination_id' => $application_id], strtolower($category['type']))) {
+			redirect(base_url('dashboard/my-applications'));
 		} else {
 			echo "Failed";
+			echo "<pre>";
+			print_r($this->data);
 		}
-		echo "<pre>";
-		print_r($category['type']);
-	}
-
-	public function bulk_edit()
-	{
-		echo "<pre>";
-		print_r($this->input->post());
-		echo "<br>";
-		print_r($_FILES);
 	}
 
 	public function accept()

@@ -222,27 +222,27 @@
 												<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 													<div class="">
 														<label for="" class="form-label">MSME certificate</label>
-														<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+														<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size=" 250K" data-allowed-file-extensions="pdf" />
 														<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
 													</div>
 												</div>
 												<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 													<div class="">
 														<label for="" class="form-label">Company Incorporation Certificate</label>
-														<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+														<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size=" 250K" data-allowed-file-extensions="pdf" />
 													</div>
 												</div>
 												<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 													<div class="">
 														<label for="" class="form-label">Work Experience Letter</label>
-														<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+														<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size=" 250K" data-allowed-file-extensions="pdf" />
 														<span class="form-text">as on March 31, 2023</span>
 													</div>
 												</div>
 												<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 													<div class="">
 														<label for="" class="form-label">Any other Collaterals</label>
-														<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+														<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_74525'] ?> data-max-file-size=" 250K" data-allowed-file-extensions="pdf" />
 														<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
 													</div>
 												</div>

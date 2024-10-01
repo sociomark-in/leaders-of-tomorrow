@@ -84,19 +84,19 @@ class NominationsController extends PanelController
 				$s = $applications['individual'][$i]['status'];
 				switch ($s) {
 					case '0':
-						$s = 'Rejected';
+						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = 'Accepted';
+						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = 'In Review';
+						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 						break;
 					case '3':
-						$s = 'Complete';
+						$s = '<span class="badge bg-warning">Locked & In Review</span>';
 						break;
 					default:
-						$s = 'Draft';
+						$s = '<span class="badge bg-secondary">Draft</span>';
 						# code...
 						break;
 				}
@@ -109,19 +109,19 @@ class NominationsController extends PanelController
 				$s = $applications['msme'][$i]['status'];
 				switch ($s) {
 					case '0':
-						$s = 'Rejected';
+						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = 'Accepted';
+						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = 'In Review';
+						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 						break;
 					case '3':
-						$s = 'Complete';
+						$s = '<span class="badge bg-warning">Locked & In Review</span>';
 						break;
 					default:
-						$s = 'Draft';
+						$s = '<span class="badge bg-secondary">Draft</span>';
 						# code...
 						break;
 				}
@@ -129,7 +129,7 @@ class NominationsController extends PanelController
 			}
 		}
 		$this->data['my_applications'] = $applications;
-		$this->load->panel_view('my_applications', $this->data);
+		$this->load->panel_view('applications/home', $this->data);
 	}
 
 	public function user_edit($slug)
@@ -148,10 +148,8 @@ class NominationsController extends PanelController
 			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
 		}
 		$this->data['category'] = $category_details;
-		$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
-		// echo "<pre>";
-		// print_r($this->data);
-		$this->load->panel_view('categories_bulk/'  . strtolower($category_details['type']), $this->data);
+		$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
+		$this->load->panel_view('applications/edit/'  . strtolower($category_details['type']), $this->data);
 	}
 
 	public function single($slug)
@@ -177,7 +175,7 @@ class NominationsController extends PanelController
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $this->input->get('stage');
 				$this->data['application']['id'] = $slug;
-				$this->load->panel_view('application_single', $this->data);
+				$this->load->panel_view('applications/single', $this->data);
 				break;
 			case 'jury':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');

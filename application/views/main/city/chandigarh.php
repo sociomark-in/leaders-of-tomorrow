@@ -67,7 +67,7 @@
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/4yf12kND24M?si=qKW2DbJPtPVS7qyf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/gdO2q8BU5-8?si=0l4vInbZedxofK7u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">

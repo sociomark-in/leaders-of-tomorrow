@@ -36,19 +36,19 @@ class AccountController extends PanelController
 						$s = $applications['individual'][$i]['status'];
 						switch ($s) {
 							case '0':
-								$s = 'Rejected';
+								$s = '<span class="badge bg-danger">Rejected</span>';
 								break;
 							case '1':
-								$s = 'Accepted';
+								$s = '<span class="badge bg-success">Accepted</span>';
 								break;
 							case '2':
-								$s = 'In Review';
+								$s = '<span class="badge bg-dark">Unlocked</span>';
 								break;
 							case '3':
-								$s = 'Complete';
+								$s = '<span class="badge bg-warning">Complete & In Review</span>';
 								break;
 							default:
-								$s = 'Draft';
+								$s = '<span class="badge bg-secondary">Draft</span>';
 								# code...
 								break;
 						}
@@ -66,26 +66,28 @@ class AccountController extends PanelController
 						$s = $applications['msme'][$i]['status'];
 						switch ($s) {
 							case '0':
-								$s = 'Rejected';
+								$s = '<span class="badge bg-danger">Rejected</span>';
 								break;
 							case '1':
-								$s = 'Accepted';
+								$s = '<span class="badge bg-success">Accepted</span>';
 								break;
 							case '2':
-								$s = 'In Review';
+								$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 								break;
 							case '3':
-								$s = 'Complete';
+								$s = '<span class="badge bg-warning">Locked & In Review</span>';
 								break;
 							default:
-								$s = 'Draft';
+								$s = '<span class="badge bg-secondary">Draft</span>';
 								# code...
 								break;
 						}
 						$applications['msme'][$i]['status_text'] = $s;
 						for ($c = 0; $c < count($categories['msme']); $c++) {
 							if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$c]['id']) {
-								unset($categories['msme'][$c]);
+								if($applications['msme'][$i]['status'] != '0'){
+									unset($categories['msme'][$c]);
+								}
 							}
 						}
 					}
