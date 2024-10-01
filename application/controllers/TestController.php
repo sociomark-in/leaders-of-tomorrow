@@ -51,6 +51,13 @@ class TestController extends CI_Controller
 		$this->brevomail->clear(TRUE);
 	}
 
+	public function email_view(){
+		$this->data['application'] = [
+			'name' => 'Sociomark'
+		];
+		$this->load->view('panel/templates/test', $this->data);
+	}
+
 	public function sms()
 	{
 		$this->load->library('twilio/smsclient');

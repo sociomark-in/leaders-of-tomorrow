@@ -32,7 +32,7 @@
 </head>
 
 <body data-bgcolor="Body"
-    style="margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family:'Roboto Slab',Arial,Helvetica,sans-serif;"
+    style="margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family:'Roboto Slab',Arial,Helvetica,sans-serif;font-size:14px;"
     bgcolor="#efefef">
     <table cellpadding="0" cellspacing="0" border="0" style="word-break:break-word;width:100%" bgcolor="#E9EAED">
         <tbody>
@@ -43,21 +43,15 @@
                         <tbody>
                             <tr>
                                 <td style="border-bottom:1px solid #e9eaed;">
-                                    <table border="0" cellpadding="30" cellspacing="0" bgcolor="#fbfbfb"
+                                    <table border="0" cellpadding="30" cellspacing="0" bgcolor="#E9EAED"
                                         style="max-width:600px;width:100%;min-width:320px;border-radius:3px 3px 0 0;padding-top:25px;">
                                         <tr>
                                             <td align="center" style="padding:0"> <img align="center"
-                                                    alt="Invite" height="58"
-                                                    src="https://www.sociomark.in/assets/img/logo/sc-colored.png">
+                                                    alt="Invite" height="50"
+                                                    src="<?= base_url('assets/images/') ?>main.png">
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td align="center"
-                                                style="padding:5px 50px;font-size:20px;color:#222; line-height: 1.5;">
-                                                Registration Pending for <strong>Leaders of Tomorrow 2024</strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
+										<tr>
                                             <td height="20" style="padding:0 30px 0"></td>
                                         </tr>
                                     </table>
@@ -71,9 +65,9 @@
                                             <td height="20" style="padding:0 30px 0"></td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size:16px;line-height:22px;padding:0 30px 0">
-                                                <div style="font-size:16px;font-weight:bold;margin-bottom:10px">
-                                                    Hi Full Name,</div>
+                                            <td style="line-height:22px;padding:0 30px 0">
+                                                <div style="font-weight:bold;margin-bottom:10px">
+                                                    Hi <?= $application['name'] ?>,</div>
                                                 <div>
                                                     <div style="margin-bottom:10px;line-height:1.5">
                                                         Thank you for nominating yourself to the <strong>Leaders of
@@ -90,7 +84,7 @@
                                                         you are not considered registered for this event.</div>
                                                     <div style="margin-bottom:10px;line-height:1.5">
                                                         <a style="background:#106c97;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
-                                                            href="https://connect.zoho.in/portal/intranet"
+                                                            href="<?= base_url('dashboard') ?>"
                                                             target="_blank">
                                                             Access Your Dashboard
                                                         </a>
@@ -105,8 +99,8 @@
 
                                                     <div>Thank you!</div>
                                                     <br>
-                                                    <div>Best,</div>
-                                                    <div><strong>Team Times Now News</strong>
+                                                    <div>Best Regards,</div>
+                                                    <div><strong>Team <?= APP_NAME ?></strong>
                                                     </div>
                                                 </div>
                                             </td>
@@ -117,7 +111,7 @@
                             <tr>
                                 <td>
                                     <div
-                                        style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;margin-top:30px;padding:10px 30px;background-color: #fbfbfb">
+                                        style="border-top:1px solid #e9eaed;font-size:10px;color:#495664;line-height:18px;margin-top:30px;padding:10px 30px;background-color: #fbfbfb">
                                         *SocioEngage is an event management
                                         platform designed and developed by Sociomark.</div>
                                 </td>
