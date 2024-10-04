@@ -316,7 +316,11 @@
 			</div>
 		</div>
 	</section>
+<<<<<<< HEAD
 	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
+=======
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart.png')">
+>>>>>>> 5c48d49685bfa9bd707cf1c9163a5f54f3539f07
 
 	</div>
 </main>
