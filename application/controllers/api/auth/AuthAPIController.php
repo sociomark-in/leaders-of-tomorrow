@@ -54,6 +54,8 @@ class AuthAPIController extends CI_Controller
 	{
 		$this->request = $this->input->post();
 		$data = $this->request;
+		echo "<pre>";
+		print_r($data);die;
 		if ($this->User->insert($this->request)) {
 			$this->session->set_userdata('awards_panel_user', $data);
 			echo "<pre>";
@@ -94,9 +96,9 @@ class AuthAPIController extends CI_Controller
 			$otp = $this->session->otp;
 		}
 		if(true){
-			$this->output->set_content_type('application/json')->set_output("false");
+			$this->output->set_content_type('application/json')->set_output(json_encode(['status' => true]));
 		} else {
-			$this->output->set_content_type('application/json')->set_output("false");
+			$this->output->set_content_type('application/json')->set_output(json_encode(['status' => false]));
 		}
 	}
 }

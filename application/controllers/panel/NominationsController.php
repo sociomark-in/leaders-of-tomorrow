@@ -210,4 +210,13 @@ class NominationsController extends PanelController
 			$this->load->panel_view('register', $this->data);
 		}
 	}
+
+	public function download($slug){
+		$id = $this->encryption->decrypt(urldecode($this->input->get("key")));
+		$application = array_merge(json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true))[0];
+		$this->load->library('pdflib/makepdf');
+		$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate();
+		// echo "<pre>";
+		// print_r($application);
+	}
 }

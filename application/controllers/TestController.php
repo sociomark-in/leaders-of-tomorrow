@@ -37,8 +37,8 @@ class TestController extends CI_Controller
 		$this->load->library('email/BrevoMail');
 		$this->brevomail->init();
 
-		$this->brevomail->from('business@sociomark.in', 'Sociomark');
-		$this->brevomail->to('test-57zx7etee@srv1.mail-tester.com');
+		$this->brevomail->from('response@timesnetwork.in', 'LOT Awards');
+		$this->brevomail->to('hemant@sociomark.in');
 
 		$this->brevomail->subject('Email Test');
 		$this->brevomail->message('Testing the brevomail class.');

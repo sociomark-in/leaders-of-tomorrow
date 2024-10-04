@@ -91,6 +91,7 @@ $route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nomi
 $route['dashboard/applications'] = 'panel/NominationsController';
 $route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1';
 $route['dashboard/application/(:any)/edit'] = 'panel/NominationsController/user_edit/$1';
+$route['dashboard/application/(:any)/download'] = 'panel/NominationsController/download/$1';
 
 $route['dashboard/categories'] = 'panel/CategoriesController';
 $route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';

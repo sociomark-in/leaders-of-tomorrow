@@ -22,7 +22,6 @@ class AttendeeModel extends CI_Model
 		$event_id = $request['event_id'];
 
 		switch ($event_id) {
-				// Test
 			case '2cf62526-7adc-405d-b7c6-ea84eb6cb11c':
 				$ticket_id = "21520";
 				$api_key = "c6538023-bdfc-4a68-94a1-8c29b61ceeb3";
@@ -41,6 +40,11 @@ class AttendeeModel extends CI_Model
 			case '372237d7-c945-4548-b444-3725309b7bd2':
 				$ticket_id = "22744";
 				$api_key = "1cf7f49b-36d1-4c90-a1d1-4b5b01b69563";
+				break;
+				// Hyderabad
+			case '1f858d77-9498-4c57-a6f2-0afa69b20e8d':
+				$ticket_id = "24318";
+				$api_key = "f05dfc61-4af7-447e-96ec-2080ce633a0b";
 				break;
 
 			default:

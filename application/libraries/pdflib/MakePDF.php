@@ -64,15 +64,15 @@ class MakePDF extends Fpdf
 		$this->pdf->Output($dest, $name);
 	}
 
-	public function load($layout = 'layout-1', $data = null)
+	public function load($data = null, $layout = 'msme')
 	{
 		switch ($layout) {
-			case 'layout-2':
-				include_once __DIR__ . '/layout/2.php';
+			case 'individual':
+				include_once __DIR__ . '/layout/individual.php';
 				break;
 
 			default:
-				include_once __DIR__ . '/layout/1.php';
+				include_once __DIR__ . '/layout/msme.php';
 				break;
 		}
 		return $this;
