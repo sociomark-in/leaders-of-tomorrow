@@ -54,7 +54,7 @@ switch ($city['name']) {
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav gap-2 <?= $class ?> <?= $active ?>">
+			<ul class="navbar-nav gap-2 <?= $class ?>">
 				<li class="nav-item">
 					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
 				</li>

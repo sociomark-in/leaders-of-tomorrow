@@ -29,7 +29,7 @@ class BaseController extends CI_Controller
 				'name' => "Hyderabad",
 				'theme' => "Hyderabad: India's Manufacturing Hotbed & SEZ Capital",
 				'date' => '2024-10-10 17:00:00',
-				'venue' => ""
+				'venue' => "Radisson Blu Plaza Hotel, Hyderabad"
 			],
 			[
 				'name' => "Delhi NCR",

@@ -1,4 +1,9 @@
 <?php
+
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 require_once APPPATH . "vendor/autoload.php";
@@ -31,6 +36,34 @@ class TestController extends CI_Controller
 		}
 	}
 
+	function mailer()
+	{
+		$mail = new PHPMailer(true);
+
+		try {
+			$mail->SMTPAuth = true;
+			$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+			$mail->isSMTP();
+			$mail->Host = "smtp-relay.brevo.com";
+			$mail->Username = "67e9cf001@smtp-brevo.com";
+			$mail->Password = "15PQjO3Bq8TythIU";
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+			$mail->Port = 587;
+
+			$mail->setFrom('response@timesnetwork.in', 'LOT Awards');
+			$mail->addAddress('hemant@sociomark.in');
+
+			$mail->isHTML(true);
+			$mail->Subject = 'Here is the subject';
+			$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+			$mail->send();
+			echo "Success!!!";
+		} catch (Exception $th) {
+			echo "Failed!! Mailer Error: {$mail->ErrorInfo}";
+		}
+	}
+
 	public function send()
 	{
 		$this->config->load('brevo_email');
@@ -51,7 +84,8 @@ class TestController extends CI_Controller
 		$this->brevomail->clear(TRUE);
 	}
 
-	public function email_view(){
+	public function email_view()
+	{
 		$this->data['application'] = [
 			'name' => 'Sociomark'
 		];
