@@ -220,6 +220,7 @@ class CityController extends BaseController
 				break;
 		}
 	}
+
 	public function city_gallery($city)
 	{
 		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
@@ -244,11 +245,12 @@ class CityController extends BaseController
 				break;
 		}
 	}
+
 	public function registration($city)
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'chandigarh') {
+			if (strtolower($sb['name']) == $city && $city == 'hyderabad') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

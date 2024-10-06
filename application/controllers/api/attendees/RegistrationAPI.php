@@ -8,11 +8,10 @@ class RegistrationAPI extends CI_Controller
 	{
 		parent::__construct();
 		$this->events = [
-			// "mumbai" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
 			"mumbai" => "f08c5088-2794-4f27-923c-2058132e1b28",
-			// "lucknow" => "2cf62526-7adc-405d-b7c6-ea84eb6cb11c",
 			"lucknow" => "4f18fda6-f8a7-4da4-a6a2-4d77c04b85bd",
 			"chandigarh" => "372237d7-c945-4548-b444-3725309b7bd2",
+			"hyderabad" => "1f858d77-9498-4c57-a6f2-0afa69b20e8d",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -34,12 +33,11 @@ class RegistrationAPI extends CI_Controller
 
 		$utm = json_decode($this->request['utm'] ?? "", true);
 		/* 
-		48958	organization['department']
-		48959	organization['turnover']
-		48960	organization['industry']
-		48950	website
-		48961	message
-		48949	consent
+		51248	organization['department']
+		51247	organization['turnover']
+		51246	organization['industry']
+		51256	website
+		51245	message
 		*/
 
 		$data['registration_details'] = [
@@ -50,14 +48,6 @@ class RegistrationAPI extends CI_Controller
 			],
 			"name" => $this->request['name'],
 			"email_id" => $this->request['email'],
-			"custom_forms" => [
-				"48958" => $this->request['organization']['department'],
-				"48959" => $this->request['organization']['turnover'],
-				"48960" => $this->request['organization']['industry'],
-				"48950" => $this->request['website'],
-				"48961" => $this->request['message'],
-				"48949" => ($this->request['consent'] == 'on')? "True" : "False",
-			],
 			"organisation" => $this->request['organization']['name'],
 			"designation" => $this->request['organization']['designation'],
 			"phone_number" => $this->request['contact'],
@@ -70,9 +60,17 @@ class RegistrationAPI extends CI_Controller
 			"whatsapp_consent" => ($this->request['whatsapp_consent'] == 'on') ? true : false,
 			"email_verification_status" => 1,
 			"phone_number_verified" => 4,
-			"is_subscriber" => true
+			"is_subscriber" => true,
+			"consent" => ($this->request['consent'] == 'on')? true : false,
 		];
 		
+		$data['registration_details']["custom_forms"] = [
+			"51248" => $this->request['organization']['department'],
+			"51247" => $this->request['organization']['turnover'],
+			"51246" => $this->request['organization']['industry'],
+			"51256" => $this->request['website'],
+			"51245" => $this->request['message'],
+		];
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);
 
 		if (!array_key_exists('error', $this->response)) {

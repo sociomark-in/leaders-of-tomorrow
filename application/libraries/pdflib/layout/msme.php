@@ -12,8 +12,8 @@ $this->pdf->Cell(47, 6, 'Business Segment', 0, 0, '');
 $this->pdf->Cell(79, 6, 'Type Of Business', 0, 1, '');
 
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(47, 4, 'Industry Segment', 0, 0, '');
-$this->pdf->Cell(47, 4, 'Business Segment', 0, 0, '');
+$this->pdf->Cell(47, 4, $data['id_75502'], 0, 0, '');
+$this->pdf->Cell(47, 4, $data['id_75505'], 0, 0, '');
 $this->pdf->Cell(79, 4, 'Type Of Business', 0, 1, '');
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
@@ -23,24 +23,24 @@ $this->pdf->Cell(79, 6, 'Website URL', 0, 0, '');
 $this->pdf->Cell(47, 6, 'Date of Company Incorporation', 0, 1, '');
 
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, 'Anirudhsatya Raju Iyyar', 0, 0, '');
-$this->pdf->Cell(79, 4, 'anirudhsatyarajuiyyar.com', 0, 0, '');
-$this->pdf->Cell(47, 4, date('F j, Y'), 0, 1, '');
+$this->pdf->Cell(63, 4, $data['name'], 0, 0, '');
+$this->pdf->Cell(79, 4, $data['organization_url'], 0, 0, '');
+$this->pdf->Cell(47, 4, $data['id_75507'], 0, 1, '');
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 6, 'Registered Address Participating Entity', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Eius autem provident esse eveniet mollitia amet! Nulla, consequatur iusto! Enim nemo voluptatum, iusto soluta qui perferendis reprehenderit omnis voluptates impedit animi?', 0);
-$this->pdf->Cell(63, 4, 'Registered Address Participating Entity', 0, 1, '');
+$this->pdf->MultiCell(0, 4, $data['id_75504'], 0);
+$this->pdf->Cell(63, 4, $data['id_75504'], 0, 1, '');
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 6, 'Number of Employees', 0, 0, '');
 $this->pdf->Cell(50, 6, 'Funding Source', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, 'More than 400', 0, 0, '');
-$this->pdf->Cell(50, 3, 'Personal funds of the owner', 0, 1, '');
+$this->pdf->Cell(63, 4, $data['id_75501'] . ' Employees', 0, 0, '');
+$this->pdf->Cell(50, 3, $data['id_75506'], 0, 1, '');
 $this->pdf->SetFont('Arial', '', 7);
 $this->pdf->Cell(0, 6, '(On payroll + On Contract) as on March 31, 2023', 0, 1, '');
 
@@ -55,9 +55,9 @@ $this->pdf->Cell(79, 6, 'Email', 0, 0, '');
 $this->pdf->Cell(47, 6, 'Contact', 0, 1, '');
 
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, 'Industry Segment', 0, 0);
-$this->pdf->Cell(79, 4, 'Type Of Business', 0, 0);
-$this->pdf->Cell(47, 4, '+91 888 888 8888', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75534'], 0, 0);
+$this->pdf->Cell(79, 4, $data['id_75535'], 0, 0);
+$this->pdf->Cell(47, 4, $data['id_75536'], 0, 1);
 
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
@@ -78,36 +78,36 @@ $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Revenue Turnover (in INR Crores)', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, '201 - 250', 0, 0);
-$this->pdf->Cell(63, 4, '201 - 250', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75510'], 0, 0);
+$this->pdf->Cell(63, 4, $data['id_75511'], 0, 1);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Revenue Growth (in %)', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, '90% - 100%', 0, 0);
-$this->pdf->Cell(63, 4, '90% - 100%', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75512'], 0, 0);
+$this->pdf->Cell(63, 4, $data['id_75513'], 0, 1);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Net Profit Margin (in %)', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, '90% - 100%', 0, 0);
-$this->pdf->Cell(63, 4, '90% - 100%', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75514'], 0, 0);
+$this->pdf->Cell(63, 4, $data['id_75515'], 0, 1);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Asset Valuation (in INR Crores)', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, '201 - 250', 0, 0);
-$this->pdf->Cell(63, 4, '201 - 250', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75516'], 0, 0);
+$this->pdf->Cell(63, 4, $data['id_75517'], 0, 1);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Debt : Equity Ratio', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, '2 - 3', 0, 0);
-$this->pdf->Cell(63, 4, '2 - 3', 0, 1);
+$this->pdf->Cell(63, 4, $data['id_75518'], 0, 0);
+$this->pdf->Cell(63, 4, $data['id_75519'], 0, 1);
 
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
@@ -122,7 +122,7 @@ $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'Brief Overview of the Company', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75503'], 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -130,7 +130,7 @@ $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'Mission and Vision', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75508'], 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -138,7 +138,7 @@ $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'Products / Services Offered', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75509'], 0);
 
 $this->pdf->AddPage();
 

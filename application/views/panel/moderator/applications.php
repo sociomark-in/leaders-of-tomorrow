@@ -25,7 +25,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto">
 										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-											Download<i class="link-icon px-1 mb-1" data-feather="download"></i>
+											Launch demo modal
 										</button>
 									</div>
 									<div class="col-auto">
@@ -38,75 +38,23 @@
 									<table class="table table-striped" id="applicationsTable">
 										<thead>
 											<tr>
-												<th>Participant</th>
-												<th>Contact Person</th>
-												<th>Number</th>
+												<th>Name</th>
+												<th>Email</th>
+												<th>Contact Number</th>
 												<th>Category</th>
-												<th>Status</th>
 												<th>Actions</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
+											<?php for ($i = 0; $i < 20; $i++) : ?>
 												<tr>
-													<td>
-														<h5><?= $application['name'] ?></h5>
-														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
-														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
-													</td>
-													<td>
-														<h5><?= $application['id_75534'] ?></h5>
-														<a href="mailto:<?= $application['id_75535'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
-														<a href="tel:<?= $application['id_75536'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
-													</td>
-													<td><a href="<?= $application['organization_url'] ?>"><?= $application['organization_url'] ?></a></td>
-													<td><?= $application['category']['name'] ?></td>
-													<td><?= $application['status_text'] ?></td>
-													<td>
-														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
-														</a>
-														<?php if ($application['status'] == '3') : ?>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-															</a>
-														<?php endif ?>
-														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id'])))?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
-														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
-														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
-													</td>
+													<td><a href="">Lorem ipsum dolor sit.</a></td>
+													<td>loremipsumdolor@gmail.com</td>
+													<td>+091 868 986 2375</td>
+													<td>Lorem ipsum dolor sit.</td>
+													<td><button class="btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Better</button></td>
 												</tr>
-											<?php endforeach ?>
-											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
-												<tr>
-													<td>
-														<h5><?= $application['name'] ?></h5>
-														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
-														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
-													</td>
-													<td>
-														<h5><?= $application['id_74529'] ?></h5>
-														<a href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
-														<a href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
-													</td>
-													<td>
-														<a class="d-block" href="<?= $application['organization_url'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['organization_url'] ?></a>
-													</td>
-													<td><?= $application['category']['name'] ?></td>
-													<td><?= $application['status_text'] ?></td>
-													<td>
-														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
-														</a>
-														<a href="">
-															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-														</a>
-														<a href=""><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
-														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
-														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
-													</td>
-												</tr>
-											<?php endforeach ?>
+											<?php endfor ?>
 										</tbody>
 									</table>
 									<script>
