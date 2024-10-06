@@ -1,6 +1,6 @@
 <?php 
 $done = 3;
-$live = "";
+$live = "Hyderabad";
 for ($i = $done; $i < count($springboards); $i++) : 
 	$sb = $springboards[$i];
 	?>
@@ -8,7 +8,7 @@ for ($i = $done; $i < count($springboards); $i++) :
 		<?php switch ($sb['name']) {
 			case $live: ?>
 				<a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile ongoing">
-					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * $done0 ?>">
+					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
 								<img src="<?= base_url("assets/images/icons/city/new/") . strtolower($sb['name'])?>.png" alt="Mumbai" height="100">
@@ -27,7 +27,7 @@ for ($i = $done; $i < count($springboards); $i++) :
 
 			default: ?>
 				<a href="javascript:void(0)" class="tile city-tile">
-					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * $done00 ?>">
+					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
 								<img src="<?= base_url("assets/images/icons/city/new/"). strtolower($sb['name'])?>.png" alt="Mumbai" height="100">

@@ -161,6 +161,7 @@ class CityController extends BaseController
 
 
 
+
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -203,6 +204,16 @@ class CityController extends BaseController
 				$this->load->city_view('lucknow', $this->data);
 				break;
 
+
+			case 'hyderabad':
+				$this->data['page'] = [
+					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Hyderabad",
+				];
+				$this->load->city_view('hyderabad', $this->data);
+				break;
 
 			default:
 				redirect('all-cities');
