@@ -45,17 +45,18 @@ class TestController extends CI_Controller
 			$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 			$mail->isSMTP();
 			$mail->Host = "smtp-relay.brevo.com";
-			$mail->Username = "67e9cf001@smtp-brevo.com";
-			$mail->Password = "15PQjO3Bq8TythIU";
+			$mail->Username = "67e9cf002@smtp-brevo.com";
+			$mail->Password = "tsUr4W8c6Xy2pnvf";
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 			$mail->Port = 587;
 
-			$mail->setFrom('response@timesnetwork.in', 'LOT Awards');
+			$mail->setFrom('noreply@leadersoftomorrow.co.in', 'LOT Awards');
 			$mail->addAddress('hemant@sociomark.in');
-
+			$mail->AddReplyTo('response@timesnetwork.in');
+			
 			$mail->isHTML(true);
 			$mail->Subject = 'Here is the subject';
-			$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+			$mail->Body    = $this->load->view('panel/emails/participant_register_new', null, true);
 			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 			$mail->send();
 			echo "Success!!!";
@@ -89,7 +90,7 @@ class TestController extends CI_Controller
 		$this->data['application'] = [
 			'name' => 'Sociomark'
 		];
-		$this->load->view('panel/templates/test', $this->data);
+		$this->load->view('panel/emails/participant_register_update', $this->data);
 	}
 
 	public function sms()

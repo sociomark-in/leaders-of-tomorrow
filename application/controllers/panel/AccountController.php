@@ -104,6 +104,9 @@ class AccountController extends PanelController
 		}
 	}
 
+	public function profile(){
+		$this->load->panel_view('account/profile');
+	}
 	public function profile_setting_single($type)
 	{
 		switch ($type) {

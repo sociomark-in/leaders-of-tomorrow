@@ -6,9 +6,7 @@
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">My Profile</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Account Settings</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Reset Password</li>
+				<li class="breadcrumb-item active" aria-current="page">My Profile</li>
 			</ol>
 		</nav>
 	</div>

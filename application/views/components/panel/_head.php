@@ -139,6 +139,8 @@
 
 <?php endswitch ?>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <!-- 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>

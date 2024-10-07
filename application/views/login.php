@@ -22,12 +22,14 @@
 								<div class="mb-3">
 									<button type="submit" class="btn btn-red">Login</button>
 								</div>
+								<div class="g-recaptcha" data-sitekey="6LeyC1oqAAAAADkQ7fisXtlSXdG7t1ZxxFgV3EsF"></div>
+								<br />
 								<?= form_close() ?>
 								<div class="mb-2">
-								Forgot Password? <a href="">Click Here to Reset</a>
+									Forgot Password? <a href="">Click Here to Reset</a>
 								</div>
 								<div class="">
-								Not Registered? <a href="<?= base_url('register') ?>">Click Here to Register</a>
+									Not Registered? <a href="<?= base_url('register') ?>">Click Here to Register</a>
 								</div>
 							</div>
 							<script>

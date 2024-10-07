@@ -21,7 +21,7 @@
 					</div>
 					<ul class="list-unstyled p-1">
 						<li class="dropdown-item py-2">
-							<a href="<?= base_url("profile") ?>" class="text-body ms-0">
+							<a href="<?= base_url("dashboard/my-profile") ?>" class="text-body ms-0">
 								<i class="me-2 icon-md" data-feather="user"></i>
 								<span>Profile</span>
 							</a>
