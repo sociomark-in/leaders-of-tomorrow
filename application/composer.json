@@ -1,11 +1,13 @@
 {
     "require" : {
         "facebook/php-sdk-v4" : "~5.0",
-		"google/apiclient": "^2.15.0",
         "clegginabox/pdf-merger": "dev-master",
         "fpdf/fpdf": "^1.86",
         "twilio/sdk": "^8.3",
-        "phpmailer/phpmailer": "^6.9"
+        "phpmailer/phpmailer": "^6.9",
+        "plivo/plivo-php": "^4.66",
+        "google/apiclient": "^2.14",
+        "google/auth": "^1.26"
     },
 	"scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"

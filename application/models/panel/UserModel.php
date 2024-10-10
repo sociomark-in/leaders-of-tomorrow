@@ -33,4 +33,19 @@ class UserModel extends CI_Model
 		}
 		return json_encode($this->db->get($this->table['user'])->result_array());
 	}
+
+	public function update($data, $where, $type = 'individual')
+	{
+		// $this->db->set();
+		$this->db->set($data);
+		if (!is_null($where)) {
+			$this->db->where($where);
+		}
+		$affected_rows = $this->db->update($this->table['user']);
+		if ($affected_rows > 0) {
+			return $affected_rows;
+		} else {
+			return false;
+		}
+	}
 }

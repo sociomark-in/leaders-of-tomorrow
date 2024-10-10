@@ -3,6 +3,8 @@
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
+use Plivo\Exceptions\PlivoRestException;
+use Plivo\RestClient;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -93,12 +95,29 @@ class TestController extends CI_Controller
 		$this->load->view('panel/emails/participant_register_update', $this->data);
 	}
 
-	public function sms()
+	public function twiliosms()
 	{
 		$this->load->library('twilio/smsclient');
 		$response = $this->smsclient->send();
 		echo "<pre>";
 		print_r($response->sid);
+	}
+
+	public function plivosms(){
+		$plivo = new RestClient($authID, $authToken);
+		echo "<pre>";
+		try {
+			$response = $plivo->messages->create(
+				[  
+					"src" => "LOTSMS",
+					"dst" => "+918689862375",
+					"text"  =>"Hello, from PHP Server!",
+				 ]
+			);
+			print_r($response);
+		} catch (PlivoRestException $e) {
+			echo "Error! " . $e->getMessage();
+		}
 	}
 
 	public function verify()

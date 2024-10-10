@@ -99,12 +99,19 @@ $route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';
 // All
 $route['dashboard/my-profile'] = 'panel/AccountController/profile';
 $route['dashboard/my-profile/edit'] = 'panel/AccountController/profile_edit';
+$route['dashboard/my-profile/verify'] = 'panel/AccountController/profile_verify';
 $route['dashboard/my-profile/settings'] = 'panel/AccountController/profile_settings';
 $route['dashboard/my-profile/setting/(:any)'] = 'panel/AccountController/profile_setting_single/$1';
 
 $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
 $route['api/new-nominee'] = 'NomineeController/add';
+
+$route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
+$route['api/v2/auth/verify/(:any)/verify'] = 'api/auth/VerificationAPIController/verify/$1';
+$route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/reset/$1';
+
+
 $route['api/v2/register/otp/send'] = 'api/auth/AuthAPIController/send_otp';
 $route['api/v2/register/otp/verify'] = 'api/auth/AuthAPIController/verify_otp';
 $route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_register';

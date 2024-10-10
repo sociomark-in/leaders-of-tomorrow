@@ -107,6 +107,13 @@ class AccountController extends PanelController
 	public function profile(){
 		$this->load->panel_view('account/profile');
 	}
+
+	
+	public function profile_verify(){
+		$this->load->panel_view('account/verify');
+	}
+
+
 	public function profile_setting_single($type)
 	{
 		switch ($type) {

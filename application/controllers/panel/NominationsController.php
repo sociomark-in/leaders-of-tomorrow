@@ -201,13 +201,17 @@ class NominationsController extends PanelController
 
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 		$this->data['nomination']['stage'] = $this->input->get('stage');
-
-		if (false) {
+		if ($this->data['user']['is_email_verified']) {
 			// First View
 			$this->load->panel_view('register', $this->data);
 		} else {
-			// Stepped View
-			$this->load->panel_view('register', $this->data);
+			$session = [
+				'is_verified' => [
+					'status' => false,
+				]
+			];
+			$this->session->set_tempdata('temp_session', $session);
+			redirect(base_url('dashboard/my-profile/verify'));
 		}
 	}
 
