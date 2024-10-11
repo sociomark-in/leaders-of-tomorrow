@@ -20,24 +20,23 @@ final class GlobalMail extends PHPMailer
 		$this->SMTPDebug = SMTP::DEBUG_SERVER;
 		$this->isSMTP();
 		$this->Host = $this->CI->config->item('mail_host');
+
 		$this->SMTPAuth = true;
-		$this->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-
-		return $this;
-	}
-
-	public function _config_($username, $password, $port)
-	{
-		$this->Username = $username;
-		$this->Password = $password;
-		$this->Port = $port;
+		$this->SMTPDebug = SMTP::DEBUG_SERVER;
+		$this->isSMTP();
+		$this->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+		$this->Host = "smtp-relay.brevo.com";
+		$this->Username = "67e9cf002@smtp-brevo.com";
+		$this->Password = "tsUr4W8c6Xy2pnvf";
+		$this->Port = 587;
 
 		return $this;
 	}
 
 	public function create_pool($from, $to, $replyto, $cc = null, $bcc = null)
 	{
-		$this->setFrom($from['email'] . $from['name']);
+		$this->setFrom($from['email'] , $from['name']);
+
 		foreach ($to as $key => $address) {
 			$this->addAddress($address);
 		}
@@ -45,6 +44,9 @@ final class GlobalMail extends PHPMailer
 			foreach ($cc as $key => $address) {
 				$this->addCC($address);
 			}
+		}
+		if (!is_null($replyto)) {
+			$this->addReplyTo($replyto);
 		}
 		if (!is_null($bcc)) {
 			foreach ($bcc as $key => $address) {
@@ -54,8 +56,11 @@ final class GlobalMail extends PHPMailer
 		return $this;
 	}
 
-	public function data($template, $data = null,  $alt = null)
+	public function data($subject, $template, $data = null,  $alt = null)
 	{
+		if (!is_null($subject)) {
+			$this->Subject = $subject;
+		}
 		$this->Body = $this->CI->load->view($template, $data, true);
 		if (!is_null($alt)) {
 			$this->AltBody = $alt;

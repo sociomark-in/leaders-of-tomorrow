@@ -14,7 +14,7 @@ $this->pdf->Cell(79, 6, 'Type Of Business', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->Cell(47, 4, $data['id_75502'], 0, 0, '');
 $this->pdf->Cell(47, 4, $data['id_75505'], 0, 0, '');
-$this->pdf->Cell(79, 4, 'Type Of Business', 0, 1, '');
+$this->pdf->Cell(79, 4, $data['id_75505'], 0, 1, '');
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
@@ -157,9 +157,9 @@ $this->pdf->Cell(47, 6, 'Start Date', 0, 0, '');
 $this->pdf->Cell(47, 6, 'End Date', 0, 1, '');
 
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(97, 4, 'Anirudhsatya Raju Iyyar', 0, 0, '');
-$this->pdf->Cell(47, 4, date('F j, Y'), 0, 0, '');
-$this->pdf->Cell(47, 4, date('F j, Y'), 0, 1, '');
+$this->pdf->Cell(97, 4,  $data['id_75520'], 0, 0, '');
+$this->pdf->Cell(47, 4, $data['id_75521'], 0, 0, '');
+$this->pdf->Cell(47, 4, $data['id_75522'], 0, 1, '');
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -170,7 +170,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 3, 'The initiative/product/service  that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service?', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75523'], 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -181,7 +181,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 3, 'The challenges that you organization has faced to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges?', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75524'], 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -192,7 +192,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 3, 'Elaborate on strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors.', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75525'], 0);
 
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
@@ -210,4 +210,57 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 3, 'The challenges that you organization has faced to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges?', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod assumenda vero error quaerat ratione aut soluta ut necessitatibus, rerum harum minus similique temporibus voluptatem tenetur autem illum ipsa alias et quisquam voluptatibus nulla accusamus! Quibusdam repellendus expedita, beatae recusandae explicabo, temporibus soluta impedit voluptate totam placeat asperiores nemo repellat?', 0);
+$this->pdf->MultiCell(0, 4, $data['id_75526'], 0);
+
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->Cell(0, 5, '', 0, 1, '');
+$this->pdf->SetFillColor(183, 32, 38);
+$this->pdf->SetTextColor(255, 255, 255);
+
+$this->pdf->Cell(0, 6, 'Impact of the Innovation / Initiative', 0, 1, '', true);
+
+$this->pdf->Cell(0, 2, '', 0, 1, '');
+$this->pdf->SetFont('Arial', 'B', 9);
+$this->pdf->SetTextColor(183, 32, 38);
+$this->pdf->MultiCell(0, 4, 'Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.', 0);
+$this->pdf->SetFont('Arial', '', 7);
+$this->pdf->SetTextColor(25, 25, 25);
+$this->pdf->MultiCell(0, 3, 'Details should be measurable and generic statements should be avoided', 0);
+$this->pdf->Cell(0, 1, '', 0, 1, '');
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->MultiCell(0, 4, $data['id_75527'], 0);
+
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->Cell(0, 5, '', 0, 1, '');
+$this->pdf->SetFillColor(183, 32, 38);
+$this->pdf->SetTextColor(255, 255, 255);
+
+$this->pdf->Cell(0, 6, 'Sustainability / Scalability', 0, 1, '', true);
+
+$this->pdf->Cell(0, 2, '', 0, 1, '');
+$this->pdf->SetFont('Arial', 'B', 9);
+$this->pdf->SetTextColor(183, 32, 38);
+$this->pdf->MultiCell(0, 4, 'Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters ', 0);
+$this->pdf->SetFont('Arial', '', 7);
+$this->pdf->SetTextColor(25, 25, 25);
+$this->pdf->MultiCell(0, 3, 'Details should be measurable and generic statements should be avoided', 0);
+$this->pdf->Cell(0, 1, '', 0, 1, '');
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->MultiCell(0, 4, $data['id_75528'], 0);
+
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->Cell(0, 5, '', 0, 1, '');
+$this->pdf->SetFillColor(183, 32, 38);
+$this->pdf->SetTextColor(255, 255, 255);
+
+$this->pdf->Cell(0, 6, 'Additional Information', 0, 1, '', true);
+
+$this->pdf->Cell(0, 2, '', 0, 1, '');
+$this->pdf->SetFont('Arial', 'B', 9);
+$this->pdf->SetTextColor(183, 32, 38);
+$this->pdf->MultiCell(0, 4, 'Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.', 0);
+
+$this->pdf->SetTextColor(25, 25, 25);
+$this->pdf->Cell(0, 1, '', 0, 1, '');
+$this->pdf->SetFont('Arial', '', 9);
+$this->pdf->MultiCell(0, 4, $data['id_75529'], 0);

@@ -45,7 +45,7 @@ class AccountController extends PanelController
 								$s = '<span class="badge bg-dark">Unlocked</span>';
 								break;
 							case '3':
-								$s = '<span class="badge bg-warning">Complete & In Review</span>';
+								$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 								break;
 							default:
 								$s = '<span class="badge bg-secondary">Draft</span>';
@@ -75,7 +75,7 @@ class AccountController extends PanelController
 								$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 								break;
 							case '3':
-								$s = '<span class="badge bg-warning">Locked & In Review</span>';
+								$s = '<span class="badge bg-warning">Locked & Under Review</span>';
 								break;
 							default:
 								$s = '<span class="badge bg-secondary">Draft</span>';

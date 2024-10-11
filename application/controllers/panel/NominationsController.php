@@ -1,6 +1,10 @@
 <?php
+
+use Clegginabox\PDFMerger\PDFMerger;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
+require_once APPPATH . "vendor/autoload.php";
 class NominationsController extends PanelController
 {
 	public $user_session;
@@ -32,7 +36,7 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete & In Review</span>';
+						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -57,7 +61,7 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete & In Review</span>';
+						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -93,7 +97,7 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Locked & In Review</span>';
+						$s = '<span class="badge bg-warning">Locked & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -118,7 +122,7 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Locked & In Review</span>';
+						$s = '<span class="badge bg-warning">Locked & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -211,16 +215,42 @@ class NominationsController extends PanelController
 				]
 			];
 			$this->session->set_tempdata('temp_session', $session);
-			redirect(base_url('dashboard/my-profile/verify'));
+			redirect(base_url('dashboard/my-profile'));
 		}
 	}
 
-	public function download($slug){
+	public function download($slug)
+	{
+
 		$id = $this->encryption->decrypt(urldecode($this->input->get("key")));
 		$application = array_merge(json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true))[0];
-		$this->load->library('pdflib/makepdf');
-		$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate();
 		// echo "<pre>";
-		// print_r($application);
+		// print_r($application);die;
+		$files = [
+			$application['id_75530'],
+			$application['id_75531'],
+			$application['id_75532'],
+			$application['id_75533'],
+		];
+		$temp = [];
+		for ($i = 0; $i < count($files); $i++) {
+			$temp[$i] = FCPATH . explode(base_url(), $files[$i])[1];
+		}
+
+		if(in_array($this->user_session['role'], ['jury', 'admin'])){
+
+			$this->load->library('pdflib/makepdf');
+			$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			
+			$pdf = new PDFMerger;
+			$pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			foreach ($temp as $key => $file) {
+				$pdf->addPDF($file);
+			}
+
+			$pdf->merge('browser');
+		} else {
+			redirect('dashboard');
+		}
 	}
 }

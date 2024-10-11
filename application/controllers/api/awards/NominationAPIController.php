@@ -200,6 +200,9 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
+				case '5':
+					# Success & Email Send
+					break;
 				default:
 					break;
 			}
@@ -360,6 +363,9 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 
+				case '5':
+					# Success & Email Send
+					break;
 				default:
 					break;
 			}
@@ -431,7 +437,7 @@ class NominationAPIController extends CI_Controller
 		];
 		$r = random_string();
 		$this->load->library('upload', $config);
-		
+
 		foreach ($_FILES as $key => $file) {
 			if ($file['size'] != 0) {
 				$new_name = time() . "_" . $r . "_" . $file['name'];
