@@ -221,7 +221,6 @@ class NominationsController extends PanelController
 
 	public function download($slug)
 	{
-
 		$id = $this->encryption->decrypt(urldecode($this->input->get("key")));
 		$application = array_merge(json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true))[0];
 		// echo "<pre>";
@@ -237,8 +236,11 @@ class NominationsController extends PanelController
 			$temp[$i] = FCPATH . explode(base_url(), $files[$i])[1];
 		}
 
-		if(in_array($this->user_session['role'], ['jury', 'admin'])){
+		if(!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])){
+			mkdir(FCPATH . 'uploads/' . $application['nomination_id'] , 0777, true);
+		}
 
+		if(in_array($this->user_session['role'], ['jury', 'admin'])){
 			$this->load->library('pdflib/makepdf');
 			$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 			
@@ -247,7 +249,6 @@ class NominationsController extends PanelController
 			foreach ($temp as $key => $file) {
 				$pdf->addPDF($file);
 			}
-
 			$pdf->merge('browser');
 		} else {
 			redirect('dashboard');
