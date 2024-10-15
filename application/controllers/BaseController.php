@@ -32,6 +32,12 @@ class BaseController extends CI_Controller
 				'venue' => "Radisson Blu Plaza Hotel, Hyderabad"
 			],
 			[
+				'name' => "Chennai",
+				'theme' => "Chennai: Driving Global Blueprint for Industrial Excellence",
+				'date' => '2024-12-06',
+				'venue' => ""
+			],
+			[
 				'name' => "Delhi NCR",
 				'theme' => "Delhi: Spotlight on India's Startup Capital",
 				'date' => '2024-10-18',
@@ -47,12 +53,6 @@ class BaseController extends CI_Controller
 				'name' => "Bengaluru",
 				'theme' => "Mastering Business, Gender and Leadership",
 				'date' => '2024-11-22',
-				'venue' => ""
-			],
-			[
-				'name' => "Chennai",
-				'theme' => "Chennai: Driving Global Blueprint for Industrial Excellence",
-				'date' => '2024-12-06',
 				'venue' => ""
 			],
 			[

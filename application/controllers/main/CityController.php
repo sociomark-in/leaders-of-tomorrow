@@ -159,8 +159,58 @@ class CityController extends BaseController
 				$this->load->city_view('chandigarh', $this->data);
 				break;
 
-
-
+			case 'hyderabad':
+				$this->data['page'] = [
+					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Hyderabad",
+					'speakers' => [
+						// [
+						// 	'photo' => "Bhavesh_Jatania.png",
+						// 	'name' => "Bhavesh Jatania",
+						// 	'description' => "Head - Startup Banking, IDFC FIRST Bank",
+						// ],
+						[
+							'photo' => "Rama_Devi_Lanka.png",
+							'name' => "Rama Devi Lanka",
+							'description' => "Director - Emerging Technologies, Government of Telangana",
+						],
+						[
+							'photo' => "K_Rama_Devi.png",
+							'name' => "K Rama Devi",
+							'description' => "Founder & President, Association of Lady Entrepreneurs of India (ALEAP)",
+						],
+						[
+							'photo' => "Ramesh_Loganathan.png",
+							'name' => "Ramesh Loganathan",
+							'description' => "Professor & Head Research Outreach, IIIT - Hyderabad",
+						],
+						[
+							'photo' => "Lion_Dr_Kiran.png",
+							'name' => "Lion Dr Kiron",
+							'description' => "Managing Director, SuchirIndia Group",
+						],
+					]
+				];
+				$this->load->city_view('hyderabad', $this->data);
+				break;
+			case 'chennai':
+				$this->data['page'] = [
+					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Chennai",
+					'speakers' => [
+						// [
+						// 	'photo' => "",
+						// 	'name' => "",
+						// 	'description' => "",
+						// ],
+					]
+				];
+				$this->load->city_view('chennai', $this->data);
+				break;
 
 			case 'test':
 				$this->data['page'] = [
@@ -204,43 +254,6 @@ class CityController extends BaseController
 				$this->load->city_view('lucknow', $this->data);
 				break;
 
-
-			case 'hyderabad':
-				$this->data['page'] = [
-					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city'] = [
-					'name' => "Hyderabad",
-					'speakers' => [
-						// [
-						// 	'photo' => "Bhavesh_Jatania.png",
-						// 	'name' => "Bhavesh Jatania",
-						// 	'description' => "Head - Startup Banking, IDFC FIRST Bank",
-						// ],
-						[
-							'photo' => "Rama_Devi_Lanka.png",
-							'name' => "Rama Devi Lanka",
-							'description' => "Director - Emerging Technologies, Government of Telangana",
-						],
-						[
-							'photo' => "K_Rama_Devi.png",
-							'name' => "K Rama Devi",
-							'description' => "Founder & President, Association of Lady Entrepreneurs of India (ALEAP)",
-						],
-						[
-							'photo' => "Ramesh_Loganathan.png",
-							'name' => "Ramesh Loganathan",
-							'description' => "Professor & Head Research Outreach, IIIT - Hyderabad",
-						],
-						[
-							'photo' => "Lion_Dr_Kiron.png",
-							'name' => "Lion Dr Kiron",
-							'description' => "Managing Director, SuchirIndia Group",
-						],
-					]
-				];
-				$this->load->city_view('hyderabad', $this->data);
-				break;
 
 			default:
 				redirect('all-cities');

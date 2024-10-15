@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 blank" id="about">
+	<section class="section pb-0 blank d-none" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
 				<div class="glass-card">
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class=" section pb-0 d-none">
+	<section id="agenda" class="d-none section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0">
+	<section id="speakers" class="d-none pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
