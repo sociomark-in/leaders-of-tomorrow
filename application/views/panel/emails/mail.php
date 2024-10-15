@@ -53,7 +53,7 @@
 												<td>
 													<a href="#">
 														<img style="width: 100%;"
-															src="https://test.apogeedigitech.in/times/protected/email/img.jpg"
+															src="https://test.apogeedigitech.in/times/protected/email/image.jpg"
 															alt="Lorem">
 													</a>
 												</td>
@@ -70,21 +70,21 @@
 											style="max-width:600px;width:100%;min-width:320px;font-size: 13px;">
 											<tr>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="2">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse5PKOQNXQkKyya7CSmNZwU1"
 														style="color: yellow;text-decoration: none;">English News TV
 													</a>
 												</td>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="2">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse4knaA7EO2NgAs8br4Zn9yA"
 														style="color: yellow;text-decoration: none;">Hindi News TV
 													</a>
 												</td>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="2">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse7_DCl75hc6kLBIBs17GY1e"
 														style="color: yellow;text-decoration: none;">Bollywood TV
@@ -93,14 +93,14 @@
 											</tr>
 											<tr>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="3">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse44tAiNg34yfe_W5h_TuAqs"
 														style="color: yellow;text-decoration: none;">Entertainment Original
 													</a>
 												</td>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="3">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse5gvZsO9W8Mxt11-SXOOtIg"
 														style="color: yellow;text-decoration: none;">Entertainment Short
@@ -109,14 +109,14 @@
 											</tr>
 											<tr>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="3">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse5mNzze8locHUbcMxqZ_tpK"
 														style="color: yellow;text-decoration: none;">English Archive
 													</a>
 												</td>
 												<td align="center"
-													style="text-align: center;  border:1px solid #ffffff4b;border-collapse:collapse;"
+													style="text-align: center;  border:1px solid #fff;border-collapse:collapse;"
 													colspan="3">
 													<a href="https://www.youtube.com/playlist?list=PL7vMDi_1wse6npqKvQT72zE1cCv3UPA11"
 														style="color: yellow;text-decoration: none;">Hindi Archive

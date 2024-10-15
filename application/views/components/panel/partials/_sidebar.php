@@ -89,7 +89,7 @@
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['super-admin'])) :?>
 			<li class="nav-item nav-category">Apps</li>
 			<li class="nav-item">
-				<a href="dashboard.html" class="nav-link">
+				<a href="<?= base_url('dashboard/app/settings') ?>" class="nav-link">
 					<i class="link-icon" data-feather="settings"></i>
 					<span class="link-title">App Settings</span>
 				</a>

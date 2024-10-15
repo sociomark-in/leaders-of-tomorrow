@@ -105,6 +105,10 @@ $route['dashboard/my-profile/setting/(:any)'] = 'panel/AccountController/profile
 
 $route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
 
+$route['dashboard/app/settings'] = 'panel/settings/GlobalSettingsController/index';
+
+
+
 $route['api/new-nominee'] = 'NomineeController/add';
 
 $route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
@@ -117,6 +121,7 @@ $route['api/v2/register/otp/verify'] = 'api/auth/AuthAPIController/verify_otp';
 $route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_register';
 $route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_login';
 $route['api/v2/participant/google-login'] = 'api/auth/SSOController/participant_google_login';
+
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
 $route['api/v2/awards/nomination/single/new_bulk'] = 'api/awards/NominationAPIController/new_bulk';
