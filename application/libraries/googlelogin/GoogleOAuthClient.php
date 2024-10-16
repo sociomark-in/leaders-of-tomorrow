@@ -7,7 +7,6 @@ class GoogleOAuthClient
 	private $CI, $keys, $client;
 	public function __construct()
 	{
-		echo "Loaded";
 		$this->CI = &get_instance();
 		$this->keys = [];
 		$result = $this->CI->db->select(['config_key', 'value'])->get('app_config')->result_array();
@@ -16,32 +15,24 @@ class GoogleOAuthClient
 			$this->keys[$row['config_key']] = $row['value'];
 		}
 		// init configuration
-
-		
-	
-	}
-	
-	function get_login_url() {
-		
 		$redirectUri = base_url('api/v2/oauth/googleuser');
 		
 		$this->client = new Google_Client();
 		$this->client->setClientId( $this->keys['googleclient_id'] . ".apps.googleusercontent.com");
 		$this->client->setClientSecret($this->keys['googleclient_secret']);
 		$this->client->setRedirectUri($redirectUri);
+		
+		log_message('notice', 'GoogleOAuth Library Loaded');
+		
+	}
+	
+	function get_login_url() {
 		$this->client->addScope('email');
 		$this->client->addScope('profile');
-
 		return $this->client->createAuthUrl();
 	}
 
 	function get_profile() {
-		$redirectUri = base_url('api/v2/oauth/googleuser');
-		
-		$this->client = new Google_Client();
-		$this->client->setClientId( $this->keys['googleclient_id'] . ".apps.googleusercontent.com");
-		$this->client->setClientSecret($this->keys['googleclient_secret']);
-		$this->client->setRedirectUri($redirectUri);
 
 		$code = $this->CI->input->get('code');
 		if(is_null($code)){

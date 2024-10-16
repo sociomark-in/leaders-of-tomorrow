@@ -77,7 +77,6 @@
 												</div>
 												<div class="col-12">
 													<?= form_open('api/v2/participant/register', ['id' => "formWizard"]) ?>
-													<h2>Getting Started</h2>
 													<fieldset>
 														<div class="row g-3 mb-3 mb-md-5">
 															<div class="col-xl-6 col-12">
@@ -91,6 +90,26 @@
 															<div class="col-12">
 																<label for="" class="form-label">Email Address</label>
 																<input type="email" id="OTPMail" name="email" class="form-control" required>
+															</div>
+															<div class="col-12">
+																<div class="">
+																	<div class="form-check">
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+																		<label class="form-check-label" for="flexCheckChecked">
+																			Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe adipisci omnis iure, vel sequi reprehenderit eveniet magni? Cupiditate inventore molestiae rem voluptatum fugiat. Laboriosam unde beatae nostrum nesciunt iusto repellat!
+																		</label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="row">
+																	<div class="col-auto">
+																		<button class="btn btn-red" type="submit">Register Now</button>
+																	</div>
+																	<div class="col-auto">
+																		<button class="btn btn-secondary" type="reset">Nevermind</button>
+																	</div>
+																</div>
 															</div>
 														</div>
 														<script>
@@ -111,72 +130,6 @@
 																preferredCountries: [],
 															});
 														</script>
-													</fieldset>
-													<!-- 
-													<h2>Verify Details with OTP</h2>
-													<fieldset>
-														<div class="row g-1 g-md-2">
-															<div class="col-12">
-																<button id="sendBothOTP" type="button" class="btn btn-yellow">Send OTP</button>
-																<span class="form-text ms-2" id="notifyOTP"></span>
-																<script>
-																	$("#sendBothOTP").on('click', () => {
-																		var email = $("#OTPMail").val();
-																		var contact = $("#OTPContact").val();
-																		$.ajax({
-																			url: '<?= base_url('api/v2/register/otp/send') ?>',
-																			method: 'POST',
-																			data: {
-																				'email': email,
-																				'contact': contact,
-																			},
-																			success: (response) => {
-																				console.log(response);
-																				if (response.status == 'error') {
-																					$('#notifyOTP').removeClass('text-success')
-																					$('#notifyOTP').text('')
-
-																					$('#notifyOTP').addClass('text-danger')
-																					$('#notifyOTP').text(response.message)
-																				} else {
-																					$('#notifyOTP').removeClass('text-danger')
-																					$('#notifyOTP').text('')
-
-																					$("#sendOTP").attr('disabled', true);
-																					$('#notifyOTP').addClass('text-success')
-																					$('#notifyOTP').text(response.message)
-																				}
-																			}
-																		})
-																	})
-																</script>
-															</div>
-															<div class="col-xl-4 col-12">
-																<label for="" class="form-label">OTP for Email</label>
-																<input type="text" name="meilotp" class="form-control" required>
-															</div>
-															<div class="col-xl-4 col-12">
-																<label for="" class="form-label">OTP for Contact</label>
-																<input type="text" name="contactotp" class="form-control" required>
-															</div>
-														</div>
-													</fieldset>
- 													-->
-													<h2>Terms & Conditions</h2>
-													<fieldset>
-														<div class="row g-3 mb-3 mb-md-5">
-
-															<div class="col-12">
-																<div class="">
-																	<div class="form-check">
-																		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-																		<label class="form-check-label" for="flexCheckChecked">
-																			Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe adipisci omnis iure, vel sequi reprehenderit eveniet magni? Cupiditate inventore molestiae rem voluptatum fugiat. Laboriosam unde beatae nostrum nesciunt iusto repellat!
-																		</label>
-																	</div>
-																</div>
-															</div>
-														</div>
 													</fieldset>
 													<?= form_close() ?>
 												</div>
@@ -226,9 +179,6 @@
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
-	$.validator.addMethod("linkedinurl_regex", function(value, element) {
-		return this.optional(element) || /^(https?:\/\/)?(www\.)?linkedin\.com\//i.test(value);
-	})
 	$.validator.addMethod("letters", function(value, element) {
 		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
 	});
@@ -244,31 +194,17 @@
 				letters: true,
 			},
 			email: {
-				emailregex: true,
-				// remote: {
-				// 	url: '<?= base_url('api/v2/register/otp/verify') ?>',
-				// 	async: false,
-				// 	type: "post",
-				// 	data: {}
-				// },
-			},
-			otp: {
 				normalizer: function(value) {
 					return $.trim(value)
 				},
+				emailregex: true,
 				remote: {
-					url: "<?= base_url('api/v2/register/otp/verify') ?>",
+					url: '<?= base_url('api/v2/register/email/verify') ?>',
+					async: false,
 					type: "post",
-					data: {
-						otp: function() {
-							return $("input[name=otp").val();
-						}
-					}
-				}
+					data: {}
+				},
 			},
-			linkedin: {
-				linkedinurl_regex: true
-			}
 		},
 		messages: {
 			email: {
@@ -277,48 +213,6 @@
 			name: {
 				letters: 'Please enter a valid name',
 			},
-			linkedin: {
-				linkedinurl_regex: 'Not a valid LinkedIn URL'
-			}
-		}
-	});
-	form.steps({
-		headerTag: "h2",
-		bodyTag: "fieldset",
-		transitionEffect: "slideLeft",
-		onStepChanging: function(event, currentIndex, newIndex) {
-			form.validate().settings.ignore = ":disabled,:hidden";
-			if (currentIndex == 1) {
-				var email = $("#OTPMail").val();
-				var contact = $("#OTPContact").val();
-				let flag;
-				console.log($.ajax({
-					url: '<?= base_url('api/v2/register/otp/verify') ?>',
-					method: 'POST',
-					data: {
-						'email': email,
-						'contact': contact,
-					},
-				}).responseJSON);
-				return true;
-			} else {
-				return form.valid();
-			}
-		},
-		onStepChanged: function(event, currentIndex, priorIndex) {
-			if (currentIndex == 1) {
-				console.log({
-					'c': currentIndex,
-					'p': priorIndex
-				});
-			}
-		},
-		onFinishing: function(event, currentIndex) {
-			form.validate().settings.ignore = ":disabled";
-			return form.valid();
-		},
-		onFinished: function(event, currentIndex) {
-			$("#formWizard").submit()
 		}
 	});
 	$(":input").inputmask();

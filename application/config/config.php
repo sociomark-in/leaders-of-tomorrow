@@ -218,6 +218,8 @@ $config['allow_get_array'] = TRUE;
 |	2 = Debug Messages
 |	3 = Informational Messages
 |	4 = All Messages
+|	
+|	debug, info, notice, warning, error, critical, alert, emergency 
 |
 | You can also pass an array with threshold levels to show individual error types
 |
@@ -252,7 +254,7 @@ $config['log_path'] = '';
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = '';
+$config['log_file_extension'] = '.log';
 
 /*
 |--------------------------------------------------------------------------

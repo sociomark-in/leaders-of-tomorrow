@@ -7,7 +7,8 @@ for ($i = $done; $i < count($springboards); $i++) :
 	<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 		<?php switch ($sb['name']) {
 			case $live: ?>
-				<a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile ongoing">
+				<a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile upcoming">
+				<!-- <a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile ongoing"> -->
 					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">

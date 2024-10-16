@@ -697,6 +697,10 @@ form .form-control {
   font-weight: 600;
   text-transform: uppercase;
 }
+.city-tile.upcoming .photo::after {
+  content: "Upcoming";
+  background-color: #ffde3f;
+}
 .city-tile.ongoing .photo::after {
   content: "Ongoing";
   background-color: #ffde3f;

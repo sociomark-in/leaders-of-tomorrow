@@ -279,6 +279,13 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Lucknow";
 				$this->load->city_view('gallery', $this->data);
 				break;
+			case 'chandigarh':
+				$this->data['page'] = [
+					'title' => "Chandigarh Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Chandigarh";
+				$this->load->city_view('gallery', $this->data);
+				break;
 
 			default:
 				redirect('all-cities');
