@@ -9,7 +9,7 @@ for ($i = $done; $i < count($springboards); $i++) :
 			case $live: ?>
 				<a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile upcoming">
 				<!-- <a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile ongoing"> -->
-					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
+					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $i * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
 								<img src="<?= base_url("assets/images/icons/city/new/") . strtolower($sb['name'])?>.png" alt="Mumbai" height="100">
@@ -28,10 +28,10 @@ for ($i = $done; $i < count($springboards); $i++) :
 
 			default: ?>
 				<a href="javascript:void(0)" class="tile city-tile">
-					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
+					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $i * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
-								<img src="<?= base_url("assets/images/icons/city/new/"). strtolower($sb['name'])?>.png" alt="Mumbai" height="100">
+								<img src="<?= base_url("assets/images/icons/city/new/"). strtolower($sb['name'])?>.png" alt="<?= $sb['name'] ?>" height="100">
 							</div>
 						</div>
 						<div class="col">
@@ -52,10 +52,10 @@ for ($i = $done; $i < count($springboards); $i++) :
 	?>
 	<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 				<a href="<?= base_url('city/') . strtolower($sb['name']) ?>" class="tile interactive-tile city-tile end">
-					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $key * 10 ?>">
+					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $i * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
-								<img src="<?= base_url("assets/images/icons/city/new/") . strtolower($sb['name'])?>.png" alt="Mumbai" height="100">
+								<img src="<?= base_url("assets/images/icons/city/new/") . strtolower($sb['name'])?>.png" alt="<?= $sb['name'] ?>" height="100">
 							</div>
 						</div>
 						<div class="col">
