@@ -63,7 +63,7 @@
 										<div class="col-12">
 											<div class="row gx-3">
 												<div class="col-auto">
-													<a href="" type="submit" class="btn btn-google"><i class="fa-brands fa-google"></i>&nbsp;Sign Up with Google</a>
+													<a href="<?= $page['oauth_url'] ?>" type="submit" class="btn btn-google"><i class="fa-brands fa-google"></i>&nbsp;Sign Up with Google</a>
 												</div>
 												<div class="col-auto">
 													<a href="" type="reset" class="btn btn-facebook"><i class="fa-brands fa-facebook-f"></i>&nbsp;Sign Up with Facebook</a>

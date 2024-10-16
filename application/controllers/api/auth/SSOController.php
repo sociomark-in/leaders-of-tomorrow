@@ -10,7 +10,7 @@ class SSOController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('panel/User');
+		$this->load->model('panel/UserModel');
 	}
 
 	public function validate()
@@ -104,5 +104,10 @@ class SSOController extends CI_Controller
 		} else {
 			echo "<a href='" . $client->createAuthUrl() . "'>Google Login</a>";
 		}
+	}
+
+	public function participant_google_profile() {
+		$this->load->library('googlelogin/googleoauthclient');
+		print_r($this->googleoauthclient->get_profile());
 	}
 }
