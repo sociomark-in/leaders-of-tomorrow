@@ -20,7 +20,11 @@ class UserModel extends CI_Model
 
 	public function insert($data)
 	{
-		return true;
+		if ($this->db->insert($this->table['user'], $data)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public function get($select = null, $where = null)

@@ -120,8 +120,7 @@ $route['api/v2/register/otp/send'] = 'api/auth/AuthAPIController/send_otp';
 $route['api/v2/register/otp/verify'] = 'api/auth/AuthAPIController/verify_otp';
 $route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_register';
 $route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_login';
-$route['api/v2/participant/google-login'] = 'api/auth/SSOController/participant_google_login';
-$route['api/v2/oauth/googleuser'] = 'api/auth/SSOController/participant_google_profile';
+$route['api/v2/oauth/googleuser'] = 'api/auth/SSOAPIController/participant_google_profile';
 
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';

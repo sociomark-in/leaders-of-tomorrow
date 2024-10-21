@@ -197,11 +197,36 @@ class CityController extends BaseController
 				break;
 			case 'chennai':
 				$this->data['page'] = [
-					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+					'title' => "Chennai Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Chennai",
 					'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Dr_Srimathy.png",
+							'name' => "Dr Srimathy Kesan",
+							'description' => "Founder & CEO, Space Kidz India",
+						],
+						[
+							'photo' => "CK_Mohan.png",
+							'name' => "CK Mohan",
+							'description' => "President, Tamil Nadu Small & Tiny Industries Association",
+						],
+						[
+							'photo' => "Divya_Abhishek.png",
+							'name' => "Divya Abhishek",
+							'description' => "Chairperson, FICCI FLO, Chennai",
+						],
+						[
+							'photo' => "Dayal_Nathan.png",
+							'name' => " Dayal Nathan",
+							'description' => "Founder & CEO, Energyly",
+						],
 						// [
 						// 	'photo' => "",
 						// 	'name' => "",
@@ -297,7 +322,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'hyderabad') {
+			if (strtolower($sb['name']) == $city && $city == 'chennai') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

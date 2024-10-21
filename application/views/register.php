@@ -61,14 +61,32 @@
 									</style>
 									<div class="row g-3 g-md-4">
 										<div class="col-12">
-											<div class="row gx-3">
-												<div class="col-auto">
-													<a href="<?= $page['oauth_url'] ?>" type="submit" class="btn btn-google"><i class="fa-brands fa-google"></i>&nbsp;Sign Up with Google</a>
+											<?php if (!is_null($googleusercontent)): ?>
+												<?php
+												if ($googleusercontent['status'] == "SUCCESS"):
+													$profile['name'] = $googleusercontent['profile']['name'];
+													$profile['email'] = $googleusercontent['profile']['email'];
+													$profile['is_email_verified'] = $googleusercontent['profile']['is_email_verified'];
+												?>
+													<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+														<?php echo $googleusercontent['status'] ?>
+														<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+													</div>
+												<?php else:
+													$profile['name'] = null;
+													$profile['email'] = null;
+												?>
+												<?php endif ?>
+											<?php else: ?>
+												<div class="row gx-3 align-items-center">
+													<div class="col-auto">
+														<a href="<?= $page['oauth_url']['google'] ?>"><img height="50" src="<?= base_url('assets/images/icons/google_sign_in_lg.svg') ?>" alt="Google Button"></a>
+													</div>
+													<div class="col-auto">
+														<p class="m-0">or</p>
+													</div>
 												</div>
-												<div class="col-auto">
-													<a href="" type="reset" class="btn btn-facebook"><i class="fa-brands fa-facebook-f"></i>&nbsp;Sign Up with Facebook</a>
-												</div>
-											</div>
+											<?php endif ?>
 										</div>
 										<div class="col-12">
 											<div class="row g-1 g-md-2">
@@ -81,7 +99,11 @@
 														<div class="row g-3 mb-3 mb-md-5">
 															<div class="col-xl-6 col-12">
 																<label for="" class="form-label">Name</label>
-																<input type="text" name="name" class="form-control" required>
+																<?php if (!is_null($profile['name'])): ?>
+																	<input type="text" name="name" value="<?= $profile['name'] ?>" class="form-control" required>
+																<?php else: ?>
+																	<input type="text" name="name" class="form-control" required>
+																<?php endif ?>
 															</div>
 															<div class="col-xl-6 col-12">
 																<label for="" class="form-label">Contact Number</label>
@@ -89,7 +111,12 @@
 															</div>
 															<div class="col-12">
 																<label for="" class="form-label">Email Address</label>
-																<input type="email" id="OTPMail" name="email" class="form-control" required>
+																<?php if (!is_null($profile['email'])): ?>
+																	<input type="hidden" name="is_email_verified" value="<?= $profile['is_email_verified'] ?>">
+																	<input type="email" name="email" value="<?= $profile['email'] ?>" class="form-control" required>
+																<?php else: ?>
+																	<input type="text" name="email" class="form-control" required>
+																<?php endif ?>
 															</div>
 															<div class="col-12">
 																<div class="">
@@ -115,7 +142,9 @@
 														<script>
 															$("#OTPContact").intlTelInput({
 																initialCountry: "in",
-																separateDialCode: false,
+																separateDialCode: true,
+																preferredCountries: ["in, us"],
+																hiddenInput: "full_contact",
 																formatOnDisplay: true,
 																nationalMode: false,
 																// allowDropdown: false,
@@ -127,7 +156,6 @@
 																},
 																utilsScript: "../../build/js/utils.js?1562189064761",
 																utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/js/utils.js",
-																preferredCountries: [],
 															});
 														</script>
 													</fieldset>

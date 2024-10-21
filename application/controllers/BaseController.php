@@ -34,8 +34,8 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Chennai",
 				'theme' => "Chennai: Driving Global Blueprint for Industrial Excellence",
-				'date' => '2024-12-06',
-				'venue' => ""
+				'date' => '2024-10-25 17:00:00',
+				'venue' => "Regenta Central RS, Chennai"
 			],
 			[
 				'name' => "Delhi NCR",

@@ -181,7 +181,7 @@ class NominationAPIController extends CI_Controller
 						} else {
 							/* No Error - File Upload Script */
 							/* Data Upload */
-							$update_data['id_7553' . $i] =  base_url(explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name'));
+							$update_data['id_7553' . $i] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
 							$i++;
 						}
 					}
@@ -406,6 +406,8 @@ class NominationAPIController extends CI_Controller
 		} elseif ($category['type'] == "Individual") {
 		}
 
+		$data['stage_status'] = '5';
+
 		/* Set Docket Name */
 		$docket_name = FCPATH . 'uploads/dockets/' . $this->input->post('category_id') . '_' . $this->input->post('application_id') . '_' . time() . '.pdf';
 
@@ -421,7 +423,8 @@ class NominationAPIController extends CI_Controller
 		}
 
 		/* Document Upload Folder Exists Script */
-		if (!file_exists($config['upload_path'])) {
+		if (file_exists($config['upload_path'])) {
+			rmdir($config['upload_path']);
 			mkdir($config['upload_path'], 0777);
 		}
 
@@ -436,8 +439,8 @@ class NominationAPIController extends CI_Controller
 			'id_74528',
 		];
 		$r = random_string();
-		$this->load->library('upload', $config);
 
+		$this->load->library('upload', $config);
 		foreach ($_FILES as $key => $file) {
 			if ($file['size'] != 0) {
 				$new_name = time() . "_" . $r . "_" . $file['name'];

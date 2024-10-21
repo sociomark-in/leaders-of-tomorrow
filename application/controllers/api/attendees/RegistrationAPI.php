@@ -12,6 +12,7 @@ class RegistrationAPI extends CI_Controller
 			"lucknow" => "4f18fda6-f8a7-4da4-a6a2-4d77c04b85bd",
 			"chandigarh" => "372237d7-c945-4548-b444-3725309b7bd2",
 			"hyderabad" => "1f858d77-9498-4c57-a6f2-0afa69b20e8d",
+			"chennai" => "8404655b-ffb0-494a-ae29-bcabcd24d2b6",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -65,11 +66,11 @@ class RegistrationAPI extends CI_Controller
 		];
 		
 		$data['registration_details']["custom_forms"] = [
-			"51248" => $this->request['organization']['department'],
-			"51247" => $this->request['organization']['turnover'],
-			"51246" => $this->request['organization']['industry'],
-			"51256" => $this->request['website'],
-			"51245" => $this->request['message'],
+			"52787" => $this->request['organization']['department'],
+			"52788" => $this->request['organization']['turnover'],
+			"52789" => $this->request['organization']['industry'],
+			"52779" => $this->request['website'],
+			"52790" => $this->request['message'],
 		];
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);
 

@@ -12,11 +12,16 @@ class RegisterController extends BaseController
 	public function index()
 	{
 		$this->load->library('googlelogin/googleoauthclient');
+		if ($this->session->has_userdata('googleuser')){
+			$this->data['googleusercontent'] = $_SESSION['googleuser']?? null;
+		}
 		$this->data['page'] = [
-			'oauth_url' => $this->googleoauthclient->get_login_url(),
+			'oauth_url' => [
+				'google' => $this->googleoauthclient->get_login_url(),
+				'facebook' => base_url()
+			],
 			'title' => "Register" . " • " . APP_NAME . " " . date('Y')
 		];
 		$this->load->mini_view('register', $this->data);
-
 	}
 }

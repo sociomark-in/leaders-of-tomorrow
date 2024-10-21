@@ -186,8 +186,9 @@ class NominationsController extends PanelController
 				$this->data['nomination']['stage'] = $this->input->get('stage');
 				$this->data['application'] = array_merge(
 					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'msme'), true),
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'individual'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'individual'), true),
 				)[0];
+
 				$this->load->moderator_view('applications/single', $this->data);
 				break;
 			default:
@@ -205,7 +206,7 @@ class NominationsController extends PanelController
 
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 		$this->data['nomination']['stage'] = $this->input->get('stage');
-		if ($this->data['user']['is_email_verified']) {
+		if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
 			// First View
 			$this->load->panel_view('register', $this->data);
 		} else {
@@ -236,14 +237,14 @@ class NominationsController extends PanelController
 			$temp[$i] = FCPATH . explode(base_url(), $files[$i])[1];
 		}
 
-		if(!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])){
-			mkdir(FCPATH . 'uploads/' . $application['nomination_id'] , 0777, true);
+		if (!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])) {
+			mkdir(FCPATH . 'uploads/' . $application['nomination_id'], 0777, true);
 		}
 
-		if(in_array($this->user_session['role'], ['jury', 'admin'])){
+		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
 			$this->load->library('pdflib/makepdf');
 			$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
-			
+
 			$pdf = new PDFMerger;
 			$pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 			foreach ($temp as $key => $file) {

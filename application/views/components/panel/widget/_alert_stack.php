@@ -12,7 +12,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		<?php endif ?>
-		<?php if (!$user['is_email_verified']): ?>
+		<?php if (!$user['is_contact_verified']): ?>
 			<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
 				<strong>Holy guacamole!</strong> Your contact number is not verified. Verify Now!
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

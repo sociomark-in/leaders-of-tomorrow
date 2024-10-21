@@ -1,7 +1,7 @@
 <?php
 $c_n = "all-cities";
 foreach ($springboards as $key => $city) {
-	if(date_format(date_create($city['date']), 'Y-m-d') > date('Y-m-d')){
+	if (date_format(date_create($city['date']), 'Y-m-d') > date('Y-m-d')) {
 		$c_n = strtolower($city['name']);
 		break;
 	}
@@ -18,26 +18,53 @@ foreach ($springboards as $key => $city) {
 			</div>
 		</div>
 	</section>
-	<section class="p-0 blank-all">
-		<div class="container">
-			<div class="row justify-content-between align-items-center">
-				<div class="col-xl-5 col-lg-6 col-12">
-					<div class="" data-aos="fade-right">
-						<img class="w-100" src="<?= base_url('assets/images/') ?>ilu.png" alt="">
-					</div>
-					<!--<img class="w-100" src="<?= base_url('assets/images/') ?>ilu2.gif" alt="">-->
-				</div>
-				<div class="col-xl-7 col-lg-6 col-12">
-					<div class="media-content">
-						<div class="ratio ratio-1x1">
-							<!-- <video poster="<?= base_url('assets/video/') ?>banner-kv-poster.png" muted autoplay loop>
+	<section class="pt-0">
+		<div class="swiper heroSwiper">
+			<div class="swiper-wrapper">
+				<!-- <div class="swiper-slide">
+					<div class="diwali-section bg-red"></div>
+				</div> -->
+				<div class="swiper-slide">
+					<div class="container">
+						<div class="row justify-content-between align-items-center">
+							<div class="col-xl-5 col-lg-6 col-12">
+								<div class="" data-aos="fade-right">
+									<img class="w-100" src="<?= base_url('assets/images/') ?>ilu.png" alt="">
+								</div>
+								<!--<img class="w-100" src="<?= base_url('assets/images/') ?>ilu2.gif" alt="">-->
+							</div>
+							<div class="col-xl-7 col-lg-6 col-12">
+								<div class="media-content">
+									<div class="ratio ratio-1x1">
+										<!-- <video poster="<?= base_url('assets/video/') ?>banner-kv-poster.png" muted autoplay loop>
 								<source src="<?= base_url('assets/video/') ?>banner-kv.mp4">
 							</video> -->
-							<img src="<?= base_url('assets/images/') ?>kv-buildings.png" alt="" class="spin">
+										<img src="<?= base_url('assets/images/') ?>kv-buildings.png" alt="" class="spin">
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="swiper-button-next swiper-button-red"></div>
+			<div class="swiper-button-prev swiper-button-red"></div>
+		</div>
+		<script>
+			new Swiper(".heroSwiper", {
+				slidesPerView: 1,
+				spaceBetween: 30,
+				loop: true,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			})
+		</script>
 		</div>
 	</section>
 

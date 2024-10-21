@@ -28,55 +28,96 @@
 							<div class="col-12">
 								<fieldset class="">
 									<legend class="card-title mb-0">
-										<h5>Participating Entity</h5>
+										<h5>Personal Information</h5>
 									</legend>
 									<div class="row g-3">
 										<div class="col-xl-5 col-lg-6">
 											<div class="">
-												<p>Name of the Participating Entity</p>
+												<p>Full Name of Individual</p>
+												<h5><?= $application['name'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-3 col-lg-6">
+											<div class="">
+												<p>Designation</p>
+												<h5><?= $application['id_74505'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Date of Birth</p>
+												<h5><?= $application['id_74506'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Total Months of Experience</p>
+												<h5><?= $application['id_74507'] ?></h5>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="row g-4">
+							<div class="col-12">
+								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Current Organization</h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xl-5 col-lg-6">
+											<div class="">
+												<p>Name of the Current Organization</p>
 												<h5><?= $application['name'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-3 col-lg-6">
 											<div class="">
 												<p>Type of Business</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74505'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-6">
+											<div class="">
+												<p>Years of Experience</p>
+												<h5><?= $application['id_74506'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Business Segment</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74507'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
-												<p>Date of Company Incorporation</p>
-												<h5><?= $application['name'] ?></h5>
+												<p>Company Incorporation</p>
+												<h5><?= $application['id_74507'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>No. Of Employees</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74507'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
-												<p>Funding Source</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="">
 												<p>Website URL</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74507'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>LinkedIn URL</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74507'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -533,3 +574,8 @@
 		</div>
 	</div>
 </div>
+<?php 
+echo "<pre>";
+print_r($application);
+echo "</pre>";
+?>

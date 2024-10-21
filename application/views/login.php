@@ -10,6 +10,39 @@
 								<div class="mb-3 mb-md-5">
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
+								<div class="mb-3">
+									<?php
+									switch ($_SESSION['user_login_status']):
+										case 'SUCCESS': ?>
+											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+												<strong>Holy guacamole!</strong> Your contact number is not verified. Verify Now!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+										<?php
+										case 'WARNING': ?>
+											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+												<strong>Holy guacamole!</strong> Your contact number is not verified. Verify Now!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+										<?php
+										case 'FAIL': ?>
+											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
+												<strong>Holy guacamole!</strong> Your contact number is not verified. Verify Now!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+
+										<?php
+										default: ?>
+											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+												<strong>Holy guacamole!</strong> Your contact number is not verified. Verify Now!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+									<?php endswitch ?>
+								</div>
 								<?= form_open('api/v2/participant/login', ['id' => "loginForm"]) ?>
 								<div class="mb-3">
 									<label for="" class="form-label">Email Address</label>
@@ -17,7 +50,10 @@
 								</div>
 								<div class="mb-3">
 									<label for="" class="form-label">Password</label>
-									<input type="password" name="password" class="form-control">
+									<div class="input-group">
+										<input type="password" id="pwd" name="password" required class="form-control">
+										<button type="button" data-controls="password" class="input-group-text"><i class="link-icon" data-feather="eye"></i></button>
+									</div>
 								</div>
 								<div class="mb-3">
 									<button type="submit" class="btn btn-red">Login</button>
@@ -33,6 +69,21 @@
 								</div>
 							</div>
 							<script>
+								$('input[type=password]').each((index, element) => {
+									var button = $(element).next();
+									var type = $(element).attr('type');
+									var icon = $(element).next().children('svg').attr('data-feather');
+									button.on('click', () => {
+										console.log(type);
+										if (type === 'password') {
+											type = 'text';
+										} else {
+											type = 'password';
+										}
+										$(element).attr('type', type);
+									})
+								})
+
 								$.validator.addMethod("emailregex", function(value, element) {
 									return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 								})

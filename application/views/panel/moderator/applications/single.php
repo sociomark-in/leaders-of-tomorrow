@@ -38,10 +38,14 @@ if ($nomination['stage'] >= 1) {
 											<?= form_close() ?>
 										</div>
 										<div class="col-lg-auto col-12">
+											<!-- 
 											<?= form_open('api/v2/awards/nomination/download') ?>
 											<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
 											<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</button>
-											<?= form_close() ?>
+											<?= form_close() ?> 
+											-->
+
+											<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id'])))?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
 										</div>
 									</div>
 								</div>
@@ -57,7 +61,6 @@ if ($nomination['stage'] >= 1) {
 						} else {
 							include_once APPPATH . '/views/panel/moderator/categories/individual.php';
 						} ?>
-						<?php print_r($application); ?>
 					</div>
 				</div>
 				<div class="col-xl-3 col-12 grid-margin stretch-card">
@@ -96,7 +99,7 @@ if ($nomination['stage'] >= 1) {
 										</div>
 										<div class="col-12">
 											<div class="col-auto">
-												<button type="submit" class="btn btn-primary">Comment & Unloack Application</button>
+												<button type="submit" class="btn btn-primary">Comment & Unlock Application</button>
 											</div>
 										</div>
 									</div>
