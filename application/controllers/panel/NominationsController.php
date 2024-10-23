@@ -138,6 +138,7 @@ class NominationsController extends PanelController
 
 	public function user_edit($slug)
 	{
+		$this->load->model('panel/CommentModel');
 		$this->data['id'] = $slug;
 		$application = array_merge(
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'individual'), true),
@@ -151,8 +152,16 @@ class NominationsController extends PanelController
 		} elseif ($c[1] == 'MSME') {
 			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
 		}
+
+		$comments = json_decode($this->CommentModel->get(null, ['nomination_id' => $slug]), true);
+
+		for ($i=0; $i < count($comments); $i++) { 
+			$comments[$i]['created_by'] = json_decode($this->UserModel->get(null, ['id' => $comments[$i]['created_by']]), true)[0];
+		}
+
 		$this->data['category'] = $category_details;
 		$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
+		$this->data['comments'] = $comments;
 		$this->load->panel_view('applications/edit/'  . strtolower($category_details['type']), $this->data);
 	}
 

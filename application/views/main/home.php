@@ -21,12 +21,12 @@ foreach ($springboards as $key => $city) {
 	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
-				<?php if (date('Y-m-d H:i:s') > '2024-10-24 09:33:00') :?>
+				<?php if (date('Y-m-d H:i:s') > '2024-10-23 09:33:00') :?>
 				<div class="swiper-slide">
 					<div class="diwali-section bg-red">
 						<div class="">
 							<div class="row justify-content-center">
-								<div class="col-xl-11 col-12">
+								<div class="col-xxl-11 col-12">
 									<picture>
 										<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
 										<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">

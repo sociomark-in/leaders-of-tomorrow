@@ -6,6 +6,7 @@ class PanelController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('panel/UserModel');
 		if (!isset($_SESSION['awards_panel_user'])) {
 			redirect('login');
 		} else {

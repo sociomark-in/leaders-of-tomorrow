@@ -452,13 +452,17 @@
 		</div>
 		<div class="col-xl-3">
 			<div class="">
+			<div class="">
 				<h5 class="card-title mb-3">All Comments</h5>
+				<?php foreach ($comments as $key => $comment) :?>
 				<div class="mb-3 p-3 bg-light">
 					<blockquote class="blockquote">
-						<p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis sunt quod enim magnam ratione officia voluptatem impedit vel molestias. Ab, velit similique! Voluptates, blanditiis inventore? Neque vel maxime quam.</p>
-						<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+						<p class="mb-4"><?= $comment['comment'] ?></p>
+						<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= $comment['created_by']['role'] ?></cite></footer>
 					</blockquote>
 				</div>
+				<?php endforeach ?>
+			</div>
 			</div>
 		</div>
 	</div>

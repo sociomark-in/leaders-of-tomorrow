@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-12">
+		<div class="col-xxl-9 col-12">
 			<div class="staged-tab-wizard">
 				<div class="row g-3">
 					<div class="col-12 grid-margin stretch-card">
@@ -35,10 +35,128 @@
 							<div class="col-12 grid-margin stretch-card">
 								<div class="card">
 									<div class="card-body">
-										<fieldset class="mb-3">
+										<fieldset class="mb-3" disabled="">
 											<legend class="card-title mb-0">
-												<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
+												<h5>Personal Information</h5>
 											</legend>
+											<div class="row g-3">
+												<div class="col-xl-5 col-lg-6">
+													<div class="">
+														<p>Full Name of the Individual</p>
+														<h5>Sociomark Digital Marketing Agency</h5>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="">
+														<p>Designation</p>
+														<h5>Sociomark Digital Marketing Agency</h5>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Date of Birth</p>
+														<h5>13/07/2001</h5>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Total Months of Experience</p>
+														<h5>Sociomark Segment</h5>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<fieldset class="mb-3" disabled="">
+											<legend class="card-title mb-0">
+												<h5>Current Organization</h5>
+											</legend>
+											<div class="row g-3">
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Name of the Current Organization</p>
+														<h5>50</h5>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Type of Business</p>
+														<h5>Personal funds of the owner</h5>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Years of Experience</p>
+														<h5>Personal funds of the owner</h5>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-6">
+													<div class="">
+														<p>Business Segment</p>
+														<h5>Personal funds of the owner</h5>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="">
+														<p>Company Incorporation</p>
+														<h5>Personal funds of the owner</h5>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="">
+														<p>No of Employees</p>
+														<h5>Personal funds of the owner</h5>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="">
+														<p>Website URL</p>
+														<h5>https://sociomark.in</h5>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="">
+														<p>LinkedIn URL</p>
+														<h5>https://cdnjs.com/libraries/Dropify34LinkedIn</h5>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<fieldset class="mb-3" disabled="">
+											<legend class="card-title mb-0">
+												<h5>Contact Person of Organization</h5>
+											</legend>
+											<div class="row g-3">
+												<div class="col-xl-3 col-lg-6">
+													<div class="">
+														<p>Full Name</p>
+														<h5>Hemant Karekar</h5>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="">
+														<p>Email Address</p>
+														<h5>hemant@sociomark.in</h5>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="">
+														<p>Contact Number</p>
+														<h5>08689862375</h5>
+													</div>
+												</div>
+											</div>
 										</fieldset>
 									</div>
 								</div>
@@ -309,6 +427,19 @@
 						});
 					</script>
 				</div>
+			</div>
+		</div>
+		<div class="col-xl-3">
+			<div class="">
+				<h5 class="card-title mb-3">All Comments</h5>
+				<?php foreach ($comments as $key => $comment) :?>
+				<div class="mb-3 p-3 bg-light">
+					<blockquote class="blockquote">
+						<p class="mb-4"><?= $comment['comment'] ?></p>
+						<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= $comment['created_by']['role'] ?></cite></footer>
+					</blockquote>
+				</div>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</div>
