@@ -21,9 +21,23 @@ foreach ($springboards as $key => $city) {
 	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
-				<!-- <div class="swiper-slide">
-					<div class="diwali-section bg-red"></div>
-				</div> -->
+				<?php if (date('Y-m-d H:i:s') > '2024-10-24 09:33:00') :?>
+				<div class="swiper-slide">
+					<div class="diwali-section bg-red">
+						<div class="">
+							<div class="row justify-content-center">
+								<div class="col-xl-11 col-12">
+									<picture>
+										<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+										<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+										<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
+									</picture>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php endif ?>
 				<div class="swiper-slide">
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
@@ -47,8 +61,8 @@ foreach ($springboards as $key => $city) {
 					</div>
 				</div>
 			</div>
-			<div class="swiper-button-next swiper-button-red"></div>
-			<div class="swiper-button-prev swiper-button-red"></div>
+			<div class="swiper-button-next swiper-button-yellow"></div>
+			<div class="swiper-button-prev swiper-button-yellow"></div>
 		</div>
 		<script>
 			new Swiper(".heroSwiper", {
@@ -162,7 +176,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="springboards" class="p-0">
+	<section id="springboards" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 align-items-center flex-row-reverse mb-3 mb-md-5">
 				<div class="col-12">
@@ -181,7 +195,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="awards" class="">
+	<section id="awards" class="section pb-0">
 		<div class="container">
 			<div class="glass-card">
 				<div class="card-body">
@@ -195,7 +209,7 @@ foreach ($springboards as $key => $city) {
 									The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
 								</p>
 								<p data-aos="fade-up">
-									More information about Categories and Participation process will be released soon.
+									More information about categories and participation process will be released soon.
 								</p>
 							</div>
 						</div>
@@ -205,7 +219,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="articles" class="pt-0">
+	<section id="articles" class="section pb-3">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

@@ -41,19 +41,26 @@
 													</div>
 												</div>
 												<div class="col-auto">
-													<?php
-													switch ((int)$application['status']) {
-														case '4':
-															$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-															$text = "Complete Application";
-															break;
+													<div class="col-auto">
+														<?php
+														switch ($application['status']) {
+															case '2':
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
+																$text = "Edit Application";
+																break;
+															case '4':
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																$text = "Complete Application";
+																break;
 
-														default:
-															# code...
-															break;
-													}
-													?>
-													<a href="<?= $redirect ?>"><?= $text ?></a>
+															default:
+																$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
+																$text = "";
+																break;
+														}
+														?>
+														<a href="<?= $redirect ?>"><?= $text ?></a>
+													</div>
 												</div>
 											</div>
 										</div>
