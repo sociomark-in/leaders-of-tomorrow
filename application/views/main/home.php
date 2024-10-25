@@ -21,23 +21,6 @@ foreach ($springboards as $key => $city) {
 	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
-				<?php if (date('Y-m-d H:i:s') > '2024-10-23 09:33:00') :?>
-				<div class="swiper-slide">
-					<div class="diwali-section bg-red">
-						<div class="">
-							<div class="row justify-content-center">
-								<div class="col-xxl-11 col-12">
-									<picture>
-										<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-										<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-										<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
-									</picture>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<?php endif ?>
 				<div class="swiper-slide">
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
@@ -60,6 +43,23 @@ foreach ($springboards as $key => $city) {
 						</div>
 					</div>
 				</div>
+				<?php if (date('Y-m-d H:i:s') > '2024-10-24 09:23:00') :?>
+				<div class="swiper-slide">
+					<div class="diwali-section bg-red">
+						<div class="">
+							<div class="row justify-content-center">
+								<div class="col-12">
+									<picture>
+										<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+										<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+										<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
+									</picture>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php endif ?>
 			</div>
 			<div class="swiper-button-next swiper-button-yellow"></div>
 			<div class="swiper-button-prev swiper-button-yellow"></div>
@@ -69,6 +69,10 @@ foreach ($springboards as $key => $city) {
 				slidesPerView: 1,
 				spaceBetween: 30,
 				loop: true,
+				autoplay: {
+                   delay: 5000,
+                   disableOnInteraction: false,
+                 },
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true,

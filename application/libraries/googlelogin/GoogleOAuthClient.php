@@ -3,7 +3,7 @@
 require_once APPPATH . '/vendor/autoload.php';
 
 use Google\Service\Oauth2;
-
+use GuzzleHttp\Psr7\Utils;
 class GoogleOAuthClient
 {
 	private $CI, $keys, $client;

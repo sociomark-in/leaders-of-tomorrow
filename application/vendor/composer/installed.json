@@ -231,17 +231,17 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.17.0",
-            "version_normalized": "2.17.0.0",
+            "version": "v2.18.0",
+            "version_normalized": "2.18.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "b1f63d72c44307ec8ef7bf18f1012de35d8944ed"
+                "reference": "846f149c9f879449145326dad99ef00bf1d879f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/b1f63d72c44307ec8ef7bf18f1012de35d8944ed",
-                "reference": "b1f63d72c44307ec8ef7bf18f1012de35d8944ed",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/846f149c9f879449145326dad99ef00bf1d879f3",
+                "reference": "846f149c9f879449145326dad99ef00bf1d879f3",
                 "shasum": ""
             },
             "require": {
@@ -267,7 +267,7 @@
             "suggest": {
                 "cache/filesystem-adapter": "For caching certs and tokens (using Google\\Client::setCache)"
             },
-            "time": "2024-07-10T14:57:54+00:00",
+            "time": "2024-10-16T21:58:58+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -297,23 +297,23 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client/issues",
-                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.17.0"
+                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.18.0"
             },
             "install-path": "../google/apiclient"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.377.0",
-            "version_normalized": "0.377.0.0",
+            "version": "v0.378.0",
+            "version_normalized": "0.378.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "912727289dd617a97da7d2700debbe81a59cea19"
+                "reference": "2290dcd117b77aaa0ff6a13a19334322beb76a64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/912727289dd617a97da7d2700debbe81a59cea19",
-                "reference": "912727289dd617a97da7d2700debbe81a59cea19",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/2290dcd117b77aaa0ff6a13a19334322beb76a64",
+                "reference": "2290dcd117b77aaa0ff6a13a19334322beb76a64",
                 "shasum": ""
             },
             "require": {
@@ -322,7 +322,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.6"
             },
-            "time": "2024-10-14T00:56:24+00:00",
+            "time": "2024-10-21T01:08:24+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -344,7 +344,7 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.377.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.378.0"
             },
             "install-path": "../google/apiclient-services"
         },
@@ -542,17 +542,17 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.3",
-            "version_normalized": "2.0.3.0",
+            "version": "2.0.4",
+            "version_normalized": "2.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8"
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
                 "shasum": ""
             },
             "require": {
@@ -562,7 +562,7 @@
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "phpunit/phpunit": "^8.5.39 || ^9.6.20"
             },
-            "time": "2024-07-18T10:29:17+00:00",
+            "time": "2024-10-17T10:06:22+00:00",
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -608,7 +608,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.0.3"
+                "source": "https://github.com/guzzle/promises/tree/2.0.4"
             },
             "funding": [
                 {
@@ -1171,17 +1171,17 @@
         },
         {
             "name": "plivo/plivo-php",
-            "version": "v4.66.1",
-            "version_normalized": "4.66.1.0",
+            "version": "v4.66.2",
+            "version_normalized": "4.66.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/plivo/plivo-php.git",
-                "reference": "d0eb2fda4b9a608784d2447500b8c674e022351a"
+                "reference": "42683caa6d99a282e4a807b74635cb0cf6cb1595"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/plivo/plivo-php/zipball/d0eb2fda4b9a608784d2447500b8c674e022351a",
-                "reference": "d0eb2fda4b9a608784d2447500b8c674e022351a",
+                "url": "https://api.github.com/repos/plivo/plivo-php/zipball/42683caa6d99a282e4a807b74635cb0cf6cb1595",
+                "reference": "42683caa6d99a282e4a807b74635cb0cf6cb1595",
                 "shasum": ""
             },
             "require": {
@@ -1193,7 +1193,7 @@
                 "justinrainbow/json-schema": "^5.2",
                 "phpunit/phpunit": "^8.1.5"
             },
-            "time": "2024-10-10T09:04:44+00:00",
+            "time": "2024-10-23T06:24:27+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1747,17 +1747,17 @@
         },
         {
             "name": "twilio/sdk",
-            "version": "8.3.3",
-            "version_normalized": "8.3.3.0",
+            "version": "8.3.5",
+            "version_normalized": "8.3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twilio/twilio-php.git",
-                "reference": "5fae06f959653c426b040972b7a2f7679dbd5b8f"
+                "reference": "1c09a3bbbdaf647d119e0741824b690861bb3bc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/5fae06f959653c426b040972b7a2f7679dbd5b8f",
-                "reference": "5fae06f959653c426b040972b7a2f7679dbd5b8f",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/1c09a3bbbdaf647d119e0741824b690861bb3bc2",
+                "reference": "1c09a3bbbdaf647d119e0741824b690861bb3bc2",
                 "shasum": ""
             },
             "require": {
@@ -1770,7 +1770,7 @@
             "suggest": {
                 "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
             },
-            "time": "2024-10-03T15:44:20+00:00",
+            "time": "2024-10-24T13:35:50+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1797,7 +1797,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twilio/twilio-php/issues",
-                "source": "https://github.com/twilio/twilio-php/tree/8.3.3"
+                "source": "https://github.com/twilio/twilio-php/tree/8.3.5"
             },
             "install-path": "../twilio/sdk"
         }
