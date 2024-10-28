@@ -63,7 +63,7 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Confirm and Next</button>

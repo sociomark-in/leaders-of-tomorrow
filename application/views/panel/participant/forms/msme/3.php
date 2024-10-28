@@ -18,7 +18,7 @@
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Name of the initiative or product/service offering</label>
-					<input type="text" name="initiative_name" class="form-control">
+					<input required type="text" name="initiative_name" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-12">
@@ -66,36 +66,74 @@
 </div>
 <?= form_close() ?>
 <script>
-	$.validator.addMethod("wordCount", function(value, element, wordCount) {
+	function parseDDMMYYYYDate(dateString) {
+		let parts = dateString.split('/');
+		let day = parseInt(parts[0], 10);
+		let month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
+		let year = parseInt(parts[2], 10);
 
-		return value.split(' ').length <= wordCount;
+		return new Date(year, month, day);
+	}
+	$.validator.addMethod("greater_than", function(value, element, param) {
 
+		var d1 = new Date(Date.parse(value));
+		var d2 = new Date(Date.parse($(param).val()));
+		console.log([value, $(param).val()]);
+		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
+
+		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
+	});
+	$('[name=initiative_start_date]').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		showButtonPanel: true,
+		dateFormat: 'dd/mm/yy',
+		maxDate: '<?= date('d/m/Y') ?>',
+
+	});
+	$('[name=initiative_end_date]').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		showButtonPanel: true,
+		dateFormat: 'dd/mm/yy',
 	});
 	$("#form_option_03").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			overview: {
-				wordCount: 300
+			initiative_desc: {
+				maxlength: 5000,
+				minlength: 50
 			},
-			mission_stmt: {
-				wordCount: 300
+			initiative_challenges: {
+				maxlength: 5000,
+				minlength: 50
 			},
-			services_stmt: {
-				wordCount: 300
+			initiative_strategy: {
+				maxlength: 5000,
+				minlength: 50
 			},
+			initiative_end_date: {
+				greater_than: '[name=initiative_start_date]'
+			}
 		},
 		messages: {
-			overview: {
-				wordCount: "Error"
+			initiative_desc: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
-			mission_stmt: {
-				wordCount: "Error"
+			initiative_challenges: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
-			services_stmt: {
-				wordCount: "Error"
+			initiative_strategy: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
+			initiative_end_date: {
+				greater_than: 'End Date should be greater than Start Date'
+			}
 		}
 	});
 </script>

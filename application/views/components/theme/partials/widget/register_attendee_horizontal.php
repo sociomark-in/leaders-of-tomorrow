@@ -135,11 +135,11 @@
 </div>
 <?= form_close() ?>
 <script>
-	$.validator.addMethod("emailregex", function(value, element) {
-		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
-	})
 	$.validator.addMethod("linkedinurl_regex", function(value, element) {
 		return this.optional(element) || /^(https?:\/\/)?(www\.)?linkedin\.com\//i.test(value);
+	})
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
 	$.validator.addMethod("letters", function(value, element) {
 		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);

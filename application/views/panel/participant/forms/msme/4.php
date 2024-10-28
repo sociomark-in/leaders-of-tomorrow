@@ -102,25 +102,39 @@
 			":hidden", ":focus"
 		],
 		rules: {
-			overview: {
-				wordCount: 300
+			initiative_tech: {
+				maxlength: 5000,
+				minlength: 50
 			},
-			mission_stmt: {
-				wordCount: 300
+			initiative_impact: {
+				maxlength: 5000,
+				minlength: 50
 			},
-			services_stmt: {
-				wordCount: 300
+			initiative_scalability: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			initiative_info: {
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
-			overview: {
-				wordCount: "Error"
+			initiative_tech: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
-			mission_stmt: {
-				wordCount: "Error"
+			initiative_impact: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
-			services_stmt: {
-				wordCount: "Error"
+			initiative_scalability: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			initiative_info: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 		}
 	});

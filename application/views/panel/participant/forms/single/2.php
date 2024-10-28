@@ -7,7 +7,7 @@
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
-	
+
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Organization Overview</h5>
@@ -91,7 +91,7 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>

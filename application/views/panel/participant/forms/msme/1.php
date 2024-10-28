@@ -75,13 +75,13 @@
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input required type="text" name="organization[website]" class="form-control">
+					<input required type="url" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input required type="text" name="organization[linkedin]" class="form-control">
+					<input required type="url" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -94,19 +94,19 @@
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Full Name of Individual</label>
-					<input name="contact_person[name]" type="text" class="form-control">
+					<input required name="contact_person[name]" type="text" class="form-control">
 				</div>
 			</div>
 			<div class="col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Email Address</label>
-					<input name="contact_person[email]" type="text" class="form-control">
+					<input required name="contact_person[email]" type="email" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Contact Number</label>
-					<input name="contact_person[contact]" type="text" class="form-control">
+					<input required name="contact_person[contact]" type="text" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -122,15 +122,34 @@
 </div>
 <?= form_close() ?>
 <script>
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("letters", function(value, element) {
+		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+	});
+	$.validator.addMethod("phone", function(value, element) {
+		return this.optional(element) || /^[0-9]*$/i.test(value);
+	});
 	$("#form_option_01").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			//Rules
+			"contact_person[email]": {
+				emailregex: true
+			},
+			"contact_person[contact]": {
+				phone: true
+			}
 		},
 		messages: {
-			//messages
+			'contact_person[email]': {
+				emailregex: 'Please enter a valid email address.'
+			},
+			'contact_person[contact]': {
+				phone: 'Please enter a valid contact number'
+			}
 		}
 	});
 </script>

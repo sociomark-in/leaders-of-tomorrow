@@ -28,25 +28,25 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Industry segment of the participating entity</label>
-					<input type="text" name="organization_industry" class="form-control">
+					<input type="text" name="organization_industry" class="form-control" required>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
-					<textarea required name="organization_overview" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_overview" id="" class="form-control" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
-					<textarea required name="organization_mission_vision" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_mission_vision" id="" class="form-control" rows="5"></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
-					<textarea required name="organization_services" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization_services" id="" class="form-control" rows="5"></textarea>
 				</div>
 			</div>
 		</div>
@@ -187,8 +187,17 @@
 			overview: {
 				wordCount: 300
 			},
-			mission_stmt: {
-				wordCount: 300
+			organization_overview: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			organization_mission_vision: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			organization_services: {
+				maxlength: 5000,
+				minlength: 50
 			},
 			services_stmt: {
 				wordCount: 300
@@ -198,8 +207,17 @@
 			overview: {
 				wordCount: "Error"
 			},
-			mission_stmt: {
-				wordCount: "Error"
+			organization_overview: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			organization_mission_vision: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			organization_services: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			services_stmt: {
 				wordCount: "Error"
