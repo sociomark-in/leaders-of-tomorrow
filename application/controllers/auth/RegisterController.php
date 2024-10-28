@@ -11,7 +11,7 @@ class RegisterController extends BaseController
 
 	public function index()
 	{
-		$this->load->library('googlelogin/googleoauthclient');
+		$this->load->library('googlelogin/GoogleOAuthClient');
 		if ($this->session->has_userdata('googleuser')){
 			$this->data['googleusercontent'] = $_SESSION['googleuser']?? null;
 		}

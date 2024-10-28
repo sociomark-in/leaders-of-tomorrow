@@ -15,7 +15,7 @@ class EmailModel extends CI_Model
 	{
 		$this->config->load('brevo_email');
 		$this->load->library('email/BrevoMail');
-		$this->brevomail->init();
+		$this->BrevoMail->init();
 
 		$this->brevomail->from('business@sociomark.in', 'Sociomark');
 		$this->brevomail->to($to);

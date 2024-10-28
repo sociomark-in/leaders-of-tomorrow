@@ -50,7 +50,7 @@ class SSOAPIController extends CI_Controller
 
 	public function participant_google_profile()
 	{
-		$this->load->library('googlelogin/googleoauthclient');
+		$this->load->library('googlelogin/GoogleOAuthClient');
 		$google_user = $this->googleoauthclient->get_profile();
 		if(is_object($google_user)){
 			$session = [

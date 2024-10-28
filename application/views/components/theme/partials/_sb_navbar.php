@@ -5,6 +5,7 @@ switch ($city['name']) {
 	case 'Lucknow':
 	case 'Chandigarh':
 	case 'Hyderabad':
+	case 'Chennai':
 		$class = "d-none";
 		break;
 
@@ -13,7 +14,7 @@ switch ($city['name']) {
 		break;
 }
 switch ($city['name']) {
-	case 'Chennai':
+	case 'dasjkhasdj':
 		$active = "d-none";
 		break;
 
@@ -45,13 +46,13 @@ switch ($city['name']) {
 				<li class="nav-item <?= $class?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
 				</li>
-				<li class="nav-item <?= $active ?>">
+				<li class="nav-item <?= $active ?> <?= $class?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
 				</li>
-				<li class="nav-item <?= $active ?>">
+				<li class="nav-item <?= $active ?> <?= $class?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#gallery">Gallery</a>
 				</li>
-				<li class="nav-item <?= $active ?>">
+				<li class="nav-item <?= $active ?> <?= $class?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
 				</li>
 			</ul>

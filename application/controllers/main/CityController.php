@@ -322,7 +322,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'chennai') {
+			if (strtolower($sb['name']) == $city && $city == 'asdajsd') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

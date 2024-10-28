@@ -294,16 +294,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.378.0",
+            "version": "v0.379.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "2290dcd117b77aaa0ff6a13a19334322beb76a64"
+                "reference": "5a671ff040d55cec7b69b88d84c91bd8867d1c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/2290dcd117b77aaa0ff6a13a19334322beb76a64",
-                "reference": "2290dcd117b77aaa0ff6a13a19334322beb76a64",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/5a671ff040d55cec7b69b88d84c91bd8867d1c8e",
+                "reference": "5a671ff040d55cec7b69b88d84c91bd8867d1c8e",
                 "shasum": ""
             },
             "require": {
@@ -332,9 +332,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.378.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.379.0"
             },
-            "time": "2024-10-21T01:08:24+00:00"
+            "time": "2024-10-28T01:10:22+00:00"
         },
         {
             "name": "google/auth",
@@ -1678,16 +1678,16 @@
         },
         {
             "name": "twilio/sdk",
-            "version": "8.3.5",
+            "version": "8.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twilio/twilio-php.git",
-                "reference": "1c09a3bbbdaf647d119e0741824b690861bb3bc2"
+                "reference": "404df9185a5e25f757f2d398d5336a453a34b61f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/1c09a3bbbdaf647d119e0741824b690861bb3bc2",
-                "reference": "1c09a3bbbdaf647d119e0741824b690861bb3bc2",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/404df9185a5e25f757f2d398d5336a453a34b61f",
+                "reference": "404df9185a5e25f757f2d398d5336a453a34b61f",
                 "shasum": ""
             },
             "require": {
@@ -1725,9 +1725,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twilio/twilio-php/issues",
-                "source": "https://github.com/twilio/twilio-php/tree/8.3.5"
+                "source": "https://github.com/twilio/twilio-php/tree/8.3.6"
             },
-            "time": "2024-10-24T13:35:50+00:00"
+            "time": "2024-10-25T12:02:22+00:00"
         }
     ],
     "packages-dev": [],

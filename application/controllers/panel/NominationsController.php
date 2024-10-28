@@ -251,7 +251,7 @@ class NominationsController extends PanelController
 		}
 
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
-			$this->load->library('pdflib/makepdf');
+			$this->load->library('pdflib/MakePDF');
 			$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 
 			$pdf = new PDFMerger;

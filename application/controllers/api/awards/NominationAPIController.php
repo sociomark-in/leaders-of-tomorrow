@@ -12,7 +12,7 @@ class NominationAPIController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
-		$this->load->model('panel/EmailModel');
+// 		$this->load->model('panel/EmailModel');
 
 		$this->data = [];
 		$this->usersession = $_SESSION['awards_panel_user'];
@@ -433,10 +433,10 @@ class NominationAPIController extends CI_Controller
 		$pdf = new PDFMerger;
 		$i = 0;
 		$c = [
-			'id_74525',
-			'id_74526',
-			'id_74527',
-			'id_74528',
+			'id_75530',
+			'id_75531',
+			'id_75532',
+			'id_75533',
 		];
 		$r = random_string();
 
