@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . '/vendor/autoload.php';
 
 use Google\Service\Oauth2;
+use GuzzleHttp\Psr7\Uri;
 
 class SSOAPIController extends CI_Controller
 {
