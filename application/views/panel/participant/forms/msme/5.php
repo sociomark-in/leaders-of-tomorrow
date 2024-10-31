@@ -14,27 +14,27 @@
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">MSME certificate</label>
-					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Company Incorporation Certificate</label>
-					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Impact assessment report as on March 31, 2023</label>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">as on March 31, 2023</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
 				</div>
 			</div>
@@ -52,6 +52,10 @@
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js"></script>
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
 		<script>
@@ -65,6 +69,31 @@
 					'imageFormat': 'The image format is not allowed ({{ value }} only).'
 				}
 			});
+			/* PDF.js - Run PDF Version Check 
+				=========================================
+				$('.dropify').each((index, elem) => {
+					$(elem).on('change', function() {
+						const file = this.files[0];
+
+						if (file.type === 'application/pdf') {
+							pdfjsLib.getDocument(file).promise.then(function(pdfDoc) {
+								const pdfVersion = pdfDoc.pdfInfo.pdfVersion;
+
+								// Validate the PDF version here
+								if (pdfVersion < '1.7') {
+									alert('Please upload a PDF version 1.7 or higher.');
+									// You might want to clear the input field or prevent form submission
+								} else {
+									// Proceed with file upload
+								}
+							}).catch(function(error) {
+								console.error('Error loading PDF:', error);
+								alert('Error processing PDF file. Please try again.');
+							});
+						}
+					});
+				}) 
+			*/
 		</script>
 	</fieldset>
 </div>

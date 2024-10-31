@@ -72,22 +72,25 @@ class AuthAPIController extends CI_Controller
 			'status' => 'UNDEFINED',
 			'message' => 'Unknown Error Occured!'
 		];
-		if (!is_null($existing_user) && count($existing_user) == 0) {
+		if (!is_null($existing_user) && count($existing_user) >= 1) {
+			$session['status'] = 'WARNING';
+			$session['message'] = 'You have already registered. Please Log In Again.';
+			$this->session->set_flashdata('user_login_status', $session);
+			// redirect('login');
+		} else {
 			if ($this->UserModel->insert($data)) {
 				$session['status'] = 'SUCCESS';
 				$session['message'] = 'You have successfully registered. Please Log In.';
 				$this->session->set_flashdata('user_login_status', $session);
-				redirect('login');
+				// redirect('login');
 			} else {
+				$session['status'] = 'WARNING';
+				$session['message'] = 'You have already registered. Please Log In Now.';
 				$this->session->set_flashdata('user_login_status', $session);
-				redirect('register');
+				// redirect('register');
 			}
-		} else {
-			$session['status'] = 'WARNING';
-			$session['message'] = 'You have already registered. Please Log In.';
-			$this->session->set_flashdata('user_login_status', $session);
-			redirect('login');
 		}
+		print_r($session);die;
 	}
 
 	public function send_otp()
