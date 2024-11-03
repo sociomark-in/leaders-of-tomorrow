@@ -20,7 +20,6 @@ class UserModel extends CI_Model
 
 	public function insert($data)
 	{
-		print_r($data);die;
 		if ($this->db->insert($this->table['user'], $data)) {
 			return true;
 		} else {

@@ -63,7 +63,6 @@ class AuthAPIController extends CI_Controller
 		$data['name'] = $this->request['name'];
 		$data['email'] = $this->request['email'];
 		$data['contact'] = $this->request['full_contact'];
-		$data['is_email_verified'] = $this->request['is_email_verified'];
 		$data['role'] = 'participant';
 		$data['useremail'] = $data['email'];
 		$data['password'] = hash('md5', hash('sha256', $password));
@@ -76,21 +75,20 @@ class AuthAPIController extends CI_Controller
 			$session['status'] = 'WARNING';
 			$session['message'] = 'You have already registered. Please Log In Again.';
 			$this->session->set_flashdata('user_login_status', $session);
-			// redirect('login');
+			redirect('login');
 		} else {
 			if ($this->UserModel->insert($data)) {
 				$session['status'] = 'SUCCESS';
 				$session['message'] = 'You have successfully registered. Please Log In.';
 				$this->session->set_flashdata('user_login_status', $session);
-				// redirect('login');
+				redirect('login');
 			} else {
 				$session['status'] = 'WARNING';
 				$session['message'] = 'You have already registered. Please Log In Now.';
 				$this->session->set_flashdata('user_login_status', $session);
-				// redirect('register');
+				redirect('register');
 			}
 		}
-		print_r($session);die;
 	}
 
 	public function send_otp()
