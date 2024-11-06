@@ -20,10 +20,6 @@ $tabs = [
 		'name' => "Document Uploads",
 		'identifier' => "uploads",
 	],
-	[
-		'name' => "Review Your Application",
-		'identifier' => "success",
-	],
 ];
 ?>
 
@@ -46,14 +42,14 @@ $tabs = [
 		<?php endfor ?>
 	</ul>
 	<div class="tab-content" id="myTabContent">
-		<?php for ($i = 0; $i < count($tabs); $i++):
+		<?php for ($i = 0; $i < count($tabs); $i++): 
 			$data["category_id"] = implode('_', [$category['id'], $category['type']]);
 			$data["application_id"] = $application['id'] ?? null;
 			$data["referrer"] = current_url();
 			$data["utm"] = $utm;
 			$data["agent_id"] = $this->input->get('agent_id');
 			$data["stage"] = $this->input->get('stage');
-		?>
+			?>
 			<?php if ($i == $stage): ?>
 				<div class="tab-pane py-3 fade show active" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0">
 					<div class="row">
@@ -73,18 +69,13 @@ $tabs = [
 										case 'case_1':
 											$this->load->view('panel/participant/forms/single/3', $data);
 											break;
+
 										case 'case_2':
 											$this->load->view('panel/participant/forms/single/4', $data);
 											break;
-										case 'uploads':
-											$this->load->view('panel/participant/forms/single/5', $data);
-											break;
-
-										case 'success':
-											$this->load->view('panel/participant/forms/single/review', $data);
-											break;
 
 										default:
+											$this->load->view('panel/participant/forms/single/5', $data);
 											# code...
 											break;
 									} ?>

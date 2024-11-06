@@ -43,7 +43,7 @@ foreach ($springboards as $key => $city) {
 						</div>
 					</div>
 				</div>
-				<?php if (date('Y-m-d H:i:s') > '2024-10-24 09:23:00') :?>
+				<?php if ((date('Y-m-d H:i:s') > '2024-10-24 09:23:00') && date('Y-m-d H:i:s') < '2024-11-01 12:00:00') :?>
 				<div class="swiper-slide">
 					<div class="diwali-section bg-red">
 						<div class="">

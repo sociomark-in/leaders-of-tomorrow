@@ -42,7 +42,7 @@ class AccountController extends PanelController
 								$s = '<span class="badge bg-success">Accepted</span>';
 								break;
 							case '2':
-								$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
+								$s = '<span class="badge bg-dark">Unlocked</span>';
 								break;
 							case '3':
 								$s = '<span class="badge bg-warning">Complete & Under Review</span>';

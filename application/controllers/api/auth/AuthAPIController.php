@@ -13,6 +13,7 @@ class AuthAPIController extends CI_Controller
 	public function participant_login()
 	{
 		$this->request = $this->input->post();
+		$this->request['passowrd_encrypted'] = hash('md5', hash('sha256', $this->request['password']));
 		$this->data['user'] = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
 		if (count($this->data['user'])) {
 			$user = $this->data['user'];
@@ -21,9 +22,10 @@ class AuthAPIController extends CI_Controller
 				$this->session->set_userdata('awards_panel_user', $session);
 				redirect('dashboard');
 			} else {
-				echo hash('md5', hash('sha256', $this->request['password']));
-				echo "<br>";
-				echo $user['password'];
+				$session['status'] = 'ERROR';
+				$session['message'] = 'Incorrect Credentials!';
+				$this->session->set_flashdata('user_login_status', $session);
+				redirect('login');
 			}
 		}
 	}
@@ -57,15 +59,15 @@ class AuthAPIController extends CI_Controller
 		$this->request = $this->input->post();
 		// $password = random_string('alnum', 16);
 
-		$password = $this->request['full_contact'];
-		$this->request['password'] = $password;
+        $contact = $this->request['contact'];
+		$this->request['password'] = hash('md5', hash('sha256', $contact));
 		
 		$data['name'] = $this->request['name'];
 		$data['email'] = $this->request['email'];
-		$data['contact'] = $this->request['full_contact'];
+		$data['contact'] = $this->request['contact'];
 		$data['role'] = 'participant';
 		$data['useremail'] = $data['email'];
-		$data['password'] = hash('md5', hash('sha256', $password));
+		$data['password'] = $this->request['password'];
 		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
 		$session = [
 			'status' => 'UNDEFINED',
@@ -89,6 +91,8 @@ class AuthAPIController extends CI_Controller
 				redirect('register');
 			}
 		}
+		print_r($data);
+		print_r($session);die;
 	}
 
 	public function send_otp()
