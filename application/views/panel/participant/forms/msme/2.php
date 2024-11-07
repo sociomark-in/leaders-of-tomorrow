@@ -70,7 +70,7 @@
 				Revenue/ Turnover (in INR Crores)
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="organization_reveue_23" id="" class="form-select">
+				<select required name="organization_revenue_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -78,7 +78,7 @@
 				</select>
 			</div>
 			<div class="col-xxl-4 col-lg-6 col-12">
-				<select required name="organization_reveue_22" id="" class="form-select">
+				<select required name="organization_revenue_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
 						<option value="Select <?= $i ?>">Select <?= $i ?></option>
