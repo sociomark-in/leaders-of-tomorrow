@@ -9,13 +9,13 @@ class BaseController extends CI_Controller
 		$this->springboards = [
 			[
 				'name' => "Mumbai",
-				'theme' => "Galvanizing India’s MSMEs to Seize Global Opportunities",
+				'theme' => "Galvanizing India's MSMEs to Seize Global Opportunities",
 				'date' => '2024-08-29 17:00:00',
 				'venue' => "Taj Lands End, Mumbai"
 			],
 			[
 				'name' => "Lucknow",
-				'theme' => "Charting Uttar Pradesh’s Trillion-Dollar Journey",
+				'theme' => "Charting Uttar Pradesh's Trillion-Dollar Journey",
 				'date' => '2024-09-13 17:00:00',
 				'venue' => "Hilton Garden Inn, Lucknow"
 			],
@@ -38,62 +38,62 @@ class BaseController extends CI_Controller
 				'venue' => "Regenta Central RS, Chennai"
 			],
 			[
-				'name' => "Delhi NCR",
-				'theme' => "Delhi: Spotlight on India's Startup Capital",
+				'name' => "Coimbatore",
+				'theme' => "Coimbatore: Crafting Futures, Empowering Growth",
 				'date' => '2024-10-18',
-				'venue' => ""
-			],
-			[
-				'name' => "Ahmedabad",
-				'theme' => "Ahmedabad: The Gateway to India's Shanghai Dream",
-				'date' => '2024-11-08',
-				'venue' => ""
-			],
-			[
-				'name' => "Bengaluru",
-				'theme' => "Mastering Business, Gender and Leadership",
-				'date' => '2024-11-22',
-				'venue' => ""
-			],
-			[
-				'name' => "Pune",
-				'theme' => "Pune: Building a Future-Ready Workforce",
-				'date' => '2024-12-20',
-				'venue' => ""
-			],
-			[
-				'name' => "Kolkata",
-				'theme' => "Kolkata: Bridging Tradition, Commerce & Innovation",
-				'date' => '2025-01-17',
-				'venue' => ""
-			],
-			[
-				'name' => "Kochi",
-				'theme' => "Kerala: Spotlight on Kerala's Knowledge Economy",
-				'date' => '2025-01-31',
-				'venue' => ""
-			],
-			[
-				'name' => "Nagpur",
-				'theme' => "Nagpur: Leading Maharashtra's Industrial Excellence",
-				'date' => '2025-02-28',
 				'venue' => ""
 			],
 			[
 				'name' => "Jaipur",
 				'theme' => "Jaipur: Powering Rajasthan's Global Tourism Vision",
-				'date' => '2025-03-21',
+				'date' => '2024-11-08',
 				'venue' => ""
 			],
 			[
-				'name' => "Goa",
-				'theme' => "Goa: Evolving economy beyond tourist footfall",
-				'date' => '2025-04-04',
+				'name' => "Pune",
+				'theme' => "Pune: Building a Future-Ready Workforce ",
+				'date' => '2024-11-22',
 				'venue' => ""
 			],
 			[
 				'name' => "Indore",
 				'theme' => "Indore: Setting the Benchmark for India's Sustainability Vision",
+				'date' => '2024-12-20',
+				'venue' => ""
+			],
+			[
+				'name' => "Delhi NCR",
+				'theme' => "Delhi: Spotlight on India's New Startup Capital",
+				'date' => '2025-01-17',
+				'venue' => ""
+			],
+			[
+				'name' => "Bengaluru",
+				'theme' => "Mastering Business, Gender and Leadership",
+				'date' => '2025-01-31',
+				'venue' => ""
+			],
+			[
+				'name' => "Goa",
+				'theme' => "Goa: Evolving Economy Beyond Tourist Footfall",
+				'date' => '2025-02-28',
+				'venue' => ""
+			],
+			[
+				'name' => "Ahmedabad",
+				'theme' => "Ahmedabad: The Gateway to India's Shanghai Dream",
+				'date' => '2025-03-21',
+				'venue' => ""
+			],
+			[
+				'name' => "Kolkata",
+				'theme' => "Kolkata: Bridging Tradition, Commerce & Innovation",
+				'date' => '2025-04-04',
+				'venue' => ""
+			],
+			[
+				'name' => "Nagpur",
+				'theme' => "Nagpur: Leading Maharashtra's Industrial Excellence",
 				'date' => '2025-04-25',
 				'venue' => ""
 			],

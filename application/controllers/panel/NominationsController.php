@@ -155,7 +155,7 @@ class NominationsController extends PanelController
 
 		$comments = json_decode($this->CommentModel->get(null, ['nomination_id' => $slug]), true);
 
-		for ($i=0; $i < count($comments); $i++) { 
+		for ($i = 0; $i < count($comments); $i++) {
 			$comments[$i]['created_by'] = json_decode($this->UserModel->get(null, ['id' => $comments[$i]['created_by']]), true)[0];
 		}
 
@@ -181,18 +181,23 @@ class NominationsController extends PanelController
 		}
 		$this->data['category'] = $category_details;
 
-
 		$this->user_session = $_SESSION['awards_panel_user'];
+		$stage = $this->input->get('stage');
 		switch ($this->user_session['role']) {
 			case 'participant':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-				$this->data['nomination']['stage'] = $this->input->get('stage');
+				$this->data['nomination']['stage'] = $stage;
 				$this->data['application']['id'] = $slug;
+				if ($stage == 5) {
+					$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
+				} else {
+				}
 				$this->load->panel_view('applications/single', $this->data);
+
 				break;
 			case 'jury':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-				$this->data['nomination']['stage'] = $this->input->get('stage');
+				$this->data['nomination']['stage'] = $stage;
 				$this->data['application'] = array_merge(
 					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'msme'), true),
 					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'individual'), true),

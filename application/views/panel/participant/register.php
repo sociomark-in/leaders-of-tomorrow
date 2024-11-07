@@ -24,8 +24,8 @@ if ($nomination['stage'] >= 1) {
 	<!-- Alert Message Box -->
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
-		<div class="">
-			<h4 class="mb-3 mb-md-0">New Application ( <a href="">#LOTS12-<?= $category['code'] ?>-<?= $application['id'] ?></a> )</h4>
+		<div class="d-flex gap-2 align-items-center">
+			<h4 class="mb-3 mb-md-0">New Application</h4><p class="text-muted m-0">(#LOTS12-<?= $category['code'] ?>-<?= $application['id'] ?>)</p>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">

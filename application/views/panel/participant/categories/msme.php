@@ -20,6 +20,10 @@ $tabs = [
 		'name' => "Document Uploads",
 		'identifier' => "uploads",
 	],
+	[
+		'name' => "Review & Confirm",
+		'identifier' => "review",
+	],
 ]
 ?>
 
@@ -70,9 +74,15 @@ $tabs = [
 										case 'case_2':
 											$this->load->view('panel/participant/forms/msme/4', $data);
 											break;
+										case 'uploads':
+											$this->load->view('panel/participant/forms/msme/5', $data);
+											break;
+										case 'review':
+											$this->load->view('panel/participant/forms/msme/review', $data);
+											break;
 
 										default:
-											$this->load->view('panel/participant/forms/msme/5', $data);
+											
 											# code...
 											break;
 									} ?>
