@@ -3,11 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class VerificationAPIController extends CI_Controller
 {
-	private $request, $response, $data, $usersession;
+	private $request, $response, $data, $usersession, $email_client;
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
+		
+		$this->load->library('email/GlobalMail');
+		$this->email_client = new GlobalMail(true);
+
 
 		$this->data = [];
 		$this->usersession = $_SESSION['awards_panel_user'];
@@ -28,21 +32,30 @@ class VerificationAPIController extends CI_Controller
 						'status' => true,
 					])));
 					$session = [
-						'token_id' => 
-						'dispose_after'
+						'token_id' => $token,
+						'dispose_after' => ''
 					];
 					$this->session->set_tempdata('email_verify_token', $session, 600);
 					$verification_link = base_url('api/v2/auth/verify/email/verify?token=' . $token);
-
 					/* PHP Emailer Script */
-					if (true) {
-						$session = [
-							'status' => true,
-						];
-					} else {
-						$session = [
-							'status' => false,
-						];
+					try {
+						if (!is_null($email)) {
+							$this->email_client->_init_();
+							$this->email_client->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], [$email], 'response@timesnetwork.in');
+							$this->email_client->data('Custom Subject', 'panel/emails/mail', null, 'This is the body in plain text for non-HTML mail clients');
+							if ($this->email_client->send()) {
+								echo "Success!!!";
+								$session = [
+									'status' => true,
+								];
+							} else {
+								$session = [
+									'status' => false,
+								];
+							}
+						}
+					} catch (Exception $th) {
+						echo "Failed!! Mailer Error: {$this->email_client->ErrorInfo}";
 					}
 					/* Send Verification EMail */
 				} else {
@@ -50,15 +63,15 @@ class VerificationAPIController extends CI_Controller
 						'status' => false,
 					];
 				}
-				$this->session->set_flashdata('email_verify_session', $session);
+				redirect($this->request['referer']);
+				$this->session->set_flashdata('emailverification_send_session', $session);
 				break;
 
 			default:
 				break;
 		}
-		redirect($this->request['referer']);
 	}
-	public function verify()
+	public function verify($type)
 	{
 		$this->request = $this->input->post();
 		echo "<pre>";
@@ -68,8 +81,9 @@ class VerificationAPIController extends CI_Controller
 		switch ($type) {
 			case 'email':
 				break;
-				default:
+			default:
 				break;
-				redirect($this->request['referer']);
+		}
+		redirect($this->request['referer']);
 	}
 }

@@ -113,8 +113,12 @@
 	</fieldset>
 </div>
 <div class="row g-3">
+	<?php 
+	$s = $stage;
+	$s--;
+	?>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>

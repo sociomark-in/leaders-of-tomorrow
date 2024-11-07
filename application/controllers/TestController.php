@@ -39,7 +39,6 @@ class TestController extends CI_Controller
 	function mailer()
 	{
 		$this->load->library('email/GlobalMail');
-		// $mail = new PHPMailer(true);
 		$mail = new GlobalMail(true);
 
 		try {
@@ -47,23 +46,6 @@ class TestController extends CI_Controller
 			$mail->_init_();
 			$mail->create_pool(['name' => 'LOT Awards', 'email'=> 'noreply@leadersoftomorrow.co.in' ], ['hemant@sociomark.in'], 'response@timesnetwork.in');
 			$mail->data('Custom Subject', 'panel/emails/mail', null, 'This is the body in plain text for non-HTML mail clients');
-			// $mail->SMTPAuth = true;
-			// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-			// $mail->isSMTP();
-			// $mail->Host = "smtp-relay.brevo.com";
-			// $mail->Username = "67e9cf002@smtp-brevo.com";
-			// $mail->Password = "tsUr4W8c6Xy2pnvf";
-			// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-			// $mail->Port = 587;
-
-			// $mail->setFrom('noreply@leadersoftomorrow.co.in', 'LOT Awards');
-			// $mail->addAddress('vivek@sociomark.in');
-			// // $mail->AddReplyTo('response@timesnetwork.in');
-			
-			// $mail->isHTML(true);
-			// $mail->Subject = 'Here is the subject';
-			// $mail->Body    = $this->load->view('panel/emails/mail', null, true);
-			// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 			$mail->send();
 			echo "Success!!!";
 		} catch (Exception $th) {
