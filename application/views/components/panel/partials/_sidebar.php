@@ -1,6 +1,6 @@
 <nav class="sidebar">
 	<div class="sidebar-header">
-		<a href="#" class="sidebar-brand">
+		<a href="<?= base_url() ?>" class="sidebar-brand">
 			<img src="<?= base_url('assets/images/main.png') ?>" alt="" width="160">
 		</a>
 		<div class="sidebar-toggler not-active">

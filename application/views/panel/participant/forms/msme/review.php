@@ -1,7 +1,4 @@
 <div class="row g-3">
-	<?php
-	print_r($application);
-	?>
 	<div class="col-12 grid-margin stretch-card">
 		<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'formFullView']) ?>
 		<input type="hidden" name="category_id" value="<?= $category_id ?>">
@@ -463,10 +460,13 @@
 			<div class="col-12">
 				<div class="row">
 					<div class="col-md-auto">
-						<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Edit and Submit</button>
+						<button type="submit" class="btn btn-primary">Save and Submit</button>
+					</div>
+					<div class="col-md-auto">
+						<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
 					</div>
 				</div>
 			</div>

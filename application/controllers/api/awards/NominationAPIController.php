@@ -18,7 +18,7 @@ class NominationAPIController extends CI_Controller
 		$this->usersession = $_SESSION['awards_panel_user'];
 		$this->load->model('panel/EntriesModel');
 	}
-	
+
 	/**
 	 * _document_uploads
 	 *
@@ -116,7 +116,16 @@ class NominationAPIController extends CI_Controller
 			"created_by" => $this->usersession['id'],
 		];
 
+
 		$application_id = $this->request['application_id'];
+		$temp_application = $common;
+
+		if ($stage == '6') {
+			$this->session->unset_userdata('temp_application_session');
+		} else {
+			$temp_application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true);
+			$this->session->set_userdata('temp_application_session', $temp_application);
+		}
 		if ($category['type'] == 'MSME') {
 			switch ($stage) {
 				case '': 	# Personal Information
@@ -157,6 +166,7 @@ class NominationAPIController extends CI_Controller
 						'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
 						'id_75519'	=> $this->request['organization_der_22'],					//organization_der
 					];
+
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
@@ -176,6 +186,7 @@ class NominationAPIController extends CI_Controller
 						'id_75525'	=> $this->request['initiative_strategy'],
 						'stage_status' => $stage
 					];
+
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
@@ -193,6 +204,7 @@ class NominationAPIController extends CI_Controller
 						'id_75529'	=> $this->request['initiative_info'],
 						'stage_status' => $stage
 					];
+
 					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
@@ -221,6 +233,7 @@ class NominationAPIController extends CI_Controller
 					break;
 				case '5':	# Review Application
 					/* Change Application Status */
+
 					$c = explode('_', $this->input->post('category_id'));
 					$f = 1;
 					foreach ($_FILES as $key => $file) {
@@ -451,7 +464,7 @@ class NominationAPIController extends CI_Controller
 			}
 		}
 	}
-	
+
 	/**
 	 * bulk_edit
 	 * 
@@ -520,10 +533,9 @@ class NominationAPIController extends CI_Controller
 			} else {
 				redirect('dashboard/application/' . $application_id . '/edit');
 			}
-
 		} elseif ($category['type'] == "Individual") {
 			$data = [];
-			
+
 			if ($f) {
 				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 				$data['id_74525'] = $response[0];
@@ -536,7 +548,7 @@ class NominationAPIController extends CI_Controller
 		}
 		$data['stage_status'] = '5';
 		$data['status'] = '3';
-		
+
 		$this->data = $data;
 		$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 		if ($rows > 0) {

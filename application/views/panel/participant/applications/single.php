@@ -42,6 +42,9 @@ if ($nomination['stage'] >= 1) {
 						</div>
 					</div>
 				</div>
+				<?php 
+				// print_r($_SESSION['temp_application_session']);
+				?>
 				<div class="col-12 grid-margin stretch-card">
 					<div class="col-12">
 						<?php
