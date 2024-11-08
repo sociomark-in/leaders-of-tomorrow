@@ -99,7 +99,16 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
+<<<<<<< HEAD
 		<a href="<?= base_url('dashboard/application/'. $application_id .'?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+=======
+		<?php
+		$s = $stage;
+		$s--;
+		?>
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
+		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
+>>>>>>> 2a39c3cb581f6940e6dcaab135ebdb6fa6befa2f
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Submit</button>

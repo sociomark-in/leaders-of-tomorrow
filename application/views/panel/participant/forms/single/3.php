@@ -39,7 +39,12 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
+		<?php
+		$s = $stage;
+		$s--;
+		?>
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
+		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
@@ -57,7 +62,7 @@
 			":hidden", ":focus"
 		],
 		rules: {
-			case_study_1:{
+			case_study_1: {
 				maxlength: 500,
 			},
 			overview: {

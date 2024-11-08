@@ -40,7 +40,6 @@
 											<tr>
 												<th>Participant</th>
 												<th>Contact Person</th>
-												<th>Number</th>
 												<th>Category</th>
 												<th>Status</th>
 												<th>Actions</th>
@@ -50,6 +49,7 @@
 											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
 												<tr>
 													<td>
+														<span class="text-muted"><?= $application['nomination_id'] ?></span>
 														<h5><?= $application['name'] ?></h5>
 														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
 														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
@@ -59,7 +59,6 @@
 														<a href="mailto:<?= $application['id_75535'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
 														<a href="tel:<?= $application['id_75536'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
 													</td>
-													<td><a href="<?= $application['organization_url'] ?>"><?= $application['organization_url'] ?></a></td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
 													<td>
@@ -71,7 +70,7 @@
 																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 															</a>
 														<?php endif ?>
-														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id'])))?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
+														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
@@ -80,6 +79,7 @@
 											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
 												<tr>
 													<td>
+														<span class="text-muted"><?= $application['nomination_id'] ?></span>
 														<h5><?= $application['name'] ?></h5>
 														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
 														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
@@ -89,9 +89,6 @@
 														<a href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
 														<a href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
 													</td>
-													<td>
-														<a class="d-block" href="<?= $application['organization_url'] ?>"><i class="link-icon px-1 mb-1" data-feather="link"></i><?= $application['organization_url'] ?></a>
-													</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
 													<td>
@@ -103,7 +100,7 @@
 																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 															</a>
 														<?php endif ?>
-														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id'])))?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
+														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
@@ -172,7 +169,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

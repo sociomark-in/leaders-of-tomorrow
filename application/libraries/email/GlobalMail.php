@@ -22,7 +22,7 @@ final class GlobalMail extends PHPMailer
 		$this->Host = $this->CI->config->item('mail_host');
 
 		$this->SMTPAuth = true;
-		$this->SMTPDebug = SMTP::DEBUG_SERVER;
+		// $this->SMTPDebug = SMTP::DEBUG_SERVER;
 		$this->isSMTP();
 		$this->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 		$this->Host = "smtp-relay.brevo.com";
