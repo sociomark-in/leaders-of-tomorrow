@@ -205,7 +205,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="gallery" class="d-none">
+	<section id="gallery" class="">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -216,13 +216,13 @@
 				<div class="col-12">
 					<div class="swiper gallerySwiper">
 						<div class="gallery-masonry swiper-wrapper">
-							<?php for ($i = 1; $i <= 5; $i++) : ?>
+						<?php for ($i = 1; $i <= 5; $i++) : ?>
 								<div class="swiper-slide tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>">
 									<figure>
 										<picture>
-											<source srcset="https://placehold.co/250x167/webp" type="image/webp">
-											<source srcset="https://placehold.co/250x167/webp" type="image/jpg">
-											<img class="w-100" src="https://placehold.co/250x167/webp" alt="" loading="lazy">
+											<!-- <source srcset="https://placehold.co/250x167/webp" type="image/webp"> -->
+											<source srcset="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/thumbs/'  . $i . '.jpg') ?>" type="image/jpg">
+											<img class="w-100" src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/thumbs/'  . $i . '.jpg') ?>" alt="" loading="lazy">
 										</picture>
 										<figcaption></figcaption>
 									</figure>
@@ -271,7 +271,7 @@
 						});
 					</script>
 				</div>
-				<div class="col-12 d-none">
+				<div class="col-12">
 					<a href="<?= base_url('city/' . strtolower($city['name'])  . '/gallery') ?>" class="btn btn-red">View More</a>
 				</div>
 			</div>
