@@ -142,12 +142,31 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex justify-content-between align-items-baseline">
-								<h6 class="card-title mb-0">Cloud storage</h6>
-								<div>
-									<a class="btn p-0 btn-icon-text text-dark" href="">View All</a>
-								</div>
+								<h6 class="card-title mb-0">All Leads (Source: Agencies)</h6>
 							</div>
-							<div id="storageChart"></div>
+							<div id="agencyLeadsChart"></div>
+							<script>
+								var options = {
+									series: [445, 535],
+									chart: {
+										type: 'donut',
+									},
+									responsive: [{
+										breakpoint: 480,
+										options: {
+											chart: {
+												width: 200
+											},
+											legend: {
+												position: 'bottom'
+											}
+										}
+									}]
+								};
+
+								var chart = new ApexCharts(document.querySelector("#agencyLeadsChart"), options);
+								chart.render();
+							</script>
 							<div class="row mb-3">
 								<div class="col-6 d-flex justify-content-end">
 									<div>
@@ -163,7 +182,7 @@
 								</div>
 							</div>
 							<div class="d-grid">
-								<button class="btn btn-primary">Upgrade storage</button>
+								<a href="<?= base_url('dashboard/all-agents') ?>" class="btn btn-primary">View Details</a>
 							</div>
 						</div>
 					</div>

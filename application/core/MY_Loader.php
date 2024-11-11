@@ -39,6 +39,11 @@ class MY_Loader extends CI_Loader
 		$this->view('panel/admin/' . $view, $vars);
 		$this->view('layout/_2_panel', $vars);
 	}
+	public function superadmin_view($view, $vars = array(), $return = FALSE){
+		$this->view('layout/_1_panel', $vars);
+		$this->view('panel/superadmin/' . $view, $vars);
+		$this->view('layout/_2_panel', $vars);
+	}
 	public function moderator_view($view, $vars = array(), $return = FALSE){
 		$this->view('layout/_1_panel', $vars);
 		$this->view('panel/moderator/' . $view, $vars);

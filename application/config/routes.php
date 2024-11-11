@@ -96,6 +96,10 @@ $route['dashboard/application/(:any)/download'] = 'panel/NominationsController/d
 $route['dashboard/categories'] = 'panel/CategoriesController';
 $route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';
 
+// Admin
+$route['dashboard/all-agents'] = 'panel/AccountController/all_agents';
+$route['dashboard/all-users'] = 'panel/AccountController/all_users';
+
 // All
 $route['dashboard/my-profile'] = 'panel/AccountController/profile';
 $route['dashboard/my-profile/edit'] = 'panel/AccountController/profile_edit';
@@ -113,7 +117,7 @@ $route['api/new-nominee'] = 'NomineeController/add';
 
 $route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
 $route['api/v2/auth/verify/(:any)/verify'] = 'api/auth/VerificationAPIController/verify/$1';
-$route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/reset/$1';
+$route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/password_reset/$1';
 
 
 $route['api/v2/register/otp/send'] = 'api/auth/AuthAPIController/send_otp';

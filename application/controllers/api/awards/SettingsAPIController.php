@@ -14,7 +14,7 @@ class SettingsAPIController extends CI_Controller
 		$this->load->model('panel/EntriesModel');
 	}
 
-	public function reset(){
+	public function password_reset(){
 		$this->request = $this->input->post();
 
 		$user = json_decode($this->UserModel->get(null, ['password' => hash('md5', hash('sha256', $this->request['password_curr']))]), true)[0];

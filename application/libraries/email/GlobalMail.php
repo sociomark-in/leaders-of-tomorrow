@@ -17,7 +17,7 @@ final class GlobalMail extends PHPMailer
 
 	public function _init_()
 	{
-		$this->SMTPDebug = SMTP::DEBUG_SERVER;
+		// $this->SMTPDebug = SMTP::DEBUG_SERVER;
 		$this->isSMTP();
 		$this->Host = $this->CI->config->item('mail_host');
 
@@ -35,10 +35,14 @@ final class GlobalMail extends PHPMailer
 
 	public function create_pool($from, $to, $replyto, $cc = null, $bcc = null)
 	{
-		$this->setFrom($from['email'] , $from['name']);
+		$this->setFrom($from['email'], $from['name']);
 
-		foreach ($to as $key => $address) {
-			$this->addAddress($address);
+		if (gettype($to)) {
+			foreach ($to as $key => $address) {
+				$this->addAddress($address);
+			}
+		} else {
+			$this->addAddress($to);
 		}
 		if (!is_null($cc)) {
 			foreach ($cc as $key => $address) {
