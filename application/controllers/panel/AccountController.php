@@ -156,6 +156,19 @@ class AccountController extends PanelController
 		}
 	}
 
+	public function agent_single($agent_id)
+	{
+		switch ($agent_id) {
+			case 'value':
+				# code...
+				break;
+
+			default:
+				$this->load->admin_view('agents/single', $this->data);
+				break;
+		}
+	}
+
 	public function nominate()
 	{
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
