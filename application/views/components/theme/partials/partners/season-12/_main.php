@@ -1,5 +1,5 @@
 <div class="col-12">
-	<div class="partners-nav row g-3 justify-content-center justify-content-lg-between">
+	<div class="partners-nav row g-3 m-0 justify-content-center justify-content-lg-between">
 		<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up">
 			<a href="javascript:void(0)" class="nav-link text-dark text-center d-block">
 				<p class="mb-3">

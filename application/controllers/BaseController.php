@@ -40,8 +40,8 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Coimbatore",
 				'theme' => "Coimbatore: Crafting Futures, Empowering Growth",
-				'date' => '2024-10-18',
-				'venue' => ""
+				'date' => '2024-11-22 17:00:00',
+				'venue' => "Le Méridien Coimbatore"
 			],
 			[
 				'name' => "Jaipur",
