@@ -46,10 +46,15 @@ class AttendeeModel extends CI_Model
 				$ticket_id = "24318";
 				$api_key = "f05dfc61-4af7-447e-96ec-2080ce633a0b";
 				break;
-				// Hyderabad
+				// Chennai
 			case '8404655b-ffb0-494a-ae29-bcabcd24d2b6':
 				$ticket_id = "25515";
 				$api_key = "46fe979f-e144-4bdf-a055-670830dacb2b";
+				break;
+				// Coimbatore
+			case '0a27f103-f22c-4c17-841f-0d6cced80347':
+				$ticket_id = "26736";
+				$api_key = "77fcb563-b37d-4d7b-be5d-a8a077b74fe3";
 				break;
 
 			default:
@@ -79,6 +84,7 @@ class AttendeeModel extends CI_Model
 			"registration_tz" => "Asia/Kolkata",
 			"waitlist_details" => $request["registration_details"]
 		];
+		// print_r(json_encode($this->data));die;
 		return $this->konfhub->waitlist_attendee($api_key, $event_id, $this->data);
 	}
 

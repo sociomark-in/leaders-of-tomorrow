@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="d-none section pb-0">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -277,6 +277,6 @@
 			</div>
 		</div>
 	</section>
-	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart.png')">
+	<div class="footer-lineart d-none" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
 	</div>
 </main>

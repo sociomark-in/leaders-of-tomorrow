@@ -11,11 +11,10 @@
 			</ol>
 		</nav>
 	</div>
-
 	<div class="row">
 		<div class="col-xl-8 col-lg-6 col-12">
 			<div class="row">
-				<?php for ($i = 0; $i < 5; $i++): ?>
+				<?php foreach ($agents as $key => $agent) : ?>
 					<div class="col-xl-4 col-lg-6 col-12">
 						<div class="row">
 							<div class="col-12 grid-margin stretch-card">
@@ -24,12 +23,12 @@
 										<div class="row justify-content-between">
 											<div class="col-auto">
 												<!-- <?= implode(' ', [$employee['first_name'], $employee['last_name']]) ?> -->
-												<img class="wd-50 ht-50 rounded-circle" src="https://ui-avatars.com/api/?name=Agent Name" alt="<?= implode(' ', [$employee['first_name'], $employee['last_name']]) ?>">
+												<img class="wd-50 ht-50 rounded-circle" src="https://ui-avatars.com/api/?name=<?= $agent['name'] ?>" alt="<?= $agent['name'] ?>">
 											</div>
 											<div class="col">
 												<div class="row">
 													<div class="col-12">
-														<h6 class="card-title mb-0">Agent Name</h6>
+														<h6 class="card-title mb-0"><?= $agent['name'] ?></h6>
 														<h3 class="mb-2">3,897</h3>
 													</div>
 												</div>
@@ -38,7 +37,7 @@
 												<a class="btn p-0 btn-light" href="">
 													<i class="p-1" data-feather="refresh-ccw"></i>
 												</a>
-												<a class="btn p-0 btn-primary" href="<?= base_url('dashboard/agent/289382347') ?>">
+												<a class="btn p-0 btn-primary" href="<?= base_url('dashboard/agent/' . $agent['agent_id']) ?>">
 													<i class="p-1" data-feather="arrow-right"></i>
 												</a>
 											</div>
@@ -48,7 +47,7 @@
 							</div>
 						</div>
 					</div>
-				<?php endfor ?>
+				<?php endforeach ?>
 			</div>
 		</div>
 		<div class="col-xl-4 col-lg-6">
@@ -64,7 +63,7 @@
 									<?= form_open() ?>
 									<div class="row gap-3">
 										<div class="col-xl-auto col-lg-7 col-12">
-											<input type="text" disabled class="form-control" value="#213121424">
+											<input type="text" disabled class="form-control" value="#<?= random_string('numeric', 10) ?>">
 										</div>
 										<div class="col-12">
 											<div class="">

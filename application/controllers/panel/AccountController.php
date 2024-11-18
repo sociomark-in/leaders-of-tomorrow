@@ -143,6 +143,8 @@ class AccountController extends PanelController
 
 	public function all_agents()
 	{
+		$this->load->model('panel/AgentModel');
+		$this->data['agents'] = json_decode($this->AgentModel->get(), true);
 		switch ($this->user_session['role']) {
 			case 'super-admin':
 				$this->load->superadmin_view('agents/home', $this->data);
