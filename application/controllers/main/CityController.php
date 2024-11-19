@@ -236,6 +236,82 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('chennai', $this->data);
 				break;
+			case 'coimbatore':
+				$this->data['page'] = [
+					'title' => "Coimbatore Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Coimbatore",
+					'partners' => [
+						[
+							'text' => 'Associate Partner',
+							'logo' => 'TEA.png',
+						],
+						[
+							'text' => 'Associate Partner',
+							'logo' => 'GSquare.png',
+						],
+					],
+					'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "Anto Alan",
+						// 	'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						// ],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "Dr Srimathy Kesan",
+						// 	'description' => "Founder & CEO, Space Kidz India",
+						// ],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "CK Mohan",
+						// 	'description' => "President, Tamil Nadu Small & Tiny Industries Association ",
+						// ],						
+						[
+							'photo' => "A_Sakthivel.png",
+							'name' => " Padma Shri Dr. A. Sakthivel",
+							'description' => "Honorary Chairman, Tirupur Exporters Association",
+						],
+						[
+							'photo' => "KM_Subramanian.png",
+							'name' => "KM Subramanian",
+							'description' => "President, Tirupur Exporters Association",
+						],
+						[
+							'photo' => "M_Karthikeyan.png",
+							'name' => " M. Karthikeyan",
+							'description' => "President, Codissia",
+						],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "Dr Manimekalai Mohan",
+						// 	'description' => "Founder & Managing Trustee, SSVM Group of Institutions",
+						// ],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "Junaith Baba",
+						// 	'description' => "COO, G SQUARE",
+						// ],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "G Radhakrishnan",
+						// 	'description' => "Chairman, CII Coimbatore Zone",
+						// ],
+						// [
+						// 	'photo' => "",
+						// 	'name' => "",
+						// 	'description' => "",
+						// ],
+					]
+				];
+				$this->load->city_view('coimbatore', $this->data);
+				break;
 
 			case 'test':
 				$this->data['page'] = [

@@ -1,4 +1,4 @@
-<?php $this->load->view('components/theme/partials/_partners'); ?>
+<?php $this->load->view('components/theme/partials/_sb_partners'); ?>
 <!-- partial:partials/_footer.html -->
 <?php $this->load->view('components/theme/partials/_footer'); ?>
 <!-- partial -->

@@ -26,7 +26,7 @@ class MY_Loader extends CI_Loader
 	{
 		$this->view('layout/_1_sb', $vars);
 		$this->view("main/city/" . $view, $vars);
-		$this->view('layout/_2', $vars);
+		$this->view('layout/_2_sb', $vars);
 	}
 
 	public function panel_view($view, $vars = array(), $return = FALSE){

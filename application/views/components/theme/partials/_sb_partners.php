@@ -1,6 +1,26 @@
 <section class="py-3 py-md-5 bg-white blank-all" id="partners">
 	<div class="container">
-		<div class="row m-0">
+		<div class="row m-0 gap-3 gap-md-4">
+			<?php if(isset($city['partners'])):?>
+			<div class="col-12">
+				<div class="mb-md-4 mb-3 section-title text-center">
+					<h2 class=""><span>Springboard Partners</span></h2>
+				</div>
+				<div class="row m-0 justify-content-center">
+					<?php switch ($this->uri->segment(2)):
+						// Cities
+						case 'coimbatore':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+
+						default:
+							break;
+					endswitch; ?>
+				</div>
+			</div>
+			<?php endif ?>
 			<div class="col-12">
 				<div class="mb-md-4 mb-3 section-title text-center">
 					<h2 class=""><span>Our Partners</span></h2>
