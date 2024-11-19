@@ -98,6 +98,8 @@ $route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';
 
 // Admin
 $route['dashboard/all-agents'] = 'panel/AccountController/all_agents';
+$route['dashboard/agent/(:any)'] = 'panel/AccountController/agent_single/$1';
+
 $route['dashboard/all-users'] = 'panel/AccountController/all_users';
 
 // All

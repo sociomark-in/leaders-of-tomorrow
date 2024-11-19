@@ -6,12 +6,11 @@ switch ($city['name']) {
 	case 'Chandigarh':
 	case 'Hyderabad':
 	case 'Chennai':
-	case 'Coimbatore':
-		$class = "d-none";
+		$past = "d-none";
 		break;
 
 	default:
-		$class = "d-block";
+		$past = "d-block";
 		break;
 }
 switch ($city['name']) {
@@ -41,23 +40,23 @@ switch ($city['name']) {
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#">Home</a>
 				</li>
-				<li class="nav-item  <?= $active ?>">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#about">About</a>
 				</li>
-				<li class="nav-item <?= $class?>">
+				<li class="nav-item <?= $past ?>">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
 				</li>
-				<li class="nav-item <?= $active ?> <?= $class?>">
+				<li class="nav-item ">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
 				</li>
-				<li class="nav-item <?= $active ?> <?= $class?>">
+				<li class="nav-item <?= $active ?> ">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#gallery">Gallery</a>
 				</li>
-				<li class="nav-item <?= $active ?> <?= $class?>">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav gap-2 <?= $class ?>">
+			<ul class="navbar-nav gap-2 <?= $past ?>">
 				<li class="nav-item">
 					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
 				</li>
