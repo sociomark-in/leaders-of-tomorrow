@@ -13,7 +13,7 @@ if ($nomination['stage'] >= 1) {
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('nominations') ?>">My Applications</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/my-applications') ?>">My Applications</a></li>
 				<li class="breadcrumb-item active" aria-current="page">(#<?= $id ?>)</li>
 			</ol>
 		</nav>
@@ -24,23 +24,6 @@ if ($nomination['stage'] >= 1) {
 			<div class="row">
 			<div class="col-12 grid-margin stretch-card">
 					<div class="card">
-						<div class="card-body">
-							<div class="row align-items-center">
-								<div class="col-auto">
-									<div class="">
-										<img src="https://placehold.co/60x60" alt="">
-									</div>
-								</div>
-								<div class="col">
-									<h2><?= $category['name'] ?></h2>
-								</div>
-								<div class="col-auto">
-									<div class="row">
-										<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="card-body">
 							<div class="row align-items-center">
 								<div class="col-auto">

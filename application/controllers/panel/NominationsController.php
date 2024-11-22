@@ -78,6 +78,11 @@ class NominationsController extends PanelController
 	public function user_side()
 	{
 		$this->data['my_applications'] = [];
+		$categories = [
+			'msme' => json_decode($this->CategoryModel->get_msme(), true),
+			'individual' => json_decode($this->CategoryModel->get_individual(), true),
+		];
+		$this->data['categories'] = $categories;
 		$applications = [
 			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'individual'), true),
 			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'msme'), true)
@@ -94,10 +99,10 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
+						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Locked & Under Review</span>';
+						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -119,10 +124,10 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-success">Accepted</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
+						$s = '<span class="badge bg-dark">Unlocked</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Locked & Under Review</span>';
+						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -132,7 +137,9 @@ class NominationsController extends PanelController
 				$applications['msme'][$i]['status_text'] = $s;
 			}
 		}
+
 		$this->data['my_applications'] = $applications;
+		$this->data['rest_categories'] = $categories;
 		$this->load->panel_view('applications/home', $this->data);
 	}
 
@@ -236,19 +243,32 @@ class NominationsController extends PanelController
 
 	public function download($slug)
 	{
-		$id = $this->encryption->decrypt(urldecode($this->input->get("key")));
-		$application = array_merge(json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true))[0];
+		$id = $this->encryption->decrypt($this->input->get("key"));
+		$application = array_merge(
+			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), 
+			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true)
+		)[0];
 		// echo "<pre>";
 		// print_r($application);die;
-		$files = [
-			$application['id_75530'],
-			$application['id_75531'],
-			$application['id_75532'],
-			$application['id_75533'],
-		];
+		$category = strtolower(explode('_', $application['category_id'])[1]);
+		if($category == 'msme'){
+			$files = [
+				$application['id_75530'],
+				$application['id_75531'],
+				$application['id_75532'],
+				$application['id_75533'],
+			];
+		} elseif ($category == 'individual') {
+			$files = [
+				$application['id_74525'],
+				$application['id_74526'],
+				$application['id_74527'],
+				$application['id_74528'],
+			];
+		}
 		$temp = [];
 		for ($i = 0; $i < count($files); $i++) {
-			$temp[$i] = FCPATH . explode(base_url(), $files[$i])[1];
+			$temp[$i] = FCPATH . $files[$i];
 		}
 
 		if (!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])) {
@@ -257,7 +277,7 @@ class NominationsController extends PanelController
 
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
 			$this->load->library('pdflib/MakePDF');
-			$this->makepdf->init('P', 'mm', 'A4')->load($application, 'msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			$this->makepdf->init('P', 'mm', 'A4')->load($application, $category)->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 
 			$pdf = new PDFMerger;
 			$pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');

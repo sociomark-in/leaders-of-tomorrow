@@ -59,9 +59,9 @@ class AuthAPIController extends CI_Controller
 		$this->request = $this->input->post();
 		// $password = random_string('alnum', 16);
 
-        $contact = $this->request['contact'];
+		$contact = $this->request['contact'];
 		$this->request['password'] = hash('md5', hash('sha256', $contact));
-		
+
 		$data['name'] = $this->request['name'];
 		$data['email'] = $this->request['email'];
 		$data['contact'] = $this->request['contact'];
@@ -91,8 +91,61 @@ class AuthAPIController extends CI_Controller
 				redirect('register');
 			}
 		}
-		print_r($data);
-		print_r($session);die;
+	}
+
+	public function agency_lead_register()
+	{
+		$this->request = $this->input->post();
+		
+		$data['name'] = $this->request['name'];
+		$data['email'] = $this->request['email'];
+		$data['contact'] = $this->request['contact'];
+		
+		$session = [
+			'status' => 'UNDEFINED',
+			'message' => 'Unknown Error Occured!'
+		];
+		if ($this->request['do_regoster'] == 'on') {
+			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+			if (!is_null($existing_user) && count($existing_user) >= 1) {
+				$session['status'] = 'WARNING';
+				$session['message'] = 'You have already registered. Please Log In Again.';
+				$this->session->set_flashdata('user_login_status', $session);
+				redirect('login');
+			} else {
+				$contact = $this->request['contact'];
+				$this->request['password'] = hash('md5', hash('sha256', $contact));
+				$data['role'] = 'participant';
+				$data['useremail'] = $data['email'];
+				$data['password'] = $this->request['password'];
+				$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+				$session = [
+					'status' => 'UNDEFINED',
+					'message' => 'Unknown Error Occured!'
+				];
+				if (!is_null($existing_user) && count($existing_user) >= 1) {
+					$session['status'] = 'WARNING';
+					$session['message'] = 'You have already registered. Please Log In Again.';
+					$this->session->set_flashdata('user_login_status', $session);
+					redirect('login');
+				} else {
+					if ($this->UserModel->insert($data)) {
+						$session['status'] = 'SUCCESS';
+						$session['message'] = 'You have successfully registered. Please Log In.';
+						$this->session->set_flashdata('user_login_status', $session);
+						redirect('login');
+					} else {
+						$session['status'] = 'WARNING';
+						$session['message'] = 'You have already registered. Please Log In Now.';
+						$this->session->set_flashdata('user_login_status', $session);
+						redirect('agency-register');
+					}
+				}
+			}
+		} else {
+			$this->LeadsModel->insert();
+		}
+		print_r($this->input->post());
 	}
 
 	public function send_otp()

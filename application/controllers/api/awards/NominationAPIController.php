@@ -128,7 +128,7 @@ class NominationAPIController extends CI_Controller
 		}
 		if ($category['type'] == 'MSME') {
 			switch ($stage) {
-				case '': 	# Personal Information
+				case '': 	# ☑ Personal Information
 					$data = [
 						"name" => $this->request['organization']['name'],
 						"email" => $this->request['contact_person']['email'],
@@ -149,7 +149,7 @@ class NominationAPIController extends CI_Controller
 						redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
 					};
 					break;
-				case '1': 	# Organization Details				
+				case '1': 	# ☑ Organization Details				
 					$data = [
 						'id_75502'	=> $this->request['organization_industry'],					//organization_industry
 						'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
@@ -174,7 +174,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '2': 	# Case Studies I
+				case '2': 	# ☑ Case Studies I
 
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
@@ -194,7 +194,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '3': 	# Case Studies II
+				case '3': 	# ☑ Case Studies II
 
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
@@ -212,7 +212,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '4':	# Upload Files
+				case '4':	# ☑ Upload Files
 					/* Get Application Data */
 
 					$c = explode('_', $this->input->post('category_id'));
@@ -231,7 +231,7 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-				case '5':	# Review Application
+				case '5':	# ☑ Review Application
 					/* Change Application Status */
 
 					$c = explode('_', $this->input->post('category_id'));
@@ -243,33 +243,32 @@ class NominationAPIController extends CI_Controller
 						}
 					}
 					$data = [
-						'id_75502'	=> $this->request['organization_industry'],					//organization_industry
-						'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
-						'id_75508'	=> $this->request['organization_mission_vision'],			//organization_mission_vision	
-						'id_75509'	=> $this->request['organization_services'],					//organization_services	
-						'id_75510'	=> $this->request['organization_revenue_23'],				//organization_revenue	
-						'id_75511'	=> $this->request['organization_revenue_22'],				//organization_revenue	
-						'id_75512'	=> $this->request['organization_growth_23'],				//organization_growth	
-						'id_75513'	=> $this->request['organization_growth_22'],				//organization_growth	
-						'id_75514'	=> $this->request['organization_profit_23'],				//organization_profit	
-						'id_75515'	=> $this->request['organization_profit_22'],				//organization_profit	
-						'id_75516'	=> $this->request['organization_assets_23'],				//organization_assets	
-						'id_75517'	=> $this->request['organization_assets_22'],				//organization_assets	
-						'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
-						'id_75519'	=> $this->request['organization_der_22'],					//organization_der
+						'id_75502'	=> $this->request['organization']['industry'] ?? null,					//organization_industry
+						'id_75503'	=> $this->request['organization']['overview'] ?? null,					//organization_overview	
+						'id_75508'	=> $this->request['organization']['mission_stmt'] ?? null,			//organization_mission_vision	
+						'id_75509'	=> $this->request['organization']['services_stmt'] ?? null,					//organization_services	
+						'id_75510'	=> $this->request['organization']['revenue_23'] ?? null,				//organization_revenue	
+						'id_75511'	=> $this->request['organization']['revenue_22'] ?? null,				//organization_revenue	
+						'id_75512'	=> $this->request['organization']['growth_23'] ?? null,				//organization_growth	
+						'id_75513'	=> $this->request['organization']['growth_22'] ?? null,				//organization_growth	
+						'id_75514'	=> $this->request['organization']['profit_23'] ?? null,				//organization_profit	
+						'id_75515'	=> $this->request['organization']['profit_22'] ?? null,				//organization_profit	
+						'id_75516'	=> $this->request['organization']['assets_23'] ?? null,				//organization_assets	
+						'id_75517'	=> $this->request['organization']['assets_22'] ?? null,				//organization_assets	
+						'id_75518'	=> $this->request['organization']['der_23'] ?? null,					//organization_der	
+						'id_75519'	=> $this->request['organization']['der_22'] ?? null,					//organization_der
 
-						'id_75520'	=> $this->request['initiative_name'],
-						'id_75521'	=> $this->request['initiative_start_date'],
-						'id_75522'	=> $this->request['initiative_end_date'],
-						'id_75523'	=> $this->request['initiative_desc'],
-						'id_75524'	=> $this->request['initiative_challenges'],
-						'id_75525'	=> $this->request['initiative_strategy'],
+						'id_75520'	=> $this->request['initiative']['name'] ?? null,
+						'id_75521'	=> $this->request['initiative']['start_date'] ?? null,
+						'id_75522'	=> $this->request['initiative']['end_date'] ?? null,
+						'id_75523'	=> $this->request['initiative']['description'] ?? null,
+						'id_75524'	=> $this->request['initiative']['challenges'] ?? null,
+						'id_75525'	=> $this->request['initiative']['strategy'] ?? null,
 
-						'id_75526'	=> $this->request['initiative_tech'],
-						'id_75527'	=> $this->request['initiative_impact'],
-						'id_75528'	=> $this->request['initiative_scalability'],
-						'id_75529'	=> $this->request['initiative_info'],
-						'stage_status' => $stage
+						'id_75526'	=> $this->request['initiative']['technology'] ?? null,
+						'id_75527'	=> $this->request['initiative']['impact'] ?? null,
+						'id_75528'	=> $this->request['initiative']['scalability'] ?? null,
+						'id_75529'	=> $this->request['initiative']['additional'] ?? null,
 					];
 
 					if ($f) {
@@ -278,13 +277,18 @@ class NominationAPIController extends CI_Controller
 						$data['id_75531'] = $response[1];
 						$data['id_75532'] = $response[2];
 						$data['id_75533'] = $response[3];
-					} else {
-						redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
 					}
 
 					$data['status'] = 3;
 					$data['stage_status'] = 5;
 
+					// Sanitize $data Array for DB Insert
+					foreach ($data as $key => $value) {
+						# code...
+						if ($value == "" || $value == null) {
+							unset($data[$key]);
+						}
+					}
 					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
@@ -300,7 +304,7 @@ class NominationAPIController extends CI_Controller
 			}
 		} elseif ($category['type'] == 'Individual') {
 			switch ($stage) {
-				case '': 	# Personal Information
+				case '': 	# ☑ Personal Information
 					# code...
 					$data = [
 						"name" => $this->request['applicant']['name'],
@@ -324,7 +328,7 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					};
 					break;
-				case '1':	# Organization Details
+				case '1':	# ☑ Organization Details
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
 						'id_74509'	=> $this->request['organization']['overview'],			//organization_overview	
@@ -343,10 +347,11 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '2':	# Case Studies I
+				case '2':	# ☑ Case Studies I
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
 						'id_74516'	=> $this->request['case_study_1'],
+						'id_74517'	=> $this->request['case_study_2'] ?? null,
 						'id_74518'	=> $this->request['case_study_3'],
 						'id_74519'	=> $this->request['case_study_4'],
 						'stage_status' => $stage
@@ -358,7 +363,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '3':	# Case Studies II	
+				case '3':	# ☑ Case Studies II	
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
 						'id_74520'	=> $this->request['case_study_5'],		//organization_mission_vision	
@@ -375,29 +380,32 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '4':	# Upload Files
+				case '4':	# ☑ Upload Files
 					/* Get Application Data */
 
 					$c = explode('_', $this->input->post('category_id'));
 
 					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 
-					$data['id_75530'] = $response[0];
-					$data['id_75531'] = $response[1];
-					$data['id_75532'] = $response[2];
-					$data['id_75533'] = $response[3];
-
+					$data['id_74525'] = $response[0];
+					$data['id_74526'] = $response[1];
+					$data['id_74527'] = $response[2];
+					$data['id_74528'] = $response[3];
+					$data['stage_status'] = $stage;
 					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 					if ($rows == 0) {
-						redirect($this->request['referrer'] . '?stage=' . $stage);
+						redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
 					} else {
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
 				case '5':	# Review Application
-					/* Change Application Status */
-					$c = explode('_', $this->input->post('category_id'));
 
+				redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+				die;
+					/* Change Application Status */
+
+					$c = explode('_', $this->input->post('category_id'));
 					$f = 1;
 					foreach ($_FILES as $key => $file) {
 						if ($file['size'] == 0) {
@@ -405,35 +413,23 @@ class NominationAPIController extends CI_Controller
 							break;
 						}
 					}
-
 					$data = [
-						'id_75502'	=> $this->request['organization_industry'],					//organization_industry
-						'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
-						'id_75508'	=> $this->request['organization_mission_vision'],			//organization_mission_vision	
-						'id_75509'	=> $this->request['organization_services'],					//organization_services	
-						'id_75510'	=> $this->request['organization_revenue_23'],				//organization_revenue	
-						'id_75511'	=> $this->request['organization_revenue_22'],				//organization_revenue	
-						'id_75512'	=> $this->request['organization_growth_23'],				//organization_growth	
-						'id_75513'	=> $this->request['organization_growth_22'],				//organization_growth	
-						'id_75514'	=> $this->request['organization_profit_23'],				//organization_profit	
-						'id_75515'	=> $this->request['organization_profit_22'],				//organization_profit	
-						'id_75516'	=> $this->request['organization_assets_23'],				//organization_assets	
-						'id_75517'	=> $this->request['organization_assets_22'],				//organization_assets	
-						'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
-						'id_75519'	=> $this->request['organization_der_22'],					//organization_der
-
-						'id_75520'	=> $this->request['initiative_name'],
-						'id_75521'	=> $this->request['initiative_start_date'],
-						'id_75522'	=> $this->request['initiative_end_date'],
-						'id_75523'	=> $this->request['initiative_desc'],
-						'id_75524'	=> $this->request['initiative_challenges'],
-						'id_75525'	=> $this->request['initiative_strategy'],
-
-						'id_75526'	=> $this->request['initiative_tech'],
-						'id_75527'	=> $this->request['initiative_impact'],
-						'id_75528'	=> $this->request['initiative_scalability'],
-						'id_75529'	=> $this->request['initiative_info'],
-						'stage_status' => $stage
+						'id_74509'	=> $this->request['organization']['overview'],	
+						'id_74510'	=> $this->request['organization']['mission_stmt'],
+						'id_74511'	=> $this->request['organization']['services_stmt'],
+						'id_74512'	=> $this->request['finance']['turnover_24'],	
+						'id_74513'	=> $this->request['finance']['turnover_23'],	
+						'id_74514'	=> $this->request['finance']['growth_24'],		
+						'id_74515'	=> $this->request['finance']['growth_23'],		
+						'id_74516'	=> $this->request['case_study_1'],
+						'id_74517'	=> $this->request['case_study_2'] ?? null,
+						'id_74518'	=> $this->request['case_study_3'],
+						'id_74519'	=> $this->request['case_study_4'],
+						'id_74520'	=> $this->request['case_study_5'],	
+						'id_74521'	=> $this->request['case_study_6'],
+						'id_74522'	=> $this->request['case_study_7'],
+						'id_74523'	=> $this->request['case_study_8'],
+						'id_74524'	=> $this->request['case_study_9'],
 					];
 
 					if ($f) {
@@ -442,13 +438,18 @@ class NominationAPIController extends CI_Controller
 						$data['id_74526'] = $response[1];
 						$data['id_74527'] = $response[2];
 						$data['id_74528'] = $response[3];
-					} else {
-						redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
 					}
 
 					$data['status'] = 3;
 					$data['stage_status'] = 5;
 
+					// Sanitize $data Array for DB Insert
+					foreach ($data as $key => $value) {
+						# code...
+						if ($value == "" || $value == null) {
+							unset($data[$key]);
+						}
+					}
 					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
@@ -523,6 +524,14 @@ class NominationAPIController extends CI_Controller
 				'id_75528'	=> $this->request['initiative_scalability'],
 				'id_75529'	=> $this->request['initiative_info'],
 			];
+
+			// Sanitize $data Array for DB Insert
+			foreach ($data as $key => $value) {
+				# code...
+				if ($value == "" || $value == null) {
+					unset($data[$key]);
+				}
+			}
 
 			if ($f) {
 				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
