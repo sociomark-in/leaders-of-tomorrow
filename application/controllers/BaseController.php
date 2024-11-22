@@ -46,7 +46,7 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Jaipur",
 				'theme' => "Jaipur: Powering Rajasthan's Global Tourism Vision",
-				'date' => '2024-11-08',
+				'date' => '2024-11-29',
 				'venue' => ""
 			],
 			[
