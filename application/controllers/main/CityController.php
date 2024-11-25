@@ -274,7 +274,7 @@ class CityController extends BaseController
 							'description' => "President, Tiruppur Exporters Association",
 						],
 						[
-							'photo' => "Junaith_Babu.png",
+							'photo' => "Junaith_Baba.png",
 							'name' => "Junaith Babu",
 							'description' => "COO, G SQUARE",
 						],
@@ -284,7 +284,7 @@ class CityController extends BaseController
 							'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
 						],
 						[
-							'photo' => " M_Karthikeyan.png",
+							'photo' => "M_Karthikeyan.png",
 							'name' => " M. Karthikeyan",
 							'description' => "President, Codissia",
 						],
@@ -309,6 +309,47 @@ class CityController extends BaseController
 				$this->load->city_view('coimbatore', $this->data);
 				break;
 
+			case 'jaipur':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Jaipur",
+					'speakers' => [
+						[
+							'photo' => "Bhavesh_Jatania.png",
+							'name' => "Bhavesh Jatania",
+							'description' => "Head – Startup Banking, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Kuldeep_Singh_Chandela.png",
+							'name' => "Kuldeep Singh Chandela",
+							'description' => "President, Federation of Hospitality & Tourism of Rajasthan (FHTR)",
+						],
+						[
+							'photo' => "Tarun_Kumar_Bansal.png",
+							'name' => "Tarun Kumar Bansal",
+							'description' => "President, Hotel & Restaurants Association of Rajasthan (HRAR)",
+						],
+						[
+							'photo' => "Chitra_Gurnani_Daga.png",
+							'name' => "Chitra Gurnani Daga",
+							'description' => "CEO & Co-Founder, Thrillophilia",
+						],
+						[
+							'photo' => "Angad_Mandawa.png",
+							'name' => "Angad deo Mandawa",
+							'description' => "Director & Member, Hotel Castle Mandawa & Federation of Hospitality and Tourism of Rajasthan (FHTR)",
+						],
+						[
+							'photo' => "Hemant_Beniwal.png",
+							'name' => "Hemant Beniwal",
+							'description' => "Certified Financial Planner & Director, Ark Primary Advisors",
+						],
+					]
+				];
+				$this->load->city_view('jaipur', $this->data);
+				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -348,7 +389,7 @@ class CityController extends BaseController
 						],
 					]
 				];
-				$this->load->city_view('lucknow', $this->data);
+				$this->load->city_view('jaipur', $this->data);
 				break;
 
 
@@ -401,7 +442,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'coimbatore') {
+			if (strtolower($sb['name']) == $city && $city == 'jaipur') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
