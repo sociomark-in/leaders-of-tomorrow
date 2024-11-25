@@ -254,55 +254,51 @@ class CityController extends BaseController
 					],
 					'speakers' => [
 						[
+							'photo' => "Kranthi_Kumar_Pati.png",
+							'name' => "Kranthi Kumar Pati",
+							'description' => " IAS, District Collector, Coimbatore",
+						],
+						[
 							'photo' => "Anto_Alan.png",
 							'name' => "Anto Alan",
 							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Anto Alan",
-						// 	'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Srimathy Kesan",
-						// 	'description' => "Founder & CEO, Space Kidz India",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "CK Mohan",
-						// 	'description' => "President, Tamil Nadu Small & Tiny Industries Association ",
-						// ],						
 						[
 							'photo' => "A_Sakthivel.png",
-							'name' => " Padma Shri Dr. A. Sakthivel",
-							'description' => "Honorary Chairman, Tirupur Exporters Association",
+							'name' => "Padma Shri Dr. A. Sakthivel",
+							'description' => "Honorary Chairman, Tiruppur Exporters Association",
 						],
 						[
 							'photo' => "KM_Subramanian.png",
 							'name' => "KM Subramanian",
-							'description' => "President, Tirupur Exporters Association",
+							'description' => "President, Tiruppur Exporters Association",
 						],
 						[
-							'photo' => "M_Karthikeyan.png",
+							'photo' => "Junaith_Babu.png",
+							'name' => "Junaith Babu",
+							'description' => "COO, G SQUARE",
+						],
+						[
+							'photo' => "CA_Meena.png",
+							'name' => "CA Meena Swaminathan",
+							'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
+						],
+						[
+							'photo' => " M_Karthikeyan.png",
 							'name' => " M. Karthikeyan",
 							'description' => "President, Codissia",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Manimekalai Mohan",
-						// 	'description' => "Founder & Managing Trustee, SSVM Group of Institutions",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Junaith Baba",
-						// 	'description' => "COO, G SQUARE",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "G Radhakrishnan",
-						// 	'description' => "Chairman, CII Coimbatore Zone",
-						// ],
+						[
+							'photo' => "G_Radhakrishnan.png",
+							'name' => "G Radhakrishnan",
+							'description' => "Chairman, CII Coimbatore Zone",
+						],
+						[
+							'photo' => "K_Illango.png",
+							'name' => "K. Ilango",
+							'description' => "Managing Director, RSM Autokast",
+						],
+						
 						// [
 						// 	'photo' => "",
 						// 	'name' => "",
@@ -313,82 +309,6 @@ class CityController extends BaseController
 				$this->load->city_view('coimbatore', $this->data);
 				break;
 
-			case 'coimbatore':
-				$this->data['page'] = [
-					'title' => "Coimbatore Springboard" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city'] = [
-					'name' => "Coimbatore",
-					'partners' => [
-						[
-							'text' => 'Associate Partner',
-							'logo' => 'TEA.png',
-						],
-						[
-							'text' => 'Associate Partner',
-							'logo' => 'GSquare.png',
-						],
-					],
-					'speakers' => [
-						[
-							'photo' => "Anto_Alan.png",
-							'name' => "Anto Alan",
-							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Anto Alan",
-						// 	'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Srimathy Kesan",
-						// 	'description' => "Founder & CEO, Space Kidz India",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "CK Mohan",
-						// 	'description' => "President, Tamil Nadu Small & Tiny Industries Association ",
-						// ],						
-						[
-							'photo' => "A_Sakthivel.png",
-							'name' => " Padma Shri Dr. A. Sakthivel",
-							'description' => "Honorary Chairman, Tirupur Exporters Association",
-						],
-						[
-							'photo' => "KM_Subramanian.png",
-							'name' => "KM Subramanian",
-							'description' => "President, Tirupur Exporters Association",
-						],
-						[
-							'photo' => "M_Karthikeyan.png",
-							'name' => " M. Karthikeyan",
-							'description' => "President, Codissia",
-						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Manimekalai Mohan",
-						// 	'description' => "Founder & Managing Trustee, SSVM Group of Institutions",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Junaith Baba",
-						// 	'description' => "COO, G SQUARE",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "G Radhakrishnan",
-						// 	'description' => "Chairman, CII Coimbatore Zone",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "",
-						// 	'description' => "",
-						// ],
-					]
-				];
-				$this->load->city_view('coimbatore', $this->data);
-				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
