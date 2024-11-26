@@ -24,4 +24,22 @@ class RegisterController extends BaseController
 		];
 		$this->load->mini_view('register', $this->data);
 	}
+
+	public function agency_register($code)
+	{
+		$this->load->model('panel/AgentModel');
+		$agents = json_decode($this->AgentModel->get(), true);
+		$f = false;
+		foreach ($agents as $key => $agent) {
+			if($agent['agent_id'] = $code){
+				$f = !$f;
+				break;
+			}
+		}
+		if($f){
+			$this->load->mini_view('agency_register', $this->data);
+		} else {
+			redirect(base_url('register'));
+		}
+	}
 }

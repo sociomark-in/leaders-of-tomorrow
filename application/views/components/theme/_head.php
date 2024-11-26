@@ -86,3 +86,14 @@
 <meta property="twitter:title" content="<?= (isset($page['title'])) ? $page['title'] : APP_NAME ?>" />
 <meta property="twitter:description" content="<?= (isset($page['desc'])) ? $page['desc'] : "ET NOW Leaders of Tomorrow is India's longest-running TV show and the premier platform empowering small businesses and entrepreneurs with essential tools for success." ?>" />
 <meta property="twitter:image" content="<?= (isset($page['thumb'])) ? $page['thumb'] : base_url("assets/images/favicon.png") ?>" />
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LY6SLH08KV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LY6SLH08KV');
+</script>

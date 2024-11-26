@@ -36,25 +36,19 @@
 						<span class="link-title">Nominations</span>
 					</a>
 				</li>
-				<li class="nav-item <?= link_is_active("dashboard/applications") ?>">
+				<!-- <li class="nav-item <?= link_is_active("dashboard/applications") ?>">
 					<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Categories</span>
 					</a>
-				</li>
-				<li class="nav-item <?= link_is_active("dashboard/applications") ?>">
-					<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
-						<i class="link-icon" data-feather="map-pin"></i>
-						<span class="link-title">Cities</span>
-					</a>
-				</li>
+				</li> -->
 			<?php endif ?>
 
 			<!-- Access Level: admin -->
 
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['admin', 'super-admin'])) : ?>
 				<li class="nav-item nav-category">User Management</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="nav-link <?= link_is_active("") ?>" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
 						<i class="link-icon" data-feather="users"></i>
 						<span class="link-title">Jury Panel</span>
@@ -70,7 +64,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
+				</li> -->
 
 				<li class="nav-item <?= link_is_active("dashboard/all-agents") ?>">
 					<a href="<?= base_url("dashboard/all-agents") ?>" class="nav-link">

@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 blank d-none" id="about">
+	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
 				<div class="glass-card">
@@ -67,7 +67,7 @@
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/Ol2qx_14tG8?si=BE_ccMKV9Rh-GMoS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/Ol2qx_14tG8?si=vUfOucwgqj2LRj8T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-0">
+	<section id="agenda" class="section pb-0 d-none">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -277,6 +277,6 @@
 			</div>
 		</div>
 	</section>
-	<div class="footer-lineart d-none" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
 	</div>
 </main>

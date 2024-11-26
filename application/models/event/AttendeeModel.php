@@ -56,6 +56,11 @@ class AttendeeModel extends CI_Model
 				$ticket_id = "26736";
 				$api_key = "77fcb563-b37d-4d7b-be5d-a8a077b74fe3";
 				break;
+				// Jaipur
+			case '0550c724-d075-4dd6-821a-185a477b1b95':
+				$ticket_id = "28027";
+				$api_key = "17159e3f-40aa-47e2-8580-92a4e9d775e4";
+				break;
 
 			default:
 				# code...

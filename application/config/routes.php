@@ -71,6 +71,7 @@ $route['awards'] = 'main/AwardsController';
 $route['awards/categories'] = 'main/AwardsController/categories';
 $route['awards/category/(:any)'] = 'main/AwardsController/category_single/$1';
 $route['awards/category/(:any)/nominate'] = 'main/AwardsController/category_nominate/$1';
+$route['awards/agency-register/(:any)'] = 'auth/RegisterController/agency_register/$1'; 
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
@@ -127,6 +128,7 @@ $route['api/v2/register/otp/verify'] = 'api/auth/AuthAPIController/verify_otp';
 $route['api/v2/participant/register'] = 'api/auth/AuthAPIController/participant_register';
 $route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_login';
 $route['api/v2/oauth/googleuser'] = 'api/auth/SSOAPIController/participant_google_profile';
+$route['api/v2/agency/lead'] = 'api/auth/AuthAPIController/agency_lead_register';
 
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
@@ -138,6 +140,5 @@ $route['api/v2/awards/nomination/accept'] = 'api/awards/NominationAPIController/
 $route['api/v2/awards/nomination/download'] = 'api/awards/NominationAPIController/download_docket';
 
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
-
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

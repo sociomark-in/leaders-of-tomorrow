@@ -67,11 +67,6 @@ class AccountController extends PanelController
 								break;
 						}
 						$applications['individual'][$i]['status_text'] = $s;
-						for ($c = 0; $c < count($categories['individual']); $c++) {
-							if ($applications['individual'][$i]['category']['id'] == $categories['individual'][$c]['id']) {
-								unset($categories['individual'][$c]);
-							}
-						}
 					}
 				}
 				if (count($applications['msme']) > 0) {
@@ -86,10 +81,10 @@ class AccountController extends PanelController
 								$s = '<span class="badge bg-success">Accepted</span>';
 								break;
 							case '2':
-								$s = '<span class="badge bg-dark">Unlocked & Awaiting Response</span>';
+								$s = '<span class="badge bg-dark">Unlocked</span>';
 								break;
 							case '3':
-								$s = '<span class="badge bg-warning">Locked & Under Review</span>';
+								$s = '<span class="badge bg-warning">Complete & Under Review</span>';
 								break;
 							default:
 								$s = '<span class="badge bg-secondary">Draft</span>';
@@ -97,16 +92,8 @@ class AccountController extends PanelController
 								break;
 						}
 						$applications['msme'][$i]['status_text'] = $s;
-						for ($c = 0; $c < count($categories['msme']); $c++) {
-							if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$c]['id']) {
-								if ($applications['msme'][$i]['status'] != '0') {
-									unset($categories['msme'][$c]);
-								}
-							}
-						}
 					}
 				}
-
 
 				$this->data['my_applications'] = $applications;
 				$this->data['rest_categories'] = $categories;

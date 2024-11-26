@@ -24,6 +24,10 @@ $tabs = [
 		'name' => "Review",
 		'identifier' => "review",
 	],
+	[
+		'name' => "Success",
+		'identifier' => "success",
+	],
 ];
 ?>
 
@@ -82,6 +86,9 @@ $tabs = [
 											break;
 										case 'review':
 											$this->load->view('panel/participant/forms/single/review', $data);
+											break;
+										case 'success':
+											$this->load->view('panel/participant/forms/success', $data);
 											break;
 
 										default:

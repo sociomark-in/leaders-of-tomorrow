@@ -258,32 +258,32 @@ class CityController extends BaseController
 						[
 							'photo' => "Kranthi_Kumar_Pati.png",
 							'name' => "Kranthi Kumar Pati",
-							'description' => "IAS, District Collector, Coimbatore",
+							'description' => " IAS, District Collector, Coimbatore",
 						],
 						[
 							'photo' => "Anto_Alan.png",
 							'name' => "Anto Alan",
 							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Srimathy Kesan",
-						// 	'description' => "Founder & CEO, Space Kidz India",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "CK Mohan",
-						// 	'description' => "President, Tamil Nadu Small & Tiny Industries Association ",
-						// ],						
 						[
 							'photo' => "A_Sakthivel.png",
-							'name' => " Padma Shri Dr. A. Sakthivel",
-							'description' => "Honorary Chairman, Tirupur Exporters Association",
+							'name' => "Padma Shri Dr. A. Sakthivel",
+							'description' => "Honorary Chairman, Tiruppur Exporters Association",
 						],
 						[
 							'photo' => "KM_Subramanian.png",
 							'name' => "KM Subramanian",
-							'description' => "President, Tirupur Exporters Association",
+							'description' => "President, Tiruppur Exporters Association",
+						],
+						[
+							'photo' => "Junaith_Baba.png",
+							'name' => "Junaith Babu",
+							'description' => "COO, G SQUARE",
+						],
+						[
+							'photo' => "CA_Meena.png",
+							'name' => "CA Meena Swaminathan",
+							'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
 						],
 						// [
 						// 	'photo' => "M_Karthikeyan.png",
@@ -313,8 +313,9 @@ class CityController extends BaseController
 						[
 							'photo' => "K_Illango.png",
 							'name' => "K. Ilango",
-							'description' => "Managing Director, RSM Autokast Ltd",
+							'description' => "Managing Director, RSM Autokast",
 						],
+						
 						// [
 						// 	'photo' => "",
 						// 	'name' => "",
@@ -325,83 +326,46 @@ class CityController extends BaseController
 				$this->load->city_view('coimbatore', $this->data);
 				break;
 
-			case 'coimbatore':
+			case 'jaipur':
 				$this->data['page'] = [
-					'title' => "Coimbatore Springboard" . " • " . APP_NAME . " " . date('Y'),
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
-					'name' => "Coimbatore",
-					'partners' => [
-						[
-							'text' => 'Associate Partner',
-							'logo' => 'TEA.png',
-							'url' => "",
-						],
-						[
-							'text' => 'Associate Partner',
-							'logo' => 'GSquare.png',
-							'url' => "",
-						],
-					],
+					'name' => "Jaipur",
 					'speakers' => [
 						[
-							'photo' => "Anto_Alan.png",
-							'name' => "Anto Alan",
-							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Anto Alan",
-						// 	'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Srimathy Kesan",
-						// 	'description' => "Founder & CEO, Space Kidz India",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "CK Mohan",
-						// 	'description' => "President, Tamil Nadu Small & Tiny Industries Association ",
-						// ],						
-						[
-							'photo' => "A_Sakthivel.png",
-							'name' => " Padma Shri Dr. A. Sakthivel",
-							'description' => "Honorary Chairman, Tirupur Exporters Association",
+							'photo' => "Bhavesh_Jatania.png",
+							'name' => "Bhavesh Jatania",
+							'description' => "Head – Startup Banking, IDFC FIRST Bank",
 						],
 						[
-							'photo' => "KM_Subramanian.png",
-							'name' => "KM Subramanian",
-							'description' => "President, Tirupur Exporters Association",
+							'photo' => "Kuldeep_Singh_Chandela.png",
+							'name' => "Kuldeep Singh Chandela",
+							'description' => "President, Federation of Hospitality & Tourism of Rajasthan (FHTR)",
 						],
 						[
-							'photo' => "M_Karthikeyan.png",
-							'name' => " M. Karthikeyan",
-							'description' => "President, Codissia",
+							'photo' => "Tarun_Kumar_Bansal.png",
+							'name' => "Tarun Kumar Bansal",
+							'description' => "President, Hotel & Restaurants Association of Rajasthan (HRAR)",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Manimekalai Mohan",
-						// 	'description' => "Founder & Managing Trustee, SSVM Group of Institutions",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Junaith Baba",
-						// 	'description' => "COO, G SQUARE",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "G Radhakrishnan",
-						// 	'description' => "Chairman, CII Coimbatore Zone",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "",
-						// 	'description' => "",
-						// ],
+						[
+							'photo' => "Chitra_Gurnani_Daga.png",
+							'name' => "Chitra Gurnani Daga",
+							'description' => "CEO & Co-Founder, Thrillophilia",
+						],
+						[
+							'photo' => "Angad_Mandawa.png",
+							'name' => "Angad deo Mandawa",
+							'description' => "Director & Member, Hotel Castle Mandawa & Federation of Hospitality and Tourism of Rajasthan (FHTR)",
+						],
+						[
+							'photo' => "Hemant_Beniwal.png",
+							'name' => "Hemant Beniwal",
+							'description' => "Certified Financial Planner & Director, Ark Primary Advisors",
+						],
 					]
 				];
-				$this->load->city_view('coimbatore', $this->data);
+				$this->load->city_view('jaipur', $this->data);
 				break;
 			case 'test':
 				$this->data['page'] = [
@@ -442,7 +406,7 @@ class CityController extends BaseController
 						],
 					]
 				];
-				$this->load->city_view('lucknow', $this->data);
+				$this->load->city_view('jaipur', $this->data);
 				break;
 
 
@@ -495,7 +459,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'coimbatore') {
+			if (strtolower($sb['name']) == $city && $city == 'jaipur') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

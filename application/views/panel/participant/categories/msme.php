@@ -24,6 +24,10 @@ $tabs = [
 		'name' => "Review & Confirm",
 		'identifier' => "review",
 	],
+	[
+		'name' => "Success",
+		'identifier' => "success",
+	],
 ]
 ?>
 
@@ -80,9 +84,12 @@ $tabs = [
 										case 'review':
 											$this->load->view('panel/participant/forms/msme/review', $data);
 											break;
+										case 'success':
+											$this->load->view('panel/participant/forms/success', $data);
+											break;
 
 										default:
-											
+
 											# code...
 											break;
 									} ?>
