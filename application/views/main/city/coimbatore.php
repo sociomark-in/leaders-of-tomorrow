@@ -61,25 +61,25 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/wDNEfmYn9Lc?si=sagfEyPjSQ7thw3x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/Ol2qx_14tG8?si=BE_ccMKV9Rh-GMoS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Driving Global Blueprint for Industrial Excellence</span></h2>
+						<h2><span>Coimbatore: Crafting Futures, Empowering Growth</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							'The Detroit of India', Chennai is well on its way to becoming a key industrial hub in South India. Whether it is strategic location by the Coromandel Coast that boasts excellent port accessibility or the robust ecosystem of MSMEs supported by a diverse workforce and innovative government initiatives, there have been multiple factors that have fueled the city's rise as an industrial hub.
+							Coimbatore, known as the Manchester of South India, blends traditional textile craftsmanship with cutting-edge engineering & automobile manufacturing. The city stands as a beacon of innovation with thriving educational institutions, SEZ-driven economic activities and its focus on women-led enterprises.
 						</p>
 						<p data-aos="fade-left" data-aos-delay="400">
-							To explore how Chennai is powering India's industrial growth engine, join the <strong class="text-red">#LOT Springboard Chennai</strong>.
+							Reflecting the city's rich industrial heritage and multi-dimensional development, we're all set to make a stop at the Leaders of Tomorrow Coimbatore Springboard.
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
@@ -216,7 +216,7 @@
 				<div class="col-12">
 					<div class="swiper gallerySwiper">
 						<div class="gallery-masonry swiper-wrapper">
-						<?php for ($i = 1; $i <= 5; $i++) : ?>
+							<?php for ($i = 1; $i <= 5; $i++) : ?>
 								<div class="swiper-slide tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>">
 									<figure>
 										<picture>

@@ -246,23 +246,25 @@ class CityController extends BaseController
 						[
 							'text' => 'Associate Partner',
 							'logo' => 'TEA.png',
+							'url' => "https://www.tea-india.org/"
 						],
 						[
 							'text' => 'Associate Partner',
 							'logo' => 'GSquare.png',
+							'url' => "https://www.gsquarehousing.com/"
 						],
 					],
 					'speakers' => [
+						[
+							'photo' => "Kranthi_Kumar_Pati.png",
+							'name' => "Kranthi Kumar Pati",
+							'description' => "IAS, District Collector, Coimbatore",
+						],
 						[
 							'photo' => "Anto_Alan.png",
 							'name' => "Anto Alan",
 							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Anto Alan",
-						// 	'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
-						// ],
 						// [
 						// 	'photo' => "",
 						// 	'name' => "Dr Srimathy Kesan",
@@ -283,26 +285,36 @@ class CityController extends BaseController
 							'name' => "KM Subramanian",
 							'description' => "President, Tirupur Exporters Association",
 						],
+						// [
+						// 	'photo' => "M_Karthikeyan.png",
+						// 	'name' => " M. Karthikeyan",
+						// 	'description' => "President, Codissia",
+						// ],
+						[
+							'photo' => "Junaith_Baba.png",
+							'name' => "Junaith Babu",
+							'description' => "COO, G SQUARE",
+						],
+						[
+							'photo' => "CA_Meena.png",
+							'name' => "CA Meena Swaminathan",
+							'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
+						],
 						[
 							'photo' => "M_Karthikeyan.png",
 							'name' => " M. Karthikeyan",
 							'description' => "President, Codissia",
 						],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Dr Manimekalai Mohan",
-						// 	'description' => "Founder & Managing Trustee, SSVM Group of Institutions",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "Junaith Baba",
-						// 	'description' => "COO, G SQUARE",
-						// ],
-						// [
-						// 	'photo' => "",
-						// 	'name' => "G Radhakrishnan",
-						// 	'description' => "Chairman, CII Coimbatore Zone",
-						// ],
+						[
+							'photo' => "G_Radhakrishnan.png",
+							'name' => "G Radhakrishnan",
+							'description' => "Chairman, CII Coimbatore Zone",
+						],
+						[
+							'photo' => "K_Illango.png",
+							'name' => "K. Ilango",
+							'description' => "Managing Director, RSM Autokast Ltd",
+						],
 						// [
 						// 	'photo' => "",
 						// 	'name' => "",
@@ -323,10 +335,12 @@ class CityController extends BaseController
 						[
 							'text' => 'Associate Partner',
 							'logo' => 'TEA.png',
+							'url' => "",
 						],
 						[
 							'text' => 'Associate Partner',
 							'logo' => 'GSquare.png',
+							'url' => "",
 						],
 					],
 					'speakers' => [
