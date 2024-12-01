@@ -328,7 +328,7 @@ class CityController extends BaseController
 
 			case 'jaipur':
 				$this->data['page'] = [
-					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
+					'title' => "Jaipur Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
 					'name' => "Jaipur",

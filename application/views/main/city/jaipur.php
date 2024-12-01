@@ -61,25 +61,25 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/Ol2qx_14tG8?si=vUfOucwgqj2LRj8T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/RDGf34nvdQQ?si=3AQ8pnOcm2158BLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Coimbatore: Crafting Futures, Empowering Growth</span></h2>
+						<h2><span>Jaipur: Powering Rajasthan's Global Tourism Vision</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Coimbatore, known as the Manchester of South India, blends traditional textile craftsmanship with cutting-edge engineering & automobile manufacturing. The city stands as a beacon of innovation with thriving educational institutions, SEZ-driven economic activities and its focus on women-led enterprises.
+							Jaipur is a vibrant tapestry of history and culture, and its stunning architecture, rich traditions, and warm hospitality make it a key destination for travelers worldwide. Through ongoing efforts towards embracing technology, promoting sustainable tourism, and supporting local artisans, Jaipur is powering Rajasthan's global tourism vision.
 						</p>
 						<p data-aos="fade-left" data-aos-delay="400">
-							Reflecting the city's rich industrial heritage and multi-dimensional development, we're all set to make a stop at the Leaders of Tomorrow Coimbatore Springboard.
+							Leaders of Tomorrow is coming to the city of Jaipur to understand how small businesses can leverage domestic resources to capitalize on Jaipur tourism economy.
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-0 d-none">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
