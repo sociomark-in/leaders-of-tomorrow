@@ -89,6 +89,11 @@
 														</script>
 													</fieldset>
 													<?= form_close() ?>
+													<script>
+														$('#formWizard').validate({
+															
+														})
+													</script>
 												</div>
 											</div>
 										</div>

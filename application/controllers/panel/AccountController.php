@@ -20,23 +20,23 @@ class AccountController extends PanelController
 		];
 		$this->data['categories'] = $categories;
 
-
+		
+		$applications_count = [
+			'uncategorized' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '2'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '2'], 'msme'), true)),
+			'approved' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '1'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '1'], 'msme'), true)),
+			'rejected' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '0'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '0'], 'msme'), true)),
+			'under_review' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '3'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '3'], 'msme'), true)),
+		];
+		$applications_count['all'] = $applications_count['uncategorized'] + $applications_count['approved'] + $applications_count['rejected'] + $applications_count['under_review'];
+		$this->data['applications_count'] = $applications_count;
 		switch ($this->user_session['role']) {
 			case 'super-admin':
-				$this->load->superadmin_view('home');
+				$this->load->superadmin_view('home', $this->data);
 				break;
 			case 'admin':
-				$this->load->admin_view('home');
+				$this->load->admin_view('home', $this->data);
 				break;
 			case 'jury':
-				$applications_count = [
-					'uncategorized' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '2'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '2'], 'msme'), true)),
-					'approved' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '1'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '1'], 'msme'), true)),
-					'rejected' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '0'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '0'], 'msme'), true)),
-					'under_review' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '3'], 'individual'), true)) + count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '3'], 'msme'), true)),
-				];
-				$applications_count['all'] = $applications_count['uncategorized'] + $applications_count['approved'] + $applications_count['rejected'] + $applications_count['under_review'];
-				$this->data['applications_count'] = $applications_count;
 				$this->load->moderator_view('home', $this->data);
 				break;
 			default:

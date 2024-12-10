@@ -60,15 +60,13 @@
 									<h6 class="card-title mb-0">Add A New Agent</h6>
 								</div>
 								<div class="col-12">
-									<?= form_open() ?>
+									<?= form_open('api/v2/dashboard/agency/new') ?>
+									<input type="text" hidden name="agent_id" class="form-control" value="#<?= random_string('numeric', 10) ?>">
 									<div class="row gap-3">
-										<div class="col-xl-auto col-lg-7 col-12">
-											<input type="text" disabled class="form-control" value="#<?= random_string('numeric', 10) ?>">
-										</div>
 										<div class="col-12">
 											<div class="">
 												<label for="" class="form-label">Agent Name</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="agent_name">
 											</div>
 										</div>
 										<div class="col-12">

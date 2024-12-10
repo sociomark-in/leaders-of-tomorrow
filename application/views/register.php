@@ -160,6 +160,7 @@
 														</script>
 													</fieldset>
 													<?= form_close() ?>
+													
 												</div>
 											</div>
 										</div>

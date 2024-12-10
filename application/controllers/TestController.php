@@ -125,16 +125,16 @@ class TestController extends CI_Controller
 				"name" =>  "LOT Awards",
 				"email" =>  "noreply@leadersoftomorrow.co.in"
 			],
-			"headers" =>  [
-				"X-Sib-Sandbox" =>  "drop"
-			],
+			// "headers" =>  [
+			// 	"X-Sib-Sandbox" =>  "drop"
+			// ],
 			"to" =>  [
 				[
 					"email" =>  "hemant@sociomark.in",
 					"name" =>  "Hemant Karekar"
 				]
 			],
-			"htmlContent" =>  "<!DOCTYPE html> <html> <body> <h1>Confirm you email</h1> <p>Please confirm your email address by clicking on the link below</p> </body> </html>",
+			// "htmlContent" =>  "<!DOCTYPE html> <html> <body> <h1>Confirm you email</h1> <p>Please confirm your email address by clicking on the link below</p> </body> </html>",
 			"textContent" =>  "Please confirm your email address by clicking on the link https://text.domain.com",
 			"subject" =>  "Login Email confirmation"
 		];

@@ -203,6 +203,8 @@ class NominationsController extends PanelController
 
 				break;
 			case 'jury':
+			case 'admin':
+			case 'super-admin':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
 				$this->data['application'] = array_merge(

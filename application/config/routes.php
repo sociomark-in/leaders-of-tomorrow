@@ -130,6 +130,9 @@ $route['api/v2/participant/login'] = 'api/auth/AuthAPIController/participant_log
 $route['api/v2/oauth/googleuser'] = 'api/auth/SSOAPIController/participant_google_profile';
 $route['api/v2/agency/lead'] = 'api/auth/AuthAPIController/agency_lead_register';
 
+$route['api/v2/dashboard/agency/new'] = 'api/agency/AgencyAPIController/new_agency';
+
+
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
 $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
 $route['api/v2/awards/nomination/single/new_bulk'] = 'api/awards/NominationAPIController/new_bulk';

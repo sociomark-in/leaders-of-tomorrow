@@ -70,4 +70,17 @@ final class GlobalMail extends PHPMailer
 			$this->AltBody = $alt;
 		}
 	}
+
+	public function text_data($subject, $template, $data = null,  $alt = null)
+	{
+		if (!is_null($subject)) {
+			$this->Subject = $subject;
+		}
+		$this->Body = $this->CI->load->view($template, $data, true);
+		if (!is_null($alt)) {
+			$this->AltBody = $alt;
+		}
+	}
+
+	
 }
