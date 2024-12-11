@@ -87,7 +87,7 @@
 		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div>
 	<div class="col-md-auto">
-		<button type="submit" class="btn btn-primary">Save and Submit</button>
+		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
 		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>

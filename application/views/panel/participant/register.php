@@ -13,14 +13,14 @@ if ($nomination['stage'] >= 1) {
 ?>
 <main class="page-content">
 	<!-- Alert Message Box -->
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-12">
 			<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
 				<strong>Holy guacamole! <?= $stage ?></strong> You should check in on some of those fields below.
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Alert Message Box -->
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
