@@ -66,24 +66,24 @@
 					</div>
 				</li> -->
 
+				<li class="nav-item <?= link_is_active("dashboard/all-users") ?>">
+					<a href="<?= base_url('dashboard/all-users') ?>" class="nav-link">
+						<i class="link-icon" data-feather="users"></i>
+						<span class="link-title">All Users</span>
+					</a>
+				</li>
 				<li class="nav-item <?= link_is_active("dashboard/all-agents") ?>">
 					<a href="<?= base_url("dashboard/all-agents") ?>" class="nav-link">
 						<i class="link-icon" data-feather="users"></i>
 						<span class="link-title">All Agents</span>
 					</a>
 				</li>
-				<li class="nav-item <?= link_is_active("dashboard/all-users") ?>">
-					<a href="<?= base_url('dashboard/all-users') ?>" class="nav-link">
-						<i class="link-icon" data-feather="users"></i>
-						<span class="link-title">Users</span>
-					</a>
-				</li>
-				<li class="nav-item <?= link_is_active("dashboard") ?>">
+				<!-- <li class="nav-item <?= link_is_active("dashboard") ?>">
 					<a href="<?= base_url('dashboard') ?>" class="nav-link">
 						<i class="link-icon" data-feather="settings"></i>
 						<span class="link-title">Settings</span>
 					</a>
-				</li>
+				</li> -->
 			<?php endif ?>
 
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['super-admin'])) : ?>
