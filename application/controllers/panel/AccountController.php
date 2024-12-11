@@ -36,6 +36,9 @@ class AccountController extends PanelController
 			case 'admin':
 				$this->load->admin_view('home', $this->data);
 				break;
+			case 'super-admin':
+				$this->load->admin_view('home', $this->data);
+				break;
 			case 'jury':
 				$this->load->moderator_view('home', $this->data);
 				break;

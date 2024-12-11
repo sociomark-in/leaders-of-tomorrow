@@ -125,9 +125,9 @@ class TestController extends CI_Controller
 				"name" =>  "LOT Awards",
 				"email" =>  "noreply@leadersoftomorrow.co.in"
 			],
-			// "headers" =>  [
-			// 	"X-Sib-Sandbox" =>  "drop"
-			// ],
+			"headers" =>  [
+				"X-Sib-Sandbox" =>  "drop"
+			],
 			"to" =>  [
 				[
 					"email" =>  "hemant@sociomark.in",

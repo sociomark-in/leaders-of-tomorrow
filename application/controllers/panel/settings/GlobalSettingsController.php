@@ -18,9 +18,6 @@ class GlobalSettingsController extends PanelController
 		foreach ($this->result as $key => $value) {
 			$config[$value['config_key']] = $this->encryption->decrypt($value['value']);
 		}
-		echo "<pre>";
-		print_r($config);
-		die;
 		$this->data['config'] = $config;
 		$this->load->admin_view('settings/home', $this->data);
 	}

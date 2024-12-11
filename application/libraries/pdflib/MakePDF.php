@@ -28,7 +28,7 @@ class MakePDF extends Fpdf
 	function Header()
 	{
 		// Logo
-		$this->Image(base_url('assets/images/main.png'), 10, 10, 0, 8);
+		$this->Image(FCPATH . 'assets/images/main.png', 10, 10, 0, 8);
 		// Arial bold 15
 		$this->SetFont('Arial', 'B', 15);
 		// Move to the right
