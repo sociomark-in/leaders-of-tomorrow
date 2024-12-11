@@ -141,7 +141,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex justify-content-between align-items-baseline mb-2">
-								<h6 class="card-title mb-0">Monthly sales</h6>
+								<h6 class="card-title mb-0">All Nominations</h6>
 								<div>
 									<a class="btn p-0 btn-icon-text text-dark" href="">View All</a>
 								</div>
@@ -180,20 +180,7 @@
 								var chart = new ApexCharts(document.querySelector("#agencyLeadsChart"), options);
 								chart.render();
 							</script>
-							<div class="row mb-3">
-								<div class="col-6 d-flex justify-content-end">
-									<div>
-										<label class="d-flex align-items-center justify-content-end fs-10px text-uppercase fw-bolder">Total storage <span class="p-1 ms-1 rounded-circle bg-secondary"></span></label>
-										<h5 class="fw-bolder mb-0 text-end">8TB</h5>
-									</div>
-								</div>
-								<div class="col-6">
-									<div>
-										<label class="d-flex align-items-center fs-10px text-uppercase fw-bolder"><span class="p-1 me-1 rounded-circle bg-primary"></span> Used storage</label>
-										<h5 class="fw-bolder mb-0">~5TB</h5>
-									</div>
-								</div>
-							</div>
+							
 							<div class="d-grid">
 								<a href="<?= base_url('dashboard/all-agents') ?>" class="btn btn-primary">View Details</a>
 							</div>
