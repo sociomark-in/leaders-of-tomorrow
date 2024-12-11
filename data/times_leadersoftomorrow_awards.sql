@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 04:08 PM
+-- Generation Time: Dec 11, 2024 at 08:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agents`
+--
+
+CREATE TABLE `agents` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `agent_id` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `agents`
+--
+
+INSERT INTO `agents` (`id`, `name`, `agent_id`, `created_at`) VALUES
+(1, 'EY_001', '1595014714', '2024-11-18 13:13:33'),
+(2, 'EY_002', '5167681127', '2024-11-18 13:13:33');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `app_config`
 --
 
@@ -39,8 +60,15 @@ CREATE TABLE `app_config` (
 --
 
 INSERT INTO `app_config` (`id`, `config_key`, `value`, `created_at`) VALUES
-(1, 'google_client_id', '536416970998-f48u58cp8e0r40fap6u6plaoe1niof35', '2024-09-16 10:36:56'),
-(2, 'google_client_secret', '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', '2024-09-16 10:36:56');
+(1, 'googleclient_id', '3d566776fc9321908e9418e34800eea1b3cc5f18a598751537d6cdf765d1bf7913146ad898eed4a721b324864a6e80ecfaff67d79c33ec084167a5d9e5ebbd89pYN3YXJSHoaLFpPA0CFg3ZaPdoIreMbbLWYI/vAOl2tfPl81P+w67uRTvw3IdG2n2pBHFgUGQTFd2CEdlg==', '2024-09-16 10:36:56'),
+(2, 'googleclient_secret', 'a405960e78b76942d1570931f8423127b18c07486da0255700e8638b8350b33596b4236dec8a44d56bdcd8a0dc96cef59f21b2bcd5629150a861f5ae49d6626dqxWF6R0K3hhUj5AmmEPYPPWzDiEkY/lEazuSPqSdj0T/8DyL9V9KUnOYvkDTAfVajRN0', '2024-09-16 10:36:56'),
+(3, 'smtp_host', 'eb38bfd56b9a0806a47ea010bdb0f7f3d7a288fb40aa4dcb1ba8e69213518f3b34148bf7affee3ad5d9021256df669d762ec9b68495e91a93f4395e42858e870NVm4WkN496mPDabKppdagnCErt99w+Tu6Cctr7M6LUXo617P', '2024-10-15 09:01:00'),
+(4, 'smtp_username', 'ca0244a9fe81113fab4e7203d358a23f9f460b56e70510f50050751bdfc32b41c625bfb8a2acccf6ec9812ec5e508bcad23cf4d7a700c96ded6849a80c5953d5dgFNkKxWXHHFDSRFxUleZzO6ryYuD6aSKsD1HMcY3YjgKWPo6D09og==', '2024-10-15 09:01:00'),
+(5, 'smtp_password', '8157d5f8fa80f12aba827540408453198d21f44d709bf9c0b3c19dcbbdfbbda1f1ce4f9512bc39f29cf6607402738cc967d444d29f743ad143853294b901fa2dd+fyLLEiQwkTwUZcahoOoFrVAKZAotG+v5939UKnf+E=', '2024-10-15 09:01:00'),
+(6, 'smtp_port', '6771a9a2ef1546e064f9bafd971f90e748eb3c8f7d987ee7a32cf8eb0993878ce5aaa2d12d9a9b406d6782bd80782370bae4378787aefd215dc396ea135d8754k+Zp9QfX99lRoU2eEhltgeV/JA==', '2024-10-15 09:01:00'),
+(7, 'sms_auth_id', 'bccb6a6a049487fb90779f45049e9f360bc78734711fee549c9568f5eff6a8b727cddacb014a41c01e197942032453d63da73126f3e5c024d4f8644ccf50e5e3XxTnJm2q7Ir1dNZitOZNL4BtrLtnUmCd1GWf2Vmmq7dmCmfu', '2024-10-15 09:01:59'),
+(8, 'sms_auth_token', 'e71298436f614822e328b90cf396b42b8f91b7da019ae8d4d347c58228dedcfc9b5e3725148e17d070c081107d1f9935f6a33771108eaa2e0eefd9ff8fb30f1bo62qiyRWDnrK44hXcxup+Jysu0d5GbUKJ+aLitqbv+Km9iCQ629wBWPNHNPYpmKvrafQY0RsqQc=', '2024-10-15 09:01:59'),
+(9, 'brevo_api_key', '142be6df8a1fad595229bf7841b5613de6133aa02df845f75b92e8a397cc3a8890f090108143980935003169f207c4714a4440ee3e078ddcfcd9242d79c2632eK+8WhJBNsnBNgtGFST75709Z0EgW4WWSGUflxyaOwwYmWGeKYkI6fa5OT5UJysyr02MmFj35JAt/XrLckh4D4wzh+48E0HuLtZzVnEyS7DNnuaMc2N3ILvXv5RPXiGrYRzMGjufjiNK4', '2024-11-18 14:18:33');
 
 -- --------------------------------------------------------
 
@@ -1574,18 +1602,9 @@ CREATE TABLE `comments_log` (
 --
 
 INSERT INTO `comments_log` (`id`, `comment`, `nomination_id`, `created_by`, `created_at`) VALUES
-(1, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 08:52:46'),
-(2, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 08:53:38'),
-(3, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 08:54:31'),
-(4, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 08:55:06'),
-(5, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 08:56:20'),
-(6, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 09:00:22'),
-(7, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 09:00:38'),
-(8, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 09:02:01'),
-(9, 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi maiores doloremque necessitatibus laboriosam amet, explicabo repellendus sequi atque consectetur totam omnis velit veniam quos dolores. ', '1727678072-1jkU', 2, '2024-09-30 09:23:47'),
-(10, 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam libero ea aperiam quibusdam fugit recusandae, illo quia mollitia velit impedit quas omnis dignissimos quisquam porro totam numquam natus quos magnam et nobis. Assumenda ipsam reprehenderit exercitationem, quia sit tempora vero laborum velit rem, totam ex molestias, expedita iste possimus minus eius ad asperiores? Velit odit sapiente earum dolorem aliquid adipisci ad maiores dolorum minima aperiam,', '1727091431-Lc2W', 2, '2024-09-30 09:28:30'),
-(11, ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam libero ea aperiam quibusdam fugit recusandae, illo quia mollitia velit impedit quas omnis dignissimos quisquam porro totam numquam natus quos magnam et nobis.', '1727091431-Lc2W', 2, '2024-09-30 09:44:04'),
-(12, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt.', '1727770364-vnGI', 2, '2024-10-01 08:18:53');
+(1, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt.', '1727770364-vnGI', 2, '2024-10-01 08:18:53'),
+(2, 'Lore', '1727770364-vnGI', 2, '2024-10-17 11:23:20'),
+(3, 'Unlock', '1727770364-vnGI', 2, '2024-10-18 09:32:15');
 
 -- --------------------------------------------------------
 
@@ -1663,6 +1682,13 @@ CREATE TABLE `individual_entries` (
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `individual_entries`
+--
+
+INSERT INTO `individual_entries` (`id`, `nomination_id`, `category_id`, `name`, `email`, `id_74501`, `id_74502`, `id_74503`, `organization_name`, `id_74504`, `id_74505`, `id_74506`, `id_74507`, `id_74508`, `organization_url`, `id_74509`, `id_74510`, `id_74511`, `id_74512`, `id_74513`, `id_74514`, `id_74515`, `linkedin_url`, `id_74516`, `id_74517`, `id_74518`, `id_74519`, `id_74520`, `id_74521`, `id_74522`, `id_74523`, `id_74524`, `id_74525`, `id_74526`, `id_74527`, `id_74528`, `id_74529`, `id_74530`, `id_74531`, `stage_status`, `status`, `created_by`, `updated_at`, `created_at`) VALUES
+(1, '1732267214-M29b', '1_Individual', 'Hemant Karekar', 'hemant@sociomark.in', '13/07/1999', 'Developer', '12 Months', 'Sociomark', '50 - 100', 'Service', 'Select 2', '03/11/2014', '', 'https://sociomark.in', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Select 1', 'Select 0', 'Select 3', 'Select 2', 'https://cdnjs.com/libraries/Dropify34', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'uploads/1732267214-M29b/1732274145_Qz4imSjg_GST_Certificate_Vahi_Mediatech_pvt_ltd.pdf', 'uploads/1732267214-M29b/1732274145_Qz4imSjg_Vahi_Pan_Card_(1).pdf', 'uploads/1732267214-M29b/1732274145_Qz4imSjg_GST_Certificate_Vahi_Mediatech_pvt_ltd1.pdf', 'uploads/1732267214-M29b/1732274145_Qz4imSjg_Vahi_Pan_Card_(1)1.pdf', 'Hemant Karekar', 'hemant@sociomark.in', '08689862375', '4', 4, 1, '2024-11-22 11:15:46', '2024-11-22 14:51:06');
 
 -- --------------------------------------------------------
 
@@ -1759,7 +1785,17 @@ CREATE TABLE `msme_entries` (
 --
 
 INSERT INTO `msme_entries` (`id`, `nomination_id`, `category_id`, `name`, `email`, `organization_name`, `id_75501`, `id_75502`, `organization_url`, `id_75503`, `id_75504`, `id_75505`, `id_75506`, `id_75507`, `id_75508`, `id_75509`, `id_75510`, `id_75511`, `id_75512`, `id_75513`, `id_75514`, `id_75515`, `id_75516`, `id_75517`, `id_75518`, `id_75519`, `id_75520`, `id_75521`, `id_75522`, `id_75523`, `id_75524`, `id_75525`, `id_75526`, `id_75527`, `id_75528`, `id_75529`, `id_75530`, `id_75531`, `id_75532`, `id_75533`, `linkedin_url`, `id_75534`, `id_75535`, `id_75536`, `stage_status`, `status`, `created_by`, `updated_at`, `created_at`) VALUES
-(1, '1727770364-vnGI', '1_MSME', 'Sociomark Digital Marketing Agency', 'hemant@sociomark.in', 'Sociomark Digital Marketing Agency', 50, 'Sociomark Segment', 'https://sociomark.in', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt.', 'https://sociomark.in', 'Sociomark Segment', 'Personal funds of the owner', '13/07/2001', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt.', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt.', 'Select 0', 'Select 1', 'Select 2', 'Select 3', 'Select 4', 'Select 5', 'Select 6', 'Select 7', 'Select 8', 'Select 9', 'Sociomark Project', '14/05/2024', '30/10/2024', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Initiative', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Challenges', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Strategy', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Technology', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Impact', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Scalability', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, possimus eaque quasi itaque natus tempora cumque quisquam corporis odit ipsum, neque adipisci hic repellendus, eum cupiditate exercitationem eos ea nesciunt. Information', 'http://localhost/times-now/leaders-of-tomorrow/uploads/1727770364-vnGI/1727770572_tx8pUOh9_MSME.pdf', 'http://localhost/times-now/leaders-of-tomorrow/uploads/1727770364-vnGI/1727770572_tx8pUOh9_Individual.pdf', 'http://localhost/times-now/leaders-of-tomorrow/uploads/1727770364-vnGI/1727770572_tx8pUOh9_MSME1.pdf', 'http://localhost/times-now/leaders-of-tomorrow/uploads/1727770364-vnGI/1727770572_tx8pUOh9_Individual1.pdf', 'https://cdnjs.com/libraries/Dropify34LinkedIn', 'Hemant Karekar', 'hemant@sociomark.in', '08689862375', 5, 3, 1, '2024-10-01 12:22:57', '2024-10-01 13:43:36');
+(1, '1732256088-N6FQ', '1_MSME', 'Sociomark', 'hemant@sociomark.in', 'Sociomark', 200, 'Sociomark', 'https://sociomark.in', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'https://sociomark.in', 'Select 2', 'Business Loans', '25/03/2014', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Select 0', 'Select 1', 'Select 2', 'Select 3', 'Select 4', 'Select 5', 'Select 6', 'Select 7', 'Select 8', 'Select 9', 'Sociomark Project', '14/05/2024', '30/10/2024', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis cursus eros quis sagittis. Praesent tincidunt et justo vestibulum tincidunt. Ut lacinia faucibus odio id imperdiet. In vel dui at nisl commodo tristique quis vel nibh. Curabitur imperdiet velit et gravida aliquam. Praesent tempus mollis ante, non dignissim enim vestibulum eu. Vestibulum placerat purus vel nisi placerat molestie. Maecenas quis lacus e', 'uploads/1732256088-N6FQ/1732256459_3WcKBmia_GST_Certificate_Vahi_Mediatech_pvt_ltd.pdf', 'uploads/1732256088-N6FQ/1732256459_3WcKBmia_Vahi_Pan_Card_(1).pdf', 'uploads/1732256088-N6FQ/1732256459_3WcKBmia_GST_Certificate_Vahi_Mediatech_pvt_ltd1.pdf', 'uploads/1732256088-N6FQ/1732256459_3WcKBmia_Vahi_Pan_Card_(1)1.pdf', 'https://cdnjs.com/libraries/Dropify34LinkedIn', 'Hemant Karekar', 'hemant@sociomark.in', '08689862375', 5, 3, 1, '2024-11-22 07:22:38', '2024-11-22 11:45:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_visit_count`
+--
+
+CREATE TABLE `site_visit_count` (
+  `visit_count` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1825,6 +1861,9 @@ INSERT INTO `states` (`id`, `title`, `country`, `status`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` varchar(15) NOT NULL,
   `useremail` varchar(255) NOT NULL,
   `password` varchar(200) NOT NULL,
   `role` varchar(100) NOT NULL DEFAULT 'participant',
@@ -1839,14 +1878,21 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `useremail`, `password`, `role`, `is_email_verified`, `is_contact_verified`, `is_password_reset`, `is_onboard`, `created_at`) VALUES
-(1, 'hemant@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'participant', 0, 0, 0, 0, '2022-08-31 11:07:15'),
-(2, 'kunal@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'jury', 0, 0, 0, 0, '2013-07-24 10:36:06'),
-(3, 'business@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'super-admin', 0, 0, 0, 0, '1978-02-25 18:44:26');
+INSERT INTO `users` (`id`, `name`, `email`, `contact`, `useremail`, `password`, `role`, `is_email_verified`, `is_contact_verified`, `is_password_reset`, `is_onboard`, `created_at`) VALUES
+(1, 'Hemant Sociomark', 'hemant@sociomark.in', '+918689862375', 'hemant@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'participant', 1, 1, 1, 0, '2022-08-31 11:07:15'),
+(2, 'Jury', 'kunal@sociomark.in', '7788554423', 'kunal@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'jury', 1, 1, 1, 0, '2013-07-24 10:36:06'),
+(3, 'Super Admin', 'business@sociomark.in', '7788554423', 'business@sociomark.in', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'super-admin', 1, 1, 1, 1, '1978-02-25 18:44:26'),
+(5, 'Times Network', 'admin@timesnetwork.com', '7788554423', 'admin@timesnetwork.com', 'ca45aa31f1dd0d9bbc6cd102f7744ea3', 'admin', 1, 1, 1, 1, '2013-07-24 10:36:06');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `agents`
+--
+ALTER TABLE `agents`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `app_config`
@@ -1908,10 +1954,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `agents`
+--
+ALTER TABLE `agents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `app_config`
 --
 ALTER TABLE `app_config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -1923,7 +1975,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `comments_log`
 --
 ALTER TABLE `comments_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `individual_categories`
@@ -1935,7 +1987,7 @@ ALTER TABLE `individual_categories`
 -- AUTO_INCREMENT for table `individual_entries`
 --
 ALTER TABLE `individual_entries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `msme_categories`
@@ -1959,7 +2011,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
