@@ -66,12 +66,12 @@
 					</div>
 				</li> -->
 
-				<li class="nav-item <?= link_is_active("dashboard/all-users") ?>">
+				<!-- <li class="nav-item <?= link_is_active("dashboard/all-users") ?>">
 					<a href="<?= base_url('dashboard/all-users') ?>" class="nav-link">
 						<i class="link-icon" data-feather="users"></i>
 						<span class="link-title">All Users</span>
 					</a>
-				</li>
+				</li> -->
 				<li class="nav-item <?= link_is_active("dashboard/all-agents") ?>">
 					<a href="<?= base_url("dashboard/all-agents") ?>" class="nav-link">
 						<i class="link-icon" data-feather="users"></i>

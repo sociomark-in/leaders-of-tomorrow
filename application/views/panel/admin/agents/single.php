@@ -65,21 +65,21 @@
 										<table class="table table-bordered" id="agentLeads">
 											<thead>
 												<tr>
-													<th>Lorem, ipsum.</th>
-													<th>Lorem, ipsum.</th>
-													<th>Lorem, ipsum.</th>
-													<th>Lorem, ipsum.</th>
-													<th>Lorem, ipsum.</th>
+													<th>ID</th>
+													<th>Name</th>
+													<th>Email Id</th>
+													<th>Contact No</th>
+													<th>Organization Name</th>
 												</tr>
 											</thead>
 											<tbody>
-												<?php for ($i = 0; $i < 22; $i++) : ?>
+												<?php for ($i = 1; $i < 22; $i++) : ?>
 													<tr>
-														<td>Lorem, ipsum dolor.</td>
-														<td>Lorem, ipsum dolor.</td>
-														<td>Lorem, ipsum dolor.</td>
-														<td>Lorem, ipsum dolor.</td>
-														<td>Lorem, ipsum dolor.</td>
+														<td><?php echo $i;?></td>
+														<td>Hemant</td>
+														<td>hemant@sociomark.in</td>
+														<td>9874563211</td>
+														<td>Sociomark</td>
 													</tr>
 												<?php endfor ?>
 											</tbody>

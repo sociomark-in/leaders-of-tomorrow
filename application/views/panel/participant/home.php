@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/panel/widget/_alert_stack') ?>
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div>
-			<h4 class="mb-3 mb-md-0">Welcome to LOT Awards Dashboard</h4>
+			<h4 class="mb-3 mb-md-0">Welcome  to LOT Awards Dashboard <?= $user['name'] ?></h4>
 		</div>
 	</div>
 
