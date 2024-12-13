@@ -15,21 +15,21 @@
 									switch ($_SESSION['user_login_status']['status']):
 										case 'SUCCESS': ?>
 											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-												<strong>Holy guacamole!</strong> <?= $_SESSION['user_login_status']['message'] ?>
+												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
 												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 											</div>
 											<?php break; ?>
 										<?php
 										case 'WARNING': ?>
 											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
-												<strong>Holy guacamole!</strong> <?= $_SESSION['user_login_status']['message'] ?>
+												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
 												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 											</div>
 											<?php break; ?>
 										<?php
 										case 'ERROR': ?>
 											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
-												<strong>Holy guacamole!</strong> <?= $_SESSION['user_login_status']['message'] ?>
+												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
 												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 											</div>
 											<?php break; ?>
