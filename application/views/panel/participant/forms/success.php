@@ -1,16 +1,22 @@
-
+<?= form_open("api/v2/awards/nomination/single/new", ['id' => 'formView']) ?>
+<input type="hidden" name="category_id" value="<?= $category_id ?>">
+<input type="hidden" name="application_id" value="<?= $id ?? null ?>">
+<input type="hidden" name="utm" value="<?= $utm ?>">
+<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
+<input type="hidden" name="stage" value="<?= $stage ?>">
 <div class="row gap-3">
 	<div class="col-12">
-		<p>
-			I,
-			<input type="text" class="form-control w-auto d-inline">
-			[name of declarant] hold the position of
-			<input type="text" class="form-control w-auto d-inline">
-			[designation] in
-			<input type="text" class="form-control w-auto d-inline">
-			[participating company] and I hereby
-			declare the following:
-		</p>
+		<div class="form-check">
+			<input class="form-check-input" name="confirm" type="checkbox" id="flexCheckChecked" required>
+			<label class="form-check-label" for="flexCheckChecked">
+				I, <strong><?= $application['name'] ?></strong>
+				[name of declarant] hold the position in
+				<strong><?= $application['organization_name'] ?></strong>
+				[participating company] and I hereby
+				declare the following:
+			</label>
+		</div>
+
 	</div>
 	<div class="col-12">
 		<div class="p-3 bg-light">
@@ -27,6 +33,20 @@
 		</div>
 	</div>
 	<div class="col-12">
-		<a class="btn btn-primary" href="<?= base_url('dashboard') ?>">Confirm Nomination & Return to Dashboard</a>
+		<button type="submit" class="btn btn-primary">Confirm Nomination & Return to Dashboard</button>
 	</div>
 </div>
+<?= form_close() ?>
+<script>
+	$("#formView").validate({
+		ignore: [
+			":hidden", ":focus"
+		],
+		rules: {
+			//Rules
+		},
+		messages: {
+			//messages
+		}
+	});
+</script>

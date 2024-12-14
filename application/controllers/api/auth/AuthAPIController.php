@@ -111,7 +111,7 @@ class AuthAPIController extends CI_Controller
 			'status' => 'UNDEFINED',
 			'message' => 'Unknown Error Occured!'
 		];
-		if ($this->request['do_regoster'] == 'on') {
+		if ($this->request['do_register'] == 'on') {
 			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
 			if (!is_null($existing_user) && count($existing_user) >= 1) {
 				$session['status'] = 'WARNING';
@@ -149,7 +149,7 @@ class AuthAPIController extends CI_Controller
 				}
 			}
 		} else {
-			$this->LeadsModel->insert();
+			// $this->LeadsModel->insert();
 		}
 		print_r($this->input->post());
 	}

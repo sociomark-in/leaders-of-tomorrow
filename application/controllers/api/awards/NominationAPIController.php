@@ -297,9 +297,10 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 				case '6':	# Success & Email Send
-
+					redirect('dashboard/');
 					break;
 				default:
+					redirect('dashboard/');
 					break;
 			}
 		} elseif ($category['type'] == 'Individual') {
@@ -399,10 +400,61 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-				case '5':	# Review Application
+				case '5':	# ☑ Review Application
 
-				redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
-				die;
+					$c = explode('_', $this->input->post('category_id'));
+					$f = 1;
+					foreach ($_FILES as $key => $file) {
+						if ($file['size'] == 0) {
+							$f = 0;
+							break;
+						}
+					}
+
+					$data = [
+						'id_74509'	=> $this->request['organization']['overview'] ?? null,
+						'id_74510'	=> $this->request['organization']['mission_stmt'] ?? null,
+						'id_74511'	=> $this->request['organization']['services_stmt'] ?? null,
+						'id_74512'	=> $this->request['finance']['turnover_24'] ?? null,
+						'id_74513'	=> $this->request['finance']['turnover_23'] ?? null,
+						'id_74514'	=> $this->request['finance']['growth_24'] ?? null,
+						'id_74515'	=> $this->request['finance']['growth_23'] ?? null,
+						'id_74516'	=> $this->request['case_study_1'] ?? null,				//organization_growth	
+						'id_74517'	=> $this->request['case_study_2'] ?? null,				//organization_profit	
+						'id_74518'	=> $this->request['case_study_3'] ?? null,				//organization_profit	
+						'id_74519'	=> $this->request['case_study_4'] ?? null,				//organization_assets	
+						'id_74520'	=> $this->request['case_study_5'] ?? null,				//organization_assets	
+						'id_74521'	=> $this->request['case_study_6'] ?? null,				//organization_der	
+						'id_74522'	=> $this->request['case_study_7'] ?? null,				//organization_der
+						'id_74523'	=> $this->request['case_study_8'] ?? null,
+						'id_74524'	=> $this->request['case_study_9'] ?? null,
+					];
+
+					if ($f) {
+						$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+						$data['id_74525'] = $response[0];
+						$data['id_74526'] = $response[1];
+						$data['id_74527'] = $response[2];
+						$data['id_74528'] = $response[3];
+					}
+
+					$data['status'] = 3;
+					$data['stage_status'] = 5;
+
+					// Sanitize $data Array for DB Insert
+					foreach ($data as $key => $value) {
+						# code...
+						if ($value == "" || $value == null) {
+							unset($data[$key]);
+						}
+					}
+					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+					if ($rows == 0) {
+						redirect($this->request['referrer'] . '?stage=' . $stage);
+					} else {
+						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+					}
+					die;
 					/* Change Application Status */
 
 					$c = explode('_', $this->input->post('category_id'));
@@ -414,18 +466,18 @@ class NominationAPIController extends CI_Controller
 						}
 					}
 					$data = [
-						'id_74509'	=> $this->request['organization']['overview'],	
+						'id_74509'	=> $this->request['organization']['overview'],
 						'id_74510'	=> $this->request['organization']['mission_stmt'],
 						'id_74511'	=> $this->request['organization']['services_stmt'],
-						'id_74512'	=> $this->request['finance']['turnover_24'],	
-						'id_74513'	=> $this->request['finance']['turnover_23'],	
-						'id_74514'	=> $this->request['finance']['growth_24'],		
-						'id_74515'	=> $this->request['finance']['growth_23'],		
+						'id_74512'	=> $this->request['finance']['turnover_24'],
+						'id_74513'	=> $this->request['finance']['turnover_23'],
+						'id_74514'	=> $this->request['finance']['growth_24'],
+						'id_74515'	=> $this->request['finance']['growth_23'],
 						'id_74516'	=> $this->request['case_study_1'],
 						'id_74517'	=> $this->request['case_study_2'] ?? null,
 						'id_74518'	=> $this->request['case_study_3'],
 						'id_74519'	=> $this->request['case_study_4'],
-						'id_74520'	=> $this->request['case_study_5'],	
+						'id_74520'	=> $this->request['case_study_5'],
 						'id_74521'	=> $this->request['case_study_6'],
 						'id_74522'	=> $this->request['case_study_7'],
 						'id_74523'	=> $this->request['case_study_8'],
@@ -458,9 +510,10 @@ class NominationAPIController extends CI_Controller
 					}
 					break;
 				case '6':	# Success & Email Send
-
+					redirect('dashboard');
 					break;
 				default:
+					redirect('dashboard');
 					break;
 			}
 		}

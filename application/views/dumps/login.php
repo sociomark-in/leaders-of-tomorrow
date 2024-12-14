@@ -24,7 +24,7 @@
 									<button type="submit" class="btn btn-red">Login</button>
 								</div>
 								<?= form_close() ?>
-								Forgot Password? <a href="">Click Here to Reset</a>
+								<!-- Forgot Password? <a href="">Click Here to Reset</a> -->
 							</div>
 							<hr>
 							<div class="row gx-2 justify-content-end">
