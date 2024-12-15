@@ -3,9 +3,10 @@ $color-light: #e9ecef;
 $color-primary: #106c97;
 $color-danger: #c92f2f;
 $color-success: #28a758;
-.card .card-title {
-	font-weight: 700;
-}
+
+$color-yellow: #ffde3f;
+$color-yellow-2: #cf8b2c;
+
 h1,
 h2,
 h3 {
@@ -14,6 +15,19 @@ h3 {
 h4,
 h5 {
 	font-weight: 700;
+}
+.card {
+	.card-title {
+		font-weight: 700;
+	}
+	&.welcome-banner {
+		background: url("../images/favicon_op30.png") no-repeat,
+			rgba(255, 222, 63, 0.2);
+		background-size: calc(max(15%, 10rem));
+		background-position: -5% 20%;
+		border: 1px solid rgba(255, 222, 63, 0.6);
+		border-radius: 0.5rem;
+	}
 }
 .btn-icon {
 	&-prepend {
@@ -36,20 +50,20 @@ h5 {
 	}
 }
 
-.staged-tab-wizard{
-	.nav[role=tablist]{
-		.nav-item{
-			.nav-link{
-				&.success{
+.staged-tab-wizard {
+	.nav[role="tablist"] {
+		.nav-item {
+			.nav-link {
+				&.success {
 					background-color: $color-success;
 					color: $color-white;
 				}
 			}
 		}
 	}
-	.tab-content{
-		.tab-pane{
-			&.disabled{
+	.tab-content {
+		.tab-pane {
+			&.disabled {
 				pointer-events: none;
 				opacity: 0.7;
 				filter: saturate(0);
@@ -92,8 +106,8 @@ h5 {
 			width: 0.25rem;
 			background-color: $color-light;
 		}
-		&:last-child{
-			&::before{
+		&:last-child {
+			&::before {
 				height: 100%;
 			}
 		}
@@ -112,7 +126,7 @@ h5 {
 			box-shadow: 0 0 0 0.5rem white, 0 0 0 0.6rem $color-light;
 		}
 		&.step-ok {
-			&::before{
+			&::before {
 				background-color: $color-light;
 			}
 			&::after {
@@ -121,7 +135,7 @@ h5 {
 			}
 		}
 		&.step-done {
-			&::before{
+			&::before {
 				background-color: $color-primary;
 			}
 			&::after {
@@ -130,7 +144,7 @@ h5 {
 			}
 		}
 		&.step-error {
-			&::before{
+			&::before {
 				background-color: $color-danger;
 			}
 			&::after {
@@ -141,20 +155,20 @@ h5 {
 	}
 }
 
-form{
+form {
 	.form-control,
 	.form-check-input,
-	.form-select{
-		&.error{
+	.form-select {
+		&.error {
 			border-color: rgba(red, 0.3);
-			&:focus{
+			&:focus {
 				box-shadow: 0 0 0 0.25rem rgba(red, 0.2);
 			}
 		}
 	}
-	label{
+	label {
 		margin-top: 0.25rem;
-		&.error{
+		&.error {
 			color: red;
 			font-style: 0.8rem;
 		}

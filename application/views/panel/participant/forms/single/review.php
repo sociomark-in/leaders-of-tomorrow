@@ -15,30 +15,28 @@
 								<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
 							</legend>
 							<div class="row g-3">
-								<div class="col-xl-4 col-lg-6 col-12">
+								<div class="col-xl-5 col-lg-6">
 									<div class="">
-										<label for="" class="form-label">Full Name of Individual</label>
-										<input type="text" required minlength="10" maxlength="50" name="applicant[name]" class="form-control">
+										<p>Full Name of Individual</p>
+										<h5><?= $application['name'] ?></h5>
 									</div>
 								</div>
-								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="col-xl-3 col-lg-6">
 									<div class="">
-										<label for="" class="form-label">Designation</label>
-										<input type="text" required maxlength="50" name="applicant[designation]" class="form-control">
+										<p>Designation</p>
+										<h5><?= $application['id_74502'] ?></h5>
 									</div>
 								</div>
-								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="col-xl-4 col-lg-6">
 									<div class="">
-										<label for="" class="form-label">Date of Birth</label>
-										<input type="text" required data-type="date" name="applicant[dob]" class="form-control">
-										<span class="form-text">(in DD/MM/YYYY)</span>
+										<p>Date of Birth</p>
+										<h5><?= $application['id_74501'] ?></h5>
 									</div>
 								</div>
-								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+								<div class="col-xl-4 col-lg-6">
 									<div class="">
-										<label for="" class="form-label">Total Months of Experience</label>
-										<input type="text" maxlength="50" required name="applicant[experience]" class="form-control">
-										<span class="form-text">As On <?= date('F j, Y') ?></span>
+										<p>Total Months of Experience</p>
+										<h5><?= $application['id_74503'] ?></h5>
 									</div>
 								</div>
 							</div>
@@ -53,7 +51,7 @@
 								<div class="col-xl-5 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Current Organization</label>
-										<input required type="text" name="organization[name]" class="form-control">
+										<input required type="text" name="organization[name]" value="<?= $application['organization_name'] ?>" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-6 col-12">
@@ -61,15 +59,15 @@
 										<label for="" class="form-label">Type of Business</label>
 										<select required name="organization[type]" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option value="Manufacturing">Manufacturing</option>
-											<option value="Service">Service</option>
+											<option <?= ($application['id_74505'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+											<option <?= ($application['id_74505'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Years of Experience</label>
-										<input required type="text" name="organization[experience]" class="form-control">
+										<input required type="text" name="organization[experience]" value="<?= $application['id_74508'] ?>" class="form-control">
 										<span class="form-text">As On <?= date('F j, Y') ?></span>
 									</div>
 								</div>
@@ -79,7 +77,7 @@
 										<select required name="organization[segment]" id="" class="form-select">
 											<option value="">Select Option</option>
 											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
+												<option <?= ($application['id_74506'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 											<?php endfor ?>
 										</select>
 									</div>
@@ -87,7 +85,7 @@
 								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Company Incorporation</label>
-										<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
+										<input required type="text" data-type="date" name="organization[inc_date]" value="<?= $application['id_74507'] ?>" class="form-control">
 										<span class="form-text">(in DD/MM/YYYY)</span>
 									</div>
 								</div>
@@ -96,11 +94,11 @@
 										<label for="" class="form-label">No. Of Employees</label>
 										<select required name="organization[size]" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option value="Less Than 50">Less Than 50</option>
-											<option value="50 - 100">50 - 100</option>
-											<option value="100 - 200">100 - 200</option>
-											<option value="200 - 400">200 - 400</option>
-											<option value="More Than 400">More Than 400</option>
+											<option <?= ($application['id_74504'] == "Less Than 50 ") ? "selected" : "" ?> value="Less Than 50">Less Than 50</option>
+											<option <?= ($application['id_74504'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_74504'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+											<option <?= ($application['id_74504'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+											<option <?= ($application['id_74504'] == "More Than 400") ? "selected" : "" ?> value="More Than 400">More Than 400</option>
 										</select>
 										<span class="form-text">(On payroll + On contract)</span>
 									</div>
@@ -108,13 +106,13 @@
 								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Website URL</label>
-										<input required type="text" name="organization[website]" class="form-control">
+										<input required type="text" name="organization[website]" value="<?= $application['organization_url'] ?>" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">LinkedIn URL</label>
-										<input required type="text" name="organization[linkedin]" class="form-control">
+										<input required type="text" name="organization[linkedin]" value="<?= $application['linkedin_url'] ?>" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -129,19 +127,19 @@
 								<div class="col-xl-3 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Full Name of Individual</label>
-										<input name="contact_person[name]" type="text" class="form-control">
+										<input name="contact_person[name]" value="<?= $application['id_74529'] ?>" type="text" class="form-control">
 									</div>
 								</div>
 								<div class="col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Email Address</label>
-										<input name="contact_person[email]" type="text" class="form-control">
+										<input name="contact_person[email]" value="<?= $application['id_74530'] ?>" type="text" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Contact Number</label>
-										<input name="contact_person[contact]" type="text" class="form-control">
+										<input name="contact_person[contact]" value="<?= $application['id_74531'] ?>" type="text" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -156,19 +154,19 @@
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Brief Overview of the Company</label>
-										<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74516'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Mission & Vision</label>
-										<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74517'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Products / Services Offered</label>
-										<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74518'] ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -196,7 +194,7 @@
 									<select required name="finance[turnover_24]" id="" class="form-select">
 										<option value="">Select Option</option>
 										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<option <?= ($application['id_74512'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 										<?php endfor ?>
 									</select>
 								</div>
@@ -204,7 +202,7 @@
 									<select required name="finance[turnover_23]" id="" class="form-select">
 										<option value="">Select Option</option>
 										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<option <?= ($application['id_74513'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 										<?php endfor ?>
 									</select>
 								</div>
@@ -215,7 +213,7 @@
 									<select required name="finance[growth_24]" id="" class="form-select">
 										<option value="">Select Option</option>
 										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<option <?= ($application['id_74514'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 										<?php endfor ?>
 									</select>
 								</div>
@@ -223,7 +221,7 @@
 									<select required name="finance[growth_23]" id="" class="form-select">
 										<option value="">Select Option</option>
 										<?php for ($i = 0; $i < 10; $i++) : ?>
-											<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<option <?= ($application['id_74515'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 										<?php endfor ?>
 									</select>
 								</div>
@@ -239,19 +237,19 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</label>
-										<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74519'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
-										<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74520'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
-										<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74521'] ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -268,7 +266,7 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Highlight the key milestones achieved by you as an entrepreneur during your journey. What are you key differentiating factors from your competitors? (Max 150 words)</label>
-										<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74522'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
@@ -281,25 +279,25 @@
 											Any other
 
 										</label>
-										<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74523'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">How do you envision contributing to the growth of the MSME sector in the coming years? (Max 150 words)</label>
-										<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74524'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Why should you win the Award in this category? (Max 50 words)</label>
-										<textarea required name="case_study_8" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_8" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74523'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc. (Max 100 words)</label>
-										<textarea required name="case_study_9" id="" class="form-control" maxlength="500" rows="5"></textarea>
+										<textarea required name="case_study_9" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74524'] ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -314,27 +312,27 @@
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
 										<label for="" class="form-label">MSME certificate</label>
-										<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+										<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_74525'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Company Incorporation Certificate</label>
-										<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+										<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_74526'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Work Experience Letter</label>
-										<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+										<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_74527'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">as on March 31, 2023</span>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Any other Collaterals</label>
-										<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+										<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_74528'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
 									</div>
 								</div>
@@ -389,15 +387,15 @@
 
 	<script>
 		$("#formFullView").validate({
-		ignore: [
-			":hidden", ":focus"
-		],
-		rules: {
-			//Rules
-		},
-		messages: {
-			//messages
-		}
-	});
+			ignore: [
+				":hidden", ":focus"
+			],
+			rules: {
+				//Rules
+			},
+			messages: {
+				//messages
+			}
+		});
 	</script>
 </div>

@@ -11,12 +11,19 @@ class GoogleOAuthClient
 	{
 		$this->CI = &get_instance();
 		$this->keys = [];
+
+		$this->CI->encryption->initialize(
+			array(
+				'cipher' => 'aes-256',
+				'mode' => 'ctr',
+			)
+		);
+
 		$result = $this->CI->db->select(['config_key', 'value'])->get('app_config')->result_array();
 
 		foreach ($result as $key => $row) {
-			$this->keys[$row['config_key']] = $row['value'];
+			$this->keys[$row['config_key']] = $this->CI->encryption->decrypt($row['value']);
 		}
-		// init configuration
 		$redirectUri = base_url('api/v2/oauth/googleuser');
 
 		$this->client = new Google_Client();

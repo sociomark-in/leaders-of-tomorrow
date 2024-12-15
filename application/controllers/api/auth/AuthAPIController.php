@@ -14,10 +14,10 @@ class AuthAPIController extends CI_Controller
 	{
 		$this->request = $this->input->post();
 		$this->request['passowrd_encrypted'] = hash('md5', hash('sha256', $this->request['password']));
-		$this->data['user'] = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
-		if (count($this->data['user'])) {
-			$user = $this->data['user'];
-			if (hash('md5', hash('sha256', $this->request['password'])) == $user['password']) {
+		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
+		if (!is_null($existing_user)) {
+			$this->data['user'] = $existing_user;
+			if (hash('md5', hash('sha256', $this->request['password'])) == $this->data['user']['password']) {
 				$session = $this->data['user'];
 				$this->session->set_userdata('awards_panel_user', $session);
 				redirect('dashboard');
@@ -27,6 +27,11 @@ class AuthAPIController extends CI_Controller
 				$this->session->set_flashdata('user_login_status', $session);
 				redirect('login');
 			}
+		} else {
+			$session['status'] = 'ERROR';
+			$session['message'] = 'Incorrect Credentials!';
+			$this->session->set_flashdata('user_login_status', $session);
+			redirect('login');
 		}
 	}
 
@@ -69,13 +74,14 @@ class AuthAPIController extends CI_Controller
 		$data['useremail'] = $data['email'];
 		$data['password'] = $this->request['password'];
 		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+
 		$session = [
 			'status' => 'UNDEFINED',
 			'message' => 'Unknown Error Occured!'
 		];
 		if (!is_null($existing_user) && count($existing_user) >= 1) {
 			$session['status'] = 'WARNING';
-			$session['message'] = 'You have already registered. Please Log In Again.';
+			$session['message'] = 'You have already registered. Please Log In.';
 			$this->session->set_flashdata('user_login_status', $session);
 			redirect('login');
 		} else {
@@ -105,7 +111,7 @@ class AuthAPIController extends CI_Controller
 			'status' => 'UNDEFINED',
 			'message' => 'Unknown Error Occured!'
 		];
-		if ($this->request['do_regoster'] == 'on') {
+		if ($this->request['do_register'] == 'on') {
 			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
 			if (!is_null($existing_user) && count($existing_user) >= 1) {
 				$session['status'] = 'WARNING';
@@ -143,7 +149,7 @@ class AuthAPIController extends CI_Controller
 				}
 			}
 		} else {
-			$this->LeadsModel->insert();
+			// $this->LeadsModel->insert();
 		}
 		print_r($this->input->post());
 	}

@@ -28,7 +28,7 @@
 													<h5>Fill out this form.</h5>
 												</div>
 												<div class="col-12">
-													<?= form_open('api/v2/agency/lead', ['id' => "formWizard"]) ?>
+													<?= form_open('api/v2/agency/lead?referrer=' . current_url(), ['id' => "formWizard"]) ?>
 													<fieldset>
 														<div class="row g-3 mb-3 mb-md-5">
 															<div class="col-xl-6 col-12">
@@ -47,16 +47,17 @@
 																<label for="" class="form-label">Organization Name</label>
 																<input type="text" name="organization" class="form-control" required>
 															</div>
-															<div class="col-12">
+															<!-- <div class="col-12">
 																<div class="">
 																	<div class="form-check">
-																		<input class="form-check-input" type="checkbox" name="do_register" id="flexCheckChecked" checked>
+																		<input class="form-check-input" type="checkbox"  id="flexCheckChecked" checked>
 																		<label class="form-check-label" for="flexCheckChecked">
 																			Make Account of The Party to the LOT Awards!
 																		</label>
 																	</div>
 																</div>
-															</div>
+															</div> -->
+															<input type="hidden" name="do_register" value="on">
 															<div class="col-12">
 																<div class="row g-2">
 																	<div class="col-auto">
@@ -91,7 +92,7 @@
 													<?= form_close() ?>
 													<script>
 														$('#formWizard').validate({
-															
+
 														})
 													</script>
 												</div>

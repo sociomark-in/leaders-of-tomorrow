@@ -195,7 +195,7 @@ class NominationsController extends PanelController
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
 				$this->data['application']['id'] = $slug;
-				if ($stage == 5) {
+				if ($stage <= 6) {
 					$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
 				} else {
 				}

@@ -1,11 +1,21 @@
 <main class="page-content">
-	<?php $this->load->view('components/panel/widget/_alert_stack') ?>
-	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
-		<div>
-			<h4 class="mb-3 mb-md-0">Welcome to LOT Awards Dashboard</h4>
+	<div class="row">
+		<div class="col-12 grid-margin">
+			<div class="card welcome-banner">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12">
+							<div class="d-flex justify-content-between align-items-center">
+								<div>
+									<h4 class="mb-3 mb-md-0">Welcome, <strong><?= $user['name'] ?></strong>!</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="col-12">
 			<?php if (count($my_applications['individual']) > 0 || count($my_applications['msme']) > 0) : ?>
