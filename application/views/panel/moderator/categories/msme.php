@@ -502,25 +502,25 @@
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>MSME Certificate</p>
-												<h5><a class="link-icon" href="<?= $application['id_75530'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_75530']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Company Incorporation Certificate</p>
-												<h5><a class="link-icon" href="<?= $application['id_75531'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_75531']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Impact assessment report as on March 31, 2023</p>
-												<h5><a class="link-icon" href="<?= $application['id_75532'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_75532']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Any other Collaterals</p>
-												<h5><a class="link-icon" href="<?= $application['id_75533'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_75533']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 									</div>
