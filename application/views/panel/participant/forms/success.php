@@ -9,11 +9,9 @@
 		<div class="form-check">
 			<input class="form-check-input" name="confirm" type="checkbox" id="flexCheckChecked" required>
 			<label class="form-check-label" for="flexCheckChecked">
-				I, <strong><?= $application['name'] ?></strong>
-				[name of declarant] hold the position in
+				I, holding the position in
 				<strong><?= $application['organization_name'] ?></strong>
-				[participating company] and I hereby
-				declare the following:
+				 hereby declare the following:
 			</label>
 		</div>
 
@@ -28,7 +26,7 @@
 					as applicable.</li>
 				<li>This declaration along with all other details pertaining to ‘<strong><?= APP_NAME ?> Awards</strong>’ are authorized and validated by the sender and shared using an official email ID of the organization.</li>
 				<li>This declaration must be filled by an authorized signatory (preferably Chief Executive Officer or Chief Risk Officer) from the participant organization.</li>
-				<li>In absence of a duly filled ‘Declaration’ document, your nomination may not be considered.</li>
+				<li>In absence of a duly filled 'Declaration’ document, your nomination may not be considered.</li>
 			</ul>
 		</div>
 	</div>

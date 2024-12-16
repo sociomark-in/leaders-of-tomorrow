@@ -217,12 +217,20 @@ class NominationAPIController extends CI_Controller
 
 					$c = explode('_', $this->input->post('category_id'));
 
-					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-
-					$data['id_75530'] = $response[0];
-					$data['id_75531'] = $response[1];
-					$data['id_75532'] = $response[2];
-					$data['id_75533'] = $response[3];
+					$f = 1;
+					foreach ($_FILES as $key => $file) {
+						if ($file['size'] == 0) {
+							$f = 0;
+							break;
+						}
+					}
+					if ($f) {
+						$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+						$data['id_75530'] = $response[0];
+						$data['id_75531'] = $response[1];
+						$data['id_75532'] = $response[2];
+						$data['id_75533'] = $response[3];
+					}
 
 					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 					if ($rows == 0) {
@@ -296,8 +304,28 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-				case '6':	# Success & Email Send
-					redirect('dashboard/');
+				case '6':	# ☑ Success & Email Send
+					$this->request = $this->input->post();
+					$data['application'] = json_decode($this->EntriesModel->get(['created_at'], ['nomination_id' => $application_id], strtolower($category['type'])), true);
+					$data['category'] = $category['name'];
+					$data['user'] = [
+						'name' => $this->usersession['name'],
+						'email' => $this->usersession['email'],
+						'contact' => $this->usersession['contact'],
+					];
+					print_r($data);
+					$this->load->library('email/BrevoCURLMail');
+					$recipients = [
+						[
+							"email" =>  $this->usersession['email'],
+							"name" =>  $this->usersession['name']
+						]
+					];
+					$subject = APP_NAME . " - Your Application is in Review!";
+					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+						redirect('dashboard');
+					}
 					break;
 				default:
 					redirect('dashboard/');
@@ -385,13 +413,21 @@ class NominationAPIController extends CI_Controller
 					/* Get Application Data */
 
 					$c = explode('_', $this->input->post('category_id'));
+					$f = 1;
+					foreach ($_FILES as $key => $file) {
+						if ($file['size'] == 0) {
+							$f = 0;
+							break;
+						}
+					}
+					if ($f) {
+						$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+						$data['id_74525'] = $response[0];
+						$data['id_74526'] = $response[1];
+						$data['id_74527'] = $response[2];
+						$data['id_74528'] = $response[3];
+					}
 
-					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-
-					$data['id_74525'] = $response[0];
-					$data['id_74526'] = $response[1];
-					$data['id_74527'] = $response[2];
-					$data['id_74528'] = $response[3];
 					$data['stage_status'] = $stage;
 					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 					if ($rows == 0) {
@@ -509,8 +545,28 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-				case '6':	# Success & Email Send
-					redirect('dashboard');
+				case '6':	# ☑ Success & Email Send
+					$this->request = $this->input->post();
+					$data['application'] = json_decode($this->EntriesModel->get(['created_at'], ['nomination_id' => $application_id], strtolower($category['type'])), true);
+					$data['category'] = $category['name'];
+					$data['user'] = [
+						'name' => $this->usersession['name'],
+						'email' => $this->usersession['email'],
+						'contact' => $this->usersession['contact'],
+					];
+					print_r($data);
+					$this->load->library('email/BrevoCURLMail');
+					$recipients = [
+						[
+							"email" =>  $this->usersession['email'],
+							"name" =>  $this->usersession['name']
+						]
+					];
+					$subject = APP_NAME . " - Your Application is in Review!";
+					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+						redirect('dashboard');
+					}
 					break;
 				default:
 					redirect('dashboard');

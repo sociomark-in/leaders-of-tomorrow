@@ -6,6 +6,34 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
+
+		<!-- 
+		74509	organization[overview]	
+		74510	organization[mission_stmt]	
+		74511	organization[services_stmt]	
+		74512	finance[turnover_24]	
+		74513	finance[turnover_23]	
+		74514	finance[growth_24]	
+		74515	finance[growth_23]	
+
+		74516 case_study_1
+		74517 case_study_2
+		74518 case_study_3
+		74519
+
+		74518 case_study_3
+		74519 case_study_4
+		74520 case_study_5
+		74521 case_study_6
+		74522 case_study_7
+		74523 case_study_8
+		74524 case_study_9
+
+		74525 doc1
+		74526 doc2
+		74527 doc3
+		74528 doc4
+	-->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-4 g-3">
@@ -154,19 +182,19 @@
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Brief Overview of the Company</label>
-										<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74516'] ?></textarea>
+										<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74509'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Mission & Vision</label>
-										<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74517'] ?></textarea>
+										<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74510'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Products / Services Offered</label>
-										<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74518'] ?></textarea>
+										<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74511'] ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -237,19 +265,19 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</label>
-										<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74519'] ?></textarea>
+										<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74516'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
-										<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74520'] ?></textarea>
+										<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74517'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
-										<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74521'] ?></textarea>
+										<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74518'] ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -266,7 +294,7 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Highlight the key milestones achieved by you as an entrepreneur during your journey. What are you key differentiating factors from your competitors? (Max 150 words)</label>
-										<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74522'] ?></textarea>
+										<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74520'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
@@ -279,13 +307,13 @@
 											Any other
 
 										</label>
-										<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74523'] ?></textarea>
+										<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74521'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">How do you envision contributing to the growth of the MSME sector in the coming years? (Max 150 words)</label>
-										<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74524'] ?></textarea>
+										<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74522'] ?></textarea>
 									</div>
 								</div>
 								<div class="col-12">
@@ -374,10 +402,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Save and Submit</button>
-					</div>
-					<div class="col-md-auto">
-						<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+						<button type="submit" class="btn btn-primary">Confirm and Submit</button>
 					</div>
 				</div>
 			</div>

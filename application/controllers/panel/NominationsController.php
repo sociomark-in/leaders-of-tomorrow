@@ -91,6 +91,11 @@ class NominationsController extends PanelController
 			for ($i = 0; $i < count($applications['individual']); $i++) {
 				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
 				$s = $applications['individual'][$i]['status'];
+				if ($s > 0) {
+					if ($applications['individual'][$i]['category']['id'] == $categories['individual'][$i]['id']) {
+						unset($categories['individual'][$i]);
+					}
+				}
 				switch ($s) {
 					case '0':
 						$s = '<span class="badge bg-danger">Rejected</span>';
@@ -116,6 +121,11 @@ class NominationsController extends PanelController
 			for ($i = 0; $i < count($applications['msme']); $i++) {
 				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
 				$s = $applications['msme'][$i]['status'];
+				if ($s > 0) {
+					if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$i]['id']) {
+						unset($categories['msme'][$i]);
+					}
+				}
 				switch ($s) {
 					case '0':
 						$s = '<span class="badge bg-danger">Rejected</span>';
@@ -194,9 +204,9 @@ class NominationsController extends PanelController
 			case 'participant':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
-				$this->data['application']['id'] = $slug;
 				if ($stage <= 6) {
 					$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
+					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
 				} else {
 				}
 				$this->load->panel_view('applications/single', $this->data);
@@ -247,13 +257,13 @@ class NominationsController extends PanelController
 	{
 		$id = $this->encryption->decrypt($this->input->get("key"));
 		$application = array_merge(
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true), 
+			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true),
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true)
 		)[0];
 		// echo "<pre>";
 		// print_r($application);die;
 		$category = strtolower(explode('_', $application['category_id'])[1]);
-		if($category == 'msme'){
+		if ($category == 'msme') {
 			$files = [
 				$application['id_75530'],
 				$application['id_75531'],

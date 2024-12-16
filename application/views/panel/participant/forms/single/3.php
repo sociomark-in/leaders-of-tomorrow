@@ -10,6 +10,7 @@
 		74516 case_study_1
 		74517 case_study_2
 		74518 case_study_3
+		74519
 	 -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
@@ -19,19 +20,19 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</label>
-					<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74516'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</label>
-					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74518'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</label>
-					<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74519'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -39,15 +40,13 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<?php
-		$s = $stage;
-		$s--;
-		?>
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
-		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
+	</div>
+	<div class="col-md-auto">
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>
@@ -63,27 +62,34 @@
 		],
 		rules: {
 			case_study_1: {
-				maxlength: 500,
+				maxlength: 5000,
+				minlength: 50
 			},
 			overview: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			mission_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			services_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
 			overview: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			mission_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			services_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 		}
 	});

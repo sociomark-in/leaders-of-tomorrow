@@ -1,7 +1,7 @@
 <main class="page-content">
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div>
-			<h4 class="mb-3 mb-md-0">All Applications</h4>
+			<h4 class="mb-3 mb-md-0">My Applications</h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -126,15 +126,20 @@
 								</div>
 							<?php endforeach ?>
 						</div>
-						<hr class="m-0 mb-3">
 					<?php else : ?>
 						<div class="row justify-content-center">
 							<div class="col-md-auto">
 								<img src="<?= base_url('assets/images/panel/icons/') ?>applications-empty.png" alt="">
 							</div>
 						</div>
-						<hr class="m-0 mb-3">
 					<?php endif ?>
+					<div class="row mb-3">
+						<div class="col-12">
+							<div>
+								<h4 class="mb-3 mb-md-0">Apply for MSME Categories</h4>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<?php foreach ($rest_categories['msme'] as $key => $category) :
 							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
@@ -159,7 +164,16 @@
 									</div>
 								</div>
 							</div>
-						<?php endforeach ?>
+							<?php endforeach ?>
+						</div>
+						<div class="row mb-3">
+						<div class="col-12">
+							<div>
+								<h4 class="mb-3 mb-md-0">Apply for Individual Categories</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row">
 						<?php foreach ($rest_categories['individual'] as $key => $category) :
 							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
 						?>
@@ -184,7 +198,6 @@
 								</div>
 							</div>
 						<?php endforeach ?>
-
 					</div>
 				</div>
 			</div>

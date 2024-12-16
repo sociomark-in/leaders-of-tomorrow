@@ -5,42 +5,21 @@
 <input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 <input type="hidden" name="stage" value="<?= $stage ?>">
 <input type="hidden" name="referrer" value="<?= $referrer ?>">
+
+<!-- 
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
+-->
+
 <div class="mb-3">
 	<fieldset class="mb-3">
-		<legend class="card-title mb-0">
+		<legend class="card-title mb-3">
 			<h5>Upload Files</h5>
 		</legend>
-		<div class="row g-3 mb-3">
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">MSME certificate</label>
-					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Company Incorporation Certificate</label>
-					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Impact assessment report as on March 31, 2023</label>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">as on March 31, 2023</span>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
-				</div>
-			</div>
-		</div>
 		<div class="">
-			<div class="bg-light p-3">
+			<div class="bg-light p-3 mb-2">
 				<h5>Instructions</h5>
 				<ul class="">
 					<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
@@ -51,6 +30,36 @@
 				</ul>
 			</div>
 		</div>
+		<div class="row g-3 mb-3">
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">MSME certificate</label>
+					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_75530'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Company Incorporation Certificate</label>
+					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_75531'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Impact assessment report as on March 31, 2023</label>
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">as on March 31, 2023</span>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Any other Collaterals</label>
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
+				</div>
+			</div>
+		</div>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
@@ -69,43 +78,54 @@
 					'imageFormat': 'The image format is not allowed ({{ value }} only).'
 				}
 			});
-			/* PDF.js - Run PDF Version Check 
-				=========================================
-				$('.dropify').each((index, elem) => {
-					$(elem).on('change', function() {
-						const file = this.files[0];
+			/* PDF.js - Run PDF Version Check */
+			$('.dropify').each((index, elem) => {
+				$(elem).on('change', function(event) {
+					// Access the selected file directly from the event object
+					const file = event.target.files[0];
 
-						if (file.type === 'application/pdf') {
-							pdfjsLib.getDocument(file).promise.then(function(pdfDoc) {
-								const pdfVersion = pdfDoc.pdfInfo.pdfVersion;
+					// Check if a file is actually selected
+					if (!file) {
+						console.warn('No file selected for dropify element:', this);
+						return; // Exit the function if no file is selected
+					}
 
-								// Validate the PDF version here
-								if (pdfVersion < '1.7') {
-									alert('Please upload a PDF version 1.7 or higher.');
-									// You might want to clear the input field or prevent form submission
-								} else {
-									// Proceed with file upload
+					// Create a new FileReader object for each file
+					const reader = new FileReader();
+
+					reader.onload = (event) => {
+						const arrayBuffer = event.target.result;
+						console.log('ArrayBuffer:', arrayBuffer);
+
+						// Assuming you have pdfjsLib loaded:
+						pdfjsLib.getDocument(arrayBuffer).promise.then((pdfDoc) => {
+							pdfDoc.getMetadata().then((metadata) => {
+								console.log('Metadata:', metadata.info.PDFFormatVersion);
+								if( metadata.info.PDFFormatVersion > "1.7"){
+									alert('PDF Version not Supported!');
 								}
-							}).catch(function(error) {
-								console.error('Error loading PDF:', error);
-								alert('Error processing PDF file. Please try again.');
 							});
-						}
-					});
-				}) 
-			*/
+						}).catch((error) => {
+							console.error('Error getting PDF version:', error);
+						});
+					};
+
+					// Read the file as an ArrayBuffer
+					reader.readAsArrayBuffer(file);
+				});
+			});
 		</script>
 	</fieldset>
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<a href="<?= base_url('dashboard/application/'. $application_id .'?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>

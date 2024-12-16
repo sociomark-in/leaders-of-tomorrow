@@ -140,29 +140,46 @@
 	</fieldset>
 </div>
 <div class="row g-3">
-	<div class="col-md-auto">
-		<?php
-		$s = $stage;
-		$s--;
-		?>
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
-		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
-	</div>
+	<!-- <div class="col-md-auto">
+		<a href="<?= base_url('dashboard/application/' . $application['id'] . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+	</div> -->
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
+	</div>
+	<div class="col-md-auto">
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>
 <script>
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("letters", function(value, element) {
+		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+	});
+	$.validator.addMethod("phone", function(value, element) {
+		return this.optional(element) || /^[0-9]*$/i.test(value);
+	});
 	$("#form_option_01").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			//Rules
+			"contact_person[email]": {
+				emailregex: true
+			},
+			"contact_person[contact]": {
+				phone: true
+			}
 		},
 		messages: {
-			//messages
+			'contact_person[email]': {
+				emailregex: 'Please enter a valid email address.'
+			},
+			'contact_person[contact]': {
+				phone: 'Please enter a valid contact number'
+			}
 		}
 	});
 </script>

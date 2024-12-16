@@ -113,18 +113,14 @@
 	</fieldset>
 </div>
 <div class="row g-3">
-	<?php 
-	$s = $stage;
-	$s--;
-	?>
-	<div class="col-md-auto">
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
-	</div>
+	<!-- <div class="col-md-auto">
+		<a href="<?= base_url('dashboard/application/' . $application['id'] . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+	</div> -->
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>

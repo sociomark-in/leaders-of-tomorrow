@@ -81,6 +81,5 @@ final class GlobalMail extends PHPMailer
 			$this->AltBody = $alt;
 		}
 	}
-
 	
 }

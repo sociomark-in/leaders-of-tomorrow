@@ -34,25 +34,36 @@ $tabs = [
 <div class="staged-tab-wizard">
 	<ul class="nav nav-pills gap-3" id="myTab" role="tablist">
 		<?php for ($i = 0; $i < count($tabs); $i++): ?>
-			<?php if ($i == $stage): ?>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="true"><?= $tabs[$i]['name'] ?></button>
-				</li>
-			<?php elseif ($i < $stage): ?>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link success" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button>
-				</li>
-			<?php else: ?>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link disabled" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button>
-				</li>
-			<?php endif ?>
+			<?php for ($i = 0; $i < count($tabs); $i++): ?>
+				<?php if ($i == $stage): ?>
+					<li class="nav-item" role="presentation">
+						<!-- <button class="nav-link active" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="true"><?= $tabs[$i]['name'] ?></button> -->
+						<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link active"><i class="link-icon px-1 pb-1" data-feather="info"></i><?= $tabs[$i]['name'] ?></a>
+					</li>
+				<?php elseif ($i < $stage): ?>
+					<li class="nav-item" role="presentation">
+						<!-- <button class="nav-link success" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button> -->
+						<?php if ($i == 0) : ?>
+							<a href="javascript:void(0)" class="nav-link success"><i class="link-icon mr-2 px-1 pb-1" data-feather="lock"></i><?= $tabs[$i]['name'] ?></a>
+						<?php else: ?>
+							<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $i) ?>" class="nav-link success"><i class="link-icon px-1 pb-1" data-feather="check"></i><?= $tabs[$i]['name'] ?></a>
+						<?php endif ?>
+					</li>
+				<?php else: ?>
+					<li class="nav-item" role="presentation">
+						<!-- <button class="nav-link disabled" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button> -->
+						<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link disabled"><?= $tabs[$i]['name'] ?></a>
+					</li>
+				<?php endif ?>
+			<?php endfor ?>
 		<?php endfor ?>
 	</ul>
+	<!-- <?php print_r($_SESSION['application_temp']) ?> -->
 	<div class="tab-content" id="myTabContent">
 		<?php for ($i = 0; $i < count($tabs); $i++):
 			$data["category_id"] = implode('_', [$category['id'], $category['type']]);
-			$data["application_id"] = $application['id'] ?? null;
+			$data["application_id"] = $application['nomination_id'] ?? null;
+			$data["application_temp"] = $_SESSION['application_temp'] ?? null;
 			$data["referrer"] = current_url();
 			$data["utm"] = $utm;
 			$data["agent_id"] = $this->input->get('agent_id');

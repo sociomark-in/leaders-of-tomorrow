@@ -6,8 +6,15 @@
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
-
-
+	<!-- 
+	74509	organization[overview]	
+	74510	organization[mission_stmt]	
+	74511	organization[services_stmt]	
+	74512	finance[turnover_24]	
+	74513	finance[turnover_23]	
+	74514	finance[growth_24]	
+	74515	finance[growth_23]	
+ -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Organization Overview</h5>
@@ -16,24 +23,23 @@
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
-					<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[overview]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74509'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
-					<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[mission_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74510'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
-					<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="organization[services_stmt]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74511'] ?></textarea>
 				</div>
 			</div>
 		</div>
 	</fieldset>
-
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
 			<h5>Financial Details</h5>
@@ -55,7 +61,7 @@
 				<select required name="finance[turnover_24]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_74512'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -63,7 +69,7 @@
 				<select required name="finance[turnover_23]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_74513'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -74,7 +80,7 @@
 				<select required name="finance[growth_24]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_74514'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -82,7 +88,7 @@
 				<select required name="finance[growth_23]" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_74515'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -95,8 +101,8 @@
 		$s = $stage;
 		$s--;
 		?>
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
-		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset This Section</a>
+		<!-- <button type="reset" class="btn btn-outline-secondary">Reset This Section</button> -->
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
@@ -115,24 +121,30 @@
 		],
 		rules: {
 			overview: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			mission_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			services_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
 			overview: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			mission_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			services_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 		}
 	});

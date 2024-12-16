@@ -26,7 +26,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the key milestones achieved by you as an entrepreneur during your journey. What are you key differentiating factors from your competitors? (Max 150 words)</label>
-					<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74520'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
@@ -39,25 +39,25 @@
 						Any other
 
 					</label>
-					<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_6" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74521'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">How do you envision contributing to the growth of the MSME sector in the coming years? (Max 150 words)</label>
-					<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_7" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74522'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Why should you win the Award in this category? (Max 50 words)</label>
-					<textarea required name="case_study_8" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_8" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74523'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc. (Max 100 words)</label>
-					<textarea required name="case_study_9" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="case_study_9" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_74524'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -65,15 +65,13 @@
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<?php
-		$s = $stage;
-		$s--;
-		?>
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $s) ?>" class="btn btn-outline-secondary">Reset Form</a>
-		<!-- <button type="reset" class="btn btn-outline-secondary">Reset Form</button> -->
+		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div>
 	<div class="col-md-auto">
-		<button type="submit" class="btn btn-primary">Confirm and Next</button>
+		<button type="submit" class="btn btn-primary">Save and Next</button>
+	</div>
+	<div class="col-md-auto">
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>
@@ -89,24 +87,30 @@
 		],
 		rules: {
 			overview: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			mission_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 			services_stmt: {
-				wordCount: 300
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
 			overview: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			mission_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 			services_stmt: {
-				wordCount: "Error"
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
 		}
 	});

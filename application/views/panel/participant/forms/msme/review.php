@@ -6,6 +6,39 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
+		<!-- 
+	75502	organization_industry	
+	75503	organization_overview	
+	75508	organization_mission_vision	
+	75509	organization_services	
+	75510	organization_reveue_23	
+	75511	organization_reveue_22	
+	75512	organization_growth_23	
+	75513	organization_growth_22	
+	75514	organization_profit_23	
+	75515	organization_profit_22	
+	75516	organization_assets_23	
+	75517	organization_assets_22	
+	75518	organization_der_23	
+	75519	organization_der_22
+
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
+
+	75526	initiative_tech
+	75527	initiative_impact	
+	75528	initiative_scalability	
+	75529	initiative_info	
+
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
+ -->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -95,6 +128,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
 					<div class="col-12">
@@ -116,18 +150,18 @@
 											<tr>
 												<td>Revenue/ Turnover (in INR Crores)</td>
 												<td>
-													<select name="organization_revenue_23" id="" class="form-select">
+													<select required name="organization_revenue_23" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75510'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
 												<td>
-													<select name="organization_revenue_22" id="" class="form-select">
+													<select required name="organization_revenue_22" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75511'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
@@ -135,18 +169,18 @@
 											<tr>
 												<td>Revenue Growth (In %)</td>
 												<td>
-													<select name="organization_growth_23" id="" class="form-select">
+													<select required name="organization_growth_23" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75512'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
 												<td>
-													<select name="organization_growth_22" id="" class="form-select">
+													<select required name="organization_growth_22" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75513'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
@@ -154,18 +188,18 @@
 											<tr>
 												<td>Net Profit Margin (In %)</td>
 												<td>
-													<select name="organization_profit_23" id="" class="form-select">
+													<select required name="organization_profit_23" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75514'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
 												<td>
-													<select name="organization_profit_22" id="" class="form-select">
+													<select required name="organization_profit_22" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75515'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
@@ -173,18 +207,18 @@
 											<tr>
 												<td>Asset Valuation (in INR Crores)</td>
 												<td>
-													<select name="organization_assets_23" id="" class="form-select">
+													<select required name="organization_assets_23" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75516'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
 												<td>
-													<select name="organization_assets_22" id="" class="form-select">
+													<select required name="organization_assets_22" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75517'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
@@ -192,18 +226,18 @@
 											<tr>
 												<td>Debt: Equity Ratio</td>
 												<td>
-													<select name="organization_der_23" id="" class="form-select">
+													<select required name="organization_der_23" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75518'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
 												<td>
-													<select name="organization_der_22" id="" class="form-select">
+													<select required name="organization_der_22" id="" class="form-select">
 														<option value="">Select Option</option>
 														<?php for ($i = 0; $i < 10; $i++) : ?>
-															<option value="Select <?= $i ?>">Select <?= $i ?></option>
+															<option <?= ($application['id_75519'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 														<?php endfor ?>
 													</select>
 												</td>
@@ -216,6 +250,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
 					<div class="col-12">
@@ -463,10 +498,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Save and Submit</button>
-					</div>
-					<div class="col-md-auto">
-						<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+						<button type="submit" class="btn btn-primary">Confirm and Submit</button>
 					</div>
 				</div>
 			</div>

@@ -7,6 +7,8 @@
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 	<!-- 
+	75502	organization_industry	
+	75503	organization_overview	
 	75508	organization_mission_vision	
 	75509	organization_services	
 	75510	organization_reveue_23	
@@ -28,25 +30,25 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Industry segment of the participating entity</label>
-					<input type="text" name="organization_industry" class="form-control" required>
+					<input type="text" name="organization_industry" value="<?= $application_temp['id_75502'] ?>" class="form-control" required>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
-					<textarea required name="organization_overview" id="" class="form-control" rows="5"></textarea>
+					<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_75503'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
-					<textarea required name="organization_mission_vision" id="" class="form-control" rows="5"></textarea>
+					<textarea required name="organization_mission_vision" id="" class="form-control" rows="5"><?= $application_temp['id_75508'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
-					<textarea required name="organization_services" id="" class="form-control" rows="5"></textarea>
+					<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_75509'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -73,7 +75,7 @@
 				<select required name="organization_revenue_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75510'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -81,7 +83,7 @@
 				<select required name="organization_revenue_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75511'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -92,7 +94,7 @@
 				<select required name="organization_growth_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75512'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -100,7 +102,7 @@
 				<select required name="organization_growth_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75513'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -111,7 +113,7 @@
 				<select required name="organization_profit_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75514'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -119,7 +121,7 @@
 				<select required name="organization_profit_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75515'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -130,7 +132,7 @@
 				<select required name="organization_assets_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75516'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -138,7 +140,7 @@
 				<select required name="organization_assets_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75517'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -149,7 +151,7 @@
 				<select required name="organization_der_23" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75518'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -157,7 +159,7 @@
 				<select required name="organization_der_22" id="" class="form-select">
 					<option value="">Select Option</option>
 					<?php for ($i = 0; $i < 10; $i++) : ?>
-						<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<option <?= ($application['id_75519'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
@@ -165,14 +167,14 @@
 	</fieldset>
 </div>
 <div class="row g-3">
-	<div class="col-md-auto">
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
-	</div>
+	<!-- <div class="col-md-auto">
+		<a href="<?= base_url('dashboard/application/' . $application['id'] . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+	</div> -->
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>

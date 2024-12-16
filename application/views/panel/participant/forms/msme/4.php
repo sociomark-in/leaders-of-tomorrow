@@ -7,6 +7,13 @@
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
+	<!-- 
+	75526	initiative_tech
+	75527	initiative_impact	
+	75528	initiative_scalability	
+	75529	initiative_info	
+ 	-->
+
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
@@ -18,7 +25,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</label>
-					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -37,7 +44,7 @@
 					<label for="" class="form-label">Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
 						(Details should be measurable and generic statements should be avoided) (Max 200 words)
 					</label>
-					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -59,7 +66,7 @@
 						Plan for raising funds in future
 						Any other
 					</label>
-					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -76,7 +83,7 @@
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
-					<textarea required name="initiative_info" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -90,7 +97,7 @@
 		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>

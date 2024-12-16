@@ -7,6 +7,15 @@
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
+	<!-- 
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
+ 	-->
+
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
@@ -18,39 +27,39 @@
 			<div class="col-xl-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Name of the initiative or product/service offering</label>
-					<input required type="text" name="initiative_name" class="form-control">
+					<input required type="text" name="initiative_name" value="<?= $application_temp['id_75520'] ?>" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-12">
 				<div class="">
 					<label for="" class="form-label">Start Date</label>
-					<input required type="text" data-type="date" name="initiative_start_date" class="form-control">
+					<input required type="text" data-type="date" name="initiative_start_date" value="<?= $application_temp['id_75521'] ?>" class="form-control">
 					<span class="form-text">(in DD/MM/YYYY)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-12">
 				<div class="">
 					<label for="" class="form-label">End Date</label>
-					<input required type="text" data-type="date" name="initiative_end_date" class="form-control">
+					<input required type="text" data-type="date" name="initiative_end_date" value="<?= $application_temp['id_75522'] ?>" class="form-control">
 					<span class="form-text">(in DD/MM/YYYY)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service? (Max 200 words)</label>
-					<textarea required name="initiative_desc" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_desc" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75523'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges? (Max 150 words)</label>
-					<textarea required name="initiative_challenges" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_challenges" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75524'] ?></textarea>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors. (Max 150 words)</label>
-					<textarea required name="initiative_strategy" id="" class="form-control" maxlength="500" rows="5"></textarea>
+					<textarea required name="initiative_strategy" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75525'] ?></textarea>
 				</div>
 			</div>
 		</div>
@@ -64,7 +73,7 @@
 		<button type="submit" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
-		<button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
 	</div>
 </div>
 <?= form_close() ?>

@@ -28,7 +28,8 @@ if ($nomination['stage'] >= 1) {
 							<div class="row align-items-center">
 								<div class="col-auto">
 									<div class="">
-										<img src="https://placehold.co/60x60" alt="">
+										<!-- <img src="https://placehold.co/60x60" alt=""> -->
+										 <img src="<?= base_url('assets/images/favicon.png') ?>" width="60" height="60" alt="Logo">
 									</div>
 								</div>
 								<div class="col">
@@ -36,7 +37,7 @@ if ($nomination['stage'] >= 1) {
 								</div>
 								<div class="col-auto">
 									<div class="row">
-										<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Details</a>
+										<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Category Details</a>
 									</div>
 								</div>
 							</div>
