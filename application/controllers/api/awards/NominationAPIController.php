@@ -582,6 +582,14 @@ class NominationAPIController extends CI_Controller
 	 * **Scope**: Applicant
 	 * 
 	 * To let the Applicant Edit the Application
+	 * 
+	 * ### To Do:
+	 *  - [x] Edit with all Data MSME
+	 *  - [ ] Edit with all Data Individual
+	 *  - [ ] Edit with all $_FILES MSME
+	 *  - [ ] Edit with all $_FILES Individual
+	 *  - [ ] Edit with any single $_FILES MSME
+	 *  - [ ] Edit with any single $_FILES Individual
 	 * @return void
 	 */
 	public function bulk_edit()
@@ -597,6 +605,8 @@ class NominationAPIController extends CI_Controller
 
 		$common = [];
 		$c = explode('_', $this->input->post('category_id'));
+
+		# ☑ Check if $_FILES Exists
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
 			if ($file['size'] == 0) {
@@ -605,6 +615,7 @@ class NominationAPIController extends CI_Controller
 			}
 		}
 		if ($category['type'] == 'MSME') {
+			# ☑ Set Data for DB Insert
 			$data = [
 				'id_75502'	=> $this->request['organization_industry'],					//organization_industry
 				'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
@@ -634,39 +645,39 @@ class NominationAPIController extends CI_Controller
 				'id_75529'	=> $this->request['initiative_info'],
 			];
 
-			// Sanitize $data Array for DB Insert
-			foreach ($data as $key => $value) {
-				# code...
-				if ($value == "" || $value == null) {
-					unset($data[$key]);
-				}
-			}
-
+			# ☑ If $_FILES Exists then Upload and get $response.
 			if ($f) {
 				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-				$data['id_74525'] = $response[0];
-				$data['id_74526'] = $response[1];
-				$data['id_74527'] = $response[2];
-				$data['id_74528'] = $response[3];
-			} else {
-				redirect('dashboard/application/' . $application_id . '/edit');
+				$data['id_75530'] = $response[0];
+				$data['id_75531'] = $response[1];
+				$data['id_75532'] = $response[2];
+				$data['id_75533'] = $response[3];
 			}
 		} elseif ($category['type'] == "Individual") {
+			# Set Data for DB Insert
 			$data = [];
 
+			# ☑ If $_FILES Exists then Upload and get $response.
 			if ($f) {
 				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 				$data['id_74525'] = $response[0];
 				$data['id_74526'] = $response[1];
 				$data['id_74527'] = $response[2];
 				$data['id_74528'] = $response[3];
-			} else {
-				redirect('dashboard/application/' . $application_id . '/edit');
+			}
+		}
+
+		# ☑ Sanitize Data for DB Insert
+		foreach ($data as $key => $value) {
+			# code...
+			if ($value == "" || $value == null) {
+				unset($data[$key]);
 			}
 		}
 		$data['stage_status'] = '5';
 		$data['status'] = '3';
 
+		# ☑ DB Insert
 		$this->data = $data;
 		$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 		if ($rows > 0) {
