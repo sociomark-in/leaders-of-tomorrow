@@ -21,6 +21,11 @@ class NominationAPIController extends CI_Controller
 
 	/**
 	 * _document_uploads
+	 * 
+	 * ### Description: 
+	 * **Scope**: Applicant
+	 * 
+	 * A Helper Function To Upload the $_FILES as per $application_id and $category_id
 	 *
 	 * @param  mixed $_files $_FILES Object
 	 * @param  mixed $category_id
@@ -83,7 +88,23 @@ class NominationAPIController extends CI_Controller
 		$pdf->merge('file', $docket_name, 'P');
 		return $response;
 	}
-
+	
+	/**
+	 * new_single
+	 * 
+	 * ### Description: 
+	 * **Scope**: Applicant
+	 * 
+	 * To let the Applicant to apply to any category in the Awards
+	 * ### To Do:
+	 *  - [x] Insert stage-wise all Data MSME
+	 *  - [x] Insert stage-wise all Data Individual
+	 *  - [x] Back Traveling MSME
+	 *  - [x] Back Traveling Individual
+	 *  - [x] Email Hit after Submit MSME
+	 *  - [x] Email Hit after Submit Individual
+	 * @return void
+	 */
 	public function new_single()
 	{
 		/* Get Application Data */
@@ -581,7 +602,7 @@ class NominationAPIController extends CI_Controller
 	 * ### Description: 
 	 * **Scope**: Applicant
 	 * 
-	 * To let the Applicant Edit the Application
+	 * To let the Applicant Edit the Unloocked Application & Lock again.
 	 * 
 	 * ### To Do:
 	 *  - [x] Edit with all Data MSME
@@ -706,17 +727,6 @@ class NominationAPIController extends CI_Controller
 		}
 	}
 
-	public function download_docket()
-	{
-		$this->request = $this->input->post();
-		$nomination = array_merge(
-			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-		);
-		$this->load->library('pdflib/makepdf');
-		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2', $data = null)->generate();
-	}
-
 	public function comment_and_reject()
 	{
 		$this->load->model('panel/CommentModel');
@@ -763,6 +773,7 @@ class NominationAPIController extends CI_Controller
 			}
 		}
 	}
+
 	public function comment_and_unlock()
 	{
 		$this->load->model('panel/CommentModel');
@@ -812,5 +823,16 @@ class NominationAPIController extends CI_Controller
 			// 	}
 			// }
 		}
+	}
+
+	public function download_docket()
+	{
+		$this->request = $this->input->post();
+		$nomination = array_merge(
+			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
+		);
+		$this->load->library('pdflib/makepdf');
+		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2', $data = null)->generate();
 	}
 }
