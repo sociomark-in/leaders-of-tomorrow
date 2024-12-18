@@ -15,6 +15,7 @@ class RegistrationAPI extends CI_Controller
 			"chennai" => "8404655b-ffb0-494a-ae29-bcabcd24d2b6",
 			"coimbatore" => "0a27f103-f22c-4c17-841f-0d6cced80347",
 			"jaipur" => "0550c724-d075-4dd6-821a-185a477b1b95",
+			"pune" => "ba68bb33-f10c-4edd-b7de-e333a754b31e",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -59,13 +60,20 @@ class RegistrationAPI extends CI_Controller
 			"is_subscriber" => true,
 			"consent" => ($this->request['consent'] == 'on')? true : false,
 		];
+		/*
+		"58456": "Swift",
+		"58457": "Textile",
+		"58458": "Below 20 Cr",
+		"58459": "Marketing",
+		"58467": "https://www.google.com" 
+		*/
 		
 		$data['registration_details']["custom_forms"] = [
-			"56984" => $this->request['organization']['department'],
-			"56985" => $this->request['organization']['turnover'],
-			"56986" => $this->request['organization']['industry'],
-			"56976" => $this->request['website'],
-			"56987" => $this->request['message'],
+			"58459" => $this->request['organization']['department'],
+			"58458" => $this->request['organization']['turnover'],
+			"58457" => $this->request['organization']['industry'],
+			"58467" => $this->request['website'],
+			"58456" => $this->request['message'],
 		];
 		
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);

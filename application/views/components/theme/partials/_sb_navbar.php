@@ -16,7 +16,7 @@ switch ($city['name']) {
 		break;
 }
 switch ($city['name']) {
-	case 'gfgdfgd':
+	case 'Pune':
 		$active = "d-none";
 		break;
 

@@ -51,9 +51,9 @@ class BaseController extends CI_Controller
 			],
 			[
 				'name' => "Pune",
-				'theme' => "Pune: Building a Future-Ready Workforce ",
-				'date' => '2024-11-22',
-				'venue' => ""
+				'theme' => "Building a Future-Ready Workforce ",
+				'date' => '2024-12-20 17:00:00',
+				'venue' => "The Pride Hotel Pune"
 			],
 			[
 				'name' => "Indore",

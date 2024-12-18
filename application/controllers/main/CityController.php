@@ -315,7 +315,7 @@ class CityController extends BaseController
 							'name' => "K. Ilango",
 							'description' => "Managing Director, RSM Autokast",
 						],
-						
+
 						// [
 						// 	'photo' => "",
 						// 	'name' => "",
@@ -366,6 +366,66 @@ class CityController extends BaseController
 					]
 				];
 				$this->load->city_view('jaipur', $this->data);
+				break;
+			case 'pune':
+				$this->data['page'] = [
+					'title' => "Pune Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Pune",
+					'speakers' => [
+						// [
+						// 	'photo' => "Rohit_Saoji.png",
+						// 	'name' => "Rohit Saoji",
+						// 	'description' => "Head-Commercial Banking, IDFC FIRST Bank",
+						// ],
+						[
+							'photo' => "Dr_Raman.png",
+							'name' => "Dr Ramakrishnan Raman",
+							'description' => "Vice Chancellor, Symbiosis International (Deemed University)",
+						],
+						[
+							'photo' => "Uma_Ganesh.png",
+							'name' => "Dr Uma Ganesh",
+							'description' => "Co-Founder, Global Talent Track (GTT) Foundation",
+						],
+						[
+							'photo' => "Nikhil_Kurele.png",
+							'name' => "Nikhil Kurele",
+							'description' => " Co-Founder & CEO, Noccarc Robotics",
+						],
+						[
+							'photo' => "Balvir_Chawla.png",
+							'name' => "Balvir Chawla",
+							'description' => "Director, Finnovators Services",
+						],
+					],
+					'partners' => [
+						[
+							'text' => 'Hospitality Partner',
+							'logo' => 'Pride.png',
+							'url' => ""
+						],
+					],
+				];
+				$this->load->city_view('pune', $this->data);
+				break;
+			case 'indore':
+				$this->data['page'] = [
+					'title' => "Indore Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Indore",
+					'speakers' => [],
+					'partners' => [
+						[
+							'text' => 'Hospitality Partner',
+							'logo' => 'Pride.png',
+							'url' => ""
+						],
+					],
+				];
+				$this->load->city_view('indore', $this->data);
 				break;
 			case 'test':
 				$this->data['page'] = [
@@ -459,7 +519,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'ertert') {
+			if (strtolower($sb['name']) == $city && $city == 'pune') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
