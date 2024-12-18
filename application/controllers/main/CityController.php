@@ -19,7 +19,13 @@ class CityController extends BaseController
 
 	public function city_single($city)
 	{
-		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
+		$gallery = directory_map('./assets/images/cities/' . $city . '/gallery/');
+		foreach ($gallery as $key => $element) {
+			if(is_array($element)){
+				unset($gallery[$key]);
+			}
+		}
+		$this->data['city']['gallery'] = $gallery;
 		switch ($city) {
 			case 'mumbai':
 				$this->data['page'] = [
@@ -478,7 +484,13 @@ class CityController extends BaseController
 
 	public function city_gallery($city)
 	{
-		$this->data['city']['gallery'] = directory_map('./assets/images/cities/' . $city . '/gallery/');
+		$gallery = directory_map('./assets/images/cities/' . $city . '/gallery/');
+		foreach ($gallery as $key => $element) {
+			if(is_array($element)){
+				unset($gallery[$key]);
+			}
+		}
+		$this->data['city']['gallery'] = $gallery;
 		switch ($city) {
 			case 'mumbai':
 				$this->data['page'] = [
@@ -506,6 +518,20 @@ class CityController extends BaseController
 					'title' => "Chennai Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Chennai";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'jaipur':
+				$this->data['page'] = [
+					'title' => "Jaipur Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Jaipur";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'coimbatore':
+				$this->data['page'] = [
+					'title' => "Coimbatore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Coimbatore";
 				$this->load->city_view('gallery', $this->data);
 				break;
 

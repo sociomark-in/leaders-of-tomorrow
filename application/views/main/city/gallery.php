@@ -35,7 +35,7 @@
 			<div class="row g-3">
 				<div class="col-12">
 						<div class="gallery-masonry" id="galleryMasonry">
-							<?php for ($i = 1; $i <= count($city['gallery']['thumbs/']); $i++) : ?>
+							<?php for ($i = 1; $i <= count($city['gallery']); $i++) : ?>
 								<a class="tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/' . $i . '.jpg') ?>">
 									<figure>
 										<picture>
@@ -49,14 +49,6 @@
 							<?php endfor ?>
 						</div>
 					<script>
-						new Swiper(".gallerySwiper", {
-							slidesPerView: 5,
-							spaceBetween: 20,
-							grid: {
-								rows: 3,
-								fill: "row"
-							}
-						})
 						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
 							plugins: [lgZoom, lgThumbnail],
 							speed: 500,
