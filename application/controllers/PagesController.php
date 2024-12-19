@@ -8,9 +8,19 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
-				'thumb' => "https://static.tnn.in/thumb/msid-112835531,thumbsize-164428,width-1280,height-720,resizemode-75/112835531.jpg?quality=100",
+				'thumb' => "https://static.tnn.in/thumb/msid-112835556,thumbsize-164428,width-1280,height-720,resizemode-75/112835556.jpg?quality=100",
 				'title' => "Leaders of Tomorrow Season 12: Empowering Indian Entrepreneurs for Global",
 				'redirect' => "https://www.timesnownews.com/india/leaders-of-tomorrow-season-12-empowering-indian-entrepreneurs-for-global-success-article-112835531"
+			],
+			[
+				'thumb' => "https://static.tnn.in/thumb/msid-114681918,thumbsize-164428,width-1280,height-720,resizemode-75/114681918.jpg?quality=100",
+				'title' => "ET Now Leaders of Tomorrow Unveils a Festive Week Special",
+				'redirect' => "https://www.timesnownews.com/leaders-of-tomorrow/et-now-leaders-of-tomorrow-unveils-a-festive-week-special-article-114681918"
+			],
+			[
+				'thumb' => "https://static.tnn.in/thumb/msid-116427400,thumbsize-164428,width-1280,height-720,resizemode-75/116427400.jpg?quality=100",
+				'title' => "6 Entrepreneurial Lessons to Learn from Ankur Warikoo",
+				'redirect' => "https://www.etnownews.com/news/6-entrepreneurial-lessons-to-learn-from-ankur-warikoo-article-116427400"
 			],
 			[
 				'thumb' => "https://static.tnn.in/thumb/msid-110893211,thumbsize-164428,width-1280,height-720,resizemode-75/110893211.jpg?quality=100",

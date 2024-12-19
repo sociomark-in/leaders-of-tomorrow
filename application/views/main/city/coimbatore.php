@@ -205,7 +205,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="gallery" class="d-none">
+	<section id="gallery" class="">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

@@ -369,7 +369,14 @@ class CityController extends BaseController
 							'name' => "Hemant Beniwal",
 							'description' => "Certified Financial Planner & Director, Ark Primary Advisors",
 						],
-					]
+					],
+					'partners' => [
+						[
+							'text' => 'Hospitality Partner',
+							'logo' => 'Pride.png',
+							'url' => ""
+						],
+					],
 				];
 				$this->load->city_view('jaipur', $this->data);
 				break;
@@ -380,11 +387,11 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Pune",
 					'speakers' => [
-						// [
-						// 	'photo' => "Rohit_Saoji.png",
-						// 	'name' => "Rohit Saoji",
-						// 	'description' => "Head-Commercial Banking, IDFC FIRST Bank",
-						// ],
+						[
+							'photo' => "Rohit_Saoji.png",
+							'name' => "Rohit Saoji",
+							'description' => "Head-Commercial Banking, IDFC FIRST Bank",
+						],
 						[
 							'photo' => "Dr_Raman.png",
 							'name' => "Dr Ramakrishnan Raman",
@@ -524,6 +531,13 @@ class CityController extends BaseController
 				$this->data['page'] = [
 					'title' => "Jaipur Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
 				$this->data['city']['name'] = "Jaipur";
 				$this->load->city_view('gallery', $this->data);
 				break;
@@ -553,6 +567,22 @@ class CityController extends BaseController
 		}
 		if ($status) {
 			$this->data['city'] = $sb;
+			switch ($city) {
+				case 'pune':
+				case 'jaipur':
+					$this->data['city']['partners'] = [
+						[
+							'text' => 'Hospitality Partner',
+							'logo' => 'Pride.png',
+							'url' => ""
+						],
+					];
+					break;
+				
+				default:
+					# code...
+					break;
+			}
 			$this->data['page'] = [
 				'title' => $sb['name'] . " Springboard Registrations" . " • " . APP_NAME . " " . date('Y'),
 			];

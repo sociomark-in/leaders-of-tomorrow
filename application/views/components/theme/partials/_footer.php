@@ -133,7 +133,7 @@
 									<h6>Springboard Cities</h6>
 									<ul class="footer-nav nav">
 										<?php foreach ($springboards as $key => $sb) : ?>
-											<?php if ($key < 6) :
+											<?php if ($key < 8) :
 											?>
 												<li class="nav-item">
 													<a class="nav-link" href="<?= base_url('city/' . strtolower($sb['name'])) ?>"><?= $sb['name'] ?></a>

@@ -7,7 +7,6 @@
 				</div>
 				<div class="row m-0 mb-3 justify-content-center">
 					<?php $this->load->view('components/theme/partials/_partners'); ?>
-					<?php $this->load->view('components/theme/partials/_partners_sb'); ?>
 				</div>
 			</div>
 		</div>

@@ -40,5 +40,6 @@
 				</div>
 			</a>
 		</div>
+		<?php $this->load->view('components/theme/partials/_partners_sb'); ?>
 	</div>
 </div>

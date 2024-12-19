@@ -1,7 +1,10 @@
-<?php switch ($this->uri->segment(2)):
+
+<?php 
+switch ($this->uri->segment(2)):
 	case 'coimbatore':
 	case 'pune':
 	case 'indore':
+	case 'jaipur':
 		$data['city'] = $city['name'];
 		$data['partners'] = $city['partners'];
 		$this->load->view('components/theme/partials/partners/layout-01', $data);
