@@ -8,6 +8,7 @@ switch ($city['name']) {
 	case 'Chennai':
 	case 'Coimbatore':
 	case 'Jaipur':
+	case 'Pune':
 		$past = "d-none";
 		break;
 
@@ -16,7 +17,7 @@ switch ($city['name']) {
 		break;
 }
 switch ($city['name']) {
-	case 'Pune':
+	case 'Indore':
 		$active = "d-none";
 		break;
 

@@ -114,6 +114,18 @@ p.wrapped {
   text-overflow: ellipsis;
 }
 
+.text-gold {
+  color: #dba620;
+}
+
+.text-silver {
+  color: #c0c0c0;
+}
+
+.text-bronze {
+  color: #cd7f32;
+}
+
 form label.error {
   color: red;
   font-size: 0.8rem;
@@ -214,11 +226,34 @@ main section .pseudo-kv::after {
   background-position: center;
 }
 
+table.table thead,
+table.table thead > tr > th {
+  text-transform: uppercase;
+}
+table.table.heading-yellow thead,
+table.table.heading-yellow thead > tr > th {
+  font-weight: 500;
+  background-color: #ffde3f;
+}
+table.table.heading-red {
+  border-color: #b72026;
+}
+table.table.heading-red thead,
+table.table.heading-red thead > tr > th {
+  padding: 0.5rem 0.25rem;
+  font-weight: 500;
+  background-color: #b72026;
+  color: #efefef;
+}
+
 .media-content {
   width: 100%;
   height: 100%;
 }
 .media-content iframe {
+  background: url("../images/backgrounds/placeholder.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
   aspect-ratio: 16/9;
 }
@@ -290,6 +325,17 @@ nav.navbar ul.navbar-nav .nav-item .nav-link {
 nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   background-color: #b72026;
   color: #ffde3f;
+}
+nav.navbar ul.navbar-nav .nav-item .btn {
+  padding: 0.4rem 0.75rem;
+}
+nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red {
+  border: 2px solid #b72026;
+  color: #b72026;
+}
+nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red:hover, nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red:active {
+  background-color: #b72026;
+  color: #efefef;
 }
 
 .nav[role=tablist] {

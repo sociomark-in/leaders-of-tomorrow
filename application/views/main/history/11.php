@@ -6,7 +6,8 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-							<li class="breadcrumb-item"><a href="<?= base_url('history') ?>">All Seasons</a></li>
+							<!-- <li class="breadcrumb-item"><a href="<?= base_url('history') ?>">All Seasons</a></li> -->
+							<li class="breadcrumb-item active" aria-current="page">All Seasons</li>
 							<li class="breadcrumb-item active" aria-current="page">Season 11</li>
 						</ol>
 					</nav>
@@ -106,16 +107,16 @@
 											<div class="desc">
 												<p class="wrapped" data-aos="fade-left" data-aos-delay="400"><?= $city['text'] ?></p>
 												<div class="row">
-													<div class="col-md-auto">
+													<div class="col-md-12">
 														<p class="mb-2">Date:</p>
 														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
 													</div>
-													<div class="col-md-auto">
+													<div class="col-md-12">
 														<p class="mb-2">Venue:</p>
 														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
 													</div>
 												</div>
-												<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+												<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=<?= $city['episodes'] ?>" class="btn btn-yellow" target="_blank">View All Episodes</a>
 											</div>
 										</div>
 									</div>
@@ -132,16 +133,16 @@
 											<div class="desc">
 												<p class="wrapped" data-aos="fade-left" data-aos-delay="400"><?= $city['text'] ?></p>
 												<div class="row">
-													<div class="col-md-auto">
+													<div class="col-md-12">
 														<p class="mb-2">Date:</p>
 														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
 													</div>
-													<div class="col-md-auto">
+													<div class="col-md-12">
 														<p class="mb-2">Venue:</p>
 														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
 													</div>
 												</div>
-												<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+												<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=<?= $city['episodes'] ?>" class="btn btn-yellow" target="_blank">View All Episodes</a>
 											</div>
 										</div>
 									</div>
@@ -161,10 +162,41 @@
 						<h2><span>Season 11 Awards</span></h2>
 					</div>
 				</div>
-				<div class="col-12">
+				<div class="col-xl-10 col-12">
 					<div class="media-content">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/JCMDIIAzujA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="winners" class="pt-0">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>Season 11 Winners</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<table class="table table-bordered heading-red">
+						<thead>
+							<tr>
+								<!-- <th>Sr. No.</th> -->
+								<th class="p-3">Name of Winner</th>
+								<th class="p-3">Category</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($winners as $key => $winner) : ?>
+								<tr>
+									<!-- <td><?= $key + 1 ?></td> -->
+									<td class="p-3"><?= $winner['name'] ?></td>
+									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['category'] ?></td>
+								</tr>
+							<?php endforeach ?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
