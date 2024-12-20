@@ -429,7 +429,33 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Indore",
-					'speakers' => [],
+					'speakers' => [
+						[
+							'photo' => "Madhukar_Pant.png",
+							'name' => "Madhukar Pant",
+							'description' => "Business Head-Loan Against Property, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Atul_Bharat.png",
+							'name' => "Atul Bharat",
+							'description' => "Founder, Indore Entrepreneurs Network ",
+						],
+						[
+							'photo' => "Pratap_Nair.png",
+							'name' => "Pratap Nair",
+							'description' => "Co Founder, Inspaze & Indore Entrepreneurs  Network",
+						],
+						[
+							'photo' => "Abhishek_Mishra.png",
+							'name' => "Abhishek Mishra",
+							'description' => "Professor, Indian Institute of Management (IIM), Indore",
+						],
+						[
+							'photo' => "Navneet_Dhawan.png",
+							'name' => "Navneet Dhawan",
+							'description' => "Certified Financial Planner",
+						],
+					],
 					'partners' => [
 						[
 							'text' => 'Hospitality Partner',
@@ -559,7 +585,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'pune') {
+			if (strtolower($sb['name']) == $city && $city == 'indore') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

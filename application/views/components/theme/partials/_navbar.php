@@ -42,6 +42,9 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
+				<li class="nav-item">
+					<a class="btn btn-outline-red text-uppercase" href="<?= base_url('history/season-11') ?>">Season&nbsp;11</a>
+				</li>
 				<li class="nav-item d-none">
 					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
 						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
@@ -121,5 +124,3 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 		</ul>
 	</div>
 </div>
-
-

@@ -58,8 +58,8 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Indore",
 				'theme' => "Indore: Setting the Benchmark for India's Sustainability Vision",
-				'date' => '2024-12-20',
-				'venue' => ""
+				'date' => '2024-12-27 17:00:00',
+				'venue' => "Pride Hotel & Convention Centre, Indore"
 			],
 			[
 				'name' => "Delhi NCR",

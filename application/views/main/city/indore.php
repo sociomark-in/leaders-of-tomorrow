@@ -72,14 +72,14 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Pune: Building a Future-Ready Workforce</span></h2>
+						<h2><span>Indore: Setting the Benchmark for India's Sustainability Vision</span></h2>
 					</div>
 					<div class="desc">
-						<p data-aos="fade-left" data-aos-delay="400">
-							Pune, Maharashtra's second-largest city and former power center of the Maratha Empire, is now the state's cultural capital. Its robust economy thrives on manufacturing, automotive, and IT sectors, boasting the sixth-highest per capita income in India. With over 62% of its population under 30, Pune stands out as a hub for a young, innovative, future-ready workforce.
-						</p>
 						<p data-aos="fade-left" data-aos-delay="200">
-							To explore the factors that have facilitated the city's journey as a rising employment powerhouse, join the <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong> - one pitstop on our pan India roadshow series, only on ET Now.
+							Indore is leading the charge in India’s sustainability journey, setting a high benchmark for other cities to follow. Known for its groundbreaking initiatives in waste management, the city became the first in India to achieve a zero landfill status, transforming waste into resources through recycling and composting.
+						</p>
+						<p data-aos="fade-left" data-aos-delay="400">
+							Indore is not only reimagining its future but is also inspiring other Indian cities to adopt sustainable practices and create a roadmap for a greener, more sustainable India. Join us at the Leaders of Tomorrow Indore Springboard - one pitstop on our pan India roadshow series, only on <strong class="text-red">ET NOW</strong>
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda" class="section pb-0 d-none">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 justify-content-center">
 				<div class="col-xl-9 col-lg-10 col-12">
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0 d-none">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
