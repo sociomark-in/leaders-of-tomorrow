@@ -62,13 +62,31 @@
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
 													<td>
-														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
-														</a>
-														<?php if ($application['status'] == '3') : ?>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-															</a>
+														<?php
+														$edit = 0;
+														switch ($user['role']) {
+															case 'admin':
+															case 'super-admin':
+																$edit = 1;
+																# code...
+																break;
+
+															default:
+																# code...
+																break;
+														} ?>
+														<?php if ($edit) : ?>
+															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
+																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+																</a>
+															<?php endif ?>
+														<?php else: ?>
+															<?php if (in_array($application['status'], [3])) : ?>
+																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+																</a>
+															<?php endif ?>
 														<?php endif ?>
 														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
@@ -92,13 +110,31 @@
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
 													<td>
-														<a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-															<i class="link-icon px-1 mb-1" data-feather="corner-up-right"></i>
-														</a>
-														<?php if ($application['status'] == '3') : ?>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-															</a>
+														<?php
+														$edit = 0;
+														switch ($user['role']) {
+															case 'admin':
+															case 'super-admin':
+																$edit = 1;
+																# code...
+																break;
+
+															default:
+																# code...
+																break;
+														} ?>
+														<?php if ($edit) : ?>
+															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
+																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+																</a>
+															<?php endif ?>
+														<?php else: ?>
+															<?php if (in_array($application['status'], [3])) : ?>
+																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+																</a>
+															<?php endif ?>
 														<?php endif ?>
 														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>

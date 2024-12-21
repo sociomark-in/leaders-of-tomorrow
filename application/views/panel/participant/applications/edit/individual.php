@@ -19,12 +19,12 @@
 					<div class="col-12 grid-margin stretch-card">
 						<?php
 						$category_id = $category['code'];
-						$application_id = $application['id'] ?? null;
+						$application_id = $application['nomination_id'] ?? null;
 						$utm = $utm;
 						$agent_id = $this->input->get('agent_id');
 						$stage = $this->input->get('stage');
 						?>
-						<?= form_open_multipart('api/v2/awards/nomination/single/bulk_edit', ['id' => 'formFullView']) ?>
+						<?= form_open_multipart('api/v2/awards/nomination/single/edit', ['id' => 'formFullView']) ?>
 
 						<input type="hidden" name="category_id" value="<?= $category_id ?>">
 						<input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">

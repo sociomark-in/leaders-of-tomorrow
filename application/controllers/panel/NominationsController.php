@@ -218,8 +218,8 @@ class NominationsController extends PanelController
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
 				$this->data['application'] = array_merge(
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 5], 'msme'), true),
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status' => 3, 'stage_status' => 4], 'individual'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'stage_status' => 5], 'msme'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'stage_status' => 5], 'individual'), true),
 				)[0];
 
 				$this->load->moderator_view('applications/single', $this->data);

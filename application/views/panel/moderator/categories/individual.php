@@ -40,19 +40,19 @@
 										<div class="col-xl-3 col-lg-6">
 											<div class="">
 												<p>Designation</p>
-												<h5><?= $application['id_74505'] ?></h5>
+												<h5><?= $application['id_74502'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Date of Birth</p>
-												<h5><?= $application['id_74506'] ?></h5>
+												<h5><?= $application['id_74501'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Total Months of Experience</p>
-												<h5><?= $application['id_74507'] ?></h5>
+												<h5><?= $application['id_74503'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -75,7 +75,7 @@
 										<div class="col-xl-5 col-lg-6">
 											<div class="">
 												<p>Name of the Current Organization</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['organization_name'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-3 col-lg-6">
@@ -87,13 +87,13 @@
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Years of Experience</p>
-												<h5><?= $application['id_74506'] ?></h5>
+												<h5><?= $application['id_74508'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Business Segment</p>
-												<h5><?= $application['id_74507'] ?></h5>
+												<h5><?= $application['id_74506'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
@@ -105,19 +105,19 @@
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>No. Of Employees</p>
-												<h5><?= $application['id_74507'] ?></h5>
+												<h5><?= $application['id_74504'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Website URL</p>
-												<h5><?= $application['id_74507'] ?></h5>
+												<h5><?= $application['organization_url'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>LinkedIn URL</p>
-												<h5><?= $application['id_74507'] ?></h5>
+												<h5><?= $application['linkedin_url'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -140,19 +140,19 @@
 										<div class="col-xl-3 col-lg-6">
 											<div class="">
 												<p>Full Name</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74529'] ?></h5>
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="">
 												<p>Email Address</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74530'] ?></h5>
 											</div>
 										</div>
 										<div class="col-xl-3 col-lg-6">
 											<div class="">
 												<p>Contact Number</p>
-												<h5><?= $application['name'] ?></h5>
+												<h5><?= $application['id_74531'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -178,26 +178,20 @@
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p>Industry segment of the participating entity</p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Brief Overview of the Company</p>
+												<h5><?= $application['id_74509'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-12">
 											<div class="">
-												<p>Brief Overview of the Company</p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Mission & Vision</p>
+												<h5><?= $application['id_74510'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-12">
 											<div class="">
-												<p>Mission & Vision</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="">
-												<p>Products / Services Offered</p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Products / Services Offered</p>
+												<h5><?= $application['id_74511'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -230,46 +224,19 @@
 													<tr>
 														<td>Revenue/ Turnover (in INR Crores)</td>
 														<td>
-															<h5><?= $application['name'] ?></h5>
+															<h5><?= $application['id_74512'] ?></h5>
 														</td>
 														<td>
-															<h5><?= $application['name'] ?></h5>
+															<h5><?= $application['id_74513'] ?></h5>
 														</td>
 													</tr>
 													<tr>
 														<td>Revenue Growth (In %)</td>
 														<td>
-															<h5><?= $application['name'] ?></h5>
+															<h5><?= $application['id_74514'] ?></h5>
 														</td>
 														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-													</tr>
-													<tr>
-														<td>Net Profit Margin (In %)</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-													</tr>
-													<tr>
-														<td>Asset Valuation (in INR Crores)</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-													</tr>
-													<tr>
-														<td>Debt: Equity Ratio</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
-														</td>
-														<td>
-															<h5><?= $application['name'] ?></h5>
+															<h5><?= $application['id_74515'] ?></h5>
 														</td>
 													</tr>
 												</tbody>
@@ -293,44 +260,25 @@
 							<div class="col-12">
 								<fieldset class="">
 									<legend class="card-title mb-0">
-										<h5>Initiative / Product / Service</h5>
+										<h5>Case Studies</h5>
 									</legend>
-									<p class="mb-3">(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
 									<div class="row g-3">
-										<div class="col-lg-6">
+										<div class="col-12">
 											<div class="">
-												<p>Name of the initiative or product/service offering</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-3 col-lg-6">
-											<div class="">
-												<p>Start Date</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-3 col-lg-6">
-											<div class="">
-												<p>End Date</p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Describe your journey as an entrepreneur. What was your inspiration behind setting up your organization? (Max 150 words)</p>
+												<h5><?= $application['id_74516'] ?></h5>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="">
-												<p>Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service? </p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Highlight the key initiatives taken by you within the organization in the past 2 years which led to business growth and success (Max 150 words)</p>
+												<h5><?= $application['id_74517'] ?></h5>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="">
-												<p>Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges? </p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p>Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors. (Max 150 words)</p>
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Elaborate on the impact of these initiatives on the various stakeholders of your organization such as customers, employees, MSME industry, etc. (Max 150 words)</p>
+												<h5><?= $application['id_74518'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -350,76 +298,32 @@
 						<div class="row g-4">
 							<div class="col-12">
 								<fieldset class="">
+									<legend class="card-title mb-0">
+										<h5>Case Studies</h5>
+									</legend>
 									<div class="row g-3">
 										<div class="col-12">
-											<legend class="card-title mb-0">
-												<h5>Use of Technology</h5>
-											</legend>
-											<p>How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</p>
-										</div>
-										<div class="col-12">
 											<div class="">
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Highlight the key milestones achieved by you as an entrepreneur during your journey. What are you key differentiating factors from your competitors? (Max 150 words)</p>
+												<h5><?= $application['id_74519'] ?></h5>
 											</div>
 										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-12">
-								<fieldset class="">
-									<div class="row g-3">
-										<div class="col-12">
-											<legend class="card-title mb-0">
-												<h5>Impact of the innovation/ initiative</h5>
-											</legend>
-											<p>
-
-												Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
-												<br>(Details should be measurable and generic statements should be avoided) (Max 200 words)
-											</p>
-										</div>
 										<div class="col-12">
 											<div class="">
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">How do you plan to scale up your business in the next 2 years. Highlight the following parameters (max 200 words)</p>
+												<h5><?= $application['id_74520'] ?></h5>
 											</div>
 										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-12">
-								<fieldset class="">
-									<div class="row g-3">
-										<div class="col-12">
-											<legend class="card-title mb-0">
-												<h5>Sustainability &amp; Scalability</h5>
-											</legend>
-											<p>Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters (max 200 words)
-												Growth plan for next 2-3 years
-												Growth plan for the initiative or product/ service offering
-												Plan for raising funds in future
-												Any other
-											</p>
-										</div>
 										<div class="col-12">
 											<div class="">
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">How do you envision contributing to the growth of the MSME sector in the coming years? (Max 150 words)</p>
+												<h5><?= $application['id_74521'] ?></h5>
 											</div>
 										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-12">
-								<fieldset class="">
-								<div class="row g-3">
-										<div class="col-12">
-											<legend class="card-title mb-0">
-												<h5>Additional Information</h5>
-											</legend>
-											<p>Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</p>
-										</div>
 										<div class="col-12">
 											<div class="">
-												<h5><?= $application['name'] ?></h5>
+												<p class="mb-2">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc. (Max 100 words)</p>
+												<h5><?= $application['id_74522'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -432,102 +336,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="tab-pane fade" id="casestudy3-tab-pane" role="tabpanel" aria-labelledby="casestudy3-tab" tabindex="0">
-		<div class="row g-3 mt-2">
-			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
-					<div class="card-body">
-						<div class="row g-4">
-							<div class="col-12">
-								<fieldset class="">
-									<legend class="card-title mb-0">
-										<h5>Participating Entity</h5>
-									</legend>
-									<div class="row g-3">
-										<div class="col-xl-5 col-lg-6">
-											<div class="">
-												<p>Name of the Participating Entity</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-3 col-lg-6">
-											<div class="">
-												<p>Type of Business</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-4 col-lg-6">
-											<div class="">
-												<p>Business Segment</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-4 col-lg-6">
-											<div class="">
-												<p>Date of Company Incorporation</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-4 col-lg-6">
-											<div class="">
-												<p>No. Of Employees</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-4 col-lg-6">
-											<div class="">
-												<p>Funding Source</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="">
-												<p>Website URL</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="">
-												<p>LinkedIn URL</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-12">
-								<fieldset class="">
-									<legend class="card-title mb-0">
-										<h5>Contact Person</h5>
-									</legend>
-									<div class="row g-3">
-										<div class="col-xl-3 col-lg-6">
-											<div class="">
-												<p>Full Name</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="">
-												<p>Email Address</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xl-3 col-lg-6">
-											<div class="">
-												<p>Contact Number</p>
-												<h5><?= $application['name'] ?></h5>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 	<div class="tab-pane fade" id="downloads-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">
 		<div class="row g-3 mt-2">
 			<div class="col-12 grid-margin stretch-card">
@@ -543,25 +351,25 @@
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>MSME Certificate</p>
-												<h5><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_74525']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Company Incorporation Certificate</p>
-												<h5><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_74526']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Impact assessment report as on March 31, 2023</p>
-												<h5><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_74527']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Any other Collaterals</p>
-												<h5><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+												<h5><a class="link-icon" href="<?= base_url($application['id_74528']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 									</div>
@@ -574,8 +382,3 @@
 		</div>
 	</div>
 </div>
-<?php 
-echo "<pre>";
-print_r($application);
-echo "</pre>";
-?>

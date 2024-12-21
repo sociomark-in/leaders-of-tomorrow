@@ -68,8 +68,8 @@ class NominationAPIController extends CI_Controller
 			$config['file_name'] = $new_name;
 
 			/* PDF Merger Script */
-			$tmp = $file['tmp_name'];
-			$pdf->addPDF($tmp);
+			// $tmp = $file['tmp_name'];
+			// $pdf->addPDF($tmp);
 			// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
 			/* PDF Merger Script */
 
@@ -85,10 +85,10 @@ class NominationAPIController extends CI_Controller
 				$i++;
 			}
 		}
-		$pdf->merge('file', $docket_name, 'P');
+		// $pdf->merge('file', $docket_name, 'P');
 		return $response;
 	}
-	
+
 	/**
 	 * new_single
 	 * 
@@ -368,6 +368,7 @@ class NominationAPIController extends CI_Controller
 						'id_74505 ' => $this->request['organization']['type'],
 						'id_74506 ' => $this->request['organization']['segment'],
 						'id_74507'	=> $this->request['organization']['inc_date'],
+						'id_74508'	=> $this->request['organization']['experience'],
 						"id_74529" => $this->request['contact_person']['name'],
 						"id_74530" => $this->request['contact_person']['email'],
 						"id_74531" => $this->request['contact_person']['contact'],
@@ -731,46 +732,50 @@ class NominationAPIController extends CI_Controller
 	{
 		$this->load->model('panel/CommentModel');
 		$this->request = $this->input->post();
+		$applicant_emails = [];
 
-		if ($this->usersession['role'] == 'jury') {
-			$data = [
-				'comment' => $this->request['comment'],
-				'nomination_id' => $this->request['application_id'],
-				'created_by' => $this->usersession['id'],
-			];
-			$nomination = array_merge(
-				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-			);
-
-			$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
-			array_push($applicant_emails, $applicant['email']);
-
-			$this->load->library('email/GlobalMail');
-			$mail = new GlobalMail(true);
-
-			// Notify Applicant
-			try {
-				$mail->_init_();
-				$mail->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], $applicant_emails, 'response@timesnetwork.in');
-				$mail->data('Custom Subject', 'panel/emails/text', null, 'This is the body in plain text for non-HTML mail clients');
-				$mail->send();
-				echo "Success!!!";
-			} catch (Exception $th) {
-				echo "Failed!! Mailer Error: {$mail->ErrorInfo}";
-			}
-			if ($this->CommentModel->insert($data)) {
+		switch ($this->usersession['role']) {
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
 				$data = [
-					'status' => '0',
+					'comment' => $this->request['comment'],
+					'nomination_id' => $this->request['application_id'],
+					'created_by' => $this->usersession['id'],
 				];
 				$nomination = array_merge(
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
 				);
-				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
-					redirect('dashboard/applications');
+
+				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
+				array_push($applicant_emails, $applicant['email']);
+
+				// $this->load->library('email/GlobalMail');
+				// $mail = new GlobalMail(true);
+
+				// // Notify Applicant
+				// try {
+				// 	$mail->_init_();
+				// 	$mail->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], $applicant_emails, 'response@timesnetwork.in');
+				// 	$mail->data('Custom Subject', 'panel/emails/text', null, 'This is the body in plain text for non-HTML mail clients');
+				// 	$mail->send();
+				// 	echo "Success!!!";
+				// } catch (Exception $th) {
+				// 	echo "Failed!! Mailer Error: {$mail->ErrorInfo}";
+				// }
+				if ($this->CommentModel->insert($data)) {
+					$data = [
+						'status' => '0',
+					];
+					if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+						redirect('dashboard/applications');
+					}
 				}
-			}
+				# code...
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -778,50 +783,57 @@ class NominationAPIController extends CI_Controller
 	{
 		$this->load->model('panel/CommentModel');
 		$this->request = $this->input->post();
+		$applicant_emails = [];
+		$admin_emails = [];
 
-		if ($this->usersession['role'] == 'jury') {
-			$data = [
-				'comment' => $this->request['comment'],
-				'nomination_id' => $this->request['application_id'],
-				'created_by' => $this->usersession['id'],
-			];
-			$nomination = array_merge(
-				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-			);
+		switch ($this->usersession['role']) {
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
+				$data = [
+					'comment' => $this->request['comment'],
+					'nomination_id' => $this->request['application_id'],
+					'created_by' => $this->usersession['id'],
+				];
+				$nomination = array_merge(
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
+				);
 
-			$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
-			array_push($applicant_emails, $applicant['email']);
+				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
+				array_push($applicant_emails, $applicant['email']);
 
-			$this->load->library('email/GlobalMail');
-			$mail = new GlobalMail(true);
+				$this->load->library('email/GlobalMail');
+				$mail = new GlobalMail(true);
 
-			// Notify Applicant
-			try {
-				$mail->_init_();
-				$mail->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], $applicant_emails, 'response@timesnetwork.in');
-				$mail->data('Custom Subject', 'panel/emails/text', null, 'This is the body in plain text for non-HTML mail clients');
-				$mail->send();
-				echo "Success!!!";
-			} catch (Exception $th) {
-				echo "Failed!! Mailer Error: {$mail->ErrorInfo}";
-			}
+				// Notify Applicant
+				try {
+					$mail->_init_();
+					$mail->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], $applicant_emails, 'response@timesnetwork.in');
+					$mail->data('Custom Subject', 'panel/emails/text', null, 'This is the body in plain text for non-HTML mail clients');
+					$mail->send();
+					echo "Success!!!";
+				} catch (Exception $th) {
+					echo "Failed!! Mailer Error: {$mail->ErrorInfo}";
+				}
 
-			$admin_emails = [];
-			$applicant_emails = [];
-			$a = json_decode($this->UserModel->get(['email'], ['role' => 'jury']), true);
-			foreach ($a as $key => $user) {
-				array_push($admin_emails, $user['email']);
-			}
-			// if ($this->CommentModel->insert($data)) {
-			// 	$data = [
-			// 		'status' => '2',
-			// 		'stage_status' => '2'
-			// 	];
-			// 	if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
-			// 		redirect('dashboard/applications');
-			// 	}
-			// }
+
+				$a = json_decode($this->UserModel->get(['email'], ['role' => 'jury']), true);
+				foreach ($a as $key => $user) {
+					array_push($admin_emails, $user['email']);
+				}
+				if ($this->CommentModel->insert($data)) {
+					$data = [
+						'status' => '2',
+						'stage_status' => '2'
+					];
+					if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+						redirect('dashboard/applications');
+					}
+				}
+				break;
+			default:
+				break;
 		}
 	}
 
