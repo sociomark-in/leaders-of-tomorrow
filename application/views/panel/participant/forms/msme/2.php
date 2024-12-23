@@ -27,25 +27,30 @@
 			<h5>Organization Overview</h5>
 		</legend>
 		<div class="row g-3">
-			<div class="col-12">
+			<div class="col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Industry segment of the participating entity</label>
-					<input type="text" name="organization_industry" value="<?= $application_temp['id_75502'] ?>" class="form-control" required>
+					<select required name="organization_industry" id="" class="form-select">
+						<option value="">Select Option</option>
+						<?php for ($i = 0; $i < 10; $i++) : ?>
+							<option <?= ($application['id_75502'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
+						<?php endfor ?>
+					</select>
 				</div>
 			</div>
-			<div class="col-xl-6 col-12">
+			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
 					<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_75503'] ?></textarea>
 				</div>
 			</div>
-			<div class="col-xl-6 col-12">
+			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
 					<textarea required name="organization_mission_vision" id="" class="form-control" rows="5"><?= $application_temp['id_75508'] ?></textarea>
 				</div>
 			</div>
-			<div class="col-xl-6 col-12">
+			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
 					<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_75509'] ?></textarea>

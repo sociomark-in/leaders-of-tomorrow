@@ -65,6 +65,7 @@
 														<?php
 														$edit = 0;
 														switch ($user['role']) {
+															case 'jury':
 															case 'admin':
 															case 'super-admin':
 																$edit = 1;
@@ -76,16 +77,13 @@
 																break;
 														} ?>
 														<?php if ($edit) : ?>
+															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+															</a>
 															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
-																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-																</a>
 															<?php endif ?>
 														<?php else: ?>
 															<?php if (in_array($application['status'], [3])) : ?>
-																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-																</a>
 															<?php endif ?>
 														<?php endif ?>
 														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
@@ -113,6 +111,7 @@
 														<?php
 														$edit = 0;
 														switch ($user['role']) {
+															case 'jury':
 															case 'admin':
 															case 'super-admin':
 																$edit = 1;
@@ -124,16 +123,13 @@
 																break;
 														} ?>
 														<?php if ($edit) : ?>
+															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
+															</a>
 															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
-																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-																</a>
 															<?php endif ?>
 														<?php else: ?>
 															<?php if (in_array($application['status'], [3])) : ?>
-																<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																	<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-																</a>
 															<?php endif ?>
 														<?php endif ?>
 														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>

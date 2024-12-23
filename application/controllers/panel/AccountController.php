@@ -108,13 +108,13 @@ class AccountController extends PanelController
 
 	public function profile()
 	{
-		$this->load->panel_view('account/profile');
+		$this->load->panel_view('account/profile', $this->data);
 	}
 
 
 	public function profile_verify()
 	{
-		$this->load->panel_view('account/verify');
+		$this->load->panel_view('account/verify', $this->data);
 	}
 
 
@@ -122,7 +122,7 @@ class AccountController extends PanelController
 	{
 		switch ($type) {
 			case 'reset-password':
-				$this->load->panel_view('account/reset_pw');
+				$this->load->panel_view('account/reset_pw', $this->data);
 				break;
 
 			default:
@@ -150,15 +150,18 @@ class AccountController extends PanelController
 
 	public function agent_single($agent_id)
 	{
+		$this->load->model('panel/AgentModel');
 		switch ($agent_id) {
 			case 'value':
 				# code...
 				break;
 
 			default:
-				$this->load->admin_view('agents/single', $this->data);
-				break;
+			$this->data['agency'] = json_decode($this->AgentModel->get(null, ['agent_id' => $agent_id]), true)[0];
+			break;
 		}
+		// print_r($this->data);die;
+		$this->load->admin_view('agents/single', $this->data);
 	}
 
 	public function nominate()

@@ -8,7 +8,7 @@ $stage = 0;
 if ($nomination['stage'] >= 1) {
 	$stage = $nomination['stage'];
 } else {
-	$application['id'] = date('U') . "-" . random_string('alnum', 4);
+	$application['nomination_id'] = date('U') . "-" . random_string('alnum', 4);
 }
 ?>
 <main class="page-content">
@@ -25,7 +25,7 @@ if ($nomination['stage'] >= 1) {
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="d-flex gap-2 align-items-center">
-			<h4 class="mb-3 mb-md-0">New Application</h4><p class="text-muted m-0">(#LOTS12-<?= $category['code'] ?>-<?= $application['id'] ?>)</p>
+			<h4 class="mb-3 mb-md-0">New Application</h4><p class="text-muted m-0">(#LOTS12-<?= $category['code'] ?>-<?= $application['nomination_id'] ?>)</p>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -44,7 +44,7 @@ if ($nomination['stage'] >= 1) {
 							<div class="row align-items-center">
 								<div class="col-auto">
 									<div class="">
-										<img src="https://placehold.co/60x60" alt="">
+									<img src="<?= base_url('assets/images/favicon.png') ?>" width="60" height="60" alt="Logo">
 									</div>
 								</div>
 								<div class="col">

@@ -45,7 +45,7 @@ if ($nomination['stage'] >= 1) {
 											<?= form_close() ?> 
 											-->
 
-											<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id'])))?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
+											<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
 										</div>
 									</div>
 								</div>
@@ -106,11 +106,17 @@ if ($nomination['stage'] >= 1) {
 									<?= form_close() ?>
 									<div class="mt-3">
 										<h5 class="card-title">Previous Comments</h5>
-										<div class="mb-3 p-3 bg-light">
-											<blockquote class="blockquote">
-												<p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis sunt quod enim magnam ratione officia voluptatem impedit vel molestias. Ab, velit similique! Voluptates, blanditiis inventore? Neque vel maxime quam.</p>
-												<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-											</blockquote>
+										<div class="row">
+											<div class="col-12">
+												<?php foreach ($comments as $key => $comment): ?>
+													<div class="bg-light">
+														<blockquote class="blockquote p-3">
+															<p class="mb-4"><?= $comment['comment'] ?></p>
+															<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= ucfirst($comment['created_by']['role']) ?></cite></footer>
+														</blockquote>
+													</div>
+												<?php endforeach ?>
+											</div>
 										</div>
 									</div>
 								</div>

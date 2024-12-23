@@ -334,7 +334,6 @@ class NominationAPIController extends CI_Controller
 						'email' => $this->usersession['email'],
 						'contact' => $this->usersession['contact'],
 					];
-					print_r($data);
 					$this->load->library('email/BrevoCURLMail');
 					$recipients = [
 						[

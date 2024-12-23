@@ -183,16 +183,16 @@
 						<thead>
 							<tr>
 								<!-- <th>Sr. No.</th> -->
-								<th class="p-3">Name of Winner</th>
-								<th class="p-3">Category</th>
+								<th class="p-3">Categories</th>
+								<th class="p-3">Name of Winners</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php foreach ($winners as $key => $winner) : ?>
 								<tr>
 									<!-- <td><?= $key + 1 ?></td> -->
-									<td class="p-3"><?= $winner['name'] ?></td>
-									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['category'] ?></td>
+									<td class="p-3"><?= $winner['category'] ?></td>
+									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?></td>
 								</tr>
 							<?php endforeach ?>
 						</tbody>

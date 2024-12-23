@@ -1,8 +1,12 @@
 <main class="page-content">
-	<?php $this->load->view('components/panel/widget/_alert_stack') ?>
+	<?php
+
+use phpseclib3\Crypt\EC\BaseCurves\Base;
+
+ $this->load->view('components/panel/widget/_alert_stack') ?>
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
-			<h4 class="mb-3 mb-md-0">Lead Agent #1</h4>
+			<h4 class="mb-3 mb-md-0"><?= $agency['name'] ?></h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -25,7 +29,7 @@
 										<div class="d-flex justify-content-between align-items-baseline">
 											<h6 class="card-title mb-0">All Leads</h6>
 											<div>
-												<a class="btn p-0 btn-icon-text text-dark" href="">View Page Preview</a>
+												<a target="_blank" class="btn p-0 btn-icon-text text-dark" href="<?= base_url('awards/agency-register/' . $agency['agent_id']) ?>">View Page Preview</a>
 											</div>
 										</div>
 										<div class="row">

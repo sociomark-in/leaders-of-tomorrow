@@ -49,7 +49,7 @@ class RegistrationAPI extends CI_Controller
 			"organisation" => $this->request['organization']['name'],
 			"designation" => $this->request['organization']['designation'],
 			"phone_number" => $this->request['contact'],
-			"whatsapp_number" => $this->request['whatsapp'],
+			"whatsapp_number" => ($this->request['whatsapp'] == null || $this->request['whatsapp'] == "")? $this->request['contact'] : $this->request['whatsapp'],
 			"linkedin_url" => $this->request['linkedin'],
 			"dial_code" => "+91",
 			"country_code" => "in",
@@ -77,8 +77,8 @@ class RegistrationAPI extends CI_Controller
 			"58481" => $this->request['message'],
 		];
 
+		// print_r($data);die;
 		$this->response = json_decode($this->AttendeeModel->new_konfhub_entry($data), true);
-		// print_r($this->response);die;
 
 		if (!array_key_exists('error', $this->response)) {
 			$data = [

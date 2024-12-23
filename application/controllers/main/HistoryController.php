@@ -207,20 +207,84 @@ class HistoryController extends BaseController
 				];
 				$this->data["winners"] = [
 					[
-						'name' => "Lorem ipsum dolor sit amet consectetur.",
-						'category' => "Lorem ipsum dolor sit."
+						'name' => "Iotechworld Avigation",
+						'category' => "Technology – IT/ITES & Telecommunication"
 					],
 					[
-						'name' => "Lorem ipsum dolor sit amet consectetur.",
-						'category' => "Lorem ipsum dolor sit."
+						'name' => "Rotex Automation",
+						'category' => "Automobiles & OEM"
 					],
 					[
-						'name' => "Lorem ipsum dolor sit amet consectetur.",
-						'category' => "Lorem ipsum dolor sit."
+						'category' => "Health, Wellness and Ayurveda",
+						'name' => "Orthotech India",
 					],
 					[
-						'name' => "Lorem ipsum dolor sit amet consectetur.",
-						'category' => "Lorem ipsum dolor sit."
+						'category' => "Packaging Products & Solutions",
+						'name' => "Ecolastic Products",
+					],
+					[
+						'category' => "Travel and Hospitality",
+						'name' => "Prasanna Purple Mobility Solutions",
+					],
+					[
+						'category' => "Home & Décor",
+						'name' => "Dileep Essentials",
+					],
+					[
+						'category' => "Construction & Real Estate",
+						'name' => "Tvasta Manufacturing Solutions",
+					],
+					[
+						'category' => "EdTech and Skill Development",
+						'name' => "Ascorb Technologies",
+					],
+					[
+						'category' => "Electrical & Electronics",
+						'name' => "Tsecond Generation Technology",
+					],
+					[
+						'category' => "Logistics & Service Delivery",
+						'name' => "Gujarat Logistics",
+					],
+					[
+						'category' => "Green Solutions provider of the Year",
+						'name' => "Freyr Energy Services",
+					],
+					[
+						'category' => "Green Solutions provider of the Year",
+						'name' => "Hasiru Dala Innovations",
+					],
+					[
+						'category' => "Fashion Jewellery & Lifestyle",
+						'name' => "SAP Jewels",
+					],
+					[
+						'category' => "Manufacturing",
+						'name' => "JS Technochem",
+					],
+					[
+						'category' => "Organic Products",
+						'name' => "Vaninfosys Technologies",
+					],
+					[
+						'category' => "Personal care & Hygiene Products",
+						'name' => "Navashya Consumer Products (Superbottoms)",
+					],
+					[
+						'category' => "Restaurants and F&B",
+						'name' => "Pagariya Food Products",
+					],
+					[
+						'category' => "Young Entrepreneur of the Year",
+						'name' => "Mohd Hamza, MD, Engineering & Environmental Solutions",
+					],
+					[
+						'category' => "Women Entrepreneur of the Year",
+						'name' => "Smt. Jayashree Nair, MD, BDH Industries",
+					],
+					[
+						'category' => "Entrepreneur of the Year",
+						'name' => "Mr. Swarup Bose, Founder & CEO, Celcius Logistics Solutions",
 					],
 				];
 				$this->load->page('history/11', $this->data);
