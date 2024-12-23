@@ -61,7 +61,7 @@
 								</div>
 								<div class="col-12">
 									<?= form_open('api/v2/dashboard/agency/new') ?>
-									<input type="text" hidden name="agent_id" class="form-control" value="#<?= random_string('numeric', 10) ?>">
+									<input type="text" hidden name="agent_id" class="form-control" value="<?= random_string('numeric', 10) ?>">
 									<div class="row gap-3">
 										<div class="col-12">
 											<div class="">

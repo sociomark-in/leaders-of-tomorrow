@@ -28,7 +28,7 @@
 													<h5>Fill out this form.</h5>
 												</div>
 												<div class="col-12">
-													<?= form_open('api/v2/agency/lead?referrer=' . current_url(), ['id' => "formWizard"]) ?>
+													<?= form_open('api/v2/agency/lead', ['id' => "formWizard"]) ?>
 													<fieldset>
 														<div class="row g-3 mb-3 mb-md-5">
 															<div class="col-xl-6 col-12">
@@ -42,10 +42,6 @@
 															<div class="col-12">
 																<label for="" class="form-label">Email Address</label>
 																<input type="email" name="email" class="form-control" required>
-															</div>
-															<div class="col-12">
-																<label for="" class="form-label">Organization Name</label>
-																<input type="text" name="organization" class="form-control" required>
 															</div>
 															<!-- <div class="col-12">
 																<div class="">

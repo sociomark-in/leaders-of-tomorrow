@@ -102,14 +102,19 @@ class AuthAPIController extends CI_Controller
 	public function agency_lead_register()
 	{
 		$this->request = $this->input->post();
-		
+		$this->load->model('panel/LeadsModel');
 		$data['name'] = $this->request['name'];
 		$data['email'] = $this->request['email'];
 		$data['contact'] = $this->request['contact'];
 		
 		$session = [
 			'status' => 'UNDEFINED',
-			'message' => 'Unknown Error Occured!'
+			'message' => 'Unknown Error Occured!'   
+
+
+
+
+			
 		];
 		if ($this->request['do_register'] == 'on') {
 			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
@@ -135,7 +140,7 @@ class AuthAPIController extends CI_Controller
 					$this->session->set_flashdata('user_login_status', $session);
 					redirect('login');
 				} else {
-					if ($this->UserModel->insert($data)) {
+					if ($this->UserModel->insert($data) && $this->LeadsModel->insert($data)) {
 						$session['status'] = 'SUCCESS';
 						$session['message'] = 'You have successfully registered. Please Log In.';
 						$this->session->set_flashdata('user_login_status', $session);
