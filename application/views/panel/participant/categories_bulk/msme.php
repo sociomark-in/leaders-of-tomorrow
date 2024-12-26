@@ -23,13 +23,13 @@
 									<h5>Participating Entity</h5>
 								</legend>
 								<div class="row g-3">
-									<div class="col-xl-5 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Name of the Participating Entity</label>
 											<input type="text" name="organization[name]" class="form-control">
 										</div>
 									</div>
-									<div class="col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Type of Business</label>
 											<select name="organization[type]" id="" class="form-select">
@@ -40,7 +40,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Business Segment</label>
 											<select name="organization[segment]" id="" class="form-select">
@@ -51,14 +51,14 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Date of Company Incorporation</label>
 											<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
 											<span class="form-text">(in DD/MM/YYYY)</span>
 										</div>
 									</div>
-									<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">No. Of Employees</label>
 											<select required name="organization[size]" id="" class="form-select">
@@ -72,7 +72,7 @@
 											<span class="form-text">(On payroll + On contract)</span>
 										</div>
 									</div>
-									<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Funding Source</label>
 											<select required name="organization[funding]" id="" class="form-select">
@@ -103,19 +103,19 @@
 									<h5>Contact Person of Organization</h5>
 								</legend>
 								<div class="row g-3">
-									<div class="col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Full Name of Individual</label>
 											<input name="contact_person[name]" type="text" class="form-control">
 										</div>
 									</div>
-									<div class="col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Email Address</label>
 											<input name="contact_person[email]" type="text" class="form-control">
 										</div>
 									</div>
-									<div class="col-xl-3 col-lg-6 col-12">
+									<div class="col-xl-4 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Contact Number</label>
 											<input name="contact_person[contact]" type="text" class="form-control">

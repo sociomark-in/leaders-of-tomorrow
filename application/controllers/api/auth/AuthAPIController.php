@@ -8,6 +8,7 @@ class AuthAPIController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
+		$this->load->library('email/BrevoCURLMail');
 	}
 
 	public function participant_login()
@@ -89,7 +90,18 @@ class AuthAPIController extends CI_Controller
 				$session['status'] = 'SUCCESS';
 				$session['message'] = 'You have successfully registered. Please Log In.';
 				$this->session->set_flashdata('user_login_status', $session);
-				redirect('login');
+				
+				$recipients = [
+					[
+						"email" =>  $data['email'],
+						"name" =>  $data['name']
+					]
+				];
+				$subject = APP_NAME . " - Registration!";
+				$body = "Hi " .  $this->usersession['name'] . ", your username:" . $data['email'] . " and password:" . $data['contact'] . " Please <a href=" . base_url('login') . ">Login</a>";
+				if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+					redirect('login');
+				}
 			} else {
 				$session['status'] = 'WARNING';
 				$session['message'] = 'You have already registered. Please Log In Now.';
@@ -102,30 +114,28 @@ class AuthAPIController extends CI_Controller
 	public function agency_lead_register()
 	{
 		$this->request = $this->input->post();
+		// print_r($this->request);die;
 		$this->load->model('panel/LeadsModel');
 		$data['name'] = $this->request['name'];
 		$data['email'] = $this->request['email'];
 		$data['contact'] = $this->request['contact'];
-		
+
 		$session = [
 			'status' => 'UNDEFINED',
-			'message' => 'Unknown Error Occured!'   
-
-
-
-
-			
+			'message' => 'Unknown Error Occured!'
 		];
 		if ($this->request['do_register'] == 'on') {
 			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
 			if (!is_null($existing_user) && count($existing_user) >= 1) {
 				$session['status'] = 'WARNING';
-				$session['message'] = 'You have already registered. Please Log In Again.';
+				$session['message'] = 'You have already registered. Please Log In.';
 				$this->session->set_flashdata('user_login_status', $session);
 				redirect('login');
 			} else {
 				$contact = $this->request['contact'];
 				$this->request['password'] = hash('md5', hash('sha256', $contact));
+				$lead = $data;
+
 				$data['role'] = 'participant';
 				$data['useremail'] = $data['email'];
 				$data['password'] = $this->request['password'];
@@ -136,18 +146,29 @@ class AuthAPIController extends CI_Controller
 				];
 				if (!is_null($existing_user) && count($existing_user) >= 1) {
 					$session['status'] = 'WARNING';
-					$session['message'] = 'You have already registered. Please Log In Again.';
+					$session['message'] = 'You have already registered. Please Log In.';
 					$this->session->set_flashdata('user_login_status', $session);
 					redirect('login');
 				} else {
-					if ($this->UserModel->insert($data) && $this->LeadsModel->insert($data)) {
+					$lead['created_by'] = $this->request['agency_id'];
+					if ($this->UserModel->insert($data) && $this->LeadsModel->insert($lead)) {
 						$session['status'] = 'SUCCESS';
 						$session['message'] = 'You have successfully registered. Please Log In.';
 						$this->session->set_flashdata('user_login_status', $session);
-						redirect('login');
+						
+						$recipients = [
+							[
+								"email" =>  $data['email'],
+								"name" =>  $data['name']
+							]
+						];
+						$subject = APP_NAME . " - Registration Success!";
+						$body = "Hi " .  $this->usersession['name'] . ", your username:" . $data['email'] . " and password:" . $data['contact'] . " Please <a href=" . base_url('login') . ">Login</a>";
+						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+							redirect('login');
+						}
+
 					} else {
-						$session['status'] = 'WARNING';
-						$session['message'] = 'You have already registered. Please Log In Now.';
 						$this->session->set_flashdata('user_login_status', $session);
 						redirect('agency-register');
 					}
@@ -156,7 +177,6 @@ class AuthAPIController extends CI_Controller
 		} else {
 			// $this->LeadsModel->insert();
 		}
-		print_r($this->input->post());
 	}
 
 	public function send_otp()

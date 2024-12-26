@@ -12,8 +12,8 @@ class RegisterController extends BaseController
 	public function index()
 	{
 		$this->load->library('googlelogin/GoogleOAuthClient');
-		if ($this->session->has_userdata('googleuser')){
-			$this->data['googleusercontent'] = $_SESSION['googleuser']?? null;
+		if ($this->session->has_userdata('googleuser')) {
+			$this->data['googleusercontent'] = $_SESSION['googleuser'] ?? null;
 		}
 		$this->data['page'] = [
 			'oauth_url' => [
@@ -28,15 +28,10 @@ class RegisterController extends BaseController
 	public function agency_register($code)
 	{
 		$this->load->model('panel/AgentModel');
-		$agents = json_decode($this->AgentModel->get(), true);
+		$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $code]), true);
 		$f = false;
-		foreach ($agents as $key => $agent) {
-			if($agent['agent_id'] = $code){
-				$f = !$f;
-				break;
-			}
-		}
-		if($f){
+		if (count($agent) > 0) {
+			$this->data['agency'] = $agent[0];
 			$this->load->mini_view('agency_register', $this->data);
 		} else {
 			redirect(base_url('register'));

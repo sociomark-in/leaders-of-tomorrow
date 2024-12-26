@@ -7,7 +7,7 @@ class LeadsModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table['user'] = 'users';
+		$this->table = 'agency_leads';
 		/*
 		Roles:
 		participant		(default)
@@ -20,7 +20,7 @@ class LeadsModel extends CI_Model
 
 	public function insert($data)
 	{
-		if ($this->db->insert($this->table['agency_leads'], $data)) {
+		if ($this->db->insert($this->table, $data)) {
 			return true;
 		} else {
 			return false;

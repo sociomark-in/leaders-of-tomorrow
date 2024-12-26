@@ -31,13 +31,13 @@
 										<h5>Participating Entity</h5>
 									</legend>
 									<div class="row g-3">
-										<div class="col-xl-5 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Name of the Participating Entity</p>
 												<h5><?= $application['name'] ?></h5>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Type of Business</p>
 												<h5><?= $application['name'] ?></h5>
@@ -67,13 +67,13 @@
 												<h5><?= $application['id_75506'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Website URL</p>
 												<h5><?= $application['organization_url'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>LinkedIn URL</p>
 												<h5><?= $application['linkedin_url'] ?></h5>
@@ -96,19 +96,19 @@
 										<h5>Contact Person</h5>
 									</legend>
 									<div class="row g-3">
-										<div class="col-xl-3 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Full Name</p>
 												<h5><?= $application['id_75534'] ?></h5>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Email Address</p>
 												<h5><?= $application['id_75535'] ?></h5>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Contact Number</p>
 												<h5><?= $application['id_75536'] ?></h5>

@@ -31,13 +31,13 @@
 										<h5>Personal Information</h5>
 									</legend>
 									<div class="row g-3">
-										<div class="col-xl-5 col-lg-6">
+										<div class="col-12">
 											<div class="">
 												<p>Full Name of Individual</p>
 												<h5><?= $application['name'] ?></h5>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Designation</p>
 												<h5><?= $application['id_74502'] ?></h5>
@@ -72,13 +72,13 @@
 										<h5>Current Organization</h5>
 									</legend>
 									<div class="row g-3">
-										<div class="col-xl-5 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Name of the Current Organization</p>
 												<h5><?= $application['organization_name'] ?></h5>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6">
+										<div class="col-xl-4 col-lg-6">
 											<div class="">
 												<p>Type of Business</p>
 												<h5><?= $application['id_74505'] ?></h5>
