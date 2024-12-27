@@ -57,9 +57,9 @@ if ($nomination['stage'] >= 1) {
 					<div class="col-12">
 						<?php
 						if (strtolower($category['type']) == 'msme') {
-							include_once APPPATH . '/views/panel/moderator/categories/msme.php';
+							include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
 						} else {
-							include_once APPPATH . '/views/panel/moderator/categories/individual.php';
+							include_once APPPATH . '/views/panel/moderator/full_view/individual.php';
 						} ?>
 					</div>
 				</div>

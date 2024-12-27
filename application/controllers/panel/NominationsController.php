@@ -80,7 +80,7 @@ class NominationsController extends PanelController
 		$this->data['my_applications'] = [];
 		$categories = [
 			'msme' => json_decode($this->CategoryModel->get_msme(), true),
-			'individual' => json_decode($this->CategoryModel->get_individual(), true),
+			// 'individual' => json_decode($this->CategoryModel->get_individual(), true),
 		];
 		$this->data['categories'] = $categories;
 		$applications = [

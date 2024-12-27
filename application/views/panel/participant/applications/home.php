@@ -133,72 +133,77 @@
 							</div>
 						</div>
 					<?php endif ?>
-					<div class="row mb-3">
-						<div class="col-12">
-							<div>
-								<h4 class="mb-3 mb-md-0">Apply for MSME Categories</h4>
+					<?php if (!is_null($rest_categories['msme']) && count($rest_categories['msme']) > 0): ?>
+						<div class="row mb-3">
+							<div class="col-12">
+								<div>
+									<h4 class="mb-3 mb-md-0">Apply for MSME Categories</h4>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<?php foreach ($rest_categories['msme'] as $key => $category) :
-							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
-						?>
-							<div class="col-xl-3 col-lg-4 col-12">
-								<div class="row">
-									<div class="col-12 grid-margin stretch-card">
-										<div class="card">
-											<div class="card-body pb-3">
-												<div class="mb-3">
-													<h5 class=""><?= $category['name'] ?></h5>
+						<div class="row">
+							<?php foreach ($rest_categories['msme'] as $key => $category) :
+								$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
+							?>
+								<div class="col-xl-3 col-lg-4 col-12">
+									<div class="row">
+										<div class="col-12 grid-margin stretch-card">
+											<div class="card">
+												<div class="card-body pb-3">
+													<div class="mb-3">
+														<h5 class=""><?= $category['name'] ?></h5>
+													</div>
+													<div class="">
+														<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
+														<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
+													</div>
 												</div>
-												<div class="">
-													<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
-													<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
+												<div class="card-footer">
+													<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 												</div>
-											</div>
-											<div class="card-footer">
-												<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 							<?php endforeach ?>
 						</div>
+					<?php endif ?>
+					<?php if (!is_null($rest_categories['individual']) && count($rest_categories['individual']) > 0): ?>
 						<div class="row mb-3">
-						<div class="col-12">
-							<div>
-								<h4 class="mb-3 mb-md-0">Apply for Individual Categories</h4>
+							<div class="col-12">
+								<div>
+									<h4 class="mb-3 mb-md-0">Apply for Individual Categories</h4>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<?php foreach ($rest_categories['individual'] as $key => $category) :
-							$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
-						?>
-							<div class="col-xl-3 col-lg-4 col-12">
-								<div class="row">
-									<div class="col-12 grid-margin stretch-card">
-										<div class="card">
-											<div class="card-body pb-3">
-												<div class="mb-3">
-													<h5 class=""><?= $category['name'] ?></h5>
+						<div class="row">
+							<?php foreach ($rest_categories['individual'] as $key => $category) :
+								$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
+							?>
+								<div class="col-xl-3 col-lg-4 col-12">
+									<div class="row">
+										<div class="col-12 grid-margin stretch-card">
+											<div class="card">
+												<div class="card-body pb-3">
+													<div class="mb-3">
+														<h5 class=""><?= $category['name'] ?></h5>
+													</div>
+													<div class="">
+														<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
+														<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
+													</div>
 												</div>
-												<div class="">
-													<a href="<?= base_url('dashboard/category/' . $category['code']) . '/nominate' ?>" class="btn btn-sm btn-primary">Apply Now</a>
-													<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-sm btn-white">View Details</a>
+												<div class="card-footer">
+													<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 												</div>
-											</div>
-											<div class="card-footer">
-												<p class="mb-0 text-sm text-muted">Last Date: <?= $category['valid_until'] ?></p>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						<?php endforeach ?>
-					</div>
+							<?php endforeach ?>
+						</div>
+					<?php endif ?>
+
 				</div>
 			</div>
 		</div>

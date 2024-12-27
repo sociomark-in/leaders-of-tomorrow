@@ -53,7 +53,9 @@
 																	</div>
 																</div>
 															</div> -->
+															
 															<input type="hidden" name="do_register" value="on">
+															<input type="hidden" name="agency_id" value="<?= $agency['agent_id'] ?>">
 															<div class="col-12">
 																<div class="row g-2">
 																	<div class="col-auto">
