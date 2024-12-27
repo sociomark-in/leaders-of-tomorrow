@@ -8,7 +8,7 @@
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Participating Entity</h5>
+			<h5>Participating Entity<span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-5 col-lg-6 col-12">
@@ -88,7 +88,7 @@
 	</fieldset>
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Contact Person of Organization</h5>
+			<h5>Contact Person of Organization<span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-3 col-lg-6 col-12">
@@ -106,7 +106,7 @@
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Contact Number</label>
-					<input required name="contact_person[contact]" type="text" class="form-control">
+					<input required name="contact_person[contact]" minlength="10" maxlength="13" type="text" class="form-control">
 				</div>
 			</div>
 		</div>

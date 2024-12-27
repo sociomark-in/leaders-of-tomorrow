@@ -45,7 +45,7 @@ if ($nomination['stage'] >= 1) {
 											<?= form_close() ?> 
 											-->
 
-											<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
+											<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
 										</div>
 									</div>
 								</div>

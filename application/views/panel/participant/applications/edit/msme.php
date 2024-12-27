@@ -290,7 +290,6 @@
 												<legend class="card-title mb-0">
 													<h5>Use of Technology</h5>
 												</legend>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 											</div>
 											<div class="row g-3">
 												<div class="col-12">
@@ -307,7 +306,6 @@
 												<legend class="card-title mb-0">
 													<h5>Impact of the innovation/ initiative</h5>
 												</legend>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 											</div>
 											<div class="row g-3">
 												<div class="col-12">
@@ -326,7 +324,6 @@
 												<legend class="card-title mb-0">
 													<h5>Sustainability & Scalability</h5>
 												</legend>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 											</div>
 											<div class="row g-3">
 												<div class="col-12">
@@ -348,7 +345,6 @@
 												<legend class="card-title mb-0">
 													<h5>Additional Information</h5>
 												</legend>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 											</div>
 											<div class="row g-3">
 												<div class="col-12">

@@ -45,55 +45,55 @@
 					<div class="col-12">
 						<fieldset class="" disabled>
 							<legend class="card-title mb-0">
-								<h5>Participating Entity</h5>
+								<h5>Participating Entity<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Name of the Participating Entity</p>
-										<h5><?= $application['name'] ?></h5>
+										<h5><?= $application['name'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Type of Business</p>
-										<h5><?= $application['name'] ?></h5>
+										<h5><?= $application['name'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Business Segment</p>
-										<h5><?= $application['id_75505'] ?></h5>
+										<h5><?= $application['id_75505'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Date of Company Incorporation</p>
-										<h5><?= $application['id_75507'] ?></h5>
+										<h5><?= $application['id_75507'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>No. Of Employees</p>
-										<h5><?= $application['id_75501'] ?></h5>
+										<h5><?= $application['id_75501'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Funding Source</p>
-										<h5><?= $application['id_75506'] ?></h5>
+										<h5><?= $application['id_75506'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Website URL</p>
-										<h5><?= $application['organization_url'] ?></h5>
+										<h5><?= $application['organization_url'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>LinkedIn URL</p>
-										<h5><?= $application['linkedin_url'] ?></h5>
+										<h5><?= $application['linkedin_url'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 							</div>
@@ -102,25 +102,25 @@
 					<div class="col-12">
 						<fieldset class="" disabled>
 							<legend class="card-title mb-0">
-								<h5>Contact Person of Organization</h5>
+								<h5>Contact Person of Organization<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Full Name</p>
-										<h5><?= $application['id_75534'] ?></h5>
+										<h5><?= $application['id_75534'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Email Address</p>
-										<h5><?= $application['id_75535'] ?></h5>
+										<h5><?= $application['id_75535'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Contact Number</p>
-										<h5><?= $application['id_75536'] ?></h5>
+										<h5><?= $application['id_75536'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 							</div>
@@ -134,7 +134,7 @@
 					<div class="col-12">
 						<fieldset class="" disabled>
 							<legend class="card-title mb-0">
-								<h5>Financial Details</h5>
+								<h5>Financial Details<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-12">
@@ -256,7 +256,7 @@
 					<div class="col-12">
 						<fieldset class="">
 							<legend class="card-title mb-0">
-								<h5>Organization Overview</h5>
+								<h5>Organization Overview<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-12">
@@ -294,7 +294,7 @@
 						<fieldset class="mb-3">
 							<div class="mb-3">
 								<legend class="card-title mb-0">
-									<h5>Initiative / Product / Service</h5>
+									<h5>Initiative / Product / Service<span class="text-danger">&ast;</span></h5>
 								</legend>
 								<p>(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
 							</div>
@@ -348,9 +348,8 @@
 						<fieldset class="">
 							<div class="mb-3">
 								<legend class="card-title mb-0">
-									<h5>Use of Technology</h5>
+									<h5>Use of Technology<span class="text-danger">&ast;</span></h5>
 								</legend>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 							</div>
 							<div class="row g-3">
 								<div class="col-12">
@@ -366,9 +365,8 @@
 						<fieldset class="">
 							<div class="mb-3">
 								<legend class="card-title mb-0">
-									<h5>Impact of the innovation/ initiative</h5>
+									<h5>Impact of the innovation/ initiative<span class="text-danger">&ast;</span></h5>
 								</legend>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 							</div>
 							<div class="row g-3">
 								<div class="col-12">
@@ -386,9 +384,8 @@
 						<fieldset class="">
 							<div class="mb-3">
 								<legend class="card-title mb-0">
-									<h5>Sustainability & Scalability</h5>
+									<h5>Sustainability & Scalability<span class="text-danger">&ast;</span></h5>
 								</legend>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 							</div>
 							<div class="row g-md-5 g-3">
 								<div class="col-12">
@@ -409,9 +406,8 @@
 						<fieldset class="mb-3">
 							<div class="mb-3">
 								<legend class="card-title mb-0">
-									<h5>Additional Information</h5>
+									<h5>Additional Information<span class="text-danger">&ast;</span></h5>
 								</legend>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit, rerum nobis suscipit itaque ullam similique cupiditate? Molestias voluptatum repellendus a hic? Quo aut voluptatem molestias illo, iure accusamus cupiditate!</p>
 							</div>
 							<div class="row g-md-5 g-3">
 								<div class="col-12">
@@ -430,7 +426,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Upload Files</h5>
+								<h5>Upload Files<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3 mb-3">
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -463,7 +459,7 @@
 							</div>
 							<div class="">
 								<div class="bg-light p-3">
-									<h5>Instructions</h5>
+									<h5>Instructions<span class="text-danger">&ast;</span></h5>
 									<ul class="">
 										<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
 										<li>Open the unsupported PDF file with Chrome</li>

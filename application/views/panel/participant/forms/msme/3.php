@@ -19,7 +19,7 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Initiative / Product / Service</h5>
+				<h5>Initiative / Product / Service<span class="text-danger">&ast;</span></h5>
 			</legend>
 			<p>(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
 		</div>

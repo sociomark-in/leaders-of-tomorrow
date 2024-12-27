@@ -8,7 +8,7 @@
 
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
+			<h5>Personal Information&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-4 col-lg-6 col-12">
@@ -41,7 +41,7 @@
 	</fieldset>
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Current Organization&nbsp;<span class="text-danger">*</span></h5>
+			<h5>Current Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-5 col-lg-6 col-12">
@@ -115,7 +115,7 @@
 	</fieldset>
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span></h5>
+			<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-3 col-lg-6 col-12">

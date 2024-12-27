@@ -16,11 +16,11 @@
 <div class="mb-3">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-3">
-			<h5>Upload Files</h5>
+			<h5>Upload Files<span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="">
 			<div class="bg-light p-3 mb-2">
-				<h5>Instructions</h5>
+				<h5>Instructions<span class="text-danger">&ast;</span></h5>
 				<ul class="">
 					<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
 					<li>Open the unsupported PDF file with Chrome</li>

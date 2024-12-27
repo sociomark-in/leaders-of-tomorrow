@@ -14,7 +14,7 @@
 	 -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Case Studies (Part 1 / 2)</h5>
+			<h5>Case Studies (Part 1 / 2)<span class="text-danger">&ast;</span></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-12">

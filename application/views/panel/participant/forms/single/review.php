@@ -40,31 +40,31 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Personal Information&nbsp;<span class="text-danger">*</span></h5>
+								<h5>Personal Information&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-5 col-lg-6">
 									<div class="">
 										<p>Full Name of Individual</p>
-										<h5><?= $application['name'] ?></h5>
+										<h5><?= $application['name'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-6">
 									<div class="">
 										<p>Designation</p>
-										<h5><?= $application['id_74502'] ?></h5>
+										<h5><?= $application['id_74502'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Date of Birth</p>
-										<h5><?= $application['id_74501'] ?></h5>
+										<h5><?= $application['id_74501'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-6">
 									<div class="">
 										<p>Total Months of Experience</p>
-										<h5><?= $application['id_74503'] ?></h5>
+										<h5><?= $application['id_74503'] ?><span class="text-danger">&ast;</span></h5>
 									</div>
 								</div>
 							</div>
@@ -73,7 +73,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Current Organization&nbsp;<span class="text-danger">*</span></h5>
+								<h5>Current Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-5 col-lg-6 col-12">
@@ -149,7 +149,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span></h5>
+								<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-3 col-lg-6 col-12">
@@ -176,7 +176,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Organization Overview</h5>
+								<h5>Organization Overview<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xl-6 col-12">
@@ -203,7 +203,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Financial Details</h5>
+								<h5>Financial Details<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
@@ -259,7 +259,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Case Studies (Part 1 / 2)</h5>
+								<h5>Case Studies (Part 1 / 2)<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-12">
@@ -287,8 +287,8 @@
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
 								<h5>
-									<h5>Case Studies (Part 2 / 2)</h5>
-								</h5>
+									<h5>Case Studies (Part 2 / 2)<span class="text-danger">&ast;</span></h5>
+								<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3">
 								<div class="col-12">
@@ -334,7 +334,7 @@
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Upload Files</h5>
+								<h5>Upload Files<span class="text-danger">&ast;</span></h5>
 							</legend>
 							<div class="row g-3 mb-3">
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -367,7 +367,7 @@
 							</div>
 							<div class="">
 								<div class="bg-light p-3">
-									<h5>Instructions</h5>
+									<h5>Instructions<span class="text-danger">&ast;</span></h5>
 									<ul class="">
 										<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
 										<li>Open the unsupported PDF file with Chrome</li>
