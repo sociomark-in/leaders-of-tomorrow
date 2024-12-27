@@ -1,0 +1,50 @@
+
+$color-white: #efefef;
+$color-white-0: #ffffff;
+$color-black: #1c1c1c;
+$color-black-0: #000000;
+$color-red: #b72026;
+$color-yellow: #ffde3f;
+$color-yellow-2: #cf8b2c;
+$color-orange: #f05c27;
+
+form{
+	label{
+		display: inline-block;
+		color: $color-black-0;
+		font-weight: 500;
+	}
+}
+
+.card-comment{
+	background-color: $color-white-0;
+}
+
+.text-muted{
+	color: $color-black !important;
+}
+
+.staged-tab-wizard{
+	.nav-item{
+		.nav-link{
+			&.disabled{
+				color: $color-black !important;
+			}
+		}
+	}
+}
+
+.welcome-banner{
+	background: url(../../images/favicon_op30.png) no-repeat, rgba(255, 222, 63, .2);
+    background-size: max(15%, 10rem);
+    background-position: -5% 20%;
+    border: 1px solid rgba(255, 222, 63, .6);
+    border-radius: .5rem;
+}
+
+
+table{
+	a{
+		color: $color-black;
+	}
+}

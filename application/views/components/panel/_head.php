@@ -73,13 +73,13 @@
 <!-- endinject -->
 
 <!-- Layout styles -->
-<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/demo1/style.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/demo1/style-new.css">
 <!-- End layout styles -->
 
 <link rel="shortcut icon" href="<?= base_url("assets/panel/") ?>images/favicon.png" />
 
-<!-- <link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/custom.min.css"> -->
-<link rel="stylesheet" href="<?= base_url("assets/") ?>css/panel.min.css">
+<link rel="stylesheet" href="<?= base_url("assets/panel/") ?>css/custom.min.css">
+<!-- <link rel="stylesheet" href="<?= base_url("assets/") ?>css/panel.min.css"> -->
 
 <?php switch (explode(base_url(), current_url())[1]):
 	case 'dashboard': ?>

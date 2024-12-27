@@ -3,7 +3,6 @@
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
 			<h4 class="mb-3 mb-md-0">Dashboard</h4>
-			<a href="">(LDRT-nxBWow0F-23djX0H7V8vrHgAGhFnW-UNu9-GxI9)</a>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">

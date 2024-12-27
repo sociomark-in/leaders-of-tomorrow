@@ -451,7 +451,7 @@
 			<div class="">
 				<h5 class="card-title mb-3">All Comments</h5>
 				<?php foreach ($comments as $key => $comment) :?>
-				<div class="mb-3 p-3 bg-light">
+				<div class="mb-3 p-3 card-comment">
 					<blockquote class="blockquote">
 						<p class="mb-4"><?= $comment['comment'] ?></p>
 						<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= $comment['created_by']['role'] ?></cite></footer>

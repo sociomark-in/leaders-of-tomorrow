@@ -1,0 +1,29 @@
+form label {
+  display: inline-block;
+  color: #000000;
+  font-weight: 500;
+}
+
+.card-comment {
+  background-color: #ffffff;
+}
+
+.text-muted {
+  color: #1c1c1c !important;
+}
+
+.staged-tab-wizard .nav-item .nav-link.disabled {
+  color: #1c1c1c !important;
+}
+
+.welcome-banner {
+  background: url(../../images/favicon_op30.png) no-repeat, rgba(255, 222, 63, 0.2);
+  background-size: max(15%, 10rem);
+  background-position: -5% 20%;
+  border: 1px solid rgba(255, 222, 63, 0.6);
+  border-radius: 0.5rem;
+}
+
+table a {
+  color: #1c1c1c;
+}

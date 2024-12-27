@@ -3,13 +3,12 @@
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
-			<h4 class="mb-3 mb-md-0">All Applications</h4>
-			<a href="">(LDRT-nxBWow0F-23djX0H7V8vrHgAGhFnW-UNu9-GxI9)</a>
+			<h4 class="mb-3 mb-md-0">All Nominations</h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Overview</li>
+				<li class="breadcrumb-item active" aria-current="page">All Nominations</li>
 			</ol>
 		</nav>
 	</div>
@@ -20,19 +19,16 @@
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card">
 						<div class="card-body">
-							<div class="d-flex justify-content-between align-items-baseline">
+							<!-- <div class="d-flex justify-content-between align-items-baseline mb-3">
 								<h6 class="card-title mb-0">All Nominations</h6>
 								<div class="row align-items-center">
-									<div class="col-auto">
+									!-- <div class="col-auto">
 										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 											Download<i class="link-icon px-1 mb-1" data-feather="download"></i>
 										</button>
-									</div>
-									<div class="col-auto">
-										<a class="btn p-0 btn-icon-text text-dark" href="">View All</a>
-									</div>
+									</div> --
 								</div>
-							</div>
+							</div> -->
 							<div class="row">
 								<div class="col-12">
 									<table class="table table-striped" id="applicationsTable">

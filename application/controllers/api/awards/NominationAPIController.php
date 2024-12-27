@@ -43,7 +43,7 @@ class NominationAPIController extends CI_Controller
 		/* Set Uploads Config */
 		$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
 		$config['allowed_types'] = 'pdf';
-		$config['max_size'] = '250';
+		$config['max_size'] = '1000';
 
 
 		/* PDFMerger Docket File Exists Script */
@@ -622,7 +622,7 @@ class NominationAPIController extends CI_Controller
 		$category_id = $this->request['category_id'];
 		$c = explode("_", $category_id);
 		$application_id = $this->request['application_id'];
-		
+
 		# ☑ Check if $_FILES Exists
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
