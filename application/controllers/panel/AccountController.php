@@ -109,7 +109,7 @@ class AccountController extends PanelController
 
 	public function profile()
 	{
-		redirect('dashboard'); exit;
+		// redirect('dashboard'); exit;
 		$this->load->panel_view('account/profile', $this->data);
 	}
 

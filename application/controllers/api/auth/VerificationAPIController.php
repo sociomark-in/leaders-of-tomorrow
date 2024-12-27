@@ -9,8 +9,7 @@ class VerificationAPIController extends CI_Controller
 		parent::__construct();
 		$this->load->model('panel/UserModel');
 		
-		$this->load->library('email/GlobalMail');
-		$this->email_client = new GlobalMail(true);
+		$this->load->library('email/BrevoCURLMail');
 
 
 		$this->data = [];
@@ -36,21 +35,25 @@ class VerificationAPIController extends CI_Controller
 						'dispose_after' => ''
 					];
 					$this->session->set_tempdata('email_verify_token', $session, 600);
-					$verification_link = base_url('api/v2/auth/verify/email/verify?token=' . $token);
+					$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
 					/* PHP Emailer Script */
 					try {
 						if (!is_null($email)) {
-							$this->email_client->_init_();
-							$this->email_client->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], [$email], 'response@timesnetwork.in');
-							$this->email_client->data('Custom Subject', 'panel/emails/mail', null, 'This is the body in plain text for non-HTML mail clients');
-							if ($this->email_client->send()) {
-								echo "Success!!!";
+							$recipients = [
+								[
+									"email" =>  $user['email'],
+									"name" =>  $user['name']
+								]
+							];
+							$subject = APP_NAME . " - Registration!";
+							$body = "Hi {$user['name']},<br>Please Click <a href='{$verification_link}'>This Link</a> to Verify Your Email Address";
+							if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 								$session = [
-									'status' => true,
+									'status' => 'SUCCESS',
 								];
 							} else {
 								$session = [
-									'status' => false,
+									'status' => 'ERROR',
 								];
 							}
 						}
@@ -60,11 +63,11 @@ class VerificationAPIController extends CI_Controller
 					/* Send Verification EMail */
 				} else {
 					$session = [
-						'status' => false,
+						'status' => 'ERROR',
 					];
 				}
 				redirect($this->request['referer']);
-				$this->session->set_flashdata('emailverification_send_session', $session);
+				$this->session->set_flashdata('email_verification_status', $session);
 				break;
 
 			default:
@@ -73,17 +76,24 @@ class VerificationAPIController extends CI_Controller
 	}
 	public function verify($type)
 	{
-		$this->request = $this->input->post();
-		echo "<pre>";
-		print_r($this->usersession);
-		print_r($this->request);
+		$this->request = $this->input->get();
 
 		switch ($type) {
 			case 'email':
+				$user = json_decode($this->UserModel->get(null, ['useremail' => $this->usersession['useremail']]), true)[0];
+				if ($this->UserModel->update(['is_email_verified' => 1], ['id' => $user['id']])) {
+					$session = [
+						'status' => 'SUCCESS',
+					];
+				} else {
+					$session = [
+						'status' => 'ERROR',
+					];
+				}
+				redirect('dashboard');
 				break;
 			default:
 				break;
 		}
-		redirect($this->request['referer']);
 	}
 }

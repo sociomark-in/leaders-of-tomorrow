@@ -33,9 +33,9 @@ class BrevoCURLMail
 		$this->headers[] = 'Content-Type: application/json';
 
 		if ($sandboxMode) {
-			$this->pool['headers'] =  [
-				"X-Sib-Sandbox" =>  "drop"
-			];
+			// $this->pool['headers'] =  [
+			// 	"X-Sib-Sandbox" =>  "drop"
+			// ];
 		}
 		return $this;
 	}

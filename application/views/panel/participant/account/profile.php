@@ -20,16 +20,36 @@
 								<h5>Reset Your Password</h5>
 							</div>
 							<div class="">
+								<?php if (isset($_SESSION['password_reset_status'])): ?>
+									<?php switch ($_SESSION['password_reset_status']['status']):
+										case 'SUCCESS': ?>
+											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+												The Password has been successfully Reset.
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php
+											break;
+											?>
+										<?php
+										case 'ERROR': ?>
+											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
+												Error Resetting the Password. <?= $_SESSION['password_reset_status']['message'] ?>
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php
+											break;
+											?>
+										<?php
+										default: ?>
+											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+												Unknown Error Occurred!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php
+											break;
+											?>
+									<?php endswitch ?>
 								<?php
-								if (isset($_SESSION['password_reset_session'])):
-									if ($_SESSION['password_reset_session']):
-								?>
-										<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-											A verification link has been sent to your registered email address which will expire <strong> in 10 minutes</strong>.
-											<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-										</div>
-								<?php
-									endif;
 								endif;
 								?>
 								<?= form_open('api/v2/settings/password/reset', ['id' => 'formWidget']) ?>
@@ -133,11 +153,31 @@
 							<div class="card-title">
 								<h5>Verify Your Email Address</h5>
 							</div>
+
 							<div class="">
-								<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-									A verification link has been sent to your registered email address which will expire <strong> in 10 minutes</strong>.
-									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-								</div>
+								<?php if (isset($_SESSION['email_verification_status'])): ?>
+									<?php switch ($_SESSION['email_verification_status']['status']):
+										case 'SUCCESS': ?>
+											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+												A verification link has been sent to your registered email address which will expire <strong> in 10 minutes</strong>.
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php
+											break;
+											?>
+										<?php
+										default: ?>
+											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+												Unknown Error Occurred!
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php
+											break;
+											?>
+									<?php endswitch ?>
+								<?php
+								endif;
+								?>
 								<?= form_open('api/v2/auth/verify/email/send', ['id' => 'formEmailVerify']) ?>
 								<div class="row g-3">
 									<div class="col-12">
@@ -191,7 +231,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4 col-md-6 col-12">
+		<div class="col-lg-4 col-md-6 col-12 d-none">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card">
