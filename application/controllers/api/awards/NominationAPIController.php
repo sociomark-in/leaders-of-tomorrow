@@ -712,37 +712,17 @@ class NominationAPIController extends CI_Controller
 		$this->load->model('panel/CommentModel');
 		$this->request = $this->input->post();
 
-		switch ($this->usersession['role']) {
-			case 'jury':
-			case 'admin':
-			case 'super-admin':
-				$data = [
-					'status' => '1',
-				];
-				$nomination = array_merge(
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
-				);
-				$nomination['created_by'] = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
-				$user = $nomination['created_by'];
-				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
-					$recipients = [
-						[
-							"email" =>  $user['email'],
-							"name" =>  $user['name']
-						]
-					];
-					$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Accepted!";
-					$body = "Hi " .  $user['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
-						redirect('dashboard/applications');
-					}
-				}
-				break;
-
-			default:
-				# code...
-				break;
+		if ($this->usersession['role'] == 'jury') {
+			$data = [
+				'status' => '1',
+			];
+			$nomination = array_merge(
+				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+				json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
+			);
+			if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+				redirect('dashboard/applications');
+			}
 		}
 	}
 
@@ -773,17 +753,7 @@ class NominationAPIController extends CI_Controller
 						'status' => '0',
 					];
 					if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
-						$recipients = [
-							[
-								"email" =>  $applicant['email'],
-								"name" =>  $applicant['name']
-							]
-						];
-						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Rejected!";
-						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] ."<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
-							redirect('dashboard/applications');
-						}
+						redirect('dashboard/applications');
 					}
 				}
 				# code...
