@@ -179,7 +179,7 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolor blanditiis numquam dolorem qui error sequi quibusdam provident eligendi nisi illum, ducimus ullam officiis sed, accusantium asperiores iure cum sit.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <?= base_url('dashboard/my-applications') ?>.</div>
 									</td>
 								</tr>
 							</tfoot>

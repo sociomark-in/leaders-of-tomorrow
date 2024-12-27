@@ -737,7 +737,8 @@ class NominationAPIController extends CI_Controller
 					];
 					$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Accepted!";
 					$body = "Hi " .  $user['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+					$htmlbody = $this->load->view('panel/emails/participant_nomination_success', null, true);
+					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 						redirect('dashboard/applications');
 					}
 				}
@@ -831,8 +832,9 @@ class NominationAPIController extends CI_Controller
 						];
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is in Review!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
-							redirect('dashboard/applications');
+						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', null);
+						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+							// redirect('dashboard/applications');
 						}
 					}
 				}

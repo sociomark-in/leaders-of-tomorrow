@@ -45,7 +45,7 @@
 											style="max-width:600px;width:100%;min-width:320px;border-radius:3px 3px 0 0;padding-top:25px;">
 											<tr>
 												<td align="center" style="padding:0"> <img align="center"
-														alt="Invite" height="50"
+														alt="" height="50"
 														src="<?= base_url('assets/images/') ?>main.png">
 												</td>
 											</tr>
@@ -150,7 +150,7 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolor blanditiis numquam dolorem qui error sequi quibusdam provident eligendi nisi illum, ducimus ullam officiis sed, accusantium asperiores iure cum sit.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <a href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.</div>
 									</td>
 								</tr>
 							</tfoot>
