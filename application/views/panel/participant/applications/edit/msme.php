@@ -334,7 +334,7 @@
 															Plan for raising funds in future
 															Any other
 														</label>
-														<textarea required name="initiative[scalalbility]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_75528'] ?></textarea>
+														<textarea required name="initiative[scalability]" id="" class="form-control" maxlength="500" rows="5"><?= $application['id_75528'] ?></textarea>
 													</div>
 												</div>
 											</div>

@@ -79,7 +79,7 @@ class NominationsController extends PanelController
 	{
 		$this->data['my_applications'] = [];
 		$categories = [
-			'msme' => json_decode($this->CategoryModel->get_msme(), true),
+			'msme' => json_decode($this->CategoryModel->get_msme(null, ['valid_until >' => date("Y-m-d H:i:s")]), true),
 			// 'individual' => json_decode($this->CategoryModel->get_individual(), true),
 		];
 		$this->data['categories'] = $categories;
@@ -90,6 +90,7 @@ class NominationsController extends PanelController
 		if (count($applications['individual']) > 0) {
 			for ($i = 0; $i < count($applications['individual']); $i++) {
 				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
+				$applications['individual'][$i]['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $applications['individual'][$i]['created_at']), 'F j, Y');
 				$s = $applications['individual'][$i]['status'];
 				if ($s > 0) {
 					if ($applications['individual'][$i]['category']['id'] == $categories['individual'][$i]['id']) {
@@ -120,6 +121,7 @@ class NominationsController extends PanelController
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
 				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+				$applications['msme'][$i]['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $applications['msme'][$i]['created_at']), 'F j, Y');
 				$s = $applications['msme'][$i]['status'];
 				if ($s > 0) {
 					if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$i]['id']) {

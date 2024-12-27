@@ -252,14 +252,16 @@ class NominationAPIController extends CI_Controller
 						$data['id_75531'] = $response[1];
 						$data['id_75532'] = $response[2];
 						$data['id_75533'] = $response[3];
-					}
-
-					$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
-					if ($rows == 0) {
-						redirect($this->request['referrer'] . '?stage=' . $stage);
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
 					} else {
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
+
 					break;
 				case '5':	# ☑ Review Application
 					/* Change Application Status */
@@ -617,13 +619,10 @@ class NominationAPIController extends CI_Controller
 	{
 		$this->request = $this->input->post();
 		$this->load->model('event/awards/CategoryModel');
-		$category_id =$this->request['category_id'];
-		$application_id =$this->request['application_id'];
-		$category = array_merge(
-			json_decode($this->CategoryModel->get_individual(null, ['code' => $category_id]), true),
-			json_decode($this->CategoryModel->get_msme(null, ['code' => $category_id]), true)
-		)[0];
-
+		$category_id = $this->request['category_id'];
+		$c = explode("_", $category_id);
+		$application_id = $this->request['application_id'];
+		
 		# ☑ Check if $_FILES Exists
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
@@ -632,35 +631,38 @@ class NominationAPIController extends CI_Controller
 				break;
 			}
 		}
-		if ($category['type'] == 'MSME') {
+		$data = [];
+		if ($c[1] == 'MSME') {
+			$category = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true);
+
 			# ☑ Set Data for DB Insert
 			$data = [
-				'id_75502'	=> $this->request['organization_industry'],					//organization_industry
-				'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
-				'id_75508'	=> $this->request['organization_mission_vision'],			//organization_mission_vision	
-				'id_75509'	=> $this->request['organization_services'],					//organization_services	
-				'id_75510'	=> $this->request['organization_revenue_23'],				//organization_revenue	
-				'id_75511'	=> $this->request['organization_revenue_22'],				//organization_revenue	
-				'id_75512'	=> $this->request['organization_growth_23'],				//organization_growth	
-				'id_75513'	=> $this->request['organization_growth_22'],				//organization_growth	
-				'id_75514'	=> $this->request['organization_profit_23'],				//organization_profit	
-				'id_75515'	=> $this->request['organization_profit_22'],				//organization_profit	
-				'id_75516'	=> $this->request['organization_assets_23'],				//organization_assets	
-				'id_75517'	=> $this->request['organization_assets_22'],				//organization_assets	
-				'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
-				'id_75519'	=> $this->request['organization_der_22'],					//organization_der
+				'id_75502'	=> $this->request['organization']['industry'],					//organization_industry
+				'id_75503'	=> $this->request['organization']['overview'],					//organization_overview	
+				'id_75508'	=> $this->request['organization']['mission_stmt'],			//organization_mission_vision	
+				'id_75509'	=> $this->request['organization']['services_stmt'],					//organization_services	
+				'id_75510'	=> $this->request['organization']['revenue_23'],				//organization_revenue	
+				'id_75511'	=> $this->request['organization']['revenue_22'],				//organization_revenue	
+				'id_75512'	=> $this->request['organization']['growth_23'],				//organization_growth	
+				'id_75513'	=> $this->request['organization']['growth_22'],				//organization_growth	
+				'id_75514'	=> $this->request['organization']['profit_23'],				//organization_profit	
+				'id_75515'	=> $this->request['organization']['profit_22'],				//organization_profit	
+				'id_75516'	=> $this->request['organization']['assets_23'],				//organization_assets	
+				'id_75517'	=> $this->request['organization']['assets_22'],				//organization_assets	
+				'id_75518'	=> $this->request['organization']['der_23'],					//organization_der	
+				'id_75519'	=> $this->request['organization']['der_22'],					//organization_der
 
-				'id_75520'	=> $this->request['initiative_name'],
-				'id_75521'	=> $this->request['initiative_start_date'],
-				'id_75522'	=> $this->request['initiative_end_date'],
-				'id_75523'	=> $this->request['initiative_desc'],
-				'id_75524'	=> $this->request['initiative_challenges'],
-				'id_75525'	=> $this->request['initiative_strategy'],
+				'id_75520'	=> $this->request['initiative']['name'],
+				'id_75521'	=> $this->request['initiative']['start_date'],
+				'id_75522'	=> $this->request['initiative']['end_date'],
+				'id_75523'	=> $this->request['initiative']['description'],
+				'id_75524'	=> $this->request['initiative']['challenges'],
+				'id_75525'	=> $this->request['initiative']['strategy'],
 
-				'id_75526'	=> $this->request['initiative_tech'],
-				'id_75527'	=> $this->request['initiative_impact'],
-				'id_75528'	=> $this->request['initiative_scalability'],
-				'id_75529'	=> $this->request['initiative_info'],
+				'id_75526'	=> $this->request['initiative']['technology'],
+				'id_75527'	=> $this->request['initiative']['impact'],
+				'id_75528'	=> $this->request['initiative']['scalability'],
+				'id_75529'	=> $this->request['initiative']['additional'],
 			];
 
 			# ☑ If $_FILES Exists then Upload and get $response.
@@ -671,9 +673,11 @@ class NominationAPIController extends CI_Controller
 				$data['id_75532'] = $response[2];
 				$data['id_75533'] = $response[3];
 			}
-		} elseif ($category['type'] == "Individual") {
+		} elseif ($c[1] == "Individual") {
+			$category = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true);
+
 			# Set Data for DB Insert
-			$data = [];
+
 
 			# ☑ If $_FILES Exists then Upload and get $response.
 			if ($f) {
@@ -684,7 +688,6 @@ class NominationAPIController extends CI_Controller
 				$data['id_74528'] = $response[3];
 			}
 		}
-
 		# ☑ Sanitize Data for DB Insert
 		foreach ($data as $key => $value) {
 			# code...
@@ -697,7 +700,7 @@ class NominationAPIController extends CI_Controller
 
 		# ☑ DB Insert
 		$this->data = $data;
-		$c = explode('_',$this->request['category_id']);
+		$c = explode('_', $this->request['category_id']);
 
 		$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
 		if ($rows > 0) {
@@ -780,7 +783,7 @@ class NominationAPIController extends CI_Controller
 							]
 						];
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Rejected!";
-						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] ."<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 							redirect('dashboard/applications');
 						}
@@ -827,7 +830,7 @@ class NominationAPIController extends CI_Controller
 							]
 						];
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is in Review!";
-						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] ."<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 							redirect('dashboard/applications');
 						}

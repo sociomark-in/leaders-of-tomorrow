@@ -136,7 +136,7 @@
 					</div>
 					<div class="col-12">
 						<div class="text-center">
-							<a class="btn btn-primary" href="<?= base_url('awards/categories') ?>">View All Categories</a>
+							<a class="btn btn-primary" href="<?= base_url('dashboards/nominations') ?>">View All Categories</a>
 						</div>
 					</div>
 				</div>

@@ -75,6 +75,7 @@ class AccountController extends PanelController
 				if (count($applications['msme']) > 0) {
 					for ($i = 0; $i < count($applications['msme']); $i++) {
 						$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+						$applications['msme'][$i]['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $applications['msme'][$i]['created_at']), 'Y-m-d');
 						$s = $applications['msme'][$i]['status'];
 						switch ($s) {
 							case '0':
