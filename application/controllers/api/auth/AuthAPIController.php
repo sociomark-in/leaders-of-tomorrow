@@ -87,10 +87,25 @@ class AuthAPIController extends CI_Controller
 			redirect('login');
 		} else {
 			if ($this->UserModel->insert($data)) {
-				$session['status'] = 'SUCCESS';
-				$session['message'] = 'You have successfully registered. Please Log In.';
-				$this->session->set_flashdata('user_login_status', $session);
-				
+				$token = hash('md5', hash('sha256', json_encode([
+					'email' => $this->request['email'],
+					'status' => true,
+				])));
+				$token_session = [
+					'token_id' => $token,
+					'dispose_after' => ''
+				];
+				$this->session->set_tempdata('email_verify_token', $token_session, 600);
+				$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
+
+				$email_data = [
+					'user' =>[
+						'name' => $data['name'],
+						'email' => $data['useremail'],
+						'password' => $data['contact'],
+					],
+					'verification_url' => $verification_link,
+				];
 				$recipients = [
 					[
 						"email" =>  $data['email'],
@@ -99,12 +114,15 @@ class AuthAPIController extends CI_Controller
 				];
 				$subject = APP_NAME . " - Registration!";
 				$body = "Hi " .  $this->usersession['name'] . ",<br>Your login Details are as follows:<br>Username:" . $data['email'] . "<br>Password:" . $data['contact'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
-				if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+				$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
+				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+					$session['status'] = 'SUCCESS';
+					$session['message'] = 'You have successfully registered. Please Check your Email for the Email Verification Link.';
+					$this->session->set_flashdata('user_login_status', $session);
 					redirect('login');
 				}
 			} else {
 				$session['status'] = 'WARNING';
-				$session['message'] = 'You have already registered. Please Log In Now.';
 				$this->session->set_flashdata('user_login_status', $session);
 				redirect('register');
 			}
@@ -155,7 +173,7 @@ class AuthAPIController extends CI_Controller
 						$session['status'] = 'SUCCESS';
 						$session['message'] = 'You have successfully registered. Please Log In.';
 						$this->session->set_flashdata('user_login_status', $session);
-						
+
 						$recipients = [
 							[
 								"email" =>  $data['email'],
@@ -167,7 +185,6 @@ class AuthAPIController extends CI_Controller
 						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 							redirect('login');
 						}
-
 					} else {
 						$this->session->set_flashdata('user_login_status', $session);
 						redirect('agency-register');

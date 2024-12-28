@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Registration Updates for Leaders of Tomorrow Event</title>
+	<title>Registration Success for Leaders of Tomorrow Event</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -27,10 +27,12 @@
 	</style>
 </head>
 
-<body data-bgcolor="Body" style="margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family:'Roboto Slab',Arial,Helvetica,sans-serif;color: #1d1d1d;"
-	bgcolor="#efefef" xml:lang="en">
-	<div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
-		<table cellpadding="0" cellspacing="0" border="0" style="word-break:break-word;width:100%" bgcolor="#E9EAED">
+<body data-bgcolor="Body"
+	style="margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family:'Roboto Slab',Arial,Helvetica,sans-serif;color: #1d1d1d; font-size:14px;"
+	bgcolor="#E9EAED" xml:lang="en">
+	<div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr"
+		style="font-size:medium; font-size:max(16px, 1rem)">
+		<table cellpadding="10" cellspacing="0" border="0" style="word-break:break-word;width:100%" bgcolor="#E9EAED">
 			<tbody>
 				<tr>
 					<td align="center">
@@ -58,83 +60,36 @@
 										<table border="0" cellpadding="30" cellspacing="0"
 											style="max-width:600px;width:100%;min-width:320px">
 											<tr>
-												<td style="padding:10px 30px;border-bottom:1px solid #e9eaed;">
-													<table cellpadding="10">
-														<tr>
-															<td height="10" style="padding:0;"></td>
-														</tr>
-														<tr>
-															<td style="padding:0">
-																<img src="https://ui-avatars.com/api/?name=Leaders+Tomorrow"
-																	alt="" height="60" width="60" style="border-radius: 50%;">
-															</td>
-															<td style="font-size: 12px; color: #495664;line-height:1.5;">
-																<strong>Jury</strong> posted a new comment on your nomination. <a href="<?= base_url('dashboard') ?>" style="color: #b72026;text-decoration: none;">Go to My Account</a>
-															</td>
-														</tr>
-														<tr>
-															<td height="10" style="padding:0;"></td>
-														</tr>
-													</table>
-												</td>
+												<td height="20" style="padding:0 30px 0"></td>
 											</tr>
 											<tr>
-												<td style="padding-top: 15px;">
-													<table>
-														<tr>
-															<td
-																style="font-size: 14px; padding: 10px 16px; border-radius: 5px; background-color: #efefef;">
-																<div style="margin-bottom:10px;line-height:1.5">
-																	<?= $response['comment'] ?? "Lorem ipsum
-																	dolor sit amet consectetur, adipisicing elit. Vero
-																	magnam sint nesciunt quasi, porro repudiandae. Corrupti
-																	tempore nemo magni fuga...." ?>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td height="10"></td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-size:16px;line-height:1.5;padding-top:0">
+												<td style="line-height:22px;padding:0 30px 0">
 													<div>
-														<div style="font-size:16px;font-weight:bold;margin-bottom:10px">
-															Hi <?= $applicant['name'] ?>,</div>
+														<div style="font-weight:bold;margin-bottom:10px">
+															Hi <?= $user['name'] ?>,</div>
 														<div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Thank you for nominating yourself to the <strong>Leaders of
-																	Tomorrow 2024.</strong>
-															</div>
 															<div style="margin-bottom:20px;line-height:1.5">
-																You have a new comment on your nomination of <strong><?= APP_NAME ?></strong> Kindly take appropriate action on
-																your dashboard by clicking the link below.
+																Thank you for registering for the <strong><?= APP_NAME ?> 2024.</strong>
 															</div>
-														</div>
-													</div>
-													<div style="line-height:1.5">
-														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-															href="<?= base_url('dashboard/application/' . $response['nomination_id'] . "/edit") ?>" target="_blank">
-															View All Nominations
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
-													<div>
-														<div style="margin-bottom:10px;line-height:1.5">
-															We will keep you updated on your nomination status.
-														</div>
+															<div style="margin-bottom:10px;line-height:1.5">
+																Kindly verify your email address first by clicking the link below
+															</div>
+															<div style="margin-bottom:10px;line-height:1.5">
+																<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
+																	href="<?= $verification_url ?>"
+																	target="_blank">
+																	Verify Your Email Address
+																</a>
+															</div>
+															<div style="margin-bottom:10px;line-height:1.5">
+																We will keep you updated on your nomination status on this email address.
+															</div>
 
-														<div>Thank you!</div>
-														<br>
-														<div>Best Regards,</div>
-														<div><strong>Team <?= APP_NAME ?></strong>
+															<div>Thank you!</div>
+															<br>
+															<div>Best Regards,</div>
+															<div><strong>Team <?= APP_NAME ?></strong></div>
 														</div>
-													</div>
 												</td>
 											</tr>
 											<tr>
@@ -190,11 +145,8 @@
 				</tr>
 			</tbody>
 		</table>
-		</td>
-		</tr>
-		</tbody>
-		</table>
 	</div>
+
 </body>
 
 </html>

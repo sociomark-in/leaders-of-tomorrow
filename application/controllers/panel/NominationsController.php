@@ -18,8 +18,8 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status !=' => '4'], 'individual'), true),
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status !=' => '4'], 'msme'), true)
+			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status <' => 2], 'individual'), true),
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status <' => 2], 'msme'), true)
 		];
 		if (count($applications['individual']) > 0) {
 			for ($i = 0; $i < count($applications['individual']); $i++) {
@@ -176,6 +176,7 @@ class NominationsController extends PanelController
 
 		for ($i = 0; $i < count($comments); $i++) {
 			$comments[$i]['created_by'] = json_decode($this->UserModel->get(null, ['id' => $comments[$i]['created_by']]), true)[0];
+			$comments[$i]['created_at'] = date_format(date_create_from_format('Y-m-d H:i:s', $comments[$i]['created_at']), 'F j, Y');
 		}
 
 		$this->data['category'] = $category_details;
@@ -222,13 +223,14 @@ class NominationsController extends PanelController
 
 				for ($i = 0; $i < count($comments); $i++) {
 					$comments[$i]['created_by'] = json_decode($this->UserModel->get(null, ['id' => $comments[$i]['created_by']]), true)[0];
+					$comments[$i]['created_at'] = date_format(date_create_from_format('Y-m-d H:i:s', $comments[$i]['created_at']), 'F j, Y');
 				}
 				$this->data['comments'] = $comments;
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
 				$this->data['application'] = array_merge(
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'stage_status' => 5], 'msme'), true),
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'stage_status' => 5], 'individual'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status !=' => 4], 'msme'), true),
+					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status !=' => 4], 'individual'), true),
 				)[0];
 
 				$this->load->moderator_view('applications/single', $this->data);

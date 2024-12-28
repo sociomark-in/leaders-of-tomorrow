@@ -1,8 +1,12 @@
 <main class="w-fullscreen">
 	<section class="section signup-widget">
 		<div class="container h-100">
-			<div class="row h-100 justify-content-center">
-				<div class="col-lg-8 col-md-6 col-12"></div>
+			<div class="row h-100 justify-content-between align-items-lg-center">
+				<div class="col-xl-5 col-lg-8 col-md-6 col-12">
+					<div class="media-content">
+						<img class="w-100" src="<?= base_url('assets/images/ilu.png') ?>" alt="Leaders Of Tomorrow">
+					</div>
+				</div>
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="plain-card p-3">
 						<div class="card-body">
