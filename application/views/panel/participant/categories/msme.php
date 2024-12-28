@@ -70,7 +70,7 @@ $tabs = [
 				<!-- <div class="tab-pane py-3 fade show active" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0"> -->
 				<div class="row py-3">
 					<div class="col-12 grid-margin stretch-card">
-						<div class="card">
+						<div class="card input-group-card">
 							<div class="card-body">
 								<?php
 								switch ($tabs[$i]['identifier']) {

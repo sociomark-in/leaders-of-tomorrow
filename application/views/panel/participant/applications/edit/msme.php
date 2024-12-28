@@ -29,7 +29,7 @@
 						<input type="hidden" name="stage" value="<?= $stage ?>">
 						<div class="row">
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<fieldset class="mb-3" disabled>
 											<legend class="card-title mb-0">
@@ -115,7 +115,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<div class="row g-3">
 											<div class="col-12">
@@ -190,7 +190,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<div class="col-12">
 											<fieldset class="">
@@ -229,7 +229,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<fieldset class="mb-3">
 											<div class="mb-3">
@@ -283,7 +283,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<fieldset class="mb-3">
 											<div class="mb-3">
@@ -359,7 +359,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<fieldset class="mb-3">
 											<legend class="card-title mb-0">
@@ -427,7 +427,7 @@
 								</div>
 							</div>
 							<div class="col-12 grid-margin stretch-card">
-								<div class="card">
+								<div class="card input-group-card">
 									<div class="card-body">
 										<div class="row g-3">
 											<div class="col-md-auto">
@@ -448,17 +448,18 @@
 		</div>
 		<div class="col-xl-3">
 			<div class="">
-			<div class="">
-				<h5 class="card-title mb-3">All Comments</h5>
-				<?php foreach ($comments as $key => $comment) :?>
-				<div class="mb-3 p-3 card-comment">
-					<blockquote class="blockquote">
-						<p class="mb-4"><?= $comment['comment'] ?></p>
-						<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= $comment['created_by']['role'] ?></cite></footer>
-					</blockquote>
+				<div class="">
+					<h5 class="card-title mb-3">All Comments</h5>
+					<?php foreach ($comments as $key => $comment) : ?>
+						<div class="mb-3 p-3 card-comment">
+							<blockquote class="blockquote">
+								<p class="mb-4"><?= $comment['comment'] ?></p>
+								<footer class="blockquote-footer">
+									<?= $comment['created_by']['name'] ?>,&nbsp;(<cite title="Source Title"><?= ucfirst($comment['created_at']) ?></cite>)</footer>
+							</blockquote>
+						</div>
+					<?php endforeach ?>
 				</div>
-				<?php endforeach ?>
-			</div>
 			</div>
 		</div>
 	</div>

@@ -16,7 +16,7 @@
 			<input type="hidden" name="stage" value="<?= $stage ?>">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<fieldset class="mb-3">
 								<legend class="card-title mb-0">
@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<fieldset class="mb-3">
 								<legend class="card-title mb-0">
@@ -276,7 +276,7 @@
 					</div>
 				</div>
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<fieldset class="mb-3">
 								<div class="mb-3">
@@ -330,7 +330,7 @@
 					</div>
 				</div>
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<fieldset class="mb-3">
 								<div class="mb-3">
@@ -410,7 +410,7 @@
 					</div>
 				</div>
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<fieldset class="mb-3">
 								<legend class="card-title mb-0">
@@ -478,7 +478,7 @@
 					</div>
 				</div>
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<div class="row g-3">
 								<div class="col-md-auto">

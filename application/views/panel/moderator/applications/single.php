@@ -22,7 +22,7 @@ if ($nomination['stage'] >= 1) {
 		<div class="col-xl col-12">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
-					<div class="card">
+					<div class="card input-group-card">
 						<div class="card-body">
 							<div class="row justify-content-between">
 								<div class="col">
@@ -34,7 +34,7 @@ if ($nomination['stage'] >= 1) {
 										<div class="col-lg-auto col-12">
 											<?= form_open('api/v2/awards/nomination/accept') ?>
 											<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
-											<button type="submit" class="btn d-flex btn-success btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
+											<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
 											<?= form_close() ?>
 										</div>
 										<div class="col-lg-auto col-12">
@@ -45,7 +45,7 @@ if ($nomination['stage'] >= 1) {
 											<?= form_close() ?> 
 											-->
 
-											<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
+											<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
 										</div>
 									</div>
 								</div>
@@ -55,18 +55,20 @@ if ($nomination['stage'] >= 1) {
 				</div>
 				<div class="col-xl-9 col-12 grid-margin stretch-card">
 					<div class="col-12">
-						<?php
-						if (strtolower($category['type']) == 'msme') {
-							include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
-						} else {
-							include_once APPPATH . '/views/panel/moderator/full_view/individual.php';
-						} ?>
+						<div class="nomination_detailed">
+							<?php
+							if (strtolower($category['type']) == 'msme') {
+								include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
+							} else {
+								include_once APPPATH . '/views/panel/moderator/full_view/individual.php';
+							} ?>
+						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-12 grid-margin stretch-card">
 					<div class="row">
 						<div class="col-12 grid-margin stretch-card">
-							<div class="card">
+							<div class="card input-group-card">
 								<div class="card-body">
 									<h5 class="card-title">Comment & Reject</h5>
 									<?= form_open('api/v2/awards/nomination/reject_w_comment', ['id' => ""]) ?>
@@ -78,7 +80,7 @@ if ($nomination['stage'] >= 1) {
 										</div>
 										<div class="col-12">
 											<div class="col-auto">
-												<button type="submit" class="btn btn-danger">Comment & Reject Application</button>
+												<button type="submit" class="btn btn-primary">Comment & Reject Application</button>
 											</div>
 										</div>
 									</div>
@@ -87,7 +89,7 @@ if ($nomination['stage'] >= 1) {
 							</div>
 						</div>
 						<div class="col-12 grid-margin stretch-card">
-							<div class="card">
+							<div class="card input-group-card">
 								<div class="card-body">
 									<h5 class="card-title">New Comment & Send for Betterment</h5>
 									<?= form_open('api/v2/awards/nomination/unlock_w_comment', ['id' => ""]) ?>
@@ -112,7 +114,8 @@ if ($nomination['stage'] >= 1) {
 													<div class="bg-light">
 														<blockquote class="blockquote p-3">
 															<p class="mb-4"><?= $comment['comment'] ?></p>
-															<footer class="blockquote-footer"><?= $comment['created_by']['name'] ?>,&nbsp;<cite title="Source Title"><?= ucfirst($comment['created_by']['role']) ?></cite></footer>
+															<footer class="blockquote-footer">
+																<?= $comment['created_by']['name'] ?>,&nbsp;(<cite title="Source Title"><?= ucfirst($comment['created_at']) ?></cite>)</footer>
 														</blockquote>
 													</div>
 												<?php endforeach ?>

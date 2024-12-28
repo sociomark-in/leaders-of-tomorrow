@@ -22,7 +22,7 @@
 	<div class="tab-pane fade show active" id="personal-tab-pane" role="tabpanel" aria-labelledby="personal-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -128,7 +128,7 @@
 				</div>
 			</div>
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -167,7 +167,7 @@
 	<div class="tab-pane fade" id="organization-tab-pane" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -202,7 +202,7 @@
 				</div>
 			</div>
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -254,7 +254,7 @@
 	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy1-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -293,7 +293,7 @@
 	<div class="tab-pane fade" id="casestudy2-tab-pane" role="tabpanel" aria-labelledby="casestudy2-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">
@@ -339,7 +339,7 @@
 	<div class="tab-pane fade" id="downloads-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">
 		<div class="row g-3 mt-2">
 			<div class="col-12 grid-margin stretch-card">
-				<div class="card">
+				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
 							<div class="col-12">

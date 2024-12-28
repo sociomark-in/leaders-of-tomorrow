@@ -25,7 +25,7 @@ if ($nomination['stage'] >= 1) {
 			<div class="col-12 grid-margin stretch-card">
 					<div class="card">
 						<div class="card-body">
-							<div class="row align-items-center">
+							<div class="row align-items-center gap-3">
 								<div class="col-auto">
 									<div class="">
 										<!-- <img src="https://placehold.co/60x60" alt=""> -->
