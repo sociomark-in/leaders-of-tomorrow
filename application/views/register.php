@@ -69,7 +69,7 @@
 													$profile['is_email_verified'] = $googleusercontent['profile']['is_email_verified'];
 												?>
 													<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-														<?php echo $googleusercontent['status'] ?>
+														You have been Successfully Registered! Please Enter Contact Number.
 														<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 													</div>
 												<?php else:
@@ -107,7 +107,7 @@
 															</div>
 															<div class="col-xl-6 col-12">
 																<label for="" class="form-label">Contact Number</label>
-																<input type="text" minlength="10" maxlength="13" id="OTPContact" name="contact" class="form-control" required>
+																<input type="text" minlength="10" maxlength="10" id="OTPContact" name="contact" class="form-control" required>
 															</div>
 															<div class="col-12">
 																<label for="" class="form-label">Email Address</label>
@@ -121,7 +121,7 @@
 															<div class="col-12">
 																<div class="">
 																	<div class="form-check">
-																		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+																		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
 																		<label class="form-check-label" for="flexCheckChecked">
 																			By checking this box, I agree to abide by the event's rules and regulations
 																		</label>
@@ -152,6 +152,9 @@
 																hiddenInput: "full_contact",
 																formatOnDisplay: true,
 																nationalMode: false,
+																customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+																	return "8655425357";
+																},
 																// allowDropdown: false,
 																geoIpLookup: function(callback) {
 																	$.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
@@ -202,6 +205,9 @@
 			name: {
 				letters: true,
 			},
+			contact: {
+				numbers: true,
+			},
 			email: {
 				normalizer: function(value) {
 					return $.trim(value)
@@ -221,6 +227,9 @@
 			},
 			name: {
 				letters: 'Please enter a valid name',
+			},
+			contact: {
+				letters: 'Please enter a valid phone number',
 			},
 		}
 	});

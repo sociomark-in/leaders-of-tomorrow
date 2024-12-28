@@ -19,7 +19,7 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Initiative / Product / Service<span class="text-danger">&ast;</span></h5>
+				<h5>Initiative / Product / Service<sup class="text-danger">&ast;</sup></h5>
 			</legend>
 			<p>(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
 		</div>
@@ -46,20 +46,23 @@
 			</div>
 			<div class="col-12">
 				<div class="">
-					<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service? (Max 200 words)</label>
+					<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2023 that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</label>
 					<textarea required name="initiative_desc" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75523'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
-					<label for="" class="form-label">Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges? (Max 150 words)</label>
+					<label for="" class="form-label">Highlight the challenges faced by you as an MSME to implement the initiative or product/service offering mentioned above and how did the organization overcome these challenges?</label>
 					<textarea required name="initiative_challenges" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75524'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
-					<label for="" class="form-label">Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors. (Max 150 words)</label>
+					<label for="" class="form-label">Elaborate on your go-market-strategy for introducing the initiative/product/service into the market. Highlight the factors that differentiate you from your competitors.</label>
 					<textarea required name="initiative_strategy" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_75525'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 		</div>

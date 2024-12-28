@@ -8,7 +8,7 @@ class VerificationAPIController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
-
+		
 		$this->load->library('email/BrevoCURLMail');
 
 
@@ -37,9 +37,6 @@ class VerificationAPIController extends CI_Controller
 					$this->session->set_tempdata('email_verify_token', $session, 600);
 					$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
 					/* PHP Emailer Script */
-					$session = [
-						
-					]
 					try {
 						if (!is_null($email)) {
 							$recipients = [
@@ -50,16 +47,18 @@ class VerificationAPIController extends CI_Controller
 							];
 							$subject = APP_NAME . " - Registration!";
 							$body = "Hi {$user['name']},<br>Please Click <a href='{$verification_link}'>This Link</a> to Verify Your Email Address";
-							$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
-							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-								$session['status'] = 'SUCCESS';
-								$session['message'] = 'You have successfully registered. Please Check your Email for the Email Verification Link.';
-								$this->session->set_flashdata('user_login_status', $session);
-								redirect('login');
+							if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+								$session = [
+									'status' => 'SUCCESS',
+								];
+							} else {
+								$session = [
+									'status' => 'ERROR',
+								];
 							}
 						}
 					} catch (Exception $th) {
-						echo "Email Failed!!";
+						echo "Email Failed!! Mailer Error: {$this->email_client->ErrorInfo}";
 					}
 					/* Send Verification EMail */
 				} else {

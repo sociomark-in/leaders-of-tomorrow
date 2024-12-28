@@ -16,11 +16,11 @@
 <div class="mb-3">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-3">
-			<h5>Upload Files<span class="text-danger">&ast;</span></h5>
+			<h5>Upload Files<sup class="text-danger">&ast;</sup></h5>
 		</legend>
-		<div class="">
+		<div class="d-none">
 			<div class="bg-light p-3 mb-2">
-				<h5>Instructions<span class="text-danger">&ast;</span></h5>
+				<h5>Instructions<sup class="text-danger">&ast;</sup></h5>
 				<ul class="">
 					<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
 					<li>Open the unsupported PDF file with Chrome</li>
@@ -35,27 +35,28 @@
 				<div class="">
 					<label for="" class="form-label">MSME certificate</label>
 					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_75530'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
+					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Company Incorporation Certificate</label>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_75531'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Impact assessment report as on March 31, 2023</label>
 					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">as on March 31, 2023</span>
+					<span class="form-text">as on March 31, 2023 (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Any other Collaterals</label>
 					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
+					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 		</div>

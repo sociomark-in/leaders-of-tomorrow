@@ -17,7 +17,7 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Use of Technology<span class="text-danger">&ast;</span></h5>
+				<h5>Use of Technology<sup class="text-danger">&ast;</sup></h5>
 			</legend>
 		</div>
 		<div class="row g-3">
@@ -25,6 +25,7 @@
 				<div class="">
 					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</label>
 					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -33,16 +34,17 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Impact of the innovation/ initiative<span class="text-danger">&ast;</span></h5>
+				<h5>Impact of the innovation/ initiative<sup class="text-danger">&ast;</sup></h5>
 			</legend>
 		</div>
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
-						(Details should be measurable and generic statements should be avoided) (Max 200 words)
+						(Details should be measurable and generic statements should be avoided)
 					</label>
 					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -51,19 +53,20 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Sustainability & Scalability<span class="text-danger">&ast;</span></h5>
+				<h5>Sustainability & Scalability<sup class="text-danger">&ast;</sup></h5>
 			</legend>
 		</div>
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="">
-					<label for="" class="form-label">Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters (max 200 words)
+					<label for="" class="form-label">Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters
 						Growth plan for next 2-3 years
 						Growth plan for the initiative or product/ service offering
 						Plan for raising funds in future
 						Any other
 					</label>
 					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -72,14 +75,15 @@
 	<fieldset class="mb-3">
 		<div class="mb-3">
 			<legend class="card-title mb-0">
-				<h5>Additional Information<span class="text-danger">&ast;</span></h5>
+				<h5>Additional Information</h5>
 			</legend>
 		</div>
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
-					<textarea required name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
+					<textarea name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
+					<span class="form-text">(50 - 500 characters)</span>
 				</div>
 			</div>
 		</div>

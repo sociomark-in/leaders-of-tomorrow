@@ -24,7 +24,7 @@
  -->
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Organization Overview<span class="text-danger">&ast;</span></h5>
+			<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-lg-6 col-12">
@@ -61,7 +61,7 @@
 
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Financial Details<span class="text-danger">&ast;</span></h5>
+			<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xxl-4 col-12">

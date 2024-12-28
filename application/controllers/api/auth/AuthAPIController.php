@@ -63,7 +63,6 @@ class AuthAPIController extends CI_Controller
 	public function participant_register()
 	{
 		$this->request = $this->input->post();
-		// $password = random_string('alnum', 16);
 
 		$contact = $this->request['contact'];
 		$this->request['password'] = hash('md5', hash('sha256', $contact));
@@ -117,7 +116,7 @@ class AuthAPIController extends CI_Controller
 				$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
 				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 					$session['status'] = 'SUCCESS';
-					$session['message'] = 'You have successfully registered. Please Check your Email for the Email Verification Link.';
+					$session['message'] = 'You have successfully registered. Please Check your Email for the Login Credentials Email Verification Link.';
 					$this->session->set_flashdata('user_login_status', $session);
 					redirect('login');
 				}

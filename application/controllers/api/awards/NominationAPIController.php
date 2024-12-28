@@ -90,6 +90,49 @@ class NominationAPIController extends CI_Controller
 		return $response;
 	}
 
+	public function isPdfCompressed($pdfPath)
+	{
+		// Read the PDF file header (first few bytes)
+		$fp = fopen($pdfPath, 'rb');
+		if (!$fp) {
+			return false; // Error opening file
+		}
+		$header = fread($fp, 5);
+		fclose($fp);
+
+		// Check for PDF header
+		if ($header != '%PDF-') {
+			return false; // Not a PDF file
+		}
+
+		// **Important:** Assume compression by default
+		$isCompressed = true;
+
+		// Basic check: Look for common compression filters (not guaranteed)
+		$content = file_get_contents($pdfPath);
+		if (
+			strpos($content, '/Filter /FlateDecode') === false &&
+			strpos($content, '/Filter /LZWDecode') === false &&
+			strpos($content, '/Filter /DCTDecode') === false
+		) {
+			// If none of the specific filters are found, 
+			// consider it potentially uncompressed 
+			$isCompressed = false;
+		}
+
+		return $isCompressed;
+		/* // Example usage
+	$pdfFilePath  = "./et.pdf";
+	if (isPdfCompressed($pdfFilePath)) {
+		echo "The PDF file is likely compressed.\n";
+	} else {
+		echo "The PDF file is potentially uncompressed.\n"; 
+	} */
+	}
+
+
+
+
 	/**
 	 * new_single
 	 * 
@@ -832,9 +875,9 @@ class NominationAPIController extends CI_Controller
 						];
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is in Review!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', null);
+						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', null, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							// redirect('dashboard/applications');
+							redirect('dashboard/applications');
 						}
 					}
 				}

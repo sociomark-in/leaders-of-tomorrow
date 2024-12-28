@@ -8,7 +8,7 @@
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Participating Entity<span class="text-danger">&ast;</span></h5>
+			<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-5 col-lg-6 col-12">
@@ -75,20 +75,20 @@
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input required type="url" name="organization[website]" class="form-control">
+					<input required type="url" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input required type="url" name="organization[linkedin]" class="form-control">
+					<input required type="url" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
 	</fieldset>
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Contact Person of Organization<span class="text-danger">&ast;</span></h5>
+			<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-3 col-lg-6 col-12">
