@@ -1,7 +1,46 @@
+:root {
+  --bs-font-sans-serif: "Inter", Helvetica, sans-serif;
+}
+
+body {
+  line-height: 1.3;
+}
+
 form label {
   display: inline-block;
   color: #000000;
   font-weight: 500;
+}
+form label:has(+ input) {
+  margin-bottom: 0.5rem;
+}
+form label.response {
+  font-size: 1.1rem;
+}
+
+form label.error {
+  color: red;
+  font-size: 0.8rem;
+}
+form .form-check-input:checked {
+  background-color: #b72026;
+  border-color: #b72026;
+}
+form .form-check-input:focus {
+  border-color: rgba(183, 32, 38, 0.5);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(183, 32, 38, 0.2);
+}
+
+.nomination_detailed .tab-content {
+  margin-top: 1rem;
+}
+
+.input-group-card {
+  border-radius: 1rem;
+}
+.input-group-card p:has(+ h5) {
+  margin-bottom: 0.5rem;
 }
 
 .card-comment {
@@ -26,4 +65,30 @@ form label {
 
 table a {
   color: #1c1c1c;
+}
+
+.btn {
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+.btn.btn-yellow {
+  --bs-btn-color: #1c1c1c;
+  --bs-btn-bg: #ffde3f;
+  --bs-btn-border-color: #ffde3f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b72026;
+  --bs-btn-hover-border-color: #b72026;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b72026;
+  --bs-btn-active-border-color: #b72026;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ffde3f;
+  --bs-btn-disabled-border-color: #ffde3f;
+}
+
+.staged-tab-wizard .nav-item .nav-link.success {
+  background-color: #03943b;
+  color: #ffffff;
 }

@@ -2077,7 +2077,7 @@ progress {
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color:  var(--bs-primary);
+  color:  var(--bs-gray-700);
 }
 
 .form-control, .typeahead.tt-input,
