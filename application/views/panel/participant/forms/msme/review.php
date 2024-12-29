@@ -43,94 +43,115 @@
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
 					<div class="col-12">
-						<fieldset class="" disabled>
+						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Participating Entity<span class="text-danger">&ast;</span></h5>
+								<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 							<div class="row g-3">
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-5 col-lg-6 col-12">
 									<div class="">
-										<p>Name of the Participating Entity</p>
-										<h5><?= $application['name'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Name of the Participating Entity</label>
+										<input required type="text" value="<?= $application['name'] ?>" name="organization[name]" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Type of Business</p>
-										<h5><?= $application['name'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Type of Business</label>
+										<select required name="organization[type]" id="" class="form-select">
+											<option value="">Select Option</option>
+											<?php for ($i = 0; $i < 10; $i++) : ?>
+												<option <?= ($application['id_75510'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
+											<?php endfor ?>
+										</select>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Business Segment</p>
-										<h5><?= $application['id_75505'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Business Segment</label>
+										<select required name="organization[segment]" id="" class="form-select">
+											<option value="">Select Option</option>
+											<?php for ($i = 0; $i < 10; $i++) : ?>
+												<option <?= ($application['id_75505'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
+											<?php endfor ?>
+										</select>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Date of Company Incorporation</p>
-										<h5><?= $application['id_75507'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Date of Company Incorporation</label>
+										<input required value="<?= $application['id_75507'] ?>" type="text" data-type="date" name="organization[inc_date]" class="form-control">
+										<span class="form-text">(in DD/MM/YYYY)</span>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>No. Of Employees</p>
-										<h5><?= $application['id_75501'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">No. Of Employees</label>
+										<select required name="organization[size]" id="" class="form-select">
+											<option value="">Select Option</option>
+											<option <?= ($application['id_75501'] == "Less Than 50") ? "selected" : "" ?> value="Less Than 50">Less Than 50</option>
+											<option <?= ($application['id_75501'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_75501'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+											<option <?= ($application['id_75501'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+											<option <?= ($application['id_75501'] == "More Than 400") ? "selected" : "" ?> value="More Than 400">More Than 400</option>
+										</select>
+										<span class="form-text">(On payroll + On contract)</span>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Funding Source</p>
-										<h5><?= $application['id_75506'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Funding Source</label>
+										<select required name="organization[funding]" id="" class="form-select">
+											<option value="">Select Option</option>
+											<option <?= ($application['id_75506'] == "Personal funds of the owner") ? "selected" : "" ?> value="Personal funds of the owner">Personal funds of the owner</option>
+											<option <?= ($application['id_75506'] == "Business Loans") ? "selected" : "" ?> value="Business Loans">Business Loans</option>
+											<option <?= ($application['id_75506'] == "Loan from family / friends") ? "selected" : "" ?> value="Loan from family / friends">Loan from family / friends</option>
+											<option <?= ($application['id_75506'] == "Loan from Banks / NBFCs") ? "selected" : "" ?> value="Loan from Banks / NBFCs">Loan from Banks / NBFCs</option>
+										</select>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="">
-										<p>Website URL</p>
-										<h5><?= $application['organization_url'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Website URL</label>
+										<input type="text" value="<?= $application['organization_url'] ?>" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="">
-										<p>LinkedIn URL</p>
-										<h5><?= $application['linkedin_url'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">LinkedIn URL</label>
+										<input type="text" value="<?= $application['linkedin_url'] ?>" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
 									</div>
 								</div>
 							</div>
 						</fieldset>
 					</div>
 					<div class="col-12">
-						<fieldset class="" disabled>
+						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Contact Person of Organization<span class="text-danger">&ast;</span></h5>
+								<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 							<div class="row g-3">
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Full Name</p>
-										<h5><?= $application['id_75534'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Full Name of Individual</label>
+										<input required value="<?= $application['id_75534'] ?>" name="contact_person[name]" type="text" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-lg-6 col-12">
 									<div class="">
-										<p>Email Address</p>
-										<h5><?= $application['id_75535'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Email Address</label>
+										<input required value="<?= $application['id_75535'] ?>" name="contact_person[email]" type="email" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6">
+								<div class="col-xl-3 col-lg-6 col-12">
 									<div class="">
-										<p>Contact Number</p>
-										<h5><?= $application['id_75536'] ?><span class="text-danger">&ast;</span></h5>
+										<label for="" class="form-label">Contact Number</label>
+										<input required value="<?= $application['id_75536'] ?>" name="contact_person[contact]" minlength="10" maxlength="13" type="text" class="form-control">
 									</div>
 								</div>
 							</div>
 						</fieldset>
 					</div>
-				</div>
-			</div>
-
-			<div class="col-12">
-				<div class="row g-md-5 g-3">
+					
 					<div class="col-12">
 						<fieldset class="" disabled>
 							<legend class="card-title mb-0">
@@ -248,11 +269,6 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-			</div>
-
-			<div class="col-12">
-				<div class="row g-md-5 g-3">
 					<div class="col-12">
 						<fieldset class="">
 							<legend class="card-title mb-0">
@@ -286,10 +302,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="row g-md-5 g-3">
+
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<div class="mb-3">
@@ -340,10 +353,6 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="row g-md-5 g-3">
 					<div class="col-12">
 						<fieldset class="">
 							<div class="mb-3">
@@ -387,7 +396,7 @@
 									<h5>Sustainability & Scalability<span class="text-danger">&ast;</span></h5>
 								</legend>
 							</div>
-							<div class="row g-md-5 g-3">
+							<div class="row g-3">
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters (max 200 words)
@@ -409,7 +418,7 @@
 									<h5>Additional Information<span class="text-danger">&ast;</span></h5>
 								</legend>
 							</div>
-							<div class="row g-md-5 g-3">
+							<div class="row g-3">
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
@@ -419,10 +428,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="row g-md-5 g-3">
+					
 					<div class="col-12">
 						<fieldset class="mb-3">
 							<legend class="card-title mb-0">
@@ -431,33 +437,33 @@
 							<div class="row g-3 mb-3">
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
-										<label for="" class="form-label">MSME certificate</label>
+										<label for="" class="form-label">MSME certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_75530']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 										<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_75530'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
-										<label for="" class="form-label">Company Incorporation Certificate</label>
+										<label for="" class="form-label">Company Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_75530']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 										<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_75531'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
-										<label for="" class="form-label">Impact assessment report</label>
+										<label for="" class="form-label">Impact assessment report&nbsp;<a class="link-icon" href="<?= base_url($application['id_75530']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 										<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_75532'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">as on March 31, 2023</span>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 									<div class="">
-										<label for="" class="form-label">Any other Collaterals</label>
+										<label for="" class="form-label">Any other Collaterals&nbsp;<a class="link-icon" href="<?= base_url($application['id_75530']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 										<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_75533'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
 										<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
 									</div>
 								</div>
 							</div>
-							<div class="">
+							<div class="d-none">
 								<div class="bg-light p-3">
 									<h5>Instructions<span class="text-danger">&ast;</span></h5>
 									<ul class="">

@@ -373,9 +373,9 @@ class NominationAPIController extends CI_Controller
 					break;
 				case '6':	# ☑ Success & Email Send
 					$this->request = $this->input->post();
-					$data['application'] = json_decode($this->EntriesModel->get(['created_at'], ['nomination_id' => $application_id], strtolower($category['type'])), true);
+					$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
 					$data['category'] = $category['name'];
-					$data['user'] = [
+					$data['applicant'] = [
 						'name' => $this->usersession['name'],
 						'email' => $this->usersession['email'],
 						'contact' => $this->usersession['contact'],
@@ -389,12 +389,13 @@ class NominationAPIController extends CI_Controller
 					];
 					$subject = APP_NAME . " - Your Application is in Review!";
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
-						redirect('dashboard');
+					$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
+					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+						redirect('dashboard/my-application');
 					}
 					break;
 				default:
-					redirect('dashboard/');
+					redirect('dashboard');
 					break;
 			}
 		} elseif ($category['type'] == 'Individual') {
@@ -765,12 +766,15 @@ class NominationAPIController extends CI_Controller
 				$data = [
 					'status' => '1',
 				];
+
 				$nomination = array_merge(
 					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
 					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
 				);
+
 				$nomination['created_by'] = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 				$user = $nomination['created_by'];
+
 				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
 					$recipients = [
 						[
@@ -814,6 +818,10 @@ class NominationAPIController extends CI_Controller
 
 				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 
+				$email_data = [
+					'applicant' => $applicant,
+					'response' => $data,
+				];
 
 				if ($this->CommentModel->insert($data)) {
 					$data = [
@@ -826,9 +834,11 @@ class NominationAPIController extends CI_Controller
 								"name" =>  $applicant['name']
 							]
 						];
+
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Rejected!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
+						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 							redirect('dashboard/applications');
 						}
 					}
@@ -861,6 +871,11 @@ class NominationAPIController extends CI_Controller
 
 				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 
+				$email_data = [
+					'applicant' => $applicant,
+					'response' => $data,
+				];
+				
 				if ($this->CommentModel->insert($data)) {
 					$data = [
 						'status' => '2',
@@ -875,7 +890,7 @@ class NominationAPIController extends CI_Controller
 						];
 						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is in Review!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', null, true);
+						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 							redirect('dashboard/applications');
 						}
