@@ -32,7 +32,6 @@ $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 6, 'Registered Address Participating Entity', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->MultiCell(0, 4, $data['id_75504'], 0);
-$this->pdf->Cell(63, 4, $data['id_75504'], 0, 1, '');
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);

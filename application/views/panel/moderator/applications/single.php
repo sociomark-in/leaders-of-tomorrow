@@ -69,29 +69,6 @@ if ($nomination['stage'] >= 1) {
 				</div>
 				<div class="col-xl-3 col-12 grid-margin stretch-card">
 					<div class="row">
-						<?php if ($application['status'] != '0'): ?>
-							<div class="col-12 grid-margin stretch-card">
-								<div class="card input-group-card">
-									<div class="card-body">
-										<h5 class="card-title">Comment & Reject</h5>
-										<?= form_open('api/v2/awards/nomination/reject_w_comment', ['id' => ""]) ?>
-										<input type="hidden" name="application_id" value="<?= $id ?>">
-										<div class="row g-3">
-											<div class="col-12">
-												<label for="" class="form-label">Put Your Comment</label>
-												<textarea name="comment" id="" cols="30" rows="8" class="form-control" required></textarea>
-											</div>
-											<div class="col-12">
-												<div class="col-auto">
-													<button type="submit" class="btn btn-primary">Comment & Reject Application</button>
-												</div>
-											</div>
-										</div>
-										<?= form_close() ?>
-									</div>
-								</div>
-							</div>
-						<?php endif ?>
 						<div class="col-12 grid-margin stretch-card">
 							<div class="card input-group-card">
 								<div class="card-body">
@@ -105,7 +82,7 @@ if ($nomination['stage'] >= 1) {
 										</div>
 										<div class="col-12">
 											<div class="col-auto">
-												<button type="submit" class="btn btn-primary">Comment & Unlock Application</button>
+												<button type="submit" class="btn btn-yellow">Comment & Unlock Application</button>
 											</div>
 										</div>
 									</div>
@@ -129,6 +106,30 @@ if ($nomination['stage'] >= 1) {
 								</div>
 							</div>
 						</div>
+						<?php if ($application['status'] != '0'): ?>
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card input-group-card">
+									<div class="card-body">
+										<h5 class="card-title">Comment & Reject</h5>
+										<?= form_open('api/v2/awards/nomination/reject_w_comment', ['id' => ""]) ?>
+										<input type="hidden" name="application_id" value="<?= $id ?>">
+										<div class="row g-3">
+											<div class="col-12">
+												<label for="" class="form-label">Put Your Comment</label>
+												<textarea name="comment" id="" cols="30" rows="8" class="form-control" required></textarea>
+											</div>
+											<div class="col-12">
+												<div class="col-auto">
+													<button type="submit" class="btn btn-primary">Comment & Reject Application</button>
+												</div>
+											</div>
+										</div>
+										<?= form_close() ?>
+									</div>
+								</div>
+							</div>
+						<?php endif ?>
+
 					</div>
 				</div>
 			</div>

@@ -902,14 +902,21 @@ class NominationAPIController extends CI_Controller
 		}
 	}
 
-	public function download_docket()
-	{
-		$this->request = $this->input->post();
-		$nomination = array_merge(
-			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-			json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-		);
-		$this->load->library('pdflib/makepdf');
-		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2', $data = null)->generate();
+	// public function download_docket()
+	// {
+	// 	$this->request = $this->input->post();
+	// 	$nomination = array_merge(
+	// 		json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
+	// 		json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
+	// 	);
+	// 	$this->load->library('pdflib/makepdf');
+	// 	$this->makepdf->init('P', 'mm', 'A4')->load('stage-1-layout-2', $data = null)->generate();
+	// }
+
+
+
+	public function download_presentation(){
+		$this->load->library('pdflib/makepresentation');
+		$this->makepresentation->init('L', 'mm', ['360', '200'])->load($data = null, $layout = 'stage_2_layout_1')->generate();
 	}
 }

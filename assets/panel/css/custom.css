@@ -18,6 +18,12 @@ form label.response {
   font-size: 1.1rem;
 }
 
+form input.form-control, form textarea.form-control {
+  border: 1px solid #969696;
+}
+form .select2-selection {
+  border: 1px solid #969696 !important;
+}
 form label.error {
   color: red;
   font-size: 0.8rem;

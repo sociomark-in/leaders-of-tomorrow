@@ -271,8 +271,7 @@ class NominationsController extends PanelController
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true),
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true)
 		)[0];
-		// echo "<pre>";
-		// print_r($application);die;
+		
 		$category = strtolower(explode('_', $application['category_id'])[1]);
 		if ($category == 'msme') {
 			$files = [
@@ -299,15 +298,27 @@ class NominationsController extends PanelController
 		}
 
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
-			$this->load->library('pdflib/MakePDF');
-			$this->makepdf->init('P', 'mm', 'A4')->load($application, $category)->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			$this->load->library('pdflib/MakeDocket');
+			switch ($category) {
+				case 'msme':
+					$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => strtolower(explode('_', $application['category_id'])[0])]), true)[0];
+					# code...
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'stage_1_msme_layout_2')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+
 
 			$pdf = new PDFMerger;
+			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
 			$pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 			foreach ($temp as $key => $file) {
 				$pdf->addPDF($file);
 			}
-			$pdf->merge('browser');
+			$pdf->merge('browser', $filename);
 		} else {
 			redirect('dashboard');
 		}

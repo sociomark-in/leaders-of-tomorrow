@@ -24,7 +24,27 @@
 						<span class="link-title">Nominations</span>
 					</a>
 				</li>
+
+				<li class="nav-item nav-category">Round II</li>
+				<li class="nav-item">
+					<a class="nav-link <?= link_is_active("") ?>" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+						<i class="link-icon" data-feather="users"></i>
+						<span class="link-title">Jury Panel</span>
+						<i class="link-arrow" data-feather="chevron-down"></i>
+					</a>
+					<div class="collapse" id="emails">
+						<ul class="nav sub-menu">
+							<li class="nav-item <?= link_is_active("") ?>">
+								<a href="#" class="nav-link">Juries</a>
+							</li>
+							<li class="nav-item <?= link_is_active("") ?>">
+								<a href="#" class="nav-link">Menu Items</a>
+							</li>
+						</ul>
+					</div>
+				</li>
 			<?php endif ?>
+			
 
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['partner', 'jury', 'admin', 'super-admin'])) : ?>
 				<!-- Nominations -->

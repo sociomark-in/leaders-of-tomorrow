@@ -17,13 +17,9 @@ require_once APPPATH . "vendor/autoload.php";
 	11	167 
 	12	189 
 */
-class MakePDF extends Fpdf
+class MakeDocket extends Fpdf
 {
-	private $pdf;
-	public function __construct()
-	{
-		parent::__construct();
-	}
+	protected $pdf;
 
 	function Header()
 	{
@@ -51,30 +47,33 @@ class MakePDF extends Fpdf
 	}
 
 
-	public function init($orientation = 'P', $unit = 'mm', $size = 'A4')
+	public function init($orientation = 'L', $unit = 'mm', $size = 'A4')
 	{
-		$this->pdf = new MakePDF($orientation = 'P', $unit = 'mm', $size = 'A4');
+		$this->pdf = new MakeDocket($orientation, $unit = 'mm', $size = 'A4');
 		$this->pdf->AliasNbPages();
 		$this->pdf->AddPage();
+		return $this;
+	}
+
+	public function load($data = null, $layout = 'msme')
+	{
+		switch ($layout) {
+			case 'stage_1_msme_layout_2':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+			case 'stage_1_msme_layout_2':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+
+			default:
+				include_once __DIR__ . '/layout/individual.php';
+				break;
+		}
 		return $this;
 	}
 
 	public function generate($dest = null, $name = null)
 	{
 		$this->pdf->Output($dest, $name);
-	}
-
-	public function load($data = null, $layout = 'msme')
-	{
-		switch ($layout) {
-			case 'individual':
-				include_once __DIR__ . '/layout/individual.php';
-				break;
-
-			default:
-				include_once __DIR__ . '/layout/msme.php';
-				break;
-		}
-		return $this;
 	}
 }

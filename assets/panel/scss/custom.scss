@@ -28,7 +28,14 @@ form {
 }
 
 form {
-	
+	input, textarea{
+		&.form-control{
+			border: 1px solid #969696;
+		}
+	}
+	.select2-selection{
+		border: 1px solid #969696 !important;
+	}
 	label.error {
 		color: red;
 		font-size: 0.8rem;
