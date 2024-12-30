@@ -23,7 +23,7 @@
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="">
-					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</label>
+					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 5000 characters)</label>
 					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
 					<span class="form-text">(50 - 5000 characters)</span>
 				</div>

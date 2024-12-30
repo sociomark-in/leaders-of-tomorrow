@@ -85,6 +85,9 @@ class VerificationAPIController extends CI_Controller
 					$session = [
 						'status' => 'SUCCESS',
 					];
+					$user = json_decode($this->UserModel->get(null, ['useremail' => $this->usersession['useremail']]), true)[0];
+					$this->usersession = $user;
+					$_SESSION['awards_panel_user'] = $user;
 				} else {
 					$session = [
 						'status' => 'ERROR',

@@ -33,21 +33,21 @@
 		<div class="row g-3 mb-3">
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">MSME certificate</label>
+					<label for="" class="form-label">MSME Certificate</label>
 					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_75530'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Company Incorporation Certificate</label>
+					<label for="" class="form-label">Incorporation Certificate</label>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_75531'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Impact assessment report as on March 31, 2023</label>
+					<label for="" class="form-label">Impact Assessment Report</label>
 					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">as on March 31, 2023 (PDF of Maximum Size 500KB)</span>
 				</div>

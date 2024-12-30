@@ -125,16 +125,6 @@
 															</div>
 															<div style="margin-bottom:10px;line-height:1.5">
 																Unfortunately, we can not proceed further with your nomination for now! Although we appreciate your interest and participation.
-																Kindly check all other nominations on your dashboard by clicking the link below.
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-																	href="<?= base_url('dashboard/my-applications') ?>" target="_blank">
-																	View All Nominations
-																</a>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																We will keep you updated on your nomination status.
 															</div>
 
 															<div>Thank you!</div>
