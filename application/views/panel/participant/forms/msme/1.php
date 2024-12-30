@@ -1,3 +1,7 @@
+<?php
+
+$this->load->view('components/panel/partials/_category_eligibility_requirements', $prohibit); ?>
+
 <?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">
 	<input type="hidden" name="category_id" value="<?= $category_id ?>">
@@ -75,13 +79,13 @@
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input required type="text" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
+					<input type="text" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input required type="text" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
+					<input type="text" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -106,7 +110,7 @@
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Contact Number</label>
-					<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="13" type="text" class="form-control">
+					<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
 				</div>
 			</div>
 		</div>

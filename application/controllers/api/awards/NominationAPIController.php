@@ -158,7 +158,7 @@ class NominationAPIController extends CI_Controller
 		$this->request = $this->input->post();
 
 		$this->load->model('event/awards/CategoryModel');
-		$stage = $this->input->post('stage') ?? "0";
+		$stage = $this->input->post('stage') ?? 0;
 		$category_id = $this->input->post('category_id');
 
 		$c = explode("_", $category_id);
@@ -168,7 +168,7 @@ class NominationAPIController extends CI_Controller
 			$category = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
 		}
 
-		$this->request['stage'] = (int)$stage + 1;
+		$this->request['stage'] = $stage;
 
 		$common = [
 			"nomination_id" => $this->request['application_id'],
@@ -185,7 +185,7 @@ class NominationAPIController extends CI_Controller
 		$application_id = $this->request['application_id'];
 		$temp_application = $common;
 
-		if ($stage == '6') {
+		if ($stage == 6) {
 			$this->session->unset_userdata('temp_application_session');
 		} else {
 			$temp_application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true);
@@ -193,7 +193,7 @@ class NominationAPIController extends CI_Controller
 		}
 		if ($category['type'] == 'MSME') {
 			switch ($stage) {
-				case '': 	# ☑ Personal Information
+				case 0: 	# ☑ Personal Information
 					$data = [
 						"name" => $this->request['organization']['name'],
 						"email" => $this->request['contact_person']['email'],
@@ -214,7 +214,7 @@ class NominationAPIController extends CI_Controller
 						redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
 					};
 					break;
-				case '1': 	# ☑ Organization Details				
+				case 1: 	# ☑ Organization Details				
 					$data = [
 						'id_75502'	=> $this->request['organization_industry'],					//organization_industry
 						'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
@@ -239,7 +239,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '2': 	# ☑ Case Studies I
+				case 2: 	# ☑ Case Studies I
 
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
@@ -259,7 +259,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '3': 	# ☑ Case Studies II
+				case 3: 	# ☑ Case Studies II
 
 					$category_id = explode('_', $this->request['category_id']);
 					$data = [
@@ -277,7 +277,7 @@ class NominationAPIController extends CI_Controller
 						redirect($this->request['referrer'] . '?stage=' . ++$stage);
 					}
 					break;
-				case '4':	# ☑ Upload Files
+				case 4:	# ☑ Upload Files
 					/* Get Application Data */
 
 					$c = explode('_', $this->input->post('category_id'));
@@ -306,7 +306,7 @@ class NominationAPIController extends CI_Controller
 					}
 
 					break;
-				case '5':	# ☑ Review Application
+				case 5:	# ☑ Review Application
 					/* Change Application Status */
 
 					$c = explode('_', $this->input->post('category_id'));
@@ -371,7 +371,7 @@ class NominationAPIController extends CI_Controller
 						redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 					}
 					break;
-				case '6':	# ☑ Success & Email Send
+				case 6:	# ☑ Success & Email Send
 					$this->request = $this->input->post();
 					$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
 					$data['category'] = $category['name'];

@@ -42,18 +42,21 @@
 				<div class="">
 					<label for="" class="form-label">Brief Overview of the Company</label>
 					<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_75503'] ?></textarea>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Mission & Vision</label>
 					<textarea required name="organization_mission_vision" id="" class="form-control" rows="5"><?= $application_temp['id_75508'] ?></textarea>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="">
 					<label for="" class="form-label">Products / Services Offered</label>
 					<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_75509'] ?></textarea>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 		</div>

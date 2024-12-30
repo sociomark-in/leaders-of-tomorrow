@@ -8,7 +8,7 @@ $stage = 0;
 if ($nomination['stage'] >= 1) {
 	$stage = $nomination['stage'];
 } else {
-	$application['nomination_id'] = date('U') . "-" . random_string('alnum', 4);
+	$application['nomination_id'] = date('U') . "-" . random_string('numeric', 5);
 }
 ?>
 <main class="page-content">

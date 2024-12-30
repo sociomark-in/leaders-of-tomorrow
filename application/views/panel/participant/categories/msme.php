@@ -64,7 +64,7 @@ $tabs = [
 			$data["referrer"] = current_url();
 			$data["utm"] = $utm;
 			$data["agent_id"] = $this->input->get('agent_id');
-			$data["stage"] = $this->input->get('stage');
+			$data["stage"] = $this->input->get('stage') ?? 0;
 		?>
 			<?php if ($i == $stage): ?>
 				<!-- <div class="tab-pane py-3 fade show active" id="<?= $tabs[$i]['identifier'] ?>-tab-pane" role="tabpanel" aria-labelledby="<?= $tabs[$i]['identifier'] ?>-tab" tabindex="0"> -->

@@ -25,7 +25,7 @@
 				<div class="">
 					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 200 words)</label>
 					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 500 characters)</span>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 						(Details should be measurable and generic statements should be avoided)
 					</label>
 					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 500 characters)</span>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 						Any other
 					</label>
 					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 500 characters)</span>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
 				<div class="">
 					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
 					<textarea name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 500 characters)</span>
+					<span class="form-text">(50 - 5000 characters)</span>
 				</div>
 			</div>
 		</div>

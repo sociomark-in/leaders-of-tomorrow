@@ -3,6 +3,15 @@
 		<i data-feather="menu"></i>
 	</a>
 	<div class="navbar-content">
+		<?php if (!$user['is_email_verified']): ?>
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<div class="d-flex gap-2 align-items-center"><img src="<?= base_url('assets/images/icons/red-blinker.gif') ?>" height="16" alt="">
+						<div class="">Kindly verify your email address by clicking the link provided in your initial registration email!</div>
+					</div>
+				</li>
+			</ul>
+		<?php endif ?>
 		<ul class="navbar-nav">
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url("dashboard/my-profile") ?>">Welcome, <?= $user['name'] ?>!</a>

@@ -105,7 +105,7 @@
 																		$text = "Edit Application";
 																		break;
 																	case '4':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
 																		$text = "Complete Application";
 																		break;
 

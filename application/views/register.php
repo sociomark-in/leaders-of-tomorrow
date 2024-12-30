@@ -69,7 +69,7 @@
 													$profile['is_email_verified'] = $googleusercontent['profile']['is_email_verified'];
 												?>
 													<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-														You have been Successfully Registered! Please Enter Contact Number.
+														You Google Details have been Successfully Received! Please Enter Your Contact Number.
 														<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 													</div>
 												<?php else:
