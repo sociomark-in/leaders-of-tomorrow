@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="<?= base_url("assets/panel/") ?>vendors/flatpickr/flatpickr.min.css">
 
 <link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
 <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
 <script>
 	Object.assign(DataTable.defaults, {

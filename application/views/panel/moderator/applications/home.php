@@ -1,5 +1,13 @@
 <main class="page-content">
 	<?php $this->load->view('components/panel/widget/_alert_stack') ?>
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.css">
+
+	<script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+	<script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
@@ -45,7 +53,7 @@
 											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
 												<tr>
 													<td>
-														<span class="text-muted"><?= $application['nomination_id'] ?></span>
+														(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)
 														<h5><?= $application['name'] ?></h5>
 														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
 														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
@@ -137,7 +145,14 @@
 										</tbody>
 									</table>
 									<script>
-										$('#applicationsTable').DataTable()
+										$('#applicationsTable').DataTable({
+											dom: "Bfrti",
+											layout: {
+												topStart: {
+													buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+												}
+											}
+										})
 									</script>
 								</div>
 							</div>

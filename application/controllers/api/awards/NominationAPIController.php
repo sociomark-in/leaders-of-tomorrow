@@ -391,7 +391,7 @@ class NominationAPIController extends CI_Controller
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 					$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
 					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-						redirect('dashboard/my-application');
+						redirect('dashboard/my-applications');
 					}
 					break;
 				default:

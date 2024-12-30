@@ -130,6 +130,12 @@ form label.error {
   color: red;
   font-size: 0.8rem;
 }
+form input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+form input::placeholder {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
 form .form-check-input:checked {
   background-color: #b72026;
   border-color: #b72026;

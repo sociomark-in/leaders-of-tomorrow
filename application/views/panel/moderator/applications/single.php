@@ -31,12 +31,14 @@ if ($nomination['stage'] >= 1) {
 								</div>
 								<div class="col-auto">
 									<div class="row g-3">
-										<div class="col-lg-auto col-12">
-											<?= form_open('api/v2/awards/nomination/accept') ?>
-											<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
-											<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
-											<?= form_close() ?>
-										</div>
+										<?php if ($application['status'] != '1'): ?>
+											<div class="col-lg-auto col-12">
+												<?= form_open('api/v2/awards/nomination/accept') ?>
+												<input type="hidden" name="application_id" value="<?= $application['nomination_id'] ?>">
+												<button type="submit" class="btn d-flex btn-primary btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Accept</button>
+												<?= form_close() ?>
+											</div>
+										<?php endif ?>
 										<div class="col-lg-auto col-12">
 											<!-- 
 											<?= form_open('api/v2/awards/nomination/download') ?>
@@ -67,27 +69,29 @@ if ($nomination['stage'] >= 1) {
 				</div>
 				<div class="col-xl-3 col-12 grid-margin stretch-card">
 					<div class="row">
-						<div class="col-12 grid-margin stretch-card">
-							<div class="card input-group-card">
-								<div class="card-body">
-									<h5 class="card-title">Comment & Reject</h5>
-									<?= form_open('api/v2/awards/nomination/reject_w_comment', ['id' => ""]) ?>
-									<input type="hidden" name="application_id" value="<?= $id ?>">
-									<div class="row g-3">
-										<div class="col-12">
-											<label for="" class="form-label">Put Your Comment</label>
-											<textarea name="comment" id="" cols="30" rows="8" class="form-control" required></textarea>
-										</div>
-										<div class="col-12">
-											<div class="col-auto">
-												<button type="submit" class="btn btn-primary">Comment & Reject Application</button>
+						<?php if ($application['status'] != '0'): ?>
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card input-group-card">
+									<div class="card-body">
+										<h5 class="card-title">Comment & Reject</h5>
+										<?= form_open('api/v2/awards/nomination/reject_w_comment', ['id' => ""]) ?>
+										<input type="hidden" name="application_id" value="<?= $id ?>">
+										<div class="row g-3">
+											<div class="col-12">
+												<label for="" class="form-label">Put Your Comment</label>
+												<textarea name="comment" id="" cols="30" rows="8" class="form-control" required></textarea>
+											</div>
+											<div class="col-12">
+												<div class="col-auto">
+													<button type="submit" class="btn btn-primary">Comment & Reject Application</button>
+												</div>
 											</div>
 										</div>
+										<?= form_close() ?>
 									</div>
-									<?= form_close() ?>
 								</div>
 							</div>
-						</div>
+						<?php endif ?>
 						<div class="col-12 grid-margin stretch-card">
 							<div class="card input-group-card">
 								<div class="card-body">

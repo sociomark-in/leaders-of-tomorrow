@@ -82,6 +82,9 @@ form {
 		&[required] {
 		}
 	}
+	input::placeholder{
+		color: rgba($color-black-0, 0.3) !important;
+	}
 	.form-check-input {
 		&:checked {
 			background-color: $color-red;

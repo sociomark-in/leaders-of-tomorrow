@@ -76,7 +76,7 @@
 												<td style="line-height:22px;padding:0 30px 0">
 													<div>
 														<div style="font-weight:bold;margin-bottom:10px">
-															Hi <?= $application['name'] ?>,</div>
+															Hi <?= $applicant['name'] ?>,</div>
 														<div>
 															<div style="margin-bottom:10px;line-height:1.5">
 																Thank you for nominating yourself to the <strong>Leaders
