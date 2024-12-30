@@ -75,13 +75,13 @@
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input required type="url" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
+					<input required type="text" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input required type="url" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
+					<input required type="text" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -94,19 +94,19 @@
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Full Name of Individual</label>
-					<input required name="contact_person[name]" type="text" class="form-control">
+					<input required name="contact_person[name]" value="<?= $user['name'] ?>" type="text" class="form-control">
 				</div>
 			</div>
 			<div class="col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Email Address</label>
-					<input required name="contact_person[email]" type="email" class="form-control">
+					<input required name="contact_person[email]" value="<?= $user['email'] ?>" type="email" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Contact Number</label>
-					<input required name="contact_person[contact]" minlength="10" maxlength="13" type="text" class="form-control">
+					<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="13" type="text" class="form-control">
 				</div>
 			</div>
 		</div>

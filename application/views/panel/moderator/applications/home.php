@@ -146,7 +146,14 @@
 									</table>
 									<script>
 										$('#applicationsTable').DataTable({
-											dom: "Bfrti",
+											dom: "Bfirt",
+											order: [
+												[0, 'desc']
+											],
+											// "columnDefs": [{
+											// 	"targets": [2, 4],
+											// 	"orderable": false
+											// }],
 											layout: {
 												topStart: {
 													buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
