@@ -17,45 +17,19 @@
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
 								<div class="col-12">
-									<?php
-									switch ($_SESSION['user_login_status']['status']):
-										case 'SUCCESS': ?>
-											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
-										<?php
-										case 'WARNING': ?>
-											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
-												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
-										<?php
-										case 'ERROR': ?>
-											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
-												<?= $_SESSION['user_login_status']['message'] ?>
-												<!-- <strong><a href="#" class="alert-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Forgot Password</a></strong>  -->
-												<strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong> 
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
-
-										<?php
-										default: ?>
-											<?php break; ?>
-									<?php endswitch ?>
+									<div class="card-title">
+										<h3>OTP & Reset Password</h3>
+									</div>
 								</div>
 								<div class="col-12">
 									<?= form_open('api/v2/participant/login', ['id' => "loginForm"]) ?>
 									<div class="row gap-2">
 										<div class="col-12">
-											<label for="" class="form-label">Email Address</label>
-											<input type="text" name="useremail" class="form-control">
+											<label for="" class="form-label">Enter OTP</label>
+											<input type="text" name="otp" class="form-control">
 										</div>
 										<div class="col-12">
-											<label for="" class="form-label">Password</label>
+											<label for="" class="form-label">New Password</label>
 											<div class="input-group">
 												<input type="password" id="pwd" name="password" required class="form-control">
 												<button type="button" data-controls="password" class="input-group-text"><i class="link-icon" data-feather="eye"></i></button>

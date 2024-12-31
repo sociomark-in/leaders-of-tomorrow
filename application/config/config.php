@@ -466,7 +466,14 @@ $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array('api/v2/participant/register', 'api/v2/participant/login', 'api/v2/register/otp/send', 'api/v2/register/otp/verify');
+$config['csrf_exclude_uris'] = array(
+	'api/v2/participant/register', 
+	'api/v2/auth/forgotpw/send', 
+	'api/v2/auth/forgot-password/send-otp', 
+	'api/v2/participant/login', 
+	'api/v2/register/otp/send', 
+	'api/v2/register/otp/verify'
+);
 
 /*
 |--------------------------------------------------------------------------

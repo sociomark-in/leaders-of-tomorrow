@@ -75,6 +75,7 @@ $route['awards/agency-register/(:any)'] = 'auth/RegisterController/agency_regist
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
+$route['forgot-password'] = 'auth/LoginController/forgot_pw';
 $route['logout'] = 'auth/LoginController/logout';
 $route['register'] = 'auth/RegisterController';
 $route['register/social'] = 'auth/Example';
@@ -121,6 +122,7 @@ $route['api/new-nominee'] = 'NomineeController/add';
 $route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
 $route['api/v2/auth/verify/(:any)/verify'] = 'api/auth/VerificationAPIController/verify/$1';
 $route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/password_reset/$1';
+$route['api/v2/auth/forgot-password/send-otp'] = 'api/awards/SettingsAPIController/forgot_pw_otp/$1';
 
 
 $route['api/v2/register/otp/send'] = 'api/auth/AuthAPIController/send_otp';
