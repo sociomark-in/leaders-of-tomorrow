@@ -18,7 +18,7 @@
 					<?php if (count($my_applications['individual']) > 0 || count($my_applications['msme']) > 0) : ?>
 						<div class="row">
 							<?php foreach ($my_applications['individual'] as $key => $application) : ?>
-								<div class="col-xl-3 col-lg-4 col-12">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
 											<div class="card">
@@ -72,7 +72,7 @@
 								</div>
 							<?php endforeach ?>
 							<?php foreach ($my_applications['msme'] as $key => $application) : ?>
-								<div class="col-xl-3 col-lg-4 col-12">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
 											<div class="card">
@@ -145,7 +145,7 @@
 							<?php foreach ($rest_categories['msme'] as $key => $category) :
 								$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
 							?>
-								<div class="col-xl-3 col-lg-4 col-12">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
 											<div class="card">
@@ -180,7 +180,7 @@
 							<?php foreach ($rest_categories['individual'] as $key => $category) :
 								$category['valid_until'] = date_format(date_create_from_format("Y-m-d H:i:s", $category['valid_until']), 'F j, Y')
 							?>
-								<div class="col-xl-3 col-lg-4 col-12">
+								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
 											<div class="card">

@@ -37,7 +37,7 @@
 											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
 												<?= $_SESSION['user_login_status']['message'] ?>
 												<!-- <strong><a href="#" class="alert-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Forgot Password</a></strong>  -->
-												<strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong> 
+												<!-- <strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong>  -->
 												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 											</div>
 											<?php break; ?>

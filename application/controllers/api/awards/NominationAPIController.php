@@ -875,7 +875,7 @@ class NominationAPIController extends CI_Controller
 					'applicant' => $applicant,
 					'response' => $data,
 				];
-				
+
 				if ($this->CommentModel->insert($data)) {
 					$data = [
 						'status' => '2',
@@ -915,7 +915,8 @@ class NominationAPIController extends CI_Controller
 
 
 
-	public function download_presentation(){
+	public function download_presentation()
+	{
 		$this->load->library('pdflib/makepresentation');
 		$this->makepresentation->init('L', 'mm', ['360', '200'])->load($data = null, $layout = 'stage_2_layout_1')->generate();
 	}
