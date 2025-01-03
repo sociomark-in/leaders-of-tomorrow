@@ -25,8 +25,8 @@
 					</a>
 				</li>
 
-				<li class="nav-item nav-category">Round II</li>
-				<li class="nav-item">
+				<li class="d-none nav-item nav-category">Round II</li>
+				<li class="d-none nav-item">
 					<a class="nav-link <?= link_is_active("") ?>" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
 						<i class="link-icon" data-feather="users"></i>
 						<span class="link-title">Jury Panel</span>

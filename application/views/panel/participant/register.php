@@ -25,7 +25,8 @@ if ($nomination['stage'] >= 1) {
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="d-flex gap-2 align-items-center">
-			<h4 class="mb-3 mb-md-0">New Application</h4><p class="text-muted m-0">(#LOTS12-<?= $category['code'] ?>-<?= $application['nomination_id'] ?>)</p>
+			<h4 class="mb-3 mb-md-0">New Application</h4>
+			<p class="text-muted m-0">(#LOTS12-<?= $category['code'] ?>-<?= $application['nomination_id'] ?>)</p>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -44,7 +45,7 @@ if ($nomination['stage'] >= 1) {
 							<div class="row align-items-center">
 								<div class="col-auto">
 									<div class="">
-									<img src="<?= base_url('assets/images/favicon.png') ?>" width="60" height="60" alt="Logo">
+										<img src="<?= base_url('assets/images/favicon.png') ?>" width="60" height="60" alt="Logo">
 									</div>
 								</div>
 								<div class="col">
@@ -60,12 +61,33 @@ if ($nomination['stage'] >= 1) {
 					</div>
 				</div>
 				<div class="col-12">
-					<?php 
-					if (strtolower($category['type']) == 'msme') {
-						include_once APPPATH . '/views/panel/participant/categories/msme.php';
-					} else {
-						include_once APPPATH . '/views/panel/participant/categories/individual.php';
-					}?>
+					<?php
+					switch ($category['type']) {
+						case '1_DIGITAL':
+							include_once APPPATH . '/views/panel/participant/categories/digital.php';
+							# code...
+						case '1_FAMILY':
+							include_once APPPATH . '/views/panel/participant/categories/family.php';
+							# code...
+							break;
+						case '1_GLOBAL':
+							include_once APPPATH . '/views/panel/participant/categories/global.php';
+							# code...
+							break;
+						case '1_INDIVIDUAL':
+							include_once APPPATH . '/views/panel/participant/categories/individual_1.php';
+							# code...
+							break;
+						case '2_INDIVIDUAL':
+							include_once APPPATH . '/views/panel/participant/categories/individual_2.php';
+							# code...
+							break;
+
+						default:
+							include_once APPPATH . '/views/panel/participant/categories/msme.php';
+							# code...
+							break;
+					} ?>
 				</div>
 			</div>
 		</div>
