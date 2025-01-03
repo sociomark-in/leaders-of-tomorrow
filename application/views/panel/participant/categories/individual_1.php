@@ -75,22 +75,22 @@ $tabs = [
 								<?php
 								switch ($tabs[$i]['identifier']) {
 									case 'profile':
-										$this->load->view('panel/participant/forms/msme/1', $data);
+										$this->load->view('panel/participant/forms/individual_1/1', $data);
 										break;
 									case 'finance':
-										$this->load->view('panel/participant/forms/msme/2', $data);
+										$this->load->view('panel/participant/forms/individual_1/2', $data);
 										break;
 									case 'case_1':
-										$this->load->view('panel/participant/forms/msme/3', $data);
+										$this->load->view('panel/participant/forms/individual_1/3', $data);
 										break;
 									case 'case_2':
-										$this->load->view('panel/participant/forms/msme/4', $data);
+										$this->load->view('panel/participant/forms/individual_1/4', $data);
 										break;
 									case 'uploads':
-										$this->load->view('panel/participant/forms/msme/5', $data);
+										$this->load->view('panel/participant/forms/individual_1/5', $data);
 										break;
 									case 'review':
-										$this->load->view('panel/participant/forms/msme/review', $data);
+										$this->load->view('panel/participant/forms/individual_1/review', $data);
 										break;
 									case 'success':
 										$this->load->view('panel/participant/forms/success', $data);

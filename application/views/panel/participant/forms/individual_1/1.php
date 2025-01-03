@@ -1,3 +1,7 @@
+<?php
+
+$this->load->view('components/panel/partials/_category_eligibility_requirements', $prohibit); ?>
+
 <?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">
 	<input type="hidden" name="category_id" value="<?= $category_id ?>">
@@ -5,48 +9,15 @@
 	<input type="hidden" name="utm" value="<?= $utm ?>">
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
-
+	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Personal Information&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
-		</legend>
-		<div class="row g-3">
-			<div class="col-xl-4 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Full Name of Individual</label>
-					<input type="text" required minlength="10" maxlength="50" name="applicant[name]" class="form-control">
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Designation</label>
-					<input type="text" required maxlength="50" name="applicant[designation]" class="form-control">
-				</div>
-			</div>
-			<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Date of Birth</label>
-					<input type="text" required data-type="date" name="applicant[dob]" class="form-control">
-					<span class="form-text">(in DD/MM/YYYY)</span>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Total Months of Experience</label>
-					<input type="text" maxlength="50" required name="applicant[experience]" class="form-control">
-					<span class="form-text">As On <?= date('F j, Y') ?></span>
-				</div>
-			</div>
-		</div>
-	</fieldset>
-	<fieldset class="mb-3">
-		<legend class="card-title mb-0">
-			<h5>Current Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
+			<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
 			<div class="col-xl-5 col-lg-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Name of the Current Organization</label>
+					<label for="" class="form-label">Name of the Participating Entity</label>
 					<input required type="text" name="organization[name]" class="form-control">
 				</div>
 			</div>
@@ -55,16 +26,10 @@
 					<label for="" class="form-label">Type of Business</label>
 					<select required name="organization[type]" id="" class="form-select">
 						<option value="">Select Option</option>
-						<option value="Manufacturing">Manufacturing</option>
-						<option value="Service">Service</option>
+						<?php for ($i = 0; $i < 10; $i++) : ?>
+							<option value="Select <?= $i ?>">Select <?= $i ?></option>
+						<?php endfor ?>
 					</select>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Years of Experience</label>
-					<input required type="text" name="organization[experience]" class="form-control">
-					<span class="form-text">As On <?= date('F j, Y') ?></span>
 				</div>
 			</div>
 			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
@@ -80,7 +45,7 @@
 			</div>
 			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Company Incorporation</label>
+					<label for="" class="form-label">Date of Company Incorporation</label>
 					<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
 					<span class="form-text">(in DD/MM/YYYY)</span>
 				</div>
@@ -99,41 +64,79 @@
 					<span class="form-text">(On payroll + On contract)</span>
 				</div>
 			</div>
+			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Funding Source</label>
+					<select required name="organization[funding]" id="" class="form-select">
+						<option value="">Select Option</option>
+						<option value="Personal funds of the owner">Personal funds of the owner</option>
+						<option value="Business Loans">Business Loans</option>
+						<option value="Loan from family / friends">Loan from family / friends</option>
+						<option value="Loan from Banks / NBFCs">Loan from Banks / NBFCs</option>
+					</select>
+				</div>
+			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Website URL</label>
-					<input required type="text" name="organization[website]" class="form-control">
+					<input type="text" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-12">
 				<div class="">
 					<label for="" class="form-label">LinkedIn URL</label>
-					<input required type="text" name="organization[linkedin]" class="form-control">
+					<input type="text" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
 				</div>
 			</div>
 		</div>
 	</fieldset>
 	<fieldset class="mb-3">
 		<legend class="card-title mb-0">
-			<h5>Contact Person of Organization&nbsp;<span class="text-danger">*</span><span class="text-danger">&ast;</span></h5>
+			<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
 		</legend>
 		<div class="row g-3">
-			<div class="col-xl-3 col-lg-6 col-12">
+			<!-- <div class="col-12">
 				<div class="">
-					<label for="" class="form-label">Full Name of Individual</label>
-					<input name="contact_person[name]" type="text" class="form-control">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="PoCCheck" checked>
+						<label class="form-check-label" for="PoCCheck">
+							Same As Login
+						</label>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Email Address</label>
-					<input name="contact_person[email]" type="text" class="form-control">
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Contact Number</label>
-					<input name="contact_person[contact]" type="text" class="form-control">
+				<script>
+					$(document).ready(function() {
+						$("#PoCCheck").on('change', () => {
+							if ($(this).is(':checked')) {
+								$("sectionChange").addClass('d-none');
+							} else {
+								console.log("Not Checked");
+								$("sectionChange").removeClass('d-none');
+							}
+						});​
+					})
+				</script>
+			</div> -->
+			<div id="sectionChange" class="col-12">
+				<div class="row g-3">
+					<div class="col-xl-3 col-lg-6 col-12">
+						<div class="">
+							<label for="" class="form-label">Full Name of Individual</label>
+							<input required name="contact_person[name]" value="<?= $user['name'] ?>" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="">
+							<label for="" class="form-label">Email Address</label>
+							<input required name="contact_person[email]" value="<?= $user['email'] ?>" type="email" class="form-control">
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-6 col-12">
+						<div class="">
+							<label for="" class="form-label">Contact Number</label>
+							<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -144,10 +147,27 @@
 		<a href="<?= base_url('dashboard/application/' . $application['id'] . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div> -->
 	<div class="col-md-auto">
-		<button type="submit" class="btn btn-primary">Save and Next</button>
+		<button type="button" data-bs-toggle="modal" data-bs-target="#consentModal" class="btn btn-primary">Save and Next</button>
 	</div>
 	<div class="col-md-auto">
 		<button type="reset" class="btn btn-outline-secondary">Reset This Section</button>
+	</div>
+</div>
+<div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
 	</div>
 </div>
 <?= form_close() ?>

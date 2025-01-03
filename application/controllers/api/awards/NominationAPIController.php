@@ -208,6 +208,7 @@ class NominationAPIController extends CI_Controller
 					];
 					$this->data['category'] =  $category;
 					$this->data['data'] = array_merge($data, $common);
+					
 					if ($this->EntriesModel->insert($this->data['data'])) {
 						// $this->session->set_userdata('application_stage', ++$stage);
 						// redirect($this->request['referrer'] . '?stage=' . ++$stage);
@@ -905,14 +906,6 @@ class NominationAPIController extends CI_Controller
 	public function download_docket()
 	{
 		$this->load->library('pdflib/makedocket');
-		$this->makedocket->init('P', 'mm', 'A4')->load($data = null, 'stage_1_msme_1')->generate();
-	}
-
-
-
-	public function download_presentation()
-	{
-		$this->load->library('pdflib/makepresentation');
-		$this->makepresentation->init('L', 'mm', ['360', '200'])->load($data = null, $layout = 'stage_2_layout_1')->generate();
+		$this->makedocket->init('P', 'mm', 'A4')->load($data = null, 'stage_1_digital_1')->generate();
 	}
 }

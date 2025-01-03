@@ -18,34 +18,8 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_74529', 'id_74530', 'id_74531', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status <=' => 3], 'individual'), true),
 			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status <=' => 3], 'msme'), true)
 		];
-		if (count($applications['individual']) > 0) {
-			for ($i = 0; $i < count($applications['individual']); $i++) {
-				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
-				$s = $applications['individual'][$i]['status'];
-				switch ($s) {
-					case '0':
-						$s = '<span class="badge bg-danger">Rejected</span>';
-						break;
-					case '1':
-						$s = '<span class="badge bg-success">Accepted</span>';
-						break;
-					case '2':
-						$s = '<span class="badge bg-dark">Unlocked</span>';
-						break;
-					case '3':
-						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
-						break;
-					default:
-						$s = '<span class="badge bg-secondary">Draft</span>';
-						# code...
-						break;
-				}
-				$applications['individual'][$i]['status_text'] = $s;
-			}
-		}
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
 				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
@@ -78,46 +52,12 @@ class NominationsController extends PanelController
 	public function user_side()
 	{
 		$this->data['my_applications'] = [];
-		$categories = [
-			'msme' => json_decode($this->CategoryModel->get_msme(null, ['valid_until >' => date("Y-m-d H:i:s")]), true),
-			// 'individual' => json_decode($this->CategoryModel->get_individual(), true),
-		];
+		
+		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
-			'individual' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'individual'), true),
 			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'msme'), true)
 		];
-		if (count($applications['individual']) > 0) {
-			for ($i = 0; $i < count($applications['individual']); $i++) {
-				$applications['individual'][$i]['category'] = json_decode($this->CategoryModel->get_individual(null, ['id' => $applications['individual'][$i]['category_id']]), true)[0];
-				$applications['individual'][$i]['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $applications['individual'][$i]['created_at']), 'F j, Y');
-				$s = $applications['individual'][$i]['status'];
-				if ($s > 0) {
-					if ($applications['individual'][$i]['category']['id'] == $categories['individual'][$i]['id']) {
-						unset($categories['individual'][$i]);
-					}
-				}
-				switch ($s) {
-					case '0':
-						$s = '<span class="badge bg-danger">Rejected</span>';
-						break;
-					case '1':
-						$s = '<span class="badge bg-success">Accepted</span>';
-						break;
-					case '2':
-						$s = '<span class="badge bg-dark">Unlocked</span>';
-						break;
-					case '3':
-						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
-						break;
-					default:
-						$s = '<span class="badge bg-secondary">Draft</span>';
-						# code...
-						break;
-				}
-				$applications['individual'][$i]['status_text'] = $s;
-			}
-		}
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
 				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
@@ -242,16 +182,9 @@ class NominationsController extends PanelController
 
 	public function nominate($code)
 	{
-		$category_details = array_merge(
-			json_decode($this->CategoryModel->get_individual(null, ['code' => $code]), true),
-			json_decode($this->CategoryModel->get_msme(null, ['code' => $code]), true)
-		);
-		$this->data['category'] = $category_details[0];
-
-		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
-		$this->data['nomination']['stage'] = $this->input->get('stage');
-		$this->load->panel_view('register', $this->data);
-		// if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
+		$category = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'code' => $code]), true)[0];
+		$this->data['category'] = $category;
+	// if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
 		// 	// First View
 		// } else {
 		// 	$session = [
@@ -262,6 +195,10 @@ class NominationsController extends PanelController
 		// 	$this->session->set_tempdata('temp_session', $session);
 		// 	redirect(base_url('dashboard/my-profile'));
 		// }
+
+		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
+		$this->data['nomination']['stage'] = $this->input->get('stage');
+		$this->load->panel_view('register', $this->data);
 	}
 
 	public function download($slug)

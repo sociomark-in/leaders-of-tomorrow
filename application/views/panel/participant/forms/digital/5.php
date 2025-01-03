@@ -1,4 +1,4 @@
-<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_05']) ?>
+<?= form_open_multipart('api/v2/awards/nomination/single/new') ?>
 <input type="hidden" name="category_id" value="<?= $category_id ?>">
 <input type="hidden" name="application_id" value="<?= $application_id ?? null ?>">
 <input type="hidden" name="utm" value="<?= $utm ?>">
@@ -7,20 +7,20 @@
 <input type="hidden" name="referrer" value="<?= $referrer ?>">
 
 <!-- 
-	74525 doc1
-	74526 doc2
-	74527 doc3
-	74528 doc4
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
 -->
 
 <div class="mb-3">
 	<fieldset class="mb-3">
 		<legend class="card-title mb-3">
-			<h5>Upload Files<span class="text-danger">&ast;</span></h5>
+			<h5>Upload Files<sup class="text-danger">&ast;</sup></h5>
 		</legend>
-		<div class="">
+		<div class="d-none">
 			<div class="bg-light p-3 mb-2">
-				<h5>Instructions<span class="text-danger">&ast;</span></h5>
+				<h5>Instructions<sup class="text-danger">&ast;</sup></h5>
 				<ul class="">
 					<li>Open the PDF Properties and check for PDF version < version 5 (1.4)</li>
 					<li>Open the unsupported PDF file with Chrome</li>
@@ -33,29 +33,30 @@
 		<div class="row g-3 mb-3">
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">MSME certificate</label>
-					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_74525'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India</span>
+					<label for="" class="form-label">MSME Certificate</label>
+					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_75530'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Company Incorporation Certificate</label>
-					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_74526'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
+					<label for="" class="form-label">Incorporation Certificate</label>
+					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_75531'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Work Experience Letter</label>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_74527'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">as on March 31, 2023</span>
+					<label for="" class="form-label">Impact Assessment Report</label>
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">as on March 31, 2023 (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_74528'] ?>" data-max-file-size="250K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF</span>
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 		</div>
@@ -101,7 +102,7 @@
 						pdfjsLib.getDocument(arrayBuffer).promise.then((pdfDoc) => {
 							pdfDoc.getMetadata().then((metadata) => {
 								console.log('Metadata:', metadata.info.PDFFormatVersion);
-								if (metadata.info.PDFFormatVersion > "1.7") {
+								if( metadata.info.PDFFormatVersion > "1.7"){
 									alert('PDF Version not Supported!');
 								}
 							});

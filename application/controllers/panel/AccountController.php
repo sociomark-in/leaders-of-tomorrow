@@ -14,10 +14,12 @@ class AccountController extends PanelController
 		$this->load->model('panel/EntriesModel');
 		$this->load->model('event/awards/CategoryModel');
 
-		$categories = [
-			'msme' => json_decode($this->CategoryModel->get_msme(), true),
-			'individual' => json_decode($this->CategoryModel->get_individual(), true),
-		];
+		// $categories = [
+		// 	'msme' => json_decode($this->CategoryModel->get_msme(), true),
+		// 	'individual' => json_decode($this->CategoryModel->get_individual(), true),
+		// ];
+
+		$categories['msme'] = json_decode($this->CategoryModel->get(), true);
 		$this->data['categories'] = $categories;
 
 		
