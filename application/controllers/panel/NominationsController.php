@@ -303,7 +303,7 @@ class NominationsController extends PanelController
 				case 'msme':
 					$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => strtolower(explode('_', $application['category_id'])[0])]), true)[0];
 					# code...
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'stage_1_msme_layout_2')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'stage_1_msme_layout_1')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 					break;
 				
 				default:

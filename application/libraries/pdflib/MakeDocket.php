@@ -27,6 +27,7 @@ class MakeDocket extends Fpdf
 		$this->Image(FCPATH . 'assets/images/main.png', 10, 10, 0, 8);
 		// Arial bold 15
 		$this->SetFont('Arial', 'B', 15);
+		$this->SetTextColor(25, 25, 25);
 		// Move to the right
 		$this->Cell(80);
 		// Title
@@ -41,6 +42,7 @@ class MakeDocket extends Fpdf
 		$this->SetY(-15);
 		// Arial italic 8
 		$this->SetFont('Arial', 'I', 8);
+		$this->SetTextColor(25, 25, 25);
 		// Page number
 		$this->Cell(97, 10, APP_NAME . ' - Season 12', 0, 0, 'L');
 		$this->Cell(97, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'R');
@@ -55,18 +57,29 @@ class MakeDocket extends Fpdf
 		return $this;
 	}
 
-	public function load($data = null, $layout = 'msme')
+	public function load($data = null, $layout = 'stage_1_msme_1')
 	{
 		switch ($layout) {
-			case 'stage_1_msme_layout_2':
+			case 'stage_1_msme_1':
 				include_once __DIR__ . '/layout/' . $layout . '.php';
 				break;
-			case 'stage_1_msme_layout_2':
+			case 'stage_1_digital_1':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+			case 'stage_1_family_1':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+			case 'stage_1_global_1':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+			case 'stage_1_individual_1':
+				include_once __DIR__ . '/layout/' . $layout . '.php';
+				break;
+			case 'stage_1_individual_2':
 				include_once __DIR__ . '/layout/' . $layout . '.php';
 				break;
 
 			default:
-				include_once __DIR__ . '/layout/individual.php';
 				break;
 		}
 		return $this;
