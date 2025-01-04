@@ -50,11 +50,17 @@ if ($nomination['stage'] >= 1) {
 				<div class="col-12 grid-margin stretch-card">
 					<div class="col-12">
 						<?php
-						if (strtolower($category['type']) == 'msme') {
-							include_once APPPATH . '/views/panel/participant/categories/msme.php';
-						} else {
-							include_once APPPATH . '/views/panel/participant/categories/individual.php';
-						} ?>
+
+						switch ($category['type']) {
+							case '1_INDIVIDUAL':
+								# code...
+								include_once APPPATH . '/views/panel/participant/categories/individual_1.php';
+								break;
+							
+							default:
+								# code...
+								break;
+						}?>
 					</div>
 				</div>
 			</div>

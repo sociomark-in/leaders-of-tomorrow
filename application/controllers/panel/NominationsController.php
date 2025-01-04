@@ -60,11 +60,11 @@ class NominationsController extends PanelController
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
-				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get(null, ['type' => $applications['msme'][$i]['category_id']]), true)[0];
 				$applications['msme'][$i]['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $applications['msme'][$i]['created_at']), 'F j, Y');
 				$s = $applications['msme'][$i]['status'];
 				if ($s > 0) {
-					if ($applications['msme'][$i]['category']['id'] == $categories['msme'][$i]['id']) {
+					if ($applications['msme'][$i]['category']['type'] == $categories['msme'][$i]['type']) {
 						unset($categories['msme'][$i]);
 					}
 				}
@@ -133,12 +133,15 @@ class NominationsController extends PanelController
 			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'msme'), true),
 		)[0];
 
-		$c = explode("_", $application['category_id']);
+		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+
+		/* $c = explode("_", $application['category_id']);
 		if ($c[1] == 'Individual') {
 			$category_details = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
 		} elseif ($c[1] == 'MSME') {
 			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
-		}
+		} */
+		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 		$this->data['category'] = $category_details;
 
 		$this->user_session = $_SESSION['awards_panel_user'];
@@ -148,10 +151,14 @@ class NominationsController extends PanelController
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
 				if ($stage <= 6) {
-					$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
+					$this->data['application'] = $application;
 					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
 				} else {
 				}
+
+				// echo "<pre>";
+				// print_r($this->data); die;
+
 				$this->load->panel_view('applications/single', $this->data);
 
 				break;
@@ -184,7 +191,7 @@ class NominationsController extends PanelController
 	{
 		$category = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'code' => $code]), true)[0];
 		$this->data['category'] = $category;
-	// if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
+		// if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
 		// 	// First View
 		// } else {
 		// 	$session = [

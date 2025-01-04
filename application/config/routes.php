@@ -136,7 +136,10 @@ $route['api/v2/dashboard/agency/new'] = 'api/agency/AgencyAPIController/new_agen
 
 
 $route['api/v2/participant/nominate'] = 'api/auth/AuthAPIController/participant_nominate';
-$route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
+
+// $route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_single';
+$route['api/v2/awards/nomination/single/new'] = 'api/awards/NominationAPIController/new_nomination';
+
 $route['api/v2/awards/nomination/single/new_bulk'] = 'api/awards/NominationAPIController/new_bulk';
 $route['api/v2/awards/nomination/single/edit'] = 'api/awards/NominationAPIController/bulk_edit';
 $route['api/v2/awards/nomination/reject_w_comment'] = 'api/awards/NominationAPIController/comment_and_reject';

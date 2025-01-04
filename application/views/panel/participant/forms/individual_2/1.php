@@ -10,92 +10,126 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 	<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 	<input type="hidden" name="stage" value="<?= $stage ?>">
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
-	<fieldset class="mb-3">
-		<legend class="card-title mb-0">
-			<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
-		</legend>
-		<div class="row g-3">
-			<div class="col-xl-5 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Name of the Participating Entity</label>
-					<input required type="text" name="organization[name]" class="form-control">
+	<div class="row g-3 g-md-4">
+		<fieldset class="col-12">
+			<legend class="card-title mb-0">
+				<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
+			</legend>
+			<div class="row g-3">
+				<div class="col-xl-6 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Name of the Participating Entity</label>
+						<input required type="text" name="organization_name" class="form-control">
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Name of the Applicant</label>
+						<input required type="text" name="name" class="form-control">
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Designation</label>
+						<input required type="text" name="designation" class="form-control">
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Date of Birth</label>
+						<input required type="text" data-type="date" name="dob" class="form-control">
+						<span class="form-text">(in DD/MM/YYYY)</span>
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Business Segment</label>
+						<select required name="organization[segment]" id="" class="form-select">
+							<option value="">Select Business Segment</option>
+							<?php for ($i = 0; $i < 10; $i++) : ?>
+								<option value="Select <?= $i ?>">Select <?= $i ?></option>
+							<?php endfor ?>
+						</select>
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Date of Company Incorporation</label>
+						<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
+						<span class="form-text">(in DD/MM/YYYY)</span>
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Total Years of Experience</label>
+						<input required type="text" name="experience['total]" class="form-control">
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+					<div class="">
+						<label for="" class="form-label">Years of Experience in this Company</label>
+						<input required type="text" name="experience[current]" class="form-control">
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="row g-3">
+						<div class="col-12">
+							<label for="" class="form-label">Registered Address Participating Entity</label>
+							<input required type="text" name="organization_address[line_1]" class="form-control mb-2">
+							<input type="text" name="organization_address[line-2]" class="form-control mb-2">
+							<input type="text" name="organization_address[line_3]" class="form-control mb-2">
+						</div>
+						<div class="col-xl-4 col-lg-6 col-12">
+							<label for="" class="form-label">State</label>
+							<select required name="organization_address[state]" id="" class="form-select">
+								<option value="">Select State</option>
+								<?php for ($i = 0; $i < 10; $i++) : ?>
+									<option value="Select <?= $i ?>">Select <?= $i ?></option>
+								<?php endfor ?>
+							</select>
+						</div>
+						<div class="col-xl-4 col-lg-6 col-12">
+							<label for="" class="form-label">City</label>
+							<select required name="organization_address[city]" id="" class="form-select">
+								<option value="">Select City</option>
+								<?php for ($i = 0; $i < 10; $i++) : ?>
+									<option value="Select <?= $i ?>">Select <?= $i ?></option>
+								<?php endfor ?>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xxl-3 col-xl-4 col-12">
+					<div class="">
+						<label for="" class="form-label">Type of Business</label>
+						<select required name="organization['business]" id="" class="form-select">
+							<option value="">Select Ownership Type</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xxl-3 col-xl-4 col-12">
+					<div class="">
+						<label for="" class="form-label">Type of Ownership</label>
+						<select required name="organization['ownership]" id="" class="form-select">
+							<option value="">Select Ownership Type</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xxl-6 col-xl-8 col-12">
+					<div class="">
+						<label for="" class="form-label">Website URL</label>
+						<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" class="form-control">
+					</div>
 				</div>
 			</div>
-			<div class="col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Type of Business</label>
-					<select required name="organization[type]" id="" class="form-select">
-						<option value="">Select Option</option>
-						<?php for ($i = 0; $i < 10; $i++) : ?>
-							<option value="Select <?= $i ?>">Select <?= $i ?></option>
-						<?php endfor ?>
-					</select>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Business Segment</label>
-					<select required name="organization[segment]" id="" class="form-select">
-						<option value="">Select Option</option>
-						<?php for ($i = 0; $i < 10; $i++) : ?>
-							<option value="Select <?= $i ?>">Select <?= $i ?></option>
-						<?php endfor ?>
-					</select>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Date of Company Incorporation</label>
-					<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
-					<span class="form-text">(in DD/MM/YYYY)</span>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">No. Of Employees</label>
-					<select required name="organization[size]" id="" class="form-select">
-						<option value="">Select Option</option>
-						<option value="Less Than 50">Less Than 50</option>
-						<option value="50 - 100">50 - 100</option>
-						<option value="100 - 200">100 - 200</option>
-						<option value="200 - 400">200 - 400</option>
-						<option value="More Than 400">More Than 400</option>
-					</select>
-					<span class="form-text">(On payroll + On contract)</span>
-				</div>
-			</div>
-			<div class="col-xxl-2 col-xl-3 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Funding Source</label>
-					<select required name="organization[funding]" id="" class="form-select">
-						<option value="">Select Option</option>
-						<option value="Personal funds of the owner">Personal funds of the owner</option>
-						<option value="Business Loans">Business Loans</option>
-						<option value="Loan from family / friends">Loan from family / friends</option>
-						<option value="Loan from Banks / NBFCs">Loan from Banks / NBFCs</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-xl-4 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Website URL</label>
-					<input type="text" placeholder="https://www.domain.xyz" name="organization[website]" class="form-control">
-				</div>
-			</div>
-			<div class="col-xl-4 col-lg-6 col-12">
-				<div class="">
-					<label for="" class="form-label">LinkedIn URL</label>
-					<input type="text" placeholder="https://www.domain.xyz" name="organization[linkedin]" class="form-control">
-				</div>
-			</div>
-		</div>
-	</fieldset>
-	<fieldset class="mb-3">
-		<legend class="card-title mb-0">
-			<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
-		</legend>
-		<div class="row g-3">
-			<!-- <div class="col-12">
+		</fieldset>
+		<fieldset class="col-12">
+			<legend class="card-title mb-0">
+				<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
+			</legend>
+			<div class="row g-3">
+				<!-- <div class="col-12">
 				<div class="">
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" value="" id="PoCCheck" checked>
@@ -117,35 +151,33 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 					})
 				</script>
 			</div> -->
-			<div id="sectionChange" class="col-12">
-				<div class="row g-3">
-					<div class="col-xl-3 col-lg-6 col-12">
-						<div class="">
-							<label for="" class="form-label">Full Name of Individual</label>
-							<input required name="contact_person[name]" value="<?= $user['name'] ?>" type="text" class="form-control">
+				<div id="sectionChange" class="col-12">
+					<div class="row g-3">
+						<div class="col-xl-3 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Full Name of Individual</label>
+								<input required name="contact_person[name]" value="<?= $user['name'] ?>" type="text" class="form-control">
+							</div>
 						</div>
-					</div>
-					<div class="col-lg-6 col-12">
-						<div class="">
-							<label for="" class="form-label">Email Address</label>
-							<input required name="contact_person[email]" value="<?= $user['email'] ?>" type="email" class="form-control">
+						<div class="col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Email Address</label>
+								<input required name="contact_person[email]" value="<?= $user['email'] ?>" type="email" class="form-control">
+							</div>
 						</div>
-					</div>
-					<div class="col-xl-3 col-lg-6 col-12">
-						<div class="">
-							<label for="" class="form-label">Contact Number</label>
-							<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
+						<div class="col-xl-3 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Contact Number</label>
+								<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</fieldset>
+		</fieldset>
+	</div>
 </div>
 <div class="row g-3">
-	<!-- <div class="col-md-auto">
-		<a href="<?= base_url('dashboard/application/' . $application['id'] . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
-	</div> -->
 	<div class="col-md-auto">
 		<button type="button" data-bs-toggle="modal" data-bs-target="#consentModal" class="btn btn-primary">Save and Next</button>
 	</div>

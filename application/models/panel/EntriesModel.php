@@ -115,7 +115,7 @@ class EntriesModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table = "";
+		$this->table = "award_entries";
 	}
 
 	/**
@@ -129,26 +129,13 @@ class EntriesModel extends CI_Model
 	 */
 	public function get($select = null, $where = null, $table = 'individual')
 	{
-		switch ($table) {
-			case 'individual':
-				$table = 'individual_entries';
-				break;
-
-			case 'msme':
-				$table = 'msme_entries';
-				break;
-
-			default:
-				$table = 'individual_entries';
-				break;
-		}
 		if (!is_null($select)) {
 			$this->db->select($select);
 		}
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		return json_encode($this->db->get($table)->result_array());
+		return json_encode($this->db->get($this->table)->result_array());
 	}
 
 	/**
@@ -159,38 +146,9 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $data
 	 * @return void
 	 */
-	public function insert($data, $table = 'individual')
+	public function insert($data)
 	{
-		$this->load->model('event/awards/CategoryModel');
-		$c = explode('_', $data['category_id']);
-		switch ($c[1]) {
-			case 'MSME':
-				$category = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
-				break;
-			case 'Individual':
-				$category = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
-				break;
-				
-			default:
-				$category = [];
-				# code...
-				break;
-		}
-		switch (strtolower($category['type'])) {
-			case 'individual':
-				$table = 'individual_entries';
-				break;
-
-			case 'msme':
-				$table = 'msme_entries';
-				break;
-
-			default:
-				$table = 'individual_entries';
-				break;
-		}
-
-		if ($this->db->insert($table, $data)) {
+		if ($this->db->insert($this->table, $data)) {
 			return true;
 		} else {
 			return false;
@@ -209,27 +167,14 @@ class EntriesModel extends CI_Model
 	 * @param  mixed $where
 	 * @return void
 	 */
-	public function update($data, $where, $type = 'individual')
+	public function update($data, $where)
 	{
-		// $this->db->set();
 		$this->db->set($data);
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		switch (strtolower($type)) {
-			case 'individual':
-				$table = 'individual_entries';
-				break;
 
-			case 'msme':
-				$table = 'msme_entries';
-				break;
-
-			default:
-				$table = 'individual_entries';
-				break;
-		}
-		$affected_rows = $this->db->update($table);
+		$affected_rows = $this->db->update($this->table);
 		if ($affected_rows > 0) {
 			return $affected_rows;
 		} else {
