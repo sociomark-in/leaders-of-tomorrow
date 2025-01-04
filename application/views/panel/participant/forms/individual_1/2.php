@@ -151,6 +151,21 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-12">
+						<div class="row g-3">
+							<div class="col-xxl-4 col-12">
+								Years of Involvement in Social Entrepreneurship
+							</div>
+							<div class="col-xxl-4 col-lg-6 col-12">
+								<select required name="organization_der_23" id="" class="form-select">
+									<option value="">Select Option</option>
+									<option <?= ($application['id_255108'] == "2 - 5 Years") ? "selected" : "" ?> value="2 - 5 Years">2 - 5 Years</option>
+									<option <?= ($application['id_255108'] == "5 - 10 Years") ? "selected" : "" ?> value="5 - 10 Years">5 - 10 Years</option>
+									<option <?= ($application['id_255108'] == "More than 10 Years") ? "selected" : "" ?> value="More than 10 Years">More than 10 Years</option>
+								</select>
+							</div>
+						</div>
+					</div>
 				</div>
 			</fieldset>
 		</div>
@@ -171,9 +186,11 @@
 							<label for="" class="form-label">No. Of Employees</label>
 							<select required name="organization[size]" id="" class="form-select">
 								<option value="">Select Option</option>
-								<?php for ($i = 0; $i < 10; $i++) : ?>
-									<option <?= ($application['id_255202'] == "Select " . $i) ? "selected" : "" ?> value="Select <?= $i ?>">Select <?= $i ?></option>
-								<?php endfor ?>
+								<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+								<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+								<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+								<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+								<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 							</select>
 						</div>
 					</div>
@@ -198,7 +215,13 @@
 					<div class="col-xxl-4 col-xl-6 col-12">
 						<div class="">
 							<label for="" class="form-label">No. of new regions/communities targeted for expansion in the next 3 years</label>
-							<input required type="number" value="<?= $application_temp['id_255206'] ?>" name="organization[regions]" class="form-control">
+							<select required name="organization[regions]" id="" class="form-select">
+								<option value="">Select Option</option>
+								<option <?= ($application['id_255206'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
+								<option <?= ($application['id_255206'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
+								<option <?= ($application['id_255206'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
+								<option <?= ($application['id_255206'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-12">

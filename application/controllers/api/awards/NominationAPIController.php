@@ -287,6 +287,106 @@ class NominationAPIController extends CI_Controller
 						break;
 				}
 				break;
+			case '1_FAMILY':
+				switch ($stage) {
+					case 0: # ☑ Personal Information
+						$data = [
+							"nomination_id" => $this->request['application_id'],
+							"category_id" => $category['type'],
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							'stage_status' => $s,
+							"status" => '4',
+							"created_by" => $this->usersession['id'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+						];
+						$this->data['data'] = $data;
+
+						if ($this->EntriesModel->insert($this->data['data'])) {
+							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+						};
+						break;
+					case 1: # ☑ Organization Details
+						$data = [
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization_reach"],
+							'id_255202' => $this->request["organization"]['size'],
+							'id_255203' => $this->request["organization"]['beneficiary'],
+							'id_255204' => $this->request["organization"]['community_impact'],
+							'id_255205' => $this->request["organization"]['investment'],
+							'id_255206' => $this->request["organization"]['regions'],
+
+							'stage_status' => $s
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 2: # ☑ Case Studies I
+						$data = [
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 3: # ☑ Case Studies II
+						$data = [
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					default:
+						# code...
+						break;
+				}
+				break;
 
 			default:
 				switch ($stage) {
