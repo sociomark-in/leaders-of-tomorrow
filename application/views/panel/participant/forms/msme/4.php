@@ -8,86 +8,52 @@
 	<input type="hidden" name="referrer" value="<?= $referrer ?>">
 
 	<!-- 
-	75526	initiative_tech
-	75527	initiative_impact	
-	75528	initiative_scalability	
-	75529	initiative_info	
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
  	-->
 
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Use of Technology<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 5000 characters)</label>
-					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+	<div class="row g-3 g-md-4">
+		<div class="col-12">
+			<fieldset class="">
+				<div class="mb-3">
+					<legend class="card-title mb-0">
+						<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+					</legend>
 				</div>
-			</div>
-		</div>
-	</fieldset>
-
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Impact of the innovation/ initiative<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
-						(Details should be measurable and generic statements should be avoided)
-					</label>
-					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="">
+							<label for="" class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</label>
+							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+							<span class="form-text">(50 - 5000 characters)</span>
+						</div>
+					</div>
 				</div>
-			</div>
+			</fieldset>
 		</div>
-	</fieldset>
-
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Sustainability & Scalability<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters
-						Growth plan for next 2-3 years
-						Growth plan for the initiative or product/ service offering
-						Plan for raising funds in future
-						Any other
-					</label>
-					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+		<div class="col-12">
+			<fieldset class="">
+				<div class="mb-3">
+					<legend class="card-title mb-0">
+						<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
+					</legend>
 				</div>
-			</div>
-		</div>
-	</fieldset>
-
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Additional Information</h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
-					<textarea name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="">
+							<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
+							<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+							<span class="form-text">(50 - 5000 characters)</span>
+						</div>
+					</div>
 				</div>
-			</div>
+			</fieldset>
 		</div>
-	</fieldset>
+	</div>
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
@@ -102,50 +68,74 @@
 </div>
 <?= form_close() ?>
 <script>
-	$.validator.addMethod("wordCount", function(value, element, wordCount) {
+	function parseDDMMYYYYDate(dateString) {
+		let parts = dateString.split('/');
+		let day = parseInt(parts[0], 10);
+		let month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
+		let year = parseInt(parts[2], 10);
 
-		return value.split(' ').length <= wordCount;
+		return new Date(year, month, day);
+	}
+	$.validator.addMethod("greater_than", function(value, element, param) {
 
+		var d1 = new Date(Date.parse(value));
+		var d2 = new Date(Date.parse($(param).val()));
+		console.log([value, $(param).val()]);
+		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
+
+		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
+	});
+	$('[name=initiative_start_date]').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		showButtonPanel: true,
+		dateFormat: 'dd/mm/yy',
+		maxDate: '<?= date('d/m/Y') ?>',
+
+	});
+	$('[name=initiative_end_date]').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		showButtonPanel: true,
+		dateFormat: 'dd/mm/yy',
 	});
 	$("#form_option_03").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			initiative_tech: {
+			case_study_1: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_impact: {
+			case_study_2: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_scalability: {
+			initiative_strategy: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_info: {
-				maxlength: 5000,
-				minlength: 50
-			},
+			initiative_end_date: {
+				greater_than: '[name=initiative_start_date]'
+			}
 		},
 		messages: {
-			initiative_tech: {
+			case_study_1: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_impact: {
+			case_study_2: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_scalability: {
+			initiative_strategy: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_info: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
+			initiative_end_date: {
+				greater_than: 'End Date should be greater than Start Date'
+			}
 		}
 	});
 </script>

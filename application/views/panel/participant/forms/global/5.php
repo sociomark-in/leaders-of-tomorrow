@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="row g-3 mb-3">
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+		<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">MSME Certificate</label>
 					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_75530'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
@@ -40,22 +40,37 @@
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Incorporation Certificate</label>
+					<label for="" class="form-label">Proof of Global Presence</label>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_75531'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(Provide a list of business registrations, partnerships, or collaborations in the required countries) (PDF of Maximum Size 500KB)</span>
+				</div>
+			</div>
+			<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Applicable Environmental Certifications</label>
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
+					GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
+				</div>
+			</div> -->
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Impact Assessment Report</label>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">as on March 31, 2023 (PDF of Maximum Size 500KB)</span>
+					<label for="" class="form-label">Collaterals to Support the Impact</label>
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>

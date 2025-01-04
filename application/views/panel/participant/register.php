@@ -66,6 +66,7 @@ if ($nomination['stage'] >= 1) {
 						case '1_DIGITAL':
 							include_once APPPATH . '/views/panel/participant/categories/digital.php';
 							# code...
+							break;
 						case '1_FAMILY':
 							include_once APPPATH . '/views/panel/participant/categories/family.php';
 							# code...

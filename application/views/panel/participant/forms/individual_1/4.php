@@ -25,7 +25,7 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="">
-							<label for="" class="form-label">How has your work contributed to the welfare of society or the environment? Describe the social or environmental outcomes achieved through your initiatives</label>
+							<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
 							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>

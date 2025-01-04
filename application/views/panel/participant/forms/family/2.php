@@ -219,15 +219,8 @@
 					</div>
 					<div class="col-12">
 						<div class="">
-							<label for="" class="form-label">Brief Description of the Business</label>
-							<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255207'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="">
 							<label for="" class="form-label">Core Products / Services Offered</label>
-							<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255208'] ?></textarea>
+							<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255207'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>

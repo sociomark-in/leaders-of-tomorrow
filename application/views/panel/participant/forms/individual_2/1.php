@@ -19,7 +19,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				<div class="col-xl-6 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Name of the Participating Entity</label>
-						<input required type="text" name="organization_name" class="form-control">
+						<input required type="text" name="organization[name]" class="form-control">
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-12">
@@ -46,9 +46,9 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<label for="" class="form-label">Business Segment</label>
 						<select required name="organization[segment]" id="" class="form-select">
 							<option value="">Select Business Segment</option>
-							<?php for ($i = 0; $i < 10; $i++) : ?>
-								<option value="Select <?= $i ?>">Select <?= $i ?></option>
-							<?php endfor ?>
+							<option value="Micro">Micro</option>
+							<option value="Small">Small</option>
+							<option value="Medium">Medium</option>
 						</select>
 					</div>
 				</div>
@@ -62,7 +62,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Total Years of Experience</label>
-						<input required type="text" name="experience['total]" class="form-control">
+						<input required type="text" name="experience[total]" class="form-control">
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -75,13 +75,13 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 					<div class="row g-3">
 						<div class="col-12">
 							<label for="" class="form-label">Registered Address Participating Entity</label>
-							<input required type="text" name="organization_address[line_1]" class="form-control mb-2">
-							<input type="text" name="organization_address[line-2]" class="form-control mb-2">
-							<input type="text" name="organization_address[line_3]" class="form-control mb-2">
+							<input required type="text" name="organization[address][line_1]" class="form-control mb-2">
+							<input type="text" name="organization[address][line_2]" class="form-control mb-2">
+							<input type="text" name="organization[address][line_3]" class="form-control mb-2">
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">State</label>
-							<select required name="organization_address[state]" id="" class="form-select">
+							<select required name="organization[address][state]" id="" class="form-select">
 								<option value="">Select State</option>
 								<?php for ($i = 0; $i < 10; $i++) : ?>
 									<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -90,7 +90,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
-							<select required name="organization_address[city]" id="" class="form-select">
+							<select required name="organization[address][city]" id="" class="form-select">
 								<option value="">Select City</option>
 								<?php for ($i = 0; $i < 10; $i++) : ?>
 									<option value="Select <?= $i ?>">Select <?= $i ?></option>
@@ -103,16 +103,22 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				<div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Business</label>
-						<select required name="organization['business]" id="" class="form-select">
-							<option value="">Select Ownership Type</option>
+						<select required name="organization[business]" id="" class="form-select">
+							<option value="">Select Business Type</option>
+							<option value="Manufacturing">Manufacturing</option>
+							<option value="Service">Service</option>
 						</select>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Ownership</label>
-						<select required name="organization['ownership]" id="" class="form-select">
+						<select required name="organization[ownership]" id="" class="form-select">
 							<option value="">Select Ownership Type</option>
+							<option value="Sole Proprietorship">Sole Proprietorship</option>
+							<option value="Partnership">Partnership</option>
+							<option value="Private Limited">Private Limited</option>
+							<option value="Other">Other</option>
 						</select>
 					</div>
 				</div>

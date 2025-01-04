@@ -58,7 +58,7 @@ $tabs = [
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<?php for ($i = 0; $i < count($tabs); $i++):
-			$data["category_id"] = implode('_', [$category['id'], $category['type']]);
+			$data["category_id"] = $category['type'];
 			$data["application_id"] = $application['nomination_id'] ?? null;
 			$data["application_temp"] = $_SESSION['application_temp'] ?? null;
 			$data["referrer"] = current_url();
