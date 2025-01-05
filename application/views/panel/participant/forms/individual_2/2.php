@@ -60,11 +60,11 @@
 							<div class="col-xxl-4 col-lg-6 col-12">
 								<select required name="organization_revenue_1" id="" class="form-select">
 									<option value="">Select Option</option>
-									<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-									<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-									<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-									<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
-									<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
+									<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+									<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+									<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+									<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
+									<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
 								</select>
 							</div>
 						</div>
@@ -88,12 +88,12 @@
 							<div class="col-xxl-4 col-lg-6 col-12">
 								<select required name="organization_growth_1" id="" class="form-select">
 									<option value="">Select Option</option>
-									<option <?= ($application['id_255103'] == "< 5%") ? "selected" : "" ?> value="< 5%">
+									<option <?= ($application['id_255104'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 										< 5%</option>
-									<option <?= ($application['id_255103'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
-									<option <?= ($application['id_255103'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
-									<option <?= ($application['id_255103'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
-									<option <?= ($application['id_255103'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
+									<option <?= ($application['id_255104'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
+									<option <?= ($application['id_255104'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
+									<option <?= ($application['id_255104'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
+									<option <?= ($application['id_255104'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
 								</select>
 							</div>
 						</div>
@@ -139,7 +139,7 @@
 								Current Ratio
 							</div>
 							<div class="col-xxl-4 col-lg-6 col-12">
-								<select required name="organization_der_23" id="" class="form-select">
+								<select required name="organization_ratio" id="" class="form-select">
 									<option value="">Select Option</option>
 									<option <?= ($application['id_255107'] == " Less than 1.0") ? "selected" : "" ?> value="< 1.0">
 										< 1.0</option>
@@ -157,7 +157,7 @@
 								Years of Involvement in Social Entrepreneurship
 							</div>
 							<div class="col-xxl-4 col-lg-6 col-12">
-								<select required name="organization_der_23" id="" class="form-select">
+								<select required name="organization_involvement" id="" class="form-select">
 									<option value="">Select Option</option>
 									<option <?= ($application['id_255108'] == "2 - 5 Years") ? "selected" : "" ?> value="2 - 5 Years">2 - 5 Years</option>
 									<option <?= ($application['id_255108'] == "5 - 10 Years") ? "selected" : "" ?> value="5 - 10 Years">5 - 10 Years</option>

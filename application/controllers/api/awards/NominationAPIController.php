@@ -281,6 +281,272 @@ class NominationAPIController extends CI_Controller
 							redirect($this->request['referrer'] . '?stage=' . ++$stage);
 						}
 						break;
+					case 4: # ☑ Upload Files
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data = [
+								'stage_status' => $s,
+
+								'id_255401' =>  $response[0],
+								'id_255402' =>  $response[1],
+								'id_255403' =>  $response[2],
+								'id_255404' =>  $response[3],
+								'id_255405' =>  $response[4],
+								'id_255406' =>  $response[5],
+							];
+							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+							if ($rows == 0) {
+								redirect($this->request['referrer'] . '?stage=' . $stage);
+							} else {
+								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
+
+					default:
+						# code...
+						break;
+				}
+				break;
+			case '2_INDIVIDUAL':
+				switch ($stage) {
+					case 0: # ☑ Personal Information
+						$data = [
+							"nomination_id" => $this->request['application_id'],
+							"category_id" => $category['type'],
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"stage_status" => $this->request['stage'],
+							"status" => '4',
+							"created_by" => $this->usersession['id'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+						];
+						$this->data['data'] = $data;
+
+						if ($this->EntriesModel->insert($this->data['data'])) {
+							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+						};
+						break;
+					case 1: # ☑ Organization Details
+					echo "<pre>";
+						print_r($this->request);
+						die;
+						$data = [
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization_reach"],
+							'id_255202' => $this->request["organization"]['size'],
+							'id_255203' => $this->request["organization"]['beneficiary'],
+							'id_255204' => $this->request["organization"]['community_impact'],
+							'id_255205' => $this->request["organization"]['investment'],
+							'id_255206' => $this->request["organization"]['regions'],
+
+							'stage_status' => $s
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 2: # ☑ Case Studies I
+						$data = [
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 3: # ☑ Case Studies II
+						$data = [
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					default:
+						# code...
+						break;
+				}
+				break;
+			case '1_GLOBAL':
+				switch ($stage) {
+					case 0: # ☑ Personal Information
+						$data = [
+							"nomination_id" => $this->request['application_id'],
+							"category_id" => $category['type'],
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"stage_status" => $this->request['stage'],
+							"status" => '4',
+							"created_by" => $this->usersession['id'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+						];
+						$this->data['data'] = $data;
+
+						if ($this->EntriesModel->insert($this->data['data'])) {
+							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+						};
+						break;
+					case 1: # ☑ Organization Details
+
+						$data = [
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['global_size'],
+							'id_255203' => $this->request["organization_presence"],
+							'id_255204' => $this->request["organization_operation"],
+							'id_255205' => $this->request["organization_collabs"],
+							'id_255206' => $this->request["organization_expansion"],
+							'id_255207' => $this->request["organization_overview"],
+							'id_255208' => $this->request["organization_services"],
+							'stage_status' => $s
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 2: # ☑ Case Studies I
+						$data = [
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 3: # ☑ Case Studies II
+						$data = [
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+
+					case 4: # ☑ Upload Files
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data = [
+								'stage_status' => $s,
+
+								'id_255401' =>  $response[0],
+								'id_255402' =>  $response[1],
+								'id_255403' =>  $response[2],
+								'id_255404' =>  $response[3],
+								'id_255405' =>  $response[4],
+							];
+							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+							if ($rows == 0) {
+								redirect($this->request['referrer'] . '?stage=' . $stage);
+							} else {
+								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
+
 
 					default:
 						# code...
@@ -382,6 +648,165 @@ class NominationAPIController extends CI_Controller
 						}
 						break;
 
+					case 4: # ☑ Upload Files
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data = [
+								'stage_status' => $s,
+
+								'id_255401' =>  $response[0],
+								'id_255402' =>  $response[1],
+								'id_255403' =>  $response[2],
+								'id_255404' =>  $response[3],
+								'id_255405' =>  $response[4],
+							];
+							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+							if ($rows == 0) {
+								redirect($this->request['referrer'] . '?stage=' . $stage);
+							} else {
+								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
+
+					default:
+						# code...
+						break;
+				}
+				break;
+			case '1_DIGITAL':
+				switch ($stage) {
+					case 0: # ☑ Personal Information
+						$data = [
+							"nomination_id" => $this->request['application_id'],
+							"category_id" => $category['type'],
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							'stage_status' => $s,
+							"status" => '4',
+							"created_by" => $this->usersession['id'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+						];
+						$this->data['data'] = $data;
+
+						if ($this->EntriesModel->insert($this->data['data'])) {
+							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+						};
+						break;
+					case 1: # ☑ Organization Details
+						$data = [
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['process'],
+							'id_255203' => $this->request["organization"]['adoption'],
+							'id_255204' => $this->request["organization_overview"],
+							'id_255205' => $this->request["organization_services"],
+
+							'stage_status' => $s
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 2: # ☑ Case Studies I
+						$data = [
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 3: # ☑ Case Studies II
+						$data = [
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+
+							'stage_status' => $s,
+						];
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect($this->request['referrer'] . '?stage=' . ++$stage);
+						}
+						break;
+
+					case 4: # ☑ Upload Files
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data = [
+								'stage_status' => $s,
+
+								'id_255401' =>  $response[0],
+								'id_255402' =>  $response[1],
+								'id_255403' =>  $response[2],
+								'id_255404' =>  $response[3],
+								'id_255405' =>  $response[4],
+							];
+							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+							if ($rows == 0) {
+								redirect($this->request['referrer'] . '?stage=' . $stage);
+							} else {
+								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
 					default:
 						# code...
 						break;
@@ -390,57 +815,58 @@ class NominationAPIController extends CI_Controller
 
 			default:
 				switch ($stage) {
-						case 0: # ☑ Personal Information
-							$data = [
-								"nomination_id" => $this->request['application_id'],
-								"category_id" => $category['type'],
-								"name" => 	$this->request['name'],
-								"email" => $this->request['contact_person']['email'] ?? null,
-								"designation" => 	$this->request['designation'],
-								"organization_name" => 	$this->request['organization']['name'],
-								"organization_url" => $this->request['organization']['url'],
-								'stage_status' => $s,
-								"status" => '4',
-								"created_by" => $this->usersession['id'],
-	
-								"id_255001" => implode(', ', [
-									$this->request['organization']['address']['line_1'],
-									$this->request['organization']['address']['line_2'],
-									$this->request['organization']['address']['line_3'],
-									$this->request['organization']['address']['city'],
-									$this->request['organization']['address']['state'],
-								]),
-								'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-								'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
-								'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
-								'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
-	
-								'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
-								'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
-								'id_255008'	=> $this->request['dob'],							//date_of_birth
-							];
-							$this->data['data'] = $data;
-	
-							if ($this->EntriesModel->insert($this->data['data'])) {
-								redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
-							};
-							break;
-					case 1: 	# ☑ Organization Details				
+					case 0: 	# ☑ Personal Information
 						$data = [
-							'id_75502'	=> $this->request['organization_industry'],					//organization_industry
-							'id_75503'	=> $this->request['organization_overview'],					//organization_overview	
-							'id_75508'	=> $this->request['organization_mission_vision'],			//organization_mission_vision	
-							'id_75509'	=> $this->request['organization_services'],					//organization_services	
-							'id_75510'	=> $this->request['organization_revenue_23'],				//organization_revenue	
-							'id_75511'	=> $this->request['organization_revenue_22'],				//organization_revenue	
-							'id_75512'	=> $this->request['organization_growth_23'],				//organization_growth	
-							'id_75513'	=> $this->request['organization_growth_22'],				//organization_growth	
-							'id_75514'	=> $this->request['organization_profit_23'],				//organization_profit	
-							'id_75515'	=> $this->request['organization_profit_22'],				//organization_profit	
-							'id_75516'	=> $this->request['organization_assets_23'],				//organization_assets	
-							'id_75517'	=> $this->request['organization_assets_22'],				//organization_assets	
-							'id_75518'	=> $this->request['organization_der_23'],					//organization_der	
-							'id_75519'	=> $this->request['organization_der_22'],					//organization_der
+							"nomination_id" => $this->request['application_id'],
+							"category_id" => $category['type'],
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							'stage_status' => $s,
+							"status" => '4',
+							"created_by" => $this->usersession['id'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+						];
+						$this->data['data'] = $data;
+
+						if ($this->EntriesModel->insert($this->data['data'])) {
+							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+						};
+						break;
+					case 1: 	# ☑ Organization Details							
+						$data = [
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['members'],
+							'id_255203' => $this->request["organization_overview"],
+							'id_255204' => $this->request["organization_services"],
+
+							'stage_status' => $s
+
 						];
 
 						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
@@ -451,16 +877,12 @@ class NominationAPIController extends CI_Controller
 						}
 						break;
 					case 2: 	# ☑ Case Studies I
-
-						$category_id = explode('_', $this->request['category_id']);
 						$data = [
-							'id_75520'	=> $this->request['initiative_name'],
-							'id_75521'	=> $this->request['initiative_start_date'],
-							'id_75522'	=> $this->request['initiative_end_date'],
-							'id_75523'	=> $this->request['initiative_desc'],
-							'id_75524'	=> $this->request['initiative_challenges'],
-							'id_75525'	=> $this->request['initiative_strategy'],
-							'stage_status' => $stage
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+
+							'stage_status' => $s,
 						];
 
 						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
@@ -471,14 +893,11 @@ class NominationAPIController extends CI_Controller
 						}
 						break;
 					case 3: 	# ☑ Case Studies II
-
-						$category_id = explode('_', $this->request['category_id']);
 						$data = [
-							'id_75526'	=> $this->request['initiative_tech'],
-							'id_75527'	=> $this->request['initiative_impact'],
-							'id_75528'	=> $this->request['initiative_scalability'],
-							'id_75529'	=> $this->request['initiative_info'],
-							'stage_status' => $stage
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'stage_status' => $s,
 						];
 
 						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
@@ -488,11 +907,8 @@ class NominationAPIController extends CI_Controller
 							redirect($this->request['referrer'] . '?stage=' . ++$stage);
 						}
 						break;
-					case 4:		# ☑ Upload Files
-						/* Get Application Data */
-
-						$c = explode('_', $this->input->post('category_id'));
-
+					case 4: 	# ☑ Upload Files
+						$category_id = $this->input->post('category_id');
 						$f = 1;
 						foreach ($_FILES as $key => $file) {
 							if ($file['size'] == 0) {
@@ -502,11 +918,16 @@ class NominationAPIController extends CI_Controller
 						}
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-							$data['id_75530'] = $response[0];
-							$data['id_75531'] = $response[1];
-							$data['id_75532'] = $response[2];
-							$data['id_75533'] = $response[3];
-							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+							$data = [
+								'stage_status' => $s,
+
+								'id_255401' =>  $response[0],
+								'id_255402' =>  $response[1],
+								'id_255403' =>  $response[2],
+								'id_255404' =>  $response[3],
+								'id_255405' =>  $response[4],
+							];
+							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
@@ -515,9 +936,8 @@ class NominationAPIController extends CI_Controller
 						} else {
 							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 						}
-
 						break;
-					case 5:		# ☑ Review Application
+					case 5:		#    Review Application
 						/* Change Application Status */
 
 						$c = explode('_', $this->input->post('category_id'));
@@ -582,7 +1002,7 @@ class NominationAPIController extends CI_Controller
 							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
-					case 6:		# ☑ Success & Email Send
+					case 6:		# 	 Success & Email Send
 						$this->request = $this->input->post();
 						$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
 						$data['category'] = $category['name'];

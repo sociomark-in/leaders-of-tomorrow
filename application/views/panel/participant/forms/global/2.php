@@ -153,7 +153,7 @@
 						<div class="">
 							<div class="">
 								<label for="" class="form-label">Number of Countries with Business Presence</label>
-								<input required name="contact_person[name]" value="<?= $application['id_255203'] ?>" type="text" class="form-control">
+								<input required name="organization_presence" value="<?= $application['id_255203'] ?>" type="text" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -161,7 +161,7 @@
 						<div class="">
 							<div class="">
 								<label for="" class="form-label">Countries of Operation</label>
-								<input required name="contact_person[name]" value="<?= $application['id_255204'] ?>" type="text" class="form-control">
+								<input required name="organization_operation" value="<?= $application['id_255204'] ?>" type="text" class="form-control">
 								<span class="form-text">(List at least 5, specifying at least 2 countries from different continents)</span>
 							</div>
 						</div>
