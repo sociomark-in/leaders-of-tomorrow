@@ -143,11 +143,16 @@ class AuthAPIController extends CI_Controller
 		];
 		if ($this->request['do_register'] == 'on') {
 			$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+			$session = [
+				'status' => 'UNDEFINED',
+				'message' => 'Unknown Error Occured!'
+			];
 			if (!is_null($existing_user) && count($existing_user) >= 1) {
-				$session['status'] = 'WARNING';
-				$session['message'] = 'You have already registered. Please Log In.';
-				$this->session->set_flashdata('user_login_status', $session);
-				redirect('login');
+				// $session['status'] = 'WARNING';
+				// $session['message'] = 'You have already registered. Please Log In.';
+				// $this->session->set_flashdata('user_login_status', $session);
+				// redirect('login');
+				print_r($existing_user);
 			} else {
 				$contact = $this->request['contact'];
 				$this->request['password'] = hash('md5', hash('sha256', $contact));
@@ -156,39 +161,29 @@ class AuthAPIController extends CI_Controller
 				$data['role'] = 'participant';
 				$data['useremail'] = $data['email'];
 				$data['password'] = $this->request['password'];
-				$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
-				$session = [
-					'status' => 'UNDEFINED',
-					'message' => 'Unknown Error Occured!'
-				];
-				if (!is_null($existing_user) && count($existing_user) >= 1) {
-					$session['status'] = 'WARNING';
-					$session['message'] = 'You have already registered. Please Log In.';
+				
+				$lead['created_by'] = $this->request['agency_id'];
+				if ($this->UserModel->insert($data) && $this->LeadsModel->insert($lead)) {
+					$session['status'] = 'SUCCESS';
+					$session['message'] = 'You have successfully registered. Please Log In.';
 					$this->session->set_flashdata('user_login_status', $session);
-					redirect('login');
-				} else {
-					$lead['created_by'] = $this->request['agency_id'];
-					if ($this->UserModel->insert($data) && $this->LeadsModel->insert($lead)) {
-						$session['status'] = 'SUCCESS';
-						$session['message'] = 'You have successfully registered. Please Log In.';
-						$this->session->set_flashdata('user_login_status', $session);
 
-						$recipients = [
-							[
-								"email" =>  $data['email'],
-								"name" =>  $data['name']
-							]
-						];
-						$subject = APP_NAME . " - Registration Success!";
-						$body = "Hi " .  $this->usersession['name'] . ", your username:" . $data['email'] . " and password:" . $data['contact'] . " Please <a href=" . base_url('login') . ">Login</a>";
-						if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
-							redirect('login');
-						}
-					} else {
-						$this->session->set_flashdata('user_login_status', $session);
-						redirect('agency-register');
+					$recipients = [
+						[
+							"email" =>  $data['email'],
+							"name" =>  $data['name']
+						]
+					];
+					$subject = APP_NAME . " - Registration Success!";
+					$body = "Hi " .  $this->usersession['name'] . ", your username:" . $data['email'] . " and password:" . $data['contact'] . " Please <a href=" . base_url('login') . ">Login</a>";
+					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+						redirect('login');
 					}
+				} else {
+					$this->session->set_flashdata('user_login_status', $session);
+					redirect('agency-register');
 				}
+				
 			}
 		} else {
 			// $this->LeadsModel->insert();

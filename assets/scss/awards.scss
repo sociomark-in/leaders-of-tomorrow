@@ -1,0 +1,32 @@
+$color-white: #efefef;
+$color-black: #1c1c1c;
+$color-black-0: #000000;
+$color-red: #b72026;
+$color-yellow: #ffde3f;
+$color-yellow-2: #cf8b2c;
+$color-orange: #f05c27;
+
+.awards-wrapper{
+	.hanging-ribbon{
+		position: fixed;
+		left: calc(10% - 10px);
+		top: 76px;
+		min-width: 50px;
+		min-height: 50px;
+		background-color: $color-red;
+		color: $color-white;
+		padding: 0.8rem 0.8rem 2rem;
+		z-index: 50;
+		text-align: center;
+		text-transform: uppercase;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 55% calc(100% - 1.7rem), 0 100%);
+		p{
+			line-height: 0.7;
+			font-size: 1rem;
+		}
+		h3{
+			line-height: 0.7;
+			font-size: calc(max(3vw, 2.5rem))
+		}
+	}
+}
