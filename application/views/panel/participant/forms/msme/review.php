@@ -198,19 +198,19 @@
 									<div class="col-xl-3 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Full Name of Individual</label>
-											<input required name="contact_person[name]" value="<?= $user['name'] ?>" type="text" class="form-control">
+											<input required name="contact_person[name]" value="<?= $application['id_255901'] ?>" type="text" class="form-control">
 										</div>
 									</div>
 									<div class="col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Email Address</label>
-											<input required name="contact_person[email]" value="<?= $user['email'] ?>" type="email" class="form-control">
+											<input required name="contact_person[email]" value="<?= $application['id_255902'] ?>" type="email" class="form-control">
 										</div>
 									</div>
 									<div class="col-xl-3 col-lg-6 col-12">
 										<div class="">
 											<label for="" class="form-label">Contact Number</label>
-											<input required name="contact_person[contact]" value="<?= $user['contact'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
+											<input required name="contact_person[contact]" value="<?= $application['id_255903'] ?>" minlength="10" maxlength="10" type="text" class="form-control">
 										</div>
 									</div>
 								</div>

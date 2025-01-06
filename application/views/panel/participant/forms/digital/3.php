@@ -17,42 +17,38 @@
  	-->
 
 	<div class="row g-3 g-md-4">
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">Describe the digital technologies (e.g., AI, IoT) that your company has integrated into its operations. How did these technologies help in transforming your business model or customer experience</label>
-							<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">Describe the digital technologies (e.g., AI, IoT) that your company has integrated into its operations. How did these technologies help in transforming your business model or customer experience</label>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">How has the integration of digital technologies impacted your company&#39;s performance in terms of revenue, customer satisfaction, and market share? Please provide any specific metrics or examples.</label>
-							<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">How has the integration of digital technologies impacted your company&#39;s performance in terms of revenue, customer satisfaction, and market share? Please provide any specific metrics or examples.</label>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
+			</div>
+		</fieldset>
 	</div>
 </div>
 <div class="row g-3">

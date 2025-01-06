@@ -183,6 +183,11 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+							
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -326,9 +331,10 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
-							"stage_status" => $this->request['stage'],
-							"status" => '4',
-							"created_by" => $this->usersession['id'],
+							
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
 
 							"id_255001" => json_encode([
 								$this->request['organization']['address']['line_1'],
@@ -400,26 +406,57 @@ class NominationAPIController extends CI_Controller
 						break;
 					case 6:	# ☑ Success & Email Send
 						$this->request = $this->input->post();
-						$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$data['category'] = $category['name'];
-						$data['applicant'] = [
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
 
-						$recipients = [
-							[
-								"email" =>  $this->usersession['email'],
-								"name" =>  $this->usersession['name']
-							]
-						];
-						$subject = APP_NAME . " - Your Application is in Review!";
-						$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
-						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/my-applications');
+						foreach ($agents as $key => $agent) {
 						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
 						break;
 					default:
 						# code...
@@ -439,6 +476,11 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -581,9 +623,10 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
-							"stage_status" => $this->request['stage'],
-							"status" => '4',
-							"created_by" => $this->usersession['id'],
+							
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
 
 							"id_255001" => json_encode([
 								$this->request['organization']['address']['line_1'],
@@ -625,7 +668,7 @@ class NominationAPIController extends CI_Controller
 							'id_255404' =>  $response[3],
 							'id_255405' =>  $response[4],
 							'id_255406' =>  $response[5],
-							
+
 							'status' =>  3,
 						];
 
@@ -636,7 +679,7 @@ class NominationAPIController extends CI_Controller
 								unset($data[$key]);
 							}
 						}
-						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -645,26 +688,57 @@ class NominationAPIController extends CI_Controller
 						break;
 					case 6:	# ☑ Success & Email Send
 						$this->request = $this->input->post();
-						$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$data['category'] = $category['name'];
-						$data['applicant'] = [
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
 
-						$recipients = [
-							[
-								"email" =>  $this->usersession['email'],
-								"name" =>  $this->usersession['name']
-							]
-						];
-						$subject = APP_NAME . " - Your Application is in Review!";
-						$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
-						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/my-applications');
+						foreach ($agents as $key => $agent) {
 						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
 						break;
 					default:
 						# code...
@@ -684,6 +758,11 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -709,7 +788,6 @@ class NominationAPIController extends CI_Controller
 						};
 						break;
 					case 1: # ☑ Organization Details
-
 						$data = [
 							'id_255101' => $this->request["organization_revenue_2"],
 							'id_255102' => $this->request["organization_revenue_1"],
@@ -798,6 +876,145 @@ class NominationAPIController extends CI_Controller
 						break;
 
 
+					case 5:	# ☑ Review Application
+						/* Change Application Status */
+
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+						}
+						$data = [
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"organization_city" => $this->request['organization']['address']['city'],
+							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
+							"id_255001" => json_encode([
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['global_size'],
+							'id_255203' => $this->request["organization_presence"],
+							'id_255204' => $this->request["organization_operation"],
+							'id_255205' => $this->request["organization_collabs"],
+							'id_255206' => $this->request["organization_expansion"],
+							'id_255207' => $this->request["organization_overview"],
+							'id_255208' => $this->request["organization_services"],
+
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+
+							'id_255401' =>  $response[0],
+							'id_255402' =>  $response[1],
+							'id_255403' =>  $response[2],
+							'id_255404' =>  $response[3],
+							'id_255405' =>  $response[4],
+
+							'status' =>  3,
+						];
+
+						// Sanitize $data Array for DB Insert
+						foreach ($data as $key => $value) {
+							# code...
+							if ($value == "" || $value == null) {
+								unset($data[$key]);
+							}
+						}
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
+					case 6:	# ☑ Success & Email Send
+						$this->request = $this->input->post();
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
+							'name' => $this->usersession['name'],
+							'email' => $this->usersession['email'],
+							'contact' => $this->usersession['contact'],
+						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
+
+						foreach ($agents as $key => $agent) {
+						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
+						break;
 					default:
 						# code...
 						break;
@@ -816,6 +1033,11 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -956,9 +1178,10 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
-							"stage_status" => $this->request['stage'],
-							"status" => '4',
-							"created_by" => $this->usersession['id'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
 
 							"id_255001" => json_encode([
 								$this->request['organization']['address']['line_1'],
@@ -1021,26 +1244,57 @@ class NominationAPIController extends CI_Controller
 						break;
 					case 6:	# ☑ Success & Email Send
 						$this->request = $this->input->post();
-						$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$data['category'] = $category['name'];
-						$data['applicant'] = [
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
 
-						$recipients = [
-							[
-								"email" =>  $this->usersession['email'],
-								"name" =>  $this->usersession['name']
-							]
-						];
-						$subject = APP_NAME . " - Your Application is in Review!";
-						$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
-						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/my-applications');
+						foreach ($agents as $key => $agent) {
 						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
 						break;
 					default:
 						# code...
@@ -1060,6 +1314,11 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -1170,6 +1429,147 @@ class NominationAPIController extends CI_Controller
 							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
+					case 5:	# ☑ Review Application
+						/* Change Application Status */
+
+						$category_id = $this->input->post('category_id');
+						$f = 1;
+						foreach ($_FILES as $key => $file) {
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
+						}
+
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+						}
+						$data = [
+							'stage_status' => $s,
+
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"organization_city" => $this->request['organization']['address']['city'],
+							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
+							"id_255001" => json_encode([
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['process'],
+							'id_255203' => $this->request["organization"]['adoption'],
+							'id_255204' => $this->request["organization_overview"],
+							'id_255205' => $this->request["organization_services"],
+
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+
+							'id_255401' =>  $response[0],
+							'id_255402' =>  $response[1],
+							'id_255403' =>  $response[2],
+							'id_255404' =>  $response[3],
+							'id_255405' =>  $response[4],
+
+							'status' =>  3,
+						];
+
+						// Sanitize $data Array for DB Insert
+						foreach ($data as $key => $value) {
+							# code...
+							if ($value == "" || $value == null) {
+								unset($data[$key]);
+							}
+						}
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+						if ($rows == 0) {
+							redirect($this->request['referrer'] . '?stage=' . $stage);
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+						}
+						break;
+					case 6:	# ☑ Success & Email Send
+						$this->request = $this->input->post();
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
+							'name' => $this->usersession['name'],
+							'email' => $this->usersession['email'],
+							'contact' => $this->usersession['contact'],
+						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
+
+						foreach ($agents as $key => $agent) {
+						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
+						break;
+
 					default:
 						# code...
 						break;
@@ -1189,6 +1589,9 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -1300,7 +1703,7 @@ class NominationAPIController extends CI_Controller
 							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
-					case 5:		#    Review Application
+					case 5:		# ☑ Review Application
 						/* Change Application Status */
 
 						$category_id = $this->input->post('category_id');
@@ -1325,6 +1728,10 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
 
 							"id_255001" => json_encode([
 								$this->request['organization']['address']['line_1'],
@@ -1382,29 +1789,61 @@ class NominationAPIController extends CI_Controller
 							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
-					case 6:		# 	 Success & Email Send
+					case 6:		# ☑ Success & Email Send
 						$this->request = $this->input->post();
-						$data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$data['category'] = $category['name'];
-						$data['applicant'] = [
+
+						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+						$email_data['category'] = $category['name'];
+						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
+						$this->load->model('panel/AgentModel');
+						$agents = json_decode($this->AgentModel->get(), true);
 
-						$recipients = [
-							[
-								"email" =>  $this->usersession['email'],
-								"name" =>  $this->usersession['name']
-							]
-						];
-						$subject = APP_NAME . " - Your Application is in Review!";
-						$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-						$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
-						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/my-applications');
+						foreach ($agents as $key => $agent) {
 						}
+						$data = [
+							'agent_referral' => $this->request['agent_referrer'],
+							'status' => '3'
+						];
+
+						if ($this->request['agent_referrer'] == 'yes') {
+							# code...
+							switch ($this->request['agent_name']) {
+								case 'Nilam':
+									$agent_code = '1595014714';
+									break;
+
+								default:
+									$agent_code = '1595014714';
+									# code...
+									break;
+							}
+							$data['agent_name'] = $agent_code;
+						}
+
+						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+						if ($rows > 0) {
+							$recipients = [
+								[
+									"email" =>  $this->usersession['email'],
+									"name" =>  $this->usersession['name']
+								]
+							];
+							$subject = APP_NAME . " - Your Application is in Review!";
+							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
+							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+								redirect('dashboard/my-applications');
+							}
+						} else {
+							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+						}
+
 						break;
+
 					default:
 						redirect('dashboard');
 						break;

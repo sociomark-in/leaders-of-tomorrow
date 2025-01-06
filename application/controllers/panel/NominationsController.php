@@ -135,12 +135,6 @@ class NominationsController extends PanelController
 
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
 
-		/* $c = explode("_", $application['category_id']);
-		if ($c[1] == 'Individual') {
-			$category_details = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
-		} elseif ($c[1] == 'MSME') {
-			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
-		} */
 		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 		$this->data['category'] = $category_details;
 

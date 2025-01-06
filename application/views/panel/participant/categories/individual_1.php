@@ -25,7 +25,7 @@ $tabs = [
 		'identifier' => "review",
 	],
 	[
-		'name' => "Consent",
+		'name' => "Reference & Consent",
 		'identifier' => "success",
 	],
 ]

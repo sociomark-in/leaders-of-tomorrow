@@ -18,42 +18,38 @@
 
 	<div class="row g-3 g-md-4">
 
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
-							<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
-							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
+						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
+			</div>
+		</fieldset>
 	</div>
 </div>
 <div class="row g-3">

@@ -11,7 +11,7 @@
 			<label class="form-check-label" for="flexCheckChecked">
 				I, holding the position in
 				<strong><?= $application['organization_name'] ?></strong>
-				 hereby declare the following:
+				hereby declare the following:
 			</label>
 		</div>
 
@@ -30,12 +30,49 @@
 			</ul>
 		</div>
 	</div>
+	<div class="col-xl-4 col-lg-6 col-12">
+		<div class="">
+			<label for="" class="form-label">Were you assisted by our team to submit this nomination?</label>
+			<div class="row">
+				<div class="col-auto form-check">
+					<input class="form-check-input" type="radio" name="agent_referrer" value="yes" id="agentReferred" checked>
+					<label class="form-check-label" for="flexRadioDefault2">
+						Yes
+					</label>
+				</div>
+				<div class="col-auto form-check">
+					<input class="form-check-input" type="radio" name="agent_referrer" value="no">
+					<label class="form-check-label" for="flexRadioDefault1">
+						No
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-xl-3 col-lg-6 col-12">
+		<div class="" id="agentDetails">
+			<label for="" class="form-label"> If Yes – Please select their name</label>
+			<select name="agent_name" class="form-select" id="">
+				<option value="Nilam">Nilam</option>
+				<option value="Savitri">Savitri</option>
+			</select>
+		</div>
+	</div>
 	<div class="col-12">
 		<button type="submit" class="btn btn-primary">Confirm Nomination & Return to Dashboard</button>
 	</div>
 </div>
 <?= form_close() ?>
 <script>
+	$("input[type='radio'][name='agent_referrer'").change(function() {
+		if ($(this).val() == "yes") {
+			$("#agentDetails").show();
+		} else {
+			$("#agentDetails").hide();
+		}
+		
+	});
 	$("#formView").validate({
 		ignore: [
 			":hidden", ":focus"
