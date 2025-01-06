@@ -1,6 +1,6 @@
 <?php
-
-$this->load->view('components/panel/partials/_category_eligibility_requirements', $prohibit); ?>
+$data['category'] = $category;
+$this->load->view('components/panel/partials/_category_eligibility_requirements', $data); ?>
 
 <?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">

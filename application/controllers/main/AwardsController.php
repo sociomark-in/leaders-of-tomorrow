@@ -9,8 +9,8 @@ class AwardsController extends BaseController
 	}
 	public function index()
 	{
-		$this->data['categories']['msme'] = json_decode($this->CategoryModel->get_msme(['name', 'code']), true);
-		$this->data['categories']['individual'] = json_decode($this->CategoryModel->get_individual(['name', 'code']), true);
+		$this->data['categories']['msme'] = json_decode($this->CategoryModel->get(['name', 'code']), true);
+		
 		$this->data['page'] = [
 			'title' =>  APP_NAME . " Awards • " . APP_NAME,
 			'description' => "",
@@ -20,8 +20,7 @@ class AwardsController extends BaseController
 	}
 
 	public function categories(){
-		$this->data['categories']['msme'] = json_decode($this->CategoryModel->get_msme(['name', 'code']), true);
-		$this->data['categories']['individual'] = json_decode($this->CategoryModel->get_individual(['name', 'code']), true);
+		$this->data['categories']['msme'] = json_decode($this->CategoryModel->get(['name', 'code']), true);
 
 		$this->data['page'] = [
 			'title' =>  "All Categories" . " • " . APP_NAME . " Awards",
@@ -33,10 +32,7 @@ class AwardsController extends BaseController
 
 	public function category_single($slug)
 	{
-		$category_details = array_merge(
-			json_decode($this->CategoryModel->get_individual(null, ['code' => $slug]), true),
-			json_decode($this->CategoryModel->get_msme(null, ['code' => $slug]), true)
-		);
+		$category_details = json_decode($this->CategoryModel->get(null, ['code' => $slug]), true);
 
 		$this->data['category'] = $category_details[0];
 
