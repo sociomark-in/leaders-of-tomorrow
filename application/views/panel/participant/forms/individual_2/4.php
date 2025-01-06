@@ -14,80 +14,41 @@
 	75529	initiative_info	
  	-->
 
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Use of Technology<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">How have you leveraged technology while implementing the initiative/product/service? (Max 5000 characters)</label>
-					<textarea required name="initiative_tech" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+	<div class="row g-3 g-md-4">
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
+						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_255304'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
 				</div>
 			</div>
-		</div>
-	</fieldset>
+		</fieldset>
 
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Impact of the innovation/ initiative<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Elaborate on the impact created by the initiative/product/service on your various stakeholders such as customers, employees, industry, etc.
-						(Details should be measurable and generic statements should be avoided)
-					</label>
-					<textarea required name="initiative_impact" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
+						<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_255305'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
 				</div>
 			</div>
-		</div>
-	</fieldset>
-
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Sustainability & Scalability<sup class="text-danger">&ast;</sup></h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Elaborate on the sustainability and / or scalability of the initiative/product/service offering mentioned above. Highlight the following parameters
-						Growth plan for next 2-3 years
-						Growth plan for the initiative or product/ service offering
-						Plan for raising funds in future
-						Any other
-					</label>
-					<textarea required name="initiative_scalability" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
-				</div>
-			</div>
-		</div>
-	</fieldset>
-
-	<fieldset class="mb-3">
-		<div class="mb-3">
-			<legend class="card-title mb-0">
-				<h5>Additional Information</h5>
-			</legend>
-		</div>
-		<div class="row g-3">
-			<div class="col-12">
-				<div class="">
-					<label for="" class="form-label">Is there any other information you would like to provide to support and strengthen your application? For example: Awards, recognitions, etc.</label>
-					<textarea name="initiative_info" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_75526'] ?></textarea>
-					<span class="form-text">(50 - 5000 characters)</span>
-				</div>
-			</div>
-		</div>
-	</fieldset>
+		</fieldset>
+	</div>
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
@@ -108,44 +69,43 @@
 
 	});
 	$("#form_option_03").validate({
-		ignore: [
-			":hidden", ":focus"
-		],
-		rules: {
-			initiative_tech: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_impact: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_scalability: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_info: {
-				maxlength: 5000,
-				minlength: 50
-			},
-		},
-		messages: {
-			initiative_tech: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_impact: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_scalability: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_info: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-		}
-	});
+				ignore: [
+					":hidden", ":focus"
+				],
+				rules: {
+					case_study_4: {
+						maxlength: 5000,
+						minlength: 50
+					},
+					case_study_5: {
+						maxlength: 5000,
+						minlength: 50
+					},
+					case_study_6: {
+						maxlength: 5000,
+						minlength: 50
+					},
+					case_study_7: {
+						maxlength: 5000,
+						minlength: 50
+					},
+				},
+				messages: {
+					case_study_4: {
+						maxlength: "Please enter no more than 5000 characters.",
+						minlength: "Please enter at least 50 characters.",
+					},
+					case_study_5: {
+						maxlength: "Please enter no more than 5000 characters.",
+						minlength: "Please enter at least 50 characters.",
+					},
+					case_study_6: {
+						maxlength: "Please enter no more than 5000 characters.",
+						minlength: "Please enter at least 50 characters.",
+					},
+					case_study_7: {
+						maxlength: "Please enter no more than 5000 characters.",
+						minlength: "Please enter at least 50 characters.",
+					},
+				});
 </script>

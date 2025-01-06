@@ -17,60 +17,54 @@
  	-->
 
 	<div class="row g-3 g-md-4">
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Vision and Leadership<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">What inspired you to start your social entrepreneurship journey? Please describe the vision and mission of your work.</label>
-							<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Vision and Leadership<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">What inspired you to start your social entrepreneurship journey? Please describe the vision and mission of your work.</label>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Innovation and Problem-Solving<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">What specific social, environmental, or economic problem does your work address? Describe the innovative solutions you have developed</label>
-							<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Innovation and Problem-Solving<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">What specific social, environmental, or economic problem does your work address? Describe the innovative solutions you have developed</label>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
-		<div class="col-12">
-			<fieldset class="">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Market Impact<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">How has your initiative impacted the market or created opportunities for underserved populations? Provide examples of tangible outcomes or success stories</label>
-							<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Market Impact<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">How has your initiative impacted the market or created opportunities for underserved populations? Provide examples of tangible outcomes or success stories</label>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
-		</div>
+			</div>
+		</fieldset>
 	</div>
 </div>
 <div class="row g-3">

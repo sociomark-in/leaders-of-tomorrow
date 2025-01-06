@@ -81,21 +81,23 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">State</label>
-							<select required name="organization[address][state]" id="" class="form-select">
-								<option value="">Select State</option>
-								<?php for ($i = 0; $i < 10; $i++) : ?>
-									<option value="Select <?= $i ?>">Select <?= $i ?></option>
-								<?php endfor ?>
-							</select>
+							<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
+							<!-- <select required name="organization[address][state]" id="" class="form-select">
+											<option value="">Select State</option>
+											<?php for ($i = 0; $i < 10; $i++) : ?>
+												<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<?php endfor ?>
+										</select> -->
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
-							<select required name="organization[address][city]" id="" class="form-select">
-								<option value="">Select City</option>
-								<?php for ($i = 0; $i < 10; $i++) : ?>
-									<option value="Select <?= $i ?>">Select <?= $i ?></option>
-								<?php endfor ?>
-							</select>
+							<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
+							<!-- <select required name="organization[address][city]" id="" class="form-select">
+											<option value="">Select City</option>
+											<?php for ($i = 0; $i < 10; $i++) : ?>
+												<option value="Select <?= $i ?>">Select <?= $i ?></option>
+											<?php endfor ?>
+										</select> -->
 						</div>
 					</div>
 				</div>

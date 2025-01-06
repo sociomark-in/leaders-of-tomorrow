@@ -13,8 +13,8 @@
 	75533	doc4	
 -->
 
-<div class="mb-3">
-	<fieldset class="mb-3">
+<div class="row g-3 g-md-4 mb-3">
+	<fieldset class="col-12">
 		<legend class="card-title mb-3">
 			<h5>Upload Files<sup class="text-danger">&ast;</sup></h5>
 		</legend>
@@ -50,35 +50,28 @@
 					<label for="" class="form-label">Proof of Age </label>
 					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(e.g., Aadhaar, Passport, or Driver’s
-					License)(PDF of Maximum Size 500KB)</span>
+						License)(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
-			<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
+					<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+					<span class="form-text"> (PDF of Maximum Size 500KB)</span>
 				</div>
-			</div> -->
+			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Collaterals to Support the Impact</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 					<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+					<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-					<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-					<span class="form-text"> (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 		</div>
@@ -124,7 +117,7 @@
 						pdfjsLib.getDocument(arrayBuffer).promise.then((pdfDoc) => {
 							pdfDoc.getMetadata().then((metadata) => {
 								console.log('Metadata:', metadata.info.PDFFormatVersion);
-								if( metadata.info.PDFFormatVersion > "1.7"){
+								if (metadata.info.PDFFormatVersion > "1.7") {
 									alert('PDF Version not Supported!');
 								}
 							});

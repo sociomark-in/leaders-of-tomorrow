@@ -77,16 +77,16 @@
 									<label for="" class="form-label">Business Segment</label>
 									<select required name="organization[segment]" id="" class="form-select">
 										<option value="">Select Business Segment</option>
-										<option value="Micro">Micro</option>
-										<option value="Small">Small</option>
-										<option value="Medium">Medium</option>
+										<option <?= ($application['id_255003'] == "Micro") ? "selected" : "" ?> value="Micro">Micro</option>
+										<option <?= ($application['id_255003'] == "Small") ? "selected" : "" ?> value="Small">Small</option>
+										<option <?= ($application['id_255003'] == "Medium") ? "selected" : "" ?> value="Medium">Medium</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Date of Company Incorporation</label>
-									<input required type="text" data-type="date" name="organization[inc_date]" class="form-control">
+									<input required type="text" data-type="date" value="<?= $application['id_255002'] ?>" name="organization[inc_date]" class="form-control">
 									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
@@ -105,28 +105,33 @@
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-12">
+										<?php
+										$address = json_decode($application['id_255001']);
+										?>
 										<label for="" class="form-label">Registered Address Participating Entity</label>
-										<input required type="text" name="organization[address][line_1]" class="form-control mb-2">
-										<input type="text" name="organization[address][line_2]" class="form-control mb-2">
-										<input type="text" name="organization[address][line_3]" class="form-control mb-2">
+										<input required type="text" value="<?= $address[0] ?>" name="organization[address][line_1]" class="form-control mb-2">
+										<input type="text" value="<?= $address[1] ?>" name="organization[address][line_2]" class="form-control mb-2">
+										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
 										<label for="" class="form-label">State</label>
-										<select required name="organization[address][state]" id="" class="form-select">
+										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
+										<!-- <select required name="organization[address][state]" id="" class="form-select">
 											<option value="">Select State</option>
 											<?php for ($i = 0; $i < 10; $i++) : ?>
 												<option value="Select <?= $i ?>">Select <?= $i ?></option>
 											<?php endfor ?>
-										</select>
+										</select> -->
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
 										<label for="" class="form-label">City</label>
-										<select required name="organization[address][city]" id="" class="form-select">
+										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
+										<!-- <select required name="organization[address][city]" id="" class="form-select">
 											<option value="">Select City</option>
 											<?php for ($i = 0; $i < 10; $i++) : ?>
 												<option value="Select <?= $i ?>">Select <?= $i ?></option>
 											<?php endfor ?>
-										</select>
+										</select> -->
 									</div>
 								</div>
 							</div>
@@ -146,17 +151,17 @@
 									<label for="" class="form-label">Type of Ownership</label>
 									<select required name="organization[ownership]" id="" class="form-select">
 										<option value="">Select Ownership Type</option>
-										<option value="Sole Proprietorship">Sole Proprietorship</option>
-										<option value="Partnership">Partnership</option>
-										<option value="Private Limited">Private Limited</option>
-										<option value="Other">Other</option>
+										<option <?= ($application['id_255005'] == "Sole Proprietorship") ? "selected" : "" ?> value="Sole Proprietorship">Sole Proprietorship</option>
+										<option <?= ($application['id_255005'] == "Partnership") ? "selected" : "" ?> value="Partnership">Partnership</option>
+										<option <?= ($application['id_255005'] == "Private Limited") ? "selected" : "" ?> value="Private Limited">Private Limited</option>
+										<option <?= ($application['id_255005'] == "Other") ? "selected" : "" ?> value="Other">Other</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" class="form-control">
+									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>

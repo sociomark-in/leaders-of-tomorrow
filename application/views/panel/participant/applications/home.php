@@ -137,7 +137,7 @@
 						<div class="row mb-3">
 							<div class="col-12">
 								<div>
-									<h4 class="mb-3 mb-md-0">Apply for MSME Categories</h4>
+									<h4 class="mb-3 mb-md-0">Apply for Categories</h4>
 								</div>
 							</div>
 						</div>
