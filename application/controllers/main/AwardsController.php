@@ -67,4 +67,14 @@ class AwardsController extends BaseController
 		// ];
 		// $this->load->award_page('nominate', $this->data);
 	}
+
+	public function terms_conditions()
+	{
+		$this->data['page'] = [
+			'title' =>  APP_NAME . " Awards • " . APP_NAME,
+			'description' => "",
+		];
+
+		$this->load->award_page('terms_conditions', $this->data);
+	}
 }
