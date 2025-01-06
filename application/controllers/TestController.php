@@ -17,8 +17,8 @@ class TestController extends CI_Controller
 
 	public function pdf()
 	{
-		$this->load->library('pdflib/makepdf');
-		$this->makepdf->init('P', 'mm', 'A4')->load('layout-2')->generate();
+		$this->load->library('pdflib/MakeDocket');
+		$this->makedocket->init('P', 'mm', 'A4')->load('docket_1_digital')->generate();
 	}
 
 	public function csv()

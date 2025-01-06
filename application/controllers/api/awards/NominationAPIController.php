@@ -2625,7 +2625,15 @@ class NominationAPIController extends CI_Controller
 
 	public function download_docket()
 	{
-		$this->load->library('pdflib/makedocket');
-		$this->makedocket->init('P', 'mm', 'A4')->load($data = null, 'stage_1_digital_1')->generate();
+		// $this->load->library('pdflib/makedocket');
+		// $this->makedocket->init('P', 'mm', 'A4')->load($data = null, 'stage_1_digital_1')->generate();
+		
+
+		// if($this->isPdfCompressed(FCPATH . "uploads/1736004999-20673/1736161690_E8zIUuSO_1735895661_IKW8HRBG_screenlot2.pdf")){
+		if($this->isPdfCompressed(FCPATH . "uploads/1736003081-51962/1736161690_E8zIUuSO_1735895661_IKW8HRBG_screenlot2.pdf")){
+			echo "Compressed!";
+		} else {
+			echo "Not Compressed!";
+		}
 	}
 }

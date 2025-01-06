@@ -18,11 +18,11 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'id_75534', 'id_75535', 'id_75536', 'organization_url', 'linkedin_url', 'created_by', 'stage_status', 'created_at', 'updated_at', 'status'], ['status <=' => 3], 'msme'), true)
+			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
-				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get_msme(null, ['id' => $applications['msme'][$i]['category_id']]), true)[0];
+				$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get(null, ['type' => $applications['msme'][$i]['category_id']]), true)[0];
 				$s = $applications['msme'][$i]['status'];
 				switch ($s) {
 					case '0':
@@ -52,7 +52,7 @@ class NominationsController extends PanelController
 	public function user_side()
 	{
 		$this->data['my_applications'] = [];
-		
+
 		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
@@ -205,50 +205,45 @@ class NominationsController extends PanelController
 	public function download($slug)
 	{
 		$id = $this->encryption->decrypt($this->input->get("key"));
-		$application = array_merge(
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'individual'), true),
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $id], 'msme'), true)
-		)[0];
-		
-		$category = strtolower(explode('_', $application['category_id'])[1]);
-		if ($category == 'msme') {
-			$files = [
-				$application['id_75530'],
-				$application['id_75531'],
-				$application['id_75532'],
-				$application['id_75533'],
-			];
-		} elseif ($category == 'individual') {
-			$files = [
-				$application['id_74525'],
-				$application['id_74526'],
-				$application['id_74527'],
-				$application['id_74528'],
-			];
-		}
+		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+		$category = $application['category_id'];
+
+		# Get All Files
+		$files = [
+			$application['id_255401'],
+			$application['id_255402'],
+			$application['id_255403'],
+			$application['id_255404'],
+			$application['id_255405'],
+			$application['id_255406'],
+		];
+		# Sanitize Files
 		$temp = [];
-		for ($i = 0; $i < count($files); $i++) {
-			$temp[$i] = FCPATH . $files[$i];
+		foreach ($files as $key => $file) {
+			if (is_null($file)) {
+				unset($files[$key]);
+			} else {
+				$temp[$key] = FCPATH . $files[$key];
+			}
 		}
 
 		if (!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])) {
 			mkdir(FCPATH . 'uploads/' . $application['nomination_id'], 0777, true);
 		}
-
+		$categories = json_decode($this->CategoryModel->get(['id', 'code', 'type'], null), true);
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
 			$this->load->library('pdflib/MakeDocket');
-			switch ($category) {
-				case 'msme':
-					$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => strtolower(explode('_', $application['category_id'])[0])]), true)[0];
-					# code...
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'stage_1_msme_layout_1')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			foreach ($categories as $key => $value) {
+				if ($application['category_id'] == $value['type']) {
+					$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+					// echo "<pre>";
+					// print_r($application);
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_digital')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 					break;
-				
-				default:
-					# code...
-					break;
+				} else {
+					continue;
+				}
 			}
-
 
 			$pdf = new PDFMerger;
 			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
