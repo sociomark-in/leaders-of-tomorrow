@@ -17,8 +17,8 @@
  	-->
 
 	<div class="row g-3 g-md-4">
-		<div class="col-12">
-			<fieldset class="">
+		<div class="">
+			<fieldset class="col-12">
 				<div class="mb-3">
 					<legend class="card-title mb-0">
 						<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
@@ -34,9 +34,7 @@
 					</div>
 				</div>
 			</fieldset>
-		</div>
-		<div class="col-12">
-			<fieldset class="">
+			<fieldset class="col-12">
 				<div class="mb-3">
 					<legend class="card-title mb-0">
 						<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>

@@ -356,7 +356,7 @@ class NominationAPIController extends CI_Controller
 						};
 						break;
 					case 1: # ☑ Organization Details
-					echo "<pre>";
+						echo "<pre>";
 						print_r($this->request);
 						die;
 						$data = [
@@ -940,7 +940,7 @@ class NominationAPIController extends CI_Controller
 					case 5:		#    Review Application
 						/* Change Application Status */
 
-						$c = explode('_', $this->input->post('category_id'));
+						$category_id = $this->input->post('category_id');
 						$f = 1;
 						foreach ($_FILES as $key => $file) {
 							if ($file['size'] == 0) {
@@ -948,45 +948,62 @@ class NominationAPIController extends CI_Controller
 								break;
 							}
 						}
-						$data = [
-							'id_75502'	=> $this->request['organization']['industry'] ?? null,					//organization_industry
-							'id_75503'	=> $this->request['organization']['overview'] ?? null,					//organization_overview	
-							'id_75508'	=> $this->request['organization']['mission_stmt'] ?? null,			//organization_mission_vision	
-							'id_75509'	=> $this->request['organization']['services_stmt'] ?? null,					//organization_services	
-							'id_75510'	=> $this->request['organization']['revenue_23'] ?? null,				//organization_revenue	
-							'id_75511'	=> $this->request['organization']['revenue_22'] ?? null,				//organization_revenue	
-							'id_75512'	=> $this->request['organization']['growth_23'] ?? null,				//organization_growth	
-							'id_75513'	=> $this->request['organization']['growth_22'] ?? null,				//organization_growth	
-							'id_75514'	=> $this->request['organization']['profit_23'] ?? null,				//organization_profit	
-							'id_75515'	=> $this->request['organization']['profit_22'] ?? null,				//organization_profit	
-							'id_75516'	=> $this->request['organization']['assets_23'] ?? null,				//organization_assets	
-							'id_75517'	=> $this->request['organization']['assets_22'] ?? null,				//organization_assets	
-							'id_75518'	=> $this->request['organization']['der_23'] ?? null,					//organization_der	
-							'id_75519'	=> $this->request['organization']['der_22'] ?? null,					//organization_der
-
-							'id_75520'	=> $this->request['initiative']['name'] ?? null,
-							'id_75521'	=> $this->request['initiative']['start_date'] ?? null,
-							'id_75522'	=> $this->request['initiative']['end_date'] ?? null,
-							'id_75523'	=> $this->request['initiative']['description'] ?? null,
-							'id_75524'	=> $this->request['initiative']['challenges'] ?? null,
-							'id_75525'	=> $this->request['initiative']['strategy'] ?? null,
-
-							'id_75526'	=> $this->request['initiative']['technology'] ?? null,
-							'id_75527'	=> $this->request['initiative']['impact'] ?? null,
-							'id_75528'	=> $this->request['initiative']['scalability'] ?? null,
-							'id_75529'	=> $this->request['initiative']['additional'] ?? null,
-						];
 
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-							$data['id_75530'] = $response[0];
-							$data['id_75531'] = $response[1];
-							$data['id_75532'] = $response[2];
-							$data['id_75533'] = $response[3];
 						}
+						$data = [
+							'stage_status' => $s,
 
-						$data['status'] = 3;
-						$data['stage_status'] = 5;
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+
+							"id_255001" => implode(', ', [
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+								$this->request['organization']['address']['city'],
+								$this->request['organization']['address']['state'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['members'],
+							'id_255203' => $this->request["organization_overview"],
+							'id_255204' => $this->request["organization_services"],
+
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'id_255401' =>  $response[0],
+							'id_255402' =>  $response[1],
+							'id_255403' =>  $response[2],
+							'id_255404' =>  $response[3],
+							'id_255405' =>  $response[4],
+
+							'status' =>  3,
+						];
 
 						// Sanitize $data Array for DB Insert
 						foreach ($data as $key => $value) {
