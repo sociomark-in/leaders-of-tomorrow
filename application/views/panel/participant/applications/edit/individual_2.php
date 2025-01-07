@@ -6,7 +6,6 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
-	
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -24,13 +23,20 @@
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Name of the Applicant</label>
-									<input required type="text" value="<?= $application["name"] ?>" name="name" class="form-control">
+									<input required type="text" value="<?= $application['name'] ?>" name="name" class="form-control">
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Designation</label>
 									<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
+								</div>
+							</div>
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Date of Birth</label>
+									<input required type="text" data-type="date" name="dob" value="<?= $application['id_255008'] ?>" class="form-control">
+									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -51,18 +57,18 @@
 									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Total Years of Experience</label>
-								<input required type="text" name="experience[total]" class="form-control">
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Total Years of Experience</label>
+									<input required type="text" name="experience[total]" value="<?= $application['id_255006'] ?>" class="form-control">
+								</div>
 							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Years of Experience in this Company</label>
-								<input required type="text" name="experience[current]" class="form-control">
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Years of Experience in this Company</label>
+									<input required type="text" name="experience[current]" value="<?= $application['id_255007'] ?>" class="form-control">
+								</div>
 							</div>
-						</div> -->
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-12">
@@ -97,16 +103,16 @@
 								</div>
 							</div>
 
-							<!-- <div class="col-xxl-3 col-xl-4 col-12">
+							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Business</label>
 									<select required name="organization[business]" id="" class="form-select">
 										<option value="">Select Business Type</option>
-										<option value="Manufacturing">Manufacturing</option>
-										<option value="Service">Service</option>
+										<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+										<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 									</select>
 								</div>
-							</div> -->
+							</div>
 							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Ownership</label>
@@ -281,9 +287,9 @@
 											<option <?= ($application['id_255106'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 												< 5%</option>
 											<option <?= ($application['id_255106'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
-											<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255105'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
+											<option <?= ($application['id_255106'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
+											<option <?= ($application['id_255106'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
+											<option <?= ($application['id_255106'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
 										</select>
 									</div>
 								</div>
@@ -294,7 +300,7 @@
 										Current Ratio
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
-										<select required name="organization_der_23" id="" class="form-select">
+										<select required name="organization_ratio" id="" class="form-select">
 											<option value="">Select Option</option>
 											<option <?= ($application['id_255107'] == " Less than 1.0") ? "selected" : "" ?> value="< 1.0">
 												< 1.0</option>
@@ -306,6 +312,21 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-12">
+								<div class="row g-3">
+									<div class="col-xxl-4 col-12">
+										Years of Involvement in Social Entrepreneurship
+									</div>
+									<div class="col-xxl-4 col-lg-6 col-12">
+										<select required name="organization_involvement" id="" class="form-select">
+											<option value="">Select Option</option>
+											<option <?= ($application['id_255108'] == "2 - 5 Years") ? "selected" : "" ?> value="2 - 5 Years">2 - 5 Years</option>
+											<option <?= ($application['id_255108'] == "5 - 10 Years") ? "selected" : "" ?> value="5 - 10 Years">5 - 10 Years</option>
+											<option <?= ($application['id_255108'] == "More than 10 Years") ? "selected" : "" ?> value="More than 10 Years">More than 10 Years</option>
+										</select>
+									</div>
+								</div>
+							</div>
 						</div>
 					</fieldset>
 					<fieldset class="col-12">
@@ -313,31 +334,25 @@
 							<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
 						</legend>
 						<div class="row g-3">
+							<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
+									<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+								</div>
+							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">No. Of Employees</label>
 									<select required name="organization[size]" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255201'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
-										<option <?= ($application['id_255201'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-										<option <?= ($application['id_255201'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
-										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
-										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+										<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+										<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+										<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+										<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
 								</div>
 							</div>
-
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-									<select required name="organization[members]" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option <?= ($application['id_255202'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
-										<option <?= ($application['id_255202'] == "International") ? "selected" : "" ?> value="International">International</option>
-									</select>
-								</div>
-							</div>
-
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
@@ -358,13 +373,13 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
+								<h5>Vision and Leadership<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</label>
+									<label for="" class="form-label">What inspired you to start your entrepreneurial journey? Describe your vision and mission for the business.</label>
 									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -374,13 +389,13 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
+								<h5>Innovation and Problem-Solving<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
+									<label for="" class="form-label">Describe the innovative approach or solutions you have implemented to address key challenges in your business. How have you utilized technology, creativity, or new methodologies in your business model?</label>
 									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -390,31 +405,30 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+								<h5>Market Impact<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</label>
+									<label for="" class="form-label">What measurable impact has your business had on the market or industry? Share specific outcomes or success stories.</label>
 									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 						</div>
 					</fieldset>
-
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+								<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -423,14 +437,14 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
+								<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+									<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
+									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"><?= $application_temp['id_255305'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -468,32 +482,32 @@
 									<span class="form-text">(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Applicable Environmental Certifications</label>
+									<label for="" class="form-label">Proof of Age </label>
 									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
-									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
+									<span class="form-text">(e.g., Aadhaar, Passport, or Driver’s
+										License)(PDF of Maximum Size 500KB)</span>
 								</div>
-							</div> -->
+							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 500KB)</span>
+									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<span class="form-text"> (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact</label>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Any other Collaterals</label>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
@@ -572,132 +586,15 @@
 	</div>
 </div>
 <script>
-	function parseDDMMYYYYDate(dateString) {
-		let parts = dateString.split('/');
-		let day = parseInt(parts[0], 10);
-		let month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
-		let year = parseInt(parts[2], 10);
-
-		return new Date(year, month, day);
-	}
-	$('[name=initiative_start_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-		maxDate: '<?= date('d/m/Y') ?>',
-
-	});
-	$('[name=initiative_end_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-	});
-
-	$.validator.addMethod("greater_than", function(value, element, param) {
-
-		var d1 = new Date(Date.parse(value));
-		var d2 = new Date(Date.parse($(param).val()));
-		console.log([value, $(param).val()]);
-		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
-
-		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
-	});
-	$.validator.addMethod("emailregex", function(value, element) {
-		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
-	})
-	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
-	});
-	$.validator.addMethod("phone", function(value, element) {
-		return this.optional(element) || /^[0-9]*$/i.test(value);
-	});
 	$("#formFullView").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			"contact_person[email]": {
-				emailregex: true
-			},
-			"contact_person[contact]": {
-				phone: true
-			},
-			overview: {
-				wordCount: 300
-			},
-			organization_overview: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_mission_vision: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_services: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			services_stmt: {
-				wordCount: 300
-			},
-			case_study_1: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			case_study_2: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_strategy: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_end_date: {
-				greater_than: '[name=initiative_start_date]'
-			},
+			//Rules
 		},
 		messages: {
-			'contact_person[email]': {
-				emailregex: 'Please enter a valid email address.'
-			},
-			'contact_person[contact]': {
-				phone: 'Please enter a valid contact number'
-			},
-			overview: {
-				wordCount: "Error"
-			},
-			organization_overview: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_mission_vision: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_services: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			services_stmt: {
-				wordCount: "Error"
-			},
-			case_study_1: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			case_study_2: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_strategy: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_end_date: {
-				greater_than: 'End Date should be greater than Start Date'
-			},
+			//messages
 		}
 	});
 </script>

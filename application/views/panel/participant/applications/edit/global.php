@@ -6,7 +6,39 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
-	
+		<!-- 
+	75502	organization_industry	
+	75503	organization_overview	
+	75508	organization_mission_vision	
+	75509	organization_services	
+	75510	organization_reveue_23	
+	75511	organization_reveue_22	
+	75512	organization_growth_23	
+	75513	organization_growth_22	
+	75514	organization_profit_23	
+	75515	organization_profit_22	
+	75516	organization_assets_23	
+	75517	organization_assets_22	
+	75518	organization_der_23	
+	75519	organization_der_22
+
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
+
+	75526	initiative_tech
+	75527	initiative_impact	
+	75528	initiative_scalability	
+	75529	initiative_info	
+
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
+ -->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -33,6 +65,13 @@
 									<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
 								</div>
 							</div>
+							<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Date of Birth</label>
+								<input required type="text" data-type="date" name="dob" class="form-control">
+								<span class="form-text">(in DD/MM/YYYY)</span>
+							</div>
+						</div> -->
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Business Segment</label>
@@ -227,28 +266,26 @@
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-xxl-4 col-12">
-										Revenue Growth (in %)
+										Revenue from Global Markets (in % of Revenue)
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="organization_growth_2" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255103'] == "< 5%") ? "selected" : "" ?> value="< 5%">
-												< 5%</option>
-											<option <?= ($application['id_255103'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
-											<option <?= ($application['id_255103'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
-											<option <?= ($application['id_255103'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
-											<option <?= ($application['id_255103'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
+											<option <?= ($application['id_255103'] == "Less than 20%") ? "selected" : "" ?> value="Less than 20%">Less than 20%</option>
+											<option <?= ($application['id_255103'] == "20% - 40%") ? "selected" : "" ?> value="20% - 40%">20% - 40%</option>
+											<option <?= ($application['id_255103'] == "40% - 60%") ? "selected" : "" ?> value="40% - 60%">40% - 60%</option>
+											<option <?= ($application['id_255103'] == "60% - 80%") ? "selected" : "" ?> value="60% - 80%">60% - 80%</option>
+											<option <?= ($application['id_255103'] == "More than 80%") ? "selected" : "" ?> value="More than 80%">More than 80%</option>
 										</select>
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="organization_growth_1" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255104'] == "< 5%") ? "selected" : "" ?> value="< 5%">
-												< 5%</option>
-											<option <?= ($application['id_255104'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
-											<option <?= ($application['id_255104'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
-											<option <?= ($application['id_255104'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
-											<option <?= ($application['id_255104'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
+											<option <?= ($application['id_255104'] == "Less than 20%") ? "selected" : "" ?> value="Less than 20%">Less than 20%</option>
+											<option <?= ($application['id_255104'] == "20% - 40%") ? "selected" : "" ?> value="20% - 40%">20% - 40%</option>
+											<option <?= ($application['id_255104'] == "40% - 60%") ? "selected" : "" ?> value="40% - 60%">40% - 60%</option>
+											<option <?= ($application['id_255104'] == "60% - 80%") ? "selected" : "" ?> value="60% - 80%">60% - 80%</option>
+											<option <?= ($application['id_255104'] == "More than 80%") ? "selected" : "" ?> value="More than 80%">More than 80%</option>
 										</select>
 									</div>
 								</div>
@@ -256,52 +293,16 @@
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-xxl-4 col-12">
-										Net Profit Margin (In %)
+										Investment in R&amp;D for Global Markets (In % of Revenue)
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="organization_profit" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255105'] == "< 10%") ? "selected" : "" ?> value="< 10%">
-												< 10%</option>
-											<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255105'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="col-12">
-								<div class="row g-3">
-									<div class="col-xxl-4 col-12">
-										Return On Assets (ROA)
-									</div>
-									<div class="col-xxl-4 col-lg-6 col-12">
-										<select required name="organization_assets" id="" class="form-select">
-											<option value="">Select Option</option>
-											<option <?= ($application['id_255106'] == "< 5%") ? "selected" : "" ?> value="< 5%">
-												< 5%</option>
-											<option <?= ($application['id_255106'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
-											<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255105'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="col-12">
-								<div class="row g-3">
-									<div class="col-xxl-4 col-12">
-										Current Ratio
-									</div>
-									<div class="col-xxl-4 col-lg-6 col-12">
-										<select required name="organization_der_23" id="" class="form-select">
-											<option value="">Select Option</option>
-											<option <?= ($application['id_255107'] == " Less than 1.0") ? "selected" : "" ?> value="< 1.0">
-												< 1.0</option>
-											<option <?= ($application['id_255107'] == "1.0 = 1.5") ? "selected" : "" ?> value="1.0 = 1.5">1.0 - 1.5</option>
-											<option <?= ($application['id_255107'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-											<option <?= ($application['id_255107'] == "2.1 - 3.0") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-											<option <?= ($application['id_255107'] == "Greater than 3.0") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+											<option <?= ($application['id_255105'] == "Less than 20%") ? "selected" : "" ?> value="Less than 20%">Less than 20%</option>
+											<option <?= ($application['id_255105'] == "20% - 40%") ? "selected" : "" ?> value="20% - 40%">20% - 40%</option>
+											<option <?= ($application['id_255105'] == "40% - 60%") ? "selected" : "" ?> value="40% - 60%">40% - 60%</option>
+											<option <?= ($application['id_255105'] == "60% - 80%") ? "selected" : "" ?> value="60% - 80%">60% - 80%</option>
+											<option <?= ($application['id_255105'] == "More than 80%") ? "selected" : "" ?> value="More than 80%">More than 80%</option>
 										</select>
 									</div>
 								</div>
@@ -326,29 +327,65 @@
 									</select>
 								</div>
 							</div>
-
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-									<select required name="organization[members]" id="" class="form-select">
+									<label for="" class="form-label">No. Of Employees Globally</label>
+									<select required name="organization[global_size]" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255202'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
-										<option <?= ($application['id_255202'] == "International") ? "selected" : "" ?> value="International">International</option>
+										<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+										<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+										<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+										<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+								</div>
+							</div>
+
+							<div class="col-xl-6 col-12">
+								<div class="">
+									<div class="">
+										<label for="" class="form-label">Number of Countries with Business Presence</label>
+										<input required name="organization_presence" value="<?= $application['id_255203'] ?>" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-12">
+								<div class="">
+									<div class="">
+										<label for="" class="form-label">Countries of Operation</label>
+										<input required name="organization_operation" value="<?= $application['id_255204'] ?>" type="text" class="form-control">
+										<span class="form-text">(List at least 5, specifying at least 2 countries from different continents)</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<div class="">
+									<label for="" class="form-label">Details of Cross-Border Collaborations/Partnerships Established</label>
+									<textarea required name="organization_collabs" id="" class="form-control" rows="5"><?= $application_temp['id_255205'] ?></textarea>
+									<span class="form-text">(50 - 5000 characters)</span>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<div class="">
+									<label for="" class="form-label">Market Expansion in the Last 2 Years</label>
+									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application_temp['id_255206'] ?></textarea>
+									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255203'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255207'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255204'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255208'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -364,7 +401,7 @@
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</label>
+									<label for="" class="form-label">Describe an innovative solution, product, or service introduced to global markets that has significantly impacted your business. Highlight how it was adapted to meet the needs of diverse international audiences</label>
 									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -380,24 +417,8 @@
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
+									<label for="" class="form-label">Provide an overview of your business’s performance in global markets, including key achievements, market share growth, and any notable recognitions or awards. How has your organization impacted the industries you operate in?</label>
 									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
-									<span class="form-text">(50 - 5000 characters)</span>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<fieldset class="col-12">
-						<div class="mb-3">
-							<legend class="card-title mb-0">
-								<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
-							</legend>
-						</div>
-						<div class="row g-3">
-							<div class="col-12">
-								<div class="">
-									<label for="" class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -407,14 +428,14 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+								<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -423,14 +444,14 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
+								<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+									<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -463,15 +484,15 @@
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Incorporation Certificate</label>
+									<label for="" class="form-label">Proof of Global Presence</label>
 									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 500KB)</span>
+									<span class="form-text">(Provide a list of business registrations, partnerships, or collaborations in the required countries) (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Applicable Environmental Certifications</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
 									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
 								</div>
@@ -555,6 +576,7 @@
 							});
 						</script>
 					</fieldset>
+
 				</div>
 			</div>
 			<div class="col-12">

@@ -6,7 +6,39 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
-	
+		<!-- 
+	75502	organization_industry	
+	75503	organization_overview	
+	75508	organization_mission_vision	
+	75509	organization_services	
+	75510	organization_reveue_23	
+	75511	organization_reveue_22	
+	75512	organization_growth_23	
+	75513	organization_growth_22	
+	75514	organization_profit_23	
+	75515	organization_profit_22	
+	75516	organization_assets_23	
+	75517	organization_assets_22	
+	75518	organization_der_23	
+	75519	organization_der_22
+
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
+
+	75526	initiative_tech
+	75527	initiative_impact	
+	75528	initiative_scalability	
+	75529	initiative_info	
+
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
+ -->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -24,13 +56,20 @@
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Name of the Applicant</label>
-									<input required type="text" value="<?= $application["name"] ?>" name="name" class="form-control">
+									<input required type="text" value="<?= $application['name'] ?>" name="name" class="form-control">
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Designation</label>
 									<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
+								</div>
+							</div>
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Date of Birth</label>
+									<input required type="text" data-type="date" name="dob" value="<?= $application['id_255008'] ?>" class="form-control">
+									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -51,18 +90,18 @@
 									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Total Years of Experience</label>
-								<input required type="text" name="experience[total]" class="form-control">
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Total Years of Experience</label>
+									<input required type="text" name="experience[total]" value="<?= $application['id_255006'] ?>" class="form-control">
+								</div>
 							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Years of Experience in this Company</label>
-								<input required type="text" name="experience[current]" class="form-control">
+							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Years of Experience in this Company</label>
+									<input required type="text" name="experience[current]" value="<?= $application['id_255007'] ?>" class="form-control">
+								</div>
 							</div>
-						</div> -->
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-12">
@@ -97,16 +136,16 @@
 								</div>
 							</div>
 
-							<!-- <div class="col-xxl-3 col-xl-4 col-12">
+							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Business</label>
 									<select required name="organization[business]" id="" class="form-select">
 										<option value="">Select Business Type</option>
-										<option value="Manufacturing">Manufacturing</option>
-										<option value="Service">Service</option>
+										<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+										<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 									</select>
 								</div>
-							</div> -->
+							</div>
 							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Ownership</label>
@@ -281,9 +320,9 @@
 											<option <?= ($application['id_255106'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 												< 5%</option>
 											<option <?= ($application['id_255106'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
-											<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255105'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
+											<option <?= ($application['id_255106'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
+											<option <?= ($application['id_255106'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
+											<option <?= ($application['id_255106'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
 										</select>
 									</div>
 								</div>
@@ -306,6 +345,21 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-12">
+								<div class="row g-3">
+									<div class="col-xxl-4 col-12">
+										Years of Involvement in Social Entrepreneurship
+									</div>
+									<div class="col-xxl-4 col-lg-6 col-12">
+										<select required name="organization_involvement" id="" class="form-select">
+											<option value="">Select Option</option>
+											<option <?= ($application['id_255108'] == "2 - 5 Years") ? "selected" : "" ?> value="2 - 5 Years">2 - 5 Years</option>
+											<option <?= ($application['id_255108'] == "5 - 10 Years") ? "selected" : "" ?> value="5 - 10 Years">5 - 10 Years</option>
+											<option <?= ($application['id_255108'] == "More than 10 Years") ? "selected" : "" ?> value="More than 10 Years">More than 10 Years</option>
+										</select>
+									</div>
+								</div>
+							</div>
 						</div>
 					</fieldset>
 					<fieldset class="col-12">
@@ -313,31 +367,55 @@
 							<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
 						</legend>
 						<div class="row g-3">
+							<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
+									<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+								</div>
+							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">No. Of Employees</label>
 									<select required name="organization[size]" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255201'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
-										<option <?= ($application['id_255201'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-										<option <?= ($application['id_255201'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
-										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
-										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+										<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+										<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+										<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+										<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
 								</div>
 							</div>
-
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-									<select required name="organization[members]" id="" class="form-select">
+									<label for="" class="form-label">No. Of Beneficiary</label>
+									<input required type="number" value="<?= $application['id_255205'] ?>" name="organization[beneficiary]" class="form-control">
+								</div>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">No. of community members directly impacted </label>
+									<input required type="number" value="<?= $application['id_255206'] ?>" name="organization[community_impact]" class="form-control">
+								</div>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
+								<div class="">
+									<label for="" class="form-label">% of profits reinvested into social initiatives</label>
+									<input required type="number" value="<?= $application['id_255207'] ?>" name="organization[investment]" class="form-control">
+								</div>
+							</div>
+							<div class="col-xxl-4 col-xl-6 col-12">
+								<div class="">
+									<label for="" class="form-label">No. of new regions/communities targeted for expansion in the next 3 years</label>
+									<select required name="organization[regions]" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255202'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
-										<option <?= ($application['id_255202'] == "International") ? "selected" : "" ?> value="International">International</option>
+										<option <?= ($application['id_255208'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
+										<option <?= ($application['id_255208'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
+										<option <?= ($application['id_255208'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
+										<option <?= ($application['id_255208'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
 									</select>
 								</div>
 							</div>
-
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
@@ -358,13 +436,13 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
+								<h5>Vision and Leadership<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</label>
+									<label for="" class="form-label">What inspired you to start your social entrepreneurship journey? Please describe the vision and mission of your work.</label>
 									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -374,13 +452,13 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
+								<h5>Innovation and Problem-Solving<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
+									<label for="" class="form-label">What specific social, environmental, or economic problem does your work address? Describe the innovative solutions you have developed</label>
 									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -390,30 +468,29 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+								<h5>Market Impact<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</label>
+									<label for="" class="form-label">How has your initiative impacted the market or created opportunities for underserved populations? Provide examples of tangible outcomes or success stories</label>
 									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 						</div>
 					</fieldset>
-
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+								<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</label>
+									<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
 									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -423,13 +500,13 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
+								<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
+									<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
 									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -468,21 +545,21 @@
 									<span class="form-text">(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Applicable Environmental Certifications</label>
 									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
-									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
-								</div>
-							</div> -->
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 500KB)</span>
+										GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
+							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Any other Collaterals</label>
+									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_75533'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
+								</div>
+							</div> -->
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact</label>
@@ -495,6 +572,13 @@
 									<label for="" class="form-label">Any other Collaterals</label>
 									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+								<div class="">
+									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<span class="form-text"> (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 						</div>
