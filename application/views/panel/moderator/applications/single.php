@@ -55,6 +55,7 @@ if ($nomination['stage'] >= 1) {
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-xl-9 col-12 grid-margin stretch-card">
 					<div class="col-12">
 						<div class="nomination_detailed">
@@ -62,19 +63,28 @@ if ($nomination['stage'] >= 1) {
 							switch ($category['type']) {
 								case '1_GLOBAL':
 									# code...
-										include_once APPPATH . '/views/panel/moderator/full_view/global.php';
+									include_once APPPATH . '/views/panel/moderator/full_view/global.php';
 									break;
 								case '1_DIGITAL':
 									# code...
-										include_once APPPATH . '/views/panel/moderator/full_view/digital.php';
+									include_once APPPATH . '/views/panel/moderator/full_view/digital.php';
+									break;
+								case '1_INDIVIDUAL':
+									# code...
+									include_once APPPATH . '/views/panel/moderator/full_view/individual_1.php';
+									break;
 								case '2_INDIVIDUAL':
 									# code...
-										include_once APPPATH . '/views/panel/moderator/full_view/individual_2.php';
+									include_once APPPATH . '/views/panel/moderator/full_view/individual_2.php';
 									break;
-								
+								case '1_FAMILY':
+									# code...
+									include_once APPPATH . '/views/panel/moderator/full_view/family.php';
+									break;
+
 								default:
 									# code...
-										include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
+									include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
 									break;
 							}
 							?>

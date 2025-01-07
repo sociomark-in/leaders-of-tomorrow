@@ -1,6 +1,6 @@
 <?php
-
-$this->load->view('components/panel/partials/_category_eligibility_requirements', $prohibit); ?>
+$data['category'] = $category;
+$this->load->view('components/panel/partials/_category_eligibility_requirements', $data); ?>
 
 <?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">
@@ -34,13 +34,13 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<input required type="text" name="designation" class="form-control">
 					</div>
 				</div>
-				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+				<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Date of Birth</label>
 						<input required type="text" data-type="date" name="dob" class="form-control">
 						<span class="form-text">(in DD/MM/YYYY)</span>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Business Segment</label>
@@ -59,7 +59,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<span class="form-text">(in DD/MM/YYYY)</span>
 					</div>
 				</div>
-				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+				<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Total Years of Experience</label>
 						<input required type="text" name="experience[total]" class="form-control">
@@ -70,7 +70,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<label for="" class="form-label">Years of Experience in this Company</label>
 						<input required type="text" name="experience[current]" class="form-control">
 					</div>
-				</div>
+				</div> -->
 				<div class="col-12">
 					<div class="row g-3">
 						<div class="col-12">
@@ -102,7 +102,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 					</div>
 				</div>
 
-				<div class="col-xxl-3 col-xl-4 col-12">
+				<!-- <div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Business</label>
 						<select required name="organization[business]" id="" class="form-select">
@@ -111,7 +111,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 							<option value="Service">Service</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Ownership</label>

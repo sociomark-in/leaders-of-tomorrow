@@ -50,26 +50,19 @@
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Name of the Participating Entity</label>
-									<input required type="text" value="<?=$application['organization_name']?>" name="organization[name]" class="form-control">
+									<input required type="text" value="<?= $application['organization_name'] ?>" name="organization[name]" class="form-control">
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Name of the Applicant</label>
-									<input required type="text" value="<?=$application['name']?>" name="name" class="form-control">
+									<input required type="text" value="<?= $application["name"] ?>" name="name" class="form-control">
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Designation</label>
-									<input required type="text" value="<?=$application['designation']?>" name="designation" class="form-control">
-								</div>
-							</div>
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Date of Birth</label>
-									<input required type="text" data-type="date" value="<?=$application['id_255008']?>" name="dob" class="form-control">
-									<span class="form-text">(in DD/MM/YYYY)</span>
+									<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -86,22 +79,22 @@
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Date of Company Incorporation</label>
-									<input required type="text" data-type="date" value="<?=$application['id_255002']?>" name="organization[inc_date]" class="form-control">
+									<input required type="text" data-type="date" value="<?= $application['id_255002'] ?>" name="organization[inc_date]" class="form-control">
 									<span class="form-text">(in DD/MM/YYYY)</span>
 								</div>
 							</div>
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Total Years of Experience</label>
-									<input required type="text" value="<?=$application['id_255006']?>" name="experience[total]" class="form-control">
-								</div>
+							<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Total Years of Experience</label>
+								<input required type="text" name="experience[total]" class="form-control">
 							</div>
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Years of Experience in this Company</label>
-									<input required type="text" value="<?=$application['id_255007']?>" name="experience[current]" class="form-control">
-								</div>
+						</div>
+						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Years of Experience in this Company</label>
+								<input required type="text" name="experience[current]" class="form-control">
 							</div>
+						</div> -->
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-12">
@@ -136,16 +129,16 @@
 								</div>
 							</div>
 
-							<div class="col-xxl-3 col-xl-4 col-12">
+							<!-- <div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Business</label>
 									<select required name="organization[business]" id="" class="form-select">
 										<option value="">Select Business Type</option>
-										<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
-										<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
+										<option value="Manufacturing">Manufacturing</option>
+										<option value="Service">Service</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Ownership</label>
@@ -608,7 +601,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Submit</button>
+						<button type="submit" class="btn btn-primary">Confirm and Resubmit</button>
 					</div>
 				</div>
 			</div>

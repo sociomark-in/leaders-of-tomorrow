@@ -585,7 +585,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Submit</button>
+						<button type="submit" class="btn btn-primary">Confirm and Resubmit</button>
 					</div>
 				</div>
 			</div>

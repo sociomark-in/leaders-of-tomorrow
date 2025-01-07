@@ -85,7 +85,9 @@ class TestController extends CI_Controller
 		$this->data['applicant'] = [
 			'name' => 'Sociomark',
 		];
-		$this->load->view('panel/emails/participant_nomination_reject', $this->data);
+		// $this->load->view('panel/emails/participant_nomination_reject', $this->data);
+
+		print_r(hash('md5', hash('sha256', "P@rtner#LOTS@12")));
 	}
 
 	public function twiliosms()

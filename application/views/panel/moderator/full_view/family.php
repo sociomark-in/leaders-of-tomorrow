@@ -241,24 +241,41 @@
 											<h5><?= $application['id_255201'] ?></h5>
 										</div>
 									</div>
-
 									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Target Market Segment and Geographic Reach</p>
-											<h5><?= $application['id_255202'] ?></h5>
+											<p class="form-label">Generational Status</p>
+											<h5><?= $application['id_255204'] ?></h5>
 										</div>
 									</div>
 
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">No. of family members actively involved</p>
+											<h5><?= $application['id_255205'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">Equity spilt between family members and investors</p>
+											<h5><?= $application['id_255206'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">Years the current generation has been leading the business</p>
+											<h5><?= $application['id_255207'] ?></h5>
+										</div>
+									</div>
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Brief Description of the Business</p>
-											<h5><?= $application['id_255203'] ?></h5>
+											<p class="form-label">How has the business evolved from one generation to the next? Describe the key transitions in leadership, vision, and strategy between generations</p>
+											<h5><?= $application['id_255202'] ?></h5>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="">
 											<p class="form-label">Core Products / Services Offered</p>
-											<h5><?= $application['id_255204'] ?></h5>
+											<h5><?= $application['id_255203'] ?></h5>
 										</div>
 									</div>
 								</div>
@@ -274,7 +291,7 @@
 			<div class="col-12 grid-margin stretch-card">
 				<div class="card input-group-card">
 					<div class="card-body">
-						<div class="row g-4">
+						<div class="row g-4 g-lg-5">
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
@@ -284,8 +301,14 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</p>
+											<p class="form-label">How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches (Max 200 words)</p>
 											<h5><?= $application['id_255301'] ?></h5>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="">
+											<p class="form-label">What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?</p>
+											<h5><?= $application['id_255302'] ?></h5>
 										</div>
 									</div>
 								</div>
@@ -299,23 +322,14 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</p>
-											<h5><?= $application['id_255302'] ?></h5>
+											<p class="form-label">What have been the major challenges your family business has faced, and how did you overcome them? Please provide specific examples of challenges in areas such as management, market expansion, or technology integration</p>
+											<h5><?= $application['id_255303'] ?></h5>
 										</div>
 									</div>
-								</div>
-							</fieldset>
-							<fieldset class="col-12">
-								<div class="mb-3">
-									<legend class="card-title mb-0">
-										<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
-									</legend>
-								</div>
-								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</p>
-											<h5><?= $application['id_255303'] ?></h5>
+											<p class="form-label">Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition</p>
+											<h5><?= $application['id_255304'] ?></h5>
 										</div>
 									</div>
 								</div>
@@ -329,22 +343,7 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</p>
-											<h5><?= $application['id_255304'] ?></h5>
-										</div>
-									</div>
-								</div>
-							</fieldset>
-							<fieldset class="col-12">
-								<div class="mb-3">
-									<legend class="card-title mb-0">
-										<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
-									</legend>
-								</div>
-								<div class="row g-3">
-									<div class="col-12">
-										<div class="">
-											<p class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</p>
+											<p class="form-label">How have you handled economic or market downturns, and what strategies have you implemented to ensure business continuity and growth in challenging times.</p>
 											<h5><?= $application['id_255305'] ?></h5>
 										</div>
 									</div>

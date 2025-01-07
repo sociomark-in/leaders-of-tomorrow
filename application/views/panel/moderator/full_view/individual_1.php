@@ -28,7 +28,7 @@
 						<div class="row g-4">
 							<fieldset class="col-12">
 								<legend class="card-title mb-0">
-									<h5>Participating Entity</h5>
+									<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 								</legend>
 								<div class="row g-3">
 									<div class="col-xl-6 col-lg-6 col-12">
@@ -51,6 +51,12 @@
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 										<div class="">
+											<p class="form-label">Date of Birth</p>
+											<h5><?= $application['id_255008'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
 											<p class="form-label">Business Segment</p>
 											<h5><?= $application['id_255003'] ?></h5>
 										</div>
@@ -61,13 +67,25 @@
 											<h5><?= $application['id_255002'] ?></h5>
 										</div>
 									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">Total Years of Experience</p>
+											<h5><?= $application['id_255006'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">Years of Experience in this Company</p>
+											<h5><?= $application['id_255007'] ?></h5>
+										</div>
+									</div>
 									<div class="col-12">
 										<div class="row g-3">
 											<div class="col-12">
-												<?php
-												$address = implode(', ', json_decode($application['id_255001']));
-												?>
 												<p class="form-label">Registered Address Participating Entity</p>
+												<?php
+												$address = implode(", ", json_decode($application['id_255001']));
+												?>
 												<h5><?= $address ?></h5>
 											</div>
 											<div class="col-xl-4 col-lg-6 col-12">
@@ -78,6 +96,13 @@
 												<p class="form-label">City</p>
 												<h5><?= $application['organization_city'] ?></h5>
 											</div>
+										</div>
+									</div>
+
+									<div class="col-xxl-3 col-xl-4 col-12">
+										<div class="">
+											<p class="form-label">Type of Business</p>
+											<h5><?= $application['id_255004'] ?></h5>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-12">
@@ -104,15 +129,14 @@
 						<div class="row g-4">
 							<fieldset class="col-12">
 								<legend class="card-title mb-0">
-									<h5>Contact Person of Organization</h5>
+									<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
 								</legend>
 								<div class="row g-3">
-
 									<div id="sectionChange" class="col-12">
 										<div class="row g-3">
 											<div class="col-xl-3 col-lg-6 col-12">
 												<div class="">
-													<p for="" class="form-label">Full Name of Individual</p>
+													<p class="form-label">Full Name of Individual</p>
 													<h5><?= $application['id_255901'] ?></h5>
 												</div>
 											</div>
@@ -138,6 +162,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Organization Details -->
 	<div class="tab-pane fade" id="organization-tab-pane" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
@@ -219,6 +244,16 @@
 												</div>
 											</div>
 										</div>
+										<div class="col-12">
+											<div class="row g-3">
+												<div class="col-xxl-4 col-12">
+													Years of Involvement in Social Entrepreneurship
+												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255108'] ?></h5>
+												</div>
+											</div>
+										</div>
 									</div>
 								</fieldset>
 							</div>
@@ -230,61 +265,86 @@
 				<div class="card input-group-card">
 					<div class="card-body">
 						<div class="row g-4">
-							<fieldset class="col-12">
-								<legend class="card-title mb-0">
-									<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
-								</legend>
-								<div class="row g-3">
-									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">No. Of Employees</p>
-											<h5><?= $application['id_255201'] ?></h5>
+							<div class="col-12">
+								<fieldset class="col-12">
+									<legend class="card-title mb-0">
+										<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
+									</legend>
+									<div class="row g-3">
+										<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
+											<div class="">
+												<p class="form-label">Target Market Segment and Geographic Reach</p>
+												<h5><?= $application['id_255201'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+											<div class="">
+												<p class="form-label">No. Of Employees</p>
+												<h5><?= $application['id_255202'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+											<div class="">
+												<p class="form-label">No. Of Beneficiary</p>
+												<h5><?= $application['id_255205'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
+											<div class="">
+												<p class="form-label">No. of community members directly impacted </p>
+												<h5><?= $application['id_255206'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
+											<div class="">
+												<p class="form-label">% of profits reinvested into social initiatives</p>
+												<h5><?= $application['id_255207'] ?></h5>
+											</div>
+										</div>
+										<div class="col-xxl-4 col-xl-6 col-12">
+											<div class="">
+												<p class="form-label">No. of new regions/communities targeted for expansion in the next 3 years</p>
+												<h5><?= $application['id_255208'] ?></h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<p class="form-label">Brief Description of the Business</p>
+												<h5><?= $application['id_255203'] ?></h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="">
+												<p class="form-label">Core Products / Services Offered</p>
+												<h5><?= $application['id_255204'] ?></h5>
+											</div>
 										</div>
 									</div>
-
-									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">Target Market Segment and Geographic Reach</p>
-											<h5><?= $application['id_255202'] ?></h5>
-										</div>
-									</div>
-
-									<div class="col-12">
-										<div class="">
-											<p class="form-label">Brief Description of the Business</p>
-											<h5><?= $application['id_255203'] ?></h5>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="">
-											<p class="form-label">Core Products / Services Offered</p>
-											<h5><?= $application['id_255204'] ?></h5>
-										</div>
-									</div>
-								</div>
-							</fieldset>
+								</fieldset>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Case Studies -->
 	<div class="tab-pane fade" id="casestudy-tab-pane" role="tabpanel" aria-labelledby="casestudy-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
 				<div class="card input-group-card">
 					<div class="card-body">
-						<div class="row g-4">
+						<div class="row g-4 g-lg-5">
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
+										<h5>Vision and Leadership<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</p>
+											<p class="form-label">What inspired you to start your social entrepreneurship journey? Please describe the vision and mission of your work.</p>
 											<h5><?= $application['id_255301'] ?></h5>
 										</div>
 									</div>
@@ -293,13 +353,13 @@
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
+										<h5>Innovation and Problem-Solving<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</p>
+											<p class="form-label">What specific social, environmental, or economic problem does your work address? Describe the innovative solutions you have developed</p>
 											<h5><?= $application['id_255302'] ?></h5>
 										</div>
 									</div>
@@ -308,13 +368,13 @@
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+										<h5>Market Impact<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</p>
+											<p class="form-label">How has your initiative impacted the market or created opportunities for underserved populations? Provide examples of tangible outcomes or success stories</p>
 											<h5><?= $application['id_255303'] ?></h5>
 										</div>
 									</div>
@@ -323,13 +383,13 @@
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Scalability and Future Readiness<sup class="text-danger">&ast;</sup></h5>
+										<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</p>
+											<p class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</p>
 											<h5><?= $application['id_255304'] ?></h5>
 										</div>
 									</div>
@@ -338,13 +398,13 @@
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
+										<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</p>
+											<p class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</p>
 											<h5><?= $application['id_255305'] ?></h5>
 										</div>
 									</div>
@@ -356,6 +416,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Document Uploads -->
 	<div class="tab-pane fade" id="downloads-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">
 		<div class="row g-3 mt-2">
 			<div class="col-12 grid-margin stretch-card">
@@ -368,34 +429,40 @@
 										<h5>Document Uploads</h5>
 									</legend>
 									<div class="row g-3">
-										<div class="col-xl-4 col-lg-6">
+										<div class="col-lg-4 col-md-6 col-12">
 											<div class="">
-												<p>MSME Certificate</p>
+												<p class="form-label">MSME Certificate</p>
 												<h5><a class="link-icon" href="<?= base_url($application['id_255401']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
-										<div class="col-xl-4 col-lg-6">
+										<div class="col-lg-4 col-md-6 col-12">
 											<div class="">
-												<p>Company Incorporation Certificate</p>
+												<p class="form-label">Incorporation Certificate</p>
 												<h5><a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
-										<div class="col-xl-4 col-lg-6">
+										<div class="col-lg-4 col-md-6 col-12">
 											<div class="">
-												<p>Photographs or Videos of products/services offered</p>
+												<p class="form-label">Applicable Environmental Certifications</p>
 												<h5><a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
-										<div class="col-xl-4 col-lg-6">
+										<div class="col-lg-4 col-md-6 col-12">
 											<div class="">
-												<p>Collaterals to Support the Impact</p>
+												<p class="form-label">Collaterals to Support the Impact</p>
 												<h5><a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
-										<div class="col-xl-4 col-lg-6">
+										<div class="col-lg-4 col-md-6 col-12">
 											<div class="">
-												<p>Any other Collaterals</p>
+												<p class="form-label">Any other Collaterals</p>
 												<h5><a class="link-icon" href="<?= base_url($application['id_255405']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-6 col-12">
+											<div class="">
+												<p class="form-label">Photographs or Videos of products/services offered</p>
+												<h5><a class="link-icon" href="<?= base_url($application['id_255406']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></h5>
 											</div>
 										</div>
 									</div>

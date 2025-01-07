@@ -17,6 +17,7 @@ class NominationAPIController extends CI_Controller
 		$this->data = [];
 		$this->usersession = $_SESSION['awards_panel_user'];
 		$this->load->model('panel/EntriesModel');
+		$this->load->model('event/awards/CategoryModel');
 		$this->load->library('email/BrevoCURLMail');
 	}
 
@@ -187,7 +188,7 @@ class NominationAPIController extends CI_Controller
 							"id_255901" => $this->request['contact_person']['name'],
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
-							
+
 							"stage_status" => $this->request['stage'],
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
@@ -331,7 +332,7 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
-							
+
 							"id_255901" => $this->request['contact_person']['name'],
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
@@ -408,12 +409,14 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
+
+
 						$this->load->model('panel/AgentModel');
 						$agents = json_decode($this->AgentModel->get(), true);
 
@@ -623,7 +626,7 @@ class NominationAPIController extends CI_Controller
 							"organization_url" => $this->request['organization']['url'],
 							"organization_city" => $this->request['organization']['address']['city'],
 							"organization_state" => $this->request['organization']['address']['state'],
-							
+
 							"id_255901" => $this->request['contact_person']['name'],
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
@@ -690,7 +693,7 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
@@ -965,7 +968,7 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
@@ -1246,7 +1249,7 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
@@ -1519,7 +1522,7 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
@@ -1793,7 +1796,7 @@ class NominationAPIController extends CI_Controller
 						$this->request = $this->input->post();
 
 						$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
-						$email_data['category'] = $category['name'];
+						$email_data['application']['category']['name'] = $category['name'];
 						$email_data['applicant'] = [
 							'name' => $this->usersession['name'],
 							'email' => $this->usersession['email'],
@@ -2488,24 +2491,29 @@ class NominationAPIController extends CI_Controller
 					'status' => '1',
 				];
 
-				$nomination = array_merge(
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0],
-				);
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'organization_name', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']]), true)[0] ?? [];
+				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
+				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
-				$nomination['created_by'] = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
-				$user = $nomination['created_by'];
 
-				if ($this->EntriesModel->update($data, ['nomination_id' => $this->request['application_id']], strtolower(explode('_', $nomination['category_id'])[1]))) {
+				if ($this->EntriesModel->update($data, ['nomination_id' => $nomination['nomination_id']])) {
 					$recipients = [
 						[
-							"email" =>  $user['email'],
-							"name" =>  $user['name']
+							"email" =>  $applicant['email'],
+							"name" =>  $applicant['name']
 						]
 					];
 					$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Accepted!";
-					$body = "Hi " .  $user['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
-					$htmlbody = $this->load->view('panel/emails/participant_nomination_success', null, true);
+					$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+
+					$email_data['application'] = $nomination;
+					$email_data['application']['category']['name'] = $category['name'];
+					$email_data['applicant'] = [
+						'name' => $applicant['name'],
+						'email' => $applicant['email'],
+						'contact' => $applicant['contact'],
+					];
+					$htmlbody = $this->load->view('panel/emails/participant_nomination_success', $email_data, true);
 					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 						redirect('dashboard/applications');
 					}
@@ -2532,18 +2540,17 @@ class NominationAPIController extends CI_Controller
 					'nomination_id' => $this->request['application_id'],
 					'created_by' => $this->usersession['id'],
 				];
-				$nomination = array_merge(
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-				);
-
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'organization_name', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']]), true)[0] ?? [];
 				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
+				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
-				$email_data = [
-					'applicant' => $applicant,
-					'response' => $data,
+				$email_data['application'] = $nomination;
+				$email_data['application']['category']['name'] = $category['name'];
+				$email_data['applicant'] = [
+					'name' => $applicant['name'],
+					'email' => $applicant['email'],
+					'contact' => $applicant['contact'],
 				];
-
 				if ($this->CommentModel->insert($data)) {
 					$data = [
 						'status' => '0',
@@ -2585,17 +2592,18 @@ class NominationAPIController extends CI_Controller
 					'nomination_id' => $this->request['application_id'],
 					'created_by' => $this->usersession['id'],
 				];
-				$nomination = array_merge(
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'individual'), true)[0] ?? [],
-					json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']], 'msme'), true)[0] ?? [],
-				);
+				
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'organization_name', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']]), true)[0] ?? [];
+				$applicant = json_decode($this->UserModel->get(null, ['id'=> $nomination['created_by']]), true)[0];
+				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
-				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
-
-				$email_data = [
-					'applicant' => $applicant,
-					'response' => $data,
-				];
+				$email_data['application'] = $nomination;
+					$email_data['application']['category']['name'] = $category['name'];
+					$email_data['applicant'] = [
+						'name' => $applicant['name'],
+						'email' => $applicant['email'],
+						'contact' => $applicant['contact'],
+					];
 
 				if ($this->CommentModel->insert($data)) {
 					$data = [
@@ -2627,10 +2635,10 @@ class NominationAPIController extends CI_Controller
 	{
 		// $this->load->library('pdflib/makedocket');
 		// $this->makedocket->init('P', 'mm', 'A4')->load($data = null, 'stage_1_digital_1')->generate();
-		
+
 
 		// if($this->isPdfCompressed(FCPATH . "uploads/1736004999-20673/1736161690_E8zIUuSO_1735895661_IKW8HRBG_screenlot2.pdf")){
-		if($this->isPdfCompressed(FCPATH . "uploads/1736003081-51962/1736161690_E8zIUuSO_1735895661_IKW8HRBG_screenlot2.pdf")){
+		if ($this->isPdfCompressed(FCPATH . "uploads/1736003081-51962/1736161690_E8zIUuSO_1735895661_IKW8HRBG_screenlot2.pdf")) {
 			echo "Compressed!";
 		} else {
 			echo "Not Compressed!";
