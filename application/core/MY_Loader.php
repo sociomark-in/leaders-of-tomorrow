@@ -17,9 +17,9 @@ class MY_Loader extends CI_Loader
 	
 	public function award_page($view, $vars = array(), $return = FALSE)
 	{
-		$this->view('layout/_1', $vars);
+		$this->view('layout/_1_awards', $vars);
 		$this->view("awards/" . $view, $vars);
-		$this->view('layout/_2', $vars);
+		$this->view('layout/_2_awards', $vars);
 	}
 	
 	public function city_view($view, $vars = array(), $return = FALSE)

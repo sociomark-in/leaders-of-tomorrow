@@ -5,6 +5,33 @@
 			<h3>12</h3>
 		</div>
 	</div>
+	<section class="section p-0">
+		<div class="hero-backdrop-wrapper w-fullscreen position-relative">
+			<div class="bg-media">
+				<img class="w-100" src="https://placehold.co/1920x900" alt="">
+			</div>
+			<div class="hero-content position-absolute">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-5">
+							<div class="hero-main-wrapper">
+								<div class="main-image">
+									<img class="w-100" src="<?= base_url('assets/images/ilu-white.png') ?>" alt="">
+								</div>
+								<div class="text-content text-center">
+									<div class="row justify-content-center">
+										<div class="col-auto">
+											<a href="" class="btn btn-lg btn-yellow" target="_blank">Register to Nominate</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -36,7 +63,7 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=dMqS8_uqrxhpIj4e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -82,7 +109,7 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<div class="row g-2">
+					<div class="row g-2 d-none">
 						<?php foreach ($categories['msme'] as $key => $category): ?>
 							<div class="col-xxl-4 col-lg-6">
 								<div class="card h-100">
@@ -100,6 +127,29 @@
 										</div>
 									</div>
 								</div>
+							</div>
+						<?php endforeach ?>
+					</div>
+					<div class="row g-2">
+						<?php foreach ($categories['msme'] as $key => $category): ?>
+							<div class="col-xxl-4 col-lg-6">
+								<a class="card glw-card h-100" href="<?= base_url('awards/category/' . $category['code']) ?>">
+									<div class="card-body">
+										<div class="row h-100 align-items-center">
+											<div class="col-auto">
+												<div class="glw-image">
+													<div class="glw-icon">
+														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+														<img src="https:" class="w-100" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<h class="m-0"><?= $category['name'] ?></h>
+											</div>
+										</div>
+									</div>
+								</a>
 							</div>
 						<?php endforeach ?>
 					</div>

@@ -1,3 +1,33 @@
+.hero-backdrop-wrapper .hero-content {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.glw-card .glw-image {
+  position: relative;
+  padding: 1.5rem;
+}
+.glw-card .glw-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: contain;
+  width: 100%;
+  aspect-ratio: 1;
+  background: url("../images/icons/glw-02.png") no-repeat;
+  background-size: 90% auto;
+  background-position: 50% 100%;
+}
+.glw-card .glw-image .glw-icon {
+  width: 80px;
+  aspect-ratio: 1;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  overflow: hidden;
+}
+
 .awards-wrapper .hanging-ribbon {
   position: fixed;
   left: calc(10% - 10px);
