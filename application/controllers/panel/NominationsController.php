@@ -99,18 +99,11 @@ class NominationsController extends PanelController
 	{
 		$this->load->model('panel/CommentModel');
 		$this->data['id'] = $slug;
-		$application = array_merge(
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'individual'), true),
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'msme'), true),
-		)[0];
+		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
 
 
 		$c = explode("_", $application['category_id']);
-		if ($c[1] == 'Individual') {
-			$category_details = json_decode($this->CategoryModel->get_individual(null, ['id' => $c[0]]), true)[0];
-		} elseif ($c[1] == 'MSME') {
-			$category_details = json_decode($this->CategoryModel->get_msme(null, ['id' => $c[0]]), true)[0];
-		}
+		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 
 		$comments = json_decode($this->CommentModel->get(null, ['nomination_id' => $slug]), true);
 
@@ -122,7 +115,7 @@ class NominationsController extends PanelController
 		$this->data['category'] = $category_details;
 		$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], strtolower($c[1])), true)[0];
 		$this->data['comments'] = $comments;
-		$this->load->panel_view('applications/edit/'  . strtolower($category_details['type']), $this->data);
+		$this->load->panel_view('applications/edit', $this->data);
 	}
 
 	public function single($slug)
@@ -149,9 +142,6 @@ class NominationsController extends PanelController
 					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
 				} else {
 				}
-
-				// echo "<pre>";
-				// print_r($this->data); die;
 
 				$this->load->panel_view('applications/single', $this->data);
 
