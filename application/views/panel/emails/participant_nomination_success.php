@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Registration Success for Leaders of Tomorrow Event</title>
+	<title>Your Nomination Has Been Accepted - Leaders of Tomorrow Awards 2025</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -66,7 +66,7 @@
 												<td style="line-height:22px;padding:0 30px 0">
 													<div
 														style="font-size:24px;font-weight:bold;margin-bottom:10px;color:#198754;padding:10px 0;line-height:1.5;border-radius:3px;">
-														Welcome Onboard!&nbsp;🎉</div>
+														Congratulations!&nbsp;🎉</div>
 												</td>
 											</tr>
 											<tr>
@@ -75,35 +75,44 @@
 											<tr>
 												<td style="line-height:22px;padding:0 30px 0">
 													<div>
-														<div style="font-weight:bold;margin-bottom:10px">
-															Hi <?= $applicant['name'] ?>,</div>
-														<div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Thank you for nominating yourself to the <strong>Leaders
-																	of
-																	Tomorrow 2024.</strong>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Your request has been approved by the evaluation
-																department.
-																We welcome you onboard for the event. Kindly check all your nominations on your dashboard by clicking the link below.
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
-																	href="<?= base_url('dashboard/my-applications') ?>"
-																	target="_blank">
-																	View All Nominations
-																</a>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																We will keep you updated on your nomination status.
-															</div>
-
-															<div>Thank you!</div>
-															<br>
-															<div>Best Regards,</div>
-															<div><strong>Team <?= APP_NAME ?></strong></div>
+														<div style="margin-bottom:10px">
+															Dear <strong><?= $applicant['name'] ?></strong>,
 														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Congratulations! Your nomination under the
+															<strong><?= $application['organization_name'] ?></strong> for
+															<strong><?= $application['category']['name'] ?></strong>
+															has been accepted.</strong>
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Your submission will now be reviewed by the <strong>pre-jury panel</strong>. If it qualifies further, it will be sent
+															to the <strong>grand jury</strong>, and we will share more details with you as the process progresses.
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
+													<div style="margin-bottom:20px;line-height:1.5">
+														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
+															href="<?= base_url('dashboard/my-applications') ?>"
+															target="_blank">
+															View All Nominations
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
+													<div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Thank you for your participation. For any queries, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
+														</div>
+														<br>
+														<div>Best Regards,</div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+
+													</div>
 												</td>
 											</tr>
 											<tr>
@@ -150,7 +159,9 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <a href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+										</div>
 									</td>
 								</tr>
 							</tfoot>

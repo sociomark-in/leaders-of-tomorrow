@@ -169,10 +169,7 @@ class NominationsController extends PanelController
 				$this->data['comments'] = $comments;
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
-				$this->data['application'] = array_merge(
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status !=' => 4], 'msme'), true),
-					json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status !=' => 4], 'individual'), true),
-				)[0];
+				$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug, 'status !=' => 4]), true)[0];
 
 				$this->load->moderator_view('applications/single', $this->data);
 				break;

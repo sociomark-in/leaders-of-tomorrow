@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Registration Success for Leaders of Tomorrow Event</title>
+	<title>Update on Your Nomination - Leaders of Tomorrow Awards 2025</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -63,17 +63,18 @@
 											<tr>
 												<td height="20" style="padding:0 30px 0"></td>
 											</tr>
-											<tr>
+											<!-- <tr>
 												<td style="line-height:22px;padding:0 30px 0">
 													<div
 														style="font-size:24px;font-weight:bold;margin-bottom:10px;color:#f11f1f;padding:10px 0;line-height:1.5;border-radius:3px;">
 														Better Luck Next Time!</div>
 												</td>
 											</tr>
+											-->
 											<tr>
 												<td height="10" style="padding: 0 30px 0;"></td>
-											</tr>
-											<tr>
+											</tr> 
+											<!-- <tr>
 												<td style="padding:10px 30px;border-bottom:1px solid #e9eaed;">
 													<table cellpadding="10">
 														<tr>
@@ -113,25 +114,46 @@
 														</tr>
 													</table>
 												</td>
-											</tr>
+											</tr> -->
 											<tr>
 												<td style="line-height:22px;padding:0 30px 0">
+													<div style="font-weight:bold;margin-bottom:10px">
+														Hi <?= $applicant['name'] ?>,</div>
 													<div>
-														<div style="font-weight:bold;margin-bottom:10px">
-															Hi <?= $applicant['name'] ?>,</div>
-														<div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Thank you for showing interest for the <strong>Leaders of Tomorrow 2024.</strong>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Unfortunately, we can not proceed further with your nomination for now! Although we appreciate your interest and participation.
-															</div>
-
-															<div>Thank you!</div>
-															<br>
-															<div>Best Regards,</div>
-															<div><strong>Team <?= APP_NAME ?></strong></div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															We regret to inform you that your nomination under the
+															<strong><?= $application['organization_name'] ?></strong> for
+															<strong><?= $application['category']['name'] ?></strong> has not been shortlisted for further evaluation.
 														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															You can log in to your account to review the feedback and comments provided by our process
+															advisors.
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
+													<div style="margin-bottom:20px;line-height:1.5">
+														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
+															href="<?= base_url('dashboard') ?>"
+															target="_blank">
+															Access Dashboard
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
+													<div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															We sincerely thank you for your participation and encourage you to stay connected with us for future opportunities.
+														</div>
+														<br>
+														<div>Best Regards,</div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+
+													</div>
 												</td>
 											</tr>
 											<tr>
@@ -178,7 +200,9 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <a href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+										</div>
 									</td>
 								</tr>
 							</tfoot>

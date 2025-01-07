@@ -59,11 +59,25 @@ if ($nomination['stage'] >= 1) {
 					<div class="col-12">
 						<div class="nomination_detailed">
 							<?php
-							if (strtolower($category['type']) == 'msme') {
-								include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
-							} else {
-								include_once APPPATH . '/views/panel/moderator/full_view/individual.php';
-							} ?>
+							switch ($category['type']) {
+								case '1_GLOBAL':
+									# code...
+										include_once APPPATH . '/views/panel/moderator/full_view/global.php';
+									break;
+								case '1_DIGITAL':
+									# code...
+										include_once APPPATH . '/views/panel/moderator/full_view/digital.php';
+								case '2_INDIVIDUAL':
+									# code...
+										include_once APPPATH . '/views/panel/moderator/full_view/individual_2.php';
+									break;
+								
+								default:
+									# code...
+										include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
+									break;
+							}
+							?>
 						</div>
 					</div>
 				</div>

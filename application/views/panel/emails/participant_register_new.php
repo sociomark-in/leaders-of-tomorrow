@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Registration Success for Leaders of Tomorrow Event</title>
+	<title>Welcome to Leaders of Tomorrow Awards 2025!</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -75,38 +75,40 @@
 											<tr>
 												<td style="line-height:22px;padding:0 30px 0">
 													<div>
-														<div style="font-weight:bold;margin-bottom:10px">
-															Hi <?= $user['name'] ?>,</div>
-														<div>
-															<div style="margin-bottom:30px;line-height:1.5">
-																Thank you for registering for the <strong><?= APP_NAME ?> 2024.</strong>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Here are the credentials to access your dashboard.
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																<strong>Username:</strong>&nbsp;<?= $user['email'] ?><br>
-																<strong>Password:</strong>&nbsp;<?= $user['password'] ?>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Kindly verify your email address first by clicking the link below
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
-																	href="<?= $verification_url ?>"
-																	target="_blank">
-																	Verify Your Email Address
-																</a>
-															</div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																We will keep you updated on your nomination status on this email address.
-															</div>
-
-															<div>Thank you!</div>
-															<br>
-															<div>Best Regards,</div>
-															<div><strong>Team <?= APP_NAME ?></strong></div>
+														<div style="margin-bottom:10px">
+															Dear <strong><?= $user['name'] ?></strong>,
 														</div>
+														<div style="margin-bottom:20px;line-height:1.5">
+															Thank you for creating your account on the <strong><?= APP_NAME ?> 2025.</strong> platform. We
+															are excited to have you onboard as part of this journey celebrating excellence in MSMEs.
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Here are the credentials to access your dashboard.
+														</div>
+														<div style="margin-bottom:20px;line-height:1.5">
+															<strong>Username:</strong>&nbsp;<?= $user['email'] ?><br>
+															<strong>Password:</strong>&nbsp;<?= $user['password'] ?>
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Kindly verify your email address first by clicking the link below
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
+																href="<?= $verification_url ?>"
+																target="_blank">
+																Verify Your Email Address
+															</a>
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															You can now start your application process and explore award categories that best suit your
+															achievements.
+														</div>
+
+														<div>If you have any questions or need assistance, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>.</div>
+														<br>
+														<div>Best Regards,</div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+													</div>
 												</td>
 											</tr>
 											<tr>
@@ -153,7 +155,9 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <a href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit 
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+										</div>
 									</td>
 								</tr>
 							</tfoot>

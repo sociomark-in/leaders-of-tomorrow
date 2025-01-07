@@ -76,9 +76,16 @@ class TestController extends CI_Controller
 	public function email_view()
 	{
 		$this->data['application'] = [
-			'name' => 'Sociomark'
+			'nomination_id' => '1748534-0098',
+			'organization_name' => 'Lorem ipsum dolor sit Pvt. Ltd.',
+			'category' => [
+				'name' => "Lorem ipsum dolor sit."
+			]
 		];
-		$this->load->view('panel/emails/participant_register_update', $this->data);
+		$this->data['applicant'] = [
+			'name' => 'Sociomark',
+		];
+		$this->load->view('panel/emails/participant_nomination_reject', $this->data);
 	}
 
 	public function twiliosms()

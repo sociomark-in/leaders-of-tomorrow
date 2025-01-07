@@ -57,7 +57,7 @@
 									<td>
 										<table border="0" cellpadding="30" cellspacing="0"
 											style="max-width:600px;width:100%;min-width:320px">
-											<tr>
+											<!-- <tr>
 												<td style="padding:10px 30px;border-bottom:1px solid #e9eaed;">
 													<table cellpadding="10">
 														<tr>
@@ -97,27 +97,31 @@
 														</tr>
 													</table>
 												</td>
+											</tr> -->
+											<tr>
+												<td height="30" style="padding:0 30px 0"></td>
 											</tr>
 											<tr>
 												<td style="font-size:16px;line-height:1.5;padding-top:0">
 													<div>
-														<div style="font-size:16px;font-weight:bold;margin-bottom:10px">
-															Hi <?= $applicant['name'] ?>,</div>
-														<div>
-															<div style="margin-bottom:10px;line-height:1.5">
-																Thank you for nominating yourself to the <strong>Leaders of
-																	Tomorrow 2024.</strong>
-															</div>
-															<div style="margin-bottom:20px;line-height:1.5">
-																You have a new comment on your nomination of <strong><?= APP_NAME ?></strong> Kindly take appropriate action on
-																your dashboard by clicking the link below.
-															</div>
+														<div style="margin-bottom:10px">
+															Dear <strong><?= $applicant['name'] ?></strong>,
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Our process advisors,<strong>E&amp;Y</strong>, have reviewed your submission for
+															<strong><?= $application['category']['name'] ?></strong> under
+															<strong><?= $application['organization_name'] ?></strong>. They have suggested certain improvements to your form.
+														</div>
+														<div style="margin-bottom:20px;line-height:1.5">
+															Please log in to your account on the Leaders of Tomorrow website to review and make the
+															required changes.
 														</div>
 													</div>
+
 													<div style="line-height:1.5">
 														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-															href="<?= base_url('dashboard/application/' . $response['nomination_id'] . "/edit") ?>" target="_blank">
-															View Your Nomination
+															href="<?= base_url('dashboard/application/' . $application['nomination_id'] . "/edit") ?>" target="_blank">
+															Access Your Nomination
 														</a>
 													</div>
 												</td>
@@ -126,14 +130,12 @@
 												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
 													<div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We will keep you updated on your nomination status.
+															For any questions or clarifications, feel free to contact us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
 														</div>
-
-														<div>Thank you!</div>
 														<br>
 														<div>Best Regards,</div>
-														<div><strong>Team <?= APP_NAME ?></strong>
-														</div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+
 													</div>
 												</td>
 											</tr>
@@ -181,7 +183,9 @@
 									<td>
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
-											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit <a href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.</div>
+											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+										</div>
 									</td>
 								</tr>
 							</tfoot>
@@ -189,10 +193,6 @@
 					</td>
 				</tr>
 			</tbody>
-		</table>
-		</td>
-		</tr>
-		</tbody>
 		</table>
 	</div>
 </body>
