@@ -65,14 +65,14 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto d-none col-lg-3 col-md-6 col-6">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>All Seasons</h6>
 									<ul class="footer-nav nav flex-column">
 										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Season 11</a>
+											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Season 11</a>
 										</li>
-										<li class="nav-item">
+										<!-- <li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Season 10</a>
 										</li>
 										<li class="nav-item">
@@ -83,25 +83,28 @@
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Other Seasons</a>
-										</li>
+										</li> -->
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto d-none col-lg-3 col-md-6 col-6">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>Season 12 Awards</h6>
 									<ul class="footer-nav nav flex-column">
-										<li class="nav-item">
+										<!-- <li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Register</a>
+										</li> -->
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Login</a>
+											<a class="nav-link" href="<?= base_url('awards') ?>">All Categories</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">All Categories</a>
+											<a class="nav-link" href="<?= base_url('awards') ?>">Awards</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="javascript:void(0)">Awards</a>
+											<a class="nav-link" href="<?= base_url('awards/terms-and-conditions') ?>">Terms & Conditions</a>
 										</li>
 									</ul>
 								</div>

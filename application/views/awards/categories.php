@@ -28,67 +28,28 @@
 	</section>
 	<section class="">
 		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-12">
-					<ul class="nav nav-pills gap-2 mb-3" id="myTab" role="tablist">
-						<li class="nav-item" role="presentation">
-							<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">MSME Awards</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Individual Awards</button>
-						</li>
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-							<div class="row g-2">
-								<?php foreach ($categories['msme'] as $key => $category): ?>
-									<div class="col-xxl-4 col-lg-6">
-										<div class="card h-100">
-											<div class="card-body">
-												<div class="row h-100 flex-column justify-content-between">
-													<div class="col-12">
-														<div class="mb-3">
-															<h5><?= $category['name'] ?></h5>
-															<p>Lorem ipsum dolor sit amet.</p>
-														</div>
-													</div>
-													<div class="col-12">
-														<a href="<?= base_url('dashboard/category/' . $category['code'] . "/nominate") ?>" class="btn btn-red">Apply Now</a>
-														<a href="<?= base_url('awards/category/' . $category['code']) ?>" class="btn">Details</a>
-													</div>
-												</div>
+			<div class="row g-2">
+				<?php foreach ($categories['msme'] as $key => $category): ?>
+					<div class="col-xxl-4 col-lg-6">
+						<a class="card glw-card h-100" href="<?= base_url('awards/category/' . $category['code']) ?>">
+							<div class="card-body">
+								<div class="row h-100 align-items-center">
+									<div class="col-auto">
+										<div class="glw-image">
+											<div class="glw-icon p-2 pb-3">
+												<!-- <img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt=""> -->
+												<img src="<?= base_url('assets/images/icons/trophy_color.png') ?>" class="w-100" alt="">
 											</div>
 										</div>
 									</div>
-								<?php endforeach ?>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-							<div class="row g-2">
-								<?php foreach ($categories['individual'] as $key => $category): ?>
-									<div class="col-xxl-3">
-										<div class="card h-100">
-											<div class="card-body">
-												<div class="row h-100 flex-column justify-content-between">
-													<div class="col-12">
-														<div class="mb-3">
-															<h5><?= $category['name'] ?></h5>
-															<p>Lorem ipsum dolor sit amet.</p>
-														</div>
-													</div>
-													<div class="col-12">
-														<a href="<?= base_url('awards/category/' . $category['code'] . "/nominate") ?>" class="btn btn-red">Apply Now</a>
-														<a href="<?= base_url('awards/category/' . $category['code']) ?>" class="btn">Details</a>
-													</div>
-												</div>
-											</div>
-										</div>
+									<div class="col">
+										<h6 class="m-0"><?= $category['name'] ?></h6>
 									</div>
-								<?php endforeach ?>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
-				</div>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</section>

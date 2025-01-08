@@ -1,27 +1,27 @@
 <main class="awards-wrapper">
-	<div class="hanging-ribbon d-none d-md-block">
+	<div class="hanging-ribbon d-none">
 		<div class="content">
 			<p>Season</p>
 			<h3>12</h3>
 		</div>
 	</div>
 	<section class="section p-0">
-		<div class="hero-backdrop-wrapper w-fullscreen position-relative">
+		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
 			<div class="bg-media">
-				<img class="w-100" src="https://placehold.co/1920x900" alt="">
+				<!-- <img class="w-100" src="https://placehold.co/1920x900" alt=""> -->
 			</div>
 			<div class="hero-content position-absolute">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-xl-5">
 							<div class="hero-main-wrapper">
-								<div class="main-image">
-									<img class="w-100" src="<?= base_url('assets/images/ilu-white.png') ?>" alt="">
+								<div class="main-image mb-3">
+									<img class="w-100" src="<?= base_url('assets/images/awards-ilu-white.png') ?>" alt="">
 								</div>
 								<div class="text-content text-center">
 									<div class="row justify-content-center">
 										<div class="col-auto">
-											<a href="" class="btn btn-lg btn-yellow" target="_blank">Register to Nominate</a>
+											<a href="<?= base_url('dashboard') ?>" class="btn btn-lg btn-yellow" target="_blank">Nominate Now</a>
 										</div>
 									</div>
 								</div>
@@ -63,7 +63,9 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=dMqS8_uqrxhpIj4e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<lite-youtube videoid="iFAuxpi5sHQ">
+							<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=iFAuxpi5sHQ">Leaders of Tomorrow Awards 2025</a>
+						</lite-youtube>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -72,9 +74,9 @@
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nam rem eum necessitatibus et maiores tempora nisi vel officia corporis porro quibusdam dolore beatae autem ea quae asperiores in incidunt, veritatis consequuntur, quia tenetur laudantium quam ipsa. Consequuntur eaque quos iusto sit, sunt ullam tempore ratione provident? Magni, iusto mollitia.
+							ET Now Leaders of Tomorrow is the longest-running television show celebrating entrepreneurship in India. Leaders of Tomorrow has highlighted inspiring stories from visionaries since 2010. Over 12 successful, illustrious seasons, Leaders of Tomorrow has leveraged its massive on-air visibility and popularity to empower, enable and energize India’s MSME Sector. As an extension to our daily show, we also host 15 city-specific mini-conclaves called "Springboards," which highlight the unique opportunities and potential of each city within India. Towards the end of each season, we host the annual Leaders of Tomorrow Awards to honour the most promising MSMEs across India.
 						</p>
-						<a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a>
+						<!-- <a data-aos="fade-left" data-aos-delay="500" href="" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
 				</div>
 			</div>
@@ -84,14 +86,16 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-12">
-					<div class="card glass-card">
-						<div class="card-body">
+					<div class="glass-card">
+						<div class="">
 							<div class="desc text-lg">
 								<p data-aos="fade-left">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nam rem eum necessitatibus et maiores tempora nisi vel officia corporis porro quibusdam dolore beatae autem ea quae asperiores in incidunt, veritatis consequuntur, quia tenetur laudantium quam ipsa. Consequuntur eaque quos iusto sit, sunt ullam tempore ratione provident? Magni, iusto mollitia.
+									Leaders of Tomorrow Season 12 Awards will continue to spotlight outstanding MSMEs, carry forward its rich legacy. This year, the awards are aligned with our vision to propel India’s global aspirations, embracing the theme: <strong class="text-red">Powering Entrepreneurs for the Global Stage</strong>.
+									The Leaders of Tomorrow Season 12 Awards is scheduled to take place in February or March 2025 as a half-day ceremony in either Mumbai or Delhi, attended by over 200 audience members largely comprising of CXOs from large and mid-enterprises.
 								</p>
 								<p data-aos="fade-left" data-aos-delay="400">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nam rem eum necessitatibus et maiores tempora nisi vel officia corporis porro quibusdam dolore beatae autem ea quae asperiores in incidunt, veritatis consequuntur, quia tenetur laudantium quam ipsa. Consequuntur eaque quos iusto sit, sunt ullam tempore ratione provident? Magni, iusto mollitia.
+									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
+									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
 							</div>
 						</div>
@@ -100,7 +104,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="" id="categories">
+	<section class="section" id="categories">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -109,49 +113,150 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<div class="row g-2 d-none">
-						<?php foreach ($categories['msme'] as $key => $category): ?>
-							<div class="col-xxl-4 col-lg-6">
-								<div class="card h-100">
-									<div class="card-body">
-										<div class="row h-100 flex-column justify-content-between">
-											<div class="col-12">
-												<div class="mb-3">
-													<h5><?= $category['name'] ?></h5>
-												</div>
-											</div>
-											<div class="col-12">
-												<a href="<?= base_url('dashboard/category/' . $category['code'] . "/nominate") ?>" class="btn btn-red">Apply Now</a>
-												<a href="<?= base_url('awards/category/' . $category['code']) ?>" class="btn">View Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						<?php endforeach ?>
-					</div>
-					<div class="row g-2">
+					<div class="row g-2 justify-content-center">
 						<?php foreach ($categories['msme'] as $key => $category): ?>
 							<div class="col-xxl-4 col-lg-6">
 								<a class="card glw-card h-100" href="<?= base_url('awards/category/' . $category['code']) ?>">
+									<!-- <a class="card glw-card h-100" href="#"> -->
 									<div class="card-body">
 										<div class="row h-100 align-items-center">
 											<div class="col-auto">
 												<div class="glw-image">
-													<div class="glw-icon">
-														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
-														<img src="https:" class="w-100" alt="">
+													<div class="glw-icon p-2 pb-3">
+														<!-- <img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt=""> -->
+														<img src="<?= base_url('assets/images/icons/trophy_color.png') ?>" class="w-100" alt="">
 													</div>
 												</div>
 											</div>
 											<div class="col">
-												<h class="m-0"><?= $category['name'] ?></h>
+												<h6 class="m-0"><?= $category['name'] ?></h6>
 											</div>
 										</div>
 									</div>
 								</a>
 							</div>
 						<?php endforeach ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section d-none" id="phases">
+		<div class="container">
+			<div class="row g-3 g-md-4">
+				<div class="col-12">
+					<div class="section-title text-center">
+						<h2><span>Programme Phases</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="staged_process__wrapper">
+						<div class="row g-3">
+							<div class="col-xxl col-xl-3 col-lg-6 col-12">
+								<div class="stage__tile active">
+									<div class="row">
+										<div class="col-12">
+											<div class="stage__title">
+												<h5>Phase 1</h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="stage__details card">
+												<div class="card-body">
+													<div class="stage__content">
+														<div class="icon mb-3">
+															<img src="<?= base_url('assets/images/icons/profiles.png') ?>" height="40" alt="">
+														</div>
+														<div class="content">
+															<h5>Call for Entries</h5>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolorum.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl col-xl-3 col-lg-6 col-12">
+								<div class="stage__tile">
+									<div class="row">
+										<div class="col-12">
+											<div class="stage__title">
+												<h5>Phase 2</h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="stage__details card">
+												<div class="card-body">
+													<div class="stage__content">
+														<div class="icon mb-3">
+															<img src="<?= base_url('assets/images/icons/shortlist.png') ?>" height="40" alt="">
+														</div>
+														<div class="content">
+															<h5>Shortlisting & Documentation</h5>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolorum.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl col-xl-3 col-lg-6 col-12">
+								<div class="stage__tile">
+									<div class="row">
+										<div class="col-12">
+											<div class="stage__title">
+												<h5>Phase 3</h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="stage__details card">
+												<div class="card-body">
+													<div class="stage__content">
+														<div class="icon mb-3">
+															<img src="<?= base_url('assets/images/icons/podium.png') ?>" height="40" alt="">
+														</div>
+														<div class="content">
+															<h5>Jury Round for the Selection of Finalists</h5>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolorum.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl col-xl-3 col-lg-6 col-12">
+								<div class="stage__tile">
+									<div class="row">
+										<div class="col-12">
+											<div class="stage__title">
+												<h5>Phase 4</h5>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="stage__details card">
+												<div class="card-body">
+													<div class="stage__content">
+														<div class="icon mb-3">
+															<img src="<?= base_url('assets/images/icons/trophy.png') ?>" height="40" alt="">
+														</div>
+														<div class="content">
+															<h5>Award Ceremony</h5>
+															<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolorum.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -316,4 +421,3 @@
 		</div>
 	</section>
 </main>
-<link rel="stylesheet" href="<?= base_url('assets/css/awards.min.css') ?>">

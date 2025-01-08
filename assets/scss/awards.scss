@@ -14,11 +14,17 @@ $color-orange: #f05c27;
 	}
 }
 .glw-card {
+	.card-body {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 	&:hover {
+		box-shadow: 0 0 0 2px rgba($color-red, 0.4);
 	}
 	.glw-image {
 		position: relative;
 		padding: 1.5rem;
+		padding-bottom: 2.5rem;
 		&::after {
 			content: "";
 			position: absolute;
@@ -42,9 +48,9 @@ $color-orange: #f05c27;
 }
 .awards-wrapper {
 	.hanging-ribbon {
-		position: fixed;
+		position: absolute;
 		left: calc(10% - 10px);
-		top: 76px;
+		top: 5px;
 		min-width: 50px;
 		min-height: 50px;
 		background-color: $color-red;
@@ -61,6 +67,66 @@ $color-orange: #f05c27;
 		h3 {
 			line-height: 0.7;
 			font-size: calc(max(3vw, 2.5rem));
+		}
+	}
+}
+
+.staged_process__wrapper {
+	.stage__tile {
+		position: relative;
+		&::after, &:before{}
+		.stage__title{
+			color: lighten($color-black, $amount: 30);
+			margin-bottom: 1rem;
+		}
+		.stage__details {
+			min-height: 200px;
+			border: none;
+			border-radius: 0.25rem;
+			color: lighten($color-black, $amount: 30);
+			.stage__content{
+				.icon{
+					img{
+						filter: grayscale(1);
+					}
+				}
+			}
+			h5 {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+			p {
+				font-size: 0.8rem;
+			}
+		}
+		&.active {
+			.stage__title{
+				color: $color-red;
+				h5{
+					font-weight: 600;
+				}
+			}
+			.stage__details {
+				.stage__content{
+					.icon{
+						img{
+							filter: grayscale(0);
+						}
+					}
+				}
+				box-shadow: 0 0 0 2px $color-red;
+				color: $color-black;
+				// background: linear-gradient(
+				// 	45deg,
+				// 	rgba($color-red, 0.3) 0%,
+				// 	transparent 100%
+				// );
+				h5 {
+					color: $color-red;
+				}
+				p {
+				}
+			}
 		}
 	}
 }

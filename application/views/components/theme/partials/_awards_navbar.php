@@ -19,7 +19,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<a class="btn btn-outline-red text-uppercase" href="<?= base_url("") ?>">Back to Home</a>
 				</li> -->
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url("") ?>">Home</a>
+					<a class="nav-link" href="<?= base_url("awards") ?>">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
@@ -27,8 +27,8 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Awards Categories</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#articles') ?>">News</a>
+				<li class="nav-item d-none">
+					<a class="nav-link" href="<?= base_url('awards#phases') ?>">Programme Phases</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#partners') ?>">Partners</a>
@@ -46,9 +46,9 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<li class="nav-item">
 						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login</a>
 					</li>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
-					</li>
+					</li> -->
 				<?php endif ?>
 			</ul>
 		</div>

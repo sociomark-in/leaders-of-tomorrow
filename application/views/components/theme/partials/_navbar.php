@@ -60,33 +60,14 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</ul>
 				</li>
 			</ul>
-			<div class="row">
-				<div class="col-md-auto">
-					<ul class="navbar-nav align-items-center g-4">
-						<li class="nav-item">
-							<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
-								<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
-								Awards&nbsp;2024
-							</a>
-						</li>
-						<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
-							<li class="nav-item">
-								<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url('logout') ?>">Logout</a>
-							</li>
-						<?php else: ?>
-							<li class="nav-item">
-								<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
-							</li>
-						<?php endif ?> -->
-					</ul>
-				</div>
-			</div>
+			<ul class="navbar-nav align-items-center g-4">
+				<li class="nav-item">
+					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
+						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+						Awards&nbsp;<?= date('Y') ?>
+					</a>
+				</li>
+			</ul>
 			<div class="row d-none">
 				<div class="col-md-auto">
 					<ul class="navbar-nav align-items-center g-4">

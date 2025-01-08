@@ -99,11 +99,20 @@ form {
 }
 
 body {
-	background: url("../images/backgrounds/sky.gif"), $color-white;
+	background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-v.png"), #fff3f3;
 	background-size: cover;
+	background-position: center;
 	background-attachment: fixed;
 	font-family: "Poppins", sans-serif;
 	cursor: url("../images/icons/cursor-sm.png"), auto !important;
+}
+@media screen and (min-width: 768px) {
+	body{
+		background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-h.png"), #fff3f3;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
 }
 footer {
 	background-color: $color-black;
@@ -205,7 +214,7 @@ table {
 		&.heading-yellow {
 			thead,
 			thead > tr > th {
-				// padding: 1rem 0.75rem;
+				padding: 1rem 0.75rem;
 				font-weight: 500;
 				background-color: $color-yellow;
 			}

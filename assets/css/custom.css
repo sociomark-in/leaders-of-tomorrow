@@ -147,13 +147,22 @@ form .form-check-input:focus {
 }
 
 body {
-  background: url("../images/backgrounds/sky.gif"), #efefef;
+  background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-v.png"), #fff3f3;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
   cursor: url("../images/icons/cursor-sm.png"), auto !important;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-h.png"), #fff3f3;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
 footer {
   background-color: #1c1c1c;
   color: #efefef !important;
@@ -239,6 +248,7 @@ table.table thead > tr > th {
 }
 table.table.heading-yellow thead,
 table.table.heading-yellow thead > tr > th {
+  padding: 1rem 0.75rem;
   font-weight: 500;
   background-color: #ffde3f;
 }

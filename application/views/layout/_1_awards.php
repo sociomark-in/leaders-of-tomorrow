@@ -10,6 +10,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
 	<?php $this->load->view('components/theme/_head'); ?>
+	<link rel="stylesheet" href="<?= base_url('assets/css/awards.min.css') ?>">
 	<title><?= (isset($page['title']))? $page['title']: APP_NAME ?></title>
 </head>
 

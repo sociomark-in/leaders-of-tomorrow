@@ -4,9 +4,17 @@
   width: 100%;
 }
 
+.glw-card .card-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.glw-card:hover {
+  box-shadow: 0 0 0 2px rgba(183, 32, 38, 0.4);
+}
 .glw-card .glw-image {
   position: relative;
   padding: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 .glw-card .glw-image::after {
   content: "";
@@ -29,9 +37,9 @@
 }
 
 .awards-wrapper .hanging-ribbon {
-  position: fixed;
+  position: absolute;
   left: calc(10% - 10px);
-  top: 76px;
+  top: 5px;
   min-width: 50px;
   min-height: 50px;
   background-color: #b72026;
@@ -50,4 +58,44 @@
 .awards-wrapper .hanging-ribbon h3 {
   line-height: 0.7;
   font-size: max(3vw, 2.5rem);
+}
+
+.staged_process__wrapper .stage__tile {
+  position: relative;
+}
+.staged_process__wrapper .stage__tile .stage__title {
+  color: dimgray;
+  margin-bottom: 1rem;
+}
+.staged_process__wrapper .stage__tile .stage__details {
+  min-height: 200px;
+  border: none;
+  border-radius: 0.25rem;
+  color: dimgray;
+}
+.staged_process__wrapper .stage__tile .stage__details .stage__content .icon img {
+  filter: grayscale(1);
+}
+.staged_process__wrapper .stage__tile .stage__details h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.staged_process__wrapper .stage__tile .stage__details p {
+  font-size: 0.8rem;
+}
+.staged_process__wrapper .stage__tile.active .stage__title {
+  color: #b72026;
+}
+.staged_process__wrapper .stage__tile.active .stage__title h5 {
+  font-weight: 600;
+}
+.staged_process__wrapper .stage__tile.active .stage__details {
+  box-shadow: 0 0 0 2px #b72026;
+  color: #1c1c1c;
+}
+.staged_process__wrapper .stage__tile.active .stage__details .stage__content .icon img {
+  filter: grayscale(0);
+}
+.staged_process__wrapper .stage__tile.active .stage__details h5 {
+  color: #b72026;
 }

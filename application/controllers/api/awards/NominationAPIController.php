@@ -435,7 +435,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -450,7 +450,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -717,7 +717,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -732,7 +732,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -992,7 +992,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -1007,7 +1007,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1273,7 +1273,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -1288,7 +1288,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1546,7 +1546,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -1561,7 +1561,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1820,7 +1820,7 @@ class NominationAPIController extends CI_Controller
 									break;
 
 								default:
-									$agent_code = '1595014714';
+									$agent_code = '5167681127';
 									# code...
 									break;
 							}
@@ -1835,7 +1835,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = APP_NAME . " - Your Application is in Review!";
+							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -2111,7 +2111,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $this->usersession['name']
 						]
 					];
-					$subject = APP_NAME . " - Your Application is in Review!";
+					$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 					$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
 					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -2353,7 +2353,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $this->usersession['name']
 						]
 					];
-					$subject = APP_NAME . " - Your Application is in Review!";
+					$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 						redirect('dashboard');
@@ -2503,7 +2503,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $applicant['name']
 						]
 					];
-					$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Accepted!";
+					$subject = "Your Nomination Has Been Accepted - " . APP_NAME . " Awards 2025!";
 					$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 
 					$email_data['application'] = $nomination;
@@ -2563,7 +2563,7 @@ class NominationAPIController extends CI_Controller
 							]
 						];
 
-						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is Rejected!";
+						$subject = "Update on Your Nomination - " . APP_NAME . " Awards 2025!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -2617,7 +2617,7 @@ class NominationAPIController extends CI_Controller
 								"name" =>  $applicant['name']
 							]
 						];
-						$subject = APP_NAME . " - Your Application [#" . $nomination['nomination_id'] . "] is in Review!";
+						$subject = "Action Required - Update Your Submission for " . APP_NAME . " Awards 2025!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {

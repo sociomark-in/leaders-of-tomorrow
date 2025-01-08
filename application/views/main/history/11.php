@@ -100,7 +100,9 @@
 									<div class="row align-items-center">
 										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 											<div class="media-content" data-aos="fade-right">
-												<iframe class="w-100" src="https://www.youtube.com/embed/<?= $city['promo'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+												<lite-youtube videoid="<?= $city['promo'] ?>">
+													<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=<?= $city['promo'] ?>"><?= $city['name'] ?></a>
+												</lite-youtube>
 											</div>
 										</div>
 										<div class="col-xl-7 col-lg-6 col-12">
@@ -126,7 +128,9 @@
 									<div class="row align-items-center">
 										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 											<div class="media-content" data-aos="fade-right">
-												<iframe class="w-100" src="https://www.youtube.com/embed/<?= $city['promo'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+												<lite-youtube videoid="<?= $city['promo'] ?>">
+													<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=<?= $city['promo'] ?>">VIDEO TITLE/DESCRIPTION</a>
+												</lite-youtube>
 											</div>
 										</div>
 										<div class="col-xl-7 col-lg-6 col-12">

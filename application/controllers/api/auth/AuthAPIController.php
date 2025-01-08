@@ -98,7 +98,7 @@ class AuthAPIController extends CI_Controller
 				$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
 
 				$email_data = [
-					'user' =>[
+					'user' => [
 						'name' => $data['name'],
 						'email' => $data['useremail'],
 						'password' => $data['contact'],
@@ -148,11 +148,11 @@ class AuthAPIController extends CI_Controller
 				'message' => 'Unknown Error Occured!'
 			];
 			if (!is_null($existing_user) && count($existing_user) >= 1) {
-				// $session['status'] = 'WARNING';
-				// $session['message'] = 'You have already registered. Please Log In.';
-				// $this->session->set_flashdata('user_login_status', $session);
-				// redirect('login');
-				print_r($existing_user);
+				$session['status'] = 'WARNING';
+				$session['message'] = 'You have already registered. Please Log In.';
+				$this->session->set_flashdata('user_login_status', $session);
+				redirect('login');
+				// print_r($existing_user);
 			} else {
 				$contact = $this->request['contact'];
 				$this->request['password'] = hash('md5', hash('sha256', $contact));
@@ -161,29 +161,40 @@ class AuthAPIController extends CI_Controller
 				$data['role'] = 'participant';
 				$data['useremail'] = $data['email'];
 				$data['password'] = $this->request['password'];
-				
+
 				$lead['created_by'] = $this->request['agency_id'];
 				if ($this->UserModel->insert($data) && $this->LeadsModel->insert($lead)) {
 					$session['status'] = 'SUCCESS';
 					$session['message'] = 'You have successfully registered. Please Log In.';
 					$this->session->set_flashdata('user_login_status', $session);
 
+					$email_data = [
+						'user' => [
+							'name' => $data['name'],
+							'email' => $data['useremail'],
+							'password' => $data['contact'],
+						],
+						'verification_url' => $verification_link,
+					];
 					$recipients = [
 						[
 							"email" =>  $data['email'],
 							"name" =>  $data['name']
 						]
 					];
-					$subject = APP_NAME . " - Registration Success!";
-					$body = "Hi " .  $this->usersession['name'] . ", your username:" . $data['email'] . " and password:" . $data['contact'] . " Please <a href=" . base_url('login') . ">Login</a>";
-					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
+					$subject = "Welcome to " . APP_NAME . " Awards 2025!!";
+					$body = "Hi " .  $this->usersession['name'] . ",<br>Your login Details are as follows:<br>Username:" . $data['email'] . "<br>Password:" . $data['contact'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
+					$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
+					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+						$session['status'] = 'SUCCESS';
+						$session['message'] = 'You have successfully registered. Please Check your Email for the Login Credentials Email Verification Link.';
+						$this->session->set_flashdata('user_login_status', $session);
 						redirect('login');
 					}
 				} else {
 					$this->session->set_flashdata('user_login_status', $session);
 					redirect('agency-register');
 				}
-				
 			}
 		} else {
 			// $this->LeadsModel->insert();

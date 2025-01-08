@@ -197,15 +197,15 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Alert Dialogue</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				...
+				Details on this page cannot be changed once saved. Please confirm before saving.
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Make Changes</button>
+				<button type="submit" class="btn btn-primary">Save and Continue</button>
 			</div>
 		</div>
 	</div>

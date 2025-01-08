@@ -52,11 +52,25 @@
 	
 	<div class="col-xl-3 col-lg-6 col-12">
 		<div class="" id="agentDetails">
-			<label for="" class="form-label"> If Yes – Please select their name</label>
-			<select name="agent_name" class="form-select" required>
-				<option value="Nilam">Nilam</option>
-				<option value="Savitri">Savy</option>
-			</select>
+			<label for="" class="form-label"> Please select their name</label>
+			<!--<select name="agent_name" class="form-select" required>-->
+			<!--	<option value="Nilam">Nilam</option>-->
+			<!--	<option value="Savitri">Savy</option>-->
+			<!--</select>-->
+			<div class="row">
+				<div class="col-auto form-check">
+					<input class="form-check-input" type="radio" name="agent_name" value="Savitri" id="agentReferred">
+					<label class="form-check-label" for="flexRadioDefault2">
+						Savy
+					</label>
+				</div>
+				<div class="col-auto form-check">
+					<input class="form-check-input" type="radio" name="agent_name" value="Nilam">
+					<label class="form-check-label" for="flexRadioDefault1">
+						Nilam
+					</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="col-12">
@@ -65,11 +79,18 @@
 </div>
 <?= form_close() ?>
 <script>
+	$("#agentDetails").hide();
 	$("input[type='radio'][name='agent_referrer'").change(function() {
 		if ($(this).val() == "yes") {
 			$("#agentDetails").show();
+			$("input[name='agent_name']").each(function(index, element) { 
+                $(element).prop("required", true); 
+            });
 		} else {
 			$("#agentDetails").hide();
+			$("input[name='agent_name']").each(function(index, element) { 
+                $(element).prop("required", false); 
+            });
 		}
 		
 	});

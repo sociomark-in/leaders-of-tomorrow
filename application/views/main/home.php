@@ -43,22 +43,22 @@ foreach ($springboards as $key => $city) {
 						</div>
 					</div>
 				</div>
-				<?php if ((date('Y-m-d H:i:s') > '2024-10-24 09:23:00') && date('Y-m-d H:i:s') < '2024-11-01 12:00:00') :?>
-				<div class="swiper-slide">
-					<div class="diwali-section bg-red">
-						<div class="">
-							<div class="row justify-content-center">
-								<div class="col-12">
-									<picture>
-										<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-										<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-										<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
-									</picture>
+				<?php if ((date('Y-m-d H:i:s') > '2024-10-24 09:23:00') && date('Y-m-d H:i:s') < '2024-11-01 12:00:00') : ?>
+					<div class="swiper-slide">
+						<div class="diwali-section bg-red">
+							<div class="">
+								<div class="row justify-content-center">
+									<div class="col-12">
+										<picture>
+											<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
+										</picture>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				<?php endif ?>
 			</div>
 			<div class="swiper-button-next swiper-button-yellow"></div>
@@ -70,9 +70,9 @@ foreach ($springboards as $key => $city) {
 				spaceBetween: 30,
 				loop: true,
 				autoplay: {
-                   delay: 5000,
-                   disableOnInteraction: false,
-                 },
+					delay: 5000,
+					disableOnInteraction: false,
+				},
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true,
@@ -91,7 +91,9 @@ foreach ($springboards as $key => $city) {
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=FHjpRisiSidQNmqV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<lite-youtube videoid="vXoSrO_5u4Q">
+							<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=vXoSrO_5u4Q">VIDEO TITLE/DESCRIPTION</a>
+						</lite-youtube>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
@@ -208,13 +210,16 @@ foreach ($springboards as $key => $city) {
 							<div class="section-title">
 								<h2><span>Awards</span></h2>
 							</div>
-							<div class="">
+							<div class="mb-3">
 								<p data-aos="fade-up">
 									The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
 								</p>
-								<p data-aos="fade-up">
-									More information about categories and participation process will be released soon.
-								</p>
+							</div>
+							<div class="">
+								<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
+									<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+									Nominate Now
+								</a>
 							</div>
 						</div>
 					</div>
