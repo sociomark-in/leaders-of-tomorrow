@@ -175,7 +175,12 @@
 				<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-						<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+						<!--<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">-->
+						<select required name="organization[reach]" id="" class="form-select">
+							<option value="">Select Option</option>
+							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
+							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -194,19 +199,40 @@
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">No. Of Beneficiary</label>
-						<input required type="number" value="<?= $application['id_255205'] ?>" name="organization[beneficiary]" class="form-control">
+						<!--<input required type="number" value="<?= $application['id_255205'] ?>" name="organization[beneficiary]" class="form-control">-->
+						<select required name="organization[beneficiary]" id="" class="form-select">
+							<option value="">Select Option</option>
+							<option <?= ($application['id_255205'] == "Less than 100") ? "selected" : "" ?> value="Less than 100">Less than 100</option>
+							<option <?= ($application['id_255205'] == "100 - 500") ? "selected" : "" ?> value="100 - 500">100 - 500</option>
+							<option <?= ($application['id_255205'] == "500 - 1000") ? "selected" : "" ?> value="500 - 1000">500 - 1000</option>
+							<option <?= ($application['id_255205'] == "More than 1000") ? "selected" : "" ?> value="More than 1000">More than 1000</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">No. of community members directly impacted </label>
-						<input required type="number" value="<?= $application['id_255206'] ?>" name="organization[community_impact]" class="form-control">
+						<!--<input required type="number" value="<?= $application['id_255206'] ?>" name="organization[community_impact]" class="form-control">-->
+						<select required name="organization[community_impact]" id="" class="form-select">
+							<option value="">Select Option</option>
+							<option <?= ($application['id_255206'] == "Less than 100") ? "selected" : "" ?> value="Less than 100">Less than 100</option>
+							<option <?= ($application['id_255206'] == "100 - 500") ? "selected" : "" ?> value="100 - 500">100 - 500</option>
+							<option <?= ($application['id_255206'] == "500 - 1000") ? "selected" : "" ?> value="500 - 1000">500 - 1000</option>
+							<option <?= ($application['id_255206'] == "More than 1000") ? "selected" : "" ?> value="More than 1000">More than 1000</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">% of profits reinvested into social initiatives</label>
-						<input required type="number" value="<?= $application['id_255207'] ?>" name="organization[investment]" class="form-control">
+						<!--<input required type="number" value="<?= $application['id_255207'] ?>" name="organization[investment]" class="form-control">-->
+							<select required name="organization[investment]" id="" class="form-select">
+							<option value="">Select Option</option>
+							<option <?= ($application['id_255207'] == "Less than 10%") ? "selected" : "" ?> value="Less than 10%">Less than 10%</option>
+							<option <?= ($application['id_255207'] == "10 - 20") ? "selected" : "" ?> value="10 - 20">10% - 20%</option>
+							<option <?= ($application['id_255207'] == "20 - 40") ? "selected" : "" ?> value="20 - 40">20% - 40%</option>
+							<option <?= ($application['id_255207'] == "More than 40") ? "selected" : "" ?> value="More than 40">More than 40%</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xxl-4 col-xl-6 col-12">

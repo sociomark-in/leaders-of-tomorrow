@@ -24,9 +24,9 @@
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="">
-						<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
+						<label for="" class="form-label">How has your work contributed to the welfare of society or the environment? Describe the social or environmental outcomes achieved through your initiatives.</label>
 						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
-						<span class="form-text">(50 - 5000 characters)</span>
+						<span class="form-text">(Max 200 words)</span>
 					</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 					<div class="">
 						<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
 						<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
-						<span class="form-text">(50 - 5000 characters)</span>
+						<span class="form-text">(Max 200 words)</span>
 					</div>
 				</div>
 			</div>
@@ -73,37 +73,21 @@
 			":hidden", ":focus"
 		],
 		rules: {
-			initiative_tech: {
+			case_study_4: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_impact: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_scalability: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_info: {
+			case_study_5: {
 				maxlength: 5000,
 				minlength: 50
 			},
 		},
 		messages: {
-			initiative_tech: {
+			case_study_4: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_impact: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_scalability: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_info: {
+			case_study_5: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
