@@ -98,6 +98,7 @@ class AuthAPIController extends CI_Controller
 				$this->session->set_tempdata('email_verify_token', $token_session, 600);
 				$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
 
+
 				$email_data = [
 					'user' => [
 						'name' => $data['name'],

@@ -90,7 +90,7 @@
 															<strong>Password:</strong>&nbsp;<?= $user['password'] ?>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Kindly verify your email address first by clicking the link below
+															Kindly verify your email address first by clicking the link below. The below link is valid for 10 minutes only.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"

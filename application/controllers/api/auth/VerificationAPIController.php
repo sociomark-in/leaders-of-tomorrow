@@ -8,7 +8,7 @@ class VerificationAPIController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
-
+		
 		$this->load->library('email/BrevoCURLMail');
 
 
@@ -26,17 +26,12 @@ class VerificationAPIController extends CI_Controller
 				$user = json_decode($this->UserModel->get(null, ['useremail' => $email]), true)[0];
 				if (count($user)) {
 					/* Send Verification EMail */
-					// $token = hash('md5', hash('sha256', json_encode([
-					// 	'email' => $this->request['email'],
-					// 	'status' => true,
-					// ])));
-					$token = $this->encryption->encryot(json_encode([
+					$token = hash('md5', hash('sha256', json_encode([
 						'email' => $this->request['email'],
 						'status' => true,
-					]));
+					])));
 					$session = [
 						'token_id' => $token,
-						'email' => $this->request['email'],
 						'dispose_after' => ''
 					];
 					$this->session->set_tempdata('email_verify_token', $session, 600);

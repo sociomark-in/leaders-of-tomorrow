@@ -94,17 +94,6 @@
 					'imageFormat': 'The image format is not allowed ({{ value }} only).'
 				}
 			});
-
-			$("input[type='file']").each(function(index, element) {
-				if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
-					$(element).prop("required", true);
-					console.log("Absent");
-					
-				} else {
-					$(element).prop("required", false);
-					console.log("Present");
-				}
-			});
 			/* PDF.js - Run PDF Version Check */
 			$('.dropify').each((index, elem) => {
 				$(elem).on('change', function(event) {

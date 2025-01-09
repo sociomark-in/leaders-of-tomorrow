@@ -43,7 +43,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-outline-red text-uppercase" href="<?= base_url('history/season-11') ?>">Season&nbsp;11</a>
+					<a class="btn btn-outline-red text-uppercase" href="<?= base_url('history/season-11') ?>">Past&nbsp;Season</a>
 				</li>
 				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -18,8 +18,7 @@ class TestController extends CI_Controller
 	public function pdf()
 	{
 		$this->load->library('pdflib/MakeDocket');
-		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
-		$this->makedocket->init('P', 'mm', 'A4')->load(null, 'stage_1_digital')->generate();
+		$this->makedocket->init('P', 'mm', 'A4')->load('docket_1_digital')->generate();
 	}
 
 	public function csv()
@@ -88,7 +87,7 @@ class TestController extends CI_Controller
 		];
 		// $this->load->view('panel/emails/participant_nomination_reject', $this->data);
 
-		// print_r(hash('md5', hash('sha256', "P@rtner#LOTS@12")));
+		print_r(hash('md5', hash('sha256', "P@rtner#LOTS@12")));
 	}
 
 	public function twiliosms()

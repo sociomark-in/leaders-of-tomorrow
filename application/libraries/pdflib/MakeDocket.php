@@ -60,7 +60,8 @@ class MakeDocket extends Fpdf
 	public function load($data = null, $layout = 'stage_1_msme_1')
 	{
 		switch ($layout) {
-			case 'stage_1_digital':
+			case 'docket_1_digital':
+			case 'docket_1_digital':
 				include_once __DIR__ . '/layout/' . $layout . '.php';
 				break;
 
