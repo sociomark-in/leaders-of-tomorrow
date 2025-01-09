@@ -37,7 +37,7 @@
 						<div class="wrap">
 							<picture>
 								<source srcset="" type="image/">
-								<img class="w-100" src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/banner.jpg') ?>" alt="<?= $city['name'] ?> Banner">
+								<img class="w-100" src="<?= base_url('assets/images/cities/' . str_replace(" ", "-", strtolower($city['name'])) . '/banner.jpg') ?>" alt="<?= $city['name'] ?> Banner">
 							</picture>
 						</div>
 					</div>
@@ -272,11 +272,11 @@
 					</script>
 				</div>
 				<div class="col-12 d-none">
-					<a href="<?= base_url('city/' . strtolower($city['name'])  . '/gallery') ?>" class="btn btn-red">View More</a>
+					<a href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name'])) . '/gallery') ?>" class="btn btn-red">View More</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= strtolower($city['name']) ?>-lineart-color.png')">
+	<div class="footer-lineart" style="background-image: url('<?= base_url('assets/images/icons/city/') ?><?= str_replace(" ", "-", strtolower($city['name'])) ?>-lineart-color.png')">
 	</div>
 </main>

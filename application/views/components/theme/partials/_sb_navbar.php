@@ -10,6 +10,7 @@ switch ($city['name']) {
 	case 'Jaipur':
 	case 'Pune':
 	case 'Indore':
+	case 'Delhi NCR':
 		$past = "d-none";
 		break;
 
@@ -42,27 +43,27 @@ switch ($city['name']) {
 					<a class="btn btn-red text-uppercase" href="<?= base_url('all-cities') ?>">All Springboards</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#">Home</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#about">About</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#about">About</a>
 				</li>
 				<li class="nav-item <?= $past ?>">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#agenda">Agenda</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#agenda">Agenda</a>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#speakers">Speakers</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#speakers">Speakers</a>
 				</li>
 				<li class="nav-item <?= $active ?> ">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#gallery">Gallery</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#gallery">Gallery</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('city/' . strtolower($city['name'])) ?>#partners">Partners</a>
+					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#partners">Partners</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav gap-2 <?= $past ?>">
 				<li class="nav-item">
-					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . strtolower($city['name'])  . '/register') ?>">Register</a>
+					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))  . '/register') ?>">Register</a>
 				</li>
 			</ul>
 		</div>

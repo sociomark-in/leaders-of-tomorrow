@@ -64,8 +64,8 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Delhi NCR",
 				'theme' => "Delhi: Spotlight on India's New Startup Capital",
-				'date' => '2025-01-17',
-				'venue' => ""
+				'date' => '2025-01-10 17:00:00',
+				'venue' => " Hotel Pride Plaza, New Delhi."
 			],
 			[
 				'name' => "Bengaluru",

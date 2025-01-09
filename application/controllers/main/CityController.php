@@ -26,7 +26,7 @@ class CityController extends BaseController
 			}
 		}
 		$this->data['city']['gallery'] = $gallery;
-		switch ($city) {
+		switch (str_replace(' ', '-', $city)) {
 			case 'mumbai':
 				$this->data['page'] = [
 					'title' => "Mumbai Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -466,6 +466,15 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('indore', $this->data);
 				break;
+			case 'delhi-ncr':
+				$this->data['page'] = [
+					'title' => "Delhi Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Delhi NCR",
+				];
+				$this->load->city_view('delhi', $this->data);
+				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -585,7 +594,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (strtolower($sb['name']) == $city && $city == 'indore') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == '') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
