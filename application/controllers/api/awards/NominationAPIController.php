@@ -189,7 +189,7 @@ class NominationAPIController extends CI_Controller
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
 
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
@@ -484,7 +484,7 @@ class NominationAPIController extends CI_Controller
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
 
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
@@ -766,7 +766,7 @@ class NominationAPIController extends CI_Controller
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
 
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
@@ -1041,7 +1041,7 @@ class NominationAPIController extends CI_Controller
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
 
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
@@ -1322,7 +1322,7 @@ class NominationAPIController extends CI_Controller
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
 
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
@@ -1595,7 +1595,7 @@ class NominationAPIController extends CI_Controller
 							"id_255901" => $this->request['contact_person']['name'],
 							"id_255902" => $this->request['contact_person']['email'],
 							"id_255903" => $this->request['contact_person']['contact'],
-							"stage_status" => $this->request['stage'],
+							"stage_status" => $s,
 							"status" => '4',
 							"created_by" => $this->usersession['id'],
 
