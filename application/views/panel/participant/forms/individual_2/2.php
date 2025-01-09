@@ -175,7 +175,12 @@
 				<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-						<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+						<!--<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">-->
+								<select required name="organization[reach]" id="" class="form-select">
+							<option value="">Select Option</option>
+							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
+							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">

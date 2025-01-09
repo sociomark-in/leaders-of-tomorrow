@@ -46,9 +46,8 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<label for="" class="form-label">Business Segment</label>
 						<select required name="organization[segment]" id="" class="form-select">
 							<option value="">Select Business Segment</option>
-							<option value="Micro">Micro</option>
-							<option value="Small">Small</option>
-							<option value="Medium">Medium</option>
+							<option value="Start-up">Start-up</option>
+							<option value="MSME">MSME</option>
 						</select>
 					</div>
 				</div>
