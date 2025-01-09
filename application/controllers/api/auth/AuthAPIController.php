@@ -86,12 +86,13 @@ class AuthAPIController extends CI_Controller
 			redirect('login');
 		} else {
 			if ($this->UserModel->insert($data)) {
-				$token = hash('md5', hash('sha256', json_encode([
+				$token = $this->encryption->encrypt(json_encode([
 					'email' => $this->request['email'],
 					'status' => true,
-				])));
+				]));
 				$token_session = [
 					'token_id' => $token,
+					'email' => $this->request['email'],
 					'dispose_after' => ''
 				];
 				$this->session->set_tempdata('email_verify_token', $token_session, 600);

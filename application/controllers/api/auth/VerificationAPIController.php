@@ -8,7 +8,7 @@ class VerificationAPIController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('panel/UserModel');
-		
+
 		$this->load->library('email/BrevoCURLMail');
 
 
@@ -26,12 +26,17 @@ class VerificationAPIController extends CI_Controller
 				$user = json_decode($this->UserModel->get(null, ['useremail' => $email]), true)[0];
 				if (count($user)) {
 					/* Send Verification EMail */
-					$token = hash('md5', hash('sha256', json_encode([
+					// $token = hash('md5', hash('sha256', json_encode([
+					// 	'email' => $this->request['email'],
+					// 	'status' => true,
+					// ])));
+					$token = $this->encryption->encryot(json_encode([
 						'email' => $this->request['email'],
 						'status' => true,
-					])));
+					]));
 					$session = [
 						'token_id' => $token,
+						'email' => $this->request['email'],
 						'dispose_after' => ''
 					];
 					$this->session->set_tempdata('email_verify_token', $session, 600);
@@ -76,24 +81,26 @@ class VerificationAPIController extends CI_Controller
 	}
 	public function verify($type)
 	{
-		$this->request = $this->input->get();
+		$this->request = $_SESSION['email_verify_token'];
 
 		switch ($type) {
 			case 'email':
-				$user = json_decode($this->UserModel->get(null, ['useremail' => $this->usersession['useremail']]), true)[0];
-				if ($this->UserModel->update(['is_email_verified' => 1], ['id' => $user['id']])) {
+				$user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+				$session = [
+					'status' => 'ERROR',
+					'message' => 'Unknown Error Occured! Please Verify your Email Again!'
+				];
+				if ($this->UserModel->update(['is_email_verified' => 1], ['useremail' => $this->request['email']])) {
 					$session = [
 						'status' => 'SUCCESS',
+						'message' => 'Your Email Address is Verified! Please Log In Again!'
 					];
 					$user = json_decode($this->UserModel->get(null, ['useremail' => $this->usersession['useremail']]), true)[0];
 					$this->usersession = $user;
 					$_SESSION['awards_panel_user'] = $user;
-				} else {
-					$session = [
-						'status' => 'ERROR',
-					];
 				}
-				redirect('dashboard');
+				$this->session->set_flashdata('user_login_status', $session);
+				redirect('login');
 				break;
 			default:
 				break;

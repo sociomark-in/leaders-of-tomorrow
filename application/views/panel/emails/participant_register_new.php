@@ -79,7 +79,7 @@
 															Dear <strong><?= $user['name'] ?></strong>,
 														</div>
 														<div style="margin-bottom:20px;line-height:1.5">
-															Thank you for creating your account on the <strong><?= APP_NAME ?> 2025.</strong> platform. We
+															Thank you for creating your account on the <strong><?= APP_NAME ?> 2025</strong>. We
 															are excited to have you onboard as part of this journey celebrating excellence in MSMEs.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
