@@ -1080,7 +1080,11 @@ class NominationAPIController extends CI_Controller
 							'id_255203' => $this->request["organization_services"],
 							'id_255204' => $this->request["organization"]['beneficiary'],
 							'id_255205' => $this->request["organization"]['members'],
-							'id_255206' => $this->request["organization"]['investment'],
+							'id_255206' => implode([
+								$this->request["organization"]['investment']['family'],
+								$this->request["organization"]['investment']['investors'],
+								$this->request["organization"]['investment']['others'],
+							]),
 							'id_255207' => $this->request["organization"]['generation'],
 
 							'stage_status' => $s

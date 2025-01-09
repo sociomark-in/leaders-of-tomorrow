@@ -42,7 +42,7 @@
 				<div class="">
 					<label for="" class="form-label">Incorporation Certificate</label>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(PDF of Maximum Size 500KB)</span>
+					<span class="form-text">Company Incorporation Certificate/Business Registration/GST (PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -84,6 +84,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
 		<script>
+			$("input[type='file']").each(function(index, element) {
+				if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+					$(element).prop("required", true);
+				} else {
+					$(element).prop("required", false);
+				}
+			});
 			$('.dropify').dropify({
 				error: {
 					'fileSize': 'The file size is too big ({{ value }} max).',

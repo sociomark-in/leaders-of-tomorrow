@@ -173,7 +173,20 @@
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Generational Status</label>
-						<input required type="number" value="<?= $application_temp['id_255204'] ?>" name="organization[beneficiary]" class="form-control">
+						<!-- <input required type="number" min="0" max="100" value="<?= $application_temp['id_255204'] ?>" name="organization[beneficiary]" class="form-control"> -->
+						<select required name="organization[beneficiary]" id="" class="form-select">
+							<option value="">Select Generation</option>
+							<option <?= ($application['id_255204'] == "1st") ? "selected" : "" ?> value="1st">1st </option>
+							<option <?= ($application['id_255204'] == "2nd") ? "selected" : "" ?> value="2nd">2nd</option>
+							<option <?= ($application['id_255204'] == "3rd") ? "selected" : "" ?> value="3rd">3rd</option>
+							<option <?= ($application['id_255204'] == "4th") ? "selected" : "" ?> value="4th">4th</option>
+							<option <?= ($application['id_255204'] == "5th") ? "selected" : "" ?> value="5th">5th</option>
+							<option <?= ($application['id_255204'] == "6th") ? "selected" : "" ?> value="6th">6th</option>
+							<option <?= ($application['id_255204'] == "7th") ? "selected" : "" ?> value="7th">7th</option>
+							<option <?= ($application['id_255204'] == "8th") ? "selected" : "" ?> value="8th">8th</option>
+							<option <?= ($application['id_255204'] == "9th") ? "selected" : "" ?> value="9th">8th</option>
+							<option <?= ($application['id_255204'] == "10th") ? "selected" : "" ?> value="10th">8th</option>
+						</select>
 					</div>
 				</div>
 
@@ -192,7 +205,20 @@
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Equity spilt between family members and investors</label>
-						<input required type="text" value="<?= $application_temp['id_255206'] ?>" name="organization[investment]" class="form-control">
+						<div class="row g-3">
+							<?php 
+							$investment = explode('-',$application_temp['id_255206']);
+							?>
+							<div class="col-lg-auto col-12">
+								<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment]['family']" class="form-control">
+							</div>
+							<div class="col-lg-auto col-12">
+								<input placeholder="% Investor Equity" type="number" min="0" max="100" value="<?= $investment[1]  ?>" name="organization[investment]['investors']" class="form-control">
+							</div>
+							<div class="col-lg-auto col-12">
+								<input placeholder="& Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment]['others']" class="form-control">
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -255,10 +281,6 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			organization_mission_vision: {
-				maxlength: 5000,
-				minlength: 50
-			},
 			organization_services: {
 				maxlength: 5000,
 				minlength: 50
@@ -272,10 +294,6 @@
 				wordCount: "Error"
 			},
 			organization_overview: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_mission_vision: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},

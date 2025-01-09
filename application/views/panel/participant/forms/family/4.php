@@ -34,6 +34,7 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
+							<span class="form-text">(Details should be measurable and generic statements should be avoided)</span>
 							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
