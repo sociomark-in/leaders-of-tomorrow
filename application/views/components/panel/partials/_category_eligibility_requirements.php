@@ -32,7 +32,8 @@
 						include_once APPPATH . '/views/panel/participant/categories/criteria/msme.php';
 						# code...
 						break;
-				} ?>
+				} 
+				?>
 			</div>
 			<div class="modal-footer">
 				<a href="<?= base_url('dashboard') ?>" class="btn btn-red-outline">Back to Dashboard</a>

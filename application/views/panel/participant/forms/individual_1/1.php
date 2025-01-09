@@ -83,21 +83,21 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 							<label for="" class="form-label">State</label>
 							<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
 							<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+									<option value="">Select State</option>
+									<?php for ($i = 0; $i < 10; $i++) : ?>
+										<option value="Select <?= $i ?>">Select <?= $i ?></option>
+									<?php endfor ?>
+								</select> -->
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
 							<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
 							<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+									<option value="">Select City</option>
+									<?php for ($i = 0; $i < 10; $i++) : ?>
+										<option value="Select <?= $i ?>">Select <?= $i ?></option>
+									<?php endfor ?>
+								</select> -->
 						</div>
 					</div>
 				</div>
@@ -215,8 +215,11 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z '\s']*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
@@ -226,6 +229,22 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			":hidden", ":focus"
 		],
 		rules: {
+			"organization[name]": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
 			"contact_person[email]": {
 				emailregex: true
 			},
@@ -234,6 +253,22 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			}
 		},
 		messages: {
+			'organization[name]': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
 			'contact_person[email]': {
 				emailregex: 'Please enter a valid email address.'
 			},

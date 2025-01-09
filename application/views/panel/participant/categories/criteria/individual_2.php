@@ -29,9 +29,7 @@
 		mention what was the innovation/impact during the eligibility period April 01, 2022, to March 31,
 		2024</li>
 	<li>Project / initiative cannot be in ideation / development stage</li>
-	<li>The participating entity must have all applicable trade specific registrations example: Certificate
-		of Incorporation, MSME Certificate, GST Registration Certificate, audited financials of the last 2
-		years, etc.</li>
+	<li>The participating entity must have all applicable trade specific registrations example: Certificate of Incorporation, MSME Certificate, GST Registration Certificate, DPIIT certificate audited financials of the last 2 years, etc.</li>
 	<li>The individual applying for the Awards must be a founder, co-founder, owner, or a prominent
 		leader of the business of an Indian registered MSMEs. This could include CEOs, managing
 		directors, or individuals in key leadership positions in the organizations</li>
