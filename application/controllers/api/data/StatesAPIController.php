@@ -12,22 +12,14 @@ class StatesAPIController extends CI_Controller
 
 	public function get_all_states()
 	{
-		$sample = [
-			'Value 1',
-			'Value 2',
-			'Value 3',
-			'Value 4',
-			'Value 5',
-			'Value 6',
-		];
+		$this->load->model('data/StateModel');
+		$this->load->model('data/CityModel');
+		
+		$data['states'] = json_decode($this->StateModel->get(), true);
 
-		foreach ($sample as $key => $value) {
-			$data [] = [
-				'id' => $key,
-				'text' => $value,
-			];
-		}
-
+		// foreach ($data['states'] as $key => $state) {
+		// 	$data['states'][$key]['cities'] => $this->CityModel->get(null, [''])
+		// }
 
 
 		$this->output->set_output(json_encode($data));
