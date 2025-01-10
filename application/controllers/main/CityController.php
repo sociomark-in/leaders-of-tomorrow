@@ -594,7 +594,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == '') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'delhi-ncr') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

@@ -89,7 +89,7 @@
 															<strong>Username:</strong>&nbsp;<?= $user['email'] ?><br>
 															<strong>Password:</strong>&nbsp;<?= $user['password'] ?>
 														</div>
-														<div style="margin-bottom:10px;line-height:1.5">
+														<!-- <div style="margin-bottom:10px;line-height:1.5">
 															Kindly verify your email address first by clicking the link below. The below link is valid for 10 minutes only.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
@@ -98,7 +98,7 @@
 																target="_blank">
 																Verify Your Email Address
 															</a>
-														</div>
+														</div> -->
 														<div style="margin-bottom:10px;line-height:1.5">
 															You can now start your application process and explore award categories that best suit your
 															achievements.
