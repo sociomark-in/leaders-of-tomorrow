@@ -55,7 +55,7 @@
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Name of the Applicant</label>
+									<label for="" class="form-label">Name of the Applicant (MD/CEO/Founder or equivalent)</label>
 									<input required type="text" value="<?= $application["name"] ?>" name="name" class="form-control">
 								</div>
 							</div>
@@ -634,109 +634,67 @@
 		dateFormat: 'dd/mm/yy',
 	});
 
-	$.validator.addMethod("greater_than", function(value, element, param) {
-
-		var d1 = new Date(Date.parse(value));
-		var d2 = new Date(Date.parse($(param).val()));
-		console.log([value, $(param).val()]);
-		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
-
-		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
-	});
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z\s]*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
 	});
-	$("#formFullView").validate({
-		ignore: [
-			":hidden", ":focus"
-		],
+	$("#form_option_01").validate({
+		
 		rules: {
+			"name": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
 			"contact_person[email]": {
 				emailregex: true
 			},
 			"contact_person[contact]": {
 				phone: true
-			},
-			overview: {
-				wordCount: 300
-			},
-			organization_overview: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_mission_vision: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_services: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			services_stmt: {
-				wordCount: 300
-			},
-			case_study_1: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			case_study_2: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_strategy: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_end_date: {
-				greater_than: '[name=initiative_start_date]'
-			},
+			}
 		},
 		messages: {
+			'name': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
 			'contact_person[email]': {
 				emailregex: 'Please enter a valid email address.'
 			},
 			'contact_person[contact]': {
 				phone: 'Please enter a valid contact number'
-			},
-			overview: {
-				wordCount: "Error"
-			},
-			organization_overview: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_mission_vision: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_services: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			services_stmt: {
-				wordCount: "Error"
-			},
-			case_study_1: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			case_study_2: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_strategy: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_end_date: {
-				greater_than: 'End Date should be greater than Start Date'
-			},
+			}
 		}
 	});
 </script>

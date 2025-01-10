@@ -53,7 +53,7 @@
 																	</div>
 																</div>
 															</div> -->
-															
+
 															<input type="hidden" name="do_register" value="on">
 															<input type="hidden" name="agency_id" value="<?= $agency['agent_id'] ?>">
 															<div class="col-12">
@@ -89,9 +89,45 @@
 													</fieldset>
 													<?= form_close() ?>
 													<script>
-														$('#formWizard').validate({
-
+														$.validator.addMethod("emailregex", function(value, element) {
+															return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 														})
+														$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+															return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+														})
+														$.validator.addMethod("letters", function(value, element) {
+															return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
+														});
+														$.validator.addMethod("phone", function(value, element) {
+															return this.optional(element) || /^[0-9]*$/i.test(value);
+														});
+														$("#formWizard").validate({
+															ignore: [
+																":hidden", ":focus"
+															],
+															rules: {
+																"name": {
+																	letters: true,
+																},
+																"email": {
+																	emailregex: true
+																},
+																"contact": {
+																	phone: true
+																}
+															},
+															messages: {
+																'name': {
+																	letters: "Please enter a valid name."
+																},
+																'email': {
+																	emailregex: 'Please enter a valid email address.'
+																},
+																'contact': {
+																	phone: 'Please enter a valid contact number'
+																}
+															}
+														});
 													</script>
 												</div>
 											</div>

@@ -108,13 +108,6 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_strategy: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			initiative_end_date: {
-				greater_than: '[name=initiative_start_date]'
-			}
 		},
 		messages: {
 			case_study_1: {
@@ -125,13 +118,6 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_strategy: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			initiative_end_date: {
-				greater_than: 'End Date should be greater than Start Date'
-			}
 		}
 	});
 </script>

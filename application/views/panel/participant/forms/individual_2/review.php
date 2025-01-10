@@ -22,7 +22,7 @@
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Name of the Applicant</label>
+									<label for="" class="form-label">Name of the Applicant (MD/CEO/Founder or equivalent)</label>
 									<input required type="text" value="<?= $application['name'] ?>" name="name" class="form-control">
 								</div>
 							</div>
@@ -351,6 +351,7 @@
 										<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 								</div>
 							</div>
 							<div class="col-12">
@@ -586,15 +587,147 @@
 	</div>
 </div>
 <script>
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
+	$.validator.addMethod("letters", function(value, element) {
+		return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
+	});
+	$.validator.addMethod("phone", function(value, element) {
+		return this.optional(element) || /^[0-9]*$/i.test(value);
+	});
 	$("#formFullView").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			//Rules
+			"organization[name]": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
+			"contact_person[email]": {
+				emailregex: true
+			},
+			"contact_person[contact]": {
+				phone: true
+			},
+
+			organization_overview: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			organization_services: {
+				maxlength: 5000,
+				minlength: 50
+			},
+
+			case_study_1: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_2: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_3: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_5: {
+				maxlength: 5000,
+				minlength: 50
+			},
 		},
 		messages: {
-			//messages
+			'organization[name]': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
+			'contact_person[email]': {
+				emailregex: 'Please enter a valid email address.'
+			},
+			'contact_person[contact]': {
+				phone: 'Please enter a valid contact number'
+			},
+
+			organization_overview: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			organization_services: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+
+			case_study_1: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_2: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_3: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_4: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_5: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+		}
+	});
+
+	$("input[type='file']").each(function(index, element) {
+		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+			$(element).prop("required", true);
+		} else {
+			$(element).prop("required", false);
+		}
+	});
+	$('.dropify').dropify({
+		error: {
+			'fileSize': 'The file size is too big ({{ value }} max).',
+			'minWidth': 'The image width is too small ({{ value }}}px min).',
+			'maxWidth': 'The image width is too big ({{ value }}}px max).',
+			'minHeight': 'The image height is too small ({{ value }}}px min).',
+			'maxHeight': 'The image height is too big ({{ value }}px max).',
+			'imageFormat': 'The image format is not allowed ({{ value }} only).'
 		}
 	});
 </script>

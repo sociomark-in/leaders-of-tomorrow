@@ -18,16 +18,28 @@
 	</div>
 	<div class="col-12">
 		<div class="p-3 bg-light">
-			<ul>
-				<li>By submitting this form from the company’s official email ID, I hereby confirm that I am duly authorized to make this declaration as an authorized representative of the company.</li>
-				<li>All the information contained in this application is true and accurate to the best of my knowledge.</li>
-				<li>I understand that <strong><?= APP_NAME ?> Awards</strong> and it’s affiliates may choose not to take steps to verify the information contained therein, and responsibility for any harm or damages caused by my fraudulent or negligent misrepresentations will be my own. I also agree to abide by the terms and conditions mentioned on the Awards website and ‘<strong><?= APP_NAME ?> Awards</strong> Nomination Form’</li>
-				<li>I authorize <strong><?= APP_NAME ?> Awards</strong> and it’s affiliates to use the content submitted as part of this entry, in whole or in part and use and display such entry, which shall include trade publications, press releases, electronic posting to the Awards website, electronic hyperlinks to the website of the Participant, and any display format selected by <strong><?= APP_NAME ?> Awards</strong> during the awards ceremony or at a later point in time, for a period of five years. Any such use shall ensure confidentiality and anonymity of information and data,
-					as applicable.</li>
-				<li>This declaration along with all other details pertaining to ‘<strong><?= APP_NAME ?> Awards</strong>’ are authorized and validated by the sender and shared using an official email ID of the organization.</li>
-				<li>This declaration must be filled by an authorized signatory (preferably Chief Executive Officer or Chief Risk Officer) from the participant organization.</li>
-				<li>In absence of a duly filled 'Declaration’ document, your nomination may not be considered.</li>
+			<ul class="mb-3">
+				<li>
+					I /We for and on behalf of my/ our organization declare to have read and understood the rules and regulations governing the Awards and voluntarily express our interest in participating in the Event.
+				</li>
+				<li>
+					I/We declare that all information submitted as part of our application is complete, true and accurate. We understand that any kind of misrepresentation/ false claims could lead to disqualification at any point of evaluation during the Awards.
+				</li>
+				<li>
+					I/We declare that the Promoters and Key Managerial Personnel of the participating entity and the participant entity itself are not subject to any litigations or disqualifications by any court of law or regulatory authorities.
+				</li>
+				<li>
+					We authorize the Awards Management to use the content submitted as part of my/our entry, in whole or in part and use and display such entry, which shall include trade publications, press releases, electronic posting on the Awards website, electronic hyperlinks to the website of the Participant, and any display format selected by the Awards Management during or after the Awards event.
+				</li>
+				<li>
+					I/ We further declare and confirm that (i) the decision taken by the investors and/or BCCL will be final and binding and we shall not raise or make any claims, allegations or action in respect of the same and the event or any part thereof against the investors and/or BCCL, its channels, directors, managements, employees, agents or authorised representatives; (ii) we shall not make any statements, claims or press releases, in any manner, directly or through any third party, on any public platform including any social media or any other online media in respect of our participation, selection and shortlisting or winning (as the case may be) relating to the event and that such act may lead to disqualification
+				</li>
 			</ul>
+			<div class="">
+				<p>Particiapant's Name:&nbsp;<strong><?= $application['name'] ?></strong></p>
+				<p>Designation:&nbsp;<strong><?= $application['designation'] ?></strong></p>
+				<p>Date:&nbsp;<strong><?= date('d-m-Y') ?></strong></p>
+			</div>
 		</div>
 	</div>
 	<div class="col-xl-4 col-lg-6 col-12">
@@ -49,7 +61,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="col-xl-3 col-lg-6 col-12">
 		<div class="" id="agentDetails">
 			<label for="" class="form-label"> Please select their name</label>
@@ -83,16 +95,16 @@
 	$("input[type='radio'][name='agent_referrer'").change(function() {
 		if ($(this).val() == "yes") {
 			$("#agentDetails").show();
-			$("input[name='agent_name']").each(function(index, element) { 
-                $(element).prop("required", true); 
-            });
+			$("input[name='agent_name']").each(function(index, element) {
+				$(element).prop("required", true);
+			});
 		} else {
 			$("#agentDetails").hide();
-			$("input[name='agent_name']").each(function(index, element) { 
-                $(element).prop("required", false); 
-            });
+			$("input[name='agent_name']").each(function(index, element) {
+				$(element).prop("required", false);
+			});
 		}
-		
+
 	});
 	$("#formView").validate({
 		ignore: [

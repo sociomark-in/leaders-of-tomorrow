@@ -24,7 +24,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				</div>
 				<div class="col-xl-6 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">Name of the Applicant</label>
+						<label for="" class="form-label">Name of the Applicant (MD/CEO/Founder or equivalent)</label>
 						<input required type="text" name="name" class="form-control">
 					</div>
 				</div>
@@ -215,7 +215,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);

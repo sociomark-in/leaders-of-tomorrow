@@ -24,7 +24,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				</div>
 				<div class="col-xl-6 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">Name of the Applicant</label>
+						<label for="" class="form-label">Name of the Applicant (MD/CEO/Founder or equivalent)</label>
 						<input required type="text" name="name" class="form-control">
 					</div>
 				</div>
@@ -215,17 +215,34 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z\s]*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
 	});
 	$("#form_option_01").validate({
-		ignore: [
-			":hidden", ":focus"
-		],
+		
 		rules: {
+			"name": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
 			"contact_person[email]": {
 				emailregex: true
 			},
@@ -234,6 +251,22 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			}
 		},
 		messages: {
+			'name': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
 			'contact_person[email]': {
 				emailregex: 'Please enter a valid email address.'
 			},

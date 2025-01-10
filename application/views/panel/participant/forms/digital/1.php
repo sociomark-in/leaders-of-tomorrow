@@ -219,7 +219,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
 	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z '\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
@@ -229,7 +229,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			":hidden", ":focus"
 		],
 		rules: {
-			"organization[name]": {
+			"name": {
 				letters: true,
 			},
 			"organization[address][state]": {
@@ -253,7 +253,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			}
 		},
 		messages: {
-			'organization[name]': {
+			'name': {
 				letters: "Please enter a valid name."
 			},
 			'organization[address][state]': {

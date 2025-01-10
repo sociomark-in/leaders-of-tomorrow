@@ -168,6 +168,7 @@
 							<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 							<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 						</select>
+						<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 					</div>
 				</div>
 

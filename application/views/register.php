@@ -115,7 +115,7 @@
 																	<input type="hidden" name="is_email_verified" value="<?= $profile['is_email_verified'] ?>">
 																	<input type="email" name="email" value="<?= $profile['email'] ?>" class="form-control" required>
 																<?php else: ?>
-																	<input type="text" name="email" class="form-control" required>
+																	<input type="email" name="email" class="form-control" required>
 																<?php endif ?>
 															</div>
 															<div class="col-12">
@@ -164,6 +164,46 @@
 																},
 																utilsScript: "../../build/js/utils.js?1562189064761",
 																utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/js/utils.js",
+															});
+
+															$.validator.addMethod("emailregex", function(value, element) {
+																return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+															})
+															$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+																return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+															})
+															$.validator.addMethod("letters", function(value, element) {
+																return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
+															});
+															$.validator.addMethod("phone", function(value, element) {
+																return this.optional(element) || /^[0-9]*$/i.test(value);
+															});
+															$("#form_option_01").validate({
+																ignore: [
+																	":hidden", ":focus"
+																],
+																rules: {
+																	"name": {
+																		letters: true,
+																	},
+																	"email": {
+																		emailregex: true
+																	},
+																	"contact": {
+																		phone: true
+																	}
+																},
+																messages: {
+																	'name': {
+																		letters: "Please enter a valid name."
+																	},
+																	'email': {
+																		emailregex: 'Please enter a valid email address.'
+																	},
+																	'contact': {
+																		phone: 'Please enter a valid contact number'
+																	}
+																}
 															});
 														</script>
 													</fieldset>

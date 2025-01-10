@@ -130,6 +130,7 @@
 							<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 							<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 						</select>
+						<span class="form-text">(On payroll + On contract) as on March 31, 2024 In India</span>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -143,6 +144,7 @@
 							<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 							<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 						</select>
+						<span class="form-text">(On payroll + On contract) as on March 31, 2024 Globally</span>
 					</div>
 				</div>
 
