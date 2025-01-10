@@ -2,6 +2,8 @@
 $data['category'] = $category;
 $this->load->view('components/panel/partials/_category_eligibility_requirements', $data); ?>
 
+<script src="https://cdn.jsdelivr.net/npm/country-state-city@3.2.2/dist/country-state-city.min.js"></script>
+
 <?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'form_option_01']) ?>
 <div class="mb-3">
 	<input type="hidden" name="category_id" value="<?= $category_id ?>">
@@ -81,26 +83,66 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">State</label>
-							<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-							<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+								<option value="">Select State</option>
+								<?php foreach ($locations['states'] as $key => $state)  : ?>
+									<option value="<?= $state['title'] ?>"><?= $state['title'] ?></option>
+								<?php endforeach ?>
+							</select>
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
 							<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-							<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+							<!-- <select required name="organization[address][city]" id="citySelect" class="form-select">
+								<option value="">Select City</option>
+									<?php for ($i = 0; $i < 10; $i++) : ?>
+									<option value="Select <?= $i ?>">Select <?= $i ?></option>
+								<?php endfor ?>
+							</select> -->
 						</div>
 					</div>
 				</div>
+				<script>
+					const stateSelect = document.getElementById("stateSelect");
+					const citySelect = document.getElementById("citySelect");
+
+					// Get all states of India
+					const states = csc.getStatesOfCountry('IN');
+
+					// Populate state select
+					states.forEach(state => {
+						const option = document.createElement("option");
+						option.value = state.isoCode;
+						option.text = state.name;
+						stateSelect.appendChild(option);
+					});
+
+					// Event listener for state change
+					stateSelect.addEventListener("change", () => {
+						const selectedState = stateSelect.value;
+
+						// Get cities of the selected state
+						const cities = csc.getCitiesOfState('IN', selectedState);
+
+						citySelect.innerHTML = ""; // Clear previous cities
+
+						// Add "Select City" option
+						const selectCityOption = document.createElement("option");
+						selectCityOption.value = "";
+						selectCityOption.text = "Select City";
+						citySelect.appendChild(selectCityOption);
+
+						// Populate city select
+						cities.forEach(city => {
+							const option = document.createElement("option");
+							option.value = city.name;
+							option.text = city.name;
+							citySelect.appendChild(option);
+						});
+					});
+				</script>
+
 
 				<!-- <div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
@@ -225,7 +267,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 		return this.optional(element) || /^[0-9]*$/i.test(value);
 	});
 	$("#form_option_01").validate({
-		
+
 		rules: {
 			"name": {
 				letters: true,

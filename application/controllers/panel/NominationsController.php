@@ -56,7 +56,7 @@ class NominationsController extends PanelController
 		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']], 'msme'), true)
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true)
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
@@ -98,6 +98,12 @@ class NominationsController extends PanelController
 	public function user_edit($slug)
 	{
 		$this->load->model('panel/CommentModel');
+
+		$this->load->model('data/StateModel');
+		$this->load->model('data/CityModel');
+		
+		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
+
 		$this->data['id'] = $slug;
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
 
@@ -121,10 +127,11 @@ class NominationsController extends PanelController
 	public function single($slug)
 	{
 		$this->data['id'] = $slug;
-		$application = array_merge(
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'individual'), true),
-			json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug], 'msme'), true),
-		)[0];
+		
+		$this->load->model('data/StateModel');
+		$this->load->model('data/CityModel');
+		
+		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
 

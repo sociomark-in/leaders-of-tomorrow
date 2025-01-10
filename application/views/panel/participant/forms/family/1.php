@@ -80,11 +80,12 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 							<input type="text" name="organization[address][line_3]" class="form-control mb-2">
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
-							<label for="" class="form-label">State</label>
-							<input type="text" required placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-							<!-- <select required name="organization[address][state]" id="stateSelect" class="form-select"> -->
-								<!-- <option value="">Select State</option> -->
-							<!-- </select> -->
+							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+								<option value="">Select State</option>
+								<?php foreach ($locations['states'] as $key => $state) : ?>
+									<option value="<?= $state['title'] ?>"><?= $state['title'] ?></option>
+								<?php endforeach ?>
+							</select>
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
@@ -215,7 +216,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			// url: '<?= base_url('api/StatesAPIController/get_all_states') ?>',
 			url: 'https://api.github.com/search/repositories',
 			dataType: 'json',
-			method:'post',
+			method: 'post',
 			delay: 250,
 			data: function(params) {
 				return {
@@ -227,7 +228,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				params.page = params.page || 1;
 				return {
 					results: data.items,
-					pagination:{
+					pagination: {
 						more: (params.page * 30) < data.total_count
 					}
 				}
