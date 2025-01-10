@@ -230,16 +230,17 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			organization_mission_vision: {
+			organization_collabs: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			organization_expansion: {
 				maxlength: 5000,
 				minlength: 50
 			},
 			organization_services: {
 				maxlength: 5000,
 				minlength: 50
-			},
-			services_stmt: {
-				wordCount: 300
 			},
 		},
 		messages: {
@@ -250,7 +251,11 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			organization_mission_vision: {
+			organization_collabs: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			organization_expansion: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},

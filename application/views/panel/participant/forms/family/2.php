@@ -211,13 +211,13 @@
 							$investment = explode('-',$application_temp['id_255206']);
 							?>
 							<div class="col-lg-auto col-12">
-								<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment]['family']" class="form-control">
+								<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment][family]" class="form-control">
 							</div>
 							<div class="col-lg-auto col-12">
-								<input placeholder="% Investor Equity" type="number" min="0" max="100" value="<?= $investment[1]  ?>" name="organization[investment]['investors']" class="form-control">
+								<input placeholder="% Investor Equity" type="number" min="0" max="100" value="<?= $investment[1]  ?>" name="organization[investment][investors]" class="form-control">
 							</div>
 							<div class="col-lg-auto col-12">
-								<input placeholder="& Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment]['others']" class="form-control">
+								<input placeholder="& Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment][others]" class="form-control">
 							</div>
 						</div>
 					</div>

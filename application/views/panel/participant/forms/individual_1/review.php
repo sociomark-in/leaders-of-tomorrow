@@ -114,25 +114,24 @@
 										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
+            							<label for="" class="form-label">State</label>
+            							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+            							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+            								<option value="">Select State</option>
+            								<?php foreach ($locations['states'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
+            						<div class="col-xl-4 col-lg-6 col-12">
+            							<label for="" class="form-label">City</label>
+            							<select required name="organization[address][city]" id="citySelect" class="form-select">
+            								<option value="">Select City</option>
+            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
 								</div>
 							</div>
 
@@ -161,7 +160,7 @@
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
+									<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -370,7 +369,11 @@
 							<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-									<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+									<select required name="organization[reach]" id="" class="form-select">
+            							<option value="">Select Option</option>
+            							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
+            							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>
+            						</select>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -388,23 +391,44 @@
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">No. Of Beneficiary</label>
-									<input required type="number" value="<?= $application['id_255205'] ?>" name="organization[beneficiary]" class="form-control">
-								</div>
-							</div>
+            					<div class="">
+            						<label for="" class="form-label">No. Of Beneficiary</label>
+            						<!--<input required type="number" value="<?= $application['id_255205'] ?>" name="organization[beneficiary]" class="form-control">-->
+            						<select required name="organization[beneficiary]" id="" class="form-select">
+            							<option value="">Select Option</option>
+            							<option <?= ($application['id_255205'] == "Less than 100") ? "selected" : "" ?> value="Less than 100">Less than 100</option>
+            							<option <?= ($application['id_255205'] == "100 - 500") ? "selected" : "" ?> value="100 - 500">100 - 500</option>
+            							<option <?= ($application['id_255205'] == "500 - 1000") ? "selected" : "" ?> value="500 - 1000">500 - 1000</option>
+            							<option <?= ($application['id_255205'] == "More than 1000") ? "selected" : "" ?> value="More than 1000">More than 1000</option>
+            						</select>
+            					</div>
+            				</div>
 							<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">No. of community members directly impacted </label>
-									<input required type="number" value="<?= $application['id_255206'] ?>" name="organization[community_impact]" class="form-control">
-								</div>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
-								<div class="">
-									<label for="" class="form-label">% of profits reinvested into social initiatives</label>
-									<input required type="number" value="<?= $application['id_255207'] ?>" name="organization[investment]" class="form-control">
-								</div>
-							</div>
+            					<div class="">
+            						<label for="" class="form-label">No. of community members directly impacted </label>
+            						<!--<input required type="number" value="<?= $application['id_255206'] ?>" name="organization[community_impact]" class="form-control">-->
+            						<select required name="organization[community_impact]" id="" class="form-select">
+            							<option value="">Select Option</option>
+            							<option <?= ($application['id_255206'] == "Less than 100") ? "selected" : "" ?> value="Less than 100">Less than 100</option>
+            							<option <?= ($application['id_255206'] == "100 - 500") ? "selected" : "" ?> value="100 - 500">100 - 500</option>
+            							<option <?= ($application['id_255206'] == "500 - 1000") ? "selected" : "" ?> value="500 - 1000">500 - 1000</option>
+            							<option <?= ($application['id_255206'] == "More than 1000") ? "selected" : "" ?> value="More than 1000">More than 1000</option>
+            						</select>
+            					</div>
+            				</div>
+            				<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
+            					<div class="">
+            						<label for="" class="form-label">% of profits reinvested into social initiatives</label>
+            						<!--<input required type="number" value="<?= $application['id_255207'] ?>" name="organization[investment]" class="form-control">-->
+            							<select required name="organization[investment]" id="" class="form-select">
+            							<option value="">Select Option</option>
+            							<option <?= ($application['id_255207'] == "Less than 10%") ? "selected" : "" ?> value="Less than 10%">Less than 10%</option>
+            							<option <?= ($application['id_255207'] == "10 - 20") ? "selected" : "" ?> value="10 - 20">10% - 20%</option>
+            							<option <?= ($application['id_255207'] == "20 - 40") ? "selected" : "" ?> value="20 - 40">20% - 40%</option>
+            							<option <?= ($application['id_255207'] == "More than 40") ? "selected" : "" ?> value="More than 40">More than 40%</option>
+            						</select>
+            					</div>
+            				</div>
 							<div class="col-xxl-4 col-xl-6 col-12">
 								<div class="">
 									<label for="" class="form-label">No. of new regions/communities targeted for expansion in the next 3 years</label>
@@ -483,37 +507,37 @@
 						</div>
 					</fieldset>
 					<fieldset class="col-12">
-						<div class="mb-3">
-							<legend class="card-title mb-0">
-								<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
-							</legend>
-						</div>
-						<div class="row g-3">
-							<div class="col-12">
-								<div class="">
-									<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
-									<span class="form-text">(50 - 5000 characters)</span>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<fieldset class="col-12">
-						<div class="mb-3">
-							<legend class="card-title mb-0">
-								<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
-							</legend>
-						</div>
-						<div class="row g-3">
-							<div class="col-12">
-								<div class="">
-									<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
-									<span class="form-text">(50 - 5000 characters)</span>
-								</div>
-							</div>
-						</div>
-					</fieldset>
+            			<div class="mb-3">
+            				<legend class="card-title mb-0">
+            					<h5>Social Responsibility and Community Impact<sup class="text-danger">&ast;</sup></h5>
+            				</legend>
+            			</div>
+            			<div class="row g-3">
+            				<div class="col-12">
+            					<div class="">
+            						<label for="" class="form-label">How has your work contributed to the welfare of society or the environment? Describe the social or environmental outcomes achieved through your initiatives.</label>
+            						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+            						<span class="form-text">(50 - 5000 characters)</span>
+            					</div>
+            				</div>
+            			</div>
+            		</fieldset>
+            		<fieldset class="col-12">
+            			<div class="mb-3">
+            				<legend class="card-title mb-0">
+            					<h5>Scalability and Future Plans<sup class="text-danger">&ast;</sup></h5>
+            				</legend>
+            			</div>
+            			<div class="row g-3">
+            				<div class="col-12">
+            					<div class="">
+            						<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
+            						<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+            						<span class="form-text">(50 - 5000 characters)</span>
+            					</div>
+            				</div>
+            			</div>
+            		</fieldset>
 
 					<fieldset class="col-12">
 						<legend class="card-title mb-3">

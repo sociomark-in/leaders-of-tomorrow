@@ -70,12 +70,7 @@ class NominationsController extends PanelController
 					foreach ($categories['msme'] as $key => $category) {
 						if ($application['category']['type'] == $category['type']) {
 							unset($categories['msme'][$key]);
-							// echo $application['category']['type'] . "==" . $category['type'];
-							// echo "<br>";
-						} else {
-							// echo $application['category']['type'] . "!=" . $category['type'];
-							// echo "<br>";
-						}
+						} 
 					}
 				}
 				switch ($s) {
@@ -113,7 +108,7 @@ class NominationsController extends PanelController
 
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
-
+		
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 
 		$this->data['id'] = $slug;
@@ -139,10 +134,10 @@ class NominationsController extends PanelController
 	public function single($slug)
 	{
 		$this->data['id'] = $slug;
-
+		
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
-
+		
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
@@ -192,10 +187,9 @@ class NominationsController extends PanelController
 	{
 		$category = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'code' => $code]), true)[0];
 		$this->data['category'] = $category;
-
+		
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
-
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 

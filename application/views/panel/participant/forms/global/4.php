@@ -101,11 +101,11 @@
 			":hidden", ":focus"
 		],
 		rules: {
-			case_study_1: {
+			case_study_3: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			case_study_2: {
+			case_study_4: {
 				maxlength: 5000,
 				minlength: 50
 			},
@@ -118,11 +118,11 @@
 			}
 		},
 		messages: {
-			case_study_1: {
+			case_study_3: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			case_study_2: {
+			case_study_4: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},

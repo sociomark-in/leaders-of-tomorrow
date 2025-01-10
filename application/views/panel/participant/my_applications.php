@@ -14,8 +14,54 @@
 	<div class="row">
 		<div class="col-12">
 			<?php 
-			if (count($my_applications['msme']) > 0) : ?>
+			if (count($my_applications['individual']) > 0 || count($my_applications['msme']) > 0) : ?>
 				<div class="row">
+					<?php foreach ($my_applications['individual'] as $key => $application) : ?>
+						<div class="col-xl-3 col-lg-4 col-12">
+							<div class="row">
+								<div class="col-12 grid-margin stretch-card">
+									<div class="card">
+										<div class="card-body">
+											<div class="mb-3">
+												<h5 class=""><?= $application['category']['name'] ?></h5>
+											</div>
+											<div class="">
+												<p><span class="badge bg-warning"><?= $application['status_text'] ?></span></p>
+											</div>
+										</div>
+										<div class="card-footer">
+											<div class="row justify-content-between">
+												<div class="col">
+													<div class="mb-0 text-sm">
+														<p>
+															Applied On<br>
+															<strong>
+																<?= $application['created_at'] ?>
+															</strong>
+														</p>
+													</div>
+												</div>
+												<div class="col-auto">
+													<?php
+													if ($application['stage_status'] == "") {
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']);
+													} elseif ($application['stage_status'] >= 1) {
+														# code...
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+													} else {
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+													}
+
+													?>
+													<a href="<?= $redirect ?>">View Application</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php endforeach ?>
 					<?php foreach ($my_applications['msme'] as $key => $application) : ?>
 						<div class="col-xl-3 col-lg-4 col-12">
 							<div class="row">

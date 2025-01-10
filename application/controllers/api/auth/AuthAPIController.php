@@ -113,7 +113,7 @@ class AuthAPIController extends CI_Controller
 						"name" =>  $data['name']
 					]
 				];
-				$subject = APP_NAME . " - Registration!";
+				$subject = "Welcome, to " . APP_NAME . " Awards 2025!!";
 				$body = "Hi " .  $this->usersession['name'] . ",<br>Your login Details are as follows:<br>Username:" . $data['email'] . "<br>Password:" . $data['contact'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
 				$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
 				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {

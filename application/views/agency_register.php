@@ -66,6 +66,13 @@
 																	</div>
 																</div>
 															</div>
+																<div class="row g-2">
+																<div class="col-12">
+																<div class="">
+																	Already Registered? <a href="<?= base_url('login') ?>">Click Here to Login</a>
+																</div>
+																</div>
+															</div>
 														</div>
 														<script>
 															$("#OTPContact").intlTelInput({

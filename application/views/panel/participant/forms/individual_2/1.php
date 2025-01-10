@@ -125,7 +125,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				<div class="col-xxl-6 col-xl-8 col-12">
 					<div class="">
 						<label for="" class="form-label">Website URL</label>
-						<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" class="form-control">
+						<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" class="form-control">
 					</div>
 				</div>
 			</div>

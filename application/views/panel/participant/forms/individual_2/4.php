@@ -63,49 +63,29 @@
 </div>
 <?= form_close() ?>
 <script>
-	$.validator.addMethod("wordCount", function(value, element, wordCount) {
-
-		return value.split(' ').length <= wordCount;
-
-	});
 	$("#form_option_03").validate({
-				ignore: [
-					":hidden", ":focus"
-				],
-				rules: {
-					case_study_4: {
-						maxlength: 5000,
-						minlength: 50
-					},
-					case_study_5: {
-						maxlength: 5000,
-						minlength: 50
-					},
-					case_study_6: {
-						maxlength: 5000,
-						minlength: 50
-					},
-					case_study_7: {
-						maxlength: 5000,
-						minlength: 50
-					},
-				},
-				messages: {
-					case_study_4: {
-						maxlength: "Please enter no more than 5000 characters.",
-						minlength: "Please enter at least 50 characters.",
-					},
-					case_study_5: {
-						maxlength: "Please enter no more than 5000 characters.",
-						minlength: "Please enter at least 50 characters.",
-					},
-					case_study_6: {
-						maxlength: "Please enter no more than 5000 characters.",
-						minlength: "Please enter at least 50 characters.",
-					},
-					case_study_7: {
-						maxlength: "Please enter no more than 5000 characters.",
-						minlength: "Please enter at least 50 characters.",
-					},
-				});
+		ignore: [
+			":hidden", ":focus"
+		],
+		rules: {
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_5: {
+				maxlength: 5000,
+				minlength: 50
+			},
+		},
+		messages: {
+			case_study_4: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_5: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+		}
+	});
 </script>

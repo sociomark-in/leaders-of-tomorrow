@@ -80,7 +80,6 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'leaderstomorrow_awards_entries_v2',
-	'database' => 'times_leadersoftomorrow_awards',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -44,9 +44,8 @@
 									<label for="" class="form-label">Business Segment</label>
 									<select required name="organization[segment]" id="" class="form-select">
 										<option value="">Select Business Segment</option>
-										<option <?= ($application['id_255003'] == "Micro") ? "selected" : "" ?> value="Micro">Micro</option>
-										<option <?= ($application['id_255003'] == "Small") ? "selected" : "" ?> value="Small">Small</option>
-										<option <?= ($application['id_255003'] == "Medium") ? "selected" : "" ?> value="Medium">Medium</option>
+										<option <?= ($application['id_255003'] == "Start-up") ? "selected" : "" ?> value="Start-up">Start-up</option>
+										<option <?= ($application['id_255003'] == "MSME") ? "selected" : "" ?> value="MSME">MSME</option>
 									</select>
 								</div>
 							</div>
@@ -81,25 +80,24 @@
 										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
+            							<label for="" class="form-label">State</label>
+            							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+            							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+            								<option value="">Select State</option>
+            								<?php foreach ($locations['states'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
+            						<div class="col-xl-4 col-lg-6 col-12">
+            							<label for="" class="form-label">City</label>
+            							<select required name="organization[address][city]" id="citySelect" class="form-select">
+            								<option value="">Select City</option>
+            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
 								</div>
 							</div>
 
@@ -128,7 +126,7 @@
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
+									<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -337,7 +335,11 @@
 							<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
-									<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">
+									<select required name="organization[reach]" id="" class="form-select">
+            							<option value="">Select Option</option>
+            							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
+            							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>
+            						</select>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
