@@ -180,17 +180,9 @@ class NominationsController extends PanelController
 	{
 		$category = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'code' => $code]), true)[0];
 		$this->data['category'] = $category;
-		// if ($this->data['user']['is_email_verified'] && $this->data['user']['is_contact_verified'] && $this->data['user']['is_password_reset']) {
-		// 	// First View
-		// } else {
-		// 	$session = [
-		// 		'is_verified' => [
-		// 			'status' => false,
-		// 		]
-		// 	];
-		// 	$this->session->set_tempdata('temp_session', $session);
-		// 	redirect(base_url('dashboard/my-profile'));
-		// }
+		
+		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
+		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
 		$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 		$this->data['nomination']['stage'] = $this->input->get('stage');
