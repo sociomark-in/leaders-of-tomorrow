@@ -90,7 +90,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						</div>
 						<div class="col-xl-4 col-lg-6 col-12">
 							<label for="" class="form-label">City</label>
-							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+							<select required name="organization[address][city]" id="citySelect" class="form-select">
 								<option value="">Select City</option>
 								<?php foreach ($locations['cities'] as $key => $option)  : ?>
 									<option value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>

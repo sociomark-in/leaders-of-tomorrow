@@ -1080,7 +1080,7 @@ class NominationAPIController extends CI_Controller
 							'id_255203' => $this->request["organization_services"],
 							'id_255204' => $this->request["organization"]['beneficiary'],
 							'id_255205' => $this->request["organization"]['members'],
-							'id_255206' => implode([
+							'id_255206' => implode('-', [
 								$this->request["organization"]['investment']['family'],
 								$this->request["organization"]['investment']['investors'],
 								$this->request["organization"]['investment']['others'],
@@ -2596,18 +2596,18 @@ class NominationAPIController extends CI_Controller
 					'nomination_id' => $this->request['application_id'],
 					'created_by' => $this->usersession['id'],
 				];
-				
+
 				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'organization_name', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $this->request['application_id']]), true)[0] ?? [];
-				$applicant = json_decode($this->UserModel->get(null, ['id'=> $nomination['created_by']]), true)[0];
+				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
 				$email_data['application'] = $nomination;
-					$email_data['application']['category']['name'] = $category['name'];
-					$email_data['applicant'] = [
-						'name' => $applicant['name'],
-						'email' => $applicant['email'],
-						'contact' => $applicant['contact'],
-					];
+				$email_data['application']['category']['name'] = $category['name'];
+				$email_data['applicant'] = [
+					'name' => $applicant['name'],
+					'email' => $applicant['email'],
+					'contact' => $applicant['contact'],
+				];
 
 				if ($this->CommentModel->insert($data)) {
 					$data = [
