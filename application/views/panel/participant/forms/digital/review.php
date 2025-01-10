@@ -504,7 +504,7 @@
 								<div class="">
 									<label for="" class="form-label">Incorporation Certificate</label>
 									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 500KB)</span>
+									<span class="form-text">Company Incorporation Certificate/Business Registration/GST*(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -611,66 +611,47 @@
 	</div>
 </div>
 <script>
-	function parseDDMMYYYYDate(dateString) {
-		let parts = dateString.split('/');
-		let day = parseInt(parts[0], 10);
-		let month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
-		let year = parseInt(parts[2], 10);
-
-		return new Date(year, month, day);
-	}
-	$('[name=initiative_start_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-		maxDate: '<?= date('d/m/Y') ?>',
-
-	});
-	$('[name=initiative_end_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-	});
-
-	$.validator.addMethod("greater_than", function(value, element, param) {
-
-		var d1 = new Date(Date.parse(value));
-		var d2 = new Date(Date.parse($(param).val()));
-		console.log([value, $(param).val()]);
-		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
-
-		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
-	});
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z '\s']*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
 	});
-	$("#formFullView").validate({
+	$("#form_option_01").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
+			"organization[name]": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
 			"contact_person[email]": {
 				emailregex: true
 			},
 			"contact_person[contact]": {
 				phone: true
 			},
-			overview: {
-				wordCount: 300
-			},
+
 			organization_overview: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_mission_vision: {
 				maxlength: 5000,
 				minlength: 50
 			},
@@ -678,9 +659,7 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			services_stmt: {
-				wordCount: 300
-			},
+
 			case_study_1: {
 				maxlength: 5000,
 				minlength: 50
@@ -689,29 +668,40 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_strategy: {
+			case_study_3: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_end_date: {
-				greater_than: '[name=initiative_start_date]'
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
+			'organization[name]': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
 			'contact_person[email]': {
 				emailregex: 'Please enter a valid email address.'
 			},
 			'contact_person[contact]': {
 				phone: 'Please enter a valid contact number'
 			},
-			overview: {
-				wordCount: "Error"
-			},
+
 			organization_overview: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_mission_vision: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
@@ -719,9 +709,7 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			services_stmt: {
-				wordCount: "Error"
-			},
+
 			case_study_1: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
@@ -730,13 +718,32 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_strategy: {
+			case_study_3: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_end_date: {
-				greater_than: 'End Date should be greater than Start Date'
+			case_study_4: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
+		}
+	});
+
+	$("input[type='file']").each(function(index, element) {
+		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+			$(element).prop("required", true);
+		} else {
+			$(element).prop("required", false);
+		}
+	});
+	$('.dropify').dropify({
+		error: {
+			'fileSize': 'The file size is too big ({{ value }} max).',
+			'minWidth': 'The image width is too small ({{ value }}}px min).',
+			'maxWidth': 'The image width is too big ({{ value }}}px max).',
+			'minHeight': 'The image height is too small ({{ value }}}px min).',
+			'maxHeight': 'The image height is too big ({{ value }}px max).',
+			'imageFormat': 'The image format is not allowed ({{ value }} only).'
 		}
 	});
 </script>

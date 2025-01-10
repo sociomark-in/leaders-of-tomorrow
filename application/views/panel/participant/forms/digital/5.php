@@ -42,7 +42,7 @@
 				<div class="">
 					<label for="" class="form-label">Incorporation Certificate</label>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(PDF of Maximum Size 500KB)</span>
+					<span class="form-text">Company Incorporation Certificate/Business Registration/GST*(PDF of Maximum Size 500KB)</span>
 				</div>
 			</div>
 			<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">

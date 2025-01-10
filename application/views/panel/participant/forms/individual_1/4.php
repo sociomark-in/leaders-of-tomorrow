@@ -26,7 +26,7 @@
 					<div class="">
 						<label for="" class="form-label">How has your work contributed to the welfare of society or the environment? Describe the social or environmental outcomes achieved through your initiatives.</label>
 						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
-						<span class="form-text">(Max 200 words)</span>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 					<div class="">
 						<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
 						<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
-						<span class="form-text">(Max 200 words)</span>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
 			</div>
