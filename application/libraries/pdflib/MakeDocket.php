@@ -57,7 +57,7 @@ class MakeDocket extends Fpdf
 		return $this;
 	}
 
-	public function load($data = null, $layout = 'stage_1_msme_1')
+	public function load($data = null, $layout = 'docket_msme')
 	{
 		switch ($layout) {
 			case 'docket_1_digital':
@@ -66,6 +66,7 @@ class MakeDocket extends Fpdf
 				break;
 
 			default:
+				include_once __DIR__ . '/layout/' . $layout . '.php';
 				break;
 		}
 		return $this;

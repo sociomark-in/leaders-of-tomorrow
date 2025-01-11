@@ -115,23 +115,22 @@
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
 										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
+										<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+										<select required name="organization[address][state]" id="stateSelect" class="form-select">
 											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+											<?php foreach ($locations['states'] as $key => $option) : ?>
+												<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+											<?php endforeach ?>
+										</select>
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
 										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
+										<select required name="organization[address][city]" id="citySelect" class="form-select">
 											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
+											<?php foreach ($locations['cities'] as $key => $option) : ?>
+												<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+											<?php endforeach ?>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -166,6 +165,7 @@
 							</div>
 						</div>
 					</fieldset>
+					
 					<fieldset class="col-12">
 						<legend class="card-title mb-0">
 							<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
@@ -647,7 +647,7 @@
 		return this.optional(element) || /^[0-9]*$/i.test(value);
 	});
 	$("#form_option_01").validate({
-		
+
 		rules: {
 			"name": {
 				letters: true,

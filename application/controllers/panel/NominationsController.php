@@ -60,7 +60,7 @@ class NominationsController extends PanelController
 		];
 		if (count($applications['msme']) > 0) {
 
-			for ($i=0; $i < count($applications['msme']); $i++) { 
+			for ($i = 0; $i < count($applications['msme']); $i++) {
 				# code...
 				$application = $applications['msme'][$i];
 				$application['category'] = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
@@ -70,7 +70,7 @@ class NominationsController extends PanelController
 					foreach ($categories['msme'] as $key => $category) {
 						if ($application['category']['type'] == $category['type']) {
 							unset($categories['msme'][$key]);
-						} 
+						}
 					}
 				}
 				switch ($s) {
@@ -108,7 +108,7 @@ class NominationsController extends PanelController
 
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
-		
+
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 
 		$this->data['id'] = $slug;
@@ -134,10 +134,10 @@ class NominationsController extends PanelController
 	public function single($slug)
 	{
 		$this->data['id'] = $slug;
-		
+
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
-		
+
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
@@ -187,7 +187,7 @@ class NominationsController extends PanelController
 	{
 		$category = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'code' => $code]), true)[0];
 		$this->data['category'] = $category;
-		
+
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
@@ -229,12 +229,32 @@ class NominationsController extends PanelController
 		$categories = json_decode($this->CategoryModel->get(['id', 'code', 'type'], null), true);
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
 			$this->load->library('pdflib/MakeDocket');
+
+			$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+			switch ($application['category_id']) {
+				case '1_INDIVIDUAL':
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_individual')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				case '2_INDIVIDUAL':
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_2_individual')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				case '1_GLOBAL':
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_global')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				case '1_FAMILY':
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_family')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				case '1_DIGITAL':
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_digital')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+				default:
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					break;
+			}
 			foreach ($categories as $key => $value) {
 				if ($application['category_id'] == $value['type']) {
-					$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 					// echo "<pre>";
 					// print_r($application);
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_digital')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 					break;
 				} else {
 					continue;
