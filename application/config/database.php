@@ -70,8 +70,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
 $active_group = 'production';
+$active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
@@ -80,6 +80,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'leaderstomorrow_awards_entries_v2',
+	'database' => 'times_leadersoftomorrow_awards',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

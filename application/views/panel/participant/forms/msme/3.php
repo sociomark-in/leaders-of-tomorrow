@@ -23,6 +23,7 @@
 					<legend class="card-title mb-0">
 						<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
 					</legend>
+					<p class="text-muted">(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
 				</div>
 				<div class="row g-3">
 					<div class="col-12">
@@ -39,6 +40,7 @@
 					<legend class="card-title mb-0">
 						<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
 					</legend>
+					<p class="text-muted">(Details should be measurable and generic statements should be avoided)</p>
 				</div>
 				<div class="row g-3">
 					<div class="col-12">

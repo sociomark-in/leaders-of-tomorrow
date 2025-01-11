@@ -39,6 +39,7 @@
 					<legend class="card-title mb-0">
 						<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
 					</legend>
+					<p class="text-muted">(The response to this question will be used to evaluate and determine the finalists for the "Entrepreneur of the Year" category. By submitting this response, you consent to its consideration for this awards category.)</p>
 				</div>
 				<div class="row g-3">
 					<div class="col-12">
