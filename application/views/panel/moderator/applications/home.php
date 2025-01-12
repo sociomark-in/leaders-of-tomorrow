@@ -146,7 +146,7 @@
 									</table>
 									<script>
 										$('#applicationsTable').DataTable({
-											dom: "Bfirt",
+											dom: "Bfrtip",
 											order: [
 												[0, 'desc']
 											],
