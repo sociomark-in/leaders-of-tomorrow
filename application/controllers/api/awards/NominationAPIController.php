@@ -237,7 +237,7 @@ class NominationAPIController extends CI_Controller
 						];
 						// echo "<pre>";
 						// print_r($data);die;
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -253,7 +253,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -268,7 +268,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -450,7 +450,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -527,7 +527,7 @@ class NominationAPIController extends CI_Controller
 							'stage_status' => $s
 						];
 
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -543,7 +543,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -561,7 +561,7 @@ class NominationAPIController extends CI_Controller
 						// echo "<pre>";
 						// print_r($data);
 						// die;
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -732,7 +732,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -808,7 +808,7 @@ class NominationAPIController extends CI_Controller
 							'id_255208' => $this->request["organization_services"],
 							'stage_status' => $s
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -823,7 +823,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -838,7 +838,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1007,7 +1007,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1089,7 +1089,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1104,7 +1104,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1120,7 +1120,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s,
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1209,6 +1209,7 @@ class NominationAPIController extends CI_Controller
 							'id_255103' => $this->request["organization_growth_2"],
 							'id_255104' => $this->request["organization_growth_1"],
 							'id_255105' => $this->request["organization_profit"],
+							
 							'id_255106' => $this->request["organization_assets"],
 							'id_255107' => $this->request["organization_der_23"],
 
@@ -1296,7 +1297,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1372,7 +1373,7 @@ class NominationAPIController extends CI_Controller
 
 							'stage_status' => $s
 						];
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1569,7 +1570,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1646,7 +1647,7 @@ class NominationAPIController extends CI_Controller
 
 						];
 
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1662,7 +1663,7 @@ class NominationAPIController extends CI_Controller
 							'stage_status' => $s,
 						];
 
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1677,7 +1678,7 @@ class NominationAPIController extends CI_Controller
 							'stage_status' => $s,
 						];
 
-						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
@@ -1843,7 +1844,7 @@ class NominationAPIController extends CI_Controller
 									"name" =>  $this->usersession['name']
 								]
 							];
-							$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+							$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 							$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 							$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $email_data, true);
 							if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -1964,7 +1965,7 @@ class NominationAPIController extends CI_Controller
 						'id_75519'	=> $this->request['organization_der_22'],					//organization_der
 					];
 
-					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
 					} else {
@@ -1984,7 +1985,7 @@ class NominationAPIController extends CI_Controller
 						'stage_status' => $stage
 					];
 
-					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
 					} else {
@@ -2002,7 +2003,7 @@ class NominationAPIController extends CI_Controller
 						'stage_status' => $stage
 					];
 
-					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id], 'msme');
+					$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 					if ($rows == 0) {
 						redirect($this->request['referrer'] . '?stage=' . $stage);
 					} else {
@@ -2119,7 +2120,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $this->usersession['name']
 						]
 					];
-					$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+					$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 					$htmlbody = $this->load->view('panel/emails/participant_nomination_review', $data, true);
 					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
@@ -2361,7 +2362,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $this->usersession['name']
 						]
 					];
-					$subject = "Submission Received for" .  APP_NAME .  " Awards 2025";
+					$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
 					$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $application_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 					if ($this->brevocurlmail->_init_()->config_plaintext(null, $recipients, $subject, $body)->send()) {
 						redirect('dashboard');

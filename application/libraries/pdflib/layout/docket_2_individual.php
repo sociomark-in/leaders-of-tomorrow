@@ -69,7 +69,17 @@ $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 6, 'Registered Address Participating Entity', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255001'] ?? "P.O. Box 447, 6237 Cursus Av.", 0);
+$address = json_decode($data['id_255001'], true);
+foreach ($address as $key => $line) {
+	if ($line == "" || is_null($line)) {
+		unset($address[$key]);
+	}
+}
+
+$address = implode(', ', $address);
+$this->pdf->MultiCell(0, 4, $address ?? "P.O. Box 463, 6237 Cursus Av.", 0);
+$this->pdf->MultiCell(0, 4, $data['organization_city'] . ", " . $data['organization_state'] ?? "P.O. Box 463, 6237 Cursus Av.", 0);
+
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);

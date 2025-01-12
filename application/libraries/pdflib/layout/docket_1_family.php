@@ -58,7 +58,17 @@ $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 6, 'Registered Address Participating Entity', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255001'] ?? "P.O. Box 463, 6237 Cursus Av.", 0);
+$address = json_decode($data['id_255001'], true);
+foreach ($address as $key => $line) {
+	if ($line == "" || is_null($line)) {
+		unset($address[$key]);
+	}
+}
+
+$address = implode(', ', $address);
+$this->pdf->MultiCell(0, 4, $address ?? "P.O. Box 463, 6237 Cursus Av.", 0);
+$this->pdf->MultiCell(0, 4, $data['organization_city'] . ", " . $data['organization_state'] ?? "P.O. Box 463, 6237 Cursus Av.", 0);
+
 
 $this->pdf->Cell(0, 5, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
@@ -122,13 +132,13 @@ $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Return On Assets (ROA)', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, $data['id_255107'] ?? "Lorem Ipsum", 0, 1);
+$this->pdf->Cell(63, 4, $data['id_255106'] ?? "Lorem Ipsum", 0, 1);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(63, 4, 'Current Ratio', 0, 0);
 $this->pdf->SetFont('Arial', 'B', 9);
-$this->pdf->Cell(63, 4, $data['id_255109'] ?? "Lorem Ipsum", 0, 1);
+$this->pdf->Cell(63, 4, $data['id_255107'] ?? "Lorem Ipsum", 0, 1);
 
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 5, '', 0, 1, '');
@@ -146,8 +156,8 @@ $this->pdf->Cell(97, 6, 'No. of family members actively involved', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->Cell(47, 4, $data['id_255201'] ?? "Lorem Ipsum", 0, 0);
-$this->pdf->Cell(47, 4, $data['id_255202'] ?? "Lorem Ipsum", 0, 0);
-$this->pdf->Cell(97, 4, $data['id_255203'] ?? "Lorem Ipsum", 0, 1, '');
+$this->pdf->Cell(47, 4, $data['id_255204'] ?? "Lorem Ipsum", 0, 0);
+$this->pdf->Cell(97, 4, $data['id_255205'] ?? "Lorem Ipsum", 0, 1, '');
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -156,8 +166,9 @@ $this->pdf->Cell(97, 6, 'Equity spilt between family members and investors', 0, 
 $this->pdf->Cell(97, 6, 'Years the current generation has been leading the business', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
-$this->pdf->Cell(97, 4, $data['id_255204'] ?? "Lorem Ipsum", 0, 0);
-$this->pdf->Cell(97, 4, $data['id_255205'] ?? "Lorem Ipsum", 0, 1, '');
+$equity = explode('-', $data['id_255206']);
+$this->pdf->Cell(97, 4, "{$equity[0]} (Family) - {$equity[0]} (Investors) - {$equity[0]} (Others)" ?? "Lorem Ipsum", 0, 0);
+$this->pdf->Cell(97, 4, $data['id_255207'] ?? "Lorem Ipsum", 0, 1, '');
 
 
 $this->pdf->SetFont('Arial', '', 9);
@@ -171,7 +182,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 4, "How has the business evolved from one generation to the next? Describe the key transitions in leadership, vision, and strategy between generations", 0);
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->Cell(0, 2, '', 0, 1, '');
-$this->pdf->MultiCell(0, 4, $data['id_255206'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.", 0);
+$this->pdf->MultiCell(0, 4, trim($data['id_255202']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.", 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -179,7 +190,7 @@ $this->pdf->SetTextColor(183, 32, 38);
 $this->pdf->Cell(0, 6, 'Core Products / Services Offered', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
 $this->pdf->SetTextColor(25, 25, 25);
-$this->pdf->MultiCell(0, 4, $data['id_255207'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255203']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);
 
 // $this->pdf->AddPage();
@@ -198,14 +209,14 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 4, 'How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255301'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255301']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->MultiCell(0, 4, 'What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255301'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255302']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
@@ -216,7 +227,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 4, 'What have been the major challenges your family business has faced, and how did you overcome them? Please provide specific examples of challenges in areas such as management, market expansion, or technology integration', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255302'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255303']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);
 
 $this->pdf->SetFont('Arial', 'B', 9);
@@ -224,7 +235,7 @@ $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->MultiCell(0, 4, 'Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition (Details should be measurable and generic statements should be avoided)', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255302'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255304']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);
 
 $this->pdf->Cell(0, 4, '', 0, 1, '');
@@ -235,5 +246,5 @@ $this->pdf->SetTextColor(25, 25, 25);
 $this->pdf->MultiCell(0, 4, 'How have you handled economic or market downturns, and what strategies have you implemented to ensure business continuity and growth in challenging times.', 0);
 $this->pdf->Cell(0, 1, '', 0, 1, '');
 $this->pdf->SetFont('Arial', '', 9);
-$this->pdf->MultiCell(0, 4, $data['id_255304'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+$this->pdf->MultiCell(0, 4, trim($data['id_255305']) ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 ", 0);

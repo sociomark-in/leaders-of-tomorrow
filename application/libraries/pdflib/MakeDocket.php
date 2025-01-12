@@ -61,7 +61,8 @@ class MakeDocket extends Fpdf
 	{
 		switch ($layout) {
 			case 'docket_1_digital':
-			case 'docket_1_digital':
+			case 'docket_1_individual':
+			case 'docket_2_individual':
 				include_once __DIR__ . '/layout/' . $layout . '.php';
 				break;
 
