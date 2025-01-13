@@ -28,7 +28,7 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</label>
-							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+							<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
-							<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+							<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>

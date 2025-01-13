@@ -28,14 +28,14 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches (Max 200 words)</label>
-							<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+							<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?</label>
-							<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+							<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>

@@ -421,7 +421,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe the digital technologies (e.g., AI, IoT) that your company has integrated into its operations. How did these technologies help in transforming your business model or customer experience</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -437,7 +437,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has the integration of digital technologies impacted your company&#39;s performance in terms of revenue, customer satisfaction, and market share? Please provide any specific metrics or examples.</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -453,7 +453,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe how digital technologies have improved the sustainability of your operations, such as reducing waste, enhancing energy efficiency, or optimizing resource use</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -469,7 +469,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How scalable are the digital solutions your company has implemented? Describe the potential for expanding the use of digital technologies within your business?</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>

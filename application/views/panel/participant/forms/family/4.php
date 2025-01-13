@@ -27,7 +27,7 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">What have been the major challenges your family business has faced, and how did you overcome them? Please provide specific examples of challenges in areas such as management, market expansion, or technology integration</label>
-							<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+							<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 						<div class="">
 							<label for="" class="form-label">Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
 							<span class="form-text">(Details should be measurable and generic statements should be avoided)</span>
-							<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+							<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>
@@ -51,7 +51,7 @@
 					<div class="col-12">
 						<div class="">
 							<label for="" class="form-label">How have you handled economic or market downturns, and what strategies have you implemented to ensure business continuity and growth in challenging times.</label>
-							<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+							<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
 							<span class="form-text">(50 - 5000 characters)</span>
 						</div>
 					</div>

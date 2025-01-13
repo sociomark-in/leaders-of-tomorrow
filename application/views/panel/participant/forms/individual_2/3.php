@@ -28,7 +28,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">What inspired you to start your entrepreneurial journey? Describe your vision and mission for the business.</label>
-						<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">Describe the innovative approach or solutions you have implemented to address key challenges in your business. How have you utilized technology, creativity, or new methodologies in your business model?</label>
-						<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">What measurable impact has your business had on the market or industry? Share specific outcomes or success stories.</label>
-						<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>

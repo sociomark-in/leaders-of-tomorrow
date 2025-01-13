@@ -403,7 +403,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe an innovative solution, product, or service introduced to global markets that has significantly impacted your business. Highlight how it was adapted to meet the needs of diverse international audiences</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -419,7 +419,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Provide an overview of your business’s performance in global markets, including key achievements, market share growth, and any notable recognitions or awards. How has your organization impacted the industries you operate in?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -436,7 +436,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -452,7 +452,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>

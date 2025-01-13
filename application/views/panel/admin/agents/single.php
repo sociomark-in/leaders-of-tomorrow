@@ -133,7 +133,15 @@
 										],
 										layout: {
 											topStart: {
-												buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+												buttons: [{
+														extend: 'excelHtml5',
+														title: 'Export_<?= date('YmdHis') ?>'
+													},
+													{
+														extend: 'csvHtml5',
+														title: 'Export_<?= date('YmdHis') ?>'
+													}
+												]
 											}
 										}
 									});
@@ -191,7 +199,15 @@
 										paging: false,
 										layout: {
 											topStart: {
-												buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+												buttons: [{
+														extend: 'excelHtml5',
+														title: 'Export_<?= date('YmdHis') ?>'
+													},
+													{
+														extend: 'csvHtml5',
+														title: 'Export_<?= date('YmdHis') ?>'
+													}
+												]
 											}
 										}
 									});

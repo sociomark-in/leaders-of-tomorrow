@@ -28,7 +28,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
-						<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
-						<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+						<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
