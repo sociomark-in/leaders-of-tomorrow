@@ -475,6 +475,15 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('delhi', $this->data);
 				break;
+			case 'bengaluru':
+				$this->data['page'] = [
+					'title' => "Bengaluru Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Bengaluru",
+				];
+				$this->load->city_view('delhi', $this->data);
+				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -594,7 +603,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'delhi-ncr') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'bengaluru') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;

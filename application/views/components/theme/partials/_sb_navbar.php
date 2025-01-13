@@ -19,7 +19,7 @@ switch ($city['name']) {
 		break;
 }
 switch ($city['name']) {
-	case '':
+	case 'Bengaluru':
 		$active = "d-none";
 		break;
 
