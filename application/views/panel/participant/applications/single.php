@@ -80,6 +80,20 @@ if ($nomination['stage'] >= 1) {
 						} ?>
 					</div>
 				</div>
+				<script>
+					$("form").each((index, element) => {
+						var $form = $(element);
+						var $button = $form.find('[type="submit"]');
+						$button.on("click", (element) => {
+							if ($form.valid()) {
+								$button.text('Please wait...').css({
+									'pointer-events': 'none',
+									'opacity': 0.5,
+								});
+							}
+						});
+					});
+				</script>
 			</div>
 		</div>
 	</div>

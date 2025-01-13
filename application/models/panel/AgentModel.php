@@ -18,6 +18,7 @@ class AgentModel extends CI_Model
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
+		$this->db->where(['status' => 1]);
 		$this->db->order_by('created_at DESC');
 		return json_encode($this->db->get($this->table)->result_array());
 	}

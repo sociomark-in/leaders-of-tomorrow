@@ -28,8 +28,8 @@
 											<div class="col">
 												<div class="row">
 													<div class="col-12">
-														<h6 class="card-title mb-0"><?= $agent['name'] ?></h6>
-														<h3 class="mb-2">3,897</h3>
+														<h3 class="mb-0"><?= $agent['name'] ?></h3>
+														<span class="text-muted"><?= $applications[$key]['entries'] ['all']?> Applications</span>
 													</div>
 												</div>
 											</div>
@@ -47,7 +47,35 @@
 							</div>
 						</div>
 					</div>
-				<?php endforeach ?>
+					<?php endforeach ?>
+					<div class="col-xl-4 col-lg-6 col-12">
+						<div class="row">
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<div class="row justify-content-between">
+											<div class="col-auto">
+												<img class="wd-50 ht-50 rounded-circle" src="https://ui-avatars.com/api/?name=Direct">
+											</div>
+											<div class="col">
+												<div class="row">
+													<div class="col-12">
+														<h3 class="mb-0">Direct Entries</h3>
+														<span class="text-muted"><?= $applications['direct']['entries']['all']?> Applications</span>
+													</div>
+												</div>
+											</div>
+											<div class="col-auto">
+												<a class="btn p-0 btn-light" href="">
+													<i class="p-1" data-feather="refresh-ccw"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 		<div class="col-xl-4 col-lg-6">

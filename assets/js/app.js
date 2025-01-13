@@ -7,14 +7,13 @@ $(function () {
 		} else {
 			$(".sidebar-toggler").addClass("active");
 			$(".sidebar-toggler").removeClass("not-active");
-			
-			$(".sidebar-body").on("mouseenter", ()=>{
+
+			$(".sidebar-body").on("mouseenter", () => {
 				$("body").addClass("open-sidebar-folded overflow-hidden");
-			})
-			$(".sidebar-body").on("mouseleave", ()=>{
+			});
+			$(".sidebar-body").on("mouseleave", () => {
 				$("body").removeClass("open-sidebar-folded overflow-hidden");
-			})
+			});
 		}
 	});
-
 });

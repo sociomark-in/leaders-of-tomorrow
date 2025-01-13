@@ -13,7 +13,7 @@ class AccountController extends PanelController
 	{
 		$this->load->model('panel/EntriesModel');
 		$this->load->model('event/awards/CategoryModel');
-		
+
 		$categories['msme'] = json_decode($this->CategoryModel->get(), true);
 		$this->data['categories'] = $categories;
 
@@ -67,7 +67,7 @@ class AccountController extends PanelController
 						$applications['msme'][$i]['status_text'] = $s;
 					}
 				}
-				
+
 				$this->data['my_applications'] = $applications;
 				$this->data['rest_categories'] = $categories;
 
@@ -106,7 +106,30 @@ class AccountController extends PanelController
 	public function all_agents()
 	{
 		$this->load->model('panel/AgentModel');
-		$this->data['agents'] = json_decode($this->AgentModel->get(), true);
+		$this->load->model('panel/LeadsModel');
+		$this->load->model('panel/EntriesModel');
+		$agents = json_decode($this->AgentModel->get(), true);
+		$agent_entries = [];
+		foreach ($agents as $key => $agent) {
+			$agent_entries[$key]['agency'] = $agent;
+			$agent_entries[$key]['entries'] =
+				[
+					'all' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'yes', 'agent_name' => $agent['agent_id']]), true)),
+					'uncategorized' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'yes', 'agent_name' => $agent['agent_id'], 'status' => '2']), true)),
+					'approved' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'yes', 'agent_name' => $agent['agent_id'], 'status' => '1']), true)),
+					'rejected' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'yes', 'agent_name' => $agent['agent_id'], 'status' => '0']), true)),
+					'under_review' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'yes', 'agent_name' => $agent['agent_id'], 'status' => '3']), true)),
+				];
+		}
+		$agent_entries['direct']['entries'] = [
+			'all' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'no']), true)),
+			'uncategorized' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'no', 'status' => '2']), true)),
+			'approved' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'no', 'status' => '1']), true)),
+			'rejected' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'no', 'status' => '0']), true)),
+			'under_review' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['agent_referral' => 'no', 'status' => '3']), true)),
+		];
+		$this->data['agents'] = $agents;
+		$this->data['applications'] = $agent_entries;
 		switch ($this->user_session['role']) {
 			case 'super-admin':
 				$this->load->admin_view('agents/home', $this->data);
@@ -123,16 +146,36 @@ class AccountController extends PanelController
 	public function agent_single($agent_id)
 	{
 		$this->load->model('panel/AgentModel');
+		$this->load->model('panel/LeadsModel');
+		$this->load->model('event/awards/CategoryModel');
+		$this->load->model('panel/EntriesModel');
+		$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $agent_id]), true)[0];
+		$agent_entries['users'] = json_decode($this->LeadsModel->get(null, ['created_by' => $agent_id]), true);
+		$agent_entries['entries'] =
+			[
+				'all' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id]), true),
+				'uncategorized' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '2']), true),
+				'approved' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '1']), true),
+				'rejected' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '0']), true),
+				'under_review' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '3']), true),
+			];
+
+		foreach ($agent_entries['entries']['all'] as $key => $application) {
+			$agent_entries['entries']['all'][$key]['category'] = json_decode($this->CategoryModel->get(['name'],['type' => $application['category_id']]), true)[0];
+		}
+
+		$agency['details'] = $agent;
+		$agency['data'] = $agent_entries;
+
 		switch ($agent_id) {
 			case 'value':
 				# code...
 				break;
 
 			default:
-				$this->data['agency'] = json_decode($this->AgentModel->get(null, ['agent_id' => $agent_id]), true)[0];
+				$this->data['agency'] = $agency;
 				break;
 		}
-		// print_r($this->data);die;
 		$this->load->admin_view('agents/single', $this->data);
 	}
 
