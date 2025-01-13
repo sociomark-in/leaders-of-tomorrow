@@ -153,15 +153,36 @@ class AccountController extends PanelController
 		$agent_entries['users'] = json_decode($this->LeadsModel->get(null, ['created_by' => $agent_id]), true);
 		$agent_entries['entries'] =
 			[
-				'all' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id]), true),
-				'uncategorized' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '2']), true),
-				'approved' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '1']), true),
-				'rejected' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '0']), true),
-				'under_review' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '3']), true),
+				'all' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id]), true),
+				'uncategorized' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '2']), true),
+				'approved' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '1']), true),
+				'rejected' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '0']), true),
+				'under_review' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '3']), true),
 			];
 
 		foreach ($agent_entries['entries']['all'] as $key => $application) {
 			$agent_entries['entries']['all'][$key]['category'] = json_decode($this->CategoryModel->get(['name'],['type' => $application['category_id']]), true)[0];
+
+			$status = "Draft";
+			switch ($application['status']) {
+				case '0':
+					$status = 'Rejected';
+					break;
+				case '1':
+					$status = 'Accepted';
+					break;
+				case '2':
+					$status = 'Unlocked';
+					break;
+				case '3':
+					$status = 'Complete & Under Review';
+					break;
+				default:
+					$status = 'Draft';
+					# code...
+					break;
+				}
+				$agent_entries['entries']['all'][$key]['status']  = $status;
 		}
 
 		$agency['details'] = $agent;

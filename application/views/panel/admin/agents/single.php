@@ -99,6 +99,7 @@
 																	<th>State</th>
 																	<th>City</th>
 																	<th>Website</th>
+																	<th>Status</th>
 																</tr>
 															</thead>
 															<tbody>
@@ -114,6 +115,7 @@
 																		<td><?= $application['organization_state'] ?></td>
 																		<td><?= $application['organization_city'] ?></td>
 																		<td><?= $application['organization_url'] ?></td>
+																		<td><?= $application['status'] ?></td>
 																	</tr>
 																<?php endforeach ?>
 															</tbody>
@@ -135,11 +137,11 @@
 											topStart: {
 												buttons: [{
 														extend: 'excelHtml5',
-														title: 'Export_<?= date('YmdHis') ?>'
+														title: 'Applications_Export_<?= date('YmdHis') ?>'
 													},
 													{
 														extend: 'csvHtml5',
-														title: 'Export_<?= date('YmdHis') ?>'
+														title: 'Applications_Export_<?= date('YmdHis') ?>'
 													}
 												]
 											}

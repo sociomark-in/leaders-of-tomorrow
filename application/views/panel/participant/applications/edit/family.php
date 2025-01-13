@@ -65,6 +65,13 @@
 									<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
 								</div>
 							</div>
+							<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="">
+								<label for="" class="form-label">Date of Birth</label>
+								<input required type="text" data-type="date" name="dob" class="form-control">
+								<span class="form-text">(in DD/MM/YYYY)</span>
+							</div>
+						</div> -->
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Business Segment</label>
@@ -107,25 +114,24 @@
 										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
+            							<label for="" class="form-label">State</label>
+            							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+            							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+            								<option value="">Select State</option>
+            								<?php foreach ($locations['states'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
+            						<div class="col-xl-4 col-lg-6 col-12">
+            							<label for="" class="form-label">City</label>
+            							<select required name="organization[address][city]" id="citySelect" class="form-select">
+            								<option value="">Select City</option>
+            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
 								</div>
 							</div>
 
@@ -154,7 +160,7 @@
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
+									<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -356,12 +362,26 @@
 										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Generational Status</label>
-									<input required type="number" value="<?= $application_temp['id_255204'] ?>" name="organization[beneficiary]" class="form-control">
+									<!-- <input required type="number" min="0" max="100" value="<?= $application['id_255204'] ?>" name="organization[beneficiary]" class="form-control"> -->
+									<select required name="organization[beneficiary]" id="" class="form-select">
+										<option value="">Select Generation</option>
+										<option <?= ($application['id_255204'] == "1st") ? "selected" : "" ?> value="1st">1st </option>
+										<option <?= ($application['id_255204'] == "2nd") ? "selected" : "" ?> value="2nd">2nd</option>
+										<option <?= ($application['id_255204'] == "3rd") ? "selected" : "" ?> value="3rd">3rd</option>
+										<option <?= ($application['id_255204'] == "4th") ? "selected" : "" ?> value="4th">4th</option>
+										<option <?= ($application['id_255204'] == "5th") ? "selected" : "" ?> value="5th">5th</option>
+										<option <?= ($application['id_255204'] == "6th") ? "selected" : "" ?> value="6th">6th</option>
+										<option <?= ($application['id_255204'] == "7th") ? "selected" : "" ?> value="7th">7th</option>
+										<option <?= ($application['id_255204'] == "8th") ? "selected" : "" ?> value="8th">8th</option>
+										<option <?= ($application['id_255204'] == "9th") ? "selected" : "" ?> value="9th">8th</option>
+										<option <?= ($application['id_255204'] == "10th") ? "selected" : "" ?> value="10th">8th</option>
+									</select>
 								</div>
 							</div>
 
@@ -380,7 +400,20 @@
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Equity spilt between family members and investors</label>
-									<input required type="text" value="<?= $application_temp['id_255206'] ?>" name="organization[investment]" class="form-control">
+									<div class="row g-3">
+										<?php
+										$investment = explode('-', $application['id_255206']);
+										?>
+										<div class="col-lg-auto col-12">
+											<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment][family]" class="form-control">
+										</div>
+										<div class="col-lg-auto col-12">
+											<input placeholder="% Investor Equity" type="number" min="0" max="100" value="<?= $investment[1]  ?>" name="organization[investment][investors]" class="form-control">
+										</div>
+										<div class="col-lg-auto col-12">
+											<input placeholder="& Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment][others]" class="form-control">
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -398,14 +431,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has the business evolved from one generation to the next? Describe the key transitions in leadership, vision, and strategy between generations</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255202'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255202'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255203'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -422,14 +455,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches (Max 200 words)</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -445,14 +478,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What have been the major challenges your family business has faced, and how did you overcome them? Please provide specific examples of challenges in areas such as management, market expansion, or technology integration</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -468,7 +501,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How have you handled economic or market downturns, and what strategies have you implemented to ensure business continuity and growth in challenging times.</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+									<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255305'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -601,7 +634,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Resubmit</button>
+						<button type="submit" class="btn btn-primary">Confirm and Re-submit</button>
 					</div>
 				</div>
 			</div>
@@ -610,15 +643,190 @@
 	</div>
 </div>
 <script>
+	$.validator.addMethod("emailregex", function(value, element) {
+		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
+	$.validator.addMethod("letters", function(value, element) {
+		return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
+	});
+	$.validator.addMethod("phone", function(value, element) {
+		return this.optional(element) || /^[0-9]*$/i.test(value);
+	});
 	$("#formFullView").validate({
 		ignore: [
 			":hidden", ":focus"
 		],
 		rules: {
-			//Rules
+			"name": {
+				letters: true,
+			},
+			"organization[name]": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
+			"contact_person[email]": {
+				emailregex: true
+			},
+			"contact_person[contact]": {
+				phone: true
+			},
+
+			organization_overview: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			organization_services: {
+				maxlength: 5000,
+				minlength: 50
+			},
+
+			case_study_1: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_2: {
+				maxlength: 5000,
+				minlength: 50
+			},
+
+			case_study_3: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_5: {
+				maxlength: 5000,
+				minlength: 50
+			},
 		},
 		messages: {
-			//messages
+			'name': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
+			'contact_person[email]': {
+				emailregex: 'Please enter a valid email address.'
+			},
+			'contact_person[contact]': {
+				phone: 'Please enter a valid contact number'
+			},
+
+
+			organization_overview: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			organization_services: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+
+			case_study_1: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_2: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+
+			case_study_3: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_4: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_5: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
 		}
+	});
+
+
+	$("input[type='file']").each(function(index, element) {
+		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+			$(element).prop("required", true);
+		} else {
+			$(element).prop("required", false);
+		}
+	});
+	$('.dropify').dropify({
+		error: {
+			'fileSize': 'The file size is too big ({{ value }} max).',
+			'minWidth': 'The image width is too small ({{ value }}}px min).',
+			'maxWidth': 'The image width is too big ({{ value }}}px max).',
+			'minHeight': 'The image height is too small ({{ value }}}px min).',
+			'maxHeight': 'The image height is too big ({{ value }}px max).',
+			'imageFormat': 'The image format is not allowed ({{ value }} only).'
+		}
+	});
+	/* PDF.js - Run PDF Version Check */
+	$('.dropify').each((index, elem) => {
+		$(elem).on('change', function(event) {
+			// Access the selected file directly from the event object
+			const file = event.target.files[0];
+
+			// Check if a file is actually selected
+			if (!file) {
+				console.warn('No file selected for dropify element:', this);
+				return; // Exit the function if no file is selected
+			}
+
+			// Create a new FileReader object for each file
+			const reader = new FileReader();
+
+			reader.onload = (event) => {
+				const arrayBuffer = event.target.result;
+				console.log('ArrayBuffer:', arrayBuffer);
+
+				// Assuming you have pdfjsLib loaded:
+				pdfjsLib.getDocument(arrayBuffer).promise.then((pdfDoc) => {
+					pdfDoc.getMetadata().then((metadata) => {
+						console.log('Metadata:', metadata.info.PDFFormatVersion);
+						if (metadata.info.PDFFormatVersion > "1.7") {
+							alert('PDF Version not Supported!');
+						}
+					});
+				}).catch((error) => {
+					console.error('Error getting PDF version:', error);
+				});
+			};
+
+			// Read the file as an ArrayBuffer
+			reader.readAsArrayBuffer(file);
+		});
 	});
 </script>

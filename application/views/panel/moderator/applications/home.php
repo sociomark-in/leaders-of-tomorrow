@@ -96,70 +96,29 @@
 													</td>
 												</tr>
 											<?php endforeach ?>
-											<?php foreach ($all_applications['individual'] as $key => $application) : ?>
-												<tr>
-													<td>
-														<span class="text-muted"><?= $application['nomination_id'] ?></span>
-														<h5><?= $application['name'] ?></h5>
-														<a href="<?= $application['linkedin_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="linkedin"></i></a>
-														<a href="<?= $application['organization_url'] ?>" target="_blank"><i class="link-icon px-1 mb-1" data-feather="link"></i></a>
-													</td>
-													<td>
-														<h5><?= $application['id_74529'] ?></h5>
-														<a href="mailto:<?= $application['id_74530'] ?>"><i class="link-icon px-1 mb-1" data-feather="mail"></i></a>
-														<a href="tel:<?= $application['id_74531'] ?>"><i class="link-icon px-1 mb-1" data-feather="phone"></i></a>
-													</td>
-													<td><?= $application['category']['name'] ?></td>
-													<td><?= $application['status_text'] ?></td>
-													<td>
-														<?php
-														$edit = 0;
-														switch ($user['role']) {
-															case 'jury':
-															case 'admin':
-															case 'super-admin':
-																$edit = 1;
-																# code...
-																break;
-
-															default:
-																# code...
-																break;
-														} ?>
-														<?php if ($edit) : ?>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
-																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
-															</a>
-															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
-															<?php endif ?>
-														<?php else: ?>
-															<?php if (in_array($application['status'], [3])) : ?>
-															<?php endif ?>
-														<?php endif ?>
-														<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
-														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
-														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
-													</td>
-												</tr>
-											<?php endforeach ?>
 										</tbody>
 									</table>
 									<script>
-										$('#applicationsTable').DataTable({
-											dom: "Bfrtip",
+										new DataTable("#applicationsTable", {
+											scrollX: true,
+											paging: false,
 											order: [
-												[0, 'desc']
+												[0, 'asc']
 											],
-											// "columnDefs": [{
-											// 	"targets": [2, 4],
-											// 	"orderable": false
-											// }],
 											layout: {
 												topStart: {
-													buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+													buttons: [{
+															extend: 'excelHtml5',
+															title: 'Export_<?= date('YmdHis') ?>'
+														},
+														{
+															extend: 'csvHtml5',
+															title: 'Export_<?= date('YmdHis') ?>'
+														}
+													]
 												}
 											}
-										})
+										});
 									</script>
 								</div>
 							</div>

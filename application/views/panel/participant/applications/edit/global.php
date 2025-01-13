@@ -55,7 +55,7 @@
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Name of the Applicant</label>
+									<label for="" class="form-label">Name of the Applicant (MD/CEO/Founder or equivalent)</label>
 									<input required type="text" value="<?= $application["name"] ?>" name="name" class="form-control">
 								</div>
 							</div>
@@ -114,25 +114,24 @@
 										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
+            							<label for="" class="form-label">State</label>
+            							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+            							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+            								<option value="">Select State</option>
+            								<?php foreach ($locations['states'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
+            						<div class="col-xl-4 col-lg-6 col-12">
+            							<label for="" class="form-label">City</label>
+            							<select required name="organization[address][city]" id="citySelect" class="form-select">
+            								<option value="">Select City</option>
+            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
 								</div>
 							</div>
 
@@ -161,7 +160,7 @@
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
+									<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -325,6 +324,7 @@
 										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<span class="form-text">(On payroll + On contract) as on March 31, 2024 in India</span>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -338,6 +338,7 @@
 										<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<span class="form-text">(On payroll + On contract) as on March 31, 2024 Globally</span>
 								</div>
 							</div>
 
@@ -362,7 +363,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Details of Cross-Border Collaborations/Partnerships Established</label>
-									<textarea required name="organization_collabs" id="" class="form-control" rows="5"><?= $application_temp['id_255205'] ?></textarea>
+									<textarea required name="organization_collabs" id="" class="form-control" rows="5"><?= $application['id_255205'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -370,7 +371,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Market Expansion in the Last 2 Years</label>
-									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application_temp['id_255206'] ?></textarea>
+									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application['id_255206'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -378,14 +379,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255207'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255207'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255208'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255208'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -402,7 +403,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe an innovative solution, product, or service introduced to global markets that has significantly impacted your business. Highlight how it was adapted to meet the needs of diverse international audiences</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -418,7 +419,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Provide an overview of your business’s performance in global markets, including key achievements, market share growth, and any notable recognitions or awards. How has your organization impacted the industries you operate in?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -435,7 +436,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -451,7 +452,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -478,21 +479,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">MSME Certificate</label>
-									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Proof of Global Presence</label>
-									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Provide a list of business registrations, partnerships, or collaborations in the required countries) (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Applicable Environmental Certifications</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
 									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
 								</div>
@@ -500,21 +501,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact</label>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Any other Collaterals</label>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
@@ -585,7 +586,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Resubmit</button>
+						<button type="submit" class="btn btn-primary">Confirm and Re-submit</button>
 					</div>
 				</div>
 			</div>

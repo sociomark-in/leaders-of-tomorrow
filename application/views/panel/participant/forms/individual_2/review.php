@@ -359,14 +359,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255203'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255204'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255204'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -383,7 +383,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What inspired you to start your entrepreneurial journey? Describe your vision and mission for the business.</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -399,7 +399,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe the innovative approach or solutions you have implemented to address key challenges in your business. How have you utilized technology, creativity, or new methodologies in your business model?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -415,7 +415,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What measurable impact has your business had on the market or industry? Share specific outcomes or success stories.</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -431,7 +431,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How does your business contribute to societal or environmental well-being? Share examples of initiatives or programs</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -447,7 +447,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What is your long-term vision for the initiative, and how do you plan to scale its impact in the future?</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255305'] ?></textarea>
+									<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255305'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -474,21 +474,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">MSME Certificate</label>
-									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India / DPIIT certificate (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Incorporation Certificate</label>
-									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Company Incorporation Certificate/Business Registration/GST*(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Proof of Age </label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(e.g., Aadhaar, Passport, or Driver’s
 										License)(PDF of Maximum Size 500KB)</span>
 								</div>
@@ -496,21 +496,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255406'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text"> (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact</label>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Any other Collaterals</label>
-									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>

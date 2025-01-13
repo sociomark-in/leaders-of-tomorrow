@@ -13,6 +13,13 @@ $color-green: #03943b;
 body{
 	line-height: 1.3;
 }
+
+pre{
+	font-family: "Inter", Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+}
+
 form {
 	label {
 		display: inline-block;

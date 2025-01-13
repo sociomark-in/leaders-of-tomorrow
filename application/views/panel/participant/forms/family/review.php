@@ -368,7 +368,7 @@
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Generational Status</label>
-									<!-- <input required type="number" min="0" max="100" value="<?= $application_temp['id_255204'] ?>" name="organization[beneficiary]" class="form-control"> -->
+									<!-- <input required type="number" min="0" max="100" value="<?= $application['id_255204'] ?>" name="organization[beneficiary]" class="form-control"> -->
 									<select required name="organization[beneficiary]" id="" class="form-select">
 										<option value="">Select Generation</option>
 										<option <?= ($application['id_255204'] == "1st") ? "selected" : "" ?> value="1st">1st </option>
@@ -402,7 +402,7 @@
 									<label for="" class="form-label">Equity spilt between family members and investors</label>
 									<div class="row g-3">
 										<?php
-										$investment = explode('-', $application_temp['id_255206']);
+										$investment = explode('-', $application['id_255206']);
 										?>
 										<div class="col-lg-auto col-12">
 											<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment][family]" class="form-control">
@@ -431,14 +431,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has the business evolved from one generation to the next? Describe the key transitions in leadership, vision, and strategy between generations</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255202'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255202'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255203'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -455,14 +455,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches (Max 200 words)</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -478,14 +478,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">What have been the major challenges your family business has faced, and how did you overcome them? Please provide specific examples of challenges in areas such as management, market expansion, or technology integration</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Outline your growth trajectory over the past 10 years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -501,7 +501,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How have you handled economic or market downturns, and what strategies have you implemented to ensure business continuity and growth in challenging times.</label>
-									<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255305'] ?></textarea>
+									<textarea required name="case_study_5" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255305'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>

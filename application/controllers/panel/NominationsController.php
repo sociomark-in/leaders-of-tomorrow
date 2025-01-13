@@ -45,8 +45,20 @@ class NominationsController extends PanelController
 				$applications['msme'][$i]['status_text'] = $s;
 			}
 		}
-		$this->data['all_applications'] = $applications;
-		$this->load->moderator_view('applications/home', $this->data);
+		switch ($this->user_session['role']) {
+			case 'participant':
+
+				break;
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
+				$this->data['all_applications'] = $applications;
+				$this->load->moderator_view('applications/home', $this->data);
+				break;
+
+			default:
+				break;
+		}
 	}
 
 	public function user_side()
@@ -110,6 +122,7 @@ class NominationsController extends PanelController
 		$this->load->model('data/CityModel');
 
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
+		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
 		$this->data['id'] = $slug;
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];

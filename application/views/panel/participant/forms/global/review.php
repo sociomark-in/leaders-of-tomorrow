@@ -363,7 +363,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Details of Cross-Border Collaborations/Partnerships Established</label>
-									<textarea required name="organization_collabs" id="" class="form-control" rows="5"><?= $application_temp['id_255205'] ?></textarea>
+									<textarea required name="organization_collabs" id="" class="form-control" rows="5"><?= $application['id_255205'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -371,7 +371,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Market Expansion in the Last 2 Years</label>
-									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application_temp['id_255206'] ?></textarea>
+									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application['id_255206'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -379,14 +379,14 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Brief Description of the Business</label>
-									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255207'] ?></textarea>
+									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255207'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Core Products / Services Offered</label>
-									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255208'] ?></textarea>
+									<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255208'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -403,7 +403,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe an innovative solution, product, or service introduced to global markets that has significantly impacted your business. Highlight how it was adapted to meet the needs of diverse international audiences</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -419,7 +419,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Provide an overview of your business’s performance in global markets, including key achievements, market share growth, and any notable recognitions or awards. How has your organization impacted the industries you operate in?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -436,7 +436,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Highlight the sustainability initiative or corporate social responsibility (CSR) program implemented by your organization that has had a measurable impact in the global markets you operate in</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -452,7 +452,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Outline your organization’s plans for future expansion and global growth. How are you leveraging technology, talent, and innovation to ensure scalability and readiness for emerging global challenges?</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -479,21 +479,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">MSME Certificate</label>
-									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Proof of Global Presence</label>
-									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Provide a list of business registrations, partnerships, or collaborations in the required countries) (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Applicable Environmental Certifications</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_75532'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
 									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 500KB)</span>
 								</div>
@@ -501,21 +501,21 @@
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact</label>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Any other Collaterals</label>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
+									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="1M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>

@@ -7,38 +7,38 @@
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
 		<!-- 
-	75502	organization_industry	
-	75503	organization_overview	
-	75508	organization_mission_vision	
-	75509	organization_services	
-	75510	organization_reveue_23	
-	75511	organization_reveue_22	
-	75512	organization_growth_23	
-	75513	organization_growth_22	
-	75514	organization_profit_23	
-	75515	organization_profit_22	
-	75516	organization_assets_23	
-	75517	organization_assets_22	
-	75518	organization_der_23	
-	75519	organization_der_22
+			75502	organization_industry	
+			75503	organization_overview	
+			75508	organization_mission_vision	
+			75509	organization_services	
+			75510	organization_reveue_23	
+			75511	organization_reveue_22	
+			75512	organization_growth_23	
+			75513	organization_growth_22	
+			75514	organization_profit_23	
+			75515	organization_profit_22	
+			75516	organization_assets_23	
+			75517	organization_assets_22	
+			75518	organization_der_23	
+			75519	organization_der_22
 
-	75520	initiative_name
-	75521	initiative_start_date	
-	75522	initiative_end_date	
-	75523	initiative_desc	
-	75524	initiative_challenges	
-	75525	initiative_strategy	
+			75520	initiative_name
+			75521	initiative_start_date	
+			75522	initiative_end_date	
+			75523	initiative_desc	
+			75524	initiative_challenges	
+			75525	initiative_strategy	
 
-	75526	initiative_tech
-	75527	initiative_impact	
-	75528	initiative_scalability	
-	75529	initiative_info	
+			75526	initiative_tech
+			75527	initiative_impact	
+			75528	initiative_scalability	
+			75529	initiative_info	
 
-	75530	doc1
-	75531	doc2	
-	75532	doc3	
-	75533	doc4	
- -->
+			75530	doc1
+			75531	doc2	
+			75532	doc3	
+			75533	doc4	
+		-->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -114,25 +114,24 @@
 										<input type="text" value="<?= $address[2] ?>" name="organization[address][line_3]" class="form-control mb-2">
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">State</label>
-										<input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control">
-										<!-- <select required name="organization[address][state]" id="" class="form-select">
-											<option value="">Select State</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12">
-										<label for="" class="form-label">City</label>
-										<input type="text" placeholder="" name="organization[address][city]" value="<?= $application['organization_city'] ?>" class="form-control">
-										<!-- <select required name="organization[address][city]" id="" class="form-select">
-											<option value="">Select City</option>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
-												<option value="Select <?= $i ?>">Select <?= $i ?></option>
-											<?php endfor ?>
-										</select> -->
-									</div>
+            							<label for="" class="form-label">State</label>
+            							<!-- <input type="text" placeholder="" name="organization[address][state]" value="<?= $application['organization_state'] ?>" class="form-control"> -->
+            							<select required name="organization[address][state]" id="stateSelect" class="form-select">
+            								<option value="">Select State</option>
+            								<?php foreach ($locations['states'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_state'] == $option['title']) ? "selected" : "" ?> value="<?= $option['title'] ?>"><?= $option['title'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
+            						<div class="col-xl-4 col-lg-6 col-12">
+            							<label for="" class="form-label">City</label>
+            							<select required name="organization[address][city]" id="citySelect" class="form-select">
+            								<option value="">Select City</option>
+            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
+            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+            								<?php endforeach ?>
+            							</select>
+            						</div>
 								</div>
 							</div>
 
@@ -161,7 +160,7 @@
 							<div class="col-xxl-6 col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
-									<input type="text" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
+									<input type="url" placeholder="https://www.domain.xyz" name="organization[url]" value="<?= $application['organization_url'] ?>" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -363,6 +362,7 @@
 										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 								</div>
 							</div>
 
@@ -421,7 +421,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe the digital technologies (e.g., AI, IoT) that your company has integrated into its operations. How did these technologies help in transforming your business model or customer experience</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -437,7 +437,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How has the integration of digital technologies impacted your company&#39;s performance in terms of revenue, customer satisfaction, and market share? Please provide any specific metrics or examples.</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -453,7 +453,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Describe how digital technologies have improved the sustainability of your operations, such as reducing waste, enhancing energy efficiency, or optimizing resource use</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -469,7 +469,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">How scalable are the digital solutions your company has implemented? Describe the potential for expanding the use of digital technologies within your business?</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="500" rows="5"> <?= $application['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -504,7 +504,7 @@
 								<div class="">
 									<label for="" class="form-label">Incorporation Certificate</label>
 									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="500K" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 500KB)</span>
+									<span class="form-text">Company Incorporation Certificate/Business Registration/GST*(PDF of Maximum Size 500KB)</span>
 								</div>
 							</div>
 							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -602,7 +602,7 @@
 						<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 					</div>
 					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Resubmit</button>
+						<button type="submit" class="btn btn-primary">Confirm and Re-submit</button>
 					</div>
 				</div>
 			</div>
@@ -611,43 +611,14 @@
 	</div>
 </div>
 <script>
-	function parseDDMMYYYYDate(dateString) {
-		let parts = dateString.split('/');
-		let day = parseInt(parts[0], 10);
-		let month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
-		let year = parseInt(parts[2], 10);
-
-		return new Date(year, month, day);
-	}
-	$('[name=initiative_start_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-		maxDate: '<?= date('d/m/Y') ?>',
-
-	});
-	$('[name=initiative_end_date]').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		showButtonPanel: true,
-		dateFormat: 'dd/mm/yy',
-	});
-
-	$.validator.addMethod("greater_than", function(value, element, param) {
-
-		var d1 = new Date(Date.parse(value));
-		var d2 = new Date(Date.parse($(param).val()));
-		console.log([value, $(param).val()]);
-		console.log([parseDDMMYYYYDate(value.trim()), parseDDMMYYYYDate($(param).val().trim())]);
-
-		return parseDDMMYYYYDate(value.trim()) > parseDDMMYYYYDate($(param).val().trim());
-	});
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
 	})
+	$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+		return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+	})
 	$.validator.addMethod("letters", function(value, element) {
-		return this.optional(element) || /^[a-zA-Z\s']*$/i.test(value);
+		return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
 	});
 	$.validator.addMethod("phone", function(value, element) {
 		return this.optional(element) || /^[0-9]*$/i.test(value);
@@ -657,20 +628,30 @@
 			":hidden", ":focus"
 		],
 		rules: {
+			"name": {
+				letters: true,
+			},
+			"organization[address][state]": {
+				letters: true,
+			},
+			"organization[address][city]": {
+				letters: true,
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: true,
+			},
+
+			"contact_person[name]": {
+				letters: true,
+			},
 			"contact_person[email]": {
 				emailregex: true
 			},
 			"contact_person[contact]": {
 				phone: true
 			},
-			overview: {
-				wordCount: 300
-			},
+
 			organization_overview: {
-				maxlength: 5000,
-				minlength: 50
-			},
-			organization_mission_vision: {
 				maxlength: 5000,
 				minlength: 50
 			},
@@ -678,9 +659,7 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			services_stmt: {
-				wordCount: 300
-			},
+
 			case_study_1: {
 				maxlength: 5000,
 				minlength: 50
@@ -689,29 +668,43 @@
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_strategy: {
+			case_study_3: {
 				maxlength: 5000,
 				minlength: 50
 			},
-			initiative_end_date: {
-				greater_than: '[name=initiative_start_date]'
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
 			},
 		},
 		messages: {
+			'name': {
+				letters: "Please enter a valid name."
+			},
+			'organization[name]': {
+				letters: "Please enter a valid name."
+			},
+			'organization[address][state]': {
+				letters: "Please enter a valid State."
+			},
+			'organization[address][city]': {
+				letters: "Please enter a valid City."
+			},
+			'organization[inc_date]': {
+				ddmmyyyyregex: "Please enter a valid date!"
+			},
+
+			'contact_person[name]': {
+				letters: "Please enter a valid name."
+			},
 			'contact_person[email]': {
 				emailregex: 'Please enter a valid email address.'
 			},
 			'contact_person[contact]': {
 				phone: 'Please enter a valid contact number'
 			},
-			overview: {
-				wordCount: "Error"
-			},
+
 			organization_overview: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
-			},
-			organization_mission_vision: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
@@ -719,9 +712,7 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			services_stmt: {
-				wordCount: "Error"
-			},
+
 			case_study_1: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
@@ -730,13 +721,32 @@
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_strategy: {
+			case_study_3: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},
-			initiative_end_date: {
-				greater_than: 'End Date should be greater than Start Date'
+			case_study_4: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
 			},
+		}
+	});
+
+	$("input[type='file']").each(function(index, element) {
+		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+			$(element).prop("required", true);
+		} else {
+			$(element).prop("required", false);
+		}
+	});
+	$('.dropify').dropify({
+		error: {
+			'fileSize': 'The file size is too big ({{ value }} max).',
+			'minWidth': 'The image width is too small ({{ value }}}px min).',
+			'maxWidth': 'The image width is too big ({{ value }}}px max).',
+			'minHeight': 'The image height is too small ({{ value }}}px min).',
+			'maxHeight': 'The image height is too big ({{ value }}px max).',
+			'imageFormat': 'The image format is not allowed ({{ value }} only).'
 		}
 	});
 </script>
