@@ -482,7 +482,7 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Bengaluru",
 				];
-				$this->load->city_view('delhi', $this->data);
+				$this->load->city_view('bengaluru', $this->data);
 				break;
 			case 'test':
 				$this->data['page'] = [
@@ -603,7 +603,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'bengaluru') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == '') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
