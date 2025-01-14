@@ -258,13 +258,19 @@ class AccountController extends PanelController
 		$agency['details'] = $agent;
 		$agency['data'] = $agent_entries;
 
-		switch ($agent_id) {
-			case 'value':
+		switch ($this->user_session['useremail']) {
+			case 'nilam@leadersoftomorrow.co.in':
+				$agent_id = '1595014714';
+				# code...
+				break;
+			case 'savitri@leadersoftomorrow.co.in':
+				$agent_id = '5167681127';
 				# code...
 				break;
 
 			default:
-				$this->data['agency'] = $agency;
+				redirect('login');
+				# code...
 				break;
 		}
 		$this->load->admin_view('agents/single', $this->data);
