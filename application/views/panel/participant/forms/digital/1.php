@@ -210,6 +210,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 	</div>
 </div>
 <?= form_close() ?>
+
 <script>
 	$.validator.addMethod("emailregex", function(value, element) {
 		return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);

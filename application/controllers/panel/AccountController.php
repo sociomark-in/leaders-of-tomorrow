@@ -38,6 +38,76 @@ class AccountController extends PanelController
 			case 'jury':
 				$this->load->moderator_view('home', $this->data);
 				break;
+			case 'agency':
+				$agent_id = null;
+				switch ($this->user_session['useremail']) {
+					case 'savy@agency1.com':
+						$agent_id = '1595014714';
+						# code...
+						break;
+					case '1595014714':
+						# code...
+						break;
+
+					default:
+						$agent_id = '5167681127';
+						# code...
+						break;
+				}
+				$this->load->model('panel/AgentModel');
+				$this->load->model('panel/LeadsModel');
+				$this->load->model('event/awards/CategoryModel');
+				$this->load->model('panel/EntriesModel');
+				$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $agent_id]), true)[0];
+				$agent_entries['users'] = json_decode($this->LeadsModel->get(null, ['created_by' => $agent_id]), true);
+				$agent_entries['entries'] =
+					[
+						'all' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id]), true),
+						'uncategorized' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '2']), true),
+						'approved' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '1']), true),
+						'rejected' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '0']), true),
+						'under_review' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'email', 'designation', 'organization_name', 'organization_state', 'organization_city', 'organization_url', 'status', 'created_at'], ['agent_referral' => 'yes', 'agent_name' => $agent_id, 'status' => '3']), true),
+					];
+
+				foreach ($agent_entries['entries']['all'] as $key => $application) {
+					$agent_entries['entries']['all'][$key]['category'] = json_decode($this->CategoryModel->get(['name'], ['type' => $application['category_id']]), true)[0];
+
+					$status = "Draft";
+					switch ($application['status']) {
+						case '0':
+							$status = 'Rejected';
+							break;
+						case '1':
+							$status = 'Accepted';
+							break;
+						case '2':
+							$status = 'Unlocked';
+							break;
+						case '3':
+							$status = 'Complete & Under Review';
+							break;
+						default:
+							$status = 'Draft';
+							# code...
+							break;
+					}
+					$agent_entries['entries']['all'][$key]['status']  = $status;
+				}
+
+				$agency['details'] = $agent;
+				$agency['data'] = $agent_entries;
+
+				switch ($agent_id) {
+					case 'value':
+						# code...
+						break;
+
+					default:
+						$this->data['agency'] = $agency;
+						break;
+				}
+				$this->load->agency_view('home', $this->data);
+				break;
 			default:
 				$applications['msme'] = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true);
 
@@ -161,7 +231,7 @@ class AccountController extends PanelController
 			];
 
 		foreach ($agent_entries['entries']['all'] as $key => $application) {
-			$agent_entries['entries']['all'][$key]['category'] = json_decode($this->CategoryModel->get(['name'],['type' => $application['category_id']]), true)[0];
+			$agent_entries['entries']['all'][$key]['category'] = json_decode($this->CategoryModel->get(['name'], ['type' => $application['category_id']]), true)[0];
 
 			$status = "Draft";
 			switch ($application['status']) {
@@ -181,8 +251,8 @@ class AccountController extends PanelController
 					$status = 'Draft';
 					# code...
 					break;
-				}
-				$agent_entries['entries']['all'][$key]['status']  = $status;
+			}
+			$agent_entries['entries']['all'][$key]['status']  = $status;
 		}
 
 		$agency['details'] = $agent;

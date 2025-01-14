@@ -24,4 +24,11 @@ class StatesAPIController extends CI_Controller
 
 		$this->output->set_output(json_encode($data));
 	}
+
+
+	public function get_cities_by_state(){
+		$this->load->model('data/CityModel');
+		$state = $this->input->get('state');
+		$this->output->set_output($this->CityModel->get(null, ['city_state' => $state]));
+	}
 }

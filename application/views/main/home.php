@@ -193,8 +193,14 @@ foreach ($springboards as $key => $city) {
 						<p data-aos="fade-up">
 							Leaders of Tomorrow Springboards is a dynamic series of ground events spanning 15 cities, designed to catapult your business to new heights. This innovative platform brings together renowned experts and business owners, fostering a collaborative environment where ideas are exchanged, challenges are addressed, and opportunities are seized. By converging with like-minded individuals and industry thought leaders, you'll gain invaluable insights, practical advice, and actionable strategies to propel your growth trajectory into the future. Join us at LOT Springboard and unlock the potential for your business to thrive in an ever-evolving landscape.
 						</p>
-						<a href="<?= base_url('city/' . $c_n) ?>" data-aos="fade-right" data-aos-delay="100" class="btn btn-yellow btn-hover-red">Upcoming Springboard</a>
-						<a href="<?= base_url('all-cities') ?>" data-aos="fade-right" class="btn btn-red">All Springboards</a>
+						<div class="row g-3">
+							<div class="col-auto">
+								<a href="<?= base_url('city/' . $c_n) ?>" data-aos="fade-right" data-aos-delay="100" class="btn btn-yellow btn-hover-red">Upcoming Springboard</a>
+							</div>
+							<div class="col-auto">
+								<a href="<?= base_url('all-cities') ?>" data-aos="fade-right" class="btn btn-red">All Springboards</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

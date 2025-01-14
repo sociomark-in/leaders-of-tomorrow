@@ -44,9 +44,6 @@ if ($nomination['stage'] >= 1) {
 						</div>
 					</div>
 				</div>
-				<?php
-				// print_r($_SESSION['temp_application_session']);
-				?>
 				<div class="col-12 grid-margin stretch-card">
 					<div class="col-12">
 						<?php
@@ -94,6 +91,77 @@ if ($nomination['stage'] >= 1) {
 						});
 					});
 				</script>
+				<?php switch ($this->input->get('stage')):
+					case 0:
+					case "": ?>
+						<script>
+							$state = $('#stateSelect');
+							$city = $('#citySelect');
+
+							$city.html(
+								"<option> Select State First</option>"
+							);
+							$state.on('change', () => {
+								$.ajax({
+									url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
+									success: function(data) {
+										$htmlData = "<option>Select City</option>";
+
+										if (data.length == 0) {
+											$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+										} else {
+											data.forEach(city => {
+												$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+											});
+										}
+
+										$city.html($htmlData);
+									}
+								})
+							})
+						</script>
+					<?php
+						break;
+					case 4: ?>
+						<div class="modal fade" id="uploadInstructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="staticBackdropLabel">File Upload Instructions</h1>
+									</div>
+									<div class="modal-body">
+										<div class="row g-3">
+											<div class="col-12">
+												To make sure your file remains supported for further process:
+											</div>
+											<div class="col-12">
+												<ol>
+													<li>Maximum File size should be <strong>500K</strong> max.</li>
+													<li>PDF Version <strong>
+															< 1.4</strong>
+													</li>
+													<li>PDF Versions for all the Attachments should be same.</li>
+												</ol>
+
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<a href="<?= base_url('dashboard') ?>" class="btn btn-red-outline">Back to Dashboard</a>
+										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<script>
+							let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('uploadInstructionsModal')) // Returns a Bootstrap modal instance
+							// Show or hide:
+							modal.show();
+						</script>
+				<?php break;
+				endswitch
+				?>
 			</div>
 		</div>
 	</div>
