@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="pb-0 d-none">
+	<section class="pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">

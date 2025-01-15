@@ -70,8 +70,8 @@ class BaseController extends CI_Controller
 			[
 				'name' => "Bengaluru",
 				'theme' => "Mastering Business, Gender and Leadership",
-				'date' => '2025-01-31',
-				'venue' => ""
+				'date' => '2025-01-24 17:00:00',
+				'venue' => "The Pride Hotel Bengaluru"
 			],
 			[
 				'name' => "Goa",

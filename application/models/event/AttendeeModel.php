@@ -66,15 +66,20 @@ class AttendeeModel extends CI_Model
 				$ticket_id = "28713";
 				$api_key = "004c5d82-c390-4723-9193-ad20f47b27a6";
 				break;
-				// Pune
+				// Indore
 			case '31e500d4-c82f-4b48-8d68-1cfb6860d176':
 				$ticket_id = "28720";
 				$api_key = "fadc03a5-04ae-4424-a492-9b76383ff6ee";
 				break;
-				// Pune
+				// Delhi
 			case 'c586b583-38a1-4985-92a6-a94daf8023c8':
 				$ticket_id = "28721";
 				$api_key = "f6500a0a-9540-4a87-9660-542a3e326fbd";
+				break;
+				// Bangalore
+			case '7d5dc078-858d-43f0-b8ff-e538a2c73cbe':
+				$ticket_id = "29111";
+				$api_key = "110e396e-210b-4c87-a210-826bff978855";
 				break;
 
 			default:

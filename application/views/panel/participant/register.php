@@ -105,4 +105,32 @@ if ($nomination['stage'] >= 1) {
 	});
 	$(":input").inputmask();
 </script>
+
+
+<script>
+	$state = $('#stateSelect');
+	$city = $('#citySelect');
+
+	$city.html(
+		"<option> Select State First</option>"
+	);
+	$state.on('change', () => {
+		$.ajax({
+			url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
+			success: function(data) {
+				$htmlData = "<option>Select City</option>";
+
+				if (data.length == 0) {
+					$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+				} else {
+					data.forEach(city => {
+						$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+					});
+				}
+
+				$city.html($htmlData);
+			}
+		})
+	})
+</script>
 <!-- End custom js for this page -->
