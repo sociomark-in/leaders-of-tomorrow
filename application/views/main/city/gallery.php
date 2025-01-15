@@ -34,9 +34,9 @@
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
-						<div class="gallery-masonry" id="galleryMasonry">
+						<div class="gallery-masonry row justify-content-center g-3 g-md-0 gap-md-2 gap-lg-4" id="galleryMasonry">
 							<?php for ($i = 1; $i <= count($city['gallery']); $i++) : ?>
-								<a class="tile gallery-tile mb-2" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/' . $i . '.jpg') ?>">
+								<a class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 tile gallery-tile" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/gallery/' . $i . '.jpg') ?>">
 									<figure>
 										<picture>
 											<!-- <source srcset="https://placehold.co/250x167/webp" type="image/webp"> -->
@@ -48,7 +48,7 @@
 								</a>
 							<?php endfor ?>
 						</div>
-					<script>
+						<script>
 						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
 							plugins: [lgZoom, lgThumbnail],
 							speed: 500,
