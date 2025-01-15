@@ -17,7 +17,8 @@ class RegistrationAPI extends CI_Controller
 			"jaipur" => "0550c724-d075-4dd6-821a-185a477b1b95",
 			"pune" => "ba68bb33-f10c-4edd-b7de-e333a754b31e",
 			"indore" => "31e500d4-c82f-4b48-8d68-1cfb6860d176",
-			"delhi-ncr" => "31e500d4-c82f-4b48-8d68-1cfb6860d176",
+			"delhi-ncr" => "c586b583-38a1-4985-92a6-a94daf8023c8",
+			"bengaluru" => "7d5dc078-858d-43f0-b8ff-e538a2c73cbe",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -63,19 +64,19 @@ class RegistrationAPI extends CI_Controller
 			"consent" => ($this->request['consent'] == 'on') ? true : false,
 		];
 		/*
-		"58470": "https://www.google.com",
-		"58478": "Marketing",
-		"58479": "Below 20 Cr",
-		"58480": "Textile",
-		"58481": "Swift"
+		"59320": "Marketing",
+		"59321": "Below 20 Cr",
+		"59322": "Textile",
+		"59312": "https://www.google.com",
+		"59323": "Swift"
 		*/
 
 		$data['registration_details']["custom_forms"] = [
-			"58487" => $this->request['organization']['department'],
-			"58486" => $this->request['organization']['turnover'],
-			"58485" => $this->request['organization']['industry'],
-			"58495" => $this->request['website'],
-			"58484" => $this->request['message'],
+			"59320" => $this->request['organization']['department'],
+			"59321" => $this->request['organization']['turnover'],
+			"59322" => $this->request['organization']['industry'],
+			"59312" => $this->request['website'],
+			"59323" => $this->request['message'],
 		];
 
 		// print_r($data);die;

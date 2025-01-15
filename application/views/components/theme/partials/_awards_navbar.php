@@ -44,7 +44,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</li>
 				<?php else: ?>
 					<li class="nav-item">
-						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login</a>
+						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
 					</li>
 					<!-- <li class="nav-item">
 						<a class="nav-link" href="<?= base_url('register') ?>">Register</a>

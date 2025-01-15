@@ -61,25 +61,22 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/ZXmypg8ofeY?si=ChkfyFW8NbS5ZEB6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/lD_qQOhTNvE?si=A9Z5OTUfTNssOHZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Pune: Building a Future-Ready Workforce</span></h2>
+						<h2><span>Spotlight on India's Startup Capital</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Pune, Maharashtra's second-largest city and former power center of the Maratha Empire, is now the state's cultural capital. Its robust economy thrives on manufacturing, automotive, and IT sectors, boasting the sixth-highest per capita income in India. With over 62% of its population under 30, Pune stands out as a hub for a young, innovative, future-ready workforce.
-						</p>
-						<p data-aos="fade-left" data-aos-delay="200">
-							To explore the factors that have facilitated the city's journey as a rising employment powerhouse, join the <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong> - one pitstop on our pan India roadshow series, only on ET Now.
+						The national capital, officially recognized as the start-up capital of India, continues to be the epicenter of the country's emerging start-up ecosystem and innovation. Its strategic location, infrastructure and diversity have attracted entrepreneurs from all over the country. Start-ups in diverse sectors such as manufacturing, IT, food, FinTech and EdTech industry have grown in the city rapidly in the past few years. Delhi now leads the start-up IPO race as well and is expected to continue being the frontrunner in the game. This springboard will showcase what contributed to the success and how the city is positioning itself at the global level. Join <strong class="text-red">Leaders of Tomorrow Delhi Springboard</strong> - one pitstop on our pan India roadshow series, only on ET NOW.
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
@@ -137,7 +134,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="speakers" class="pb-0 d-none">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -205,7 +202,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="gallery" class="d-none">
+	<section id="gallery" class="">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

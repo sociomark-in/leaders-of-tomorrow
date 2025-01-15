@@ -592,9 +592,23 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Coimbatore";
 				$this->load->city_view('gallery', $this->data);
 				break;
+			case 'pune':
+				$this->data['page'] = [
+					'title' => "Pune Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Pune";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'indore':
+				$this->data['page'] = [
+					'title' => "Indore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Indore";
+				$this->load->city_view('gallery', $this->data);
+				break;
 
 			default:
-				redirect('all-cities');
+				redirect('city/' . $city);
 				break;
 		}
 	}
@@ -603,7 +617,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == '') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'bengaluru') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
