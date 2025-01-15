@@ -1,12 +1,16 @@
-<?php $this->load->view('components/panel/_forgot_password_reset_modal');?>
+<?php $this->load->view('components/panel/_forgot_password_reset_modal'); ?>
 
 <main class="w-fullscreen">
 	<section class="section signup-widget">
 		<div class="container h-100">
-			<div class="row h-100 justify-content-between align-items-lg-center">
+			<div class="row g-3 g-md-0 h-100 justify-content-between align-items-lg-center">
 				<div class="col-xl-5 col-lg-8 col-md-6 col-12">
 					<div class="media-content">
-						<img class="w-100" src="<?= base_url('assets/images/ilu.png') ?>" alt="Leaders Of Tomorrow">
+						<picture>
+							<source srcset="<?= base_url('assets/images/ilu_awards.png') ?>" type="image/png" media="(min-width: 768px)">
+							<source srcset="<?= base_url('assets/images/ilu_awards@600.png') ?>" type="image/png" media="(max-width: 768px)">
+							<img class="w-100" src="<?= base_url('assets/images/ilu_awards@600.png') ?>" alt="">
+						</picture>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-12">

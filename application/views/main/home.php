@@ -26,17 +26,21 @@ foreach ($springboards as $key => $city) {
 						<div class="row justify-content-between align-items-center">
 							<div class="col-xl-5 col-lg-6 col-12">
 								<div class="" data-aos="fade-right">
-									<img class="w-100" src="<?= base_url('assets/images/') ?>ilu.png" alt="">
+									<picture>
+										<source srcset="<?= base_url('assets/images/ilu.png') ?>" type="image/png" media="(min-width: 768px)">
+										<source srcset="<?= base_url('assets/images/ilu@600.png') ?>" type="image/png" media="(max-width: 768px)">
+										<img class="w-100" src="<?= base_url('assets/images/ilu@600.png') ?>" alt="">
+									</picture>
 								</div>
-								<!--<img class="w-100" src="<?= base_url('assets/images/') ?>ilu2.gif" alt="">-->
 							</div>
 							<div class="col-xl-7 col-lg-6 col-12">
 								<div class="media-content">
 									<div class="ratio ratio-1x1">
-										<!-- <video poster="<?= base_url('assets/video/') ?>banner-kv-poster.png" muted autoplay loop>
-								<source src="<?= base_url('assets/video/') ?>banner-kv.mp4">
-							</video> -->
-										<img src="<?= base_url('assets/images/') ?>kv-buildings.png" alt="" class="spin">
+										<picture class="spin">
+											<source srcset="<?= base_url('assets/images/kv-buildings.png') ?>" type="image/png" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/kv-buildings@600.png') ?>" type="image/png" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/kv-buildings@600.png') ?>" alt="">
+										</picture>
 									</div>
 								</div>
 							</div>
