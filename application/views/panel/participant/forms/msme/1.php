@@ -102,46 +102,6 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						</div>
 					</div>
 				</div>
-				<script>
-					const stateSelect = document.getElementById("stateSelect");
-					const citySelect = document.getElementById("citySelect");
-
-					// Get all states of India
-					const states = csc.getStatesOfCountry('IN');
-
-					// Populate state select
-					states.forEach(state => {
-						const option = document.createElement("option");
-						option.value = state.isoCode;
-						option.text = state.name;
-						stateSelect.appendChild(option);
-					});
-
-					// Event listener for state change
-					stateSelect.addEventListener("change", () => {
-						const selectedState = stateSelect.value;
-
-						// Get cities of the selected state
-						const cities = csc.getCitiesOfState('IN', selectedState);
-
-						citySelect.innerHTML = ""; // Clear previous cities
-
-						// Add "Select City" option
-						const selectCityOption = document.createElement("option");
-						selectCityOption.value = "";
-						selectCityOption.text = "Select City";
-						citySelect.appendChild(selectCityOption);
-
-						// Populate city select
-						cities.forEach(city => {
-							const option = document.createElement("option");
-							option.value = city.name;
-							option.text = city.name;
-							citySelect.appendChild(option);
-						});
-					});
-				</script>
-
 
 				<!-- <div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">

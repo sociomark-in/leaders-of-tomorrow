@@ -93,7 +93,8 @@ if ($nomination['stage'] >= 1) {
 				</script>
 				<?php switch ($this->input->get('stage')):
 					case 0:
-					case "": ?>
+					case "":
+					case 5: ?>
 						<script>
 							$state = $('#stateSelect');
 							$city = $('#citySelect');
@@ -142,7 +143,7 @@ if ($nomination['stage'] >= 1) {
 													</li>
 													<li>PDF Versions for all the Attachments should be same.</li>
 												</ol>
-
+												<button class="btn text-red" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Click Here</button> 
 											</div>
 										</div>
 									</div>

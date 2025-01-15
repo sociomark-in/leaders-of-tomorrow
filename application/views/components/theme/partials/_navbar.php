@@ -68,13 +68,6 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</a>
 				</li>
 			</ul>
-			<div class="row d-none">
-				<div class="col-md-auto">
-					<ul class="navbar-nav align-items-center g-4">
-
-					</ul>
-				</div>
-			</div>
 		</div>
 		<a class="navbar-brand d-none d-lg-block" href="https://www.timesnownews.com/" target="_blank">
 			<img src="<?= base_url("assets/images/sponsors/") ?>times.png" alt="ICS Logo" height="50">
