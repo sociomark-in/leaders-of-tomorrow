@@ -47,6 +47,69 @@ $utm = $utm;
 								}
 								?>
 							</div>
+							<div class="modal fade" id="uploadInstructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="staticBackdropLabel">File Upload Instructions</h1>
+										</div>
+										<div class="modal-body">
+											<div class="row g-3">
+												<div class="col-12">
+													To make sure your file remains supported for further process:
+												</div>
+												<div class="col-12">
+													<ol>
+														<li>PDF Version should be - <strong>
+																< 1.4</strong>
+														</li>
+														<li>PDF Versions for all the Attachments should be same.</li>
+														<li>
+															For further instructions <a href="#" class="" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Click Here</a>
+														</li>
+													</ol>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Instructions</h1>
+										</div>
+										<div class="modal-body">
+											<div class="row g-3">
+												<div class="col-12">
+
+												</div>
+												<div class="col-12">
+													<ol>
+														<li>Open your PDF in Google Chrome</li>
+														<li>Select <strong>Print</strong> and set Print Destination as <strong>Save as PDF</strong></li>
+														<li>Save the PDF and upload the same PDF in your Application</li>
+													</ol>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button class="btn btn-primary" data-bs-target="#uploadInstructionsModal" data-bs-toggle="modal">Back to Instructions</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<script>
+								let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('uploadInstructionsModal')) // Returns a Bootstrap modal instance
+								// Show or hide:
+								modal.show();
+							</script>
 						</div>
 					</div>
 				</div>

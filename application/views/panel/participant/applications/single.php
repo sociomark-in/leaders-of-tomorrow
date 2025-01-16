@@ -162,6 +162,9 @@ if ($nomination['stage'] >= 1) {
 									<div class="modal-body">
 										<div class="row g-3">
 											<div class="col-12">
+												
+											</div>
+											<div class="col-12">
 												<ol>
 													<li>Open your PDF in Google Chrome</li>
 													<li>Select <strong>Print</strong> and set Print Destination as <strong>Save as PDF</strong></li>

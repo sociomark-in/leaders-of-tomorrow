@@ -274,13 +274,27 @@ class NominationsController extends PanelController
 				}
 			}
 
-			$pdf = new PDFMerger;
-			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
-			$pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
-			foreach ($temp as $key => $file) {
-				$pdf->addPDF($file);
+			// $pdf = new PDFMerger;
+			// $filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
+			// $pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			// foreach ($temp as $key => $file) {
+			// 	$pdf->addPDF($file);
+			// }
+			// $pdf->merge('browser', $filename);
+
+
+			$zip = new ZipArchive;
+        	if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
+			    unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+        	} elseif ($zip->open('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip', ZipArchive::CREATE) === TRUE) {
+
+				$zip->addFile('uploads/' . $application['nomination_id'] . '/docket_page.pdf', 'docket_page.pdf');
+				foreach ($temp as $key => $file) {
+					$zip->addFile($file, explode('uploads/' . $application['nomination_id'], $file)[1]);
+				}
+				$zip->close();
+			    redirect(base_url('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip'));
 			}
-			$pdf->merge('browser', $filename);
 		} else {
 			redirect('dashboard');
 		}

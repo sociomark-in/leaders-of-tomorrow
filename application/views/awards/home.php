@@ -5,7 +5,7 @@
 			<h3>12</h3>
 		</div>
 	</div>
-	<section class="section p-0">
+	<section class="section d-none">
 		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
 			<div class="bg-media">
 				<!-- <img class="w-100" src="https://placehold.co/1920x900" alt=""> -->
@@ -52,6 +52,25 @@
 							<div class="col-auto">
 								<h1>Awards</h1>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section pb-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-10 col-12">
+					<div class="media-content springboard-banner">
+						<div class="wrap">
+							<a href="<?= base_url('dashboard') ?>">
+								<picture>
+									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
+								</picture>
+							</a>
 						</div>
 					</div>
 				</div>

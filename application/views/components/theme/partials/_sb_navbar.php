@@ -63,7 +63,7 @@ switch ($city['name']) {
 			</ul>
 			<ul class="navbar-nav gap-2 <?= $past ?>">
 				<li class="nav-item">
-					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))  . '/register') ?>">Register</a>
+					<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))  . '/register') ?>">Register to Attend</a>
 				</li>
 			</ul>
 		</div>

@@ -155,7 +155,7 @@
 													<?php if ($speaker['photo'] == ""): ?>
 														<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php else: ?>
-														<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+														<img src="<?= base_url('assets/images/cities/' . str_replace(" ", '-', strtolower($city['name'])) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 													<?php endif ?>
 												</div>
 												<div class="desc text-center">
@@ -202,7 +202,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="gallery" class="">
+	<section id="gallery" class="d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

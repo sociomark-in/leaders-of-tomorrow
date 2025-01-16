@@ -44,7 +44,7 @@ class NominationAPIController extends CI_Controller
 		/* Set Uploads Config */
 		$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
 		$config['allowed_types'] = 'pdf';
-		$config['max_size'] = '1000';
+		$config['max_size'] = '2000';
 
 
 		/* PDFMerger Docket File Exists Script */

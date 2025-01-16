@@ -72,14 +72,11 @@
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Pune: Building a Future-Ready Workforce</span></h2>
+						<h2><span>Bengaluru: Mastering Business, Leadership & Gender Equity</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							Pune, Maharashtra's second-largest city and former power center of the Maratha Empire, is now the state's cultural capital. Its robust economy thrives on manufacturing, automotive, and IT sectors, boasting the sixth-highest per capita income in India. With over 62% of its population under 30, Pune stands out as a hub for a young, innovative, future-ready workforce.
-						</p>
-						<p data-aos="fade-left" data-aos-delay="200">
-							To explore the factors that have facilitated the city's journey as a rising employment powerhouse, join the <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong> - one pitstop on our pan India roadshow series, only on ET Now.
+							Bengaluru's dynamic business ecosystem stands as a testament to its thriving entrepreneurial culture. Home to the world's second-largest AI talent pool, Bengaluru has become a magnet for MNCs seeking to establish a strong foothold in India. The city also excels in advancing gender equity, bridging workplace disparities & championing inclusivity in business. Discover how businesses in Bengaluru are harnessing talent, fostering innovation and setting a benchmark to achieve unparalleled growth. Join us for the <strong class="text-red">Leaders of Tomorrow Bengaluru Springboard</strong>, a pivotal stop on our pan-India roadshow series, exclusively on ET Now.
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>
