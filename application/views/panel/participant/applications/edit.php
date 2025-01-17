@@ -110,6 +110,57 @@ $utm = $utm;
 								// Show or hide:
 								modal.show();
 							</script>
+
+							<script>
+								$state = $('#stateSelect');
+								$city = $('#citySelect');
+								
+								$htmlData = "";
+
+								$cityValue = "<?= $application['organization_city'] ?>";
+								$stateValue = "<?= $application['organization_state'] ?>";
+								if ($cityValue != "" || $cityValue != "Select State First" || $cityValue != $stateValue) {
+									$htmlData += "<option selected value='" + $cityValue + "'>" + $cityValue + "</option>";
+								}
+
+								$city.html(
+									"<option value=''>Select State First</option>"
+								);
+								$.ajax({
+									url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
+									success: function(data) {
+
+										$htmlData += "<option value=''>Select City</option>";
+										if (data.length == 0) {
+											$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+										} else {
+											data.forEach(city => {
+												$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+											});
+										}
+
+										$city.html($htmlData);
+									}
+								})
+								$state.on('change', () => {
+									$.ajax({
+										url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
+										success: function(data) {
+											$htmlData = "<option  value=''>Select City</option>";
+
+											if (data.length == 0) {
+												$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+											} else {
+												data.forEach(city => {
+													$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+												});
+											}
+
+											$city.html($htmlData);
+										}
+									})
+								})
+							</script>
 						</div>
 					</div>
 				</div>

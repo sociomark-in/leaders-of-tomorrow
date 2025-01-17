@@ -1553,6 +1553,9 @@ class NominationAPIController extends CI_Controller
 								case 'Nilam':
 									$agent_code = '1595014714';
 									break;
+								case 'Savy':
+									$agent_code = '5167681127';
+									break;
 
 								default:
 									$agent_code = '5167681127';

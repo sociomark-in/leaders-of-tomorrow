@@ -41,16 +41,20 @@ class AccountController extends PanelController
 			case 'agency':
 				$agent_id = null;
 				switch ($this->user_session['useremail']) {
-					case 'savy@agency1.com':
+					case 'savitri@leadersoftomorrow.co.in':
 						$agent_id = '1595014714';
 						# code...
 						break;
-					case '1595014714':
+					case 'nilam@leadersoftomorrow.co.in':
+						$agent_id = '5167681127';
+						# code...
+						break;
+					case 'idfcuser01@leadersoftomorrow.co.in':
+						$agent_id = '9475208163';
 						# code...
 						break;
 
 					default:
-						$agent_id = '5167681127';
 						# code...
 						break;
 				}
@@ -219,6 +223,7 @@ class AccountController extends PanelController
 		$this->load->model('panel/LeadsModel');
 		$this->load->model('event/awards/CategoryModel');
 		$this->load->model('panel/EntriesModel');
+		
 		$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $agent_id]), true)[0];
 		$agent_entries['users'] = json_decode($this->LeadsModel->get(null, ['created_by' => $agent_id]), true);
 		$agent_entries['entries'] =
@@ -258,21 +263,8 @@ class AccountController extends PanelController
 		$agency['details'] = $agent;
 		$agency['data'] = $agent_entries;
 
-		switch ($this->user_session['useremail']) {
-			case 'nilam@leadersoftomorrow.co.in':
-				$agent_id = '1595014714';
-				# code...
-				break;
-			case 'savitri@leadersoftomorrow.co.in':
-				$agent_id = '5167681127';
-				# code...
-				break;
+		$this->data['agency'] = $agency;
 
-			default:
-				redirect('login');
-				# code...
-				break;
-		}
 		$this->load->admin_view('agents/single', $this->data);
 	}
 
