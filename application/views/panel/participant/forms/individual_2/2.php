@@ -176,7 +176,7 @@
 					<div class="">
 						<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
 						<!--<input required type="text" value="<?= $application_temp['id_255201'] ?>" name="organization_reach" class="form-control">-->
-						<select required name="organization[reach]" id="" class="form-select">
+								<select required name="organization[reach]" id="" class="form-select">
 							<option value="">Select Option</option>
 							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
 							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>

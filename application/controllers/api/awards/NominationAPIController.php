@@ -44,7 +44,7 @@ class NominationAPIController extends CI_Controller
 		/* Set Uploads Config */
 		$config['upload_path'] = FCPATH . 'uploads/' .  $application_id;
 		$config['allowed_types'] = 'pdf';
-		$config['max_size'] = '2000';
+		$config['max_size'] = '5000';
 
 
 		/* PDFMerger Docket File Exists Script */
@@ -1552,9 +1552,6 @@ class NominationAPIController extends CI_Controller
 							switch ($this->request['agent_name']) {
 								case 'Nilam':
 									$agent_code = '1595014714';
-									break;
-								case 'Savy':
-									$agent_code = '5167681127';
 									break;
 
 								default:

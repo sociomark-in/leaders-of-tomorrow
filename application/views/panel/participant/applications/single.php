@@ -98,16 +98,19 @@ if ($nomination['stage'] >= 1) {
 						<script>
 							$state = $('#stateSelect');
 							$city = $('#citySelect');
-
-							$htmlData = "";
+							
+							$cityValue = "<?= $application['organization_city'] ?>";
+							if ($cityValue != "") {
+								$htmlData += "<option selected value='" + $cityValue + "'>" + $cityValue + "</option>";
+							}
 
 							$city.html(
-								"<option value=''>Select State First</option>"
+								"<option value=''> Select State First</option>"
 							);
 							$.ajax({
 								url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
 								success: function(data) {
-									$htmlData = "<option  value=''>Select City</option>";
+									$htmlData += "<option value=''>Select City</option>";
 
 									if (data.length == 0) {
 										$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
@@ -124,7 +127,7 @@ if ($nomination['stage'] >= 1) {
 								$.ajax({
 									url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
 									success: function(data) {
-										$htmlData = "<option  value=''>Select City</option>";
+										$htmlData = "<option value=''>Select City</option>";
 
 										if (data.length == 0) {
 											$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
