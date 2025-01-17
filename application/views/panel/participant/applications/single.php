@@ -99,14 +99,32 @@ if ($nomination['stage'] >= 1) {
 							$state = $('#stateSelect');
 							$city = $('#citySelect');
 
+							$htmlData = "";
+
 							$city.html(
-								"<option> Select State First</option>"
+								"<option value=''>Select State First</option>"
 							);
+							$.ajax({
+								url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
+								success: function(data) {
+									$htmlData = "<option  value=''>Select City</option>";
+
+									if (data.length == 0) {
+										$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+									} else {
+										data.forEach(city => {
+											$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+										});
+									}
+
+									$city.html($htmlData);
+								}
+							})
 							$state.on('change', () => {
 								$.ajax({
 									url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
 									success: function(data) {
-										$htmlData = "<option>Select City</option>";
+										$htmlData = "<option  value=''>Select City</option>";
 
 										if (data.length == 0) {
 											$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
