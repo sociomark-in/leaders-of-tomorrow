@@ -340,6 +340,7 @@
             							<option value="">Select Option</option>
             							<option <?= ($application['id_255201'] == "Domestic") ? "selected" : "" ?> value="Domestic">Domestic</option>
             							<option <?= ($application['id_255201'] == "International") ? "selected" : "" ?> value="International">International</option>
+										<option <?= ($application['id_255201'] == "Both") ? "selected" : "" ?> value="Both">Both</option>
             						</select>
 								</div>
 							</div>
