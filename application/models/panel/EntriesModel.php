@@ -129,6 +129,7 @@ class EntriesModel extends CI_Model
 	 */
 	public function get($select = null, $where = null, $table = 'individual')
 	{
+		$this->db->where(['global_status' => 1]);
 		if (!is_null($select)) {
 			$this->db->select($select);
 		}

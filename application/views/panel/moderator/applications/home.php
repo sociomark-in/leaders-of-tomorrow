@@ -37,6 +37,19 @@
 									</div> --
 								</div>
 							</div> -->
+							<?php
+							$edit = 0;
+							switch ($user['role']) {
+								case 'admin':
+								case 'super-admin':
+									$edit = 1;
+									# code...
+									break;
+
+								default:
+									# code...
+									break;
+							} ?>
 							<div class="row">
 								<div class="col-12">
 									<table class="table table-striped w-100" id="applicationsTable">
@@ -54,33 +67,22 @@
 												<th>City</th>
 												<th>Website</th>
 												<th>Status</th>
+												<?php if($edit): ?>
+													<th>Lead Source</th>
+												<?php endif ?>
 											</tr>
 										</thead>
 										<tbody>
 											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
 												<tr>
 												<td>
-														<?php
-														$edit = 0;
-														switch ($user['role']) {
-															case 'jury':
-															case 'admin':
-															case 'super-admin':
-																$edit = 1;
-																# code...
-																break;
-
-															default:
-																# code...
-																break;
-														} ?>
 														<?php if ($edit) : ?>
 															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
 																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 															</a>
 															<?php if (in_array($application['status'], [3, 1, 0])) : ?>
 															<?php endif ?>
-														<?php else: ?>
+															<?php else: ?>
 															<?php if (in_array($application['status'], [3])) : ?>
 															<?php endif ?>
 														<?php endif ?>
@@ -88,7 +90,7 @@
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
-													<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $application['created_at']), 'F j, Y H:iA')  ?></td>
+													<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $application['created_at']), 'F d, Y H:iA')  ?></td>
 													<td>(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['name'] ?></td>
@@ -98,9 +100,12 @@
 													<td><?= $application['organization_state'] ?></td>
 													<td><?= $application['organization_city'] ?></td>
 													<td><?= $application['organization_url'] ?></td>
-													<td><?= $application['status'] ?></td>
+													<td><?= $application['status_text'] ?></td>
+													<?php if($edit): ?>
+														<td><?= $application['agent_name'] ?? "Direct" ?></td>
+													<?php endif ?>
 												</tr>
-											<?php endforeach ?>
+												<?php endforeach ?>
 										</tbody>
 									</table>
 									<script>
@@ -108,7 +113,7 @@
 											scrollX: true,
 											paging: false,
 											order: [
-												[1, 'asc']
+												[1, 'desc']
 											],
 											layout: {
 												topStart: {

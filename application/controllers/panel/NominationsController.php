@@ -13,12 +13,13 @@ class NominationsController extends PanelController
 		parent::__construct();
 		$this->load->model('event/awards/CategoryModel');
 		$this->load->model('panel/EntriesModel');
+		$this->load->model('panel/AgentModel');
 		$this->user_session = $_SESSION['awards_panel_user'];
 	}
 	public function index()
 	{
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
+			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "agent_referral", "agent_name", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
@@ -43,6 +44,7 @@ class NominationsController extends PanelController
 						break;
 				}
 				$applications['msme'][$i]['status_text'] = $s;
+				$applications['msme'][$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true)[0]['name'];
 			}
 		}
 		switch ($this->user_session['role']) {
@@ -53,6 +55,7 @@ class NominationsController extends PanelController
 			case 'admin':
 			case 'super-admin':
 				$this->data['all_applications'] = $applications;
+				
 				$this->load->moderator_view('applications/home', $this->data);
 				break;
 
