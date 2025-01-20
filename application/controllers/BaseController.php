@@ -62,7 +62,7 @@ class BaseController extends CI_Controller
 				'venue' => "Pride Hotel & Convention Centre, Indore"
 			],
 			[
-				'name' => "Delhi NCR",
+				'name' => "Delhi",
 				'theme' => "Delhi: Spotlight on India's New Startup Capital",
 				'date' => '2025-01-10 17:00:00',
 				'venue' => " Hotel Pride Plaza, New Delhi."

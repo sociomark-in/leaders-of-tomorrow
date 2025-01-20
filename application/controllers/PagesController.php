@@ -8,6 +8,11 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-117191517,thumbsize-164428,width-1280,height-720,resizemode-75/117191517.jpg?quality=100",
+				'title' => "3 Key Takeaways from Neeta Lulla on India's Handloom Sector",
+				'redirect' => "https://www.etnownews.com/news/3-key-takeaways-from-neeta-lulla-on-indias-handloom-sector-article-117191517"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-116983014,thumbsize-164428,width-1280,height-720,resizemode-75/116983014.jpg?quality=100",
 				'title' => "From Fields to Fortune: The Thriving Potential of Rural Entrepreneurship",
 				'redirect' => "https://www.etnownews.com/news/from-fields-to-fortune-the-thriving-potential-of-rural-entrepreneurship-article-116983014"

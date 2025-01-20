@@ -466,12 +466,12 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('indore', $this->data);
 				break;
-			case 'delhi-ncr':
+			case 'delhi':
 				$this->data['page'] = [
 					'title' => "Delhi Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city'] = [
-					'name' => "Delhi NCR",
+					'name' => "Delhi",
 					'speakers' => [
 						// [
 						// 	'photo' => "Bharat_Goyal.png",
