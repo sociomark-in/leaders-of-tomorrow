@@ -134,16 +134,14 @@
 				<div class="col-12">
 					<div class="row g-2 justify-content-center">
 						<?php foreach ($categories['msme'] as $key => $category): ?>
-							<div class="col-xxl-4 col-lg-6">
+							<!-- <div class="col-xxl-4 col-lg-6">
 								<a class="card glw-card h-100" href="<?= base_url('awards/category/' . $category['code']) ?>">
-									<!-- <a class="card glw-card h-100" href="#"> -->
 									<div class="card-body">
 										<div class="row h-100 align-items-center">
 											<div class="col-auto">
 												<div class="glw-image">
 													<div class="glw-icon p-2 pb-3">
 														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
-														<!-- <img src="<?= base_url('assets/images/icons/trophy_color.png') ?>" class="w-100" alt=""> -->
 													</div>
 												</div>
 											</div>
@@ -153,8 +151,61 @@
 										</div>
 									</div>
 								</a>
+							</div> -->
+							<div class="col-xxl-4 col-lg-6">
+								<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+									<div class="card-body">
+										<div class="row h-100 align-items-center">
+											<div class="col-auto">
+												<div class="glw-image">
+													<div class="glw-icon p-2 pb-3">
+														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<h6 class="m-0"><?= $category['name'] ?></h6>
+											</div>
+										</div>
+									</div>
+								</a>
+								<script>
+										$button = $("#categoryModelHandler<?= $key ?>");
+										$button.on("click", () => {
+											$.ajax({
+												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
+												data: {
+													category: "<?= $category['code'] ?>"
+												},
+												success: function(result) {
+													console.log(result);
+													$("#categoryModel .modal-title").text(result.name)
+													$("#categoryModel .modal-body").html(
+														"<p>"+ result.description +"</p>"
+													)
+												}
+											})
+										})
+								</script>
 							</div>
 						<?php endforeach ?>
+						<div class="modal fade" id="categoryModel" tabindex="-1" aria-labelledby="categoryModelLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="categoryModelLabel">Modal title</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										...
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<a href="<?= base_url('awards/category/' . $category['code'] . '/nominate')?>" class="btn btn-red">Nominate Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

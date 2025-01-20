@@ -65,7 +65,11 @@
 										<div class="row g-3">
 											<div class="col-12">
 												<?php
-												$address = implode(', ', json_decode($application['id_255001']));
+												if(is_array(json_decode($application['id_255001']))){
+													$address = implode(', ', json_decode($application['id_255001']));
+												} else {
+													$address = $application['id_255001'];
+												}
 												?>
 												<p class="form-label">Registered Address Participating Entity</p>
 												<h5><?= $address ?></h5>

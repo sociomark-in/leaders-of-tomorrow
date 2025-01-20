@@ -40,6 +40,7 @@
 							<?php
 							$edit = 0;
 							switch ($user['role']) {
+								case 'jury':
 								case 'admin':
 								case 'super-admin':
 									$edit = 1;
