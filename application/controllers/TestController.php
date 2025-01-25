@@ -87,9 +87,14 @@ class TestController extends CI_Controller
 		];
 		// $this->load->view('panel/emails/participant_nomination_reject', $this->data);
 
-		print_r(hash('md5', hash('sha256', "9999186738")));
 	}
 
+	function test()
+	{
+		
+		$pdf = $this->load->library('pdflib/MergePDF');
+		// print_r(hash('md5', hash('sha256', "9999186738")));
+	}
 	public function twiliosms()
 	{
 		$this->load->library('twilio/smsclient');
