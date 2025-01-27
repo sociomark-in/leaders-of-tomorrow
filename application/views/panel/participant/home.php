@@ -29,8 +29,9 @@
 											<div class="mb-3">
 												<h5 class=""><?= $application['category']['name'] ?></h5>
 											</div>
-											<div class="">
-												<p><?= $application['status_text'] ?></p>
+											<div class="d-flex gap-3 gap-md-4">
+												<p>Stage I:&nbsp;<?= $application['status_text'] ?></p>
+												<p>Stage II:&nbsp;<?= $application['status_2_text'] ?? "--" ?></p>
 											</div>
 										</div>
 										<div class="card-footer">

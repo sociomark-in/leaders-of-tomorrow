@@ -42,18 +42,19 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="col-xl-4 col-lg-6 col-12">
 		<div class="">
-			<label for="" class="form-label">Were you assisted by our team to submit this nomination?</label>
-			<div class="row">
+			<label for="" class="form-label">Are you an existing IDFC FIRST Bank Customer?</label>
+			<div class="row ms-1">
 				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="agent_referrer" value="yes" id="agentReferred" required>
+					<input class="form-check-input" type="radio" name="is_idfc_customer" value="yes" id="idfcReferred" required>
 					<label class="form-check-label" for="flexRadioDefault2">
 						Yes
 					</label>
 				</div>
 				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="agent_referrer" value="no" required>
+					<input class="form-check-input" type="radio" name="is_idfc_customer" value="no" required>
 					<label class="form-check-label" for="flexRadioDefault1">
 						No
 					</label>
@@ -62,50 +63,57 @@
 		</div>
 	</div>
 
-	<div class="col-xl-3 col-lg-6 col-12" id="agentDetails">
-		<div class="">
-			<label for="" class="form-label"> Please select their name</label>
-			<!--<select name="agent_name" class="form-select" required>-->
-			<!--	<option value="Nilam">Nilam</option>-->
-			<!--	<option value="Savitri">Savy</option>-->
-			<!--</select>-->
-			<div class="row">
-				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="agent_name" value="Savitri" id="agentReferred">
-					<label class="form-check-label" for="flexRadioDefault2">
-						Savy
-					</label>
-				</div>
-				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="agent_name" value="Nilam">
-					<label class="form-check-label" for="flexRadioDefault1">
-						Nilam
-					</label>
+	<?php if (count($lead) > 0) :?>
+
+		<input type="hidden" name="agent_referrer" value="yes">
+		<input type="hidden" name="agent_name" value="<?= $lead['created_by'] ?>">
+
+		<?php else: ?>
+			<div class="col-xl-4 col-lg-6 col-12">
+				<div class="">
+					<label for="" class="form-label">Were you assisted by our team to submit this nomination?</label>
+					<div class="row ms-1">
+						<div class="col-auto form-check">
+							<input class="form-check-input" type="radio" name="agent_referrer" value="yes" id="agentReferred" required>
+							<label class="form-check-label" for="flexRadioDefault2">
+								Yes
+							</label>
+						</div>
+						<div class="col-auto form-check">
+							<input class="form-check-input" type="radio" name="agent_referrer" value="no" required>
+							<label class="form-check-label" for="flexRadioDefault1">
+								No
+							</label>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	
-	<!--<div class="col-xl-4 col-lg-6 col-12 d-none">-->
-	<!--	<div class="">-->
-	<!--		<label for="" class="form-label">Are you an existing IDFC FIRST Bank Customer?</label>-->
-	<!--		<div class="row">-->
-	<!--			<div class="col-auto form-check">-->
-	<!--				<input class="form-check-input" type="radio" name="agent_idfc_referrer" value="IDFC FIRST Bank Customer" id="idfcReferred" required>-->
-	<!--				<label class="form-check-label" for="flexRadioDefault2">-->
-	<!--					Yes-->
-	<!--				</label>-->
-	<!--			</div>-->
-	<!--			<div class="col-auto form-check">-->
-	<!--				<input class="form-check-input" type="radio" name="agent_idfc_referrer" value="Other" required>-->
-	<!--				<label class="form-check-label" for="flexRadioDefault1">-->
-	<!--					No-->
-	<!--				</label>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
-	
+		
+			<div class="col-xl-3 col-lg-6 col-12" id="agentDetails">
+				<div class="">
+					<label for="" class="form-label"> Please select their name</label>
+					<!--<select name="agent_name" class="form-select" required>-->
+					<!--	<option value="Nilam">Nilam</option>-->
+					<!--	<option value="Savitri">Savy</option>-->
+					<!--</select>-->
+					<div class="row ms-1">
+						<div class="col-auto form-check">
+							<input class="form-check-input" type="radio" name="agent_name" value="Savitri" id="agentReferred">
+							<label class="form-check-label" for="flexRadioDefault2">
+								Savy
+							</label>
+						</div>
+						<div class="col-auto form-check">
+							<input class="form-check-input" type="radio" name="agent_name" value="Nilam">
+							<label class="form-check-label" for="flexRadioDefault1">
+								Nilam
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+	<?php endif ?>
+		
 	<div class="col-12">
 		<button type="submit" class="btn btn-primary">Submit Nomination & Return to Dashboard</button>
 	</div>

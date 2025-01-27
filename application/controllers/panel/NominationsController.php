@@ -30,13 +30,13 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = '<span class="badge bg-success">Accepted</span>';
+						$s = '<span class="badge bg-success">Approved</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-dark">Unlocked</span>';
+						$s = '<span class="badge bg-dark">Need Improvements</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
+						$s = '<span class="badge bg-warning">Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -93,13 +93,13 @@ class NominationsController extends PanelController
 						$s = '<span class="badge bg-danger">Rejected</span>';
 						break;
 					case '1':
-						$s = '<span class="badge bg-success">Accepted</span>';
+						$s = '<span class="badge bg-success">Approved</span>';
 						break;
 					case '2':
-						$s = '<span class="badge bg-dark">Unlocked</span>';
+						$s = '<span class="badge bg-dark">Need Improvements</span>';
 						break;
 					case '3':
-						$s = '<span class="badge bg-warning">Complete & Under Review</span>';
+						$s = '<span class="badge bg-warning">Under Review</span>';
 						break;
 					default:
 						$s = '<span class="badge bg-secondary">Draft</span>';
@@ -153,6 +153,7 @@ class NominationsController extends PanelController
 
 		$this->load->model('data/StateModel');
 		$this->load->model('data/CityModel');
+		$this->load->model('panel/LeadsModel');
 
 		$this->data['locations']['states'] = json_decode($this->StateModel->get(), true);
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
@@ -168,10 +169,13 @@ class NominationsController extends PanelController
 			case 'participant':
 				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
 				$this->data['nomination']['stage'] = $stage;
-				if ($stage <= 6) {
-					$this->data['application'] = $application;
+				$this->data['application'] = $application;
+				if ($stage < 6) {
 					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
-				} else {
+				} elseif ($stage == 6) {
+					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
+					$lead = json_decode($this->LeadsModel->get(null, ['email' => $this->user_session['useremail']]), true)[0];
+					$this->data['lead'] = $lead;
 				}
 
 				$this->load->panel_view('applications/single', $this->data);

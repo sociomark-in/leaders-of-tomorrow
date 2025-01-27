@@ -423,6 +423,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];
@@ -705,6 +706,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];
@@ -980,6 +982,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];
@@ -1270,6 +1273,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];
@@ -1543,6 +1547,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];
@@ -1817,6 +1822,7 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
+							'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
 							'status' => '3'
 						];

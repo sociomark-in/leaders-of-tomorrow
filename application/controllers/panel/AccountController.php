@@ -82,13 +82,13 @@ class AccountController extends PanelController
 							$status = 'Rejected';
 							break;
 						case '1':
-							$status = 'Accepted';
+							$status = 'Approved';
 							break;
 						case '2':
-							$status = 'Unlocked';
+							$status = 'Need Improvements';
 							break;
 						case '3':
-							$status = 'Complete & Under Review';
+							$status = 'Under Review';
 							break;
 						default:
 							$status = 'Draft';
@@ -125,13 +125,13 @@ class AccountController extends PanelController
 								$s = '<span class="badge bg-danger">Rejected</span>';
 								break;
 							case '1':
-								$s = '<span class="badge bg-success">Accepted</span>';
+								$s = '<span class="badge bg-success">Approved</span>';
 								break;
 							case '2':
-								$s = '<span class="badge bg-dark">Unlocked</span>';
+								$s = '<span class="badge bg-dark">Need Improvements</span>';
 								break;
 							case '3':
-								$s = '<span class="badge bg-warning">Complete & Under Review</span>';
+								$s = '<span class="badge bg-warning">Under Review</span>';
 								break;
 							default:
 								$s = '<span class="badge bg-secondary">Draft</span>';
@@ -244,13 +244,13 @@ class AccountController extends PanelController
 					$status = 'Rejected';
 					break;
 				case '1':
-					$status = 'Accepted';
+					$status = 'Approved';
 					break;
 				case '2':
-					$status = 'Unlocked';
+					$status = 'Need Improvements';
 					break;
 				case '3':
-					$status = 'Complete & Under Review';
+					$status = 'Under Review';
 					break;
 				default:
 					$status = 'Draft';

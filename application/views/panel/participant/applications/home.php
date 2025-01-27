@@ -6,7 +6,7 @@
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">My Applications</li>
+				<li class="breadcrumb-item active" aria-current="page">My Application</li>
 			</ol>
 		</nav>
 	</div>
@@ -17,60 +17,6 @@
 				<div class="col-12">
 					<?php if (count($my_applications['msme']) > 0) : ?>
 						<div class="row">
-							<?php foreach ($my_applications['individual'] as $key => $application) : ?>
-								<div class="col-xl-4 col-lg-6 col-12">
-									<div class="row">
-										<div class="col-12 grid-margin stretch-card">
-											<div class="card">
-												<div class="card-body">
-													<div class="mb-3">
-														<h5 class=""><?= $application['category']['name'] ?></h5>
-													</div>
-													<div class="">
-														<p><?= $application['status_text'] ?></p>
-													</div>
-												</div>
-												<div class="card-footer">
-													<div class="row justify-content-between">
-														<div class="col">
-															<div class="mb-0 text-sm">
-																<p>
-																	Applied On<br>
-																	<strong>
-																		<?= $application['created_at'] ?>
-																	</strong>
-																</p>
-															</div>
-														</div>
-														<div class="col-auto">
-															<div class="col-auto">
-																<?php
-																switch ($application['status']) {
-																	case '2':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
-																		$text = "Edit Application";
-																		break;
-																	case '4':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
-																		$text = "Complete Application";
-																		break;
-
-																	default:
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
-																		$text = "";
-																		break;
-																}
-																?>
-																<a href="<?= $redirect ?>"><?= $text ?></a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php endforeach ?>
 							<?php foreach ($my_applications['msme'] as $key => $application) : ?>
 								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
@@ -168,6 +114,8 @@
 							<?php endforeach ?>
 						</div>
 					<?php endif ?>
+
+
 				</div>
 			</div>
 		</div>
