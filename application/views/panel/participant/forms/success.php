@@ -62,8 +62,8 @@
 		</div>
 	</div>
 
-	<div class="col-xl-3 col-lg-6 col-12">
-		<div class="" id="agentDetails">
+	<div class="col-xl-3 col-lg-6 col-12" id="agentDetails">
+		<div class="">
 			<label for="" class="form-label"> Please select their name</label>
 			<!--<select name="agent_name" class="form-select" required>-->
 			<!--	<option value="Nilam">Nilam</option>-->
@@ -85,6 +85,27 @@
 			</div>
 		</div>
 	</div>
+	
+	<!--<div class="col-xl-4 col-lg-6 col-12 d-none">-->
+	<!--	<div class="">-->
+	<!--		<label for="" class="form-label">Are you an existing IDFC FIRST Bank Customer?</label>-->
+	<!--		<div class="row">-->
+	<!--			<div class="col-auto form-check">-->
+	<!--				<input class="form-check-input" type="radio" name="agent_idfc_referrer" value="IDFC FIRST Bank Customer" id="idfcReferred" required>-->
+	<!--				<label class="form-check-label" for="flexRadioDefault2">-->
+	<!--					Yes-->
+	<!--				</label>-->
+	<!--			</div>-->
+	<!--			<div class="col-auto form-check">-->
+	<!--				<input class="form-check-input" type="radio" name="agent_idfc_referrer" value="Other" required>-->
+	<!--				<label class="form-check-label" for="flexRadioDefault1">-->
+	<!--					No-->
+	<!--				</label>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</div>-->
+	
 	<div class="col-12">
 		<button type="submit" class="btn btn-primary">Submit Nomination & Return to Dashboard</button>
 	</div>

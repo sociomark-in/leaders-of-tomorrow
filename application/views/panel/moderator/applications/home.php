@@ -61,16 +61,16 @@
 												<th>ID</th>
 												<th>Category</th>
 												<th>Name</th>
+												<th>Status</th>
+												<?php if($edit): ?>
+													<th>Lead Source</th>
+												<?php endif ?>
 												<th>Email</th>
 												<th>Organization Name</th>
 												<th>Designation</th>
 												<th>State</th>
 												<th>City</th>
 												<th>Website</th>
-												<th>Status</th>
-												<?php if($edit): ?>
-													<th>Lead Source</th>
-												<?php endif ?>
 											</tr>
 										</thead>
 										<tbody>
@@ -95,16 +95,16 @@
 													<td>(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['name'] ?></td>
+													<td><?= $application['status_text'] ?></td>
+													<?php if($edit): ?>
+														<td><?= $application['agent_name'] ?? "Direct" ?></td>
+													<?php endif ?>
 													<td><?= $application['email'] ?></td>
 													<td><?= $application['organization_name'] ?></td>
 													<td><?= $application['designation'] ?></td>
 													<td><?= $application['organization_state'] ?></td>
 													<td><?= $application['organization_city'] ?></td>
 													<td><?= $application['organization_url'] ?></td>
-													<td><?= $application['status_text'] ?></td>
-													<?php if($edit): ?>
-														<td><?= $application['agent_name'] ?? "Direct" ?></td>
-													<?php endif ?>
 												</tr>
 												<?php endforeach ?>
 										</tbody>

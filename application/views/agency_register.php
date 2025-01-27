@@ -3,8 +3,16 @@
 <main>
 	<section>
 		<div class="container">
-			<div class="row">
-				<div class="col-xl-6"></div>
+			<div class="row g-4 justify-content-between align-items-lg-center">
+				<div class="col-xl-5 col-lg-8 col-md-6 col-12">
+				    <div class="media-content">
+						<picture>
+							<source srcset="<?= base_url('assets/images/ilu_awards.png') ?>" type="image/png" media="(min-width: 768px)">
+							<source srcset="<?= base_url('assets/images/ilu_awards@600.png') ?>" type="image/png" media="(max-width: 768px)">
+							<img class="w-100" src="<?= base_url('assets/images/ilu_awards@600.png') ?>" alt="">
+						</picture>
+					</div>
+				</div>
 				<div class="col-xl-6">
 					<div class="plain-card">
 						<div class="card-body">
@@ -13,7 +21,7 @@
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
 								<div class="section-title mb-3 mb-md-5">
-									<h2><span>Lead for Awards</span></h2>
+									<h2><span>Register to Nominate</span></h2>
 								</div>
 								<div class="">
 									<style>
