@@ -7,8 +7,7 @@
         "plivo/plivo-php": "^4.66",
         "google/apiclient": "^2.17",
         "google/auth": "^1.26",
-        "getbrevo/brevo-php": "^2.0",
-        "ilovepdf/ilovepdf-php": "^1.2"
+        "getbrevo/brevo-php": "^2.0"
     },
 	"scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
