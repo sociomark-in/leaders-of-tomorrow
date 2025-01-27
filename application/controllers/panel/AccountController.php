@@ -113,7 +113,7 @@ class AccountController extends PanelController
 				$this->load->agency_view('home', $this->data);
 				break;
 			default:
-				$applications['msme'] = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true);
+				$applications['msme'] = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status', 'status_2'], ['created_by' => $this->user_session['id']]), true);
 
 				if (count($applications['msme']) > 0) {
 					for ($i = 0; $i < count($applications['msme']); $i++) {
@@ -139,6 +139,34 @@ class AccountController extends PanelController
 								break;
 						}
 						$applications['msme'][$i]['status_text'] = $s;
+
+						if ($applications['msme'][$i]['status']) {
+							# code...
+							$s = $applications['msme'][$i]['status_2'];
+							switch ($s) {
+								case '0':
+									$s = '<span class="badge bg-danger">Rejected</span>';
+									break;
+								case '1':
+									$s = '<span class="badge bg-success">Approved</span>';
+									break;
+								case '2':
+									$s = '<span class="badge bg-dark">Need Improvements</span>';
+									break;
+								case '3':
+									$s = '<span class="badge bg-warning">Under Review</span>';
+									break;
+								case '4':
+									$s = '<span class="badge bg-secondary">Draft</span>';
+									# code...
+									break;
+								default:
+									$s = NULL;
+									# code...
+									break;
+							}
+						}
+						$applications['msme'][$i]['status_2_text'] = $s;
 					}
 				}
 

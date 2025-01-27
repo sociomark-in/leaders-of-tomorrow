@@ -87,6 +87,7 @@ $route['nominate'] = 'awards/AccountController/nominate';
 // Participant
 $route['dashboard'] = 'panel/AccountController';
 $route['dashboard/my-applications'] = 'panel/NominationsController/user_side';
+$route['dashboard/my-presentations'] = 'panel/NominationsController/user_presentations';
 
 $route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate/$1';
 
@@ -122,8 +123,9 @@ $route['api/new-nominee'] = 'NomineeController/add';
 
 $route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
 $route['api/v2/auth/verify/(:any)/verify'] = 'api/auth/VerificationAPIController/verify/$1';
-$route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/password_reset/$1';
-$route['api/v2/auth/forgot-password/send-otp'] = 'api/awards/SettingsAPIController/forgot_pw_otp/$1';
+$route['api/v2/settings/password/reset'] = 'api/awards/SettingsAPIController/password_reset';
+$route['api/v2/auth/forgot-password/send-otp'] = 'api/awards/SettingsAPIController/forgot_pw_otp';
+$route['api/v2/auth/forgot-password/resend-password'] = 'api/awards/SettingsAPIController/forgot_pw_resend';
 
 
 $route['api/v2/register/otp/send'] = 'api/auth/AuthAPIController/send_otp';

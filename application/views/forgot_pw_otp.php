@@ -17,7 +17,7 @@
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
 								<div class="col-12">
-									<?= form_open('api/v2/auth/forgot-password/send-otp', ['id' => "loginForm"]) ?>
+									<?= form_open('api/v2/auth/forgot-password/resend-password', ['id' => "loginForm"]) ?>
 									<div class="row gap-2">
 										<div class="col-12">
 											<div class="section-title">

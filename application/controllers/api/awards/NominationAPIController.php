@@ -2510,6 +2510,7 @@ class NominationAPIController extends CI_Controller
 				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
+				$this->UserModel->update(['is_nominated' => 1], ['id' => $nomination['created_by']]);
 
 				if ($this->EntriesModel->update($data, ['nomination_id' => $nomination['nomination_id']])) {
 					$recipients = [

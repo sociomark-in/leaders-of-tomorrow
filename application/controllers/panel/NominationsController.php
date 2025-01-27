@@ -1,9 +1,11 @@
 <?php
+
+use Clegginabox\PDFMerger\PDFMerger;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/PanelController.php";
 require_once APPPATH . "vendor/autoload.php";
 
-use Clegginabox\PDFMerger\PDFMerger;
 
 class NominationsController extends PanelController
 {
@@ -71,7 +73,8 @@ class NominationsController extends PanelController
 		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true)
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true),
+			'stage_2_applications' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id'], 'status' => 1]), true)
 		];
 		if (count($applications['msme']) > 0) {
 
@@ -282,7 +285,7 @@ class NominationsController extends PanelController
 				}
 			}
 
-			// $filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
+			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
 			// $pdf = new PDFMerger;
 			// $pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 			// foreach ($temp as $key => $file) {
@@ -291,24 +294,38 @@ class NominationsController extends PanelController
 			// $pdf->merge('browser', $filename);
 
 
-			// $pdf = $this->load->library('pdflib/MergePDF');
+			// $this->load->library('pdflib/MergePDF');
+			// $pdf = new MergePDF();
 			// $pdf->merge($temp, $filename);
 
-
-			$zip = new ZipArchive;
-			if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
-				unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
-			} elseif ($zip->open('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip', ZipArchive::CREATE) === TRUE) {
-
-				$zip->addFile('uploads/' . $application['nomination_id'] . '/docket_page.pdf', 'docket_page.pdf');
-				foreach ($temp as $key => $file) {
-					$zip->addFile($file, explode('uploads/' . $application['nomination_id'], $file)[1]);
-				}
-				$zip->close();
-				redirect(base_url('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip'));
+			$this->pdf = new Ilovepdf("project_public_" . $this->keys['ilovepdf_public_key'], "secret_key_" . $this->keys['ilovepdf_secret_key']);
+			$task = $this->pdf->newTask('merge');
+			foreach ($files as $key => $file) {
+				$task->addFile($file);
 			}
+			$task->execute();
+			$task->download($filename);
+
+			// $zip = new ZipArchive;
+			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
+			// 	unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+			// } elseif ($zip->open('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip', ZipArchive::CREATE) === TRUE) {
+
+			// 	$zip->addFile('uploads/' . $application['nomination_id'] . '/docket_page.pdf', 'docket_page.pdf');
+			// 	foreach ($temp as $key => $file) {
+			// 		$zip->addFile($file, explode('uploads/' . $application['nomination_id'], $file)[1]);
+			// 	}
+			// 	$zip->close();
+			// 	redirect(base_url('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip'));
+			// }
 		} else {
 			redirect('dashboard');
 		}
+	}
+
+
+	function user_presentations()
+	{
+		$this->load->panel_view('presentations/home', $this->data);
 	}
 }

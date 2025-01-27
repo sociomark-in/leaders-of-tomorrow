@@ -49,6 +49,40 @@ class SettingsAPIController extends CI_Controller
 		}
 	}
 
+	public function forgot_pw_resend()
+	{
+		$this->request = $this->input->post();
+
+		$user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
+
+		$recipients = [
+			[
+				"email" =>  $user['email'],
+				"name" =>  $user['name']
+			]
+		];
+
+		$password = $user['contact'];
+		$data = [
+			'password' => $password
+		];
+		$data['email'] = $user['email'];
+
+		$email_data = [
+			'user' => [
+				'email' => $data['email'],
+				'password' => $data['password'],
+			]
+		];
+
+		$subject = APP_NAME . " - Resent Password";
+		$body = "Hi, <br>Your login Details are as follows:<br>Username:" . $this->request['email'] . "<br>Password:" . $this->request['email'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
+		$this->load->view('panel/emails/participant_register_new', $email_data);
+		// $htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
+		// if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+		// 	redirect('login');
+		// }
+	}
 	public function forgot_pw()
 	{
 		$this->request = $this->input->post();

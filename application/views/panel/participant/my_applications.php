@@ -55,6 +55,20 @@
 													?>
 													<a href="<?= $redirect ?>">View Application</a>
 												</div>
+												<div class="col-auto">
+													<?php
+													if ($application['status'] == "") {
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']);
+													} elseif ($application['stage_status'] >= 1) {
+														# code...
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+													} else {
+														$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'] + 1;
+													}
+
+													?>
+													<a href="<?= $redirect ?>">View Application</a>
+												</div>
 											</div>
 										</div>
 									</div>
