@@ -6,7 +6,7 @@ use Plivo\RestClient;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-require_once APPPATH . "vendor/autoload.php";
+require_once APPPATH . "/vendor/autoload.php";
 
 class TestController extends CI_Controller
 {
@@ -91,9 +91,18 @@ class TestController extends CI_Controller
 
 	function test()
 	{
-		
-		$pdf = $this->load->library('pdflib/MergePDF');
-		// print_r(hash('md5', hash('sha256', "9999186738")));
+
+		$this->load->library('pdflib/MergePDF');
+
+		$this->mergepdf->merge(
+			[
+				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+			],
+			FCPATH . 'uploads/1735207545-GvW7',
+			'file.pdf'
+		);
 	}
 	public function twiliosms()
 	{

@@ -81,6 +81,7 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'leaderstomorrow_awards_entries_v2',
 	'database' => 'times_leadersoftomorrow_awards_v2',
+	'database' => 'times_leadersoftomorrow_awards',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

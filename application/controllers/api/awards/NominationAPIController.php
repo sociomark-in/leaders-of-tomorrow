@@ -423,8 +423,10 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
 
@@ -706,8 +708,10 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
 
@@ -982,8 +986,10 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
 
@@ -1273,8 +1279,10 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
 
@@ -1547,25 +1555,12 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
-
-						if ($this->request['agent_referrer'] == 'yes') {
-							# code...
-							switch ($this->request['agent_name']) {
-								case 'Nilam':
-									$agent_code = '1595014714';
-									break;
-
-								default:
-									$agent_code = '5167681127';
-									# code...
-									break;
-							}
-							$data['agent_name'] = $agent_code;
-						}
 
 						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows > 0) {
@@ -1822,25 +1817,31 @@ class NominationAPIController extends CI_Controller
 						foreach ($agents as $key => $agent) {
 						}
 						$data = [
-							'is_idfc_customer' => $this->request['is_idfc_customer'],
+						    'is_idfc_customer' => $this->request['is_idfc_customer'],
 							'agent_referral' => $this->request['agent_referrer'],
+							'agent_name' => $this->request['agent_name'],
+							'created_at' => date('Y-m-d H:i:s'), 
 							'status' => '3'
 						];
 
-						if ($this->request['agent_referrer'] == 'yes') {
-							# code...
-							switch ($this->request['agent_name']) {
-								case 'Nilam':
-									$agent_code = '1595014714';
-									break;
+				// 		if ($this->request['agent_referrer'] == 'yes') {
+				// 			# code...
+				// 			switch ($this->request['agent_name']) {
+				// 				case 'Nilam':
+				// 					$agent_code = '1595014714';
+				// 					break;
+									
+				// 				case 'Savy':
+				// 					$agent_code = '5167681127';
+				// 					break;
 
-								default:
-									$agent_code = '5167681127';
-									# code...
-									break;
-							}
-							$data['agent_name'] = $agent_code;
-						}
+				// 				default:
+				// 					$agent_code = '';
+				// 					# code...
+				// 					break;
+				// 			}
+				// 			$data['agent_name'] = $agent_code;
+				// 		}
 
 						$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 						if ($rows > 0) {
@@ -2510,7 +2511,6 @@ class NominationAPIController extends CI_Controller
 				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
 				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
 
-				$this->UserModel->update(['is_nominated' => 1], ['id' => $nomination['created_by']]);
 
 				if ($this->EntriesModel->update($data, ['nomination_id' => $nomination['nomination_id']])) {
 					$recipients = [

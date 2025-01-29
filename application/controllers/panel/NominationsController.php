@@ -286,38 +286,19 @@ class NominationsController extends PanelController
 			}
 
 			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
-			// $pdf = new PDFMerger;
-			// $pdf->addPDF(FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
-			// foreach ($temp as $key => $file) {
-			// 	$pdf->addPDF($file);
-			// }
-			// $pdf->merge('browser', $filename);
-
-
-			// $this->load->library('pdflib/MergePDF');
-			// $pdf = new MergePDF();
-			// $pdf->merge($temp, $filename);
-
-			$this->pdf = new Ilovepdf("project_public_" . $this->keys['ilovepdf_public_key'], "secret_key_" . $this->keys['ilovepdf_secret_key']);
-			$task = $this->pdf->newTask('merge');
-			foreach ($files as $key => $file) {
-				$task->addFile($file);
+			
+			$attachments = [];
+			array_push($attachments, FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			foreach ($temp as $key => $file) {
+				array_push($attachments, $file);
 			}
-			$task->execute();
-			$task->download($filename);
+			$this->load->library('pdflib/MergePDF');
 
-			// $zip = new ZipArchive;
-			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
-			// 	unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
-			// } elseif ($zip->open('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip', ZipArchive::CREATE) === TRUE) {
-
-			// 	$zip->addFile('uploads/' . $application['nomination_id'] . '/docket_page.pdf', 'docket_page.pdf');
-			// 	foreach ($temp as $key => $file) {
-			// 		$zip->addFile($file, explode('uploads/' . $application['nomination_id'], $file)[1]);
-			// 	}
-			// 	$zip->close();
-			// 	redirect(base_url('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip'));
-			// }
+			$this->mergepdf->merge(
+				$attachments,
+				FCPATH . 'uploads/' . $application['nomination_id'],
+				$filename
+			);
 		} else {
 			redirect('dashboard');
 		}

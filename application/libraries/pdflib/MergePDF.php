@@ -1,7 +1,8 @@
 <?php
-require_once APPPATH . '/vendor/autoload.php';
 
-use ILovePDF\ILovePDF; 
+use Ilovepdf\Ilovepdf;
+
+require_once APPPATH . '/vendor/autoload.php';
 
 class MergePDF
 {
@@ -32,15 +33,19 @@ class MergePDF
     	// [ilovepdf_secret_key] => e56e32170ceb262c0cd2c2cb64e8badb_ShJMv360d9cb0476b2dd1b8607747c366ea98
 	}
 	
-	public function merge($files, $filename) {
-		$this->pdf = new ILovePDF("project_public_" . $this->keys['ilovepdf_public_key'], "secret_key_" . $this->keys['ilovepdf_secret_key']);
+	public function merge($files, $destination_folder, $filename) {
+		if (!file_exists($destination_folder)) {
+			mkdir($destination_folder, 0777, true);
+		}
+		$this->pdf = new Ilovepdf("project_public_" . $this->keys['ilovepdf_public_key'], "secret_key_" . $this->keys['ilovepdf_secret_key']);
 		$task = $this->pdf->newTask('merge');
 		foreach ($files as $key => $file) {
 			$task->addFile($file);
 			// print_r($file);
 			// echo "<br>";
 		}
+		$task->setOutputFilename($filename);
 		$task->execute();
-		$task->download($filename);
+		$task->download($destination_folder);
 	}
 }
