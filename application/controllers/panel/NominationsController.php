@@ -299,6 +299,19 @@ class NominationsController extends PanelController
 				FCPATH . 'uploads/' . $application['nomination_id'],
 				$filename
 			);
+			redirect(base_url('uploads/' . $application['nomination_id'] . $filename));
+
+			// $zip = new ZipArchive;
+			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
+			// 	unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+			// } elseif ($zip->open('uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip', ZipArchive::CREATE) === TRUE) {
+
+			// 	$zip->addFile('uploads/' . $application['nomination_id'] . '/docket_page.pdf', 'docket_page.pdf');
+			// 	foreach ($temp as $key => $file) {
+			// 		$zip->addFile($file, explode('uploads/' . $application['nomination_id'], $file)[1]);
+			// 	}
+			// 	$zip->close();
+			// }
 		} else {
 			redirect('dashboard');
 		}
