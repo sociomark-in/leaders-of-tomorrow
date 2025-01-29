@@ -16,6 +16,8 @@ defined('APP_NAME') 					OR define('APP_NAME', "Leaders of Tomorrow");
 
 defined('GOOGLE_OAUTH_CLIENT_ID') 		OR define('GOOGLE_OAUTH_CLIENT_ID', "973841660802-aocg2s8viu5sopiu7etlevigtutfb4bt");
 defined('GOOGLE_OAUTH_CLIENT_SECRET') 	OR define('GOOGLE_OAUTH_CLIENT_SECRET', "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");
+
+defined('ILOVEPDF_API_REQUEST_LIMIT') 	OR define('ILOVEPDF_API_REQUEST_LIMIT', 400);
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes

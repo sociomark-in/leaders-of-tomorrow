@@ -87,7 +87,7 @@
 															<?php if (in_array($application['status'], [3])) : ?>
 															<?php endif ?>
 														<?php endif ?>
-														<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
+														<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>

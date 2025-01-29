@@ -292,14 +292,18 @@ class NominationsController extends PanelController
 			foreach ($temp as $key => $file) {
 				array_push($attachments, $file);
 			}
-			$this->load->library('pdflib/MergePDF');
-
-			$this->mergepdf->merge(
-				$attachments,
-				FCPATH . 'uploads/' . $application['nomination_id'],
-				$filename
-			);
-			redirect(base_url('uploads/' . $application['nomination_id'] . $filename));
+			if (file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
+				// unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+    			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+			} else {
+    			$this->load->library('pdflib/MergePDF');
+    			$this->mergepdf->config()->merge(
+    				$attachments,
+    				FCPATH . 'uploads/' . $application['nomination_id'],
+    				$filename
+    			);
+    			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+			}
 
 			// $zip = new ZipArchive;
 			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {

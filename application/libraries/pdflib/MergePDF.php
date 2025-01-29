@@ -6,11 +6,11 @@ require_once APPPATH . '/vendor/autoload.php';
 
 class MergePDF
 {
-	private $CI, $keys, $pdf;
+	private $CI, $key, $pdf;
 	public function __construct()
 	{
 		$this->CI = &get_instance();
-		$this->keys = [];
+		$this->key = [];
 
 		$this->CI->encryption->initialize(
 			array(
@@ -18,34 +18,44 @@ class MergePDF
 				'mode' => 'ctr',
 			)
 		);
-
-		$result = $this->CI->db->select(['config_key', 'value'])->get('app_config')->result_array();
-		// $en = $this->CI->encryption->encrypt("8d03f94b9478e01a85944af052fcb428_QfsaF5c27251f1c8f287f996356815002c83d");
-		// echo "<pre>";
-		// print_r($result);
-		foreach ($result as $key => $row) {
-			$this->keys[$row['config_key']] = $this->CI->encryption->decrypt($row['value']);
+	}
+	
+	public function config(){
+		$result = $this->CI->db->select(['config_key', 'value', 'usage_count'])->get('app_config')->result_array();
+	    foreach ($result as $key => $row) {
+		    switch($row['config_key']){
+                case 'ilovepdf_public_key':
+                case 'ilovepdf_public_key_001':
+                case 'ilovepdf_public_key_002':
+                case 'ilovepdf_public_key_003':
+                    if($row['usage_count'] < ILOVEPDF_API_REQUEST_LIMIT){
+                        $this->key['name'] = $row['config_key'];
+                        $value = json_decode($row['value'], true);
+                        $this->key['public_key'] = $this->CI->encryption->decrypt($value[0]);
+                        $this->key['secret_key'] = $this->CI->encryption->decrypt($value[1]);
+                        return $this;
+                    } else {
+                        echo "Download LImit Reached! Please Contact the Administrator for further steps.";
+                        exit;
+                    }
+                    break;
+            }
+	            
 		}
-		
-		// print_r($this->keys);
-
-		// [ilovepdf_public_key] => 8d03f94b9478e01a85944af052fcb428_QfsaF5c27251f1c8f287f996356815002c83d
-    	// [ilovepdf_secret_key] => e56e32170ceb262c0cd2c2cb64e8badb_ShJMv360d9cb0476b2dd1b8607747c366ea98
 	}
 	
 	public function merge($files, $destination_folder, $filename) {
 		if (!file_exists($destination_folder)) {
 			mkdir($destination_folder, 0777, true);
 		}
-		$this->pdf = new Ilovepdf("project_public_" . $this->keys['ilovepdf_public_key'], "secret_key_" . $this->keys['ilovepdf_secret_key']);
+		$this->pdf = new Ilovepdf("project_public_" . $this->key['public_key'], "secret_key_" . $this->key['secret_key']);
 		$task = $this->pdf->newTask('merge');
 		foreach ($files as $key => $file) {
 			$task->addFile($file);
-			// print_r($file);
-			// echo "<br>";
 		}
 		$task->setOutputFilename($filename);
 		$task->execute();
 		$task->download($destination_folder);
+		$this->CI->db->set('usage_count', 'usage_count+1', FALSE)->where('config_key', $this->key['name'])->update('app_config');
 	}
 }

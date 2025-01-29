@@ -92,17 +92,26 @@ class TestController extends CI_Controller
 	function test()
 	{
 
-		$this->load->library('pdflib/MergePDF');
-
-		$this->mergepdf->merge(
-			[
-				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
-				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
-				FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
-			],
-			FCPATH . 'uploads/1735207545-GvW7',
-			'file.pdf'
+		$this->encryption->initialize(
+			array(
+				'cipher' => 'aes-256',
+				'mode' => 'ctr',
+			)
 		);
+
+		print_r($this->encryption->encrypt("17c5834c59b86837b0297fba8b116355_rkQlqcc520e5b64f1aec394f7a86b9118d031"));
+
+		// $this->load->library('pdflib/MergePDF');
+
+		// $this->mergepdf->merge(
+		// 	[
+		// 		FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+		// 		FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+		// 		FCPATH . 'uploads/1735207545-GvW7/1735207772_ePZdioER_Test_Doxument.pdf',
+		// 	],
+		// 	FCPATH . 'uploads/1735207545-GvW7',
+		// 	'file.pdf'
+		// );
 	}
 	public function twiliosms()
 	{
