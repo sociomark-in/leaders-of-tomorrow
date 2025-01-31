@@ -6,7 +6,7 @@
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">My Application</li>
+				<li class="breadcrumb-item active" aria-current="page">My Presentations</li>
 			</ol>
 		</nav>
 	</div>
@@ -47,16 +47,16 @@
 																<?php
 																switch ($application['status']) {
 																	case '2':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
-																		$text = "Edit Application";
+																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "/edit";
+																		$text = "Edit Presentation";
 																		break;
 																	case '4':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
-																		$text = "Complete Application";
+																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
+																		$text = "Complete Presentation";
 																		break;
 
 																	default:
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
+																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "/edit";
 																		$text = "";
 																		break;
 																}

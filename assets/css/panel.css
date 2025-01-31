@@ -39,6 +39,13 @@ h5 {
   height: 1rem;
 }
 
+.badge.bg-danger {
+  background-color: rgba(201, 47, 47, 0.2);
+}
+.badge.bg-warning {
+  background-color: rgba(207, 139, 44, 0.2);
+}
+
 .staged-tab-wizard .nav[role=tablist] .nav-item .nav-link.success {
   background-color: #28a758;
   color: #efefef;

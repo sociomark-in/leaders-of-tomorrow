@@ -21,7 +21,7 @@ class CityController extends BaseController
 	{
 		$gallery = directory_map('./assets/images/cities/' . $city . '/gallery/');
 		foreach ($gallery as $key => $element) {
-			if(is_array($element)){
+			if (is_array($element)) {
 				unset($gallery[$key]);
 			}
 		}
@@ -508,35 +508,51 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Bengaluru",
-					'speakers' =>[
+					'speakers' => [
 						[
-							'name' =>"Anto Alan",
-							'photo' =>"Anto_Alan.png",
-							'description' =>"Business Head – Business Banking & Agri, IDFC FIRST Bank",
+							'name' => "Anto Alan",
+							'photo' => "Anto_Alan.png",
+							'description' => "Business Head – Business Banking & Agri, IDFC FIRST Bank",
 						],
 						[
-							'name' =>"Swapna Bapat",
-							'photo' =>"Swapna_Bapat.png",
-							'description' =>"Vice President & Managing Director, India & SAARC, Palo Alto Networks",
+							'name' => "Swapna Bapat",
+							'photo' => "Swapna_Bapat.png",
+							'description' => "Vice President & Managing Director, India & SAARC, Palo Alto Networks",
 						],
 						[
-							'name' =>"Sahar Mansoor",
-							'photo' =>"Sahar_Mansoor.png",
-							'description' =>"Founder & CEO, Bare Necessities",
+							'name' => "Sahar Mansoor",
+							'photo' => "Sahar_Mansoor.png",
+							'description' => "Founder & CEO, Bare Necessities",
 						],
 						[
-							'name' =>"Kamal Karanth",
-							'photo' =>"Kamal_Karanth.png",
-							'description' =>"Co-Founder, Xpheno",
+							'name' => "Kamal Karanth",
+							'photo' => "Kamal_Karanth.png",
+							'description' => "Co-Founder, Xpheno",
 						],
 						[
-							'name' =>"Tanuj Choudhry",
-							'photo' =>"Tanuj_Choudhry.png",
-							'description' =>"Co-Founder & COO, HomeLane",
+							'name' => "Tanuj Choudhry",
+							'photo' => "Tanuj_Choudhry.png",
+							'description' => "Co-Founder & COO, HomeLane",
 						],
 					]
 				];
 				$this->load->city_view('bengaluru', $this->data);
+				break;
+			case 'goa':
+				$this->data['page'] = [
+					'title' => "Goa Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Goa",
+				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
+				$this->load->city_view('goa', $this->data);
 				break;
 			case 'test':
 				$this->data['page'] = [
@@ -591,7 +607,7 @@ class CityController extends BaseController
 	{
 		$gallery = directory_map('./assets/images/cities/' . $city . '/gallery/');
 		foreach ($gallery as $key => $element) {
-			if(is_array($element)){
+			if (is_array($element)) {
 				unset($gallery[$key]);
 			}
 		}
@@ -660,6 +676,15 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Indore";
 				$this->load->city_view('gallery', $this->data);
 				break;
+			case 'goa':
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
+				break;
 
 			default:
 				redirect('city/' . $city);
@@ -671,7 +696,7 @@ class CityController extends BaseController
 	{
 		foreach ($this->springboards as $key => $sb) {
 			$status = 0;
-			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == 'bengaluru') {
+			if (str_replace(" ", "-", strtolower($sb['name'])) == $city && $city == '') {
 				$status = 1;
 				$this->data['city'] = $sb;
 				break;
@@ -682,6 +707,7 @@ class CityController extends BaseController
 			switch ($city) {
 				case 'pune':
 				case 'jaipur':
+				case 'goa':
 					$this->data['city']['partners'] = [
 						[
 							'text' => 'Hospitality Partner',
@@ -690,7 +716,7 @@ class CityController extends BaseController
 						],
 					];
 					break;
-				
+
 				default:
 					# code...
 					break;

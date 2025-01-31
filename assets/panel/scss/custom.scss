@@ -64,6 +64,23 @@ form {
 	}
 }
 
+.badge{
+	padding: 0.35rem 0.8rem;
+	font-size: 0.8rem;
+	font-weight: normal;
+	&.bg-danger{
+		background-color: rgba($color-red, $alpha: 0.2) !important;
+	}
+	&.bg-success{
+		background-color: rgba($color-green, $alpha: 0.2) !important;
+		color: darken($color-green, $amount: 10) !important;
+	}
+	&.bg-warning{
+		background-color: rgba($color-yellow-2, $alpha: 0.2) !important;
+		color: darken($color-yellow-2, $amount: 10) !important;
+	}
+}
+
 .nomination_detailed{
 	.tab-content{
 		margin-top: 1rem;

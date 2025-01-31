@@ -27,7 +27,16 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<p><?= $application['status_text'] ?></p>
+														<div class="row">
+															<div class="col">
+																<p class="mb-2">Stage I</p>
+																<p><?= $application['status_text'] ?? "--" ?></p>
+															</div>
+															<div class="col">
+																<p class="mb-2">Stage II</p>
+																<p><?= $application['status_2_text'] ?? "--" ?></p>
+															</div>
+														</div>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -54,6 +63,10 @@
 																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
 																		$text = "Complete Application";
 																		break;
+																	case '1':
+																		$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
+																		$text = "Prepare Presentation for Stage II";
+																		break;
 
 																	default:
 																		$redirect = base_url('dashboard/application/' . $application['nomination_id']) . "/edit";
@@ -61,7 +74,15 @@
 																		break;
 																}
 																?>
-																<a href="<?= $redirect ?>"><?= $text ?></a>
+																<?php switch ($application['status']):
+																	case '1': ?>
+																		<a href="<?= $redirect ?>" class=""><?= $text ?></a>
+																		<?php break; ?>
+																	<?php
+																	default: ?>
+																		<a href="<?= $redirect ?>" class=""><?= $text ?></a>
+																		<?php break; ?>
+																<?php endswitch ?>
 															</div>
 														</div>
 													</div>

@@ -8,6 +8,11 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-117392504,thumbsize-164428,width-1280,height-720,resizemode-75/117392504.jpg?quality=100",
+				'title' => "Mastering Tomorrow: Skill Surge for MSMEs in the Workforce",
+				'redirect' => "https://www.etnownews.com/news/mastering-tomorrow-skill-surge-for-msmes-in-the-workforce-article-117392504"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-117191517,thumbsize-164428,width-1280,height-720,resizemode-75/117191517.jpg?quality=100",
 				'title' => "3 Key Takeaways from Neeta Lulla on India's Handloom Sector",
 				'redirect' => "https://www.etnownews.com/news/3-key-takeaways-from-neeta-lulla-on-indias-handloom-sector-article-117191517"

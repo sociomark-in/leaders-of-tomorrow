@@ -320,10 +320,4 @@ class NominationsController extends PanelController
 			redirect('dashboard');
 		}
 	}
-
-
-	function user_presentations()
-	{
-		$this->load->panel_view('presentations/home', $this->data);
-	}
 }

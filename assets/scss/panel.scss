@@ -49,6 +49,14 @@ h5 {
 		}
 	}
 }
+.badge{
+	&.bg-danger{
+		background-color: rgba($color-danger, $alpha: 0.2);
+	}
+	&.bg-warning{
+		background-color: rgba($color-yellow-2, $alpha: 0.2);
+	}
+}
 
 .staged-tab-wizard {
 	.nav[role="tablist"] {

@@ -436,9 +436,12 @@ class NominationAPIController extends CI_Controller
 								case 'Nilam':
 									$agent_code = '1595014714';
 									break;
+								case 'Savitri':
+									$agent_code = '5167681127';
+									break;
 
 								default:
-									$agent_code = '5167681127';
+									$agent_code = $this->request['agent_name'];
 									# code...
 									break;
 							}
@@ -2041,8 +2044,14 @@ class NominationAPIController extends CI_Controller
 						'contact' => $applicant['contact'],
 					];
 					$htmlbody = $this->load->view('panel/emails/participant_nomination_success', $email_data, true);
+					$f = 0;
 					if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-						redirect('dashboard/applications');
+						$u = [
+							'is_nominated' => 1
+						];
+						if($this->UserModel->update($u, ['id' => $applicant['id']])){
+							redirect('dashboard/applications');
+						}
 					}
 				}
 				break;
