@@ -20,6 +20,7 @@ class PresentationsController extends PanelController
 	{
 		switch ($this->user_session['role']) {
 			case 'participant':
+				
 				$this->load->panel_view('presentations/home', $this->data);
 				# code...
 				break;
@@ -40,6 +41,10 @@ class PresentationsController extends PanelController
 	 */
 	public function single($slug)
 	{
+		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+		$this->data['application'] = $application;
+		$this->data['category'] = $category_details;
 		$this->load->panel_view('presentations/single', $this->data);
 	}
 }

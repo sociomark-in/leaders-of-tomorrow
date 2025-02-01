@@ -30,7 +30,6 @@ $tabs = [
 	],
 ]
 ?>
-<!-- <?php print_r($_SESSION['application_temp']) ?> -->
 <div class="staged-tab-wizard">
 	<ul class="nav nav-pills gap-3" id="myTab" role="tablist">
 		<?php for ($i = 0; $i < count($tabs); $i++): ?>
