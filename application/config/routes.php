@@ -152,6 +152,8 @@ $route['api/v2/awards/nomination/unlock_w_comment'] = 'api/awards/NominationAPIC
 $route['api/v2/awards/nomination/accept'] = 'api/awards/NominationAPIController/accept';
 $route['api/v2/awards/nomination/download'] = 'api/awards/NominationAPIController/download_docket';
 
+$route['api/v2/awards/presentation/new'] = 'api/awards/PresentationAPIController/new_presentation';
+
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

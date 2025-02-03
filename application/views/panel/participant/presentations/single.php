@@ -17,12 +17,27 @@
 	switch ($c[1]) {
 		case 'MSME':
 			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category/msme.php';
-			break;
-		
-		default:
 			include_once APPPATH . 'views/panel/participant/presentations/category/individual.php';
+			break;
+
+		default:
+			include_once APPPATH . 'views/panel/participant/presentations/category/msme.php';
 			break;
 	}
 	?>
+
+	<script>
+		$("form").each((index, element) => {
+			var $form = $(element);
+			var $button = $form.find('[type="submit"]');
+			$button.on("click", (element) => {
+				if ($form.valid()) {
+					$button.text('Please wait...').css({
+						'pointer-events': 'none',
+						'opacity': 0.5,
+					});
+				}
+			});
+		});
+	</script>
 </main>
