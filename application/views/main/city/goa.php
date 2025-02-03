@@ -61,7 +61,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0">
+	<section class="section pb-0 d-none">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
