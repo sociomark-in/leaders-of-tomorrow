@@ -19,6 +19,7 @@ class RegistrationAPI extends CI_Controller
 			"indore" => "31e500d4-c82f-4b48-8d68-1cfb6860d176",
 			"delhi-ncr" => "c586b583-38a1-4985-92a6-a94daf8023c8",
 			"bengaluru" => "7d5dc078-858d-43f0-b8ff-e538a2c73cbe",
+			"goa" => "151b0d88-279a-4d6f-b36c-c0046775c7ed",
 		];
 		$this->load->model('event/AttendeeModel', 'AttendeeModel');
 	}
@@ -51,7 +52,7 @@ class RegistrationAPI extends CI_Controller
 			"organisation" => $this->request['organization']['name'],
 			"designation" => $this->request['organization']['designation'],
 			"phone_number" => $this->request['contact'],
-			"whatsapp_number" => ($this->request['whatsapp'] == null || $this->request['whatsapp'] == "")? $this->request['contact'] : $this->request['whatsapp'],
+			"whatsapp_number" => ($this->request['whatsapp'] == null || $this->request['whatsapp'] == "") ? $this->request['contact'] : $this->request['whatsapp'],
 			"linkedin_url" => $this->request['linkedin'],
 			"dial_code" => "+91",
 			"country_code" => "in",
@@ -64,19 +65,25 @@ class RegistrationAPI extends CI_Controller
 			"consent" => ($this->request['consent'] == 'on') ? true : false,
 		];
 		/*
-		"59320": "Marketing",
-		"59321": "Below 20 Cr",
-		"59322": "Textile",
-		"59312": "https://www.google.com",
-		"59323": "Swift"
+		"61829": "Marketing",
+		"61828": "Below 20 Cr",
+		"61827": "Textile",
+		"61837": "https://www.google.com",
+		"61826": "Swift"
+
+		"61826": "Swift",
+		"61827": "Textile",
+		"61828": "Below 20 Cr",
+		"61829": "Marketing",
+		"61837": "https://www.google.com"
 		*/
 
 		$data['registration_details']["custom_forms"] = [
-			"59320" => $this->request['organization']['department'],
-			"59321" => $this->request['organization']['turnover'],
-			"59322" => $this->request['organization']['industry'],
-			"59312" => $this->request['website'],
-			"59323" => $this->request['message'],
+			"61829" => $this->request['organization']['department'],
+			"61828" => $this->request['organization']['turnover'],
+			"61827" => $this->request['organization']['industry'],
+			"61837" => $this->request['website'],
+			"61826" => $this->request['message'],
 		];
 
 		// print_r($data);die;
