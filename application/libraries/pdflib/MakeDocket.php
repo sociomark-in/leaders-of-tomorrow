@@ -59,17 +59,17 @@ class MakeDocket extends Fpdf
 
 	public function load($data = null, $layout = 'docket_msme')
 	{
-		switch ($layout) {
-			case 'docket_1_digital':
-			case 'docket_1_individual':
-			case 'docket_2_individual':
-				include_once __DIR__ . '/layout/' . $layout . '.php';
-				break;
+		include_once __DIR__ . '/layout/' . $layout . '.php';
+		// switch ($layout) {
+		// 	case 'docket_1_digital':
+		// 	case 'docket_1_individual':
+		// 	case 'docket_2_individual':
+		// 		include_once __DIR__ . '/layout/' . $layout . '.php';
+		// 		break;
 
-			default:
-				include_once __DIR__ . '/layout/' . $layout . '.php';
-				break;
-		}
+		// 	default:
+		// 		break;
+		// }
 		return $this;
 	}
 
