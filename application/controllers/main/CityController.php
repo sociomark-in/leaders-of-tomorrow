@@ -669,11 +669,25 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Pune";
 				$this->load->city_view('gallery', $this->data);
 				break;
+			case 'hyderabad':
+				$this->data['page'] = [
+					'title' => "Hyderabad Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Hyderabad";
+				$this->load->city_view('gallery', $this->data);
+				break;
 			case 'indore':
 				$this->data['page'] = [
 					'title' => "Indore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Indore";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'bengaluru':
+				$this->data['page'] = [
+					'title' => "Bengaluru Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Bengaluru";
 				$this->load->city_view('gallery', $this->data);
 				break;
 			case 'goa':
