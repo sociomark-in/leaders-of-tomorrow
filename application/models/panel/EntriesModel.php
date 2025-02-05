@@ -136,6 +136,7 @@ class EntriesModel extends CI_Model
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
+		$this->db->distinct();
 		return json_encode($this->db->get($this->table)->result_array());
 	}
 

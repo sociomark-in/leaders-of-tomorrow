@@ -25,7 +25,7 @@
 					</a>
 				</li>
 				<?php if ($_SESSION['awards_panel_user']['is_nominated']) : ?>
-					<li class="nav-item d-none <?= link_is_active("dashboard/my-presentations") ?>">
+					<li class="nav-item <?= link_is_active("dashboard/my-presentations") ?>">
 						<a href="<?= base_url('dashboard/my-presentations') ?>" class="nav-link">
 							<i class="link-icon" data-feather="layers"></i>
 							<span class="link-title">Presentations</span>
@@ -51,8 +51,6 @@
 					</div>
 				</li>
 			<?php endif ?>
-
-
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['partner', 'jury', 'admin', 'super-admin'])) : ?>
 				<!-- Nominations -->
 				<li class="nav-item nav-category">Nominations Management</li>
@@ -63,12 +61,12 @@
 						<span class="link-title">Nominations</span>
 					</a>
 				</li>
-				<!-- <li class="nav-item <?= link_is_active("dashboard/applications") ?>">
-					<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
-						<i class="link-icon" data-feather="book"></i>
-						<span class="link-title">Categories</span>
+				<li class="nav-item <?= link_is_active("dashboard/presentations") ?>">
+					<a href="<?= base_url('dashboard/presentations') ?>" class="nav-link">
+						<i class="link-icon" data-feather="layers"></i>
+						<span class="link-title">Presentations</span>
 					</a>
-				</li> -->
+				</li>
 			<?php endif ?>
 
 			<!-- Access Level: admin -->

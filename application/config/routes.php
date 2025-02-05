@@ -87,7 +87,7 @@ $route['nominate'] = 'awards/AccountController/nominate';
 // Participant
 $route['dashboard'] = 'panel/AccountController';
 $route['dashboard/my-applications'] = 'panel/NominationsController/user_side';
-$route['dashboard/my-presentations'] = 'panel/PresentationsController/index';
+$route['dashboard/my-presentations'] = 'panel/PresentationsController';
 
 $route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate/$1';
 
@@ -97,6 +97,7 @@ $route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1'
 $route['dashboard/application/(:any)/edit'] = 'panel/NominationsController/user_edit/$1';
 $route['dashboard/application/(:any)/download'] = 'panel/NominationsController/download/$1';
 
+$route['dashboard/presentations'] = 'panel/PresentationsController';
 $route['dashboard/application/(:any)/presentation'] = 'panel/PresentationsController/single/$1';
 
 $route['dashboard/categories'] = 'panel/CategoriesController';

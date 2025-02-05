@@ -8,7 +8,7 @@
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/my-applications') ?>">My Applications</a></li>
-				<li class="breadcrumb-item active" aria-current="page">(#<?= $id ?>)</li>
+				<li class="breadcrumb-item active" aria-current="page">New Presentation</li>
 			</ol>
 		</nav>
 	</div>
@@ -16,12 +16,15 @@
 	$c = explode('_', $category['type']);
 	switch ($c[1]) {
 		case 'MSME':
+		case 'GLOBAL':
+		case 'FAMILY':
+		case 'DIGITAL':
 			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category/individual.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category/msme.php';
 			break;
 
 		default:
-			include_once APPPATH . 'views/panel/participant/presentations/category/msme.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category/individual.php';
 			break;
 	}
 	?>

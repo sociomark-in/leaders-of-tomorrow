@@ -18,15 +18,22 @@ class PresentationsController extends PanelController
 
 	public function index()
 	{
+		$presentations = [];
 		switch ($this->user_session['role']) {
 			case 'participant':
-				
+
 				$this->load->panel_view('presentations/home', $this->data);
 				# code...
 				break;
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
+				$this->data['all_applications'] = $presentations;
+
+				$this->load->moderator_view('presentations/home', $this->data);
+				break;
 
 			default:
-				# code...
 				break;
 		}
 	}
