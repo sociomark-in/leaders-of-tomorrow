@@ -341,7 +341,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
+							<textarea  required rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -521,15 +521,15 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		}
 	});
 
-	$("input[type='file']").each(function(index, element) {
-		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
-			$(element).prop("required", true);
-			console.log("Absent");
+	// $("input[type='file']").each(function(index, element) {
+	// 	if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+	// 		$(element).prop("required", true);
+	// 		console.log("Absent");
 
-		} else {
-			$(element).prop("required", false);
-			console.log("Present");
-		}
-	});
+	// 	} else {
+	// 		$(element).prop("required", false);
+	// 		console.log("Present");
+	// 	}
+	// });
 	
 </script>

@@ -35,10 +35,10 @@ class MergePDF
                         $this->key['secret_key'] = $this->CI->encryption->decrypt($value[1]);
                         return $this;
                     } else {
-                        echo "Download LImit Reached! Please Contact the Administrator for further steps.";
-                        exit;
+						break;
+                        // echo "Download LImit Reached! Please Contact the Administrator for further steps.";
+                        // exit;
                     }
-                    break;
             }
 	            
 		}

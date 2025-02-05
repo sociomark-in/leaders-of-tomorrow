@@ -83,8 +83,9 @@ class PresentationAPIController extends CI_Controller
 				break;
 			}
 		}
+		$response = [];
 		if ($f) {
-			$response = $this->_document_uploads($_FILES, $presentation_id);
+			$response['attachments'] = $this->_document_uploads($_FILES, $presentation_id);
 		}
 		echo "<pre>";
 		print_r(array_merge($response, $this->request));

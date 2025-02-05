@@ -270,14 +270,14 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study IV: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
 						<p>How well do you understand your target market, and what strategies are in place to adapt to changing market trends?</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_6" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -285,7 +285,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -297,14 +297,14 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study V: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
 						<p>How do you plan to manage cash flow effectively, especially during periods of rapid growth or economic downturns?</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -312,7 +312,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_9" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -331,7 +331,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_10" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -339,7 +339,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_11" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
