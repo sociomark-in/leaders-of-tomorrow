@@ -17,6 +17,7 @@ application/logs/*
 !application/logs/.htaccess
 application/vendor/*
 uploads/*
+attachments/*
 
 *.zip
 *.csv

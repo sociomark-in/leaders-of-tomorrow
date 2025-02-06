@@ -60,22 +60,22 @@ class PresentationsController extends PanelController
 	{
 		$this->load->library('pdflib/MakePresentation');
 		$presentation = [
-			'attachments' => 
-				[
-					'logoimg' => 'attachments/1738755385-41862/1738755515_57216_favicon.png',
-					'doc1' => 'attachments/1738755385-41862/1738755515_02164_favicon.png',
-					'doc2' => 'attachments/1738755385-41862/1738755515_20451_favicon.png',
-					'doc3' => 'attachments/1738755385-41862/1738755515_45936_favicon.png',
-					'doc4' => 'attachments/1738755385-41862/1738755515_03246_favicon.png',
-					'doc5' => 'attachments/1738755385-41862/1738755515_95836_favicon.png',
-					'doc6' => 'attachments/1738755385-41862/1738755515_45169_favicon.png',
-				],		
+			'attachments' =>
+			[
+				'logoimg' => 'attachments/1738755385-41862/1738755515_57216_favicon.png',
+				'doc1' => 'attachments/1738755385-41862/1738755515_02164_favicon.png',
+				'doc2' => 'attachments/1738755385-41862/1738755515_20451_favicon.png',
+				'doc3' => 'attachments/1738755385-41862/1738755515_45936_favicon.png',
+				'doc4' => 'attachments/1738755385-41862/1738755515_03246_favicon.png',
+				'doc5' => 'attachments/1738755385-41862/1738755515_95836_favicon.png',
+				'doc6' => 'attachments/1738755385-41862/1738755515_45169_favicon.png',
+			],
 			'nomination_id' => '1736226536-92108',
 			'presentation_id' => '1738755385-41862',
 			'organization_name' => 'Sociomark Digital Marketing Agency',
-					'id_255004' => 'Manufacturing',
-					'size' => 'Less than 50',
-					'id_255002' => '20/06/2021',
+			'id_255004' => 'Manufacturing',
+			'size' => 'Less than 50',
+			'id_255002' => '20/06/2021',
 			'name' => 'Hemant Developer',
 			'organization_revenue_2' => '5 - 24',
 			'organization_revenue_1' => '5 - 24',
