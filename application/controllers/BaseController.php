@@ -77,7 +77,7 @@ class BaseController extends CI_Controller
 				'name' => "Goa",
 				'theme' => "Goa: Evolving Economy Beyond Tourist Footfall",
 				'date' => '2025-02-07 17:00:00',
-				'venue' => "The Pride Hotel Goa"
+				'venue' => "Pride Sun Village Resort, Goa"
 			],
 			[
 				'name' => "Ahmedabad",

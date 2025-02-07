@@ -63,12 +63,12 @@
 						<span class="link-title">Nominations</span>
 					</a>
 				</li>
-				<!-- <li class="nav-item <?= link_is_active("dashboard/applications") ?>">
-					<a href="<?= base_url('dashboard/applications') ?>" class="nav-link">
+				<li class="nav-item <?= link_is_active("dashboard/presentations") ?>">
+					<a href="<?= base_url('dashboard/presentations') ?>" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
-						<span class="link-title">Categories</span>
+						<span class="link-title">Presentations</span>
 					</a>
-				</li> -->
+				</li>
 			<?php endif ?>
 
 			<!-- Access Level: admin -->
