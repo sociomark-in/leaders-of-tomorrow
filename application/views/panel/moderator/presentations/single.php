@@ -40,7 +40,7 @@ if ($nomination['stage'] >= 1) {
 											</div>
 										<?php endif ?>
 										<div class="col-lg-auto col-12">
-											<a href="<?= base_url('dashboard/application/' . $application['presentation_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['presentation_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
+											<a href="<?= base_url('dashboard/presentation/' . $application['presentation_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['presentation_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Presentation</a>
 										</div>
 									</div>
 								</div>
