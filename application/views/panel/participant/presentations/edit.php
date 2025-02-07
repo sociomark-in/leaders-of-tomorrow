@@ -1,7 +1,7 @@
 <main class="page-content">
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="d-flex gap-2 align-items-baseline">
-			<h4 class="mb-3 mb-md-0">New Presentation for <?= $category['name'] ?></h4>
+			<h4 class="mb-3 mb-md-0">Edit Presentation <?= $presentation['category']['name'] ?></h4>
 			<p class="m-0 text-muted">(#<?= $application['nomination_id'] ?>)</p>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
@@ -13,18 +13,18 @@
 		</nav>
 	</div>
 	<?php
-	$c = explode('_', $category['type']);
+	$c = explode('_', $presentation['category']['type']);
 	switch ($c[1]) {
 		case 'MSME':
 		case 'GLOBAL':
 		case 'FAMILY':
 		case 'DIGITAL':
 			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_new/msme.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/msme.php';
 			break;
 
 		default:
-			include_once APPPATH . 'views/panel/participant/presentations/category_new/individual.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/individual.php';
 			break;
 	}
 	?>

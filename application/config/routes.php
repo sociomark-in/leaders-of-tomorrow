@@ -156,6 +156,11 @@ $route['api/v2/awards/nomination/unlock_w_comment'] = 'api/awards/NominationAPIC
 $route['api/v2/awards/nomination/accept'] = 'api/awards/NominationAPIController/accept';
 $route['api/v2/awards/nomination/download'] = 'api/awards/NominationAPIController/download_docket';
 
+$route['api/v2/awards/presentation/edit'] = 'api/awards/PresentationAPIController/bulk_edit';
+$route['api/v2/awards/presentation/reject_w_comment'] = 'api/awards/PresentationAPIController/comment_and_reject';
+$route['api/v2/awards/presentation/unlock_w_comment'] = 'api/awards/PresentationAPIController/comment_and_unlock';
+$route['api/v2/awards/presentation/accept'] = 'api/awards/PresentationAPIController/accept';
+
 $route['api/v2/awards/presentation/new'] = 'api/awards/PresentationAPIController/new_presentation';
 
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';

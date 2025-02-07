@@ -44,25 +44,19 @@
 											<tr>
 												<th></th>
 												<th>Date & Time</th>
-												<th>ID</th>
+												<th>Presentation ID</th>
+												<th>Nomination ID</th>
 												<th>Category</th>
 												<th>Name</th>
 												<th>Status</th>
-												<?php if ($edit): ?>
-													<th>Lead Source</th>
-												<?php endif ?>
-												<th>Email</th>
 												<th>Organization Name</th>
-												<th>Designation</th>
-												<th>State</th>
-												<th>City</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($all_applications['msme'] as $key => $application) : ?>
+											<?php foreach ($all_applications as $key => $application) : ?>
 												<tr>
 													<td>
-														<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+														<a href="<?= base_url('dashboard/presentation/' . $application['presentation_id'] . "/view") ?>">
 															<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 														</a>
 														<?php if (in_array($application['status'], [3, 1, 0])) : ?>
@@ -70,24 +64,20 @@
 														<?php endif ?>
 														<?php if (in_array($application['status'], [3])) : ?>
 														<?php endif ?>
-														<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
+														<a target="_blank" href="<?= base_url('dashboard/presentation/' . $application['presentation_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['presentation_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
 													<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $application['created_at']), 'F d, Y H:iA')  ?></td>
-													<td>(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
+													<td>(<span class="text-red"><a href="<?= base_url('dashboard/presentation/' . $application['presentation_id']) . "/view" ?>">#<?= $application['presentation_id'] ?></a></span>)</td>
+													<td>(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) . "/view" ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>
 													<?php if ($edit): ?>
 														<td><?= $application['agent_name'] ?? "Direct" ?></td>
 													<?php endif ?>
-													<td><?= $application['email'] ?></td>
 													<td><?= $application['organization_name'] ?></td>
-													<td><?= $application['designation'] ?></td>
-													<td><?= $application['organization_state'] ?></td>
-													<td><?= $application['organization_city'] ?></td>
-													<td><?= $application['organization_url'] ?></td>
 												</tr>
 											<?php endforeach ?>
 										</tbody>

@@ -68,6 +68,10 @@ form {
 	padding: 0.35rem 0.8rem;
 	font-size: 0.8rem;
 	font-weight: normal;
+	&.bg-dark{
+		background-color: rgba($color-black, $alpha: 0.2) !important;
+		color: darken($color-black, $amount: 10) !important;
+	}
 	&.bg-danger{
 		background-color: rgba($color-red, $alpha: 0.2) !important;
 		color: darken($color-red, $amount: 10) !important;

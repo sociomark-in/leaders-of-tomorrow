@@ -49,6 +49,10 @@ form .form-check-input:focus {
   font-size: 0.8rem;
   font-weight: normal;
 }
+.badge.bg-dark {
+  background-color: rgba(28, 28, 28, 0.2) !important;
+  color: #030303 !important;
+}
 .badge.bg-danger {
   background-color: rgba(183, 32, 38, 0.2) !important;
   color: #8c181d !important;

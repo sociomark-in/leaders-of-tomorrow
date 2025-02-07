@@ -89,7 +89,10 @@ class TestController extends CI_Controller
 
 	}
 
-	function test()
+	function test(){
+		print_r(hash('md5', hash('sha256', "9868247070")));
+	}
+	function test2()
 	{
 
 		$this->encryption->initialize(

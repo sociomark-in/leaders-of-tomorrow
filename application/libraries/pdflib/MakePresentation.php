@@ -5,11 +5,30 @@ use Fpdf\Fpdf;
 require_once APPPATH . "vendor/autoload.php";
 class MakePresentation extends FPDF
 {
-	protected $pdf;
+	protected $pdf, $defaultImagePath;
+	function __construct($orientation = 'P', $unit = 'mm', $size = 'A4', $defaultImagePath = '') {
+        parent::__construct($orientation, $unit, $size);
+        $this->defaultImagePath = FCPATH . 'assets/images/backgrounds/bg.jpg';
+    }
 
 	function SetCellMargin($margin) {
 		$this->cMargin = $margin;
 	}
+
+	function AddPage($orientation = '', $size = '', $rotation = 0, $imagePath = null) {
+        parent::AddPage($orientation, $size, $rotation);
+
+        // Use provided image path or default if none given
+        $imageToUse = ($imagePath !== null) ? $imagePath : $this->defaultImagePath;
+
+        if (!empty($imageToUse) && file_exists($imageToUse)) { // Check if path is provided and file exists
+            $this->Image($imageToUse, 0, 0, 0, 0); // Adjust position (10,10) and size (0,0 for auto) as needed
+        } else if (!empty($imageToUse)) {
+          $this->SetFont('Arial','',12);
+          $this->Cell(0,10,'Warning: Image not found at ' . $imageToUse,0,1,'C');
+        }
+
+    }
 
 	function Footer()
 	{
@@ -34,7 +53,7 @@ class MakePresentation extends FPDF
 		$this->Ln(20);
 	}
 
-	public function init($orientation = 'P', $unit = 'mm', $size = 'A4')
+	public function init($orientation = 'P', $unit = 'mm', $size = ['297', '210'])
 	{
 		$this->pdf = new MakePresentation($orientation, $unit = 'mm', $size);
 		$this->pdf->SetMargins(25,25);
