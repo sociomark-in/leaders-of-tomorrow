@@ -70,6 +70,7 @@ form {
 	font-weight: normal;
 	&.bg-danger{
 		background-color: rgba($color-red, $alpha: 0.2) !important;
+		color: darken($color-red, $amount: 10) !important;
 	}
 	&.bg-success{
 		background-color: rgba($color-green, $alpha: 0.2) !important;

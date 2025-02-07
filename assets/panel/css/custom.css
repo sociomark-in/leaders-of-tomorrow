@@ -51,6 +51,7 @@ form .form-check-input:focus {
 }
 .badge.bg-danger {
   background-color: rgba(183, 32, 38, 0.2) !important;
+  color: #8c181d !important;
 }
 .badge.bg-success {
   background-color: rgba(3, 148, 59, 0.2) !important;

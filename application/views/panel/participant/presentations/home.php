@@ -10,14 +10,15 @@
 			</ol>
 		</nav>
 	</div>
+	
 
 	<div class="row g-3">
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<?php if (!is_null($my_applications['msme']) && count($my_applications['msme']) > 0) : ?>
+					<?php if (!is_null($my_presentations) && count($my_presentations) > 0) : ?>
 						<div class="row">
-							<?php foreach ($my_applications['msme'] as $key => $application) : ?>
+							<?php foreach ($my_presentations as $key => $application) :?>
 								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="row">
 										<div class="col-12 grid-margin stretch-card">
@@ -47,16 +48,12 @@
 																<?php
 																switch ($application['status']) {
 																	case '2':
-																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "/edit";
+																		$redirect = base_url('dashboard/presentation/' . $application['presentation_id']) . "/edit";
 																		$text = "Edit Presentation";
-																		break;
-																	case '4':
-																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
-																		$text = "Complete Presentation";
 																		break;
 
 																	default:
-																		$redirect = base_url('dashboard/presentation/' . $application['nomination_id']) . "/edit";
+																		$redirect = base_url('dashboard/presentation/' . $application['presentation_id']) . "/edit";
 																		$text = "";
 																		break;
 																}

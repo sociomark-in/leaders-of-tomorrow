@@ -35,7 +35,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 							<div class="row g-2 g-md-3">
 								<div class="col-12">
 									<div class="">
-										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
+										<label for="" class="form-label">Name of the Participating Entity</label>
 										<input required type="text" name="organization[name]" class="form-control">
 									</div>
 								</div>
@@ -56,8 +56,8 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 										<label for="" class="form-label">Type of Business</label>
 										<select required name="organization[business]" id="" class="form-select">
 											<option value="">Select Business Type</option>
-											<option value="Manufacturing">Manufacturing</option>
-											<option value="Service">Service</option>
+											<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+											<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 										</select>
 									</div>
 								</div>
@@ -66,11 +66,11 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 										<label for="" class="form-label">No. Of Employees</label>
 										<select required name="organization[size]" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255201'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
-											<option <?= ($application['id_255201'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-											<option <?= ($application['id_255201'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
-											<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
-											<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+											<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+											<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+											<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+											<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 										</select>
 										<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 									</div>
@@ -270,14 +270,14 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study IV: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
 						<p>How well do you understand your target market, and what strategies are in place to adapt to changing market trends?</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_6" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -285,7 +285,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -297,14 +297,14 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study V: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
 						<p>How do you plan to manage cash flow effectively, especially during periods of rapid growth or economic downturns?</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -312,7 +312,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_9" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -331,7 +331,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_10" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -339,7 +339,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" name="case_study_11" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>

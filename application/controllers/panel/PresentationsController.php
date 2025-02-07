@@ -12,54 +12,81 @@ class PresentationsController extends PanelController
 		parent::__construct();
 		$this->load->model('event/awards/CategoryModel');
 		$this->load->model('panel/EntriesModel');
+		$this->load->model('panel/PresentationsModel');
 		$this->load->model('panel/AgentModel');
 		$this->user_session = $_SESSION['awards_panel_user'];
 	}
 
 	public function index()
 	{
-		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "agent_referral", "agent_name", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
-		];
+		$applications = json_decode($this->PresentationsModel->get(null, ['created_by' => $this->user_session['id']]), true);
 		switch ($this->user_session['role']) {
 			case 'participant':
-				
+				for ($i = 0; $i < count($applications); $i++) {
+					# code...
+					$application = $applications[$i];
+					$application['category'] = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+					$application['created_at'] = date_format(date_create_from_format("Y-m-d H:i:s", $application['created_at']), 'F j, Y');
+					$s = $application['status'];
+
+					switch ($s) {
+						case '0':
+							$s = '<span class="badge bg-danger">Rejected</span>';
+							break;
+						case '1':
+							$s = '<span class="badge bg-success">Approved</span>';
+							break;
+						case '2':
+							$s = '<span class="badge bg-dark">Need Improvements</span>';
+							break;
+						case '3':
+							$s = '<span class="badge bg-warning">Under Review</span>';
+							break;
+						default:
+							$s = '<span class="badge bg-secondary">Draft</span>';
+							# code...
+							break;
+					}
+					$application['status_text'] = $s;
+					$applications[$i] = $application;
+				}
+				$this->data['my_presentations'] = $applications;
 				$this->load->panel_view('presentations/home', $this->data);
 				# code...
 				break;
-				case 'jury':
-					case 'admin':
-						case 'super-admin':
-							if (count($applications['msme']) > 0) {
-								for ($i = 0; $i < count($applications['msme']); $i++) {
-									$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get(null, ['type' => $applications['msme'][$i]['category_id']]), true)[0];
-									$s = $applications['msme'][$i]['status'];
-									switch ($s) {
-										case '0':
-											$s = '<span class="badge bg-danger">Rejected</span>';
-											break;
-										case '1':
-											$s = '<span class="badge bg-success">Approved</span>';
-											break;
-										case '2':
-											$s = '<span class="badge bg-dark">Need Improvements</span>';
-											break;
-										case '3':
-											$s = '<span class="badge bg-warning">Under Review</span>';
-											break;
-										default:
-											$s = '<span class="badge bg-secondary">Draft</span>';
-											# code...
-											break;
-									}
-									$applications['msme'][$i]['status_text'] = $s;
-									$applications['msme'][$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true)[0]['name'];
-								}
-							}
-							$this->data['all_applications'] = $applications;
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
+				if (count($applications['msme']) > 0) {
+					for ($i = 0; $i < count($applications['msme']); $i++) {
+						$applications['msme'][$i]['category'] = json_decode($this->CategoryModel->get(null, ['type' => $applications['msme'][$i]['category_id']]), true)[0];
+						$s = $applications['msme'][$i]['status'];
+						switch ($s) {
+							case '0':
+								$s = '<span class="badge bg-danger">Rejected</span>';
+								break;
+							case '1':
+								$s = '<span class="badge bg-success">Approved</span>';
+								break;
+							case '2':
+								$s = '<span class="badge bg-dark">Need Improvements</span>';
+								break;
+							case '3':
+								$s = '<span class="badge bg-warning">Under Review</span>';
+								break;
+							default:
+								$s = '<span class="badge bg-secondary">Draft</span>';
+								# code...
+								break;
+						}
+						$applications['msme'][$i]['status_text'] = $s;
+						$applications['msme'][$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true)[0]['name'];
+					}
+				}
+				$this->data['all_applications'] = $applications;
 
-							$this->load->moderator_view('presentation/home', $this->data);
-							break;
+				$this->load->moderator_view('presentation/home', $this->data);
+				break;
 
 			default:
 				break;
@@ -67,19 +94,60 @@ class PresentationsController extends PanelController
 	}
 
 	/**
-	 * single
+	 * new_presentation
 	 *
 	 * ### Single Presentation View
 	 * 
 	 * 
 	 * @return void
 	 */
-	public function single($slug)
+	public function new_presentation($slug)
 	{
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
 		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 		$this->data['application'] = $application;
 		$this->data['category'] = $category_details;
 		$this->load->panel_view('presentations/single', $this->data);
+	}
+
+
+	public function download($slug)
+	{
+		$this->load->library('pdflib/MakePresentation');
+		$presentation = [
+			'category' => [
+				'name' => "Excellence in E-Commerce and Service Delivery"
+			],
+			'logo_image' => "attachments/1738814958-63490/1738815039_61754_favicon.png",
+			'id_255401' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'id_255402' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'id_255403' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'id_255404' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'id_255405' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'id_255406' => "attachments/1738814958-63490/1738815039_81760_image.jpg",
+			'nomination_id' => '1736226536-92108',
+			'presentation_id' => '1738755385-41862',
+			'organization_name' => 'Sociomark Digital Marketing Agency',
+			'id_255004' => 'Manufacturing',
+			'id_255201' => 'Less than 50',
+			'id_255002' => '20/06/2021',
+			'name' => 'Hemant Developer',
+			'id_255101' => '5 - 24',
+			'id_255102' => '5 - 24',
+			'id_255103' => '< 5%',
+			'id_255104' => '6% - 15%',
+			'id_255105' => '< 10%',
+			'id_255106' => '50 - 100',
+			'id_255107' => '1.6 - 2.0',
+			'id_255201' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255202' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255203' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255204' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255205' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255206' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255207' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.',
+			'id_255208' => 'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. CUM, QUOS NESCIUNT IN ODIO SAEPE SUNT NECESSITATIBUS, FUGA, PRAESENTIUM DOLOREM EXERCITATIONEM DISTINCTIO QUAM IPSUM IPSAM ILLUM IPSA IUSTO ODIT QUIS LAUDANTIUM ASSUMENDA. CUPIDITATE, NIHIL SAPIENTE. NULLA VOLUPTATES NEMO AMET DUCIMUS IUSTO REPELLENDUS ODIT ASSUMENDA ISTE BLANDITIIS TEMPORA, INCIDUNT CONSEQUATUR SIMILIQUE, REICIENDIS ET REPUDIANDAE ASPERIORES CONSECTETUR ALIAS HIC ELIGENDI EXPEDITA VELIT! PERSPICIATIS CORPORIS TENETUR FUGIT BLANDITIIS PORRO OFFICIA INVENTORE, SAPIENTE ACCUSANTIUM NESCIUNT TEMPORA RATIONE NULLA OFFICIIS ADIPISCI NON NIHIL ALIQUID NATUS! CORRUPTI DELECTUS, COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI. COMMODI ESSE QUIBUSDAM EOS, DOLORES ASPERIORES IN SAEPE NON CUPIDITATE DOLOREM VENIAM SUNT, MINUS SUSCIPIT QUIS. ILLO, SAEPE ELIGENDI.'
+		];
+		$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_layout_1')->generate();
 	}
 }

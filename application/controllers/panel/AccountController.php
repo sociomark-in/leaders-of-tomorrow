@@ -140,31 +140,28 @@ class AccountController extends PanelController
 						}
 						$applications['msme'][$i]['status_text'] = $s;
 
-						if ($applications['msme'][$i]['status']) {
-							# code...
-							$s = $applications['msme'][$i]['status_2'];
-							switch ($s) {
-								case '0':
-									$s = '<span class="badge bg-danger">Rejected</span>';
-									break;
-								case '1':
-									$s = '<span class="badge bg-success">Approved</span>';
-									break;
-								case '2':
-									$s = '<span class="badge bg-dark">Need Improvements</span>';
-									break;
-								case '3':
-									$s = '<span class="badge bg-warning">Under Review</span>';
-									break;
-								case '4':
-									$s = '<span class="badge bg-secondary">Draft</span>';
-									# code...
-									break;
-								default:
-									$s = NULL;
-									# code...
-									break;
-							}
+						$s = $applications['msme'][$i]['status_2'];
+						switch ($s) {
+							case '0':
+								$s = '<span class="badge bg-danger">Rejected</span>';
+								break;
+							case '1':
+								$s = '<span class="badge bg-success">Approved</span>';
+								break;
+							case '2':
+								$s = '<span class="badge bg-dark">Need Improvements</span>';
+								break;
+							case '3':
+								$s = '<span class="badge bg-warning">Under Review</span>';
+								break;
+							case '4':
+								$s = '<span class="badge bg-secondary">Draft</span>';
+								# code...
+								break;
+							default:
+								$s = NULL;
+								# code...
+								break;
 						}
 						$applications['msme'][$i]['status_2_text'] = $s;
 					}
@@ -172,6 +169,10 @@ class AccountController extends PanelController
 
 				$this->data['my_applications'] = $applications;
 				$this->data['rest_categories'] = $categories;
+
+				// echo "<pre>";
+				// print_r($this->data);
+				// die;
 
 				$this->load->panel_view('home', $this->data);
 				break;

@@ -15,7 +15,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<?php if (count($my_applications['msme']) > 0) : ?>
+					<?php if (!is_null($my_applications['msme']) && count($my_applications['msme']) > 0) : ?>
 						<div class="row">
 							<?php foreach ($my_applications['msme'] as $key => $application) : ?>
 								<div class="col-xl-4 col-lg-6 col-12">
@@ -27,16 +27,7 @@
 														<h5 class=""><?= $application['category']['name'] ?></h5>
 													</div>
 													<div class="">
-														<div class="row">
-															<div class="col">
-																<p class="mb-2">Stage I</p>
-																<p><?= $application['status_text'] ?? "--" ?></p>
-															</div>
-															<div class="col">
-																<p class="mb-2">Stage II</p>
-																<p><?= $application['status_2_text'] ?? "--" ?></p>
-															</div>
-														</div>
+														<p><?= $application['status_text'] ?></p>
 													</div>
 												</div>
 												<div class="card-footer">
@@ -64,8 +55,13 @@
 																		$text = "Complete Application";
 																		break;
 																	case '1':
-																		$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
-																		$text = "Prepare Presentation for Stage II";
+																		if (!is_null($application['status_2'])) {
+																			$redirect = base_url('dashboard/my-presentations/');
+																			$text = "View All Presentations";
+																		} else {
+																			$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
+																			$text = "Prepare Presentation for Stage II";
+																		}
 																		break;
 
 																	default:
@@ -74,15 +70,7 @@
 																		break;
 																}
 																?>
-																<?php switch ($application['status']):
-																	case '1': ?>
-																		<a href="<?= $redirect ?>" class=""><?= $text ?></a>
-																		<?php break; ?>
-																	<?php
-																	default: ?>
-																		<a href="<?= $redirect ?>" class=""><?= $text ?></a>
-																		<?php break; ?>
-																<?php endswitch ?>
+																<a href="<?= $redirect ?>"><?= $text ?></a>
 															</div>
 														</div>
 													</div>
