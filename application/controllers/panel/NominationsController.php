@@ -46,6 +46,33 @@ class NominationsController extends PanelController
 						break;
 				}
 				$applications['msme'][$i]['status_text'] = $s;
+				if ($applications['msme'][$i]['status_2']) {
+					# code...
+					$s = $applications['msme'][$i]['status_2'];
+					switch ($s) {
+						case '0':
+							$s = '<span class="badge bg-danger">Rejected</span>';
+							break;
+						case '1':
+							$s = '<span class="badge bg-success">Approved</span>';
+							break;
+						case '2':
+							$s = '<span class="badge bg-dark">Need Improvements</span>';
+							break;
+						case '3':
+							$s = '<span class="badge bg-warning">Under Review</span>';
+							break;
+						case '4':
+							$s = '<span class="badge bg-secondary">Draft</span>';
+							# code...
+							break;
+						default:
+							$s = NULL;
+							# code...
+							break;
+					}
+				}
+				$applications['msme'][$i]['status_2_text'] = $s;
 				$applications['msme'][$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true)[0]['name'];
 			}
 		}
@@ -73,8 +100,8 @@ class NominationsController extends PanelController
 		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id']]), true),
-			'stage_2_applications' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status'], ['created_by' => $this->user_session['id'], 'status' => 1]), true)
+			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status', 'status_2'], ['created_by' => $this->user_session['id']]), true),
+			'stage_2_applications' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status', 'status_2'], ['created_by' => $this->user_session['id'], 'status' => 1]), true)
 		];
 		if (count($applications['msme']) > 0) {
 

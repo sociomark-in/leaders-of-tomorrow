@@ -7,6 +7,10 @@ class MakePresentation extends FPDF
 {
 	protected $pdf;
 
+	function SetCellMargin($margin) {
+		$this->cMargin = $margin;
+	}
+
 	function Footer()
 	{
 		// Position at 1.5 cm from bottom
@@ -33,7 +37,7 @@ class MakePresentation extends FPDF
 	public function init($orientation = 'P', $unit = 'mm', $size = 'A4')
 	{
 		$this->pdf = new MakePresentation($orientation, $unit = 'mm', $size);
-		$this->pdf->SetMargins(0,0);
+		$this->pdf->SetMargins(25,25);
 		$this->pdf->AliasNbPages();
 		$this->pdf->AddPage();
 		return $this;

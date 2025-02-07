@@ -67,8 +67,21 @@
 																$text = "Complete Application";
 																break;
 															case '1':
-																$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
-																$text = "Prepare Presentation for Stage II";
+																if (!is_null($application['status_2'])) {
+																	$redirect = base_url('dashboard/my-presentations/');
+																	$text = "View All Presentations";
+																} else {
+																	switch ($$application['status_2']) {
+																		case '1':
+																			$text = "";
+																			break;
+
+																		default:
+																			$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
+																			$text = "Prepare Presentation for Stage II";
+																			break;
+																	}
+																}
 																break;
 
 															default:

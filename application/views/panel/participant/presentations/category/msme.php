@@ -229,7 +229,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_1" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -237,7 +237,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_2" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -256,7 +256,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="10" name="case_study_3" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_3" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -275,7 +275,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_4" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -283,7 +283,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_5" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -303,7 +303,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_6" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_6" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -322,7 +322,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_7" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -341,7 +341,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea  required rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
+							<textarea required rows="10" maxlength="900" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -361,42 +361,42 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					<div class="row g-2 g-md-3">
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study I</label>
 								<input type="file" accept="image/*" name="doc1" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study II</label>
 								<input type="file" accept="image/*" name="doc2" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study III</label>
 								<input type="file" accept="image/*" name="doc3" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study IV</label>
 								<input type="file" accept="image/*" name="doc4" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study V</label>
 								<input type="file" accept="image/*" name="doc5" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
-								<label for="" class="form-label">Logo of the Incorporation</label>
+								<label for="" class="form-label">Graphic Creative Supporting Case Study VI</label>
 								<input type="file" accept="image/*" name="doc6" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 2MB in Square Orientation)</span>
 							</div>
@@ -440,22 +440,102 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		],
 		rules: {
 			case_study_1: {
-				maxlength: 5000,
-				minlength: 50
+				maxlength: 900,
+				minlength: 300
 			},
 			case_study_2: {
-				maxlength: 5000,
-				minlength: 50
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_3: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_4: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_5: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_6: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_7: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_8: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_9: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_10: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_11: {
+				maxlength: 900,
+				minlength: 300
+			},
+			case_study_12: {
+				maxlength: 900,
+				minlength: 300
 			},
 		},
 		messages: {
 			case_study_1: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
 			},
 			case_study_2: {
-				maxlength: "Please enter no more than 5000 characters.",
-				minlength: "Please enter at least 50 characters.",
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_3: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_4: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_5: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_6: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_7: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_8: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_9: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_10: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_11: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
+			},
+			case_study_12: {
+				maxlength: "Please enter no more than 900 characters.",
+				minlength: "Please enter at least 300 characters.",
 			},
 		}
 	});
