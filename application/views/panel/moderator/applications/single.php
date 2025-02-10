@@ -83,9 +83,16 @@ if ($nomination['stage'] >= 1) {
 									break;
 
 								default:
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
-									break;
+								switch (explode('_', $category['type'])[1]) {
+									case 'IDFC':
+										include_once APPPATH . '/views/panel/moderator/full_view/idfc.php';
+										break;
+
+									default:
+										include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
+										break;
+								}
+								break;
 							}
 							?>
 						</div>

@@ -116,6 +116,7 @@
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
+								<button class="btn btn-outline-secondary" id="party">Press Button</button>
 							</div>
 						</div>
 					</div>
@@ -123,6 +124,119 @@
 			</div>
 		</div>
 	</section>
+
+	<section id="grand-juries" class="pb-0">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>List of Grand Juries</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper grandJurySwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 12; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<div class="speaker-tile normal">
+										<div class="photo mb-3">
+											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
+										</div>
+										<div class="desc text-center">
+											<h5>Lorem ipsum dolor sit. <?= $i ?></h5>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+										</div>
+									</div>
+								</div>
+							<?php endfor ?>
+						</div>
+					</div>
+					<script>
+						new Swiper(".grandJurySwiper", {
+							slidesPerView: 2,
+							grid: {
+								rows: 1,
+								fill: 'row'
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 3,
+									spaceBetween: 20,
+									grid: {
+										rows: 2,
+									},
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 50,
+									grid: {
+										rows: 3,
+									},
+								},
+								1400: {
+									slidesPerView: 4,
+									spaceBetween: 30,
+									grid: {
+										rows: 3,
+									},
+								},
+							},
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="pre-juries" class="">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>List of Pre-juries</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper preJurySwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 12; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<div class="speaker-tile normal">
+										<div class="photo mb-3">
+											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
+										</div>
+										<div class="desc text-center">
+											<h5>Lorem ipsum dolor sit.</h5>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+										</div>
+									</div>
+								</div>
+							<?php endfor ?>
+						</div>
+					</div>
+					<script>
+						new Swiper(".preJurySwiper", {
+							slidesPerView: 2,
+							breakpoints: {
+								640: {
+									slidesPerView: 3,
+									spaceBetween: 20,
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 50,
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 30,
+								},
+							},
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="section" id="categories">
 		<div class="container">
 			<div class="row g-3">
@@ -170,22 +284,22 @@
 									</div>
 								</a>
 								<script>
-										$button = $("#categoryModelHandler<?= $key ?>");
-										$button.on("click", () => {
-											$.ajax({
-												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
-												data: {
-													category: "<?= $category['code'] ?>"
-												},
-												success: function(result) {
-													console.log(result);
-													$("#categoryModel .modal-title").text(result.name)
-													$("#categoryModel .modal-body").html(
-														"<p>"+ result.description +"</p>"
-													)
-												}
-											})
+									$button = $("#categoryModelHandler<?= $key ?>");
+									$button.on("click", () => {
+										$.ajax({
+											url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
+											data: {
+												category: "<?= $category['code'] ?>"
+											},
+											success: function(result) {
+												console.log(result);
+												$("#categoryModel .modal-title").text(result.name)
+												$("#categoryModel .modal-body").html(
+													"<p>" + result.description + "</p>"
+												)
+											}
 										})
+									})
 								</script>
 							</div>
 						<?php endforeach ?>
@@ -201,7 +315,7 @@
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										<a href="<?= base_url('awards/category/' . $category['code'] . '/nominate')?>" class="btn btn-red">Nominate Now</a>
+										<a href="<?= base_url('awards/category/' . $category['code'] . '/nominate') ?>" class="btn btn-red">Nominate Now</a>
 									</div>
 								</div>
 							</div>
@@ -392,102 +506,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="grand-juries" class="pb-0 d-none">
-		<div class="container">
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>List of Grand Juries</span></h2>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="swiper jurySwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 12; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal">
-										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
-										</div>
-										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-										</div>
-									</div>
-								</div>
-							<?php endfor ?>
-						</div>
-					</div>
-					<script>
-						new Swiper(".jurySwiper", {
-							slidesPerView: 2,
-							breakpoints: {
-								640: {
-									slidesPerView: 3,
-									spaceBetween: 20,
-								},
-								1024: {
-									slidesPerView: 4,
-									spaceBetween: 50,
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-								},
-							},
-						})
-					</script>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="pre-juries" class=" d-none">
-		<div class="container">
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>List of Pre-juries</span></h2>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="swiper preJurySwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 12; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal">
-										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
-										</div>
-										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-										</div>
-									</div>
-								</div>
-							<?php endfor ?>
-						</div>
-					</div>
-					<script>
-						new Swiper(".preJurySwiper", {
-							slidesPerView: 2,
-							breakpoints: {
-								640: {
-									slidesPerView: 3,
-									spaceBetween: 20,
-								},
-								1024: {
-									slidesPerView: 4,
-									spaceBetween: 50,
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-								},
-							},
-						})
-					</script>
-				</div>
-			</div>
-		</div>
-	</section>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>
+<script src="<?= base_url('assets/js/awards.js') ?>"></script>

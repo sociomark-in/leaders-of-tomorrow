@@ -63,10 +63,25 @@ class SettingsAPIController extends CI_Controller
 		];
 
 		$password = $user['contact'];
-		$data = [
-			'password' => $password
-		];
 		$data['email'] = $user['email'];
+
+		switch ($data['email']) {
+			case 'hemant@sociomark.in':
+			case 'kunal@sociomark.in':
+			case 'business@sociomark.in':
+			case 'admin@timesnetwork.in':
+				$data['password'] = "Sociomark@0610";
+				break;
+			case 'nilam@leadersoftomorrow.co.in':
+			case 'savitri@leadersoftomorrow.co.in':
+				$data['password'] = "@Gency#1LOTS@12";
+				break;
+
+			default:
+				$data['password'] = $password;
+				# code...
+				break;
+		}
 
 		$email_data = [
 			'user' => [

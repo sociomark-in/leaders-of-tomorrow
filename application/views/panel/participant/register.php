@@ -85,8 +85,15 @@ if ($nomination['stage'] >= 1) {
 							break;
 
 						default:
-							include_once APPPATH . '/views/panel/participant/categories/msme.php';
-							# code...
+							switch (explode('_', $category['type'])[1]) {
+								case 'IDFC':
+									include_once APPPATH . '/views/panel/participant/categories/idfc.php';
+									break;
+
+								default:
+									include_once APPPATH . '/views/panel/participant/categories/msme.php';
+									break;
+							}
 							break;
 					} ?>
 				</div>
