@@ -18,12 +18,7 @@ class LoginController extends BaseController
 
 	public function forgot_pw(){
 		$get = $this->input->get('key');
-
-		if(!isset($get)){
-			$this->load->mini_view('forgot_pw_otp', $this->data);
-		} else {
-			$this->load->mini_view('forgot_pw_change', $this->data);
-		}
+		$this->load->mini_view('forgot_pw_otp', $this->data);
 	}
 
 	public function multi(){

@@ -17,6 +17,37 @@
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
 								<div class="col-12">
+									<?php
+									switch ($_SESSION['user_login_status']['status']):
+										case 'SUCCESS': ?>
+											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+										<?php
+										case 'WARNING': ?>
+											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+										<?php
+										case 'ERROR': ?>
+											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
+												<?= $_SESSION['user_login_status']['message'] ?>
+												<!-- <strong><a href="#" class="alert-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Forgot Password</a></strong>  -->
+												<!-- <strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong>  -->
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<?php break; ?>
+
+										<?php
+										default: ?>
+											<?php break; ?>
+									<?php endswitch ?>
+								</div>
+								<div class="col-12">
 									<?= form_open('api/v2/auth/forgot-password/resend-password', ['id' => "loginForm"]) ?>
 									<div class="row gap-2">
 										<div class="col-12">
@@ -29,7 +60,7 @@
 											<input type="text" name="useremail" class="form-control">
 										</div>
 										<div class="col-12">
-											<button type="submit" class="btn btn-red">Send OTP</button>
+											<button type="submit" class="btn btn-red">Send Credentials</button>
 										</div>
 										<div class="g-recaptcha" data-sitekey="6LeyC1oqAAAAADkQ7fisXtlSXdG7t1ZxxFgV3EsF"></div>
 									</div>

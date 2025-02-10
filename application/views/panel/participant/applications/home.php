@@ -58,9 +58,11 @@
 																		if (!is_null($application['status_2'])) {
 																			$redirect = base_url('dashboard/my-presentations/');
 																			$text = "View All Presentations";
+																			$text = "";
 																		} else {
 																			$redirect = base_url('dashboard/application/' . $application['nomination_id'] . "/presentation");
 																			$text = "Prepare Presentation for Stage II";
+																			$text = "";
 																		}
 																		break;
 

@@ -55,53 +55,91 @@ class SettingsAPIController extends CI_Controller
 
 		$user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['useremail']]), true)[0];
 
-		$recipients = [
-			[
-				"email" =>  $user['email'],
-				"name" =>  $user['name']
-			]
-		];
+		if (!is_null($user) && count($user)) {
+			$this->load->library('email/BrevoCURLMail');
+			$recipients = [
+				[
+					"email" =>  $user['useremail'],
+					"name" =>  $user['name'],
+				]
+			];
+			$password = $user['contact'];
+			$data['email'] = $user['email'];
 
-		$password = $user['contact'];
-		$data = [
-			'password' => $password
-		];
-		$data['email'] = $user['email'];
+			switch ($data['email']) {
+				case 'savitri@leadersoftomorrow.co.in':
+				case 'nilam@leadersoftomorrow.co.in':
+					$data['password'] = '@Gency#1LOTS@12';
 
-		$email_data = [
-			'user' => [
-				'email' => $data['email'],
-				'password' => $data['password'],
-			]
-		];
+					break;
+				case 'kunal@sociomark.in':
+				case 'hemant@sociomark.in':
+				case 'business@sociomark.in':
+				case 'admin@timesnetwork.com':
+					$data['password'] = "Sociomark@0610";
+					break;
+				default:
+					# code...
+					$data['password'] = $password;
+					break;
+			}
 
-		$subject = APP_NAME . " - Resent Password";
-		$body = "Hi, <br>Your login Details are as follows:<br>Username:" . $this->request['email'] . "<br>Password:" . $this->request['email'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
-		$this->load->view('panel/emails/participant_register_new', $email_data);
-		// $htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
-		// if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-		// 	redirect('login');
-		// }
+			$email_data = [
+				'user' => [
+					'email' => $data['email'],
+					'password' => $data['password'],
+				]
+			];
+
+			if ($_SESSION['user_password_reset']) {
+				$session['status'] = 'WARNING';
+				$session['message'] = 'Too many requests! Please try again tomorrow!';
+				$this->session->set_flashdata('user_login_status', $session);
+				redirect('forgot-password');
+			} else {
+				$subject = APP_NAME . " - Resent Password";
+				$body = "Hi, <br>Your login Details are as follows:<br>Username:" . $this->request['email'] . "<br>Password:" . $this->request['email'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
+				$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
+				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+					$session['status'] = 'SUCCESS';
+					$session['message'] = 'The Login Credentials has been sent to entered email address!';
+					$this->session->set_flashdata('user_login_status', $session);
+					$this->session->set_tempdata('user_password_reset', TRUE, 86000);
+					redirect('login');
+				}
+			}
+		} else {
+			$session['status'] = 'ERROR';
+			$session['message'] = 'Incorrect Credentials! User Not Found!';
+			$this->session->set_flashdata('user_login_status', $session);
+			redirect('forgot-password');
+		}
 	}
 	public function forgot_pw()
 	{
 		$this->request = $this->input->post();
 
 		$user = $this->UserModel->get(null, ['useremail' => $this->request['useremail']]);
-		print_r($user);
-		die;
-		$this->load->library('email/BrevoCURLMail');
-		$recipients = [
-			[
-				"email" =>  $this->request['useremail'],
-				"name" =>  "Registered User"
-			]
-		];
-		$subject = APP_NAME . " - Resent Password";
-		$body = "Hi, <br>Your login Details are as follows:<br>Username:" . $this->request['email'] . "<br>Password:" . $this->request['email'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
-		// $htmlbody = $this->load->view('panel/emails/participant_nomination_success', null, true);
-		if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, null, $body)->send()) {
-			redirect('login');
+
+		if (count($user)) {
+			$this->load->library('email/BrevoCURLMail');
+			$recipients = [
+				[
+					"email" =>  $user['useremail'],
+					"name" =>  $user['name'],
+				]
+			];
+			$subject = APP_NAME . " - Resent Password";
+			$body = "Hi, <br>Your login Details are as follows:<br>Username:" . $this->request['email'] . "<br>Password:" . $this->request['email'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
+			$htmlbody = $this->load->view('panel/emails/participant_nomination_success', null, true);
+			if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+				redirect('login');
+			}
+		} else {
+			$session['status'] = 'ERROR';
+			$session['message'] = 'Incorrect Credentials! User Not Found!';
+			$this->session->set_flashdata('user_login_status', $session);
+			redirect('forgot-password');
 		}
 	}
 

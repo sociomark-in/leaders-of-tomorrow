@@ -8,6 +8,16 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-118003029,thumbsize-164428,width-1280,height-720,resizemode-75/118003029.jpg?quality=100",
+				'title' => "Navigating Intellectual Property Rights: A Wakeup Call for Entrepreneurs",
+				'redirect' => "https://www.etnownews.com/news/navigating-intellectual-property-rights-a-wake-up-call-for-entrepreneurs-article-118003029"
+			],
+			[
+				'thumb' => "https://static.tnn.in/thumb/msid-117979686,thumbsize-164428,width-1280,height-720,resizemode-75/117979686.jpg?quality=100",
+				'title' => "MSMEs Shooting for the Stars in India's Space Sector",
+				'redirect' => "https://www.etnownews.com/news/msmes-shooting-for-the-stars-in-indias-space-sector-article-117979686"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-117671584,thumbsize-164428,width-1280,height-720,resizemode-75/117671584.jpg?quality=100",
 				'title' => "Relevance & Longevity: 4 Lessons from Bharat Floorings & Tiles",
 				'redirect' => "https://www.etnownews.com/news/relevance-longevity-4-lessons-from-bharat-floorings-tiles-article-117671584"
@@ -85,7 +95,7 @@ class PagesController extends BaseController
 			],
 		];
 		$this->data['page'] = [
-			'title' => APP_NAME . " " .date('Y'). " • " . "Powering Entrepreneurs for the Global Stage",
+			'title' => APP_NAME . " " . date('Y') . " • " . "Powering Entrepreneurs for the Global Stage",
 		];
 		$this->load->page('home', $this->data);
 	}
