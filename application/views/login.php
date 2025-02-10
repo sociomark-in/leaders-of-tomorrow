@@ -73,8 +73,13 @@
 									<?= form_close() ?>
 								</div>
 								<!-- <div class="mb-2">Forgot Password? <a href="">Click Here to Reset</a></div> -->
-								<div class="">
-									Not Registered? <a href="<?= base_url('register') ?>">Click Here to Register</a>
+								<div class="col-12">
+									<div class="">
+										Not Registered? <a href="<?= base_url('register') ?>">Click Here to Register</a>
+									</div>
+									<div class="">
+										forgot Password? <a href="<?= base_url('forgot-password') ?>">Click Here to Resend!</a>
+									</div>
 								</div>
 							</div>
 							<script>
