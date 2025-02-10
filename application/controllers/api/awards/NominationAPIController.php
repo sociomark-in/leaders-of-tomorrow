@@ -1619,8 +1619,7 @@ class NominationAPIController extends CI_Controller
 										$this->request['organization']['address']['line_3'],
 									]),
 									'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-									'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
-									'id_255004'	=> $this->request['organization']['type'],		//organization_inc_date
+									'id_255003'	=> $this->request['organization']['type'],		//organization_inc_date
 									'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
 
 									'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
@@ -1640,23 +1639,16 @@ class NominationAPIController extends CI_Controller
 									'id_255101' => $this->request["organization_revenue_2"],
 									'id_255102' => $this->request["organization_revenue_1"],
 									'id_255103' => $this->request["organization_growth_2"],
-									'id_255104' => $this->request["organization_growth_1"],
-									'id_255105' => $this->request["organization_profit"],
-									'id_255106' => $this->request["organization_assets"],
-									'id_255107' => $this->request["organization_der_23"],
 
 									'id_255201' => $this->request["organization"]['size'],
 									'id_255202' => $this->request["organization"]['members'],
 									'id_255203' => $this->request["organization_overview"],
 									'id_255204' => $this->request["organization_services"],
+									'id_255205' => $this->request["organization"]['clients'],
 
 									'stage_status' => $s
 
 								];
-
-								echo "<pre>";
-								print_r($this->data);
-								die;
 
 								$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 								if ($rows == 0) {

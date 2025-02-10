@@ -189,7 +189,7 @@ class NominationsController extends PanelController
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
-
+		
 		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 		$this->data['category'] = $category_details;
 

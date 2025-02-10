@@ -51,7 +51,7 @@
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Business Segment</p>
+											<p class="form-label">Type of Enterprise</p>
 											<h5><?= $application['id_255003'] ?></h5>
 										</div>
 									</div>
@@ -86,8 +86,14 @@
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-12">
 										<div class="">
-											<p class="form-label">Type of Ownership</p>
-											<h5><?= $application['id_255005'] ?></h5>
+											<p class="form-label">Years of Association with IDFC First Bank</p>
+											<h5><?= $application['id_255501'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-12">
+										<div class="">
+											<p class="form-label">IDFC First Bank Account Number <br>(Last 4 Digits)</p>
+											<h5><?= $application['id_255502'] ?></h5>
 										</div>
 									</div>
 									<div class="col-xxl-6 col-xl-8 col-12">
@@ -188,39 +194,6 @@
 												<div class="col-xxl-4 col-lg-6 col-12">
 													<h5><?= $application['id_255103'] ?></h5>
 												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255104'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Net Profit Margin (In %)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255105'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Return On Assets (ROA)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255106'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Current Ratio
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255107'] ?></h5>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -243,6 +216,12 @@
 										<div class="">
 											<p class="form-label">No. Of Employees</p>
 											<h5><?= $application['id_255201'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">No. Of Clients</p>
+											<h5><?= $application['id_255205'] ?></h5>
 										</div>
 									</div>
 
@@ -335,21 +314,6 @@
 										<div class="">
 											<p class="form-label">Outline your organization&#39;s strategy for scaling operations and adapting to future market demands. Highlight any investments in technology, talent, or infrastructure that demonstrate readiness for future growth.</p>
 											<h5><?= $application['id_255304'] ?></h5>
-										</div>
-									</div>
-								</div>
-							</fieldset>
-							<fieldset class="col-12">
-								<div class="mb-3">
-									<legend class="card-title mb-0">
-										<h5>Entrepreneur of the Year<sup class="text-danger">&ast;</sup></h5>
-									</legend>
-								</div>
-								<div class="row g-3">
-									<div class="col-12">
-										<div class="">
-											<p class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</p>
-											<h5><?= $application['id_255305'] ?></h5>
 										</div>
 									</div>
 								</div>

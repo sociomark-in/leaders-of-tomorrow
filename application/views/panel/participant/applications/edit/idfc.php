@@ -1,11 +1,44 @@
 <div class="row g-3">
 	<div class="col-12 grid-margin stretch-card">
-		<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'formFullView']) ?>
+		<?= form_open_multipart('api/v2/awards/nomination/single/edit', ['id' => 'formFullView']) ?>
 		<input type="hidden" name="category_id" value="<?= $category_id ?>">
 		<input type="hidden" name="application_id" value="<?= $id ?? null ?>">
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
+		<!-- 
+	75502	organization_industry	
+	75503	organization_overview	
+	75508	organization_mission_vision	
+	75509	organization_services	
+	75510	organization_reveue_23	
+	75511	organization_reveue_22	
+	75512	organization_growth_23	
+	75513	organization_growth_22	
+	75514	organization_profit_23	
+	75515	organization_profit_22	
+	75516	organization_assets_23	
+	75517	organization_assets_22	
+	75518	organization_der_23	
+	75519	organization_der_22
+
+	75520	initiative_name
+	75521	initiative_start_date	
+	75522	initiative_end_date	
+	75523	initiative_desc	
+	75524	initiative_challenges	
+	75525	initiative_strategy	
+
+	75526	initiative_tech
+	75527	initiative_impact	
+	75528	initiative_scalability	
+	75529	initiative_info	
+
+	75530	doc1
+	75531	doc2	
+	75532	doc3	
+	75533	doc4	
+ -->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">
@@ -84,19 +117,19 @@
 								</div>
 							</div>
 
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Years of Association with IDFC First Bank</label>
 									<input required type="text" name="idfc[years]" value="<?= $application['id_255501'] ?>" class="form-control">
 								</div>
 							</div>
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">IDFC First Bank Account Number (Last 4 Digits)</label>
 									<input required type="text" name="idfc[account]" value="<?= $application['id_255502'] ?>" class="form-control">
 								</div>
 							</div>
-							<div class="col-xxl-6 col-xl-8 col-12">
+							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Website URL</label>
 									<input type="url" placeholder="https://www.domain.xyz" value="<?= $application['organization_url'] ?>" name="organization[url]" class="form-control">
@@ -226,7 +259,7 @@
 							<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
 						</legend>
 						<div class="row g-3">
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">No. Of Employees</label>
 									<select required name="organization[size]" id="" class="form-select">
@@ -240,7 +273,7 @@
 								</div>
 							</div>
 
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Target Market Segment and Geographic Reach</label>
 									<select required name="organization[members]" id="" class="form-select">
@@ -250,7 +283,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="col-xl-4 col-lg-6 col-12">
 								<div class="">
 									<label for="" class="form-label">No. Of Clients</label>
 									<select required name="organization[clients]" id="" class="form-select">
@@ -363,21 +396,21 @@
 							</div>
 						</div>
 						<div class="row g-3 mb-3">
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255401']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<!-- <div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Applicable Environmental Certifications</label>
 									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
@@ -385,21 +418,21 @@
 									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div> -->
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+							<div class="col-lg-4 col-md-6 col-12">
 								<div class="">
 									<label for="" class="form-label">Any other Collaterals&nbsp;<a class="link-icon" href="<?= base_url($application['id_255405']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
