@@ -71,8 +71,15 @@ if ($nomination['stage'] >= 1) {
 								break;
 
 							default:
-								include_once APPPATH . '/views/panel/participant/categories/msme.php';
-								# code...
+								switch (explode('_', $category['type'])[1]) {
+									case 'IDFC':
+										include_once APPPATH . '/views/panel/participant/categories/idfc.php';
+										break;
+
+									default:
+										include_once APPPATH . '/views/panel/participant/categories/msme.php';
+										break;
+								}
 								break;
 						} ?>
 					</div>
@@ -98,7 +105,7 @@ if ($nomination['stage'] >= 1) {
 						<script>
 							$state = $('#stateSelect');
 							$city = $('#citySelect');
-							
+
 							$cityValue = "<?= $application['organization_city'] ?>";
 							if ($cityValue != "") {
 								$htmlData += "<option selected value='" + $cityValue + "'>" + $cityValue + "</option>";
@@ -158,7 +165,9 @@ if ($nomination['stage'] >= 1) {
 											</div>
 											<div class="col-12">
 												<ol>
-													<li>PDF Version should be - <strong>< 1.4</strong></li>
+													<li>PDF Version should be - <strong>
+															< 1.4</strong>
+													</li>
 													<li>PDF Versions for all the Attachments should be same.</li>
 													<li>
 														For further instructions <a href="#" class="" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Click Here</a>
@@ -183,7 +192,7 @@ if ($nomination['stage'] >= 1) {
 									<div class="modal-body">
 										<div class="row g-3">
 											<div class="col-12">
-												
+
 											</div>
 											<div class="col-12">
 												<ol>

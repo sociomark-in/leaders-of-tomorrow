@@ -60,7 +60,7 @@
 											<input type="text" name="useremail" class="form-control">
 										</div>
 										<div class="col-12">
-											<button type="submit" class="btn btn-red">Send Credentials</button>
+											<button type="submit" class="btn btn-red">Resend Password</button>
 										</div>
 										<div class="g-recaptcha" data-sitekey="6LeyC1oqAAAAADkQ7fisXtlSXdG7t1ZxxFgV3EsF"></div>
 									</div>

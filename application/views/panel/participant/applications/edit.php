@@ -41,8 +41,16 @@ $utm = $utm;
 										include_once APPPATH . '/views/panel/participant/applications/edit/individual_2.php';
 										break;
 
-									default:
-										include_once APPPATH . '/views/panel/participant/applications/edit/msme.php';
+										default:
+										switch (explode('_', $category['type'])[1]) {
+											case 'IDFC':
+												include_once APPPATH . '/views/panel/participant/applications/edit/idfc.php';
+												break;
+		
+											default:
+												include_once APPPATH . '/views/panel/participant/applications/edit/msme.php';
+												break;
+										}
 										break;
 								}
 								?>

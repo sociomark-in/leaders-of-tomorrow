@@ -50,18 +50,7 @@
 											<h5><?= $application['id_255002'] ?></h5>
 										</div>
 									</div>
-									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">Total Years of Experience</p>
-											<h5><?= $application['id_255006'] ?></h5>
-										</div>
-									</div>
-									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">Years of Experience in this Company</p>
-											<h5><?= $application['id_255007'] ?></h5>
-										</div>
-									</div>
+									
 
 									<div class="col-xxl-3 col-xl-4 col-12">
 										<div class="">
@@ -131,6 +120,26 @@
 												</div>
 												<div class="col-xxl-4 col-lg-6 col-12">
 													<h5><?= $application['id_255105'] ?></h5>
+												</div>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="row g-3">
+												<div class="col-xxl-4 col-12">
+												Assets Valuation (in INR Crores)
+												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255106'] ?></h5>
+												</div>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="row g-3">
+												<div class="col-xxl-4 col-12">
+													Debt Equity Ratio
+												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255107'] ?></h5>
 												</div>
 											</div>
 										</div>
@@ -362,8 +371,14 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Background about your organization/institute.</p>
+											<p class="form-label">Background about your organization/institute. Highlight the challenges you are aiming to solve through the initiative.</p>
 											<h5><?= $application['id_255201'] ?></h5>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="">
+											<p class="form-label">Geographical area where the organization works. Few Success Stories (If Applicable)</p>
+											<h5><?= $application['id_255202'] ?></h5>
 										</div>
 									</div>
 								</div>
@@ -385,8 +400,8 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Key product/service offerings</p>
-											<h5><?= $application['id_255202'] ?></h5>
+											<p class="form-label">What are unique offerings that differentiates you from the existing competitiors in the market?</p>
+											<h5><?= $application['id_255203'] ?></h5>
 										</div>
 									</div>
 								</div>
@@ -414,14 +429,14 @@
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">What sets your business model apart from competitors in the market?</p>
-												<h5><?= $application['id_255203'] ?></h5>
+												<p class="form-label">Describe the initiatives taken by your organizations in last year (April 2023 - March 2024)</p>
+												<h5><?= $application['id_255204'] ?></h5>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">How do you plan to scale your business, and what challenges do you anticipate in the scaling process?</p>
-												<h5><?= $application['id_255204'] ?></h5>
+												<p class="form-label">Describe the impact created by the initiatives in the last year on the business growth and other stakeholders. i.e. Customers Employees, Industry, etc.</p>
+												<h5><?= $application['id_255205'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -445,14 +460,8 @@
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">How well do you understand your target market, and what strategies are in place to adapt to changing market trends?</p>
+												<p class="form-label">Based on the current economic conditions describe key risk management initiatives implemented by your organization to mitigate these risks and how has technology played a role in it</p>
 												<h5><?= $application['id_255205'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p class="form-label">Share examples of how your business has demonstrated innovation in response to market demands in the last two years</p>
-												<h5><?= $application['id_255206'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -481,14 +490,8 @@
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">How do you plan to manage cash flow effectively, especially during periods of rapid growth or economic downturns?</p>
-												<h5><?= $application['id_255207'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p class="form-label">Can you share any customer success stories or testimonials that highlight the impact of your business on your target audience?</p>
-												<h5><?= $application['id_255208'] ?></h5>
+												<p class="form-label">Elaborate on the Sustainability and/or Scalability plan of your organization for the next 2-3 years.</p>
+												<h5><?= $application['id_255206'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -512,14 +515,8 @@
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">What are your long-term goals for the company, and how do you see it evolving in the next 5-10 years?</p>
-												<h5><?= $application['id_255209'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p class="form-label">How do emerging technologies or trends factor into your strategic planning?</p>
-												<h5><?= $application['id_255210'] ?></h5>
+												<p class="form-label">List any awards/achievements won in the last 2 years or any other additional information for the jury.</p>
+												<h5><?= $application['id_255207'] ?></h5>
 											</div>
 										</div>
 									</div>

@@ -43,7 +43,7 @@
 		</div>
 	</div>
 
-	<div class="col-xl-4 col-lg-6 col-12">
+	<!-- <div class="col-xl-4 col-lg-6 col-12">
 		<div class="">
 			<label for="" class="form-label">Are you an existing IDFC FIRST Bank Customer?</label>
 			<div class="row ms-1">
@@ -61,7 +61,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<input type="hidden" name="is_idfc_customer" value="yes">
 
 	<?php if (count($lead) > 0) : ?>
 
