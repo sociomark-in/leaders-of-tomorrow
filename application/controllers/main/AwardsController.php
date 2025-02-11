@@ -82,6 +82,42 @@ class AwardsController extends BaseController
 				$content['description'] = "Recognizes MSMEs that leverage technology and innovative practices to transform agriculture and allied services such as dairy, fisheries, or Agri-logistics.";
 				break;
 
+			case '3001':
+				$content['description'] = "Recognizes MSMEs driving innovation in IT services, electronics, or software development contributing to technological advancements and digital transformation across industries.";
+				break;
+
+			case '3002':
+				$content['description'] = "Recognizes MSMEs excelling in automobile components manufacturing, innovations in vehicle technologies, or OEM partnerships or EV manufacturing, charging infrastructure, or battery solutions";
+				break;
+
+			case '3003':
+				$content['description'] = "This award honors MSMEs excelling in healthcare, wellness, or Ayurveda, creating affordable and innovative solutions that promote holistic well-being";
+				break;
+
+			case '3004':
+				$content['description'] = "Recognizes MSMEs that bring innovation to food processing, packaging, and preservation, enhancing product quality and shelf life.";
+				break;
+
+			case '3005':
+				$content['description'] = "Recognizes MSMEs organizations that demonstrate outstanding efficiency, innovation, and excellence in manufacturing practices, setting benchmarks for the industry. These will include industry such as textiles, apparels, industrial tools, specialized equipment’s, pharmaceuticals, chemicals, leather, footwear, furniture, plastic, polymer products, metal and fabrication, construction, infrastructure, and related sectors";
+				break;
+
+			case '3006':
+				$content['description'] = "This award honors MSMEs excelling in creating innovative, sustainable, and market-leading lifestyle or consumer products, including fashion, home décor, personal care, and sustainable products";
+				break;
+
+			case '3007':
+				$content['description'] = "Recognizes MSMEs offering last-mile delivery services for small e-commerce businesses and solving challenges in logistics and supply chain management through innovation.";
+				break;
+
+			case '3008':
+				$content['description'] = "Recognizes MSMEs addressing the need for quality education and skill development through innovative tech-based solutions.";
+				break;
+
+			case '3009':
+				$content['description'] = "Recognizes MSMEs that leverage technology and innovative practices to transform agriculture and allied services such as dairy, fisheries, or Agri-logistics.";
+				break;
+
 			case '2900':
 				$content['description'] = "Recognizes MSMEs that have successfully integrated digital technologies to transform their operations, customer experience, or business models. This will include technologies like AI and IoT are being used to optimize supply chains, enhance customer experiences, and improve product quality";
 				break;
@@ -110,7 +146,8 @@ class AwardsController extends BaseController
 
 		$this->data['content'] = $content;
 
-		$this->load->award_page('single/' . $slug, $this->data);
+		// $this->load->award_page('single/' . $slug, $this->data);
+		$this->load->award_page('single', $this->data);
 	}
 
 	public function category_nominate($code)
