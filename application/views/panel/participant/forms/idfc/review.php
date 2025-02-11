@@ -255,7 +255,7 @@
 									<label for="" class="form-label">No. Of Clients</label>
 									<select required name="organization[clients]" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255205'] == "Lss than 100") ? "selected" : "" ?> value="Lss than 100">Lss than 100</option>
+										<option <?= ($application['id_255205'] == "Less than 100") ? "selected" : "" ?> value="Less than 100">Less than 100</option>
 										<option <?= ($application['id_255205'] == "100 - 500") ? "selected" : "" ?> value="100 - 500">100 - 500</option>
 										<option <?= ($application['id_255205'] == "500 - 1000") ? "selected" : "" ?> value="500 - 1000">500 - 1000</option>
 										<option <?= ($application['id_255205'] == "More than 1000") ? "selected" : "" ?> value="More than 1000">More than 1000</option>

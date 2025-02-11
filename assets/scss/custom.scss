@@ -1,4 +1,5 @@
 $color-white: #efefef;
+$color-white-0: #ffffff;
 $color-black: #1c1c1c;
 $color-black-0: #000000;
 $color-red: #b72026;
@@ -82,7 +83,7 @@ form {
 		&[required] {
 		}
 	}
-	input::placeholder{
+	input::placeholder {
 		color: rgba($color-black-0, 0.3) !important;
 	}
 	.form-check-input {
@@ -99,7 +100,8 @@ form {
 }
 
 body {
-	background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-v.png"), #fff3f3;
+	background: url("../images/backgrounds/sky.gif"),
+		url("../images/backgrounds/sky-v.png"), #fff3f3;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -107,8 +109,9 @@ body {
 	cursor: url("../images/icons/cursor-sm.png"), auto !important;
 }
 @media screen and (min-width: 768px) {
-	body{
-		background: url("../images/backgrounds/sky.gif"), url("../images/backgrounds/sky-h.png"), #fff3f3;
+	body {
+		background: url("../images/backgrounds/sky.gif"),
+			url("../images/backgrounds/sky-h.png"), #fff3f3;
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
@@ -889,8 +892,75 @@ form {
 		color: rgba($color-black, 0.8);
 	}
 
-	&.speaker-tile-02{
-		
+	&.speaker-tile-01 {
+		.photo {
+			padding: 1rem 0;
+			position: relative;
+			img {
+				background-color: $color-white-0;
+				mask-image: url("../images/masks/hexagon-rounded-01.svg");
+				mask-repeat: no-repeat;
+				mask-size: contain;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+		}
+		.desc {
+			margin-top: -0.5rem;
+		}
+	}
+	&.speaker-tile-02 {
+		clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+		.photo {
+			background: $color-white-0;
+			margin-bottom: 1rem;
+			background: linear-gradient(
+				135deg,
+				$color-white-0 0%,
+				$color-white-0 55%,
+				lighten($color-yellow, 10) 55%,
+				lighten($color-yellow, 10) calc(55% + 1rem),
+				$color-white-0 calc(55% + 1rem),
+				$color-white-0 calc(55% + 1.3rem),
+				lighten($color-yellow, 10) calc(55% + 1.3rem),
+				lighten($color-yellow, 10) 100%
+			);
+			overflow: hidden;
+			position: relative;
+			&::after {
+				position: absolute;
+				content: "";
+				background-color: $color-red;
+				width: calc(max(3rem, 30%));
+				aspect-ratio: 1;
+				bottom: 0;
+				right: 0;
+				background: linear-gradient(
+					135deg,
+					transparent 0%,
+					transparent 55%,
+					$color-red 55%,
+					$color-red 100%
+				);
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.desc {
+			h5 {
+				font-size: 1.2rem;
+			}
+		}
 	}
 }
 .article-tile {

@@ -555,16 +555,16 @@ class CityController extends BaseController
 							'photo' => "Tej_Naik.png",
 							'description' => "Co-founder & MD, Powerland ATV",
 						],
-						// [
-						// 	'name' => "Jack Ajit Sukhija",
-						// 	'photo' => "Jack Ajit_Sukhija.png",
-						// 	'description' => "President, Travel & Tourism Association of Goa",
-						// ],
-						// [
-						// 	'name' => "Prajyot Mainkar",
-						// 	'photo' => "Prajyot_Mainkar.png",
-						// 	'description' => " Founder & CEO, Sofueled",
-						// ],
+						[
+							'name' => "Jack Ajit Sukhija",
+							'photo' => "Jack_Ajit.png",
+							'description' => "President, Travel & Tourism Association of Goa",
+						],
+						[
+							'name' => "Lalit Saraswat",
+							'photo' => "Lalit_Saraswat.png",
+							'description' => "Past Chairman, CII Goa & CEO, Sancoale Technologies",
+						],
 						[
 							'name' => "Sachin Mehta",
 							'photo' => "Sachin_Mehta.png",

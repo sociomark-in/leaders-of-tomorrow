@@ -5,7 +5,7 @@
 				<h1 class="modal-title fs-5" id="staticBackdropLabel">Eligibility Criteria and Pre-requisites</h1>
 			</div>
 			<div class="modal-body">
-				<?php 
+				<?php
 				switch ($category['type']) {
 					case '1_DIGITAL':
 						include_once APPPATH . '/views/panel/participant/categories/criteria/digital.php';
@@ -29,10 +29,17 @@
 						break;
 
 					default:
-						include_once APPPATH . '/views/panel/participant/categories/criteria/msme.php';
-						# code...
+						switch (explode('_', $category['type'])[1]) {
+							case 'IDFC':
+								include_once APPPATH . '/views/panel/participant/categories/criteria/idfc.php';
+								break;
+
+							default:
+								include_once APPPATH . '/views/panel/participant/categories/criteria/msme.php';
+								break;
+						}
 						break;
-				} 
+				}
 				?>
 			</div>
 			<div class="modal-footer">

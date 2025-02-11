@@ -104,14 +104,15 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">Years of Association with IDFC First Bank</label>
-						<input required type="text" name="idfc[years]" class="form-control">
+						<label for="" class="form-label">Since when are you associated with IDFC FIRST Bank?</label>
+						<input required type="number" min="1000" max="<?= date('Y') ?>" name="idfc[years]" class="form-control">
+						<span class="form-text">(Enter Year)</span>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">IDFC First Bank Account Number (Last 4 Digits)</label>
-						<input required type="text" name="idfc[account]" class="form-control">
+						<label for="" class="form-label">IDFC FIRST Bank Account Number (Last 4 Digits)</label>
+						<input required type="text" minlength="4" maxlength="4" name="idfc[account]" class="form-control">
 					</div>
 				</div>
 				<div class="col-xxl-6 col-xl-8 col-12">
@@ -238,7 +239,10 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			},
 			"contact_person[contact]": {
 				phone: true
-			}
+			},
+			"idfc[account]": {
+				phone: true
+			},
 		},
 		messages: {
 			'name': {
@@ -262,6 +266,9 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			},
 			'contact_person[contact]': {
 				phone: 'Please enter a valid contact number'
+			},
+			'idfc[account]': {
+				phone: 'Please enter a valid number'
 			}
 		}
 	});

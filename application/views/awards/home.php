@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0">
+	<section class="section pb-0 d-none">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
@@ -116,7 +116,7 @@
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
-								<button class="btn btn-outline-secondary" id="party">Press Button</button>
+								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
 							</div>
 						</div>
 					</div>
@@ -138,9 +138,9 @@
 						<div class="swiper-wrapper">
 							<?php for ($i = 0; $i < 12; $i++) : ?>
 								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal">
-										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
+									<div class="speaker-tile speaker-tile-02 normal">
+										<div class="photo">
+											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5>Lorem ipsum dolor sit. <?= $i ?></h5>
@@ -199,10 +199,10 @@
 					<div class="swiper preJurySwiper">
 						<div class="swiper-wrapper">
 							<?php for ($i = 0; $i < 12; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal">
+								<div class="swiper-slide">
+									<div class="speaker-tile normal speaker-tile-01">
 										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
+											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5>Lorem ipsum dolor sit.</h5>
@@ -222,11 +222,11 @@
 									spaceBetween: 20,
 								},
 								1024: {
-									slidesPerView: 4,
+									slidesPerView: 3,
 									spaceBetween: 50,
 								},
 								1400: {
-									slidesPerView: 5,
+									slidesPerView: 4,
 									spaceBetween: 30,
 								},
 							},
@@ -247,62 +247,85 @@
 				</div>
 				<div class="col-12">
 					<div class="row g-2 justify-content-center">
-						<?php foreach ($categories['msme'] as $key => $category): ?>
-							<!-- <div class="col-xxl-4 col-lg-6">
-								<a class="card glw-card h-100" href="<?= base_url('awards/category/' . $category['code']) ?>">
-									<div class="card-body">
-										<div class="row h-100 align-items-center">
-											<div class="col-auto">
-												<div class="glw-image">
-													<div class="glw-icon p-2 pb-3">
-														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+						<?php if (count($categories['active']) > 0) : ?>
+							<?php foreach ($categories['active'] as $key => $category): ?>
+								<div class="col-xxl-4 col-lg-6">
+									<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+										<div class="card-body">
+											<div class="row h-100 align-items-center">
+												<div class="col-auto">
+													<div class="glw-image">
+														<div class="glw-icon p-2 pb-3">
+															<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+														</div>
 													</div>
 												</div>
-											</div>
-											<div class="col">
-												<h6 class="m-0"><?= $category['name'] ?></h6>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div> -->
-							<div class="col-xxl-4 col-lg-6">
-								<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
-									<div class="card-body">
-										<div class="row h-100 align-items-center">
-											<div class="col-auto">
-												<div class="glw-image">
-													<div class="glw-icon p-2 pb-3">
-														<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
-													</div>
+												<div class="col">
+													<h6 class="m-0"><?= $category['name'] ?></h6>
 												</div>
 											</div>
-											<div class="col">
-												<h6 class="m-0"><?= $category['name'] ?></h6>
-											</div>
 										</div>
-									</div>
-								</a>
-								<script>
-									$button = $("#categoryModelHandler<?= $key ?>");
-									$button.on("click", () => {
-										$.ajax({
-											url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
-											data: {
-												category: "<?= $category['code'] ?>"
-											},
-											success: function(result) {
-												console.log(result);
-												$("#categoryModel .modal-title").text(result.name)
-												$("#categoryModel .modal-body").html(
-													"<p>" + result.description + "</p>"
-												)
-											}
+									</a>
+									<script>
+										$button = $("#categoryModelHandler<?= $key ?>");
+										$button.on("click", () => {
+											$.ajax({
+												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
+												data: {
+													category: "<?= $category['code'] ?>"
+												},
+												success: function(result) {
+													console.log(result);
+													$("#categoryModel .modal-title").text(result.name)
+													$("#categoryModel .modal-body").html(
+														"<p>" + result.description + "</p>"
+													)
+												}
+											})
 										})
-									})
-								</script>
-							</div>
-						<?php endforeach ?>
+									</script>
+								</div>
+							<?php endforeach ?>
+						<?php else: ?>
+							<?php foreach ($categories['all'] as $key => $category): ?>
+								<div class="col-xxl-4 col-lg-6">
+									<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+										<div class="card-body">
+											<div class="row h-100 align-items-center">
+												<div class="col-auto">
+													<div class="glw-image">
+														<div class="glw-icon p-2 pb-3">
+															<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<h6 class="m-0"><?= $category['name'] ?></h6>
+												</div>
+											</div>
+										</div>
+									</a>
+									<!-- <script>
+										$button = $("#categoryModelHandler<?= $key ?>");
+										$button.on("click", () => {
+											$.ajax({
+												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
+												data: {
+													category: "<?= $category['code'] ?>"
+												},
+												success: function(result) {
+													console.log(result);
+													$("#categoryModel .modal-title").text(result.name)
+													$("#categoryModel .modal-body").html(
+														"<p>" + result.description + "</p>"
+													)
+												}
+											})
+										})
+									</script> -->
+								</div>
+							<?php endforeach ?>
+						<?php endif ?>
 						<div class="modal fade" id="categoryModel" tabindex="-1" aria-labelledby="categoryModelLabel" aria-hidden="true">
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
@@ -472,7 +495,7 @@
 								<div class="swiper-slide p-3">
 									<div class="speaker-tile normal">
 										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person.png') ?>" class="w-100" alt="">
+											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5>Lorem ipsum dolor sit.</h5>

@@ -407,7 +407,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 	<div class="col-12 grid-margin stretch-card">
 		<div class="row g-3">
 			<div class="col-auto"><button type="button" data-bs-toggle="modal" data-bs-target="#consentModal" class="btn btn-primary">Confirm & Submit</button></div>
-			<div class="col-auto"><button type="reset" class="btn btn-outline-secondary">Reset the Data</button></div>
+			<div class="col-auto"><button type="reset" class="btn btn-outline-secondary">Reset this Form</button></div>
 		</div>
 	</div>
 </div>

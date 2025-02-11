@@ -2,7 +2,7 @@
 <ul>
 	<li>Forms should be filled in English only</li>
 	<li>All questions must be answered. Incomplete forms will not be considered</li>
-	<li>All forms must be received by the management by latest February 05, 2025, 11:59pm IST</li>
+	<li>All forms must be received by the management by latest February 09, 2025, 11:59pm IST</li>
 	<li>Supporting documents must be in the PDF formats only. Size of each document cannot exceed 2 MB</li>
 	<li>Mandatory to attach MSME certificate document received from Ministry of MSME, Govt. of
 		India</li>

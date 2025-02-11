@@ -809,6 +809,62 @@ form .form-control {
   font-size: 12px;
   color: rgba(28, 28, 28, 0.8);
 }
+.speaker-tile.speaker-tile-01 .photo {
+  padding: 1rem 0;
+  position: relative;
+}
+.speaker-tile.speaker-tile-01 .photo img {
+  background-color: #ffffff;
+  -webkit-mask-image: url("../images/masks/hexagon-rounded-01.svg");
+          mask-image: url("../images/masks/hexagon-rounded-01.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.speaker-tile.speaker-tile-01 .photo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.speaker-tile.speaker-tile-01 .desc {
+  margin-top: -0.5rem;
+}
+.speaker-tile.speaker-tile-02 {
+  -webkit-clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+          clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+}
+.speaker-tile.speaker-tile-02 .photo {
+  background: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 55%, #ffe772 55%, #ffe772 calc(55% + 1rem), #ffffff calc(55% + 1rem), #ffffff calc(55% + 1.3rem), #ffe772 calc(55% + 1.3rem), #ffe772 100%);
+  overflow: hidden;
+  position: relative;
+}
+.speaker-tile.speaker-tile-02 .photo::after {
+  position: absolute;
+  content: "";
+  background-color: #b72026;
+  width: max(3rem, 30%);
+  aspect-ratio: 1;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, transparent 0%, transparent 55%, #b72026 55%, #b72026 100%);
+}
+.speaker-tile.speaker-tile-02 .photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.speaker-tile.speaker-tile-02 .desc h5 {
+  font-size: 1.2rem;
+}
+
 .article-tile {
   position: relative;
 }
