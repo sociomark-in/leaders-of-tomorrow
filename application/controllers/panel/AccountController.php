@@ -24,6 +24,7 @@ class AccountController extends PanelController
 			'under_review' => count(json_decode($this->EntriesModel->get(['nomination_id'], ['status' => '3']), true)),
 		];
 		$applications_count['all'] = $applications_count['uncategorized'] + $applications_count['approved'] + $applications_count['rejected'] + $applications_count['under_review'];
+// 		echo "<pre>"; print_r($applications_count);die;
 		$this->data['applications_count'] = $applications_count;
 		switch ($this->user_session['role']) {
 			case 'super-admin':

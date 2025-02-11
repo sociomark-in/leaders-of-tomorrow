@@ -189,7 +189,7 @@ class NominationsController extends PanelController
 		$this->data['locations']['cities'] = json_decode($this->CityModel->get(), true);
 
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
-		
+
 		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 		$this->data['category'] = $category_details;
 
@@ -282,6 +282,7 @@ class NominationsController extends PanelController
 			$this->load->library('pdflib/MakeDocket');
 
 			$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+			$application['category'] = $category_details;
 			switch ($application['category_id']) {
 				case '1_INDIVIDUAL':
 					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_individual')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
@@ -319,18 +320,33 @@ class NominationsController extends PanelController
 			foreach ($temp as $key => $file) {
 				array_push($attachments, $file);
 			}
+			
+// 			if (file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
+// 				// unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+//     			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+// 			} else {
+//     			$this->load->library('pdflib/MergePDF');
+//     			$this->mergepdf->config()->merge(
+//     				$attachments,
+//     				FCPATH . 'uploads/' . $application['nomination_id'],
+//     				$filename
+//     			);
+//     			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+// 			}
+			
 			if (file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
-				// unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
-    			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-			} else {
-    			$this->load->library('pdflib/MergePDF');
-    			$this->mergepdf->config()->merge(
-    				$attachments,
-    				FCPATH . 'uploads/' . $application['nomination_id'],
-    				$filename
-    			);
-    			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-			}
+				unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
+    // 			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+			} 
+			
+			$this->load->library('pdflib/MergePDF');
+			$this->mergepdf->config()->merge(
+				$attachments,
+				FCPATH . 'uploads/' . $application['nomination_id'],
+				$filename
+			);
+			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+			
 
 			// $zip = new ZipArchive;
 			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
