@@ -5,6 +5,8 @@ switch ($this->uri->segment(2)):
 	case 'pune':
 	case 'indore':
 	case 'jaipur':
+	case 'delhi':
+	case 'bengaluru':
 	case 'goa':
 		$data['city'] = $city['name'];
 		$data['partners'] = $city['partners'];

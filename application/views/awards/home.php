@@ -82,8 +82,8 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
-						<lite-youtube videoid="iFAuxpi5sHQ">
-							<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=iFAuxpi5sHQ">Leaders of Tomorrow Awards 2025</a>
+						<lite-youtube videoid="Zg3rD_XZOSY">
+							<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=Zg3rD_XZOSY">Leaders of Tomorrow Awards 2025</a>
 						</lite-youtube>
 					</div>
 				</div>
@@ -125,7 +125,7 @@
 		</div>
 	</section>
 
-	<section id="grand-juries" class="pb-0">
+	<section id="grand-juries" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -187,7 +187,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="pre-juries" class="">
+	<section id="pre-juries" class=" d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

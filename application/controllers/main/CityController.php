@@ -500,6 +500,13 @@ class CityController extends BaseController
 						],
 					]
 				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
 				$this->load->city_view('delhi', $this->data);
 				break;
 			case 'bengaluru':
@@ -535,6 +542,13 @@ class CityController extends BaseController
 							'description' => "Co-Founder & COO, HomeLane",
 						],
 					]
+				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
 				];
 				$this->load->city_view('bengaluru', $this->data);
 				break;
@@ -713,6 +727,13 @@ class CityController extends BaseController
 					'title' => "Indore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Indore";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'delhi':
+				$this->data['page'] = [
+					'title' => "Delhi Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Delhi";
 				$this->load->city_view('gallery', $this->data);
 				break;
 			case 'bengaluru':

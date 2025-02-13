@@ -111,7 +111,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">IDFC FIRST Bank Account Number (Last 4 Digits)</label>
+						<label for="" class="form-label">IDFC FIRST Bank Customer ID (Last 4 Digits)</label>
 						<input required type="text" minlength="4" maxlength="4" name="idfc[account]" class="form-control">
 					</div>
 				</div>
