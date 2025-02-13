@@ -9,6 +9,17 @@ class AwardsController extends BaseController
 	}
 	public function index()
 	{
+		$utm = NULL;
+		if(!is_null($this->input->get('utm_source'))){
+			$utm = [
+				'utm_source' 	=> $this->input->get('utm_source'),
+				'utm_medium' 	=> $this->input->get('utm_medium'),
+				'utm_content' 	=> $this->input->get('utm_content'),
+			];
+			$this->session->set_tempdata('utm_lead', $utm, 300);
+		}
+
+
 		$this->data['categories']['active'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories']['all'] = json_decode($this->CategoryModel->get(), true);
 

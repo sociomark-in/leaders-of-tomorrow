@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
@@ -66,10 +66,15 @@
 						<div class="wrap">
 							<a href="<?= base_url('dashboard') ?>">
 								<picture>
+									<source srcset="<?= base_url('assets/images/banners/awards_idfc_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+									<source srcset="<?= base_url('assets/images/banners/awards_idfc_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+									<img class="w-100" src="<?= base_url('assets/images/banners/awards_idfc_banner_v.jpg') ?>" alt="">
+								</picture>
+								<!-- <picture>
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
 									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
-								</picture>
+								</picture> -->
 							</a>
 						</div>
 					</div>
