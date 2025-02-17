@@ -61,12 +61,12 @@ $this->pdf->Cell(70, 15, "Type of Business", 1, 0, '', false);
 $this->pdf->Cell(70, 15, $data['id_255004']??"", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Revenue Turnover (in Cr.)", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255101']??"", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255102']??"", 1, 1, '', false);
+$this->pdf->Cell(35, 15, $data['id_255101'] . " Cr."??"", 1, 0, '', false);
+$this->pdf->Cell(35, 15, $data['id_255102'] . " Cr."??"", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "No. Of Employees", 1, 0, '', false);
-$this->pdf->Cell(70, 15, $data['id_255101']??"", 1, 0, '', false);
+$this->pdf->Cell(70, 15, $data['id_255101'] . " Employees"??"", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Revenue Growth (in %)", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255103']??"", 1, 0, '', false);
@@ -77,18 +77,15 @@ $this->pdf->Cell(70, 15, "Incorporation Date", 1, 0, '', false);
 $this->pdf->Cell(70, 15, $data['id_255002']??"", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Net Profit Margin", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255105']??"", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255106']??"", 1, 1, '', false);
+$this->pdf->Cell(35, 15, $data['id_255105']??"", 1, 1, '', false);
 
 $this->pdf->Cell(160, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Asset Valuation", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255105']??"", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255106']??"", 1, 1, '', false);
+$this->pdf->Cell(35, 15, $data['id_255106'] . " Cr."??"", 1, 1, '', false);
 
 $this->pdf->Cell(160, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Debt Equity Ratio", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255105']??"", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255106']??"", 1, 1, '', false);
+$this->pdf->Cell(35, 15, $data['id_255107']??"", 1, 1, '', false);
 
 $test = "LOREM IPSUM DOLOR SIT AMET CONSECTETUR, ADIPISICING ELIT. DOLORUM QUOS VOLUPTATEM INCIDUNT. IMPEDIT LABORIOSAM POSSIMUS ATQUE TEMPORA REPREHENDERIT NULLA NECESSITATIBUS HARUM VERITATIS MODI DESERUNT VEL MOLESTIAS ILLO, CUPIDITATE DELENITI EUM ID MOLLITIA ITAQUE? SIMILIQUE RATIONE, MOLLITIA QUAS ILLO OMNIS EA ALIQUID EIUS QUIS IPSA EAQUE DOLORUM. NON INVENTORE IN DOLORUM NIHIL DOLORE REM QUASI QUAS, VERO IPSUM PERFERENDIS EX NEMO. OFFICIA LAUDANTIUM QUISQUAM SUSCIPIT SAPIENTE PERFERENDIS ALIAS DUCIMUS NULLA INVENTORE REPUDIANDAE QUIA. ILLO, DOLOREM CULPA SAPIENTE VERO IPSAM IUSTO? ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE! ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE!  EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO?? FUGIT APERIAM VEL!";
 

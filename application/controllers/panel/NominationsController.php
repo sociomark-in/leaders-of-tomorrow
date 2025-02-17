@@ -21,7 +21,7 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "agent_referral", "agent_name", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
+			'msme' => json_decode($this->EntriesModel->get(null, ['status <=' => 3], 'msme'), true)
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
@@ -288,9 +288,6 @@ class NominationsController extends PanelController
 				unlink(FCPATH . $docketname);
 			}
 
-			echo "<pre>";
-			print_r($application);
-			die;
 			switch ($application['category_id']) {
 				case '1_INDIVIDUAL':
 					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_individual')->generate('F', FCPATH . $docketname);
