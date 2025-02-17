@@ -19,10 +19,10 @@ class MergePDF
 			)
 		);
 	}
-	
-	public function config(){
-		$result = $this->CI->db->select(['config_key', 'value', 'usage_count'])->get('app_config')->result_array();
-	    foreach ($result as $key => $row) {
+
+	public function config()
+	{
+		foreach ($result as $key => $row) {
 	        $i = 0;
             if($i<=5){
                 if($row['config_key'] == 'ilovepdf_public_key_00'. $i){
@@ -34,16 +34,15 @@ class MergePDF
                         return $this;
                     } else {
 						break;
-                        // echo "Download LImit Reached! Please Contact the Administrator for further steps.";
-                        // exit;
                     }
                 }
                 $i++;
             }
 	   }
 	}
-	
-	public function merge($files, $destination_folder, $filename) {
+
+	public function merge($files, $destination_folder, $filename)
+	{
 		if (!file_exists($destination_folder)) {
 			mkdir($destination_folder, 0777, true);
 		}

@@ -8,6 +8,11 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-118107565,thumbsize-164428,width-1280,height-720,resizemode-75/118107565.jpg?quality=100",
+				'title' => "Charting India’s Growth Story: 3 Visionary Insights from Nadir Godrej",
+				'redirect' => "https://www.etnownews.com/news/charting-indias-growth-story-3-visionary-insights-from-nadir-godrej-article-118107565"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-118003029,thumbsize-164428,width-1280,height-720,resizemode-75/118003029.jpg?quality=100",
 				'title' => "Navigating Intellectual Property Rights: A Wakeup Call for Entrepreneurs",
 				'redirect' => "https://www.etnownews.com/news/navigating-intellectual-property-rights-a-wake-up-call-for-entrepreneurs-article-118003029"
