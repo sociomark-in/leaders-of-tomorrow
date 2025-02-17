@@ -268,7 +268,7 @@
 						});
 					</script>
 				</div>
-				<div class="col-12 d-none">
+				<div class="col-12">
 					<a href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name'])) . '/gallery') ?>" class="btn btn-red">View More</a>
 				</div>
 			</div>

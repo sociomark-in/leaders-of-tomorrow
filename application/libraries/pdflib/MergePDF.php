@@ -23,11 +23,9 @@ class MergePDF
 	public function config(){
 		$result = $this->CI->db->select(['config_key', 'value', 'usage_count'])->get('app_config')->result_array();
 	    foreach ($result as $key => $row) {
-		    switch($row['config_key']){
-                case 'ilovepdf_public_key':
-                case 'ilovepdf_public_key_001':
-                case 'ilovepdf_public_key_002':
-                case 'ilovepdf_public_key_003':
+	        $i = 0;
+            if($i<=5){
+                if($row['config_key'] == 'ilovepdf_public_key_00'. $i){
                     if($row['usage_count'] < ILOVEPDF_API_REQUEST_LIMIT){
                         $this->key['name'] = $row['config_key'];
                         $value = json_decode($row['value'], true);
@@ -39,9 +37,10 @@ class MergePDF
                         // echo "Download LImit Reached! Please Contact the Administrator for further steps.";
                         // exit;
                     }
+                }
+                $i++;
             }
-	            
-		}
+	   }
 	}
 	
 	public function merge($files, $destination_folder, $filename) {
