@@ -15,16 +15,25 @@
 	<?php
 	$c = explode('_', $presentation['category']['type']);
 	switch ($c[1]) {
-		case 'MSME':
+		case 'INDIVIDUAL':
+			# code...
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/individual.php';
+			break;
 		case 'GLOBAL':
+			# code...
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/global.php';
+			break;
 		case 'FAMILY':
+			# code...
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/family.php';
+			break;
 		case 'DIGITAL':
 			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_edit/msme.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/digital.php';
 			break;
 
 		default:
-			include_once APPPATH . 'views/panel/participant/presentations/category_edit/individual.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/msme.php';
 			break;
 	}
 	?>

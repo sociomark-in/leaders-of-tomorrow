@@ -35,20 +35,20 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 							<div class="row g-2 g-md-3">
 								<div class="col-12">
 									<div class="">
-										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
+										<label for="" class="form-label">Name of the Participating Entity</label>
 										<input required type="text" name="organization[name]" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-8 col-lg-6 col-12">
-									<div class="">
-										<label for="" class="form-label">Name of the Presenter</label>
-										<input required type="text" name="name" class="form-control">
-									</div>
-								</div>
-								<div class="col-xl-4 col-lg-6 col-12">
+								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Designation</label>
 										<input required type="text" name="designation" class="form-control">
+									</div>
+								</div>
+								<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Name of the MD/CEO/Founder</label>
+										<input required type="text" name="name" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-4 col-12">
@@ -56,8 +56,8 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 										<label for="" class="form-label">Type of Business</label>
 										<select required name="organization[business]" id="" class="form-select">
 											<option value="">Select Business Type</option>
-											<option value="Manufacturing">Manufacturing</option>
-											<option value="Service">Service</option>
+											<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+											<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 										</select>
 									</div>
 								</div>
@@ -66,11 +66,11 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 										<label for="" class="form-label">No. Of Employees</label>
 										<select required name="organization[size]" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255201'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
-											<option <?= ($application['id_255201'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-											<option <?= ($application['id_255201'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
-											<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
-											<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+											<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+											<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+											<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+											<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 										</select>
 										<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 									</div>
@@ -80,6 +80,18 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 										<label for="" class="form-label">Date of Company Incorporation</label>
 										<input required type="text" data-type="date" value="<?= $application['id_255002'] ?>" name="organization[inc_date]" class="form-control">
 										<span class="form-text">(in DD/MM/YYYY)</span>
+									</div>
+								</div>
+								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Total Years of Experience</label>
+										<input required type="text" name="experience[total]" class="form-control">
+									</div>
+								</div>
+								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Years of Experience in this Company</label>
+										<input required type="text" name="experience[current]" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -116,23 +128,23 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 									Revenue / Turnover (in INR Crores)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_24" id="" class="form-select">
+									<select required name="organization_revenue_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="5 - 24">5 - 24</option>
-										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
+										<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
+										<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_23" id="" class="form-select">
+									<select required name="organization_revenue_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="5 - 24">5 - 24</option>
-										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
+										<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
+										<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
 									</select>
 								</div>
 							</div>
@@ -143,25 +155,25 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 									Revenue Growth (in %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_24" id="" class="form-select">
+									<select required name="organization_growth_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
+										<option <?= ($application['id_255103'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option <?= ($application['id_255103'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
+										<option <?= ($application['id_255103'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
+										<option <?= ($application['id_255103'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
+										<option <?= ($application['id_255103'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_23" id="" class="form-select">
+									<select required name="organization_growth_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
+										<option <?= ($application['id_255104'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option <?= ($application['id_255104'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
+										<option <?= ($application['id_255104'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
+										<option <?= ($application['id_255104'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
+										<option <?= ($application['id_255104'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
 									</select>
 								</div>
 							</div>
@@ -169,86 +181,16 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Net Profit Margin (In %)
+									EBTIA (In %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_24" id="" class="form-select">
+									<select required name="organization_profit" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_23" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="row g-3">
-								<div class="col-xxl-4 col-12">
-									Return on Assets (in %)
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_24" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_23" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="row g-3">
-								<div class="col-xxl-4 col-12">
-									Current Ratio
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_24" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
-											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
-									</select>
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_23" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
-											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+										<option <?= ($application['id_255105'] == "< 10%") ? "selected" : "" ?> value="< 10%">
+											< 10%</option>
+										<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
+										<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
+										<option <?= ($application['id_255105'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
 									</select>
 								</div>
 							</div>
@@ -266,19 +208,57 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<h5>Case Study I: About the Organization<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
-						<p>Brief description of the Business</p>
+						<p>Background about your organization/institute.</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
+							<textarea rows="10" maxlength="900" required rows="10" name="case_study_1" class="form-control editor" id=""></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 grid-margin stretch-card">
+		<div class="card input-group-card">
+			<div class="card-body">
+				<fieldset class="">
+					<legend class="card-title mb-2">
+						<h5>Case Study II: Unique Offerings<sup class="text-danger">&ast;</sup></h5>
+					</legend>
+					<div class="mb-3">
+						<p>Key product/service offerings</p>
+					</div>
+					<div class="row g-2 g-md-3">
+						<div class="col-12">
+							<textarea required maxlength="900" rows="10" name="case_study_2" class="form-control editor" id=""></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 grid-margin stretch-card">
+		<div class="card input-group-card">
+			<div class="card-body">
+				<fieldset class="">
+					<legend class="card-title mb-2">
+						<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+					</legend>
+					<div class="mb-3">
+						<p>What sets your business model apart from competitors in the market?</p>
+					</div>
+					<div class="row g-2 g-md-3 mb-3">
+						<div class="col-12">
+							<textarea required maxlength="900" rows="10" name="case_study_3" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
-						<p>Core Products / Services Offered</p>
+						<p>How do you plan to scale your business, and what challenges do you anticipate in the scaling process?</p>
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -290,30 +270,22 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study II: Innovation & Adaptibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study IV<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_3" class="form-control editor" id=""></textarea>
-						</div>
+					<div class="mb-3">
+						<p>How well do you understand your target market, and what strategies are in place to adapt to changing market trends?</p>
 					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 grid-margin stretch-card">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>Case Study III: Business Performance & Market Impact<sup class="text-danger">&ast;</sup></h5>
-					</legend>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_4" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
 						</div>
+					</div>
+					<div class="mb-3">
+						<p>Share examples of how your business has demonstrated innovation in response to market demands in the last two years</p>
+					</div>
+					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_5" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_6" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -325,11 +297,22 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study IV: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study V<sup class="text-danger">&ast;</sup></h5>
 					</legend>
+					<div class="mb-3">
+						<p>How do you plan to manage cash flow effectively, especially during periods of rapid growth or economic downturns?</p>
+					</div>
+					<div class="row g-2 g-md-3 mb-3">
+						<div class="col-12">
+							<textarea required maxlength="900" rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
+						</div>
+					</div>
+					<div class="mb-3">
+						<p>Can you share any customer success stories or testimonials that highlight the impact of your business on your target audience?</p>
+					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_6" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -341,27 +324,22 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study V: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study VI<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3">
+					<div class="mb-3">
+						<p>What are your long-term goals for the company, and how do you see it evolving in the next 5-10 years?</p>
+					</div>
+					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_7" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_9" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 grid-margin stretch-card">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>Case Study VI: Additional Supportings<sup class="text-danger">&ast;</sup></h5>
-					</legend>
+					<div class="mb-3">
+						<p>How do emerging technologies or trends factor into your strategic planning?</p>
+					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_8" class="form-control editor" id=""></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_10" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -621,14 +599,14 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		}
 	});
 
-	// $("input[type='file']").each(function(index, element) {
-	// 	if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
-	// 		$(element).prop("required", true);
-	// 		console.log("Absent");
+	$("input[type='file']").each(function(index, element) {
+		if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+			$(element).prop("required", true);
+			console.log("Absent");
 
-	// 	} else {
-	// 		$(element).prop("required", false);
-	// 		console.log("Present");
-	// 	}
-	// });
+		} else {
+			$(element).prop("required", false);
+			console.log("Present");
+		}
+	});
 </script>

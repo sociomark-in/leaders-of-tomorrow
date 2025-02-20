@@ -93,6 +93,63 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		<div class="card input-group-card">
 			<div class="card-body">
 				<fieldset class="">
+					<legend class="card-title mb-2">
+						<h5>About the Organization<sup class="text-danger">&ast;</sup></h5>
+					</legend>
+					<div class="row g-3">
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<label for="" class="form-label">Generational Status</label>
+							<select required name="organization[beneficiary]" id="" class="form-select">
+								<option value="">Select Option</option>
+								<option value="1st">1st</option>
+								<option value="2nd">2nd</option>
+								<option value="3rd">3rd</option>
+								<option value="4th">4th</option>
+								<option value="5th">5th</option>
+								<option value="6th">6th</option>
+								<option value="7th">7th</option>
+								<option value="8th">8th</option>
+								<option value="9th">9th</option>
+								<option value="10th">10th</option>
+								<option value="Greater than 10th">Greater than 10th</option>
+							</select>
+						</div>
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<div class="">
+								<label for="" class="form-label">No. Of Employees Global</label>
+								<select required name="organization[size_global]" id="" class="form-select">
+									<option value="">Select Option</option>
+									<option <?= ($application['id_255201'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+									<option <?= ($application['id_255201'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+									<option <?= ($application['id_255201'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+									<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+									<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+								</select>
+								<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
+							</div>
+						</div>
+						<div class="col-xxl-6 col-xl-4 col-12">
+							<label class="form-label">Countries of Operation</label>
+							<input type="text" class="form-control" required name="organization[countries]">
+							<span class="form-text">(At leasst 5, 2 from different continents.)</span>
+						</div>
+						<div class="col-12">
+							<label for="" class="form-label">Details of Cross-border Collaborations/Partnerships Established</label>
+						<textarea required rows="15" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
+						</div>
+						<div class="col-12">
+							<label for="" class="form-label">Market Expansion in Last 2 Years</label>
+						<textarea required rows="15" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 grid-margin stretch-card">
+		<div class="card input-group-card">
+			<div class="card-body">
+				<fieldset class="">
 					<legend class="card-title mb-0">
 						<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 					</legend>
@@ -252,33 +309,6 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 									</select>
 								</div>
 							</div>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 grid-margin stretch-card">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>Case Study I: About the Organization<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<div class="mb-3">
-						<p>Brief description of the Business</p>
-					</div>
-					<div class="row g-2 g-md-3 mb-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
-						</div>
-					</div>
-					<div class="mb-3">
-						<p>Core Products / Services Offered</p>
-					</div>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>

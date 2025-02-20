@@ -78,7 +78,6 @@ class PresentationAPIController extends CI_Controller
 		$presentation_id = $this->request['presentation_id'];
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $this->request['nomination_id']]), true)[0];
 
-
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
 			if ($file['size'] == 0) {
@@ -91,90 +90,66 @@ class PresentationAPIController extends CI_Controller
 			$response = $this->_document_uploads($_FILES, $presentation_id);
 		}
 
+		$this->data = [
+			'category_id' => $application['category_id'],
+			'nomination_id' => $this->request['nomination_id'],
+			'presentation_id' => $this->request['presentation_id'],
+			'organization_name' => $this->request['organization']['name'],
+			'designation' => $this->request['designation'],
+			'name' => $this->request['name'],
+
+			'id_255002' => $this->request['organization']['inc_date'],
+			'id_255006' => $this->request['experience']['total'],
+			'id_255007' => $this->request['experience']['current'],
+			'id_255008' => $this->request['organization']['size'],
+
+			'id_255101' => $this->request['organization_revenue_24'],
+			'id_255102' => $this->request['organization_revenue_23'],
+			'id_255103' => $this->request['organization_growth_24'],
+			'id_255104' => $this->request['organization_growth_23'],
+			'id_255105' => $this->request['organization_profit_24'],
+			'id_255106' => $this->request['organization_profit_23'],
+			'id_255107' => $this->request['organization_roa_24'],
+			'id_255108' => $this->request['organization_roa_23'],
+			'id_255109' => $this->request['organization_der_24'],
+			'id_255110' => $this->request['organization_der_23'],
+
+			'id_255201' => $this->request['case_study_1'] ?? "",
+			'id_255202' => $this->request['case_study_2'] ?? "",
+			'id_255203' => $this->request['case_study_3'] ?? "",
+			'id_255204' => $this->request['case_study_4'] ?? "",
+			'id_255205' => $this->request['case_study_5'] ?? "",
+			'id_255206' => $this->request['case_study_6'] ?? "",
+			'id_255207' => $this->request['case_study_7'] ?? "",
+			'id_255208' => $this->request['case_study_8'] ?? "",
+			'id_255209' => $this->request['case_study_9'] ?? "",
+			'id_255210' => $this->request['case_study_10'] ?? "",
+
+			'logo_image' => $response['logoimg'] ?? "",
+			'id_255401' => $response['doc1'] ?? "",
+			'id_255402' => $response['doc2'] ?? "",
+			'id_255403' => $response['doc3'] ?? "",
+			'id_255404' => $response['doc4'] ?? "",
+			'id_255405' => $response['doc5'] ?? "",
+			'id_255406' => $response['doc6'] ?? "",
+			'id_255407' => $response['doc7'] ?? "",
+			'created_by' => $this->usersession['id'],
+			'created_at' => date('Y-m-d H:i:s'),
+		];
+
 		switch (explode('_', $application['category_id'])[1]) {
-			case 'INDIVIDUAL':
-				$this->data = [
-					'category_id' => $application['category_id'],
-					'nomination_id' => $this->request['nomination_id'],
-					'presentation_id' => $this->request['presentation_id'],
-					'organization_name' => $this->request['organization']['name'],
-					'designation' => $this->request['designation'],
-					'id_255004' => $this->request['organization']['business'],
-					'id_255108' => $this->request['organization']['size'],
-					'id_255002' => $this->request['organization']['inc_date'],
-					'name' => $this->request['name'],
-
-					'id_255006' => $this->request['experience']['total'],
-					'id_255007' => $this->request['experience']['current'],
-
-					'id_255101' => $this->request['organization_revenue_2'],
-					'id_255102' => $this->request['organization_revenue_1'],
-					'id_255103' => $this->request['organization_growth_2'],
-					'id_255104' => $this->request['organization_growth_1'],
-					'id_255105' => $this->request['organization_profit'],
-
-					'id_255201' => $this->request['case_study_1'] ?? "",
-					'id_255202' => $this->request['case_study_2'] ?? "",
-					'id_255203' => $this->request['case_study_3'] ?? "",
-					'id_255204' => $this->request['case_study_4'] ?? "",
-					'id_255205' => $this->request['case_study_5'] ?? "",
-					'id_255206' => $this->request['case_study_6'] ?? "",
-					'id_255207' => $this->request['case_study_7'] ?? "",
-					'id_255208' => $this->request['case_study_8'] ?? "",
-					'id_255209' => $this->request['case_study_9'] ?? "",
-					'id_255210' => $this->request['case_study_10'] ?? "",
-
-					'logo_image' => $response['logoimg'] ?? "",
-					'id_255401' => $response['doc1'] ?? "",
-					'id_255402' => $response['doc2'] ?? "",
-					'id_255403' => $response['doc3'] ?? "",
-					'id_255404' => $response['doc4'] ?? "",
-					'id_255405' => $response['doc5'] ?? "",
-					'id_255406' => $response['doc6'] ?? "",
-					'id_255407' => $response['doc7'] ?? "",
-					'created_by' => $this->usersession['id'],
-					'created_at' => date('Y-m-d H:i:s'),
-				];
+			case 'FAMILY':
+				$this->data['id_255004'] = $this->request['organization']['beneficiary'];
+				$this->data['id_255009'] = $this->request['organization']['size_global'];
+				$this->data['id_255010'] = $this->request['organization']['members'];
+				$this->data['id_255011'] = $this->request['organization']['generation'];
+				break;
+			case 'GLOBAL':
+				$this->data['id_255009'] = $this->request['organization']['size_global'];
+				$this->data['id_255004'] = $this->request['organization']['beneficiary'];
 				break;
 
 			default:
-				$this->data = [
-					'category_id' => $application['category_id'],
-					'nomination_id' => $this->request['nomination_id'],
-					'presentation_id' => $this->request['presentation_id'],
-					'organization_name' => $this->request['organization']['name'],
-					'designation' => $this->request['designation'],
-					'id_255004' => $this->request['organization']['business'],
-					'id_255108' => $this->request['organization']['size'],
-					'id_255002' => $this->request['organization']['inc_date'],
-					'name' => $this->request['name'],
-					'id_255101' => $this->request['organization_revenue_2'],
-					'id_255102' => $this->request['organization_revenue_1'],
-					'id_255103' => $this->request['organization_growth_2'],
-					'id_255104' => $this->request['organization_growth_1'],
-					'id_255105' => $this->request['organization_profit'],
-					'id_255106' => $this->request['organization_valuation'],
-					'id_255107' => $this->request['organization_der_23'],
-					'id_255201' => $this->request['case_study_1'] ?? "",
-					'id_255202' => $this->request['case_study_2'] ?? "",
-					'id_255203' => $this->request['case_study_3'] ?? "",
-					'id_255204' => $this->request['case_study_4'] ?? "",
-					'id_255205' => $this->request['case_study_5'] ?? "",
-					'id_255206' => $this->request['case_study_6'] ?? "",
-					'id_255207' => $this->request['case_study_7'] ?? "",
-					'id_255208' => $this->request['case_study_8'] ?? "",
-
-					'logo_image' => $response['logoimg'] ?? "",
-					'id_255401' => $response['doc1'] ?? "",
-					'id_255402' => $response['doc2'] ?? "",
-					'id_255403' => $response['doc3'] ?? "",
-					'id_255404' => $response['doc4'] ?? "",
-					'id_255405' => $response['doc5'] ?? "",
-					'id_255406' => $response['doc6'] ?? "",
-					'id_255407' => $response['doc7'] ?? "",
-					'created_by' => $this->usersession['id'],
-					'created_at' => date('Y-m-d H:i:s'),
-				];
 				break;
 		}
 

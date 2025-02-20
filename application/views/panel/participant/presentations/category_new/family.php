@@ -93,6 +93,70 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		<div class="card input-group-card">
 			<div class="card-body">
 				<fieldset class="">
+					<legend class="card-title mb-2">
+						<h5>About the Organization<sup class="text-danger">&ast;</sup></h5>
+					</legend>
+					<div class="row g-3">
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<label for="" class="form-label">Generational Status</label>
+							<select required name="organization[beneficiary]" id="" class="form-select">
+								<option value="">Select Option</option>
+								<option value="1st">1st</option>
+								<option value="2nd">2nd</option>
+								<option value="3rd">3rd</option>
+								<option value="4th">4th</option>
+								<option value="5th">5th</option>
+								<option value="6th">6th</option>
+								<option value="7th">7th</option>
+								<option value="8th">8th</option>
+								<option value="9th">9th</option>
+								<option value="10th">10th</option>
+								<option value="Greater than 10th">Greater than 10th</option>
+							</select>
+						</div>
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<label for="" class="form-label">Equity spilt between family members and investors</label>
+							<div class="row g-2">
+								<div class="col-xl col-lg-auto col-12">
+									<input required placeholder="% Family Equity" type="number" min="0" max="100" name="organization[investment][family]" class="form-control">
+								</div>
+								<div class="col-xl col-lg-auto col-12">
+									<input placeholder="% Investor Equity" type="number" min="0" max="100" name="organization[investment][investors]" class="form-control">
+								</div>
+								<div class="col-xl col-lg-auto col-12">
+									<input placeholder="& Other Equity" type="number" min="0" max="100" name="organization[investment][others]" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<label class="form-label">No. of Family Members Actively Involved</label>
+							<select required name="organization[members]" id="" class="form-select">
+								<option value="">Select Option</option>
+								<option <?= ($application['id_255205'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
+								<option <?= ($application['id_255205'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
+								<option <?= ($application['id_255205'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
+								<option <?= ($application['id_255205'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
+							</select>
+						</div>
+						<div class="col-xxl-3 col-xl-4 col-12">
+							<label for="" class="form-label">Years the Current Generation Leading the Business</label>
+							<select required name="organization[generation]" id="" class="form-select">
+								<option value="">Select Option</option>
+								<option value="Upto 10 Years">Upto 10 Years</option>
+								<option value="10 - 15 Years">10 - 15 Years</option>
+								<option value="15 - 20 Years">15 - 20 Years</option>
+								<option value="More than 20 Years">More than 20 Years</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 grid-margin stretch-card">
+		<div class="card input-group-card">
+			<div class="card-body">
+				<fieldset class="">
 					<legend class="card-title mb-0">
 						<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 					</legend>
@@ -252,33 +316,6 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 									</select>
 								</div>
 							</div>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 grid-margin stretch-card">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>Case Study I: About the Organization<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<div class="mb-3">
-						<p>Brief description of the Business</p>
-					</div>
-					<div class="row g-2 g-md-3 mb-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
-						</div>
-					</div>
-					<div class="mb-3">
-						<p>Core Products / Services Offered</p>
-					</div>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>

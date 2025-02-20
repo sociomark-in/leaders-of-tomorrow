@@ -26,7 +26,7 @@ if ($nomination['stage'] >= 1) {
 						<div class="card-body">
 							<div class="row justify-content-between">
 								<div class="col">
-									
+
 								</div>
 								<div class="col-auto">
 									<div class="row g-3">
@@ -58,9 +58,20 @@ if ($nomination['stage'] >= 1) {
 									# code...
 									include_once APPPATH . '/views/panel/moderator/full_presentation/individual.php';
 									break;
+								case 'GLOBAL':
+									# code...
+									include_once APPPATH . '/views/panel/moderator/full_presentation/global.php';
+									break;
+								case 'FAMILY':
+									# code...
+									include_once APPPATH . '/views/panel/moderator/full_presentation/family.php';
+									break;
+								case 'DIGITAL':
+									# code...
+									include_once APPPATH . '/views/panel/moderator/full_presentation/digital.php';
+									break;
 
 								default:
-									# code...
 									include_once APPPATH . '/views/panel/moderator/full_presentation/msme.php';
 									break;
 							}

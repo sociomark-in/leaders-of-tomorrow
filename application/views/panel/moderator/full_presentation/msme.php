@@ -31,7 +31,7 @@
 									<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 								</legend>
 								<div class="row g-3">
-									<div class="col-xl-6 col-lg-6 col-12">
+									<div class="col-12">
 										<div class="">
 											<p class="form-label">Name of the Participating Entity</p>
 											<h5><?= $application['organization_name'] ?></h5>
@@ -39,8 +39,14 @@
 									</div>
 									<div class="col-xl-6 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Name of the Applicant</p>
+											<p class="form-label">Name of the Presenter</p>
 											<h5><?= $application['name'] ?></h5>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-12">
+										<div class="">
+											<p class="form-label">Designation</p>
+											<h5><?= $application['designation'] ?></h5>
 										</div>
 									</div>
 
@@ -50,7 +56,7 @@
 											<h5><?= $application['id_255002'] ?></h5>
 										</div>
 									</div>
-									
+
 
 									<div class="col-xxl-3 col-xl-4 col-12">
 										<div class="">
@@ -126,7 +132,7 @@
 										<div class="col-12">
 											<div class="row g-3">
 												<div class="col-xxl-4 col-12">
-												Assets Valuation (in INR Crores)
+													Return on Assets
 												</div>
 												<div class="col-xxl-4 col-lg-6 col-12">
 													<h5><?= $application['id_255106'] ?></h5>
@@ -189,172 +195,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Organization Details -->
-	<div class="tab-pane fade d-none" id="organization-tab-pane" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">
-		<div class="row mt-2">
-			<div class="col-12 grid-margin stretch-card">
-				<div class="card input-group-card">
-					<div class="card-body">
-						<div class="row g-4">
-							<div class="col-12">
-								<fieldset class="col-12">
-									<legend class="card-title mb-0">
-										<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
-									</legend>
-									<div class="row g-3">
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													FY 2024
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													FY 2023
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Revenue / Turnover (in INR Crores)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255101'] ?></h5>
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255102'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Revenue Growth (in %)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255103'] ?></h5>
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255104'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Net Profit Margin (In %)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255105'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Return On Assets (ROA)
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255106'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Current Ratio
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255107'] ?></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="row g-3">
-												<div class="col-xxl-4 col-12">
-													Years of Involvement in Social Entrepreneurship
-												</div>
-												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255108'] ?></h5>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 grid-margin stretch-card">
-				<div class="card input-group-card">
-					<div class="card-body">
-						<div class="row g-4">
-							<div class="col-12">
-								<fieldset class="col-12">
-									<legend class="card-title mb-0">
-										<h5>Organization Overview<sup class="text-danger">&ast;</sup></h5>
-									</legend>
-									<div class="row g-3">
-										<div class="col-xxl-6 col-xl-4 col-lg-6 col-12">
-											<div class="">
-												<p class="form-label">Target Market Segment and Geographic Reach</p>
-												<h5><?= $application['id_255201'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-											<div class="">
-												<p class="form-label">No. Of Employees</p>
-												<h5><?= $application['id_255202'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-											<div class="">
-												<p class="form-label">No. Of Beneficiary</p>
-												<h5><?= $application['id_255205'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
-											<div class="">
-												<p class="form-label">No. of community members directly impacted </p>
-												<h5><?= $application['id_255206'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xxl-4 col-xl-3 col-lg-6 col-12">
-											<div class="">
-												<p class="form-label">% of profits reinvested into social initiatives</p>
-												<h5><?= $application['id_255207'] ?></h5>
-											</div>
-										</div>
-										<div class="col-xxl-4 col-xl-6 col-12">
-											<div class="">
-												<p class="form-label">No. of new regions/communities targeted for expansion in the next 3 years</p>
-												<h5><?= $application['id_255208'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p class="form-label">Brief Description of the Business</p>
-												<h5><?= $application['id_255203'] ?></h5>
-											</div>
-										</div>
-										<div class="col-12">
-											<div class="">
-												<p class="form-label">Core Products / Services Offered</p>
-												<h5><?= $application['id_255204'] ?></h5>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Case Study I -->
 	<div class="tab-pane fade" id="casestudy1-tab-pane" role="tabpanel" aria-labelledby="casestudy1-tab" tabindex="0">
 		<div class="row mt-2">
@@ -371,13 +211,13 @@
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Background about your organization/institute. Highlight the challenges you are aiming to solve through the initiative.</p>
+											<p class="form-label">Brief description about the organization</p>
 											<h5><?= $application['id_255201'] ?></h5>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">Geographical area where the organization works. Few Success Stories (If Applicable)</p>
+											<p class="form-label">Core Products / Services Offered</p>
 											<h5><?= $application['id_255202'] ?></h5>
 										</div>
 									</div>
@@ -394,13 +234,12 @@
 							<fieldset class="col-12">
 								<div class="mb-3">
 									<legend class="card-title mb-0">
-										<h5>Case Study II: Unique Offerings<sup class="text-danger">&ast;</sup></h5>
+										<h5>Case Study II: Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
 									</legend>
 								</div>
 								<div class="row g-3">
 									<div class="col-12">
 										<div class="">
-											<p class="form-label">What are unique offerings that differentiates you from the existing competitiors in the market?</p>
 											<h5><?= $application['id_255203'] ?></h5>
 										</div>
 									</div>
@@ -423,19 +262,17 @@
 								<fieldset class="col-12">
 									<div class="mb-3">
 										<legend class="card-title mb-0">
-											<h5>Case Study III: Key Initiatives<sup class="text-danger">&ast;</sup></h5>
+											<h5>Case Study III: Business Performance & Market Impact<sup class="text-danger">&ast;</sup></h5>
 										</legend>
 									</div>
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">Describe the initiatives taken by your organizations in last year (April 2023 - March 2024)</p>
 												<h5><?= $application['id_255204'] ?></h5>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">Describe the impact created by the initiatives in the last year on the business growth and other stakeholders. i.e. Customers Employees, Industry, etc.</p>
 												<h5><?= $application['id_255205'] ?></h5>
 											</div>
 										</div>
@@ -454,14 +291,13 @@
 								<fieldset class="col-12">
 									<div class="mb-3">
 										<legend class="card-title mb-0">
-											<h5>Case Study IV<sup class="text-danger">&ast;</sup></h5>
+											<h5>Case Study IV: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
 										</legend>
 									</div>
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">Based on the current economic conditions describe key risk management initiatives implemented by your organization to mitigate these risks and how has technology played a role in it</p>
-												<h5><?= $application['id_255205'] ?></h5>
+												<h5><?= $application['id_255206'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -484,14 +320,13 @@
 								<fieldset class="col-12">
 									<div class="mb-3">
 										<legend class="card-title mb-0">
-											<h5>Case Study V<sup class="text-danger">&ast;</sup></h5>
+											<h5>Case Study V: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
 										</legend>
 									</div>
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">Elaborate on the Sustainability and/or Scalability plan of your organization for the next 2-3 years.</p>
-												<h5><?= $application['id_255206'] ?></h5>
+												<h5><?= $application['id_255207'] ?></h5>
 											</div>
 										</div>
 									</div>
@@ -509,14 +344,13 @@
 								<fieldset class="col-12">
 									<div class="mb-3">
 										<legend class="card-title mb-0">
-											<h5>Case Study VI<sup class="text-danger">&ast;</sup></h5>
+											<h5>Case Study VI: Additional Supportings<sup class="text-danger">&ast;</sup></h5>
 										</legend>
 									</div>
 									<div class="row g-3">
 										<div class="col-12">
 											<div class="">
-												<p class="form-label">List any awards/achievements won in the last 2 years or any other additional information for the jury.</p>
-												<h5><?= $application['id_255207'] ?></h5>
+												<h5><?= $application['id_255208'] ?></h5>
 											</div>
 										</div>
 									</div>
