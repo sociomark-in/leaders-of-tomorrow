@@ -117,9 +117,13 @@
 									Leaders of Tomorrow Season 12 Awards will continue to spotlight outstanding MSMEs, carry forward its rich legacy. This year, the awards are aligned with our vision to propel India’s global aspirations, embracing the theme: <strong class="text-red">Powering Entrepreneurs for the Global Stage</strong>.
 									The Leaders of Tomorrow Season 12 Awards is scheduled to take place in February or March 2025 as a half-day ceremony in either Mumbai or Delhi, attended by over 200 audience members largely comprising of CXOs from large and mid-enterprises.
 								</p>
-								<p data-aos="fade-left" data-aos-delay="400">
+								<p data-aos="fade-left" data-aos-delay="200">
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
+								</p>
+								<p data-aos="fade-left" data-aos-delay="400">
+								    Entries open exclusively for IDFC FIRST Bank customers until 20th February. 
+If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
 								</p>
 								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
 							</div>

@@ -21,7 +21,7 @@ class NominationsController extends PanelController
 	public function index()
 	{
 		$applications = [
-			'msme' => json_decode($this->EntriesModel->get(["nomination_id", "category_id", "name", "email", "designation", "organization_name", "organization_state", "organization_city", "organization_url", "agent_referral", "agent_name", "created_by", "stage_status", "created_at", "updated_at", "status"], ['status <=' => 3], 'msme'), true)
+			'msme' => json_decode($this->EntriesModel->get(null, ['status <=' => 3], 'msme'), true)
 		];
 		if (count($applications['msme']) > 0) {
 			for ($i = 0; $i < count($applications['msme']); $i++) {
@@ -283,70 +283,69 @@ class NominationsController extends PanelController
 
 			$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 			$application['category'] = $category_details;
+			$docketname =  'uploads/' . $application['nomination_id'] . '/docket_page.pdf';
+			if (file_exists($docketname)) {
+				unlink(FCPATH . $docketname);
+			}
+
 			switch ($application['category_id']) {
 				case '1_INDIVIDUAL':
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_individual')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_individual')->generate('F', FCPATH . $docketname);
 					break;
 				case '2_INDIVIDUAL':
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_2_individual')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_2_individual')->generate('F', FCPATH . $docketname);
 					break;
 				case '1_GLOBAL':
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_global')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_global')->generate('F', FCPATH . $docketname);
 					break;
 				case '1_FAMILY':
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_family')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_family')->generate('F', FCPATH . $docketname);
 					break;
 				case '1_DIGITAL':
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_digital')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_1_digital')->generate('F', FCPATH . $docketname);
 					break;
 				default:
-					$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_msme')->generate('F', FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+					switch (explode('_', $application['category_id'])[1]) {
+						case 'IDFC':
+							$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_idfc')->generate('F', FCPATH . $docketname);
+							break;
+
+						default:
+							$this->makedocket->init('P', 'mm', 'A4')->load($application, 'docket_msme')->generate('F', FCPATH . $docketname);
+							break;
+					}
 					break;
-			}
-			foreach ($categories as $key => $value) {
-				if ($application['category_id'] == $value['type']) {
-					// echo "<pre>";
-					// print_r($application);
-					break;
-				} else {
-					continue;
-				}
 			}
 
 			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
-			
+
 			$attachments = [];
 			array_push($attachments, FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
 			foreach ($temp as $key => $file) {
 				array_push($attachments, $file);
 			}
-			
-// 			if (file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
-// 				// unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
-//     			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-// 			} else {
-//     			$this->load->library('pdflib/MergePDF');
-//     			$this->mergepdf->config()->merge(
-//     				$attachments,
-//     				FCPATH . 'uploads/' . $application['nomination_id'],
-//     				$filename
-//     			);
-//     			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-// 			}
-			
+
+			// 			if (!file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
+			//     			$this->load->library('pdflib/MergePDF');
+			//     			$this->mergepdf->config()->merge(
+			//     				$attachments,
+			//     				FCPATH . 'uploads/' . $application['nomination_id'],
+			//     				$filename
+			//     			);
+			// 			}
+
 			if (file_exists('uploads/' . $application['nomination_id'] . "/" . $filename)) {
-				unlink(FCPATH . 'uploads/' . $application['nomination_id'] . '/' . $application['nomination_id'] . '_docket.zip');
-    // 			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-			} 
-			
+				unlink(FCPATH . 'uploads/' . $application['nomination_id'] . "/" . $filename);
+			}
+
 			$this->load->library('pdflib/MergePDF');
 			$this->mergepdf->config()->merge(
 				$attachments,
 				FCPATH . 'uploads/' . $application['nomination_id'],
 				$filename
 			);
+
 			redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-			
 
 			// $zip = new ZipArchive;
 			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {

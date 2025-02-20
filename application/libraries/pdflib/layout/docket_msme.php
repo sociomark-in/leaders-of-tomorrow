@@ -22,7 +22,7 @@ $this->pdf->SetTextColor(25, 25, 25);
 
 $this->pdf->Cell(0, 2, '', 0, 1, '');
 $this->pdf->Cell(47, 6, 'Application ID', 0, 0, '');
-$this->pdf->Cell(79, 6, 'Categor', 0, 1, '');
+$this->pdf->Cell(79, 6, 'Category', 0, 1, '');
 
 $this->pdf->SetFont('Arial', 'B', 9);
 $this->pdf->Cell(47, 4, $data['nomination_id'] ?? "Lorem Ipsum", 0, 0, '');
