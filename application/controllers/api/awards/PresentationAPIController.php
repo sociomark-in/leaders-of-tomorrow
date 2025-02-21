@@ -77,6 +77,7 @@ class PresentationAPIController extends CI_Controller
 		$this->request = $this->input->post();
 		$presentation_id = $this->request['presentation_id'];
 		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $this->request['nomination_id']]), true)[0];
+		$category = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
 
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
@@ -161,6 +162,25 @@ class PresentationAPIController extends CI_Controller
 
 		if ($this->PresentationsModel->insert($this->data)) {
 			if ($this->EntriesModel->update(['status_2' => 3], ['nomination_id' => $this->data['nomination_id']])) {
+				$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $presentation_id], strtolower($category['type'])), true)[0];
+				$email_data['application']['category']['name'] = $category['name'];
+				$email_data['applicant'] = [
+					'name' => $this->usersession['name'],
+					'email' => $this->usersession['email'],
+					'contact' => $this->usersession['contact'],
+				];
+				$recipients = [
+					[
+						"email" =>  $this->usersession['email'],
+						"name" =>  $this->usersession['name']
+					]
+				];
+				$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
+				$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $presentation_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+				$htmlbody = $this->load->view('panel/emails/participant_presentation_review', $email_data, true);
+				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+					redirect('dashboard/my-applications');
+				}
 				redirect('dashboard');
 			} else {
 				echo "Unknown Error!";

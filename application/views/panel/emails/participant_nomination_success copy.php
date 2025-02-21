@@ -79,21 +79,19 @@
 															Dear <strong><?= $applicant['name'] ?></strong>,
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We are pleased to inform you that your entry has been qualified for the next round of jury evaluation!
+															Congratulations! Your nomination under the
+															<strong><?= $application['organization_name'] ?></strong> for
+															<strong><?= $application['category']['name'] ?></strong>
+															has been accepted.</strong>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Congratulations on making it this far.
-														</div>
-														<div style="margin-bottom:10px;line-height:1.5">
-															Our process advisors will be reaching out to you with detailed next steps shortly. Please stay tuned for further instructions.
-														</div>
-														<div style="margin-bottom:10px;line-height:1.5">
-															Thank you for your participation, and we look forward to seeing you in the next round!
+															Your submission will now be reviewed by the <strong>pre-jury panel</strong>. If it qualifies further, it will be sent
+															to the <strong>grand jury</strong>, and we will share more details with you as the process progresses.
 														</div>
 													</div>
 												</td>
 											</tr>
-											<tr style="display: none;">
+											<tr>
 												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
 													<div style="margin-bottom:20px;line-height:1.5">
 														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
@@ -108,11 +106,12 @@
 												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
 													<div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															For any queries, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
+															Thank you for your participation. For any queries, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
 														</div>
 														<br>
 														<div>Best Regards,</div>
 														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+
 													</div>
 												</td>
 											</tr>

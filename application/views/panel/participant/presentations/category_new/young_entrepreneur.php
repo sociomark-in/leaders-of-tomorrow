@@ -471,7 +471,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 								<p><strong>Guidelines</strong></p>
 								<p>Add any of the following to support your entry.</p>
 								<ul>
-									<li>Product Images/Video showcasing the making of the product/Demo of the service offering</li>
+									<li>Product images of the making of the product or service offering</li>
 									<li>Customer testimonials</li>
 									<li>Awards & Achievements</li>
 									<li>Any other collateral to support the entry</li>

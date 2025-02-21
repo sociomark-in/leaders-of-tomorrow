@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Your Nomination Has Been Accepted - Leaders of Tomorrow Awards 2025</title>
+	<title>Submission Received for Leaders of Tomorrow Awards 2025</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -66,7 +66,7 @@
 												<td style="line-height:22px;padding:0 30px 0">
 													<div
 														style="font-size:24px;font-weight:bold;margin-bottom:10px;color:#198754;padding:10px 0;line-height:1.5;border-radius:3px;">
-														Congratulations!&nbsp;🎉</div>
+														Thank You!</div>
 												</td>
 											</tr>
 											<tr>
@@ -79,36 +79,25 @@
 															Dear <strong><?= $applicant['name'] ?></strong>,
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We are pleased to inform you that your entry has been qualified for the next round of jury evaluation!
+															Thank you for submitting your presentation for the <strong>IDFC FIRST Bank Presents ET NOW <?= APP_NAME ?> Awards 2025</strong>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Congratulations on making it this far.
+															We have received your entry with Unique ID <a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-presentations') ?>">#<?= $application['nomination_id'] ?></a>
+															under the category <strong><?= $application['category']['name'] ?></strong> for <?= $application['organization_name'] ?>.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Our process advisors will be reaching out to you with detailed next steps shortly. Please stay tuned for further instructions.
+															Your submission is now under review by our process advisors, <strong>Ernst &amp; Young (E&amp;Y).</strong>
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5;display:none;">
+															<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
+																href="<?= base_url('dashboard/my-applications') ?>"
+																target="_blank">
+																View All Nominations
+															</a>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Thank you for your participation, and we look forward to seeing you in the next round!
-														</div>
-													</div>
-												</td>
-											</tr>
-											<tr style="display: none;">
-												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
-													<div style="margin-bottom:20px;line-height:1.5">
-														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-															href="<?= base_url('dashboard/my-applications') ?>"
-															target="_blank">
-															View All Nominations
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
-													<div>
-														<div style="margin-bottom:10px;line-height:1.5">
-															For any queries, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
+															You will receive further updates via email if any modifications are required in your form. Should
+															you have any questions, feel free to contact us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>
 														</div>
 														<br>
 														<div>Best Regards,</div>
