@@ -122,8 +122,8 @@
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
 								<p data-aos="fade-left" data-aos-delay="400">
-								    Entries open exclusively for IDFC FIRST Bank customers until 20th February. 
-If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
+								    <strong>Entries open exclusively for IDFC FIRST Bank customers until 20th February.</strong> 
+								    If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
 								</p>
 								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
 							</div>
@@ -542,4 +542,3 @@ If you have unveiled the transformative power of innovation, elevating your busi
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>
 <script src="<?= base_url('assets/js/awards.js') ?>"></script>
-

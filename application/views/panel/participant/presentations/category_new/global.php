@@ -33,24 +33,32 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						</div>
 						<div class="col-xl-9 col-lg-8 col-12">
 							<div class="row g-2 g-md-3">
-								<div class="col-12">
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
 										<input required type="text" name="organization[name]" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-8 col-lg-6 col-12">
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Presenter</label>
 										<input required type="text" name="name" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6 col-12">
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Designation</label>
 										<input required type="text" name="designation" class="form-control">
 									</div>
 								</div>
+								<!-- Backend Missing -->
+								<div class="col-xl-6 col-12">
+									<div class="">
+										<label for="" class="form-label">No. of Countries with Business Presence (Outside India)</label>
+										<input required type="number" min="0" name="organization['adaption']" class="form-control">
+									</div>
+								</div>
+								<!-- Backend Missing -->
 								<div class="col-xl-4 col-12">
 									<div class="">
 										<label for="" class="form-label">Type of Business</label>
@@ -98,23 +106,6 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</legend>
 					<div class="row g-3">
 						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Generational Status</label>
-							<select required name="organization[beneficiary]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option value="1st">1st</option>
-								<option value="2nd">2nd</option>
-								<option value="3rd">3rd</option>
-								<option value="4th">4th</option>
-								<option value="5th">5th</option>
-								<option value="6th">6th</option>
-								<option value="7th">7th</option>
-								<option value="8th">8th</option>
-								<option value="9th">9th</option>
-								<option value="10th">10th</option>
-								<option value="Greater than 10th">Greater than 10th</option>
-							</select>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
 							<div class="">
 								<label for="" class="form-label">No. Of Employees Global</label>
 								<select required name="organization[size_global]" id="" class="form-select">
@@ -128,18 +119,20 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 								<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 							</div>
 						</div>
-						<div class="col-xxl-6 col-xl-4 col-12">
+						<div class="col-xxl col-xl-4 col-12">
 							<label class="form-label">Countries of Operation</label>
 							<input type="text" class="form-control" required name="organization[countries]">
 							<span class="form-text">(At leasst 5, 2 from different continents.)</span>
 						</div>
 						<div class="col-12">
 							<label for="" class="form-label">Details of Cross-border Collaborations/Partnerships Established</label>
-						<textarea required rows="15" maxlength="900" name="case_study_1" class="form-control editor" id=""></textarea>
+						<textarea required rows="15" maxlength="750" name="case_study_1" class="form-control editor" id=""></textarea>
+						<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 						<div class="col-12">
 							<label for="" class="form-label">Market Expansion in Last 2 Years</label>
-						<textarea required rows="15" maxlength="900" name="case_study_2" class="form-control editor" id=""></textarea>
+						<textarea required rows="15" maxlength="750" name="case_study_2" class="form-control editor" id=""></textarea>
+						<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
@@ -226,7 +219,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Net Profit Margin (In %)
+									Net Profit Margin (in %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_profit_24" id="" class="form-select">
@@ -255,7 +248,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Return on Assets (in %)
+									Return from Global Markets (in %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_roa_24" id="" class="form-select">
@@ -284,28 +277,28 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Current Ratio
+									Investment in R&D in Global Markets (% of Revenue)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_der_24" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
-											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+									<option value="">Select Option</option>
+										<option value="< 5%">
+											< 5%</option>
+										<option value="6% - 15%">6% - 15%</option>
+										<option value="16% - 25%">16% - 25%</option>
+										<option value="26% - 35%">26% - 35%</option>
+										<option value="> 36%">> 36%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_der_23" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
-											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+									<option value="">Select Option</option>
+										<option value="< 5%">
+											< 5%</option>
+										<option value="6% - 15%">6% - 15%</option>
+										<option value="16% - 25%">16% - 25%</option>
+										<option value="26% - 35%">26% - 35%</option>
+										<option value="> 36%">> 36%</option>
 									</select>
 								</div>
 							</div>
@@ -320,11 +313,21 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study II: Innovation & Adaptibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study I: Innovation & Adaptibility<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_3" class="form-control editor" id=""></textarea>
+					<div class="row g-2 g-md-3 flex-row-reverse">
+						<div class="col-xl-4">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<ul>
+									<li>Highlight innovative strategies/products/services that have driven your global expansion</li>
+									<li>Explain how your business has adapted to diverse international markets</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_3" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
@@ -336,14 +339,21 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study III: Business Performance & Market Impact<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study II: Business Performance & Market Impact<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3 mb-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_4" class="form-control editor" id=""></textarea>
+					<div class="row g-2 g-md-3 flex-row-reverse">
+						<div class="col-xl-4">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<ul>
+									<li>Present key financial metrics (e.g., revenue growth, market share, ROI)</li>
+									<li>Showcase market impact through partnerships, customer base, and industry recognition</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_5" class="form-control editor" id=""></textarea>
+						<div class="col-xl col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_4" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
@@ -355,11 +365,23 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study IV: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study III: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_6" class="form-control editor" id=""></textarea>
+					<div class="row g-2 g-md-3 flex-row-reverse">
+						<div class="col-xl-4">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<ul>
+									<li>Describe your sustainability initiatives and CSR activities in global markets</li>
+									<li>Demonstrate commitment to environmental, social, and governance (ESG) standards</li>
+									<li>Outline your growth strategy for future global expansion</li>
+									<li>Highlight technological innovations and readiness for market changes</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_6" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
@@ -371,18 +393,30 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study V: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study IV: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3">
-						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_7" class="form-control editor" id=""></textarea>
+					<div class="row g-2 g-md-3 flex-row-reverse">
+						<div class="col-xl-4">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<ul>
+									<li>Describe your sustainability initiatives and CSR activities in global markets</li>
+									<li>Demonstrate commitment to environmental, social, and governance (ESG) standards</li>
+									<li>Outline your growth strategy for future global expansion</li>
+									<li>Highlight technological innovations and readiness for market changes</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_7" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
 			</div>
 		</div>
 	</div>
-	<div class="col-12 grid-margin stretch-card">
+	<div class="col-12 grid-margin stretch-card d-none">
 		<div class="card input-group-card">
 			<div class="card-body">
 				<fieldset class="">
@@ -391,7 +425,8 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 					</legend>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required rows="15" maxlength="900" name="case_study_8" class="form-control editor" id=""></textarea>
+							<textarea required rows="15" maxlength="750" name="case_study_8" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
 				</fieldset>
@@ -403,52 +438,69 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Creatives & Images<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study V: Additional Supportings<sup class="text-danger">&ast;</sup></h5>
+						<!-- <h5>Creatives & Images<sup class="text-danger">&ast;</sup></h5> -->
 					</legend>
 					<div class="mb-3">
 						<p></p>
 					</div>
-					<div class="row g-2 g-md-3">
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study I</label>
-								<input type="file" accept="image/*" name="doc1" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+					<div class="row g-2 g-md-3 flex-row-reverse">
+						<div class="col-xl-4 col-12">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<p>Add any of the following to support your entry.</p>
+								<ul>
+									<li>Product Images/Video showcasing the making of the product/Demo of the service offering</li>
+									<li>Customer testimonials</li>
+									<li>Awards & Achievements</li>
+									<li>Any other collateral to support the entry</li>
+								</ul>
 							</div>
 						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study II</label>
-								<input type="file" accept="image/*" name="doc2" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
-							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study III</label>
-								<input type="file" accept="image/*" name="doc3" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
-							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study IV</label>
-								<input type="file" accept="image/*" name="doc4" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
-							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study V</label>
-								<input type="file" accept="image/*" name="doc5" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
-							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-							<div class="">
-								<label for="" class="form-label">Graphic Creative Supporting Case Study VI</label>
-								<input type="file" accept="image/*" name="doc6" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
-								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+						<div class="col-xl-8 col-12">
+							<div class="row g-2 g-md-3">
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image I</label>
+										<input type="file" accept="image/*" name="doc1" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image II</label>
+										<input type="file" accept="image/*" name="doc2" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image III</label>
+										<input type="file" accept="image/*" name="doc3" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image IV</label>
+										<input type="file" accept="image/*" name="doc4" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image V</label>
+										<input type="file" accept="image/*" name="doc5" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-6 col-12">
+									<div class="">
+										<label for="" class="form-label">Image VI</label>
+										<input type="file" accept="image/*" name="doc6" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+										<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -490,102 +542,102 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 		],
 		rules: {
 			case_study_1: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_2: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_3: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_4: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_5: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_6: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_7: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_8: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_9: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_10: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_11: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 			case_study_12: {
-				maxlength: 900,
-				minlength: 300
+				maxlength: 750,
+				minlength: 360
 			},
 		},
 		messages: {
 			case_study_1: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_2: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_3: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_4: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_5: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_6: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_7: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_8: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_9: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_10: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_11: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 			case_study_12: {
-				maxlength: "Please enter no more than 900 characters.",
-				minlength: "Please enter at least 300 characters.",
+				maxlength: "Please enter no more than 750 characters.",
+				minlength: "Please enter at least 360 characters.",
 			},
 		}
 	});
@@ -600,7 +652,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 	$(document).ready(function() {
 		$('.editor-wysiwyg').each((index, element) => {
 			$(element).summernote({
-				height: 300,
+				height: 360,
 				toolbar: [
 					// [groupName, [list of button]]
 					['style', ['style']],

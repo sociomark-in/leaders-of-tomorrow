@@ -139,6 +139,7 @@ class PresentationAPIController extends CI_Controller
 
 		switch (explode('_', $application['category_id'])[1]) {
 			case 'FAMILY':
+				$this->data['id_255005'] = implode('-', $this->request['organization']['investment']);
 				$this->data['id_255004'] = $this->request['organization']['beneficiary'];
 				$this->data['id_255009'] = $this->request['organization']['size_global'];
 				$this->data['id_255010'] = $this->request['organization']['members'];
@@ -146,7 +147,12 @@ class PresentationAPIController extends CI_Controller
 				break;
 			case 'GLOBAL':
 				$this->data['id_255009'] = $this->request['organization']['size_global'];
-				$this->data['id_255004'] = $this->request['organization']['beneficiary'];
+				$this->data['id_255004'] = $this->request['organization']['adaption'];
+				break;
+
+			case 'DIGITAL':
+				$this->data['id_255004'] = $this->request['organization']['adaption'];
+				# code...
 				break;
 
 			default:

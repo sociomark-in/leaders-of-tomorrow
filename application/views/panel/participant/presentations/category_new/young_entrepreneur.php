@@ -41,7 +41,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 								</div>
 								<div class="col-xl-8 col-lg-6 col-12">
 									<div class="">
-										<label for="" class="form-label">Name of the Presenter</label>
+										<label for="" class="form-label">Name of the Entrepreneur</label>
 										<input required type="text" name="name" class="form-control">
 									</div>
 								</div>
@@ -263,10 +263,10 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study I: About the Organization<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study I: About the Entrepreneur<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="mb-3">
-						<p>Brief description of the Business</p>
+						<p>Share your entrepreneurial journey, inspiration, and key milestones</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
 						<!-- <div class="col-xl-4 col-12">
@@ -287,7 +287,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						</div>
 					</div>
 					<div class="mb-3">
-						<p>Core Products / Services Offered</p>
+						<p>Highlight leadership qualities and initiatives taken to drive success.</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
 						<!-- <div class="col-xl-4 col-12">
@@ -316,20 +316,20 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study II: Innovation & Adaptibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study II: Innovation & Problem-Solving<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
 						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Highlight your most innovative product/service and its USP</li>
-									<li>Describe how your business adapted to recent market challenges.</li>
-									<li>What new technologies or processes have you adopted?</li>
+									<li>Present the unique solutions or innovations introduced in your business.</li>
+									<li>Discuss challenges faced and how they were effectively addressed.</li>
+									<li>Showcase adaptability to market trends and technological advancements</li>
 								</ul>
 							</div>
 						</div>
-						<div class="col-xl-8 col-12">
+						<div class="col-xl col-12">
 							<textarea required rows="15" maxlength="750" name="case_study_3" class="form-control editor" id=""></textarea>
 							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
@@ -350,10 +350,9 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Summarize your revenue growth & Key financial achievements over the last 2 years.</li>
-									<li>How have you managed financial challenges effectively?</li>
-									<li>Highlight new markets or customer segments you have entered.</li>
-									<li>How has your business positively impacted the local community?</li>
+									<li>Highlight revenue growth, market expansion, and competitive positioning.</li>
+									<li>Provide data on customer reach, partnerships, and financial performance.</li>
+									<li>Showcase key achievements and how they have contributed to industry impact.</li>
 								</ul>
 							</div>
 						</div>
@@ -371,19 +370,19 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study IV: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study IV: Social Responsibility & Community Impact<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
 						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>What social responsibility initiatives have you undertaken?</li>
-									<li>How does your business contribute to the well-being of your community?</li>
-									<li>What steps have you taken to ensure long-term sustainability?</li>
-									<li>What is your strategy for scaling your business in the next 5 years?</li>
-									<li>How are you preparing for future industry trends and challenges?</li>
-									<li>What investments have you made in technology and talent for future growth?</li>
+									<li>Explain how your business contributes to social causes and ethical practices.</li>
+									<li>Present initiatives focused on sustainability and community development.</li>
+									<li>Provide measurable impact on social or environmental well-being.</li>
+									<li>Discuss future business strategies and expansion plans.</li>
+									<li>Highlight efforts toward sustainable growth and risk mitigation.</li>
+									<li>Showcase plans for technology adoption and workforce development</li>
 								</ul>
 							</div>
 						</div>
@@ -401,19 +400,19 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
-						<h5>Case Study V: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
+						<h5>Case Study V: Sustainability & Future Plans<sup class="text-danger">&ast;</sup></h5>
 					</legend>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
 						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>What social responsibility initiatives have you undertaken?</li>
-									<li>How does your business contribute to the well-being of your community?</li>
-									<li>What steps have you taken to ensure long-term sustainability?</li>
-									<li>What is your strategy for scaling your business in the next 5 years?</li>
-									<li>How are you preparing for future industry trends and challenges?</li>
-									<li>What investments have you made in technology and talent for future growth?</li>
+									<li>Explain how your business contributes to social causes and ethical practices.</li>
+									<li>Present initiatives focused on sustainability and community development.</li>
+									<li>Provide measurable impact on social or environmental well-being.</li>
+									<li>Discuss future business strategies and expansion plans.</li>
+									<li>Highlight efforts toward sustainable growth and risk mitigation.</li>
+									<li>Showcase plans for technology adoption and workforce development</li>
 								</ul>
 							</div>
 						</div>
@@ -437,11 +436,12 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
-								<p>Add any of the following to support your entry</p>
 								<ul>
-									<li>Customer testimonials</li>
-									<li>Awards & Achievements</li>
-									<li>Any other collateral to support the entry</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
 								</ul>
 							</div>
 						</div>
