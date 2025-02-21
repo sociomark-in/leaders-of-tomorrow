@@ -79,7 +79,7 @@
 															Dear <strong><?= $applicant['name'] ?></strong>,
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We are pleased to inform you that your entry has been qualified for the next round of jury evaluation!
+															We are pleased to inform you that your entry has been qualified for the next round of jury evaluation of <strong>IDFC FIRST Bank Presents ET NOW Leaders of Tomorrow Awards Season 12</strong>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															Congratulations on making it this far.

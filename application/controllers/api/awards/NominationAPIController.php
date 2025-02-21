@@ -2677,7 +2677,7 @@ class NominationAPIController extends CI_Controller
 							"name" =>  $applicant['name']
 						]
 					];
-					$subject = "Your Nomination Has Been Accepted - " . APP_NAME . " Awards 2025!";
+					$subject = "Congratulations! Your Entry for 'IDFC FIRST Bank Presents ET NOW Leaders of Tomorrow Awards' has Been qualified for the Grand Jury evaluation!";
 					$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 
 					$email_data['application'] = $nomination;
