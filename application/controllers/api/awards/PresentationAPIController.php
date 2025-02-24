@@ -53,21 +53,23 @@ class PresentationAPIController extends CI_Controller
 		$i = 0;
 		$this->load->library('upload', $config);
 		foreach ($_files as $key => $file) {
-			$r = random_string('numeric', 5);
-			$new_name = time() . "_" . $r . "_" . $file['name'];
-			$config['file_name'] = $new_name;
-
-			/* File Upload Script */
-			$this->upload->initialize($config);
-			if (!$this->upload->do_upload($key)) {
-				// An error occurred
-				echo "Error: " . $this->upload->display_errors();
-			} else {
-				/* No Error - File Upload Script */
-				/* Data Upload */
-				$response[$key] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
-				$i++;
-			}
+		    if ($file['size'] > 0) {
+    			$r = random_string('numeric', 5);
+    			$new_name = time() . "_" . $r . "_" . $file['name'];
+    			$config['file_name'] = $new_name;
+    
+    			/* File Upload Script */
+    			$this->upload->initialize($config);
+    			if (!$this->upload->do_upload($key)) {
+    				// An error occurred
+    				echo "Error: " . $this->upload->display_errors();
+    			} else {
+    				/* No Error - File Upload Script */
+    				/* Data Upload */
+    				$response[$key] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
+    				$i++;
+    			}
+		   	}
 		}
 		return $response;
 	}
