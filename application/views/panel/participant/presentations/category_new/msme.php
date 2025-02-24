@@ -388,7 +388,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 							</div>
 						</div>
 						<div class="col-xl-8 col-12">
-							<textarea required rows="15" maxlength="750" name="case_study_6" class="form-control editor" id=""></textarea>
+							<textarea required rows="15" maxlength="750" name="case_study_5" class="form-control editor" id=""></textarea>
 							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>
@@ -418,7 +418,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 							</div>
 						</div>
 						<div class="col-xl-8 col-12">
-							<textarea required rows="15" maxlength="750" name="case_study_7" class="form-control editor" id=""></textarea>
+							<textarea required rows="15" maxlength="750" name="case_study_6" class="form-control editor" id=""></textarea>
 							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
 						</div>
 					</div>

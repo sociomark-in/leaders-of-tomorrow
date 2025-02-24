@@ -1,5 +1,5 @@
 <div class="col-12">
-	<div class="partners-nav row g-3 m-0 justify-content-center justify-content-lg-between">
+	<div class="partners-nav row g-3 m-0 justify-content-center">
 		<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up">
 			<a href="javascript:void(0)" class="nav-link text-dark text-center d-block">
 				<p class="mb-3">
@@ -37,6 +37,16 @@
 				</p>
 				<div class="px-3">
 					<img src="<?= base_url('assets/images/sponsors/12/') ?>bu.png" alt="Partners" height="80">
+				</div>
+			</a>
+		</div>
+		<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up" data-aos-delay="200">
+			<a href="https://fiana.co.in/" target="_blank" class="nav-link text-dark text-center d-block">
+				<p class="mb-3">
+					Outdoor Partner
+				</p>
+				<div class="px-3">
+					<img src="<?= base_url('assets/images/sponsors/12/') ?>ooh.png" alt="Partners" height="30" style="margin-top: 1.5rem;">
 				</div>
 			</a>
 		</div>

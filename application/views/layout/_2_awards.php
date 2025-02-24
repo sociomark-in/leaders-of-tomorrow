@@ -1,8 +1,8 @@
 <!-- partial:partials/_footer -->
 <section class="py-3 py-md-5 bg-white blank-all" id="partners">
-	<div class="container">
-		<div class="row m-0">
-			<div class="col-12">
+	<div class="container-fluid">
+		<div class="row m-0 justify-content-center">
+			<div class="col-lg-10 col-12">
 				<div class="mb-md-4 mb-3 section-title text-center">
 					<h2 class=""><span>Our Partners</span></h2>
 				</div>

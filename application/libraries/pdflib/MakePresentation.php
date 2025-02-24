@@ -64,8 +64,10 @@ class MakePresentation extends FPDF
 
 	public function load($data = null, $layout = 'stage_2_layout_1')
 	{
-		include_once __DIR__ . '/layout/' . $layout . '.php';
-		return $this;
+		if (!is_null($data)) {
+			include_once __DIR__ . '/layout/' . $layout . '.php';
+			return $this;
+		}
 	}
 
 	public function generate($dest = null, $name = null)

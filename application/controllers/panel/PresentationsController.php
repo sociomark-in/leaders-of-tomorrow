@@ -135,14 +135,32 @@ class PresentationsController extends PanelController
 	public function download($slug)
 	{
 		$this->load->library('pdflib/MakePresentation');
+
+		
 		$presentation = json_decode($this->PresentationsModel->get(null, ['presentation_id' => $slug]), true)[0];
 		$presentation['category'] = json_decode($this->CategoryModel->get(['name'], ['type' => $presentation['category_id']]), true)[0];
-		switch (explode('_', $presentation['category_id'])[1]) {
-			case 'INDIVIDUAL':
-				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_layout_2')->generate();
+
+		$filename = "LOTS12_" . $presentation['category']['code']  . "_" . $presentation['presentation_id'] . ".pdf";
+		
+		// echo "<pre>"; print_r($presentation);die;
+		switch ($presentation['category_id']) {
+			case '1_INDIVIDUAL':
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_social_entrepreneur')->generate('I', $filename);
+				break;
+			case '2_INDIVIDUAL':
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_young_entrepreneur')->generate('I', $filename);
+				break;
+			case '1_GLOBAL':
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_global')->generate('I', $filename);
+				break;
+			case '1_DIGITAL':
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_digital')->generate('I', $filename);
+				break;
+			case '1_FAMILY':
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_family')->generate('I', $filename);
 				break;
 			default:
-				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_layout_1')->generate();
+				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_msme')->generate('I', $filename);
 				break;
 		}
 	}

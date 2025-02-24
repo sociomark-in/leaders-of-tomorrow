@@ -150,6 +150,7 @@ class PresentationAPIController extends CI_Controller
 			case 'GLOBAL':
 				$this->data['id_255009'] = $this->request['organization']['size_global'];
 				$this->data['id_255005'] = $this->request['organization']['adaption'];
+				$this->data['id_255004'] = $this->request['organization']['countries'];
 				break;
 
 			case 'DIGITAL':
