@@ -101,6 +101,7 @@ class PresentationAPIController extends CI_Controller
 
 			'id_255002' => $this->request['organization']['inc_date'],
 			'id_255006' => $this->request['experience']['total'],
+			'id_255004' => $this->request['organization']['business'],
 			'id_255007' => $this->request['experience']['current'],
 			'id_255008' => $this->request['organization']['size'],
 
@@ -140,19 +141,19 @@ class PresentationAPIController extends CI_Controller
 
 		switch (explode('_', $application['category_id'])[1]) {
 			case 'FAMILY':
-				$this->data['id_255005'] = implode('-', $this->request['organization']['investment']);
-				$this->data['id_255004'] = $this->request['organization']['beneficiary'];
+				$this->data['id_255004'] = implode('-', $this->request['organization']['investment']);
+				$this->data['id_255005'] = $this->request['organization']['beneficiary'];
 				$this->data['id_255009'] = $this->request['organization']['size_global'];
 				$this->data['id_255010'] = $this->request['organization']['members'];
 				$this->data['id_255011'] = $this->request['organization']['generation'];
 				break;
 			case 'GLOBAL':
 				$this->data['id_255009'] = $this->request['organization']['size_global'];
-				$this->data['id_255004'] = $this->request['organization']['adaption'];
+				$this->data['id_255005'] = $this->request['organization']['adaption'];
 				break;
 
 			case 'DIGITAL':
-				$this->data['id_255004'] = $this->request['organization']['adaption'];
+				$this->data['id_255005'] = $this->request['organization']['adaption'];
 				# code...
 				break;
 

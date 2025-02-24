@@ -434,31 +434,31 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 			</div>
 		</div>
 	</div>
-	<div class="col-12 grid-margin stretch-card d-none">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>Case Study VI: Additional Supportings<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
-						<div class="col-xl-4">
-							<div class="bg-light p-3">
-								<p><strong>Guidelines</strong></p>
-								<ul>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xl col-12">
-							<textarea required rows="15" maxlength="750" name="case_study_8" class="form-control editor" id=""></textarea>
-							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
+	<!--<div class="col-12 grid-margin stretch-card d-none">-->
+	<!--	<div class="card input-group-card">-->
+	<!--		<div class="card-body">-->
+	<!--			<fieldset class="">-->
+	<!--				<legend class="card-title mb-2">-->
+	<!--					<h5>Case Study VI: Additional Supportings<sup class="text-danger">&ast;</sup></h5>-->
+	<!--				</legend>-->
+	<!--				<div class="row g-2 g-md-3 mb-3 flex-row-reverse">-->
+	<!--					<div class="col-xl-4">-->
+	<!--						<div class="bg-light p-3">-->
+	<!--							<p><strong>Guidelines</strong></p>-->
+	<!--							<ul>-->
+	<!--								<li></li>-->
+	<!--							</ul>-->
+	<!--						</div>-->
+	<!--					</div>-->
+	<!--					<div class="col-xl col-12">-->
+	<!--						<textarea required rows="15" maxlength="750" name="case_study_8" class="form-control editor" id=""></textarea>-->
+	<!--						<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>-->
+	<!--					</div>-->
+	<!--				</div>-->
+	<!--			</fieldset>-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</div>-->
 	<div class="col-12 grid-margin stretch-card">
 		<div class="card input-group-card">
 			<div class="card-body">
