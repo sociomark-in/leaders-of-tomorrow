@@ -127,6 +127,9 @@
 												<div class="col-xxl-4 col-lg-6 col-12">
 													<h5><?= $application['id_255105'] ?></h5>
 												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255106'] ?></h5>
+												</div>
 											</div>
 										</div>
 										<div class="col-12">
@@ -135,7 +138,10 @@
 													Return on Assets
 												</div>
 												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255106'] ?></h5>
+													<h5><?= $application['id_255107'] ?></h5>
+												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255108'] ?></h5>
 												</div>
 											</div>
 										</div>
@@ -145,7 +151,10 @@
 													Debt Equity Ratio
 												</div>
 												<div class="col-xxl-4 col-lg-6 col-12">
-													<h5><?= $application['id_255107'] ?></h5>
+													<h5><?= $application['id_255109'] ?></h5>
+												</div>
+												<div class="col-xxl-4 col-lg-6 col-12">
+													<h5><?= $application['id_255110'] ?></h5>
 												</div>
 											</div>
 										</div>

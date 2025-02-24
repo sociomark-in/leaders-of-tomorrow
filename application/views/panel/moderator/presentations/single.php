@@ -24,9 +24,16 @@ if ($nomination['stage'] >= 1) {
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card input-group-card">
 						<div class="card-body">
-							<div class="row justify-content-between">
+							<div class="row justify-content-between align-items-center">
 								<div class="col">
-
+									<div class="row align-items-center">
+										<div class="col-lg-auto">
+											<img src="<?= ($application['logo_image'] == "") ? 'https://ui-avatars.com/api/?name=' . $application['organization_name']  : "" . $application['logo_image'] ?>" alt="Logo">
+										</div>
+										<div class="col">
+											<h2 class="page-title"><?= $application['organization_name'] ?></h2>
+										</div>
+									</div>
 								</div>
 								<div class="col-auto">
 									<div class="row g-3">
@@ -56,23 +63,23 @@ if ($nomination['stage'] >= 1) {
 							switch (explode('_', $application['category_id'])[1]) {
 								case 'INDIVIDUAL':
 									# code...
-									include_once APPPATH . '/views/panel/moderator/full_presentation/individual.php';
+									include_once APPPATH . '/views/panel/moderator/presentations/category_single/individual.php';
 									break;
 								case 'GLOBAL':
 									# code...
-									include_once APPPATH . '/views/panel/moderator/full_presentation/global.php';
+									include_once APPPATH . '/views/panel/moderator/presentations/category_single/global.php';
 									break;
 								case 'FAMILY':
 									# code...
-									include_once APPPATH . '/views/panel/moderator/full_presentation/family.php';
+									include_once APPPATH . '/views/panel/moderator/presentations/category_single/family.php';
 									break;
 								case 'DIGITAL':
 									# code...
-									include_once APPPATH . '/views/panel/moderator/full_presentation/digital.php';
+									include_once APPPATH . '/views/panel/moderator/presentations/category_single/digital.php';
 									break;
 
 								default:
-									include_once APPPATH . '/views/panel/moderator/full_presentation/msme.php';
+									include_once APPPATH . '/views/panel/moderator/presentations/category_single/msme.php';
 									break;
 							}
 							?>

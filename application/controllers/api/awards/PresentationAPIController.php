@@ -88,8 +88,8 @@ class PresentationAPIController extends CI_Controller
 		}
 		$response = [];
 		if ($f) {
-			$response = $this->_document_uploads($_FILES, $presentation_id);
 		}
+		$response = $this->_document_uploads($_FILES, $presentation_id);
 
 		$this->data = [
 			'category_id' => $application['category_id'],
@@ -163,7 +163,7 @@ class PresentationAPIController extends CI_Controller
 
 		if ($this->PresentationsModel->insert($this->data)) {
 			if ($this->EntriesModel->update(['status_2' => 3], ['nomination_id' => $this->data['nomination_id']])) {
-				$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $presentation_id], strtolower($category['type'])), true)[0];
+				$email_data['application'] = json_decode($this->PresentationsModel->get(null, ['presentation_id' => $presentation_id], strtolower($category['type'])), true)[0];
 				$email_data['application']['category']['name'] = $category['name'];
 				$email_data['applicant'] = [
 					'name' => $this->usersession['name'],
@@ -378,8 +378,8 @@ class PresentationAPIController extends CI_Controller
 		}
 		$response = [];
 		if ($f) {
-			$response = $this->_document_uploads($_FILES, $presentation_id);
 		}
+		$response = $this->_document_uploads($_FILES, $presentation_id);
 
 		switch (explode('_', $application['category_id'])[1]) {
 			case 'INDIVIDUAL':
