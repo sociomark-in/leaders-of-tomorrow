@@ -118,7 +118,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_revenue_24" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="5 - 24">5 - 24</option>
+										<option value="Less than 24">Less than 24</option>
 										<option value="25 - 49">25 - 49</option>
 										<option value="50 - 100">50 - 100</option>
 										<option value="101 - 200">101 - 200</option>
@@ -128,7 +128,7 @@ $presentation_id = date('U') . "-" . random_string('numeric', 5);
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_revenue_23" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="5 - 24">5 - 24</option>
+										<option value="Less than 24">Less than 24</option>
 										<option value="25 - 49">25 - 49</option>
 										<option value="50 - 100">50 - 100</option>
 										<option value="101 - 200">101 - 200</option>
