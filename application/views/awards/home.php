@@ -1,11 +1,11 @@
 <main class="awards-wrapper">
-	<div class="hanging-ribbon d-none">
+	<div class="hanging-ribbon ">
 		<div class="content">
 			<p>Season</p>
 			<h3>12</h3>
 		</div>
 	</div>
-	<section class="section d-none">
+	<section class="section p-0">
 		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
 			<div class="bg-media">
 				<!-- <img class="w-100" src="https://placehold.co/1920x900" alt=""> -->
@@ -84,7 +84,7 @@
 	</section>
 	<section class="pb-0" id="about">
 		<div class="container">
-			<div class="row align-items-center">
+			<div class="row align-items-center g-3">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<lite-youtube videoid="Zg3rD_XZOSY">
@@ -134,7 +134,7 @@
 		</div>
 	</section>
 
-	<section id="grand-juries" class="pb-0 d-none">
+	<section id="grand-juries" class="pb-0 ">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -145,30 +145,37 @@
 				<div class="col-12">
 					<div class="swiper grandJurySwiper">
 						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 12; $i++) : ?>
+							<?php foreach ($grand_juries as $key => $person) : ?>
 								<div class="swiper-slide p-3">
 									<div class="speaker-tile speaker-tile-02 normal">
 										<div class="photo">
-											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
+											<img src="<?= base_url('assets/images/grand-juries/12/') . $person['photo'] ?>" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit. <?= $i ?></h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+											<h5><?= $person['name'] ?></h5>
+											<p><?= $person['description'] ?></p>
 										</div>
 									</div>
 								</div>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</div>
 					</div>
 					<script>
 						new Swiper(".grandJurySwiper", {
-							slidesPerView: 2,
+							slidesPerView: 1.3,
 							grid: {
 								rows: 1,
 								fill: 'row'
 							},
 							breakpoints: {
 								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+									grid: {
+										rows: 2,
+									},
+								},
+								768: {
 									slidesPerView: 3,
 									spaceBetween: 20,
 									grid: {
@@ -176,7 +183,7 @@
 									},
 								},
 								1024: {
-									slidesPerView: 4,
+									slidesPerView: 3,
 									spaceBetween: 50,
 									grid: {
 										rows: 3,
@@ -196,7 +203,8 @@
 			</div>
 		</div>
 	</section>
-	<section id="pre-juries" class=" d-none">
+
+	<section id="pre-juries" class="d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -358,7 +366,8 @@
 			</div>
 		</div>
 	</section>
-	<section class="section d-none" id="phases">
+	
+	<section class="section " id="phases">
 		<div class="container">
 			<div class="row g-3 g-md-4">
 				<div class="col-12">
@@ -370,7 +379,7 @@
 					<div class="staged_process__wrapper">
 						<div class="row g-3">
 							<div class="col-xxl col-xl-3 col-lg-6 col-12">
-								<div class="stage__tile active">
+								<div class="stage__tile">
 									<div class="row">
 										<div class="col-12">
 											<div class="stage__title">
@@ -422,7 +431,7 @@
 								</div>
 							</div>
 							<div class="col-xxl col-xl-3 col-lg-6 col-12">
-								<div class="stage__tile">
+								<div class="stage__tile active">
 									<div class="row">
 										<div class="col-12">
 											<div class="stage__title">
@@ -479,6 +488,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section id="live" class="pb-0 d-none">
 		<div class="container">
 			<div class="row justify-content-center g-4">
