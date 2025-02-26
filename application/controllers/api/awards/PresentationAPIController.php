@@ -162,6 +162,7 @@ class PresentationAPIController extends CI_Controller
 				break;
 		}
 
+
 		if ($this->PresentationsModel->insert($this->data)) {
 			if ($this->EntriesModel->update(['status_2' => 3], ['nomination_id' => $this->data['nomination_id']])) {
 				$email_data['application'] = json_decode($this->PresentationsModel->get(null, ['presentation_id' => $presentation_id], strtolower($category['type'])), true)[0];

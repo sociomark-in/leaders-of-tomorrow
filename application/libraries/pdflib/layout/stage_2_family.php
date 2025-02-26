@@ -53,7 +53,7 @@ $this->pdf->MultiCell(200, 15, $data['organization_name'] ?? "", 0, 'L');
 $this->pdf->Cell(0, 10, "", 0, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(100, 10, '[Name of CEO/Founder]', 0, 1, '', false);
+$this->pdf->Cell(100, 10, '[Name of Presenter]', 0, 1, '', false);
 $this->pdf->Cell(0, 2, "", 0, 1, '', false);
 $this->pdf->SetFont('', 'B', 30);
 $this->pdf->MultiCell(200, 15, $data['name'] ?? "", 0, 'L');
@@ -78,8 +78,8 @@ $this->pdf->Cell(35, 15, "FY 2024", 1, 0, '', false);
 $this->pdf->Cell(35, 15, "FY 2023", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(70, 15, "Type of Business", 1, 0, '', false);
-$this->pdf->Cell(70, 15, $data['id_255004'] ?? "", 1, 0, '', false);
+$this->pdf->Cell(70, 15, "Generational Status", 1, 0, '', false);
+$this->pdf->Cell(70, 15, $data['id_255005'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Revenue Turnover (in Cr.)", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255101'] ?? "", 1, 0, '', false);
@@ -101,32 +101,31 @@ $this->pdf->Cell(70, 15, "Net Profit Margin", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255105'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255106'] ?? "", 1, 1, '', false);
 
-$this->pdf->Cell(160, 15, "", 0, 0, true);
+$this->pdf->SetFont('Arial', '', 16);
+$this->pdf->Cell(70, 15, "Current Generation", 1, 0, '', false);
+$this->pdf->Cell(70, 15, $data['id_255011'] ?? "", 1, 0, '', false);
+$this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Asset Valuation", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255107'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255108'] ?? "", 1, 1, '', false);
 
-$this->pdf->Cell(160, 15, "", 0, 0, true);
+$this->pdf->SetFont('Arial', '', 16);
+$this->pdf->Cell(70, 15, "Family Members Involved", 1, 0, '', false);
+$this->pdf->Cell(70, 15, $data['id_255010'] ?? "", 1, 0, '', false);
+$this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Debt Equity Ratio", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255109'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255110'] ?? "", 1, 1, '', false);
 
+$split = explode('-', $data['id_255004']);
+$this->pdf->SetFont('Arial', 'B', 16);
+$this->pdf->Cell(20, 15, "", 0, 1, true);
+$this->pdf->Cell(300, 15, "Equity Split Between Family & Investors & Others", 1, 1, false);
+$this->pdf->SetFont('Arial', '', 16);
+$this->pdf->MultiCell(300, 15, "Family: " . $split[0] . "% - Investors: " . $split[1] . "% - Others: " . $split[2] . "%", 1, 'L');
+
 $test = "LOREM IPSUM DOLOR SIT AMET CONSECTETUR, ADIPISICING ELIT. DOLORUM QUOS VOLUPTATEM INCIDUNT. IMPEDIT LABORIOSAM POSSIMUS ATQUE TEMPORA REPREHENDERIT NULLA NECESSITATIBUS HARUM VERITATIS MODI DESERUNT VEL MOLESTIAS ILLO, CUPIDITATE DELENITI EUM ID MOLLITIA ITAQUE? SIMILIQUE RATIONE, MOLLITIA QUAS ILLO OMNIS EA ALIQUID EIUS QUIS IPSA EAQUE DOLORUM. NON INVENTORE IN DOLORUM NIHIL DOLORE REM QUASI QUAS, VERO IPSUM PERFERENDIS EX NEMO. OFFICIA LAUDANTIUM QUISQUAM SUSCIPIT SAPIENTE PERFERENDIS ALIAS DUCIMUS NULLA INVENTORE REPUDIANDAE QUIA. ILLO, DOLOREM CULPA SAPIENTE VERO IPSAM IUSTO? ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE! ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE!  EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO?? FUGIT APERIAM VEL!";
 
-$this->pdf->SetCellMargin(0);
-$this->pdf->addPage();
-$this->pdf->SetFont('Arial', 'B', 18);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower("Brief description of the business")), 0, 'L');
-$this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255201'])), 0, 'L');
-
-$this->pdf->addPage();
-$this->pdf->SetFont('Arial', 'B', 18);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower("Core Products/Services Offered")), 0, 'L');
-$this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255202'])), 0, 'L');
 
 $this->pdf->addPage();
 $this->pdf->SetFont('Arial', 'B', 18);
@@ -147,14 +146,14 @@ $this->pdf->SetFont('Arial', 'B', 18);
 $this->pdf->MultiCell(300, 10, ucwords(strtolower("Sustainability and Social Responsibility")), 0, 'L');
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255205'])), 0, 'L');
+$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255206'])), 0, 'L');
 
 $this->pdf->addPage();
 $this->pdf->SetFont('Arial', 'B', 18);
 $this->pdf->MultiCell(300, 10, ucwords(strtolower("Scalability and Future Readiness")), 0, 'L');
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255206'])), 0, 'L');
+$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255207'])), 0, 'L');
 
 if (count($files) > 0) {
 	$x = 25;

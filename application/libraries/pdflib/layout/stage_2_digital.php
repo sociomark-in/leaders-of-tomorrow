@@ -53,7 +53,7 @@ $this->pdf->MultiCell(200, 15, $data['organization_name'] ?? "", 0, 'L');
 $this->pdf->Cell(0, 10, "", 0, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(100, 10, '[Name of CEO/Founder]', 0, 1, '', false);
+$this->pdf->Cell(100, 10, '[Name of Presenter]', 0, 1, '', false);
 $this->pdf->Cell(0, 2, "", 0, 1, '', false);
 $this->pdf->SetFont('', 'B', 30);
 $this->pdf->MultiCell(200, 15, $data['name'] ?? "", 0, 'L');
@@ -111,6 +111,12 @@ $this->pdf->Cell(70, 15, "Debt Equity Ratio", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255109'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255110'] ?? "", 1, 1, '', false);
 
+$this->pdf->SetFont('Arial', 'B', 16);
+$this->pdf->Cell(20, 15, "", 0, 1, true);
+$this->pdf->Cell(300, 15, "No. of Digital Tools/Technologies adapted in last 2 years.", 1, 1, false);
+$this->pdf->SetFont('Arial', '', 16);
+$this->pdf->MultiCell(300, 15, $data['id_255005'], 1, 'L');
+
 $test = "LOREM IPSUM DOLOR SIT AMET CONSECTETUR, ADIPISICING ELIT. DOLORUM QUOS VOLUPTATEM INCIDUNT. IMPEDIT LABORIOSAM POSSIMUS ATQUE TEMPORA REPREHENDERIT NULLA NECESSITATIBUS HARUM VERITATIS MODI DESERUNT VEL MOLESTIAS ILLO, CUPIDITATE DELENITI EUM ID MOLLITIA ITAQUE? SIMILIQUE RATIONE, MOLLITIA QUAS ILLO OMNIS EA ALIQUID EIUS QUIS IPSA EAQUE DOLORUM. NON INVENTORE IN DOLORUM NIHIL DOLORE REM QUASI QUAS, VERO IPSUM PERFERENDIS EX NEMO. OFFICIA LAUDANTIUM QUISQUAM SUSCIPIT SAPIENTE PERFERENDIS ALIAS DUCIMUS NULLA INVENTORE REPUDIANDAE QUIA. ILLO, DOLOREM CULPA SAPIENTE VERO IPSAM IUSTO? ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE! ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE!  EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO?? FUGIT APERIAM VEL!";
 
 $this->pdf->SetCellMargin(0);
@@ -147,14 +153,14 @@ $this->pdf->SetFont('Arial', 'B', 18);
 $this->pdf->MultiCell(300, 10, ucwords(strtolower("Sustainability and Social Responsibility")), 0, 'L');
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255205'])), 0, 'L');
+$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255206'])), 0, 'L');
 
 $this->pdf->addPage();
 $this->pdf->SetFont('Arial', 'B', 18);
 $this->pdf->MultiCell(300, 10, ucwords(strtolower("Scalability and Future Readiness")), 0, 'L');
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(300, 7, "", 0, 1, '', false);
-$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255206'])), 0, 'L');
+$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255207'])), 0, 'L');
 
 if (count($files) > 0) {
 	$x = 25;
