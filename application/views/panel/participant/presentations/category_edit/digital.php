@@ -8,9 +8,10 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
-<?= form_open_multipart('api/v2/awards/presentation/new', ['id' => "form_option"]) ?>
-<input type="hidden" name="nomination_id" value="<?= $application['nomination_id'] ?>">
-<input type="hidden" name="presentation_id" value="<?= $presentation_id ?>">
+<?= form_open_multipart('api/v2/awards/presentation/edit', ['id' => "form_option"]) ?>
+
+<input type="hidden" name="nomination_id" value="<?= $presentation['nomination_id'] ?>">
+<input type="hidden" name="presentation_id" value="<?= $presentation['presentation_id'] ?>">
 <div class="row py-3">
 	<div class="col-12 grid-margin stretch-card">
 		<div class="card input-group-card">
@@ -31,19 +32,27 @@
 						</div>
 						<div class="col-xl-9 col-lg-8 col-12">
 							<div class="row g-2 g-md-3">
-								<div class="col-12">
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
 										<input required type="text" name="organization[name]" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-8 col-lg-6 col-12">
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Presenter</label>
 										<input required type="text" name="name" class="form-control">
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-6 col-12">
+								<!-- Backend Missing -->
+								<div class="col-xl-6 col-12">
+									<div class="">
+										<label for="" class="form-label">No. of Digital Tools/ Technologies adapted in last 2 years</label>
+										<input required type="number" min="0" name="organization['adaption']" class="form-control">
+									</div>
+								</div>
+								<!-- Backend Missing -->
+								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Designation</label>
 										<input required type="text" name="designation" class="form-control">
@@ -81,70 +90,6 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 grid-margin stretch-card">
-		<div class="card input-group-card">
-			<div class="card-body">
-				<fieldset class="">
-					<legend class="card-title mb-2">
-						<h5>About the Organization<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<div class="row g-3">
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Generational Status</label>
-							<select required name="organization[beneficiary]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option value="1st">1st</option>
-								<option value="2nd">2nd</option>
-								<option value="3rd">3rd</option>
-								<option value="4th">4th</option>
-								<option value="5th">5th</option>
-								<option value="6th">6th</option>
-								<option value="7th">7th</option>
-								<option value="8th">8th</option>
-								<option value="9th">9th</option>
-								<option value="10th">10th</option>
-								<option value="Greater than 10th">Greater than 10th</option>
-							</select>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Equity spilt between family members and investors</label>
-							<div class="row g-2">
-								<div class="col-xl col-lg-auto col-12">
-									<input required placeholder="% Family Equity" type="number" min="0" max="100" name="organization[investment][family]" class="form-control">
-								</div>
-								<div class="col-xl col-lg-auto col-12">
-									<input placeholder="% Investor Equity" type="number" min="0" max="100" name="organization[investment][investors]" class="form-control">
-								</div>
-								<div class="col-xl col-lg-auto col-12">
-									<input placeholder="& Other Equity" type="number" min="0" max="100" name="organization[investment][others]" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label class="form-label">No. of Family Members Actively Involved</label>
-							<select required name="organization[members]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255205'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
-								<option <?= ($application['id_255205'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
-								<option <?= ($application['id_255205'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
-								<option <?= ($application['id_255205'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
-							</select>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Years the Current Generation Leading the Business</label>
-							<select required name="organization[generation]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option value="Upto 10 Years">Upto 10 Years</option>
-								<option value="10 - 15 Years">10 - 15 Years</option>
-								<option value="15 - 20 Years">15 - 20 Years</option>
-								<option value="More than 20 Years">More than 20 Years</option>
-							</select>
 						</div>
 					</div>
 				</fieldset>
@@ -325,15 +270,45 @@
 			<div class="card-body">
 				<fieldset class="">
 					<legend class="card-title mb-2">
+						<h5>Case Study I: About the Organization<sup class="text-danger">&ast;</sup></h5>
+					</legend>
+					<div class="mb-3">
+						<p>Brief description of the Business</p>
+					</div>
+					<div class="row g-2 g-md-3 mb-3">
+						<div class="col-xl col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_1" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
+						</div>
+					</div>
+					<div class="mb-3">
+						<p>Core Products / Services Offered</p>
+					</div>
+					<div class="row g-2 g-md-3">
+						<div class="col-12">
+							<textarea required rows="15" maxlength="750" name="case_study_2" class="form-control editor" id=""></textarea>
+							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 grid-margin stretch-card">
+		<div class="card input-group-card">
+			<div class="card-body">
+				<fieldset class="">
+					<legend class="card-title mb-2">
 						<h5>Case Study II: Innovation & Adaptibility<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
+					<div class="row g-2 g-md-3 flex-row-reverse">
 						<div class="col-xl-4">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>How does your family business blend tradition with innovation? Share key examples.</li>
-									<li>What technological advancements have you adopted to improve operations or expand market reach?</li>
+									<li>Highlight the digital technologies implemented (e.g., AI, IoT, automation).</li>
+									<li>Explain how your business adapted to digital transformation challenges.</li>
+									<li>Showcase unique innovations and their impact on operations.</li>
 								</ul>
 							</div>
 						</div>
@@ -353,13 +328,14 @@
 					<legend class="card-title mb-2">
 						<h5>Case Study III: Business Performance & Market Impact<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
+					<div class="row g-2 g-md-3 flex-row-reverse">
 						<div class="col-xl-4">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>What major challenges has your family business overcome in management, market expansion, or technology integration?</li>
-									<li>Highlight your growth over the past 10 years with specific metrics (revenue, market share, client base).</li>
+									<li>Demonstrate improvements in efficiency, revenue, and customer experience.</li>
+									<li>Share key performance metrics and market expansion success stories.</li>
+									<li>Discuss how digital transformation has given your business a competitive edge.</li>
 								</ul>
 							</div>
 						</div>
@@ -379,17 +355,15 @@
 					<legend class="card-title mb-2">
 						<h5>Case Study IV: Sustainability & Social Responsibility<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
+					<div class="row g-2 g-md-3 flex-row-reverse">
 						<div class="col-xl-4">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Describe how does your business impact local community in terms of job creation, skill development, etc</li>
-									<li>Demonstrate commitment to environmental, social, and governance (ESG) standards</li>
-									<li>What is your strategy for scaling your business in the next 5 years?</li>
-									<li>How have you managed economic downturns and ensured business continuity during challenging times?</li>
-									<li>How are you preparing for future industry trends and challenges?</li>
-									<li>What investments have you made in technology and talent for future growth?</li>
+									<li>Explain how digital initiatives contribute to environmental sustainability.</li>
+									<li>Showcase any community or social impact initiatives linked to technology adoption</li>
+									<li>Highlight investments in future technologies and workforce digital upskilling.</li>
+									<li>Discuss potential challenges and how you plan to address them</li>
 								</ul>
 							</div>
 						</div>
@@ -409,17 +383,15 @@
 					<legend class="card-title mb-2">
 						<h5>Case Study V: Scalability & Future Readiness<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
+					<div class="row g-2 g-md-3 flex-row-reverse">
 						<div class="col-xl-4">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Describe how does your business impact local community in terms of job creation, skill development, etc</li>
-									<li>Demonstrate commitment to environmental, social, and governance (ESG) standards</li>
-									<li>What is your strategy for scaling your business in the next 5 years?</li>
-									<li>How have you managed economic downturns and ensured business continuity during challenging times?</li>
-									<li>How are you preparing for future industry trends and challenges?</li>
-									<li>What investments have you made in technology and talent for future growth?</li>
+									<li>Explain how digital initiatives contribute to environmental sustainability.</li>
+									<li>Showcase any community or social impact initiatives linked to technology adoption</li>
+									<li>Highlight investments in future technologies and workforce digital upskilling.</li>
+									<li>Discuss potential challenges and how you plan to address them</li>
 								</ul>
 							</div>
 						</div>
@@ -439,16 +411,8 @@
 	<!--				<legend class="card-title mb-2">-->
 	<!--					<h5>Case Study VI: Additional Supportings<sup class="text-danger">&ast;</sup></h5>-->
 	<!--				</legend>-->
-	<!--				<div class="row g-2 g-md-3 mb-3 flex-row-reverse">-->
-	<!--					<div class="col-xl-4">-->
-	<!--						<div class="bg-light p-3">-->
-	<!--							<p><strong>Guidelines</strong></p>-->
-	<!--							<ul>-->
-	<!--								<li></li>-->
-	<!--							</ul>-->
-	<!--						</div>-->
-	<!--					</div>-->
-	<!--					<div class="col-xl col-12">-->
+	<!--				<div class="row g-2 g-md-3">-->
+	<!--					<div class="col-12">-->
 	<!--						<textarea required rows="15" maxlength="750" name="case_study_8" class="form-control editor" id=""></textarea>-->
 	<!--						<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>-->
 	<!--					</div>-->

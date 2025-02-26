@@ -7,9 +7,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
-<?php
-$presentation_id = date('U') . "-" . random_string('numeric', 5);
-?>
+
 <?= form_open_multipart('api/v2/awards/presentation/new', ['id' => "form_option"]) ?>
 <input type="hidden" name="nomination_id" value="<?= $application['nomination_id'] ?>">
 <input type="hidden" name="presentation_id" value="<?= $presentation_id ?>">

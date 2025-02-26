@@ -39,8 +39,6 @@ class PresentationAPIController extends CI_Controller
 		/* Document Upload Folder Exists Script */
 		if (!file_exists($folder_path)) {
 			mkdir($folder_path, 0777);
-		} else {
-			delete_files($folder_path);
 		}
 
 		/* Set Uploads Config */

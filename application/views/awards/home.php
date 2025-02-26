@@ -298,7 +298,8 @@
 						<?php else: ?>
 							<?php foreach ($categories['all'] as $key => $category): ?>
 								<div class="col-xxl-4 col-lg-6">
-									<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+									<!-- <a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel"> -->
+									<a class="card glw-card h-100">
 										<div class="card-body">
 											<div class="row h-100 align-items-center">
 												<div class="col-auto">

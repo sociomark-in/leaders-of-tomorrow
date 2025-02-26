@@ -104,9 +104,11 @@ class PresentationsController extends PanelController
 	 */
 	public function new_presentation($slug)
 	{
-		$presentation = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
-		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $presentation['category_id']]), true)[0];
-		$this->data['application'] = $presentation;
+		$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+		$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+		$presentation_id = date('U') . "-" . random_string('numeric', 5);
+		$this->data['application'] = $application;
+		$this->data['presentation_id'] = $presentation_id;
 		$this->data['category'] = $category_details;
 		$this->load->panel_view('presentations/single', $this->data);
 	}

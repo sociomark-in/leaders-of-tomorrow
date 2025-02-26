@@ -13,21 +13,20 @@
 		</nav>
 	</div>
 	<?php
-	$c = explode('_', $presentation['category']['type']);
-	switch ($c[1]) {
-		case 'INDIVIDUAL':
+	switch ($presentation['category']['type']) {
+		case '1_INDIVIDUAL':
 			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_edit/individual.php';
+			include_once APPPATH . 'views/panel/participant/presentations/category_edit/social_entrepreneur.php';
 			break;
-		case 'GLOBAL':
+		case '1_GLOBAL':
 			# code...
 			include_once APPPATH . 'views/panel/participant/presentations/category_edit/global.php';
 			break;
-		case 'FAMILY':
+		case '1_FAMILY':
 			# code...
 			include_once APPPATH . 'views/panel/participant/presentations/category_edit/family.php';
 			break;
-		case 'DIGITAL':
+		case '1_DIGITAL':
 			# code...
 			include_once APPPATH . 'views/panel/participant/presentations/category_edit/digital.php';
 			break;

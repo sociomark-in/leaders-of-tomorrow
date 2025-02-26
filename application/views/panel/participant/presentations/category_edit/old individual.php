@@ -7,10 +7,12 @@
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
-
-<?= form_open_multipart('api/v2/awards/presentation/edit', ['id' => "form_option"]) ?>
-<input type="hidden" name="nomination_id" value="<?= $presentation['nomination_id'] ?>">
-<input type="hidden" name="presentation_id" value="<?= $presentation['presentation_id'] ?>">
+<?php
+$presentation_id = date('U') . "-" . random_string('numeric', 5);
+?>
+<?= form_open_multipart('api/v2/awards/presentation/new', ['id' => "form_option"]) ?>
+<input type="hidden" name="nomination_id" value="<?= $application['nomination_id'] ?>">
+<input type="hidden" name="presentation_id" value="<?= $presentation_id ?>">
 <div class="row py-3">
 	<div class="col-12 grid-margin stretch-card">
 		<div class="card input-group-card">
@@ -24,7 +26,7 @@
 							<div class="col-12">
 								<div class="">
 									<label for="" class="form-label">Logo of the Incorporation</label>
-									<input type="file" accept="image/*" name="logoimg" class="dropify" data-default-file="<?= base_url($presentation['logo_image']) ?>" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+									<input type="file" accept="image/*" name="logoimg" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 									<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 								</div>
 							</div>
@@ -34,19 +36,19 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity</label>
-										<input required type="text" value="<?= $presentation['organization_name'] ?>" name="organization[name]" class="form-control">
+										<input required type="text" name="organization[name]" class="form-control">
 									</div>
 								</div>
 								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Designation</label>
-										<input required type="text" value="<?= $presentation['designation'] ?>" name="designation" class="form-control">
+										<input required type="text" name="designation" class="form-control">
 									</div>
 								</div>
 								<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the MD/CEO/Founder</label>
-										<input required type="text" name="name" value="<?= $presentation['name'] ?>" class="form-control">
+										<input required type="text" name="name" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-4 col-12">
@@ -54,8 +56,8 @@
 										<label for="" class="form-label">Type of Business</label>
 										<select required name="organization[business]" id="" class="form-select">
 											<option value="">Select Business Type</option>
-											<option <?= ($presentation['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
-											<option <?= ($presentation['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
+											<option <?= ($application['id_255004'] == "Manufacturing") ? "selected" : "" ?> value="Manufacturing">Manufacturing</option>
+											<option <?= ($application['id_255004'] == "Service") ? "selected" : "" ?> value="Service">Service</option>
 										</select>
 									</div>
 								</div>
@@ -64,11 +66,11 @@
 										<label for="" class="form-label">No. Of Employees</label>
 										<select required name="organization[size]" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($presentation['id_255108'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
-											<option <?= ($presentation['id_255108'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-											<option <?= ($presentation['id_255108'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
-											<option <?= ($presentation['id_255108'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
-											<option <?= ($presentation['id_255108'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
+											<option <?= ($application['id_255202'] == "Less than 50") ? "selected" : "" ?> value="Less than 50">Less than 50</option>
+											<option <?= ($application['id_255202'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_255202'] == "100 - 200") ? "selected" : "" ?> value="100 - 200">100 - 200</option>
+											<option <?= ($application['id_255202'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
+											<option <?= ($application['id_255202'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 										</select>
 										<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
 									</div>
@@ -76,20 +78,20 @@
 								<div class="col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Date of Company Incorporation</label>
-										<input required type="text" data-type="date" value="<?= $presentation['id_255002'] ?>" name="organization[inc_date]" class="form-control">
+										<input required type="text" data-type="date" value="<?= $application['id_255002'] ?>" name="organization[inc_date]" class="form-control">
 										<span class="form-text">(in DD/MM/YYYY)</span>
 									</div>
 								</div>
 								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Total Years of Experience</label>
-										<input required type="text" value="<?= $presentation['id_255006'] ?>" name="experience[total]" class="form-control">
+										<input required type="text" name="experience[total]" class="form-control">
 									</div>
 								</div>
 								<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Years of Experience in this Company</label>
-										<input required type="text" value="<?= $presentation['id_255007'] ?>" name="experience[current]" class="form-control">
+										<input required type="text" name="experience[current]" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -128,21 +130,21 @@
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_revenue_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($presentation['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-										<option <?= ($presentation['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-										<option <?= ($presentation['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-										<option <?= ($presentation['id_255101'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
-										<option <?= ($presentation['id_255101'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
+										<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
+										<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_revenue_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($presentation['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-										<option <?= ($presentation['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-										<option <?= ($presentation['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-										<option <?= ($presentation['id_255102'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
-										<option <?= ($presentation['id_255102'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
+										<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="50 - 100">101 - 200</option>
+										<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="50 - 100">201 - 250</option>
 									</select>
 								</div>
 							</div>
@@ -155,23 +157,23 @@
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_growth_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($presentation['id_255103'] == "< 5%") ? "selected" : "" ?> value="< 5%">
+										<option <?= ($application['id_255103'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 											< 5%</option>
-										<option <?= ($presentation['id_255103'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
-										<option <?= ($presentation['id_255103'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
-										<option <?= ($presentation['id_255103'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
-										<option <?= ($presentation['id_255103'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
+										<option <?= ($application['id_255103'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
+										<option <?= ($application['id_255103'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
+										<option <?= ($application['id_255103'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
+										<option <?= ($application['id_255103'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_growth_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($presentation['id_255104'] == "< 5%") ? "selected" : "" ?> value="< 5%">
+										<option <?= ($application['id_255104'] == "< 5%") ? "selected" : "" ?> value="< 5%">
 											< 5%</option>
-										<option <?= ($presentation['id_255104'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
-										<option <?= ($presentation['id_255104'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
-										<option <?= ($presentation['id_255104'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
-										<option <?= ($presentation['id_255104'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
+										<option <?= ($application['id_255104'] == "6% - 15%") ? "selected" : "" ?> value="6% - 15%">6% - 15%</option>
+										<option <?= ($application['id_255104'] == "16% - 25%") ? "selected" : "" ?> value="16% - 25%">16% - 25%</option>
+										<option <?= ($application['id_255104'] == "26% - 35%") ? "selected" : "" ?> value="26% - 35%">26% - 35%</option>
+										<option <?= ($application['id_255104'] == "> 36%") ? "selected" : "" ?> value="> 36%">> 36%</option>
 									</select>
 								</div>
 							</div>
@@ -184,11 +186,11 @@
 								<div class="col-xxl-4 col-lg-6 col-12">
 									<select required name="organization_profit" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($presentation['id_255105'] == "< 10%") ? "selected" : "" ?> value="< 10%">
+										<option <?= ($application['id_255105'] == "< 10%") ? "selected" : "" ?> value="< 10%">
 											< 10%</option>
-										<option <?= ($presentation['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-										<option <?= ($presentation['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-										<option <?= ($presentation['id_255105'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
+										<option <?= ($application['id_255105'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
+										<option <?= ($application['id_255105'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
+										<option <?= ($application['id_255105'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
 									</select>
 								</div>
 							</div>
@@ -210,7 +212,7 @@
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea rows="10" maxlength="900" required rows="10" name="case_study_1" class="form-control editor" id=""><?= $presentation['id_255201'] ?></textarea>
+							<textarea rows="10" maxlength="900" required rows="10" name="case_study_1" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -229,7 +231,7 @@
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_2" class="form-control editor" id=""><?= $presentation['id_255202'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_2" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -248,7 +250,7 @@
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_3" class="form-control editor" id=""><?= $presentation['id_255203'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_3" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -256,7 +258,7 @@
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_4" class="form-control editor" id=""><?= $presentation['id_255204'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_4" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -275,7 +277,7 @@
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_5" class="form-control editor" id=""><?= $presentation['id_255205'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_5" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -283,7 +285,7 @@
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_6" class="form-control editor" id=""><?= $presentation['id_255206'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_6" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -302,7 +304,7 @@
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_7" class="form-control editor" id=""><?= $presentation['id_255207'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_7" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -310,7 +312,7 @@
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_8" class="form-control editor" id=""><?= $presentation['id_255208'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_8" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -329,7 +331,7 @@
 					</div>
 					<div class="row g-2 g-md-3 mb-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_9" class="form-control editor" id=""><?= $presentation['id_255209'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_9" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
@@ -337,7 +339,7 @@
 					</div>
 					<div class="row g-2 g-md-3">
 						<div class="col-12">
-							<textarea required maxlength="900" rows="10" name="case_study_10" class="form-control editor" id=""><?= $presentation['id_255210'] ?></textarea>
+							<textarea required maxlength="900" rows="10" name="case_study_10" class="form-control editor" id=""></textarea>
 						</div>
 					</div>
 				</fieldset>
@@ -358,42 +360,42 @@
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study I</label>
-								<input type="file" accept="image/*" name="doc1" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255401']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc1" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study II</label>
-								<input type="file" accept="image/*" name="doc2" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255402']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc2" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study III</label>
-								<input type="file" accept="image/*" name="doc3" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255403']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc3" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study IV</label>
-								<input type="file" accept="image/*" name="doc4" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255404']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc4" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study V</label>
-								<input type="file" accept="image/*" name="doc5" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255405']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc5" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
 						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 							<div class="">
 								<label for="" class="form-label">Graphic Creative Supporting Case Study VI</label>
-								<input type="file" accept="image/*" name="doc6" class="dropify" data-max-file-size="1M" data-default-file="<?= base_url($presentation['id_255406']) ?>" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
+								<input type="file" accept="image/*" name="doc6" class="dropify" data-max-file-size="1M" data-max-width="1000" data-min-width="100" data-allowed-formats="square" data-max-file-size-preview="1M" data-allowed-file-extensions="jpg jpeg png" />
 								<span class="form-text">(JPG of Maximum Size 1MB in Square Orientation)</span>
 							</div>
 						</div>
@@ -405,7 +407,7 @@
 	<div class="col-12 grid-margin stretch-card">
 		<div class="row g-3">
 			<div class="col-auto"><button type="button" data-bs-toggle="modal" data-bs-target="#consentModal" class="btn btn-primary">Confirm & Submit</button></div>
-			<div class="col-auto"><button type="reset" class="btn btn-outline-secondary">Reset the Data</button></div>
+			<div class="col-auto"><button type="reset" class="btn btn-outline-secondary">Reset this Form</button></div>
 		</div>
 	</div>
 </div>
