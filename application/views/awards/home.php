@@ -82,6 +82,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="pb-0" id="about">
 		<div class="container">
 			<div class="row align-items-center g-3">
@@ -122,12 +123,24 @@
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
 								<p data-aos="fade-left" data-aos-delay="400">
-								    <strong>Entries open exclusively for IDFC FIRST Bank customers until 28th February.</strong> 
-								    If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
+									<strong>Entries open exclusively for IDFC FIRST Bank customers until 28th February.</strong>
+									If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
 								</p>
 								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="live" class="pb-0 d-none">
+		<div class="container">
+			<div class="row justify-content-center g-4">
+				<div class="col-12">
+					<div class="media-content">
+						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -303,7 +316,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="section" id="categories">
 		<div class="container">
 			<div class="row g-3">
@@ -416,7 +429,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="section d-none" id="phases">
 		<div class="container">
 			<div class="row g-3 g-md-4">
@@ -533,18 +546,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="live" class="pb-0 d-none">
-		<div class="container">
-			<div class="row justify-content-center g-4">
-				<div class="col-12">
-					<div class="media-content">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
