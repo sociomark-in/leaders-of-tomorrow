@@ -22,6 +22,7 @@ class MergePDF
 
 	public function config()
 	{
+	    $result = $this->CI->db->get('app_config')->result_array();
 		foreach ($result as $key => $row) {
 	        $i = 0;
             if($i<=5){

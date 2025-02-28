@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://leadersoftomorrow.co.in/';
 $config['base_url'] = 'https://lotawards.apogeedigitech.in/';
+$config['base_url'] = 'https://leadersoftomorrow.co.in/';
 $config['base_url'] = 'http://localhost/times-now/leaders-of-tomorrow/';
 
 /*

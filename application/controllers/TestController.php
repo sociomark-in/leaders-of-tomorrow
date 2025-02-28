@@ -102,7 +102,10 @@ class TestController extends CI_Controller
 			)
 		);
 
-		print_r($this->encryption->encrypt("17c5834c59b86837b0297fba8b116355_rkQlqcc520e5b64f1aec394f7a86b9118d031"));
+		print_r($this->encryption->encrypt("81035a34e7a380d164ce50c27dc0f50d_0antr5c517402eeddd7c420f4534e84a042a0"));
+// 		["8e99facb8c8649cdf5d7fe6d19a1e301fb5869a691252c78ce6ef68f548d1f11b89dcf37c751695a44068e48d3aa205941a7aafa94358032489ad1c7389419e5nnhSbZrkcanZ4aAAI1z/03It1fZcuQyHDwDTqDFAJ9/u4OG6eDyMTQ+7ZRMk4GI6lr7suUy8h+4C0QW6eWNM5r91bDEiAQm/N0aVkXPeFFtN7z/ZIaQ=",""]
+// 		project_public_eeb0d5cf48600b874919c7c9a85cd67f_DfhDwdec4d5fbcc121168b31312103cd3a7fe
+// 		secret_key_81035a34e7a380d164ce50c27dc0f50d_0antr5c517402eeddd7c420f4534e84a042a0
 
 		// $this->load->library('pdflib/MergePDF');
 

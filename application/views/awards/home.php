@@ -1,12 +1,12 @@
 <main class="awards-wrapper">
-	<div class="hanging-ribbon ">
+	<div class="hanging-ribbon d-none">
 		<div class="content">
 			<p>Season</p>
 			<h3>12</h3>
 		</div>
 	</div>
 	<section class="section p-0">
-		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
+		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative d-none">
 			<div class="bg-media">
 				<!-- <img class="w-100" src="https://placehold.co/1920x900" alt=""> -->
 			</div>
@@ -122,7 +122,7 @@
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
 								<p data-aos="fade-left" data-aos-delay="400">
-								    <strong>Entries open exclusively for IDFC FIRST Bank customers until 20th February.</strong> 
+								    <strong>Entries open exclusively for IDFC FIRST Bank customers until 28th February.</strong> 
 								    If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
 								</p>
 								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
@@ -254,6 +254,56 @@
 		</div>
 	</section>
 
+	<section id="speakers" class="pb-0">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>List of Speakers</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="swiper speakerSwiper">
+						<div class="swiper-wrapper">
+							<?php for ($i = 0; $i < 12; $i++) : ?>
+								<div class="swiper-slide p-3">
+									<div class="speaker-tile normal speaker-tile-01">
+										<div class="photo mb-3">
+											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
+										</div>
+										<div class="desc text-center">
+											<h5>Lorem ipsum dolor sit.</h5>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+										</div>
+									</div>
+								</div>
+							<?php endfor ?>
+						</div>
+					</div>
+					<script>
+						new Swiper(".speakerSwiper", {
+							slidesPerView: 2,
+							breakpoints: {
+								640: {
+									slidesPerView: 3,
+									spaceBetween: 20,
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 50,
+								},
+								1400: {
+									slidesPerView: 5,
+									spaceBetween: 30,
+								},
+							},
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 	<section class="section" id="categories">
 		<div class="container">
 			<div class="row g-3">
@@ -367,7 +417,7 @@
 		</div>
 	</section>
 	
-	<section class="section " id="phases">
+	<section class="section d-none" id="phases">
 		<div class="container">
 			<div class="row g-3 g-md-4">
 				<div class="col-12">
@@ -496,55 +546,6 @@
 					<div class="media-content">
 						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="speakers" class="pb-0 d-none">
-		<div class="container">
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>List of Speakers</span></h2>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="swiper speakerSwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 12; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal">
-										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
-										</div>
-										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-										</div>
-									</div>
-								</div>
-							<?php endfor ?>
-						</div>
-					</div>
-					<script>
-						new Swiper(".speakerSwiper", {
-							slidesPerView: 2,
-							breakpoints: {
-								640: {
-									slidesPerView: 3,
-									spaceBetween: 20,
-								},
-								1024: {
-									slidesPerView: 4,
-									spaceBetween: 50,
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-								},
-							},
-						})
-					</script>
 				</div>
 			</div>
 		</div>

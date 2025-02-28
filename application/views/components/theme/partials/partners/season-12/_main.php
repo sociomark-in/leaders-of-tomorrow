@@ -46,7 +46,7 @@
 					Outdoor Partner
 				</p>
 				<div class="px-3">
-					<img src="<?= base_url('assets/images/sponsors/12/') ?>ooh.png" alt="Partners" height="30" style="margin-top: 1.5rem;">
+					<img src="<?= base_url('assets/images/sponsors/12/') ?>ooh.png" alt="Partners" height="80">
 				</div>
 			</a>
 		</div>

@@ -7,6 +7,16 @@ class PagesController extends BaseController
 	public function index()
 	{
 		$this->data['articles'] = [
+		    [
+				'thumb' => "https://static.tnn.in/thumb/msid-118596760,thumbsize-164428,width-1280,height-720,resizemode-75/118596760.jpg?quality=100",
+				'title' => "Leaders of Tomorrow Season 12 Awards: Honouring India’s Entrepreneurial Excellence",
+				'redirect' => "https://www.etnownews.com/news/leaders-of-tomorrow-season-12-awards-honouring-indias-entrepreneurial-excellence-article-118595838"
+			],
+// 		    [
+// 				'thumb' => "https://static.tnn.in/thumb/msid-118596760,thumbsize-164428,width-1280,height-720,resizemode-75/118596760.jpg?quality=100",
+// 				'title' => "Leaders of Tomorrow Season 12 Awards: Honouring India’s Entrepreneurial Excellence",
+// 				'redirect' => "https://www.timesnownews.com/videos/et-now/news/leaders-of-tomorrow-season-12-awards-honouring-indias-entrepreneurial-excellence-article-118596760"
+// 			],
 			[
 				'thumb' => "https://static.tnn.in/thumb/msid-118107565,thumbsize-164428,width-1280,height-720,resizemode-75/118107565.jpg?quality=100",
 				'title' => "Charting India’s Growth Story: 3 Visionary Insights from Nadir Godrej",
