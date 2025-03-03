@@ -5,8 +5,8 @@
 			<h3>12</h3>
 		</div>
 	</div>
-	<section class="section p-0">
-		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative d-none">
+	<section class="section pb-0 d-none">
+		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
 			<div class="bg-media">
 				<!-- <img class="w-100" src="https://placehold.co/1920x900" alt=""> -->
 			</div>
@@ -122,14 +122,47 @@
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
-								<p data-aos="fade-left" data-aos-delay="400">
-									<strong>Entries open exclusively for IDFC FIRST Bank customers until 28th February.</strong>
-									If you have unveiled the transformative power of innovation, elevating your business to newer heights, then enter today and show the world that you are among India’s Leaders of Tomorrow. Nominate now!
-								</p>
-								<!-- <button class="btn btn-outline-secondary" id="party">Press Button</button> -->
+								<!-- <button class="btn btn-outline-red" id="party">Press to Celebrate</button> -->
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="winners" class="pb-0 d-none">
+		<div class="container">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>Season 11 Winners</span></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<table class="table table-bordered heading-red">
+						<thead>
+							<tr>
+								<!-- <th>Sr. No.</th> -->
+								<th class="p-3">Categories</th>
+								<th class="p-3">Name of Winners</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <?php foreach ($winners as $key => $winner) : ?>
+								<tr>
+									<td class="p-3"><?= $winner['category'] ?></td>
+									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?></td>
+								</tr>
+							<?php endforeach ?> -->
+							<?php for ($i = 0; $i < 10; $i++): ?>
+								<tr>
+									<td class="p-3"><?= $winner['category'] ?? "Category" ?></td>
+									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?? "Category Winner" ?></td>
+								</tr>
+							<?php endfor ?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -147,7 +180,7 @@
 		</div>
 	</section>
 
-	<section id="grand-juries" class="pb-0 ">
+	<section id="grand-juries" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -217,7 +250,7 @@
 		</div>
 	</section>
 
-	<section id="pre-juries" class="d-none">
+	<section id="pre-juries" class="d-none pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -267,7 +300,7 @@
 		</div>
 	</section>
 
-	<section id="speakers" class="pb-0">
+	<section id="speakers" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -276,42 +309,57 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<div class="swiper speakerSwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 12; $i++) : ?>
-								<div class="swiper-slide p-3">
-									<div class="speaker-tile normal speaker-tile-01">
-										<div class="photo mb-3">
-											<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
-										</div>
-										<div class="desc text-center">
-											<h5>Lorem ipsum dolor sit.</h5>
-											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-										</div>
-									</div>
+					<div class="row align-items-center">
+						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<div class="speaker-tile normal speaker-tile-02">
+								<div class="photo mb-3">
+									<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
 								</div>
-							<?php endfor ?>
+								<div class="desc text-center">
+									<h5>Lorem ipsum dolor sit.</h5>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
+							<div class="swiper speakerSwiper">
+								<div class="swiper-wrapper">
+									<?php foreach ($speakers as $key => $person): ?>
+										<div class="swiper-slide p-3">
+											<div class="speaker-tile speaker-tile-01 normal">
+												<div class="photo">
+													<img src="<?= base_url('assets/images/speakers/12/') . $person['photo'] ?>" class="w-100" alt="">
+												</div>
+												<div class="desc text-center">
+													<h5><?= $person['name'] ?></h5>
+													<p><?= $person['description'] ?></p>
+												</div>
+											</div>
+										</div>
+									<?php endforeach ?>
+								</div>
+							</div>
+							<script>
+								new Swiper(".speakerSwiper", {
+									slidesPerView: 2,
+									breakpoints: {
+										640: {
+											slidesPerView: 2,
+											spaceBetween: 20,
+										},
+										1024: {
+											slidesPerView: 3,
+											spaceBetween: 50,
+										},
+										1400: {
+											slidesPerView: 4,
+											spaceBetween: 10,
+										},
+									},
+								})
+							</script>
 						</div>
 					</div>
-					<script>
-						new Swiper(".speakerSwiper", {
-							slidesPerView: 2,
-							breakpoints: {
-								640: {
-									slidesPerView: 3,
-									spaceBetween: 20,
-								},
-								1024: {
-									slidesPerView: 4,
-									spaceBetween: 50,
-								},
-								1400: {
-									slidesPerView: 5,
-									spaceBetween: 30,
-								},
-							},
-						})
-					</script>
 				</div>
 			</div>
 		</div>
@@ -554,4 +602,4 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>
-<script src="<?= base_url('assets/js/awards.js') ?>"></script>
+<!-- <script src="<?= base_url('assets/js/awards.js') ?>"></script> -->

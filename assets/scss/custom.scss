@@ -317,16 +317,16 @@ nav.navbar {
 					color: $color-yellow;
 				}
 			}
-			.btn {
-				padding: 0.4rem 0.75rem;
-				&.btn-outline-red {
-					border: 2px solid $color-red;
-					color: $color-red;
-					&:hover,
-					&:active {
-						background-color: $color-red;
-						color: $color-white;
-					}
+		}
+		.btn {
+			padding: 0.4rem 0.75rem;
+			&.btn-outline-red {
+				border: 2px solid $color-red;
+				color: $color-red;
+				&:hover,
+				&:active {
+					background-color: $color-red;
+					color: $color-white;
 				}
 			}
 		}
@@ -392,6 +392,15 @@ nav.navbar {
 .btn {
 	border-radius: 0;
 	padding: 0.5rem 1rem;
+	&.btn-outline-red {
+		border: 2px solid $color-red;
+		color: $color-red;
+		&:hover,
+		&:active {
+			background-color: $color-red;
+			color: $color-white;
+		}
+	}
 	&.btn-loading {
 		&::before {
 			content: "";

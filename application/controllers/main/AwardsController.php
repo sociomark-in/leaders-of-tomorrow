@@ -76,6 +76,69 @@ class AwardsController extends BaseController
 			// 	'description' => "",
 			// ],
 		];
+
+		$this->data['speakers'] = [
+			[
+				'photo' => "V_Vaidyanathan.png",
+				'name' => "V Vaidyanathan",
+				'description' => "MD & CEO, IDFC FIRST Bank",
+			],
+			[
+				'photo' => "Aman_Gupta.png",
+				'name' => "Aman Gupta",
+				'description' => "Co-Founder & CMO, BoAt Lifestyle",
+			],
+			[
+				'photo' => "Ashishkumar_Chauhan.png",
+				'name' => "Ashishkumar Chauhan",
+				'description' => "MD & CEO, NSE",
+			],
+			[
+				'photo' => "Akis_Evangelidis.png",
+				'name' => "Akis Evangelidis",
+				'description' => "Co-Founder & India President, Nothing",
+			],
+			[
+				'photo' => "Padmaja_Ruparel.png",
+				'name' => "Padmaja Ruparel",
+				'description' => "Co-Founder, IAN Group",
+			],
+			[
+				'photo' => "A_Velumani.png",
+				'name' => "Dr A Velumani",
+				'description' => "Creator, Thyrocare",
+			],
+			[
+				'photo' => "Radha_Kirthivasan.png",
+				'name' => "Radha Kirthivasan",
+				'description' => "Head, Listing and SME, BSE",
+			],
+			[
+				'photo' => "Vivek_Gambhir.png",
+				'name' => "Vivek Gambhir",
+				'description' => "Venture Partner, Lightspeed India",
+			],
+			[
+				'photo' => "Anisha_Singh.png",
+				'name' => "Anisha Singh",
+				'description' => "Founder, She Capital",
+			],
+			[
+				'photo' => "Bert_Mueller.png",
+				'name' => "Bert Mueller",
+				'description' => "Founder, California Burrito",
+			],
+			[
+				'photo' => "Spencer_Schneier.png",
+				'name' => "Spencer Schneier",
+				'description' => "Founder, Commenda",
+			],
+			[
+				'photo' => "Anand_Mane.png",
+				'name' => "Anand Mane",
+				'description' => "Founder, Joul",
+			],
+		];
 		$utm = NULL;
 		if(!is_null($this->input->get('utm_source'))){
 			$utm = [
@@ -236,6 +299,14 @@ class AwardsController extends BaseController
 		} else {
 			redirect('dashboard/category/' . $category_details['code'] . '/nominate');
 		}
+	}
+
+	public function attendee_register() {
+		$this->data['award_event'] = [
+			'date' => '2025-03-10 16:00:00',
+			'venue' => "Taj Hotel, Delhi"
+		];
+		$this->load->award_page('attendee_register', $this->data);
 	}
 
 	public function terms_conditions()

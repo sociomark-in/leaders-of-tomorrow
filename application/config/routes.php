@@ -71,6 +71,7 @@ $route['awards'] = 'main/AwardsController';
 $route['awards/terms-and-conditions'] = 'main/AwardsController/terms_conditions';
 $route['awards/categories'] = 'main/AwardsController/categories';
 $route['awards/category/(:any)'] = 'main/AwardsController/category_single/$1';
+$route['awards/register-to-attend'] = 'main/AwardsController/attendee_register';
 $route['awards/category/(:any)/nominate'] = 'main/AwardsController/category_nominate/$1';
 $route['awards/agency-register/(:any)'] = 'auth/RegisterController/agency_register/$1'; 
 /* Awards */

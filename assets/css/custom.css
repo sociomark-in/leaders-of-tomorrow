@@ -343,14 +343,14 @@ nav.navbar ul.navbar-nav .nav-item .nav-link.active {
   background-color: #b72026;
   color: #ffde3f;
 }
-nav.navbar ul.navbar-nav .nav-item .btn {
+nav.navbar ul.navbar-nav .btn {
   padding: 0.4rem 0.75rem;
 }
-nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red {
+nav.navbar ul.navbar-nav .btn.btn-outline-red {
   border: 2px solid #b72026;
   color: #b72026;
 }
-nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red:hover, nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red:active {
+nav.navbar ul.navbar-nav .btn.btn-outline-red:hover, nav.navbar ul.navbar-nav .btn.btn-outline-red:active {
   background-color: #b72026;
   color: #efefef;
 }
@@ -407,6 +407,14 @@ nav.navbar ul.navbar-nav .nav-item .btn.btn-outline-red:hover, nav.navbar ul.nav
 .btn {
   border-radius: 0;
   padding: 0.5rem 1rem;
+}
+.btn.btn-outline-red {
+  border: 2px solid #b72026;
+  color: #b72026;
+}
+.btn.btn-outline-red:hover, .btn.btn-outline-red:active {
+  background-color: #b72026;
+  color: #efefef;
 }
 .btn.btn-loading::before {
   content: "";

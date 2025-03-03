@@ -40,7 +40,10 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<a class="nav-link" href="<?= base_url('awards#partners') ?>">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav align-items-center g-4">
+			<ul class="navbar-nav gap-2 align-items-md-center g-4">
+				<!-- <li class="nav-item">
+					<a class="btn btn-outline-red" href="<?= base_url('awards/register-to-attend') ?>">Register to Attend</a>
+				</li> -->
 				<?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
 						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>
