@@ -32,7 +32,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0">
+	<section class="section pb-0 d-none">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12">
@@ -66,9 +66,9 @@
 						<div class="wrap">
 							<a href="<?= base_url('dashboard') ?>">
 								<picture>
-									<source srcset="<?= base_url('assets/images/banners/awards_idfc_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-									<source srcset="<?= base_url('assets/images/banners/awards_idfc_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-									<img class="w-100" src="<?= base_url('assets/images/banners/awards_idfc_banner_v.jpg') ?>" alt="">
+									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
 								</picture>
 								<!-- <picture>
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
@@ -122,7 +122,6 @@
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
 									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
 								</p>
-								<!-- <button class="btn btn-outline-red" id="party">Press to Celebrate</button> -->
 							</div>
 						</div>
 					</div>
@@ -131,12 +130,12 @@
 		</div>
 	</section>
 
-	<section id="winners" class="pb-0 d-none">
+	<section id="winners" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>Season 11 Winners</span></h2>
+						<h2><span>Season 12 Winners</span></h2>
 					</div>
 				</div>
 				<div class="col-12">
@@ -155,14 +154,63 @@
 									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?></td>
 								</tr>
 							<?php endforeach ?> -->
-							<?php for ($i = 0; $i < 10; $i++): ?>
+							<?php foreach ($categories['all'] as $key => $category): ?>
 								<tr>
-									<td class="p-3"><?= $winner['category'] ?? "Category" ?></td>
+									<td class="p-3"><?= $winner['category'] ?? $category['name'] ?></td>
 									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?? "Category Winner" ?></td>
 								</tr>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</tbody>
 					</table>
+				</div>
+				<div class="col-12">
+					<div class="swiper gallerySwiper">
+						<div class="swiper-wrapper" id="galleryMasonry">
+							<?php
+							$i = 0;
+							foreach ($categories['all'] as $key => $category):
+							?>
+								<a href="https://placehold.co/1500x1000/jpg" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="https://placehold.co/1500x1000/jpg" data-sub-html=".caption">
+									<picture>
+										<source srcset="https://placehold.co/250x167/webp" type="image/webp">
+										<source srcset="https://placehold.co/250x167/jpg" type="image/jpg">
+										<img src="" class="w-100 mb-3" alt="https://placehold.co/250x167/jpg">
+									</picture>
+									<div class="caption text-dark">
+										<h5>Winner Name</h5>
+										<p>(<?= $category['name'] ?>)</p>
+									</div>
+
+								</a>
+							<?php endforeach ?>
+						</div>
+					</div>
+					<script>
+						var gallery = lightGallery(document.getElementById('galleryMasonry'), {
+							plugins: [lgZoom, lgThumbnail],
+							speed: 500,
+						});
+						new Swiper(".gallerySwiper", {
+							slidesPerView: 1.4,
+							autoplay: {
+								delay: 2000,
+							},
+							loop: true,
+							breakpoints: {
+								768: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								1400: {
+									slidesPerView: 3,
+									spaceBetween: 40,
+								},
+							},
+						})
+					</script>
+				</div>
+				<div class="col-12">
+					<button class="btn btn-outline-red" id="party">Press to Celebrate</button>
 				</div>
 			</div>
 		</div>
@@ -193,7 +241,7 @@
 						<div class="swiper-wrapper">
 							<?php foreach ($grand_juries as $key => $person) : ?>
 								<div class="swiper-slide p-3">
-									<div class="speaker-tile speaker-tile-02 normal">
+									<div class="speaker-tile speaker-tile-01 normal">
 										<div class="photo">
 											<img src="<?= base_url('assets/images/grand-juries/12/') . $person['photo'] ?>" class="w-100" alt="">
 										</div>
@@ -208,39 +256,31 @@
 					</div>
 					<script>
 						new Swiper(".grandJurySwiper", {
-							slidesPerView: 1.3,
-							grid: {
-								rows: 1,
-								fill: 'row'
+							autoplay: {
+								delay: 2000,
 							},
+							loop: true,
+							slidesPerView: 1.3,
+							// grid: {
+							// 	rows: 1,
+							// 	fill: 'row'
+							// },
 							breakpoints: {
 								640: {
 									slidesPerView: 2,
 									spaceBetween: 20,
-									grid: {
-										rows: 2,
-									},
 								},
 								768: {
 									slidesPerView: 3,
 									spaceBetween: 20,
-									grid: {
-										rows: 2,
-									},
 								},
 								1024: {
-									slidesPerView: 3,
+									slidesPerView: 4,
 									spaceBetween: 50,
-									grid: {
-										rows: 3,
-									},
 								},
 								1400: {
-									slidesPerView: 4,
+									slidesPerView: 5,
 									spaceBetween: 30,
-									grid: {
-										rows: 3,
-									},
 								},
 							},
 						})
@@ -300,7 +340,7 @@
 		</div>
 	</section>
 
-	<section id="speakers" class="pb-0 d-none">
+	<section id="speakers" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -310,7 +350,7 @@
 				</div>
 				<div class="col-12">
 					<div class="row align-items-center">
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12 d-none">
 							<div class="speaker-tile normal speaker-tile-02">
 								<div class="photo mb-3">
 									<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
@@ -321,12 +361,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
+						<!-- <div class="col-xxl-9 col-xl-8 col-lg-6 col-12"> -->
+						<div class="col-12">
 							<div class="swiper speakerSwiper">
 								<div class="swiper-wrapper">
 									<?php foreach ($speakers as $key => $person): ?>
 										<div class="swiper-slide p-3">
-											<div class="speaker-tile speaker-tile-01 normal">
+											<div class="speaker-tile speaker-tile-02 normal">
 												<div class="photo">
 													<img src="<?= base_url('assets/images/speakers/12/') . $person['photo'] ?>" class="w-100" alt="">
 												</div>
@@ -341,7 +382,11 @@
 							</div>
 							<script>
 								new Swiper(".speakerSwiper", {
-									slidesPerView: 2,
+									slidesPerView: 1.4,
+									autoplay: {
+										delay: 4000,
+									},
+									loop: true,
 									breakpoints: {
 										640: {
 											slidesPerView: 2,
@@ -353,7 +398,7 @@
 										},
 										1400: {
 											slidesPerView: 4,
-											spaceBetween: 10,
+											spaceBetween: 0,
 										},
 									},
 								})
@@ -602,4 +647,4 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>
-<!-- <script src="<?= base_url('assets/js/awards.js') ?>"></script> -->
+<script src="<?= base_url('assets/js/awards.js') ?>"></script>

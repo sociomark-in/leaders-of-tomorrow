@@ -905,8 +905,8 @@ form {
 		.photo {
 			padding: 1rem 0;
 			position: relative;
+			background: url("../images/favicon_op30.png"), $color-white-0;
 			img {
-				background-color: $color-white-0;
 				mask-image: url("../images/masks/hexagon-rounded-01.svg");
 				mask-repeat: no-repeat;
 				mask-size: contain;

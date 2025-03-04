@@ -70,6 +70,16 @@ class AwardsController extends BaseController
 				'name' => "Vinod Kumar Wuthoo",
 				'description' => "President, India SME Forum",
 			],
+			[
+				'photo' => "Nilesh_Lele.png",
+				'name' => "Nilesh Lele",
+				'description' => "President, Chamber for Advancement of Small & Medium Businesses",
+			],
+			[
+				'photo' => "Prashant_Naigaonkar.png",
+				'name' => "Prashant Naigaonkar",
+				'description' => "Startup Mentor and SME Advisor",
+			],
 			// [
 			// 	'photo' => "",
 			// 	'name' => "",
@@ -77,12 +87,19 @@ class AwardsController extends BaseController
 			// ],
 		];
 
-		$this->data['speakers'] = [
+		$this->data['chief_guest'] = [
 			[
-				'photo' => "V_Vaidyanathan.png",
-				'name' => "V Vaidyanathan",
-				'description' => "MD & CEO, IDFC FIRST Bank",
+				'photo' => "Jayant_Chaudhary.png",
+				'name' => "Jayant Chaudhary",
+				'description' => "Minister, (I/C) Skill Development and Entrepreneurship & Minister of State for Education, Government of India",
 			],
+		];
+		$this->data['speakers'] = [
+			// [
+			// 	'photo' => "V_Vaidyanathan.png",
+			// 	'name' => "V Vaidyanathan",
+			// 	'description' => "MD & CEO, IDFC FIRST Bank",
+			// ],
 			[
 				'photo' => "Aman_Gupta.png",
 				'name' => "Aman Gupta",
@@ -108,11 +125,11 @@ class AwardsController extends BaseController
 				'name' => "Dr A Velumani",
 				'description' => "Creator, Thyrocare",
 			],
-			[
-				'photo' => "Radha_Kirthivasan.png",
-				'name' => "Radha Kirthivasan",
-				'description' => "Head, Listing and SME, BSE",
-			],
+			// [
+			// 	'photo' => "Radha_Kirthivasan.png",
+			// 	'name' => "Radha Kirthivasan",
+			// 	'description' => "Head, Listing and SME, BSE",
+			// ],
 			[
 				'photo' => "Vivek_Gambhir.png",
 				'name' => "Vivek Gambhir",
@@ -133,11 +150,11 @@ class AwardsController extends BaseController
 				'name' => "Spencer Schneier",
 				'description' => "Founder, Commenda",
 			],
-			[
-				'photo' => "Anand_Mane.png",
-				'name' => "Anand Mane",
-				'description' => "Founder, Joul",
-			],
+			// [
+			// 	'photo' => "Anand_Mane.png",
+			// 	'name' => "Anand Mane",
+			// 	'description' => "Founder, Joul",
+			// ],
 		];
 		$utm = NULL;
 		if(!is_null($this->input->get('utm_source'))){
