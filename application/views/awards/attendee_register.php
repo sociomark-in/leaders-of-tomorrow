@@ -35,11 +35,8 @@ $venue = ($award_event['venue'] == "") ? "Yet to be decided!" : $award_event['ve
 					</div>
 				</div>
 			</div>
-			<div class="row g-3 justify-content-center align-items-end">
+			<div class="row g-3 justify-content-center">
 				<div class="col-xl-8 col-lg-6 col-12">
-					<div class="section-title mb-3 mb-md-5" data-aos="fade-right">
-						<h2><span>Register to Attend</span></h2>
-					</div>
 					<div class="text-content">
 						<div class="card event-ticket">
 							<div class="card-body">

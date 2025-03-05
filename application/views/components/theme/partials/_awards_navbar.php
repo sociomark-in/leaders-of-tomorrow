@@ -28,10 +28,10 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand Juries</a>
+					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand Jury</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Speakers</a>
+					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key Speakers</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Awards Categories</a>
@@ -44,10 +44,10 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				</li>
 			</ul>
 			<ul class="navbar-nav gap-2 align-items-md-center g-4">
-				<!-- <li class="nav-item">
-					<a class="btn btn-outline-red" href="<?= base_url('awards/register-to-attend') ?>">Register to Attend</a>
-				</li> -->
-				<?php if (isset($_SESSION['awards_panel_user'])) : ?>
+				<li class="nav-item d-none">
+					<a class="btn btn-red" href="<?= base_url('awards/register-to-attend') ?>">Register to Attend</a>
+				</li>
+				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
 						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>
 					</li>
@@ -56,12 +56,9 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</li>
 				<?php else: ?>
 					<li class="nav-item">
-						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
+						<a class="btn btn-icon-prepend btn-outline red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
 					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="<?= base_url('register') ?>">Register</a>
-					</li> -->
-				<?php endif ?>
+				<?php endif ?> -->
 			</ul>
 		</div>
 		<a class="navbar-brand d-none d-lg-block" href="https://www.timesnownews.com/" target="_blank">

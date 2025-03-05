@@ -74,6 +74,7 @@ $route['awards/category/(:any)'] = 'main/AwardsController/category_single/$1';
 $route['awards/register-to-attend'] = 'main/AwardsController/attendee_register';
 $route['awards/category/(:any)/nominate'] = 'main/AwardsController/category_nominate/$1';
 $route['awards/agency-register/(:any)'] = 'auth/RegisterController/agency_register/$1'; 
+$route['awards/rsvp/thank-you'] = 'main/AwardsController/rsvp_thankyou';
 /* Awards */
 
 $route['login'] = 'auth/LoginController/single';
@@ -165,5 +166,6 @@ $route['api/v2/awards/presentation/accept'] = 'api/awards/PresentationAPIControl
 $route['api/v2/awards/presentation/new'] = 'api/awards/PresentationAPIController/new_presentation';
 
 $route['api/v2/rsvp/register'] = 'api/attendees/RegistrationAPI/new_waitlist';
+$route['api/v2/awards/rsvp'] = 'api/attendees/RegistrationAPI/new_waitlist_awards';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

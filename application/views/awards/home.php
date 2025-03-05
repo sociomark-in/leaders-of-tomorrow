@@ -116,7 +116,7 @@
 							<div class="desc text-lg">
 								<p data-aos="fade-left">
 									Leaders of Tomorrow Season 12 Awards will continue to spotlight outstanding MSMEs, carry forward its rich legacy. This year, the awards are aligned with our vision to propel India’s global aspirations, embracing the theme: <strong class="text-red">Powering Entrepreneurs for the Global Stage</strong>.
-									The Leaders of Tomorrow Season 12 Awards is scheduled to take place in February or March 2025 as a half-day ceremony in either Mumbai or Delhi, attended by over 200 audience members largely comprising of CXOs from large and mid-enterprises.
+									The Leaders of Tomorrow Season 12 Awards is scheduled to take place in March 2025 as a half-day ceremony in Delhi, attended by over 200 audience members largely comprising of CXOs from large and mid-enterprises.
 								</p>
 								<p data-aos="fade-left" data-aos-delay="200">
 									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
@@ -130,7 +130,7 @@
 		</div>
 	</section>
 
-	<section id="winners" class="pb-0">
+	<section id="winners" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -148,16 +148,20 @@
 							</tr>
 						</thead>
 						<tbody>
-							<!-- <?php foreach ($winners as $key => $winner) : ?>
+							<?php foreach ($winners as $key => $winner) :
+								$organization = "<strong>" . $winner['organization']. "</strong>";
+								if ($winner['type'] == "INDIVIDUAL") {
+									$organization = implode(', ', ["<strong>" . $winner['person'] . "</strong>", $winner['designation'], $winner['organization']]);
+								}
+							?>
 								<tr>
 									<td class="p-3"><?= $winner['category'] ?></td>
-									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?></td>
-								</tr>
-							<?php endforeach ?> -->
-							<?php foreach ($categories['all'] as $key => $category): ?>
-								<tr>
-									<td class="p-3"><?= $winner['category'] ?? $category['name'] ?></td>
-									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><?= $winner['name'] ?? "Category Winner" ?></td>
+									<td class="p-3">
+										<div class="d-flex">
+											<i class="fa-solid fa-trophy me-3 mt-1 text-gold"></i>
+											<p class="mb-0"><?= $organization ?></p>
+										</div>
+									</td>
 								</tr>
 							<?php endforeach ?>
 						</tbody>
@@ -168,7 +172,11 @@
 						<div class="swiper-wrapper" id="galleryMasonry">
 							<?php
 							$i = 0;
-							foreach ($categories['all'] as $key => $category):
+							foreach ($winners as $key => $winner):
+								$organization = "<strong>" . $winner['organization']. "</strong>";
+								if ($winner['type'] == "INDIVIDUAL") {
+									$organization = implode(', ', ["<strong>" . $winner['person'] . "</strong>", $winner['designation'], $winner['organization']]);
+								}
 							?>
 								<a href="https://placehold.co/1500x1000/jpg" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="https://placehold.co/1500x1000/jpg" data-sub-html=".caption">
 									<picture>
@@ -176,9 +184,9 @@
 										<source srcset="https://placehold.co/250x167/jpg" type="image/jpg">
 										<img src="" class="w-100 mb-3" alt="https://placehold.co/250x167/jpg">
 									</picture>
-									<div class="caption text-dark">
-										<h5>Winner Name</h5>
-										<p>(<?= $category['name'] ?>)</p>
+									<div class="caption text-dark d-none d-md-block">
+										<p class="mb-1"><?= $winner['category'] ?></p>
+										<h5><?= $organization ?></h5>
 									</div>
 
 								</a>
@@ -192,6 +200,7 @@
 						});
 						new Swiper(".gallerySwiper", {
 							slidesPerView: 1.4,
+							spaceBetween: 10,
 							autoplay: {
 								delay: 2000,
 							},
@@ -233,7 +242,7 @@
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>List of Grand Juries</span></h2>
+						<h2><span>Grand Jury</span></h2>
 					</div>
 				</div>
 				<div class="col-12">
@@ -276,11 +285,11 @@
 								},
 								1024: {
 									slidesPerView: 4,
-									spaceBetween: 50,
+									spaceBetween: 30,
 								},
 								1400: {
 									slidesPerView: 5,
-									spaceBetween: 30,
+									spaceBetween: 10,
 								},
 							},
 						})
@@ -345,7 +354,7 @@
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>List of Speakers</span></h2>
+						<h2><span>Key Speakers</span></h2>
 					</div>
 				</div>
 				<div class="col-12">

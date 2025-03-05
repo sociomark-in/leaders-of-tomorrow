@@ -95,11 +95,11 @@ class AwardsController extends BaseController
 			],
 		];
 		$this->data['speakers'] = [
-			// [
-			// 	'photo' => "V_Vaidyanathan.png",
-			// 	'name' => "V Vaidyanathan",
-			// 	'description' => "MD & CEO, IDFC FIRST Bank",
-			// ],
+			[
+				'photo' => "V_Vaidyanathan.png",
+				'name' => "V Vaidyanathan",
+				'description' => "MD & CEO, IDFC FIRST Bank",
+			],
 			[
 				'photo' => "Aman_Gupta.png",
 				'name' => "Aman Gupta",
@@ -125,11 +125,11 @@ class AwardsController extends BaseController
 				'name' => "Dr A Velumani",
 				'description' => "Creator, Thyrocare",
 			],
-			// [
-			// 	'photo' => "Radha_Kirthivasan.png",
-			// 	'name' => "Radha Kirthivasan",
-			// 	'description' => "Head, Listing and SME, BSE",
-			// ],
+			[
+				'photo' => "Radha_Kirthivasan.png",
+				'name' => "Radha Kirthivasan",
+				'description' => "Head, Listing and SME, BSE",
+			],
 			[
 				'photo' => "Vivek_Gambhir.png",
 				'name' => "Vivek Gambhir",
@@ -156,6 +156,106 @@ class AwardsController extends BaseController
 			// 	'description' => "Founder, Joul",
 			// ],
 		];
+		$this->data['winners'] = [
+			[
+				'organization' => "Plant Remedies",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Agri-Tech and Allied Services",
+			],
+			[
+				'organization' => "Synnova Gears And Transmissions",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Automobiles & Electric Vehicle",
+			],
+			[
+				'organization' => "Microlit",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Global Business Leadership",
+			],
+			[
+				'organization' => "Razzmatazz Design",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Lifestyle and Consumer Products",
+			],
+			[
+				'organization' => "Pluckk",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Food Processing & Packaging",
+			],
+			[
+				'organization' => "Jeevitam Tech Solutions",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in EdTech and Skill Development",
+			],
+			[
+				'organization' => "Autosys Industrial Solutions",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Manufacturing",
+			],
+			[
+				'organization' => "Global Engineers",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Family Business Leadership",
+			],
+			[
+				'organization' => "Starkenn Technologies",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in IT/ITES and Electronics",
+			],
+			[
+				'organization' => "Enerture Technologies",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Digital Transformation",
+			],
+			[
+				'organization' => "AWL India",
+				'type' => 'INDIVIDUAL',
+				'person' => "Rahul Mehra",
+				'designation' => "Founder & CEO",
+				'category' => "Entrepreneur of the year",
+			],
+			[
+				'organization' => "Swachh Sustainable Solutions",
+				'type' => 'INDIVIDUAL',
+				'person' => "Rahul Nainani",
+				'designation' => "CEO & Co-Founder",
+				'category' => "Social Impact Entrepreneur of the year",
+			],
+			[
+				'organization' => "Jeevitam Livelihood Tech Solution",
+				'type' => 'INDIVIDUAL',
+				'person' => "Munish Chawla",
+				'designation' => "Co Founder and Chief Happiness Officer",
+				'category' => "Social Impact Entrepreneur of the year",
+			],
+			[
+				'organization' => "Urban Monk",
+				'type' => 'INDIVIDUAL',
+				'person' => "Ruchika Bhuwalka",
+				'designation' => "Founder",
+				'category' => "Women Entrepreneur of the Year",
+			],
+		];
 		$utm = NULL;
 		if(!is_null($this->input->get('utm_source'))){
 			$utm = [
@@ -168,7 +268,7 @@ class AwardsController extends BaseController
 
 
 		$this->data['categories']['active'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
-		$this->data['categories']['all'] = json_decode($this->CategoryModel->get(), true);
+		$this->data['categories']['all'] = json_decode($this->CategoryModel->get(null, ['id <=' => 14]), true);
 
 		$this->data['page'] = [
 			'title' =>  APP_NAME . " Awards • " . APP_NAME,
@@ -324,6 +424,11 @@ class AwardsController extends BaseController
 			'venue' => "Taj Hotel, Delhi"
 		];
 		$this->load->award_page('attendee_register', $this->data);
+	}
+
+	public function rsvp_thankyou()
+	{
+		$this->load->award_page('thankyou', $this->data);
 	}
 
 	public function terms_conditions()
