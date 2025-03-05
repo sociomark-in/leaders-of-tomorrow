@@ -95,9 +95,44 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY6SLH08KV"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-LY6SLH08KV');
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-LY6SLH08KV');
 </script>
+
+<?php if (explode(base_url(), current_url())[1] == 'awards') : ?>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Event",
+			"name": "IDFC FIRST Bank presents ET NOW Leaders of Tomorrow Awards 2025",
+			"organizer": {
+				"@type": "Organization",
+				"name": "IDFC FIRST Bank presents ET NOW Leaders of Tomorrow",
+				"url": "<?= base_url("awards")?>"
+			},
+			"description": "The Awards by ET NOW Leaders of Tomorrow recognize exceptional individuals and businesses making a significant impact across industries. This prestigious platform celebrates innovation, leadership, and excellence, honoring visionaries shaping the future. Join us in acknowledging the leaders of tomorrow, driving change and inspiring success.",
+			"image": "<?= base_url("assets/images/main.png")?>",
+			"startDate": "2025-03-10T17:00",
+			"endDate": "2025-03-10T20:00",
+			"eventStatus": "https://schema.org/EventScheduled",
+			"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+			"location": {
+				"@type": "Place",
+				"name": "Hotel Taj Palace",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "2, Sardar Patel Marg, Diplomatic Enclave, Chanakyapuri",
+					"addressLocality": "New Delhi",
+					"postalCode": "110021",
+					"addressCountry": "IN"
+				}
+			}
+		}
+	</script>
+<?php endif ?>

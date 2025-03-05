@@ -419,12 +419,12 @@
 		</div>
 	</section>
 
-	<section class="section" id="categories">
+	<section id="categories" class="section">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="section-title">
-						<h2><span>Award Categories</span></h2>
+						<h2><span>Categories</span></h2>
 					</div>
 				</div>
 				<div class="col-12">

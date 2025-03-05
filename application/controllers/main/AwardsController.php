@@ -271,8 +271,9 @@ class AwardsController extends BaseController
 		$this->data['categories']['all'] = json_decode($this->CategoryModel->get(null, ['id <=' => 14]), true);
 
 		$this->data['page'] = [
-			'title' =>  APP_NAME . " Awards • " . APP_NAME,
-			'description' => "",
+			'title' => "IDFC FIRST Bank presents ET NOW " .  APP_NAME . " Awards 2025",
+			'description' => "The Awards by ET NOW Leaders of Tomorrow recognize exceptional individuals and businesses making a significant impact across industries. This prestigious platform celebrates innovation, leadership, and excellence, honoring visionaries shaping the future. Join us in acknowledging the leaders of tomorrow, driving change and inspiring success.",
+			'thumb' => base_url("assets/images/banners/awards_banner_h.jpg"),
 		];
 
 		$this->load->award_page('home', $this->data);
