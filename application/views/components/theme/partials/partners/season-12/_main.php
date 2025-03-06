@@ -46,7 +46,8 @@
 					Outdoor Partners
 				</p>
 				<div class="px-3">
-					<div class="row justify-content-center g-2">
+					<img src="<?= base_url('assets/images/sponsors/12/') ?>ooh-unit.png" alt="Partners" height="50">
+					<div class="row justify-content-center g-2 d-none">
 						<div class="col-auto">
 							<img src="<?= base_url('assets/images/sponsors/12/') ?>ooh_only.png" alt="Partners" height="30" style="margin-top: 2rem;">
 						</div>

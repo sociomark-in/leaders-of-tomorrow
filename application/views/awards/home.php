@@ -149,7 +149,7 @@
 						</thead>
 						<tbody>
 							<?php foreach ($winners as $key => $winner) :
-								$organization = "<strong>" . $winner['organization']. "</strong>";
+								$organization = "<strong>" . $winner['organization'] . "</strong>";
 								if ($winner['type'] == "INDIVIDUAL") {
 									$organization = implode(', ', ["<strong>" . $winner['person'] . "</strong>", $winner['designation'], $winner['organization']]);
 								}
@@ -173,7 +173,7 @@
 							<?php
 							$i = 0;
 							foreach ($winners as $key => $winner):
-								$organization = "<strong>" . $winner['organization']. "</strong>";
+								$organization = "<strong>" . $winner['organization'] . "</strong>";
 								if ($winner['type'] == "INDIVIDUAL") {
 									$organization = implode(', ', ["<strong>" . $winner['person'] . "</strong>", $winner['designation'], $winner['organization']]);
 								}
@@ -359,19 +359,22 @@
 				</div>
 				<div class="col-12">
 					<div class="row align-items-center">
-						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12 d-none">
-							<div class="speaker-tile normal speaker-tile-02">
-								<div class="photo mb-3">
-									<img src="<?= base_url('assets/images/cities/person_dummy.png') ?>" class="w-100" alt="">
+						<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+							<?php foreach ($chief_guest as $key => $person): ?>
+								<div class="speaker-tile speaker-tile-02 normal">
+									<div class="photo">
+										<img src="<?= base_url('assets/images/speakers/12/') . $person['photo'] ?>" class="w-100" alt="">
+									</div>
+									<div class="desc text-center">
+										<!-- <h5>Chief Guest</h5> -->
+										<h5><?= $person['name'] ?></h5>
+										<p><?= $person['description'] ?></p>
+									</div>
 								</div>
-								<div class="desc text-center">
-									<h5>Lorem ipsum dolor sit.</h5>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nostrum.</p>
-								</div>
-							</div>
+								<?php endforeach ?>
 						</div>
-						<!-- <div class="col-xxl-9 col-xl-8 col-lg-6 col-12"> -->
-						<div class="col-12">
+						<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
+							<!-- <div class="col-12"> -->
 							<div class="swiper speakerSwiper">
 								<div class="swiper-wrapper">
 									<?php foreach ($speakers as $key => $person): ?>
@@ -402,11 +405,11 @@
 											spaceBetween: 20,
 										},
 										1024: {
-											slidesPerView: 3,
+											slidesPerView: 2,
 											spaceBetween: 50,
 										},
 										1400: {
-											slidesPerView: 4,
+											slidesPerView: 3,
 											spaceBetween: 0,
 										},
 									},

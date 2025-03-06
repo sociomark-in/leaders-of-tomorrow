@@ -95,15 +95,15 @@ class AwardsController extends BaseController
 			],
 		];
 		$this->data['speakers'] = [
-			[
-				'photo' => "V_Vaidyanathan.png",
-				'name' => "V Vaidyanathan",
-				'description' => "MD & CEO, IDFC FIRST Bank",
-			],
+			// [
+			// 	'photo' => "V_Vaidyanathan.png",
+			// 	'name' => "V Vaidyanathan",
+			// 	'description' => "MD & CEO, IDFC FIRST Bank",
+			// ],
 			[
 				'photo' => "Aman_Gupta.png",
 				'name' => "Aman Gupta",
-				'description' => "Co-Founder & CMO, BoAt Lifestyle",
+				'description' => "Co-Founder & CMO, boAt Lifestyle",
 			],
 			[
 				'photo' => "Ashishkumar_Chauhan.png",

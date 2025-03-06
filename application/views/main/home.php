@@ -232,11 +232,11 @@ foreach ($springboards as $key => $city) {
 										Awards 2025
 									</a>
 								</div>
-								<!-- <div class="col-auto">
+								<div class="col-auto">
 									<a class="btn btn-yellow text-uppercase" href="<?= base_url('awards/register-to-attend') ?>">
 										Register to Attend
 									</a>
-								</div> -->
+								</div>
 							</div>
 						</div>
 					</div>

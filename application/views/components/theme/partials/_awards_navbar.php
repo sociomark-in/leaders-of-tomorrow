@@ -1,6 +1,5 @@
 <?php
-
-use phpseclib3\Crypt\EC\BaseCurves\Base;
+$utm = $this->input->get();
 ?>
 <nav class="navbar navbar-expand-lg">
 	<div class="container-fluid">
@@ -24,7 +23,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
 				</li>
 				<li class="nav-item">
@@ -44,8 +43,15 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 				</li>
 			</ul>
 			<ul class="navbar-nav gap-2 align-items-md-center g-4">
-				<li class="nav-item d-none">
-					<a class="btn btn-red" href="<?= base_url('awards/register-to-attend') ?>">Register to Attend</a>
+				<?php
+				$q = "";
+				$f = false;
+				if (count($utm) > 0) {
+					$q = http_build_query($utm, '', '&');
+				}
+				?>
+				<li class="nav-item">
+					<a class="btn btn-red" href="<?= base_url('awards/register-to-attend' . $q) ?>">Register</a>
 				</li>
 				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
