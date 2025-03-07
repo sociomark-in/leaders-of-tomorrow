@@ -73,73 +73,27 @@
 											-->
 											<tr>
 												<td height="10" style="padding: 0 30px 0;"></td>
-											</tr> 
-											<!-- <tr>
-												<td style="padding:10px 30px;border-bottom:1px solid #e9eaed;">
-													<table cellpadding="10">
-														<tr>
-															<td height="10" style="padding:0;"></td>
-														</tr>
-														<tr>
-															<td style="padding:0">
-																<img src="https://ui-avatars.com/api/?name=Leaders+Tomorrow"
-																	alt="" height="60" width="60" style="border-radius: 50%;">
-															</td>
-															<td style="font-size: 12px; color: #495664;line-height:1.5;">
-																<strong>Jury</strong> rejected your nomination with a comment. <a href="<?= base_url('dashboard') ?>" style="color: #b72026;text-decoration: none;">Go to My Account</a>
-															</td>
-														</tr>
-														<tr>
-															<td height="10" style="padding:0;"></td>
-														</tr>
-													</table>
-												</td>
 											</tr>
-											<tr>
-												<td style="padding-top: 15px;">
-													<table>
-														<tr>
-															<td
-																style="font-size: 14px; padding: 10px 16px; border-radius: 5px; background-color: #efefef;">
-																<div style="margin-bottom:10px;line-height:1.5">
-																	<?= $response['comment'] ?? "Lorem ipsum
-																	dolor sit amet consectetur, adipisicing elit. Vero
-																	magnam sint nesciunt quasi, porro repudiandae. Corrupti
-																	tempore nemo magni fuga...." ?>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td height="10"></td>
-														</tr>
-													</table>
-												</td>
-											</tr> -->
 											<tr>
 												<td style="line-height:22px;padding:0 30px 0">
 													<div style="font-weight:bold;margin-bottom:10px">
-														Hi <?= $applicant['name'] ?>,</div>
+														Dear <?= $applicant['name'] ?>,</div>
 													<div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We regret to inform you that your nomination under the
-															<strong><?= $application['organization_name'] ?></strong> for
-															<strong><?= $application['category']['name'] ?></strong> has not been shortlisted for further evaluation.
+															We sincerely appreciate your participation in the <strong>IDFC FIRST Bank Presents ET Now Leaders of Tomorrow Season 12 Awards</strong>. 
+															Your journey as an entrepreneur and the incredible work you are doing in the MSME sector are truly commendable.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															You can log in to your account to review the feedback and comments provided by our process
-															advisors.
+															After a rigorous evaluation process by our esteemed jury and process partners, we regret to inform you
+															that your nomination (<?= $application['nomination_id'] ?>) under the category 
+															<strong><?= $application['category']['name'] ?></strong> has not been selected this year. 
+															However, this in no way diminishes the impact and value of your entrepreneurial contributions. 
+															Every submission we received showcased remarkable innovation, resilience, and leadership.
 														</div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
-													<div style="margin-bottom:20px;line-height:1.5">
-														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-															href="<?= base_url('dashboard') ?>"
-															target="_blank">
-															Access Dashboard
-														</a>
+														<div style="margin-bottom:10px;line-height:1.5">
+															We encourage you to continue your journey of growth and success. <strong>The Leaders of Tomorrow Awards will return next year</strong>,
+															and we would love to see your application again for Season 13.
+														</div>
 													</div>
 												</td>
 											</tr>
@@ -147,7 +101,15 @@
 												<td style="font-size:16px;line-height:22px;padding:0 30px 0">
 													<div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We sincerely thank you for your participation and encourage you to stay connected with us for future opportunities.
+															We deeply appreciate your time and effort in participating in this process and hope to see you at future
+															editions of the awards. Please stay connected with us for upcoming opportunities, industry insights, and
+															future events that can support your entrepreneurial journey.
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															For any questions or feedback, feel free to reach out to us at <a style="text-decoration: none; color:#b72026;" href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a>.
+														</div>
+														<div style="margin-bottom:10px;line-height:1.5">
+															Wishing you continued success, and we hope to celebrate your achievements in the future.
 														</div>
 														<br>
 														<div>Best Regards,</div>

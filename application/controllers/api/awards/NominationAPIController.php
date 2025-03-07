@@ -2743,7 +2743,7 @@ class NominationAPIController extends CI_Controller
 							]
 						];
 
-						$subject = "Update on Your Nomination - " . APP_NAME . " Awards 2025!";
+						$subject = "Thank You for Your Participation in " . APP_NAME . " Awards 2025!";
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
