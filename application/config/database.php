@@ -71,8 +71,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 $active_group = 'testing';
-$active_group = 'production';
 $active_group = 'default';
+$active_group = 'production';
 $query_builder = TRUE;
 
 $db['default'] = array(
