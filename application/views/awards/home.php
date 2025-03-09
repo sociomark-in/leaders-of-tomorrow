@@ -167,7 +167,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-12">
+				<div class="col-12 d-none">
 					<div class="swiper gallerySwiper">
 						<div class="swiper-wrapper" id="galleryMasonry">
 							<?php

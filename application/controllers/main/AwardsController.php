@@ -176,7 +176,7 @@ class AwardsController extends BaseController
 				'type' => 'MSME',
 				'person' =>  NULL,
 				'designation' =>  NULL,
-				'category' => "Global Business Leadership",
+				'category' => "Global Business Leadership Award",
 			],
 			[
 				'organization' => "Razzmatazz Design",
@@ -215,6 +215,7 @@ class AwardsController extends BaseController
 			],
 			[
 				'organization' => "Starkenn Technologies",
+				'organization' => "Whiteklay Technologies",
 				'type' => 'MSME',
 				'person' =>  NULL,
 				'designation' =>  NULL,
@@ -226,6 +227,13 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Digital Transformation",
+			],
+			[
+				'organization' => "Vipragen Biosciences",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Health, Wellness & Ayurveda",
 			],
 			[
 				'organization' => "AWL India",
@@ -241,13 +249,13 @@ class AwardsController extends BaseController
 				'designation' => "CEO & Co-Founder",
 				'category' => "Social Impact Entrepreneur of the year",
 			],
-			[
-				'organization' => "Jeevitam Livelihood Tech Solution",
-				'type' => 'INDIVIDUAL',
-				'person' => "Munish Chawla",
-				'designation' => "Co Founder and Chief Happiness Officer",
-				'category' => "Social Impact Entrepreneur of the year",
-			],
+			// [
+			// 	'organization' => "Jeevitam Livelihood Tech Solution",
+			// 	'type' => 'INDIVIDUAL',
+			// 	'person' => "Munish Chawla",
+			// 	'designation' => "Co Founder and Chief Happiness Officer",
+			// 	'category' => "Social Impact Entrepreneur of the year",
+			// ],
 			[
 				'organization' => "Urban Monk",
 				'type' => 'INDIVIDUAL',

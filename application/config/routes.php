@@ -98,6 +98,7 @@ $route['dashboard/applications'] = 'panel/NominationsController';
 $route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1';
 $route['dashboard/application/(:any)/edit'] = 'panel/NominationsController/user_edit/$1';
 $route['dashboard/application/(:any)/download'] = 'panel/NominationsController/download/$1';
+$route['dashboard/application/(:any)/reject'] = 'api/awards/NominationAPIController/reject_default_comment/$1';
 
 $route['dashboard/presentations'] = 'panel/PresentationsController';
 $route['dashboard/application/(:any)/presentation'] = 'panel/PresentationsController/new_presentation/$1';

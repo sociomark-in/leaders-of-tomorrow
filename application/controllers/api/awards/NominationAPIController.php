@@ -2175,7 +2175,7 @@ class NominationAPIController extends CI_Controller
 		$category = json_decode($this->CategoryModel->get(null, ['type' => $category_id]), true);
 		switch ($category['type']) {
 			case '1_INDIVIDUAL':
-			    $data = [
+				$data = [
 					'stage_status' => 6,
 
 					"name" => 	$this->request['name'],
@@ -2233,22 +2233,22 @@ class NominationAPIController extends CI_Controller
 					'id_255403' =>  $response[2],
 					'id_255404' =>  $response[3],
 					'id_255405' =>  $response[4],
-					
+
 					'status' =>  3,
 				];
 				# ☑ If $_FILES Exists then Upload and get $response.
-    			if ($f) {
-    				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-    				$data['id_255401'] = $response[0];
-    				$data['id_255402'] = $response[1];
-    				$data['id_255403'] = $response[2];
-    				$data['id_255404'] = $response[3];
-    				$data['id_255405'] = $response[4];
-    				$data['id_255406'] = $response[5];
-    			}
-			    break;
+				if ($f) {
+					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+					$data['id_255401'] = $response[0];
+					$data['id_255402'] = $response[1];
+					$data['id_255403'] = $response[2];
+					$data['id_255404'] = $response[3];
+					$data['id_255405'] = $response[4];
+					$data['id_255406'] = $response[5];
+				}
+				break;
 			case '2_INDIVIDUAL':
-			    $data = [
+				$data = [
 					'stage_status' => 6,
 
 					"name" => 	$this->request['name'],
@@ -2300,20 +2300,20 @@ class NominationAPIController extends CI_Controller
 					'status' =>  3,
 				];
 				# ☑ If $_FILES Exists then Upload and get $response.
-    			if ($f) {
-    				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-    				$data['id_255401'] = $response[0];
-    				$data['id_255402'] = $response[1];
-    				$data['id_255403'] = $response[2];
-    				$data['id_255404'] = $response[3];
-    				$data['id_255405'] = $response[4];
-    				$data['id_255406'] = $response[5];
-    			}
-			    break;
+				if ($f) {
+					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+					$data['id_255401'] = $response[0];
+					$data['id_255402'] = $response[1];
+					$data['id_255403'] = $response[2];
+					$data['id_255404'] = $response[3];
+					$data['id_255405'] = $response[4];
+					$data['id_255406'] = $response[5];
+				}
+				break;
 			case '1_GLOBAL':
-			    $data = [
-			        'stage_status' => 6,
-			        
+				$data = [
+					'stage_status' => 6,
+
 					"name" => 	$this->request['name'],
 					"email" => $this->request['contact_person']['email'] ?? null,
 					"designation" => 	$this->request['designation'],
@@ -2363,17 +2363,17 @@ class NominationAPIController extends CI_Controller
 					'status' =>  3,
 				];
 				# ☑ If $_FILES Exists then Upload and get $response.
-    			if ($f) {
-    				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-    				$data['id_255401'] = $response[0];
-    				$data['id_255402'] = $response[1];
-    				$data['id_255403'] = $response[2];
-    				$data['id_255404'] = $response[3];
-    				$data['id_255405'] = $response[4];
-    			}
-			    break;
+				if ($f) {
+					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+					$data['id_255401'] = $response[0];
+					$data['id_255402'] = $response[1];
+					$data['id_255403'] = $response[2];
+					$data['id_255404'] = $response[3];
+					$data['id_255405'] = $response[4];
+				}
+				break;
 			case '1_FAMILY':
-			    $data = [
+				$data = [
 					'stage_status' => 6,
 
 					"name" => 	$this->request['name'],
@@ -2432,17 +2432,17 @@ class NominationAPIController extends CI_Controller
 					'status' =>  3,
 				];
 				# ☑ If $_FILES Exists then Upload and get $response.
-    			if ($f) {
-    				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-    				$data['id_255401'] = $response[0];
-    				$data['id_255402'] = $response[1];
-    				$data['id_255403'] = $response[2];
-    				$data['id_255404'] = $response[3];
-    				$data['id_255405'] = $response[4];
-    			}
-			    break;
+				if ($f) {
+					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+					$data['id_255401'] = $response[0];
+					$data['id_255402'] = $response[1];
+					$data['id_255403'] = $response[2];
+					$data['id_255404'] = $response[3];
+					$data['id_255405'] = $response[4];
+				}
+				break;
 			case '1_DIGITAL':
-			    $data = [
+				$data = [
 					'stage_status' => 6,
 
 					"name" => 	$this->request['name'],
@@ -2493,141 +2493,141 @@ class NominationAPIController extends CI_Controller
 					'status' =>  3,
 				];
 				# ☑ If $_FILES Exists then Upload and get $response.
-    			if ($f) {
-    				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-    				$data['id_255401'] = $response[0];
-    				$data['id_255402'] = $response[1];
-    				$data['id_255403'] = $response[2];
-    				$data['id_255404'] = $response[3];
-    				$data['id_255405'] = $response[4];
-    			}
-			    break;
+				if ($f) {
+					$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+					$data['id_255401'] = $response[0];
+					$data['id_255402'] = $response[1];
+					$data['id_255403'] = $response[2];
+					$data['id_255404'] = $response[3];
+					$data['id_255405'] = $response[4];
+				}
+				break;
 			default:
 				switch (explode('_', $category['type'])[1]) {
 					case 'IDFC':
-					    $data = [
-    						'stage_status' => 6,
-    
-    						"name" => 	$this->request['name'],
-    						"email" => $this->request['contact_person']['email'] ?? null,
-    						"designation" => 	$this->request['designation'],
-    						"organization_name" => 	$this->request['organization']['name'],
-    						"organization_url" => $this->request['organization']['url'],
-    						"organization_city" => $this->request['organization']['address']['city'],
-    						"organization_state" => $this->request['organization']['address']['state'],
-    
-    						"id_255901" => $this->request['contact_person']['name'],
-    						"id_255902" => $this->request['contact_person']['email'],
-    						"id_255903" => $this->request['contact_person']['contact'],
-    
-    						"id_255001" => json_encode([
-    							$this->request['organization']['address']['line_1'],
-    							$this->request['organization']['address']['line_2'],
-    							$this->request['organization']['address']['line_3'],
-    						]),
-    						'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-    						'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
-    						'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
-    						'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
-    
-    						'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
-    						'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
-    						'id_255008'	=> $this->request['dob'],							//date_of_birth
-    
-    						'id_255101' => $this->request["organization_revenue_2"],
-    						'id_255102' => $this->request["organization_revenue_1"],
-    						'id_255103' => $this->request["organization_growth_2"],
-    						'id_255104' => $this->request["organization_growth_1"],
-    						'id_255105' => $this->request["organization_profit"],
-    						'id_255106' => $this->request["organization_assets"],
-    						'id_255107' => $this->request["organization_der_23"],
-    
-    						'id_255201' => $this->request["organization"]['size'],
-    						'id_255202' => $this->request["organization"]['members'],
-    						'id_255203' => $this->request["organization_overview"],
-    						'id_255204' => $this->request["organization_services"],
-    
-    						'id_255301' => $this->request['case_study_1'],
-    						'id_255302' => $this->request['case_study_2'],
-    						'id_255303' => $this->request['case_study_3'],
-    						'id_255304' => $this->request['case_study_4'],
-    						'id_255305' => $this->request['case_study_5'],
-    
-    						'status' =>  3,
-    					];
-    					# ☑ If $_FILES Exists then Upload and get $response.
-            			if ($f) {
-            				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-            				$data['id_255401'] = $response[0];
-            				$data['id_255402'] = $response[1];
-            				$data['id_255403'] = $response[2];
-            				$data['id_255404'] = $response[3];
-            				$data['id_255405'] = $response[4];
-            			}
-					    break;
+						$data = [
+							'stage_status' => 6,
+
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"organization_city" => $this->request['organization']['address']['city'],
+							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
+							"id_255001" => json_encode([
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['members'],
+							'id_255203' => $this->request["organization_overview"],
+							'id_255204' => $this->request["organization_services"],
+
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'status' =>  3,
+						];
+						# ☑ If $_FILES Exists then Upload and get $response.
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data['id_255401'] = $response[0];
+							$data['id_255402'] = $response[1];
+							$data['id_255403'] = $response[2];
+							$data['id_255404'] = $response[3];
+							$data['id_255405'] = $response[4];
+						}
+						break;
 					default:
-            			# ☑ Set Data for DB Insert
-            			$data = [
-            				'stage_status' => 5,
-            
-            				"name" => 	$this->request['name'],
-            				"email" => $this->request['contact_person']['email'] ?? null,
-            				"designation" => 	$this->request['designation'],
-            				"organization_name" => 	$this->request['organization']['name'],
-            				"organization_url" => $this->request['organization']['url'],
-            				"organization_city" => $this->request['organization']['address']['city'],
-            				"organization_state" => $this->request['organization']['address']['state'],
-            
-            				"id_255901" => $this->request['contact_person']['name'],
-            				"id_255902" => $this->request['contact_person']['email'],
-            				"id_255903" => $this->request['contact_person']['contact'],
-            
-            				"id_255001" => json_encode([
-            					$this->request['organization']['address']['line_1'],
-            					$this->request['organization']['address']['line_2'],
-            					$this->request['organization']['address']['line_3'],
-            				]),
-            				'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-            				'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
-            				'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
-            				'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
-            
-            				'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
-            				'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
-            				'id_255008'	=> $this->request['dob'],							//date_of_birth
-            
-            				'id_255101' => $this->request["organization_revenue_2"],
-            				'id_255102' => $this->request["organization_revenue_1"],
-            				'id_255103' => $this->request["organization_growth_2"],
-            				'id_255104' => $this->request["organization_growth_1"],
-            				'id_255105' => $this->request["organization_profit"],
-            				'id_255106' => $this->request["organization_assets"],
-            				'id_255107' => $this->request["organization_der_23"],
-            
-            				'id_255201' => $this->request["organization"]['size'],
-            				'id_255202' => $this->request["organization"]['members'],
-            				'id_255203' => $this->request["organization_overview"],
-            				'id_255204' => $this->request["organization_services"],
-            
-            				'id_255301' => $this->request['case_study_1'],
-            				'id_255302' => $this->request['case_study_2'],
-            				'id_255303' => $this->request['case_study_3'],
-            				'id_255304' => $this->request['case_study_4'],
-            				'id_255305' => $this->request['case_study_5'],
-            
-            				'status' =>  3,
-            			];
-            
-            			# ☑ If $_FILES Exists then Upload and get $response.
-            			if ($f) {
-            				$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-            				$data['id_255401'] = $response[0];
-            				$data['id_255402'] = $response[1];
-            				$data['id_255403'] = $response[2];
-            				$data['id_255404'] = $response[3];
-            				$data['id_255405'] = $response[4];
-            			}
-					    break;
+						# ☑ Set Data for DB Insert
+						$data = [
+							'stage_status' => 5,
+
+							"name" => 	$this->request['name'],
+							"email" => $this->request['contact_person']['email'] ?? null,
+							"designation" => 	$this->request['designation'],
+							"organization_name" => 	$this->request['organization']['name'],
+							"organization_url" => $this->request['organization']['url'],
+							"organization_city" => $this->request['organization']['address']['city'],
+							"organization_state" => $this->request['organization']['address']['state'],
+
+							"id_255901" => $this->request['contact_person']['name'],
+							"id_255902" => $this->request['contact_person']['email'],
+							"id_255903" => $this->request['contact_person']['contact'],
+
+							"id_255001" => json_encode([
+								$this->request['organization']['address']['line_1'],
+								$this->request['organization']['address']['line_2'],
+								$this->request['organization']['address']['line_3'],
+							]),
+							'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
+							'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
+							'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
+							'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+
+							'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
+							'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+							'id_255008'	=> $this->request['dob'],							//date_of_birth
+
+							'id_255101' => $this->request["organization_revenue_2"],
+							'id_255102' => $this->request["organization_revenue_1"],
+							'id_255103' => $this->request["organization_growth_2"],
+							'id_255104' => $this->request["organization_growth_1"],
+							'id_255105' => $this->request["organization_profit"],
+							'id_255106' => $this->request["organization_assets"],
+							'id_255107' => $this->request["organization_der_23"],
+
+							'id_255201' => $this->request["organization"]['size'],
+							'id_255202' => $this->request["organization"]['members'],
+							'id_255203' => $this->request["organization_overview"],
+							'id_255204' => $this->request["organization_services"],
+
+							'id_255301' => $this->request['case_study_1'],
+							'id_255302' => $this->request['case_study_2'],
+							'id_255303' => $this->request['case_study_3'],
+							'id_255304' => $this->request['case_study_4'],
+							'id_255305' => $this->request['case_study_5'],
+
+							'status' =>  3,
+						];
+
+						# ☑ If $_FILES Exists then Upload and get $response.
+						if ($f) {
+							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							$data['id_255401'] = $response[0];
+							$data['id_255402'] = $response[1];
+							$data['id_255403'] = $response[2];
+							$data['id_255404'] = $response[3];
+							$data['id_255405'] = $response[4];
+						}
+						break;
 				}
 		}
 		# ☑ Sanitize Data for DB Insert
@@ -2702,6 +2702,55 @@ class NominationAPIController extends CI_Controller
 
 			default:
 				# code...
+				break;
+		}
+	}
+
+	public function reject_default_comment($application_id)
+	{
+		$this->load->model('panel/CommentModel');
+		switch ($this->usersession['role']) {
+			case 'jury':
+			case 'admin':
+			case 'super-admin':
+				$data = [
+					'comment' => "Rejected",
+					'nomination_id' => $application_id,
+					'created_by' => $this->usersession['id'],
+				];
+
+				$nomination = json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'name', 'organization_name', 'email', 'status', 'stage_status', 'created_by'], ['nomination_id' => $application_id]), true)[0] ?? [];
+				$applicant = json_decode($this->UserModel->get(null, ['id' => $nomination['created_by']]), true)[0];
+				$category = json_decode($this->CategoryModel->get(['name'], ['type' => $nomination['category_id']]), true)[0];
+				$email_data['application'] = $nomination;
+				$email_data['application']['category']['name'] = $category['name'];
+				$email_data['applicant'] = [
+					'name' => $applicant['name'],
+					'email' => $applicant['email'],
+					'contact' => $applicant['contact'],
+				];
+				if ($this->CommentModel->insert($data)) {
+					$data = [
+						'status' => '0',
+					];
+					if ($this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower(explode('_', $nomination['category_id'])[1]))) {
+						$recipients = [
+							[
+								"email" =>  $applicant['email'],
+								"name" =>  $applicant['name']
+							]
+						];
+
+						$subject = "Thank You for Your Participation in " . APP_NAME . " Awards 2025!";
+						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
+						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
+							redirect('dashboard/applications');
+						}
+					}
+				}
+				break;
+			default:
 				break;
 		}
 	}

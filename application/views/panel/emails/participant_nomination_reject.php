@@ -85,7 +85,9 @@
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															After a rigorous evaluation process by our esteemed jury and process partners, we regret to inform you
-															that your nomination (<?= $application['nomination_id'] ?>) under the category 
+															that your nomination 
+															<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>">(#<?= $application['nomination_id'] ?>)</a> 
+															under the category 
 															<strong><?= $application['category']['name'] ?></strong> has not been selected this year. 
 															However, this in no way diminishes the impact and value of your entrepreneurial contributions. 
 															Every submission we received showcased remarkable innovation, resilience, and leadership.
