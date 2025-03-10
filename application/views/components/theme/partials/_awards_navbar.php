@@ -23,17 +23,20 @@ $utm = $this->input->get();
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url("awards#live") ?>">Live</a>
+				</li>
 				<!-- <li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
 				</li> -->
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand Jury</a>
+					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key Speakers</a>
+					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key&nbsp;Speakers</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Awards Categories</a>
+					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Categories</a>
 				</li>
 				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url('awards#phases') ?>">Programme Phases</a>
@@ -51,7 +54,7 @@ $utm = $this->input->get();
 				}
 				?>
 				<li class="nav-item">
-					<a class="btn btn-red" href="<?= base_url('awards/register-to-attend' . $q) ?>">Register</a>
+					<a class="btn btn-red disabled text-white" href="<?= base_url('awards/register-to-attend' . $q) ?>">Registrations&nbsp;Closed</a>
 				</li>
 				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">

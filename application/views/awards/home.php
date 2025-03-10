@@ -5,6 +5,26 @@
 			<h3>12</h3>
 		</div>
 	</div>
+
+	<div class="fireworks">
+		<button class="btn btn-red" id="party"></button>
+		<style>
+			#party {
+				position: fixed;
+				z-index: 999;
+				bottom: 5rem;
+				right: 1rem;
+				width: 3rem;
+				height: 3rem;
+				background-image: url('<?= base_url("assets/images/icons/fireworks.png") ?>');
+				background-position: center;
+				background-size: 60% auto;
+				background-repeat: no-repeat;
+				border-radius: 50%;
+			}
+		</style>
+	</div>
+
 	<section class="section pb-0 d-none">
 		<div class="hero-backdrop-wrapper bg-black w-fullscreen position-relative">
 			<div class="bg-media">
@@ -218,19 +238,16 @@
 						})
 					</script>
 				</div>
-				<div class="col-12">
-					<button class="btn btn-outline-red" id="party">Press to Celebrate</button>
-				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="live" class="pb-0 d-none">
+	<section id="live" class="pb-0">
 		<div class="container">
 			<div class="row justify-content-center g-4">
 				<div class="col-12">
 					<div class="media-content">
-						<iframe class="w-100" src="https://www.youtube.com/embed/gF5_3m-rS2A?si=7__x3paYx0udxCkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -371,7 +388,7 @@
 										<p><?= $person['description'] ?></p>
 									</div>
 								</div>
-								<?php endforeach ?>
+							<?php endforeach ?>
 						</div>
 						<div class="col-xxl-9 col-xl-8 col-lg-6 col-12">
 							<!-- <div class="col-12"> -->
@@ -656,6 +673,7 @@
 			</div>
 		</div>
 	</section>
+
 </main>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>

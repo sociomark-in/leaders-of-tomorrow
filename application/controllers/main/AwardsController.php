@@ -88,10 +88,15 @@ class AwardsController extends BaseController
 		];
 
 		$this->data['chief_guest'] = [
+			// [
+			// 	'photo' => "Jayant_Chaudhary.png",
+			// 	'name' => "Jayant Chaudhary",
+			// 	'description' => "Minister, (I/C) Skill Development and Entrepreneurship & Minister of State for Education, Government of India",
+			// ],
 			[
-				'photo' => "Jayant_Chaudhary.png",
-				'name' => "Jayant Chaudhary",
-				'description' => "Minister, (I/C) Skill Development and Entrepreneurship & Minister of State for Education, Government of India",
+				'photo' => "Anurag_Thakur.png",
+				'name' => "Anurag Singh Thakur",
+				'description' => "Former Union Minister, Chairman, Parliamentary Standing Committee on Coal, Mines & Steel",
 			],
 		];
 		$this->data['speakers'] = [
