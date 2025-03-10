@@ -168,6 +168,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Agri-Tech and Allied Services",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Synnova Gears And Transmissions",
@@ -175,6 +179,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Automobiles & Electric Vehicle",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Microlit",
@@ -182,6 +190,7 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Global Business Leadership Award",
+				'gallery' => NULL
 			],
 			[
 				'organization' => "Razzmatazz Design",
@@ -189,6 +198,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Lifestyle and Consumer Products",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Pluckk",
@@ -196,6 +209,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Food Processing & Packaging",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Jeevitam Tech Solutions",
@@ -203,6 +220,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in EdTech and Skill Development",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Autosys Industrial Solutions",
@@ -210,6 +231,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Manufacturing",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Global Engineers",
@@ -217,6 +242,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Family Business Leadership",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Starkenn Technologies",
@@ -225,6 +254,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in IT/ITES and Electronics",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Enerture Technologies",
@@ -232,6 +265,10 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Digital Transformation",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Vipragen Biosciences",
@@ -239,20 +276,32 @@ class AwardsController extends BaseController
 				'person' =>  NULL,
 				'designation' =>  NULL,
 				'category' => "Excellence in Health, Wellness & Ayurveda",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "AWL India",
 				'type' => 'INDIVIDUAL',
 				'person' => "Rahul Mehra",
 				'designation' => "Founder & CEO",
-				'category' => "Entrepreneur of the year",
+				'category' => "Entrepreneur of the Year",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			[
 				'organization' => "Swachh Sustainable Solutions",
 				'type' => 'INDIVIDUAL',
 				'person' => "Rahul Nainani",
 				'designation' => "CEO & Co-Founder",
-				'category' => "Social Impact Entrepreneur of the year",
+				'category' => "Social Impact Entrepreneur of the Year",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 			// [
 			// 	'organization' => "Jeevitam Livelihood Tech Solution",
@@ -290,6 +339,11 @@ class AwardsController extends BaseController
 		];
 
 		$this->load->award_page('home', $this->data);
+	}
+
+	public function gallery(){
+		$this->data['gallery'] = directory_map('assets/images/galleries/12/thumbs/');
+		$this->load->award_page('gallery', $this->data);
 	}
 
 	public function categories()

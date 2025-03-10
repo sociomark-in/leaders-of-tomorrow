@@ -24,10 +24,10 @@ $utm = $this->input->get();
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url("awards#live") ?>">Live</a>
+					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
 				</li>
 				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
+					<a class="nav-link" href="<?= base_url("awards#agenda") ?>">Agenda</a>
 				</li> -->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>
@@ -38,8 +38,8 @@ $utm = $this->input->get();
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Categories</a>
 				</li>
-				<li class="nav-item d-none">
-					<a class="nav-link" href="<?= base_url('awards#phases') ?>">Programme Phases</a>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Gallery</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#partners') ?>">Partners</a>

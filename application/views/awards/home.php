@@ -78,24 +78,21 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0">
+
+	<section id="live" class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
 					<div class="media-content springboard-banner">
 						<div class="wrap">
-							<a href="<?= base_url('dashboard') ?>">
+							<!-- <a href="<?= base_url('dashboard') ?>">
 								<picture>
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
 									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
 								</picture>
-								<!-- <picture>
-									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
-								</picture> -->
-							</a>
+							</a> -->
+							<iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
@@ -187,7 +184,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-12 d-none">
+				<div class="col-12">
 					<div class="swiper gallerySwiper">
 						<div class="swiper-wrapper" id="galleryMasonry">
 							<?php
@@ -198,18 +195,19 @@
 									$organization = implode(', ', ["<strong>" . $winner['person'] . "</strong>", $winner['designation'], $winner['organization']]);
 								}
 							?>
-								<a href="https://placehold.co/1500x1000/jpg" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="https://placehold.co/1500x1000/jpg" data-sub-html=".caption">
-									<picture>
-										<source srcset="https://placehold.co/250x167/webp" type="image/webp">
-										<source srcset="https://placehold.co/250x167/jpg" type="image/jpg">
-										<img src="" class="w-100 mb-3" alt="https://placehold.co/250x167/jpg">
-									</picture>
-									<div class="caption text-dark d-none d-md-block">
-										<p class="mb-1"><?= $winner['category'] ?></p>
-										<h5><?= $organization ?></h5>
-									</div>
+								<?php if (!is_null($winner['gallery'])) : ?>
+									<a href="<?= $winner['gallery']['main'] ?>" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= $winner['gallery']['main'] ?>" data-sub-html=".caption">
+										<picture>
+											<source srcset="<?= $winner['gallery']['thumb'] ?>" type="image/jpg">
+											<img src="" class="w-100 mb-3" alt="<?= $winner['gallery']['thumb'] ?>">
+										</picture>
+										<div class="caption text-dark d-none d-md-block">
+											<p class="mb-1"><?= $winner['category'] ?></p>
+											<h5><?= $organization ?></h5>
+										</div>
 
-								</a>
+									</a>
+								<?php endif ?>
 							<?php endforeach ?>
 						</div>
 					</div>
@@ -222,7 +220,7 @@
 							slidesPerView: 1.4,
 							spaceBetween: 10,
 							autoplay: {
-								delay: 2000,
+								delay: 2500,
 							},
 							loop: true,
 							breakpoints: {
@@ -242,13 +240,48 @@
 		</div>
 	</section>
 
-	<section id="live" class="pb-0">
+	<section id="agenda" class="section pb-0">
 		<div class="container">
-			<div class="row justify-content-center g-4">
-				<div class="col-12">
-					<div class="media-content">
-						<iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<div class="row g-3 justify-content-center">
+				<div class="col-xl-9 col-lg-10 col-12">
+					<div class="section-title text-center mb-3">
+						<h2><span>Agenda</span></h2>
 					</div>
+				</div>
+				<div class="col-xl-8 col-lg-10 col-12">
+					<div class="swiper agendaSwiper">
+						<div class="swiper-wrapper" id="agendaPages">
+							<a class="swiper-slide mb-2" href="<?= base_url('assets/images/banners/') . "awards_agenda_page-001.jpg" ?>">
+								<figure>
+									<picture>
+										<source srcset="<?= base_url('assets/images/banners/') .  "awards_agenda_page-001.jpg" ?>" type="image/jpg">
+										<img class="w-100" src="<?= base_url('assets/images/banners/') .  "awards_agenda_page-001.jpg" ?>" alt="" loading="lazy">
+									</picture>
+									<figcaption></figcaption>
+								</figure>
+							</a>
+						</div>
+					</div>
+					<script>
+						new Swiper(".agendaSwiper", {
+							navigation: {
+								nextEl: ".agendaSwiper .swiper-button-next",
+								prevEl: ".agendaSwiper .swiper-button-prev",
+							},
+							slidesPerView: $(".agendaSwiper .swiper-slide").length,
+							spaceBetween: 20,
+							breakpoints: {
+								640: {
+									slidesPerView: $('.agendaSwiper .swiper-slide').length,
+									spaceBetween: 20,
+								},
+							}
+						})
+						var agenda = lightGallery(document.getElementById('agendaPages'), {
+							plugins: [lgZoom, lgThumbnail],
+							speed: 500,
+						});
+					</script>
 				</div>
 			</div>
 		</div>
@@ -306,7 +339,7 @@
 								},
 								1400: {
 									slidesPerView: 5,
-									spaceBetween: 10,
+									spaceBetween: 0,
 								},
 							},
 						})
