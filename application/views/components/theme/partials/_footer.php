@@ -94,14 +94,18 @@
 										<!-- <li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Register</a>
 										</li> -->
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('awards') ?>">All Categories</a>
-										</li>
+										
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('awards') ?>">Awards</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('awards#categories') ?>">All Categories</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Awards Gallery</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('awards/terms-and-conditions') ?>">Terms & Conditions</a>

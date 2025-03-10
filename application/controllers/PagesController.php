@@ -7,16 +7,26 @@ class PagesController extends BaseController
 	public function index()
 	{
 		$this->data['articles'] = [
+			[
+				'thumb' => "https://static.tnn.in/thumb/msid-118845436,thumbsize-164428,width-1280,height-720,resizemode-75/118845436.jpg?quality=100",
+				'title' => "देखें LIVE: IDFC FIRST Bank द्वारा प्रस्तुत ईटी नाउ लीडर्स ऑफ टुमॉरो अवार्ड्स सीजन 12 | स्ट्रीमिंग",
+				'redirect' => "https://hindi.etnownews.com/news/watch-live-idfc-first-bank-presents-et-now-leaders-of-tomorrow-awards-season-12-streaming-direct-link-article-118845436"
+			],
+		    [
+				'thumb' => "https://static.tnn.in/thumb/msid-118788243,thumbsize-164428,width-1280,height-720,resizemode-75/118788243.jpg?quality=100",
+				'title' => "IDFC Bank Presents ET NOW Leaders of Tomorrow Awards Season 12",
+				'redirect' => "https://www.etnownews.com/news/idfc-bank-presents-et-now-leaders-of-tomorrow-awards-season-12-recognizing-indias-trailblazing-entrepreneurs-article-118788243"
+			],
+		    [
+				'thumb' => "https://static.tnn.in/thumb/msid-118787847,thumbsize-164428,width-1280,height-720,resizemode-75/118787847.jpg?quality=100",
+				'title' => "ET NOW Leaders of Tomorrow Awards Season 12: भारत के उभरते उद्यमियों को किया जाएगा सम्मानित",
+				'redirect' => "https://hindi.etnownews.com/news/idfc-bank-presents-et-now-leaders-of-tomorrow-awards-season-12-recognizing-indias-emerging-entrepreneurs-article-118787847"
+			],
 		    [
 				'thumb' => "https://static.tnn.in/thumb/msid-118596760,thumbsize-164428,width-1280,height-720,resizemode-75/118596760.jpg?quality=100",
 				'title' => "Leaders of Tomorrow Season 12 Awards: Honouring India’s Entrepreneurial Excellence",
 				'redirect' => "https://www.etnownews.com/news/leaders-of-tomorrow-season-12-awards-honouring-indias-entrepreneurial-excellence-article-118595838"
 			],
-// 		    [
-// 				'thumb' => "https://static.tnn.in/thumb/msid-118596760,thumbsize-164428,width-1280,height-720,resizemode-75/118596760.jpg?quality=100",
-// 				'title' => "Leaders of Tomorrow Season 12 Awards: Honouring India’s Entrepreneurial Excellence",
-// 				'redirect' => "https://www.timesnownews.com/videos/et-now/news/leaders-of-tomorrow-season-12-awards-honouring-indias-entrepreneurial-excellence-article-118596760"
-// 			],
 			[
 				'thumb' => "https://static.tnn.in/thumb/msid-118107565,thumbsize-164428,width-1280,height-720,resizemode-75/118107565.jpg?quality=100",
 				'title' => "Charting India’s Growth Story: 3 Visionary Insights from Nadir Godrej",

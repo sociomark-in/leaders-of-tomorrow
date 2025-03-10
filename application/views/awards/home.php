@@ -147,7 +147,7 @@
 		</div>
 	</section>
 
-	<section id="winners" class="pb-0 d-none">
+	<section id="winners" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

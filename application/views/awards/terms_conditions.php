@@ -160,8 +160,16 @@
 								</tr>
 								<tr>
 									<td>5</td>
-									<td>Excellence in E-commerce and service delivery</td>
-									<td>Recognizes MSMEs offering last-mile delivery services for small e-commerce businesses and solving challenges in logistics and supply chain management through innovation.</td>
+									<td>Excellence in Specialized service delivery</td>
+									<td>
+										Recognizes MSMEs that excel in delivering specialized
+										services that address niche market needs with
+										innovation, efficiency, and customer-centric solutions.
+										Whether in logistics, financial services, travel solutions,
+										or investment recovery, these businesses play a critical role
+										in enhancing service delivery through technology,
+										operational excellence, and strategic problem-solving.
+									</td>
 									<td>1</td>
 								</tr>
 								<tr>
@@ -191,7 +199,13 @@
 								<tr>
 									<td>10</td>
 									<td>Global Business Leadership Award</td>
-									<td>Recognizes organizations or individuals who demonstrate exceptional leadership, innovation, and impact in global markets. Eligible businesses must have a presence in a minimum of five countries outside India, with representation in at least two countries from different continents. This category celebrates achievements in expanding international reach, fostering cross-border collaborations, and driving global business excellence across diverse industries.</td>
+									<td>Recognizes organizations or individuals who demonstrate
+										exceptional leadership, innovation, and impact in global
+										markets. Eligible businesses must have a presence in atleast
+										two countries internationally. This category celebrates
+										achievements in expanding international reach, fostering
+										cross-border collaborations, and driving global business
+										excellence across diverse industries</td>
 									<td>1</td>
 								</tr>
 								<tr>
