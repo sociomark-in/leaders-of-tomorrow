@@ -86,7 +86,6 @@ class AwardsController extends BaseController
 			// 	'description' => "",
 			// ],
 		];
-
 		$this->data['chief_guest'] = [
 			// [
 			// 	'photo' => "Jayant_Chaudhary.png",
@@ -161,6 +160,7 @@ class AwardsController extends BaseController
 			// 	'description' => "Founder, Joul",
 			// ],
 		];
+		
 		$this->data['winners'] = [
 			[
 				'organization' => "Plant Remedies",
@@ -185,14 +185,6 @@ class AwardsController extends BaseController
 				]
 			],
 			[
-				'organization' => "Microlit",
-				'type' => 'MSME',
-				'person' =>  NULL,
-				'designation' =>  NULL,
-				'category' => "Global Business Leadership Award",
-				'gallery' => NULL
-			],
-			[
 				'organization' => "Razzmatazz Design",
 				'type' => 'MSME',
 				'person' =>  NULL,
@@ -215,7 +207,7 @@ class AwardsController extends BaseController
 				]
 			],
 			[
-				'organization' => "Jeevitam Tech Solutions",
+				'organization' => "Jeevitam Livelihood Tech Solutions",
 				'type' => 'MSME',
 				'person' =>  NULL,
 				'designation' =>  NULL,
@@ -260,6 +252,17 @@ class AwardsController extends BaseController
 				]
 			],
 			[
+				'organization' => "Vipragen Biosciences",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Health, Wellness & Ayurveda",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
+			],
+			[
 				'organization' => "Enerture Technologies",
 				'type' => 'MSME',
 				'person' =>  NULL,
@@ -271,11 +274,19 @@ class AwardsController extends BaseController
 				]
 			],
 			[
-				'organization' => "Vipragen Biosciences",
+				'organization' => "Microlit",
 				'type' => 'MSME',
 				'person' =>  NULL,
 				'designation' =>  NULL,
-				'category' => "Excellence in Health, Wellness & Ayurveda",
+				'category' => "Global Business Leadership Award",
+				'gallery' => NULL
+			],
+			[
+				'organization' => "Swachh Sustainable Solutions",
+				'type' => 'INDIVIDUAL',
+				'person' => "Rahul Nainani",
+				'designation' => "CEO & Co-Founder",
+				'category' => "Social Impact Entrepreneur of the Year",
 				'gallery' => [
 					'main' => "https://placehold.co/1500x1000/jpg",
 					'thumb' => "https://placehold.co/600x400/jpg"
@@ -292,30 +303,63 @@ class AwardsController extends BaseController
 					'thumb' => "https://placehold.co/600x400/jpg"
 				]
 			],
-			[
-				'organization' => "Swachh Sustainable Solutions",
-				'type' => 'INDIVIDUAL',
-				'person' => "Rahul Nainani",
-				'designation' => "CEO & Co-Founder",
-				'category' => "Social Impact Entrepreneur of the Year",
-				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
-				]
-			],
-			// [
-			// 	'organization' => "Jeevitam Livelihood Tech Solution",
-			// 	'type' => 'INDIVIDUAL',
-			// 	'person' => "Munish Chawla",
-			// 	'designation' => "Co Founder and Chief Happiness Officer",
-			// 	'category' => "Social Impact Entrepreneur of the year",
-			// ],
+// 			// [
+// 			// 	'organization' => "Jeevitam Livelihood Tech Solution",
+// 			// 	'type' => 'INDIVIDUAL',
+// 			// 	'person' => "Munish Chawla",
+// 			// 	'designation' => "Co Founder and Chief Happiness Officer",
+// 			// 	'category' => "Social Impact Entrepreneur of the year",
+// 			// ],
 			[
 				'organization' => "Urban Monk",
 				'type' => 'INDIVIDUAL',
 				'person' => "Ruchika Bhuwalka",
 				'designation' => "Founder",
 				'category' => "Women Entrepreneur of the Year",
+			],
+			[
+				'organization' => "Prathibha Biotech",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "Excellence in Green Revolution",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
+			],
+			[
+				'organization' => "KAMA International Organic",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "IDFC FIRST Bank Rising Star",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
+			],
+			[
+				'organization' => "Manjha Technologies",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "IDFC FIRST Bank Rising Star",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
+			],
+			[
+				'organization' => "Ayurveda House",
+				'type' => 'MSME',
+				'person' =>  NULL,
+				'designation' =>  NULL,
+				'category' => "IDFC FIRST Bank Rising Star",
+				'gallery' => [
+					'main' => "https://placehold.co/1500x1000/jpg",
+					'thumb' => "https://placehold.co/600x400/jpg"
+				]
 			],
 		];
 		$utm = NULL;
