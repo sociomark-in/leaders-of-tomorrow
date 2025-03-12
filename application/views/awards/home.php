@@ -196,10 +196,11 @@
 								}
 							?>
 								<?php if (!is_null($winner['gallery'])) : ?>
-									<a href="<?= $winner['gallery']['main'] ?>" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= $winner['gallery']['main'] ?>" data-sub-html=".caption">
+									<a href="<?= base_url($winner['gallery']['main']) ?>" class="swiper-slide" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url($winner['gallery']['main']) ?>" data-sub-html="<p class='mb-1'><?= $winner['category'] ?></p>
+											<h5><?= $organization ?></h5>">
 										<picture>
-											<source srcset="<?= $winner['gallery']['thumb'] ?>" type="image/jpg">
-											<img src="" class="w-100 mb-3" alt="<?= $winner['gallery']['thumb'] ?>">
+											<source srcset="<?= base_url($winner['gallery']['thumb']) ?>" type="image/jpg">
+											<img src="<?= base_url($winner['gallery']['thumb']) ?>" class="w-100 mb-3" alt="">
 										</picture>
 										<div class="caption text-dark d-none d-md-block">
 											<p class="mb-1"><?= $winner['category'] ?></p>
