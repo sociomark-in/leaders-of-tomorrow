@@ -169,8 +169,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Agri-Tech and Allied Services",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/PlantRemedies.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/PlantRemedies.jpg"
 				]
 			],
 			[
@@ -180,8 +180,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Automobiles & Electric Vehicle",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Synnova.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Synnova.jpg"
 				]
 			],
 			[
@@ -191,8 +191,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Lifestyle and Consumer Products",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Razzmatazz.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Razzmatazz.jpg"
 				]
 			],
 			[
@@ -202,8 +202,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Food Processing & Packaging",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Pluckk.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Pluckk.jpg"
 				]
 			],
 			[
@@ -213,8 +213,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in EdTech and Skill Development",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Jeevitam.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Jeevitam.jpg"
 				]
 			],
 			[
@@ -224,8 +224,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Manufacturing",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Autosys.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Autosys.jpg"
 				]
 			],
 			[
@@ -235,8 +235,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Family Business Leadership",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Global.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Global.jpg"
 				]
 			],
 			[
@@ -247,8 +247,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in IT/ITES and Electronics",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Whiteklay.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Whiteklay.jpg"
 				]
 			],
 			[
@@ -258,8 +258,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Health, Wellness & Ayurveda",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Vipragen.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Vipragen.jpg"
 				]
 			],
 			[
@@ -269,8 +269,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Digital Transformation",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Enerture.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Enerture.jpg"
 				]
 			],
 			[
@@ -288,8 +288,8 @@ class AwardsController extends BaseController
 				'designation' => "CEO & Co-Founder",
 				'category' => "Social Impact Entrepreneur of the Year",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Swachh.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Swachh.jpg"
 				]
 			],
 			[
@@ -299,8 +299,8 @@ class AwardsController extends BaseController
 				'designation' => "Founder & CEO",
 				'category' => "Entrepreneur of the Year",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/AWL.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/AWL.jpg"
 				]
 			],
 // 			// [
@@ -316,6 +316,10 @@ class AwardsController extends BaseController
 				'person' => "Ruchika Bhuwalka",
 				'designation' => "Founder",
 				'category' => "Women Entrepreneur of the Year",
+				'gallery' => [
+					'main' => "assets/images/galleries/12/UrbanMonk.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/UrbanMonk.jpg"
+				]
 			],
 			[
 				'organization' => "Prathibha Biotech",
@@ -324,8 +328,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "Excellence in Green Revolution",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Prathibha.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Prathibha.jpg"
 				]
 			],
 			[
@@ -335,8 +339,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "IDFC FIRST Bank Rising Star",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/KAMA.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/KAMA.jpg"
 				]
 			],
 			[
@@ -346,8 +350,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "IDFC FIRST Bank Rising Star",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Manjha.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Manjha.jpg"
 				]
 			],
 			[
@@ -357,8 +361,8 @@ class AwardsController extends BaseController
 				'designation' =>  NULL,
 				'category' => "IDFC FIRST Bank Rising Star",
 				'gallery' => [
-					'main' => "https://placehold.co/1500x1000/jpg",
-					'thumb' => "https://placehold.co/600x400/jpg"
+					'main' => "assets/images/galleries/12/Ayurveda.jpg",
+					'thumb' => "assets/images/galleries/12/thumbs/Ayurveda.jpg"
 				]
 			],
 		];
