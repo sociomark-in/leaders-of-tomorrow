@@ -38,9 +38,9 @@ $utm = $this->input->get();
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Categories</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Gallery</a>
-				</li>
+				</li> -->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#partners') ?>">Partners</a>
 				</li>
@@ -53,9 +53,9 @@ $utm = $this->input->get();
 					$q = http_build_query($utm, '', '&');
 				}
 				?>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="btn btn-red disabled text-white" href="<?= base_url('awards/register-to-attend' . $q) ?>">Registrations&nbsp;Closed</a>
-				</li>
+				</li> -->
 				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
 						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>

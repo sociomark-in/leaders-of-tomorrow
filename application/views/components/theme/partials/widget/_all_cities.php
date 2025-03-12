@@ -1,6 +1,6 @@
 <?php 
 $done = 12;
-$live = "";
+$live = "Ahmedabad";
 for ($i = $done; $i < count($springboards); $i++) : 
 	$sb = $springboards[$i];
 	?>

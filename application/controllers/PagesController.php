@@ -8,6 +8,16 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-118914566,thumbsize-164428,width-1280,height-720,resizemode-75/118914566.jpg?quality=100",
+				'title' => "ET NOW Leaders of Tomorrow Awards Season 12: भारत के टॉप MSMEs और Startups सम्मानित",
+				'redirect' => "https://hindi.etnownews.com/news/indias-top-msmes-and-startups-honoured-at-et-now-leaders-of-tomorrow-awards-season-12-powering-entrepreneurs-for-the-global-stage-article-118914566"
+			],
+			[
+				'thumb' => "https://static.tnn.in/thumb/msid-118903544,thumbsize-164428,width-1280,height-720,resizemode-75/118903544.jpg?quality=100",
+				'title' => "India’s Top MSMEs and Startups Honoured at ET NOW Leaders of Tomorrow Awards",
+				'redirect' => "https://www.etnownews.com/news/indias-top-msmes-startups-honoured-at-et-now-leaders-of-tomorrow-awards-season-12-powering-entrepreneurs-for-the-global-stage-article-118903544"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-118845436,thumbsize-164428,width-1280,height-720,resizemode-75/118845436.jpg?quality=100",
 				'title' => "देखें LIVE: IDFC FIRST Bank द्वारा प्रस्तुत ईटी नाउ लीडर्स ऑफ टुमॉरो अवार्ड्स सीजन 12 | स्ट्रीमिंग",
 				'redirect' => "https://hindi.etnownews.com/news/watch-live-idfc-first-bank-presents-et-now-leaders-of-tomorrow-awards-season-12-streaming-direct-link-article-118845436"
