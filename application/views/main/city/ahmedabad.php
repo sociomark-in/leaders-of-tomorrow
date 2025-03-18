@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="pb-0 d-none">
+	<section class="pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-12">
@@ -61,23 +61,22 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
 					<div class="media-content" data-aos="fade-right">
 						<!--<iframe class="w-100" src="https://www.youtube.com/watch?v=4yf12kND24M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-						<iframe class="w-100" src="https://www.youtube.com/embed/rFFLPBQcStM?si=OYhCMjds0oIw4WdH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<iframe class="w-100" src="https://www.youtube.com/embed/vXoSrO_5u4Q?si=Sr_MJ5_KIKf1izjr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Goa: An Economy Evolving Beyond Tourism</span></h2>
+						<h2><span>Ahmedabad: The Gateway to India’s Shanghai Dream</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-up">
-							Known for its pristine beaches, tropical allure, cultural heritage and vibrant nightlife, Goa is charting an ambitious path beyond tourism. Diversifying its economy, Goa is advancing plans to establish a dedicated IT hub while positioning itself as a premier cargo and cruise destination to strengthen its coastal infrastructure and unlock new avenues for trade and business.
-							As India’s first <strong class="text-red">'Har Ghar Jal'</strong> certified state, Goa is also emerging as a trailblazer in sustainable development, setting a benchmark for progress and innovation. Explore Goa’s transformation and vast opportunities on the <strong class="text-red">Leaders of Tomorrow Goa Springboard</strong> – a key stop on our pan-India roadshow series, only on ET NOW.
+						Known for its vibrant culture, cuisine & historical sites, Ahmedabad is emerging as a manufacturing powerhouse and a startup hub, driving Gujarat's economic growth. Ahmedabad’s Dholera, often referred to as the ‘Shanghai of India’, is set to become the country's first greenfield smart city. This development underscores the city's role as a crucial gateway to India’s vision for innovation. By supporting entrepreneurship and utilising government support, Ahmedabad is embracing a new era of growth. Explore the city’s opportunities & challenges on the <strong class="text-red">Leaders of Tomorrow Ahmedabad Springboard</strong> - one pitstop on our pan India roadshow series, only on ET NOW.
 						</p>
 						<!-- <a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/watch?v=JhaCnMvPW-k&list=PL51KTBvlQFEGwdrPMKBpBFIPGKTtbcz3M" class="btn btn-yellow" target="_blank">View All Episodes</a> -->
 					</div>

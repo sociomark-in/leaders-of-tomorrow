@@ -601,23 +601,23 @@ class CityController extends BaseController
 				$this->load->city_view('goa', $this->data);
 				break;
 			
-			// case 'ahmedabad':
-			// 	$this->data['page'] = [
-			// 		'title' => "Ahmedabad Springboard" . " • " . APP_NAME . " " . date('Y'),
-			// 	];
-			// 	$this->data['city'] = [
-			// 		'name' => "Ahmedabad",
-			// 		'speakers' => []
-			// 	];
-			// 	$this->data['city']['partners'] = [
-			// 		[
-			// 			'text' => 'Hospitality Partner',
-			// 			'logo' => 'Pride.png',
-			// 			'url' => ""
-			// 		],
-			// 	];
-			// 	$this->load->city_view('ahmedabad', $this->data);
-			// 	break;
+			case 'ahmedabad':
+				$this->data['page'] = [
+					'title' => "Ahmedabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Ahmedabad",
+					'speakers' => []
+				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
+				$this->load->city_view('ahmedabad', $this->data);
+				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
@@ -793,6 +793,7 @@ class CityController extends BaseController
 				case 'pune':
 				case 'jaipur':
 				case 'goa':
+				case 'ahmedabad':
 					$this->data['city']['partners'] = [
 						[
 							'text' => 'Hospitality Partner',

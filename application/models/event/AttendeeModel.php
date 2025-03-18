@@ -86,6 +86,11 @@ class AttendeeModel extends CI_Model
 				$ticket_id = "31812";
 				$api_key = "323f3b4c-9c71-4385-8569-31af98ec9907";
 				break;
+				// Ahmedabad
+			case '48cac1a6-11c9-4ac7-8d7a-957e2ca2a945':
+				$ticket_id = "34127";
+				$api_key = "fc5e8e6e-e54b-4514-8105-7ab404ba17c5";
+				break;
 
 				// Awards
 			case 'b15f16a3-db1e-41d9-b135-472b02bf263c':

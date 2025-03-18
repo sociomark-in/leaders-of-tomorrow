@@ -1,5 +1,5 @@
 <section class="py-3 py-md-5 bg-white blank-all" id="partners">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row m-0">
 			<div class="col-12">
 				<div class="mb-md-4 mb-3 section-title text-center">
