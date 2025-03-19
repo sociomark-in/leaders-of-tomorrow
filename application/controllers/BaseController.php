@@ -83,7 +83,7 @@ class BaseController extends CI_Controller
 				'name' => "Ahmedabad",
 				'theme' => "Ahmedabad: The Gateway to India's Shanghai Dream",
 				'date' => '2025-03-21 17:00:00',
-				'venue' => "The Pride Hotel Ahmedabad"
+				'venue' => "Pride Plaza Hotel Ahmedabad"
 			],
 			[
 				'name' => "Kolkata",
