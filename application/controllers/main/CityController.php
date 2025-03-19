@@ -607,7 +607,33 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Ahmedabad",
-					'speakers' => []
+					'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Sunil_Parekh.png",
+							'name' => "Dr. Sunil R Parekh",
+							'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+						],
+						// [
+						// 	'photo' => "Ashish_Desai.png",
+						// 	'name' => "Ashish Desai",
+						// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+						// ],
+						[
+							'photo' => "Arnav_Patel.png",
+							'name' => "Arnav Patel",
+							'description' => "Director, Paypoint",
+						],
+						// [
+						// 	'photo' => "Mayank_Patel.png",
+						// 	'name' => "Dr. Mayank Patel",
+						// 	'description' => "Head of Advisory Services, IBGrid",
+						// ],
+					]
 				];
 				$this->data['city']['partners'] = [
 					[
