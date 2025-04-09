@@ -644,6 +644,92 @@ class CityController extends BaseController
 				];
 				$this->load->city_view('ahmedabad', $this->data);
 				break;
+			case 'kolkata':
+				$this->data['page'] = [
+					'title' => "Kolkata Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Kolkata",
+					'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Sunil_Parekh.png",
+							'name' => "Dr. Sunil R Parekh",
+							'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+						],
+						// [
+						// 	'photo' => "Ashish_Desai.png",
+						// 	'name' => "Ashish Desai",
+						// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+						// ],
+						[
+							'photo' => "Arnav_Patel.png",
+							'name' => "Arnav Patel",
+							'description' => "Director, Paypoint",
+						],
+						// [
+						// 	'photo' => "Mayank_Patel.png",
+						// 	'name' => "Dr. Mayank Patel",
+						// 	'description' => "Head of Advisory Services, IBGrid",
+						// ],
+					]
+				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
+				$this->load->city_view('kolkata', $this->data);
+				break;
+			case 'nagpur':
+				$this->data['page'] = [
+					'title' => "Nagpur Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Nagpur",
+					'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Sunil_Parekh.png",
+							'name' => "Dr. Sunil R Parekh",
+							'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+						],
+						// [
+						// 	'photo' => "Ashish_Desai.png",
+						// 	'name' => "Ashish Desai",
+						// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+						// ],
+						[
+							'photo' => "Arnav_Patel.png",
+							'name' => "Arnav Patel",
+							'description' => "Director, Paypoint",
+						],
+						// [
+						// 	'photo' => "Mayank_Patel.png",
+						// 	'name' => "Dr. Mayank Patel",
+						// 	'description' => "Head of Advisory Services, IBGrid",
+						// ],
+					]
+				];
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Hospitality Partner',
+						'logo' => 'Pride.png',
+						'url' => ""
+					],
+				];
+				$this->load->city_view('nagpur', $this->data);
+				break;
 			case 'test':
 				$this->data['page'] = [
 					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),

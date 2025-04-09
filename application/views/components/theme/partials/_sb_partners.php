@@ -14,6 +14,36 @@
 							$data['partners'] = $city['partners'];
 							$this->load->view('components/theme/partials/partners/layout-01', $data);
 							break;
+						case 'delhi':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+						case 'bengaluru':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+						case 'goa':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+						case 'ahmedabad':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+						case 'nagpur':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
+						case 'kolkata':
+							$data['city'] = $city['name'];
+							$data['partners'] = $city['partners'];
+							$this->load->view('components/theme/partials/partners/layout-01', $data);
+							break;
 
 						default:
 							break;
