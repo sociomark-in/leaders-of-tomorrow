@@ -41,7 +41,7 @@
 								<div class="text-content text-center">
 									<div class="row justify-content-center">
 										<div class="col-auto">
-											<a href="<?= base_url('dashboard') ?>" class="btn btn-lg btn-yellow" target="_blank">Nominate Now</a>
+											<a href="<?= base_url('panel') ?>" class="btn btn-lg btn-yellow" target="_blank">Nominate Now</a>
 										</div>
 									</div>
 								</div>
@@ -85,7 +85,7 @@
 				<div class="col-xl-10 col-12">
 					<div class="media-content springboard-banner">
 						<div class="wrap">
-							<!-- <a href="<?= base_url('dashboard') ?>">
+							<!-- <a href="<?= base_url('panel') ?>">
 								<picture>
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
 									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">

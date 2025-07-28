@@ -1,0 +1,11 @@
+{
+    "require" : {
+        "fpdf/fpdf": "^1.86",
+        "google/apiclient": "^2.17",
+        "google/auth": "^1.26",
+        "ilovepdf/ilovepdf-php": "^1.2"
+    },
+	"scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    }
+}

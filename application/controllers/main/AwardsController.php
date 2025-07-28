@@ -528,9 +528,9 @@ class AwardsController extends BaseController
 	{
 		$category_details = json_decode($this->CategoryModel->get(null, ['code' => $code]), true)[0];
 		if (!isset($_SESSION['awards_panel_user'])) {
-			redirect('login');
+			redirect($this->PANEL_URL . '/login');
 		} else {
-			redirect('dashboard/category/' . $category_details['code'] . '/nominate');
+			redirect($this->PANEL_URL . '/category/' . $category_details['code'] . '/nominate');
 		}
 	}
 

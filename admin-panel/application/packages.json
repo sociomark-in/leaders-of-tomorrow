@@ -1,0 +1,15 @@
+{
+    "require" : {
+        "clegginabox/pdf-merger": "dev-master",
+        "fpdf/fpdf": "^1.86",
+        "twilio/sdk": "^8.3",
+        "phpmailer/phpmailer": "^6.9",
+        "plivo/plivo-php": "^4.66",
+        "google/apiclient": "^2.17",
+        "google/auth": "^1.26", 
+		"ilovepdf/ilovepdf-php": "^1.2"
+    },
+	"scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    }
+}
