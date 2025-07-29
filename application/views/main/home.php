@@ -28,18 +28,18 @@ foreach ($springboards as $key => $city) {
 								<div class="" data-aos="fade-right">
 									<picture>
 										<source srcset="<?= base_url('assets/images/ilu.png') ?>" type="image/png" media="(min-width: 768px)">
-										<source srcset="<?= base_url('assets/images/ilu@600.png') ?>" type="image/png" media="(max-width: 768px)">
-										<img class="w-100" src="<?= base_url('assets/images/ilu@600.png') ?>" alt="">
+										<source srcset="<?= base_url('assets/images/ilu.png') ?>" type="image/png" media="(max-width: 768px)">
+										<img class="w-100" src="<?= base_url('assets/images/ilu.png') ?>" alt="">
 									</picture>
 								</div>
 							</div>
 							<div class="col-xl-7 col-lg-6 col-12">
 								<div class="media-content">
 									<div class="ratio ratio-1x1">
-										<picture class="spin">
-											<source srcset="<?= base_url('assets/images/kv-buildings.png') ?>" type="image/png" media="(min-width: 768px)">
-											<source srcset="<?= base_url('assets/images/kv-buildings@600.png') ?>" type="image/png" media="(max-width: 768px)">
-											<img class="w-100" src="<?= base_url('assets/images/kv-buildings@600.png') ?>" alt="">
+										<picture class="">
+											<source srcset="<?= base_url('assets/images/kv-puzzle.png') ?>" type="image/png" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/kv-puzzle.png') ?>" type="image/png" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/kv-puzzle.png') ?>" alt="">
 										</picture>
 									</div>
 								</div>
@@ -90,7 +90,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section class="" id="about">
+	<section class="d-none" id="about">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -186,7 +186,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="springboards" class="section pb-0">
+	<section id="springboards" class="d-none section pb-0">
 		<div class="container">
 			<div class="row g-3 align-items-center flex-row-reverse mb-3 mb-md-5">
 				<div class="col-12">
@@ -211,7 +211,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="awards" class="section pb-0">
+	<section id="awards" class="d-none section pb-0">
 		<div class="container">
 			<div class="glass-card">
 				<div class="card-body">
@@ -245,7 +245,7 @@ foreach ($springboards as $key => $city) {
 		</div>
 	</section>
 
-	<section id="articles" class="section pb-3">
+	<section id="articles" class="d-none section pb-3">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">

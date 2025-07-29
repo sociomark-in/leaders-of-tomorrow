@@ -10,10 +10,7 @@ class LoginController extends BaseController
 	}
 
 	public function single(){
-		$this->data['page'] =[
-			'title' => "Login"
-		];
-		$this->load->mini_view('login', $this->data);
+		redirect($this->PANEL_URL . "/login");
 	}
 
 	public function forgot_pw(){

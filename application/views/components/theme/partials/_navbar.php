@@ -7,11 +7,11 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 		<a class="navbar-brand" href="<?= base_url() ?>">
 			<img src="<?= base_url() ?>assets/images/main.png" alt="LOT Logo" height="40">
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="mx-0 mx-md-4 collapse navbar-collapse w-100 justify-content-between" id="navbarNav">
-			<ul class="navbar-nav gap-2 mb-3 mb-md-0">
+			<ul class="navbar-nav gap-2 mb-3 mb-md-0 d-none">
 				<!-- <li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="#">Home</a>
 				</li> -->
@@ -60,7 +60,7 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					</ul>
 				</li>
 			</ul>
-			<ul class="navbar-nav g-4">
+			<ul class="navbar-nav g-4 d-none">
 				<li class="nav-item">
 					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
 						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">

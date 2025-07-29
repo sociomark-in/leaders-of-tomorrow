@@ -87,48 +87,6 @@ $route['multi-login'] = 'auth/LoginController/multi';
 
 $route['nominate'] = 'awards/AccountController/nominate';
 
-// Participant
-$route['dashboard'] = 'panel/AccountController';
-$route['dashboard/my-applications'] = 'panel/NominationsController/user_side';
-$route['dashboard/my-presentations'] = 'panel/PresentationsController';
-
-$route['dashboard/category/(:any)/nominate'] = 'panel/NominationsController/nominate/$1';
-
-// Jury
-$route['dashboard/applications'] = 'panel/NominationsController';
-$route['dashboard/application/(:any)'] = 'panel/NominationsController/single/$1';
-$route['dashboard/application/(:any)/edit'] = 'panel/NominationsController/user_edit/$1';
-$route['dashboard/application/(:any)/download'] = 'panel/NominationsController/download/$1';
-$route['dashboard/application/(:any)/reject'] = 'api/awards/NominationAPIController/reject_default_comment/$1';
-
-$route['dashboard/presentations'] = 'panel/PresentationsController';
-$route['dashboard/application/(:any)/presentation'] = 'panel/PresentationsController/new_presentation/$1';
-$route['dashboard/presentation/(:any)/view'] = 'panel/PresentationsController/single/$1';
-$route['dashboard/presentation/(:any)/edit'] = 'panel/PresentationsController/edit/$1';
-$route['dashboard/presentation/(:any)/download'] = 'panel/PresentationsController/download/$1';
-
-$route['dashboard/categories'] = 'panel/CategoriesController';
-$route['dashboard/category/(:any)'] = 'panel/CategoriesController/single/$1';
-
-// Admin
-$route['dashboard/all-agents'] = 'panel/AccountController/all_agents';
-$route['dashboard/agent/(:any)'] = 'panel/AccountController/agent_single/$1';
-
-$route['dashboard/all-users'] = 'panel/AccountController/all_users';
-
-// All
-$route['dashboard/my-profile'] = 'panel/AccountController/profile';
-$route['dashboard/my-profile/edit'] = 'panel/AccountController/profile_edit';
-$route['dashboard/my-profile/verify'] = 'panel/AccountController/profile_verify';
-$route['dashboard/my-profile/settings'] = 'panel/AccountController/profile_settings';
-$route['dashboard/my-profile/setting/(:any)'] = 'panel/AccountController/profile_setting_single/$1';
-
-$route['dashboard/profile/(:any)'] = 'awards/AccountController/public_profile/$1';
-
-$route['dashboard/app/settings'] = 'panel/settings/GlobalSettingsController/index';
-
-
-
 $route['api/new-nominee'] = 'NomineeController/add';
 
 $route['api/v2/auth/verify/(:any)/send'] = 'api/auth/VerificationAPIController/send/$1';
