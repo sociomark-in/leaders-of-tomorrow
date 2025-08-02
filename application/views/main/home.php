@@ -1,9 +1,11 @@
 <?php
-$c_n = "all-cities";
-foreach ($springboards as $key => $city) {
-	if (date_format(date_create($city['date']), 'Y-m-d') > date('Y-m-d')) {
-		$c_n = strtolower($city['name']);
-		break;
+$upcoming_sb = "all-cities";
+if (!is_null($springboards)) {
+	foreach ($springboards as $key => $city) {
+		if (date_format(date_create($city['date']), 'Y-m-d') > date('Y-m-d')) {
+			$upcoming_sb = strtolower($city['name']);
+			break;
+		}
 	}
 }
 ?>
@@ -18,6 +20,7 @@ foreach ($springboards as $key => $city) {
 			</div>
 		</div>
 	</section>
+
 	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
@@ -25,12 +28,15 @@ foreach ($springboards as $key => $city) {
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
 							<div class="col-xl-5 col-lg-6 col-12">
-								<div class="" data-aos="fade-right">
+								<div class="mb-3" data-aos="fade-right">
 									<picture>
 										<source srcset="<?= base_url('assets/images/ilu.png') ?>" type="image/png" media="(min-width: 768px)">
 										<source srcset="<?= base_url('assets/images/ilu.png') ?>" type="image/png" media="(max-width: 768px)">
 										<img class="w-100" src="<?= base_url('assets/images/ilu.png') ?>" alt="">
 									</picture>
+								</div>
+								<div class="" data-aos="fade-right">
+									<img src="<?= base_url('assets/images/coming-soon.png') ?>" class="w-100" alt="">
 								</div>
 							</div>
 							<div class="col-xl-7 col-lg-6 col-12">
@@ -199,7 +205,7 @@ foreach ($springboards as $key => $city) {
 						</p>
 						<div class="row g-3">
 							<div class="col-auto">
-								<a href="<?= base_url('city/' . $c_n) ?>" data-aos="fade-right" data-aos-delay="100" class="btn btn-yellow btn-hover-red">Upcoming Springboard</a>
+								<a href="<?= base_url('city/' . $upcoming_sb) ?>" data-aos="fade-right" data-aos-delay="100" class="btn btn-yellow btn-hover-red">Upcoming Springboard</a>
 							</div>
 							<div class="col-auto">
 								<a href="<?= base_url('all-cities') ?>" data-aos="fade-right" class="btn btn-red">All Springboards</a>

@@ -7,44 +7,42 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 		<a class="navbar-brand" href="<?= base_url() ?>">
 			<img src="<?= base_url() ?>assets/images/main.png" alt="LOT Logo" height="40">
 		</a>
-		<button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="mx-0 mx-md-4 collapse navbar-collapse w-100 justify-content-between" id="navbarNav">
-			<ul class="navbar-nav gap-2 mb-3 mb-md-0 d-none">
+			<ul class="navbar-nav gap-2 mb-3 mb-md-0">
 				<!-- <li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="#">Home</a>
 				</li> -->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
-				<li class="nav-item dropdown d-none">
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Previous Seasons
+						Past Seasons
 					</a>
 					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="<?= base_url('history/season-12') ?>">Season 12</a></li>
 						<li><a class="dropdown-item" href="<?= base_url('history/season-11') ?>">Season 11</a></li>
-						<li><a class="dropdown-item" href="<?= base_url('history/season-10') ?>">Season 10</a></li>
-						<li><a class="dropdown-item" href="<?= base_url('history/season-9') ?>">Season 9</a></li>
-						<li><a class="dropdown-item" href="<?= base_url('history/season-8') ?>">Season 8</a></li>
 						<li>
 							<hr class="dropdown-divider">
 						</li>
-						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li>
+						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Seasons</a></li>
 					</ul>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url('#articles') ?>">News</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="btn btn-outline-red text-uppercase" href="<?= base_url('history/season-11') ?>">Past&nbsp;Season</a>
-				</li>
+				</li> -->
 				<li class="nav-item dropdown d-none">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Miscellaneous Menu

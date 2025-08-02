@@ -20,7 +20,7 @@
 	<section class="pt-0">
 		<div class="container">
 			<div class="row g-3">
-				<?php for ($i = 11; $i > 7; $i--) : ?>
+				<?php for ($i = EVENT_SEASON - 1; $i > 7; $i--) : ?>
 					<div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-6">
 						<a href="<?= base_url('history/') . "season-" . $i ?>"  class="speaker-tile">
 							<div class="photo mb-3">

@@ -28,111 +28,106 @@
 		</div>
 	</section>
 
-	<section class="pb-0">
+	<section class="">
 		<div class="container">
-			<div class="row justify-content-center g-3">
-				<div class="col-12">
-					<div class="section-title">
-						<h2><span>All Springboards</span></h2>
-					</div>
-				</div>
+			<div class="row justify-content-center g-3 g-md-4">
 				<div class="col-12">
 					<ul class="nav nav-pills" id="myTab" role="tablist">
-						<?php foreach ($hcities as $key => $city) : ?>
-							<?php if ($key == 0): ?>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="<?= strtolower($city['name']) ?>" data-bs-toggle="tab" data-bs-target="#<?= strtolower($city['name']) ?>-pane" type="button" role="tab" aria-controls="<?= strtolower($city['name']) ?>-pane" aria-selected="true"><?= $city['name'] ?></button>
+						<li class="nav-item">
+							<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= current_url() . "/awards" ?>">
+								<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+								Awards
+							</a>
+						</li>
+						<?php foreach ($cities as $key => $city) : ?>
+							<?php if ($city == $page['name']): ?>
+								<li class="nav-item">
+									<a href="<?= current_url() ?>?city=<?= $city ?>" class="nav-link active" id="<?= strtolower($city) ?>"><?= $city ?></a>
 								</li>
 							<?php else: ?>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="<?= strtolower($city['name']) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= strtolower($city['name']) ?>-tab-pane" type="button" role="tab" aria-controls="<?= strtolower($city['name']) ?>-tab-pane" aria-selected="false"><?= $city['name'] ?></button>
+								<li class="nav-item">
+									<a href="<?= current_url() ?>?city=<?= $city ?>" class="nav-link" id="<?= strtolower($city) ?>"><?= $city ?></a>
 								</li>
 							<?php endif ?>
 						<?php endforeach ?>
 					</ul>
-					<div class="tab-content py-3" id="myTabContent">
-						<?php foreach ($hcities as $key => $city) : ?>
-							<?php if ($key == 0): ?>
-								<div class="tab-pane fade show active" id="<?= strtolower($city['name']) ?>-pane" role="tabpanel" aria-labelledby="<?= strtolower($city['name']) ?>" tabindex="0">
-									<div class="row align-items-center">
-										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
-											<div class="media-content" data-aos="fade-right">
-												<lite-youtube videoid="<?= $city['promo'] ?>">
-													<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=<?= $city['promo'] ?>"><?= $city['name'] ?></a>
-												</lite-youtube>
-											</div>
-										</div>
-										<div class="col-xl-7 col-lg-6 col-12">
-											<?php if (isset($city['theme'])) : ?>
-												<div class="section-title aos-init aos-animate" data-aos="fade-left">
-													<h2><span><?= $city['theme'] ?></span></h2>
-												</div>
-											<?php endif ?>
-											<div class="desc">
-												<?php if (isset($city['text'])) : ?>
-													<p class="wrapped" data-aos="fade-left" data-aos-delay="400"></p>
-												<?php endif ?>
-												<div class="row">
-													<div class="col-md-12">
-														<p class="mb-2">Date:</p>
-														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
-													</div>
-													<div class="col-md-12">
-														<p class="mb-2">Venue:</p>
-														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
-													</div>
-												</div>
-												<?php if (isset($city['episodes'])) : ?>
-													<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=<?= $city['episodes'] ?>" class="btn btn-yellow" target="_blank">View All Episodes</a>
-												<?php endif ?>
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php else: ?>
-								<div class="tab-pane fade" id="<?= strtolower($city['name']) ?>-tab-pane" role="tabpanel" aria-labelledby="<?= strtolower($city['name']) ?>-tab" tabindex="0">
-									<div class="row align-items-center">
-										<div class="col-xl-5 col-lg-6 col-md-6 col-12">
-											<div class="media-content" data-aos="fade-right">
-												<lite-youtube videoid="<?= $city['promo'] ?>">
-													<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=<?= $city['promo'] ?>">VIDEO TITLE/DESCRIPTION</a>
-												</lite-youtube>
-											</div>
-										</div>
-										<div class="col-xl-7 col-lg-6 col-12">
-											<?php if (isset($city['theme'])) : ?>
-												<div class="section-title aos-init aos-animate" data-aos="fade-left">
-													<h2><span><?= $city['theme'] ?></span></h2>
-												</div>
-											<?php endif ?>
-											<div class="desc">
-												<?php if (isset($city['text'])) : ?>
-													<p class="wrapped" data-aos="fade-left" data-aos-delay="400"></p>
-												<?php endif ?>
-												<div class="row">
-													<div class="col-md-12">
-														<p class="mb-2">Date:</p>
-														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['date'] ?></h4>
-													</div>
-													<div class="col-md-12">
-														<p class="mb-2">Venue:</p>
-														<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $city['venue'] ?></h4>
-													</div>
-												</div>
-												<?php if (isset($city['episodes'])) : ?>
-													<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=<?= $city['episodes'] ?>" class="btn btn-yellow" target="_blank">View All Episodes</a>
-												<?php endif ?>
-											</div>
-										</div>
-									</div>
+				</div>
+				<div class="col-12">
+					<div class="row align-items-center">
+						<div class="col-xl-5 col-lg-6 col-md-6 col-12">
+							<div class="media-content" data-aos="fade-right">
+								<lite-youtube videoid="<?= $page['promo'] ?>">
+									<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=<?= $page['promo'] ?>"><?= $city ?></a>
+								</lite-youtube>
+							</div>
+						</div>
+						<div class="col-xl-7 col-lg-6 col-12">
+							<?php if (isset($page['theme'])) : ?>
+								<div class="section-title aos-init aos-animate" data-aos="fade-left">
+									<h2><span><?= $page['theme'] ?></span></h2>
 								</div>
 							<?php endif ?>
-						<?php endforeach ?>
+							<div class="desc">
+								<?php if (isset($city['text'])) : ?>
+									<p class="wrapped" data-aos="fade-left" data-aos-delay="400"></p>
+								<?php endif ?>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="mb-2">Date:</p>
+										<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $page['date'] ?></h4>
+									</div>
+									<div class="col-md-12">
+										<p class="mb-2">Venue:</p>
+										<h4 class="text-red" data-aos="fade-left" data-aos-delay="400"><?= $page['venue'] ?></h4>
+									</div>
+								</div>
+								<?php if (isset($city['episodes'])) : ?>
+									<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=<?= $city['episodes'] ?>" class="btn btn-yellow" target="_blank">View All Episodes</a>
+								<?php endif ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<?php if (!is_null($springboard['gallery']) > 0): ?>
+		<section id="gallery" class="section pt-0">
+			<div class="container">
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="section-title">
+							<h2><span>Key Moments</span></h2>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="row g-3" id="galleryMasonry">
+							<?php foreach ($springboard['gallery'] as $key => $image) : ?>
+								<a class="col-xxl-2 col-xl-3 col-lg-4 col-6" data-aos="fade-left" data-aos-delay="<?= $key * 10 ?>" href="<?= base_url('assets/images/history/' . $season . '/springboards/' . strtolower($page['name']) . '/gallery/' . $image) ?>">
+									<figure>
+										<picture>
+											<!-- <source srcset="https://placehold.co/250x167/webp" type="image/webp"> -->
+											<source srcset="<?= base_url('assets/images/history/' . $season . '/springboards/' . strtolower($page['name']) . '/gallery/thumbs/' . $image) ?>" type="image/jpg">
+											<img class="w-100" src="<?= base_url('assets/images/history/' . $season . '/springboards/' . strtolower($page['name']) . '/gallery/thumbs/' . $image) ?>" alt="" loading="lazy">
+										</picture>
+										<figcaption></figcaption>
+									</figure>
+								</a>
+							<?php endforeach ?>
+						</div>
+						<script>
+							var gallery = lightGallery(document.getElementById('galleryMasonry'), {
+								plugins: [lgZoom, lgThumbnail],
+								speed: 500,
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif ?>
+	<!-- 
 	<section id="live">
 		<div class="container">
 			<div class="row justify-content-center g-4">
@@ -165,7 +160,7 @@
 					<table class="table table-bordered heading-red">
 						<thead>
 							<tr>
-								<!-- <th>Sr. No.</th> -->
+								<th>Sr. No.</th>
 								<th class="p-3">Categories</th>
 								<th class="p-3">Name of Winners</th>
 							</tr>
@@ -173,9 +168,9 @@
 						<tbody>
 							<?php foreach ($awards['winners'] as $key => $winner) : ?>
 								<tr>
-									<!-- <td><?= $key + 1 ?></td> -->
+									<td><?= $key + 1 ?></td>
 									<td class="p-3"><?= $winner['category'] ?></td>
-									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><strong><?= $winner['name'] ?></strong></td>
+									<td class="p-3"><i class="fa-solid fa-trophy me-3 text-gold"></i><strong><?= $winner ?></strong></td>
 								</tr>
 							<?php endforeach ?>
 						</tbody>
@@ -281,5 +276,5 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </main>

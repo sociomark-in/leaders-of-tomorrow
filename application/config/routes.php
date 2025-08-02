@@ -55,6 +55,7 @@ $route['history'] = 'main/HistoryController';
 $route['gallery'] = 'main/GalleryController';
 $route['all-cities'] = 'main/CityController';
 $route['history/season-(:any)'] = 'main/HistoryController/season_single/$1';
+$route['history/season-(:any)/awards'] = 'main/HistoryController/season_awards/$1';
 $route['misc/(:any)'] = 'main/OtherPagesController/misc/$1';
 $route['sitemap'] = 'main/OtherPagesController/sitemap';
 

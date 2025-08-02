@@ -23,6 +23,805 @@ class HistoryController extends BaseController
 			'title' => "Season " . $number . " • " . APP_NAME,
 		];
 		switch ($number) {
+			case '12':
+				$this->data['partners'] = [
+					[
+						'text' => "Presenting Partner",
+						'logo' => "idfc.png",
+						'url' => null,
+					],
+					[
+						'text' => "Associate Partner",
+						'logo' => "adani.png",
+						'url' => null,
+					],
+					[
+						'text' => "Education Partner",
+						'logo' => "bennett.png",
+						'url' => null,
+					],
+				];
+				$this->data['cities'] = [
+					"Mumbai",
+					"Lucknow",
+					"Chandigarh",
+					"Hyderabad",
+					"Chennai",
+					"Coimbatore",
+					"Jaipur",
+					"Pune",
+					"Indore",
+					"Delhi",
+					"Bengaluru",
+					"Goa",
+					"Ahmedabad",
+					"Nagpur",
+					"Kolkata",
+				];
+				
+				$city = $this->input->get('city') ?? "Mumbai";
+				switch ($city) {
+					case 'Mumbai':
+						$this->data['page'] = [
+							'title' => "Mumbai Springboard" . " • " . APP_NAME . " " . date('Y'),
+							'date' => '2024-08-29 17:00:00',
+							'venue' =>	"Taj Lands End, Mumbai",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Galvanizing India’s MSMEs to Seize Global Opportunities",
+						];
+						$this->data['springboard'] = [
+							'name' => "Mumbai",
+							'guests' => [
+								[
+									'photo' => "Devendra_Fadnavis.png",
+									'name' => "Devendra Fadnavis",
+									'description' => "Deputy Chief Minister, Maharashtra",
+								],
+							],
+							'speakers' => [
+								[
+									'photo' => "Chinmay_Dhoble.png",
+									'name' => "Chinmay Dhoble",
+									'description' => "Head, Retail Liabilities & Branch Banking, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Dr_A_Velumani.png",
+									'name' => "Dr. A Velumani",
+									'description' => "Creator, Thyrocare ",
+								],
+								[
+									'photo' => "Ajay_Thakur.png",
+									'name' => "Ajay Thakur",
+									'description' => "CEO & Managing Partner , TGI SME Capital Advisors LLP",
+								],
+								[
+									'photo' => "Amisha_Vora.png",
+									'name' => "Amisha Vora",
+									'description' => "Chairperson & MD, PL Capital",
+								],
+								[
+									'photo' => "Aisshwarya_DKS_Hegde.png",
+									'name' => "Aisshwarya DKS Hegde",
+									'description' => "Edupreneur, Trustee Secretary, National Education Foundation",
+								],
+								[
+									'photo' => "Sushma_Morthania.png",
+									'name' => "Sushma Morthania",
+									'description' => "Director General, India SME Forum",
+								],
+								[
+									'photo' => "Pankaj_Mathpal.png",
+									'name' => "Pankaj Mathpal",
+									'description' => "Founder & MD, Optima Money Managers",
+								],
+							]
+						];
+						break;
+					case 'Lucknow':
+						$this->data['page'] = [
+							'date' => '2024-09-13 17:00:00',
+							'venue' =>	"Hilton Garden Inn",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Charting Uttar Pradesh’s Trillion-Dollar Journey ",
+						];
+						$this->data['springboard'] = [
+							'name' => "Lucknow",
+							'speakers' => [
+								[
+									'photo' => "Bhavesh_Jatania.png",
+									'name' => "Bhavesh Jatania",
+									'description' => "Head - Startup Banking, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Jayant_Krishna.png",
+									'name' => "Jayant Krishna",
+									'description' => "Senior Fellow & Former CEO, CSIS, National Skill Development Corporation",
+								],
+								[
+									'photo' => "Vinamra_Agarwal.png",
+									'name' => "Vinamra Agarwal",
+									'description' => "Joint MD, Technical Associates",
+								],
+								[
+									'photo' => "Jyotsna_Kaur_Habibullah.png",
+									'name' => "Jyotsna Kaur Habibullah",
+									'description' => "CEO, Lucknow Farmers Market",
+								],
+								[
+									'photo' => "Anuj_Agarwal.png",
+									'name' => "Anuj Agarwal",
+									'description' => "MD, Gyan Dairy",
+								],
+								[
+									'photo' => "Aditya_Sharma.png",
+									'name' => "Aditya Sharma",
+									'description' => "Founder, Capital Tree",
+								],
+							]
+						];
+						break;
+					case 'Chandigarh':
+						$this->data['page'] = [
+							'date' => '2024-09-27 17:00:00',
+							'venue' =>	"Hometel, Chandigarh",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "A Case Study For Ease Of Doing Business",
+						];
+						$this->data['springboard'] = [
+							'name' => "Chandigarh",
+							'guests' => [
+								[
+									'photo' => "Satya_Jain.png",
+									'name' => "Satya Pal Jain",
+									'description' => "Additional Solicitor General of India & Former Member of Lok Sabha Chandigarh",
+								],
+							],
+							'speakers' => [
+								[
+									'photo' => "Rohit_Saoji.png",
+									'name' => "Rohit Jagdish Saoji",
+									'description' => "Head, Commercial Banking, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Naveen_Manglani.png",
+									'name' => "Naveen Manglani",
+									'description' => "President, Chamber of Chandigarh Industries",
+								],
+								[
+									'photo' => "Heena_Kataria.png",
+									'name' => "Heena Kataria",
+									'description' => "Founder & CEO, MerakiAds",
+								],
+								[
+									'photo' => "Vineet_Khurana.png",
+									'name' => "Vineet Khurana",
+									'description' => "CEO, SACC India",
+								],
+								[
+									'photo' => "Isha_Taneja.png",
+									'name' => "Isha Taneja",
+									'description' => "Chair, TiE Chandigarh Women",
+								],
+							]
+						];
+						break;
+
+					case 'Hyderabad':
+						$this->data['page'] = [
+							'date' => '2024-10-10 17:00:00',
+							'venue' =>	"Radisson Blu Plaza Hotel Hyderabad Banjara Hills",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "India's Manufacturing Hotbed & SEZ Capital ",
+						];
+						$this->data['springboard'] = [
+							'name' => "Hyderabad",
+							'speakers' => [
+								// [
+								// 	'photo' => "Bhavesh_Jatania.png",
+								// 	'name' => "Bhavesh Jatania",
+								// 	'description' => "Head - Startup Banking, IDFC FIRST Bank",
+								// ],
+								[
+									'photo' => "Rama_Devi_Lanka.png",
+									'name' => "Rama Devi Lanka",
+									'description' => "Director - Emerging Technologies, Government of Telangana",
+								],
+								[
+									'photo' => "K_Rama_Devi.png",
+									'name' => "K Rama Devi",
+									'description' => "Founder & President, Association of Lady Entrepreneurs of India (ALEAP)",
+								],
+								[
+									'photo' => "Ramesh_Loganathan.png",
+									'name' => "Ramesh Loganathan",
+									'description' => "Professor & Head Research Outreach, IIIT - Hyderabad",
+								],
+								[
+									'photo' => "Lion_Dr_Kiran.png",
+									'name' => "Lion Dr Kiron",
+									'description' => "Managing Director, SuchirIndia Group",
+								],
+							]
+						];
+						break;
+					case 'Chennai':
+						$this->data['page'] = [
+							'date' => '2024-10-25 17:00:00',
+							'venue' =>	"Regenta Central RS, Chennai",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Driving Global Blueprint for Industrial Excellence",
+						];
+						$this->data['springboard'] = [
+							'name' => "Chennai",
+							'speakers' => [
+								[
+									'photo' => "Anto_Alan.png",
+									'name' => "Anto Alan",
+									'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Dr_Srimathy.png",
+									'name' => "Dr Srimathy Kesan",
+									'description' => "Founder & CEO, Space Kidz India",
+								],
+								[
+									'photo' => "CK_Mohan.png",
+									'name' => "CK Mohan",
+									'description' => "President, Tamil Nadu Small & Tiny Industries Association",
+								],
+								[
+									'photo' => "Divya_Abhishek.png",
+									'name' => "Divya Abhishek",
+									'description' => "Chairperson, FICCI FLO, Chennai",
+								],
+								[
+									'photo' => "Dayal_Nathan.png",
+									'name' => " Dayal Nathan",
+									'description' => "Founder & CEO, Energyly",
+								],
+								// [
+								// 	'photo' => "",
+								// 	'name' => "",
+								// 	'description' => "",
+								// ],
+							]
+						];
+						break;
+					case 'Coimbatore':
+						$this->data['page'] = [
+							'date' => '2024-11-22 17:00:00',
+							'venue' =>	"Le Méridien, Coimbatore",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Crafting Futures, Empowering Growth",
+						];
+						$this->data['springboard'] = [
+							'name' => "Coimbatore",
+							'partners' => [
+								[
+									'text' => 'Associate Partner',
+									'logo' => 'TEA.png',
+									'url' => "https://www.tea-india.org/"
+								],
+								[
+									'text' => 'Associate Partner',
+									'logo' => 'GSquare.png',
+									'url' => "https://www.gsquarehousing.com/"
+								],
+							],
+							'speakers' => [
+								[
+									'photo' => "Kranthi_Kumar_Pati.png",
+									'name' => "Kranthi Kumar Pati",
+									'description' => " IAS, District Collector, Coimbatore",
+								],
+								[
+									'photo' => "Anto_Alan.png",
+									'name' => "Anto Alan",
+									'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "A_Sakthivel.png",
+									'name' => "Padma Shri Dr. A. Sakthivel",
+									'description' => "Honorary Chairman, Tiruppur Exporters Association",
+								],
+								[
+									'photo' => "KM_Subramanian.png",
+									'name' => "KM Subramanian",
+									'description' => "President, Tiruppur Exporters Association",
+								],
+								[
+									'photo' => "Junaith_Baba.png",
+									'name' => "Junaith Babu",
+									'description' => "COO, G SQUARE",
+								],
+								[
+									'photo' => "CA_Meena.png",
+									'name' => "CA Meena Swaminathan",
+									'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
+								],
+								// [
+								// 	'photo' => "M_Karthikeyan.png",
+								// 	'name' => " M. Karthikeyan",
+								// 	'description' => "President, Codissia",
+								// ],
+								[
+									'photo' => "Junaith_Baba.png",
+									'name' => "Junaith Babu",
+									'description' => "COO, G SQUARE",
+								],
+								[
+									'photo' => "CA_Meena.png",
+									'name' => "CA Meena Swaminathan",
+									'description' => "Chairperson, FICCI Ladies Organisation, Coimbatore Chapter",
+								],
+								[
+									'photo' => "M_Karthikeyan.png",
+									'name' => " M. Karthikeyan",
+									'description' => "President, Codissia",
+								],
+								[
+									'photo' => "G_Radhakrishnan.png",
+									'name' => "G Radhakrishnan",
+									'description' => "Chairman, CII Coimbatore Zone",
+								],
+								[
+									'photo' => "K_Illango.png",
+									'name' => "K. Ilango",
+									'description' => "Managing Director, RSM Autokast",
+								],
+
+								// [
+								// 	'photo' => "",
+								// 	'name' => "",
+								// 	'description' => "",
+								// ],
+							]
+						];
+						break;
+
+					case 'Jaipur':
+						$this->data['page'] = [
+							'date' => '2024-11-29 17:00:00',
+							'venue' =>	"Pride Amber Vilas Resort & Convention Centre",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Powering Rajasthan's Global Tourism Vision",
+						];
+						$this->data['springboard'] = [
+							'name' => "Jaipur",
+							'speakers' => [
+								[
+									'photo' => "Bhavesh_Jatania.png",
+									'name' => "Bhavesh Jatania",
+									'description' => "Head – Startup Banking, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Kuldeep_Singh_Chandela.png",
+									'name' => "Kuldeep Singh Chandela",
+									'description' => "President, Federation of Hospitality & Tourism of Rajasthan (FHTR)",
+								],
+								[
+									'photo' => "Tarun_Kumar_Bansal.png",
+									'name' => "Tarun Kumar Bansal",
+									'description' => "President, Hotel & Restaurants Association of Rajasthan (HRAR)",
+								],
+								[
+									'photo' => "Chitra_Gurnani_Daga.png",
+									'name' => "Chitra Gurnani Daga",
+									'description' => "CEO & Co-Founder, Thrillophilia",
+								],
+								[
+									'photo' => "Angad_Mandawa.png",
+									'name' => "Angad deo Mandawa",
+									'description' => "Director & Member, Hotel Castle Mandawa & Federation of Hospitality and Tourism of Rajasthan (FHTR)",
+								],
+								[
+									'photo' => "Hemant_Beniwal.png",
+									'name' => "Hemant Beniwal",
+									'description' => "Certified Financial Planner & Director, Ark Primary Advisors",
+								],
+							],
+							'partners' => [
+								[
+									'text' => 'Hospitality Partner',
+									'logo' => 'Pride.png',
+									'url' => ""
+								],
+							],
+						];
+						break;
+					case 'Pune':
+						$this->data['page'] = [
+							'date' => '2024-12-20 17:00:00',
+							'venue' =>	"The Pride Hotel, Pune",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Building a Future-Ready Workforce ",
+						];
+						$this->data['springboard'] = [
+							'name' => "Pune",
+							'speakers' => [
+								[
+									'photo' => "Rohit_Saoji.png",
+									'name' => "Rohit Saoji",
+									'description' => "Head-Commercial Banking, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Dr_Raman.png",
+									'name' => "Dr Ramakrishnan Raman",
+									'description' => "Vice Chancellor, Symbiosis International (Deemed University)",
+								],
+								[
+									'photo' => "Uma_Ganesh.png",
+									'name' => "Dr Uma Ganesh",
+									'description' => "Co-Founder, Global Talent Track (GTT) Foundation",
+								],
+								[
+									'photo' => "Nikhil_Kurele.png",
+									'name' => "Nikhil Kurele",
+									'description' => " Co-Founder & CEO, Noccarc Robotics",
+								],
+								[
+									'photo' => "Balvir_Chawla.png",
+									'name' => "Balvir Chawla",
+									'description' => "Director, Finnovators Services",
+								],
+							],
+							'partners' => [
+								[
+									'text' => 'Hospitality Partner',
+									'logo' => 'Pride.png',
+									'url' => ""
+								],
+							],
+						];
+						break;
+					case 'Indore':
+						$this->data['page'] = [
+							'date' => '2024-12-27 17:00:00',
+							'venue' =>	"Pride Hotel & Convention Centre, Indore",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Setting the Benchmark for India's Sustainability Vision",
+						];
+						$this->data['springboard'] = [
+							'name' => "Indore",
+							'speakers' => [
+								[
+									'photo' => "Madhukar_Pant.png",
+									'name' => "Madhukar Pant",
+									'description' => "Business Head-Loan Against Property, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Atul_Bharat.png",
+									'name' => "Atul Bharat",
+									'description' => "Founder, Indore Entrepreneurs Network ",
+								],
+								[
+									'photo' => "Pratap_Nair.png",
+									'name' => "Pratap Nair",
+									'description' => "Co Founder, Inspaze & Indore Entrepreneurs  Network",
+								],
+								[
+									'photo' => "Abhishek_Mishra.png",
+									'name' => "Abhishek Mishra",
+									'description' => "Professor, Indian Institute of Management (IIM), Indore",
+								],
+								[
+									'photo' => "Navneet_Dhawan.png",
+									'name' => "Navneet Dhawan",
+									'description' => "Certified Financial Planner",
+								],
+							],
+							'partners' => [
+								[
+									'text' => 'Hospitality Partner',
+									'logo' => 'Pride.png',
+									'url' => ""
+								],
+							],
+						];
+						break;
+					case 'Delhi':
+						$this->data['page'] = [
+							'date' => '2025-01-10 17:00:00',
+							'venue' =>	"Pride Hotel, Aerocity, New Delhi",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Spotlight on India’s Startup Capital ",
+						];
+						$this->data['springboard'] = [
+							'name' => "Delhi",
+							'speakers' => [
+								// [
+								// 	'photo' => "Bharat_Goyal.png",
+								// 	'name' => "Bharat Goyal",
+								// 	'description' => "Zonal Head-North, IDFC FIRST Bank",
+								// ],
+								[
+									'photo' => "Vivek_Gambhir.png",
+									'name' => "Vivek Gambhir",
+									'description' => "Venture Partner, Lightspeed India",
+								],
+								[
+									'photo' => "Deepak_Gupta.png",
+									'name' => "Deepak Gupta",
+									'description' => " Co-founder & COO, Bombay Shaving Company",
+								],
+								[
+									'photo' => "Apeksha_Jain.png",
+									'name' => "Apeksha Jain",
+									'description' => "Founder & CEO, The Gourmet Jar",
+								],
+								[
+									'photo' => "Nikita_Bose.png",
+									'name' => "Nikita Bose",
+									'description' => "Business Mentor, Former Program Expert, Startup India, MSME Ministry",
+								],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+					case 'Bengaluru':
+						$this->data['page'] = [
+							'date' => '2025-01-24 17:00:00',
+							'venue' =>	"The Pride Hotel, Bangalore",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Mastering Business, Leadership & Gender Equity",
+						];
+						$this->data['springboard'] = [
+							'name' => "Bengaluru",
+							'speakers' => [
+								[
+									'name' => "Anto Alan",
+									'photo' => "Anto_Alan.png",
+									'description' => "Business Head – Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'name' => "Swapna Bapat",
+									'photo' => "Swapna_Bapat.png",
+									'description' => "Vice President & Managing Director, India & SAARC, Palo Alto Networks",
+								],
+								[
+									'name' => "Sahar Mansoor",
+									'photo' => "Sahar_Mansoor.png",
+									'description' => "Founder & CEO, Bare Necessities",
+								],
+								[
+									'name' => "Kamal Karanth",
+									'photo' => "Kamal_Karanth.png",
+									'description' => "Co-Founder, Xpheno",
+								],
+								[
+									'name' => "Tanuj Choudhry",
+									'photo' => "Tanuj_Choudhry.png",
+									'description' => "Co-Founder & COO, HomeLane",
+								],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+					case 'Goa':
+						$this->data['page'] = [
+							'date' => '2025-02-13 17:00:00',
+							'venue' =>	"Pride Sun Village Resort And Spa, Goa",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "An Economy Evolving Beyond Tourism",
+						];
+						$this->data['springboard'] = [
+							'name' => "Goa",
+							'speakers' => [
+								[
+									'name' => "Pooja Bedi",
+									'photo' => "Pooja_Bedi.png",
+									'description' => "Actor & Founder, Happy Soul",
+								],
+								[
+									'name' => "Tej Naik",
+									'photo' => "Tej_Naik.png",
+									'description' => "Co-founder & MD, Powerland ATV",
+								],
+								[
+									'name' => "Jack Ajit Sukhija",
+									'photo' => "Jack_Ajit.png",
+									'description' => "President, Travel & Tourism Association of Goa",
+								],
+								[
+									'name' => "Lalit Saraswat",
+									'photo' => "Lalit_Saraswat.png",
+									'description' => "Past Chairman, CII Goa & CEO, Sancoale Technologies",
+								],
+								[
+									'name' => "Sachin Mehta",
+									'photo' => "Sachin_Mehta.png",
+									'description' => "Head-Branch Banking & Corporate Salary, IDFC FIRST Bank",
+								],
+								// [
+								// 	'name' => "Snigdha Manchanda",
+								// 	'photo' => "Snigdha_Manchanda.png",
+								// 	'description' => "Founder & CEO, Tea Trunk",
+								// ],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+
+					case 'Ahmedabad':
+						$this->data['page'] = [
+							'date' => '2025-03-21 17:00:00',
+							'venue' =>	"Pride Plaza Hotel, Ahmedabad",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "The Gateway to India’s Shanghai Dream",
+						];
+						$this->data['springboard'] = [
+							'name' => "Ahmedabad",
+							'speakers' => [
+								[
+									'photo' => "Anto_Alan.png",
+									'name' => "Anto Alan",
+									'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Sunil_Parekh.png",
+									'name' => "Dr. Sunil R Parekh",
+									'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+								],
+								// [
+								// 	'photo' => "Ashish_Desai.png",
+								// 	'name' => "Ashish Desai",
+								// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+								// ],
+								[
+									'photo' => "Arnav_Patel.png",
+									'name' => "Arnav Patel",
+									'description' => "Director, Paypoint",
+								],
+								// [
+								// 	'photo' => "Mayank_Patel.png",
+								// 	'name' => "Dr. Mayank Patel",
+								// 	'description' => "Head of Advisory Services, IBGrid",
+								// ],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+					case 'Kolkata':
+						$this->data['page'] = [
+							'date' => '2025-04-04 00:00:00',
+							'venue' =>	"Pride Plaza Hotel, Kolkata",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Bridging Tradition, Commerce & Innovation",
+						];
+						$this->data['springboard'] = [
+							'name' => "Kolkata",
+							'speakers' => [
+								[
+									'photo' => "Anto_Alan.png",
+									'name' => "Anto Alan",
+									'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Sunil_Parekh.png",
+									'name' => "Dr. Sunil R Parekh",
+									'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+								],
+								// [
+								// 	'photo' => "Ashish_Desai.png",
+								// 	'name' => "Ashish Desai",
+								// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+								// ],
+								[
+									'photo' => "Arnav_Patel.png",
+									'name' => "Arnav Patel",
+									'description' => "Director, Paypoint",
+								],
+								// [
+								// 	'photo' => "Mayank_Patel.png",
+								// 	'name' => "Dr. Mayank Patel",
+								// 	'description' => "Head of Advisory Services, IBGrid",
+								// ],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+					case 'Nagpur':
+						$this->data['page'] = [
+							'date' => '2025-04-25 00:00:00',
+							'venue' =>	"Pride Hotel, Nagpur",
+							'promo' => "JhaCnMvPW-k",
+							'theme' => "Leading Maharashtra’s Industrial Excellence",
+						];
+						$this->data['springboard'] = [
+							'name' => "Nagpur",
+							'speakers' => [
+								[
+									'photo' => "Anto_Alan.png",
+									'name' => "Anto Alan",
+									'description' => "Business Head, Business Banking & Agri, IDFC FIRST Bank",
+								],
+								[
+									'photo' => "Sunil_Parekh.png",
+									'name' => "Dr. Sunil R Parekh",
+									'description' => "Industry veteran, Founding Curator , AGS @WEF Geneva",
+								],
+								// [
+								// 	'photo' => "Ashish_Desai.png",
+								// 	'name' => "Ashish Desai",
+								// 	'description' => "Senior Member, PHDCCI, Gujarat Chapter & Head - Corporate Affairs, NIRMA Ltd",
+								// ],
+								[
+									'photo' => "Arnav_Patel.png",
+									'name' => "Arnav Patel",
+									'description' => "Director, Paypoint",
+								],
+								// [
+								// 	'photo' => "Mayank_Patel.png",
+								// 	'name' => "Dr. Mayank Patel",
+								// 	'description' => "Head of Advisory Services, IBGrid",
+								// ],
+							]
+						];
+						$this->data['springboard']['partners'] = [
+							[
+								'text' => 'Hospitality Partner',
+								'logo' => 'Pride.png',
+								'url' => ""
+							],
+						];
+						break;
+					default:
+
+						break;
+				}
+
+				$gallery = directory_map('./assets/images/history/' . $number . '/springboards/' . strtolower($city) . '/gallery/');
+				if (is_array($gallery) && count($gallery) > 0){
+					foreach ($gallery as $key => $element) {
+						if (is_array($element)) {
+							unset($gallery[$key]);
+						}
+					}
+				} else {
+					$gallery = null;
+				}
+
+				$this->data['page']['name'] = $city;
+				$this->data['page']['title'] = $city . " Springboard" . " • " . APP_NAME . "- Season " . $number;
+				$this->data['springboard']['gallery'] = $gallery;
+
+				$this->data['awards']['live'] = "ou5PFIuEoQ0?si=KnukaxaixoF4Gi3W";
+
+				// echo "<pre>";
+				// print_r($this->data);
+				// die;
+				$this->load->page('history/12', $this->data);
+				break;
 			case '11':
 				$this->data['partners'] = [
 					[
@@ -205,7 +1004,7 @@ class HistoryController extends BaseController
 						'text' => "Exploring Mumbai's dynamic landscape as the gateway to opportunities, we highlight the city's booming finance, corporate and startup industries while spotlighting how inter-city infrastructure developments are set to redefine Mumbai's future.",
 					],
 				];
-				$this->data["winners"] = [
+				$this->data['awards']["winners"] = [
 					[
 						'name' => "Iotechworld Avigation",
 						'category' => "Technology – IT/ITES & Telecommunication"
@@ -287,140 +1086,378 @@ class HistoryController extends BaseController
 						'name' => "Mr. Swarup Bose, Founder & CEO, Celcius Logistics Solutions",
 					],
 				];
+				$this->data['awards']['live'] = "gF5_3m-rS2A?si=7__x3paYx0udxCkk";
+
 				$this->load->page('history/11', $this->data);
-				break;
-			case '10':
-				$this->data['partners'] = [
-					[
-						'text' => "Green State Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "An Initiative By",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Associate Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Education Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Knowledge Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "NGO Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Research Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-				];
-				$this->load->page('history/10', $this->data);
-				break;
-			case '9':
-				$this->data['partners'] = [
-					[
-						'text' => "An Initiative By",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Education Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Knowledge Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "NGO Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Associate Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Green State Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Research Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-				];
-				$this->load->page('history/9', $this->data);
-				break;
-			case '8':
-				$this->data['partners'] = [
-					[
-						'text' => "An Initiative By",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Associate Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Green State Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Education Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Knowledge Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "NGO Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-					[
-						'text' => "Research Partner",
-						'logo' => "times.png",
-						'url' => null,
-					],
-				];
-				$this->load->page('history/8', $this->data);
-				break;
-			case '7':
-			case '6':
-			case '5':
-			case '4':
-			case '3':
-			case '2':
-			case '1':
-				$this->load->page('history/single', $this->data);
 				break;
 
 			default:
 				redirect('history');
+				break;
+		}
+	}
+
+	public function awards($number)
+	{
+		switch ($number) {
+			case '12':
+				$this->data['grand_juries'] = [
+					[
+						'photo' => "Amit_Jain.png",
+						'name' => "Amit Jain",
+						'description' => "Co-Founder & CEO,CarDekho Group",
+					],
+					[
+						'photo' => "Shauravi_Malik.png",
+						'name' => "Shauravi Malik",
+						'description' => "Co-Founder, Wholsum Foods (Slurrp Farm and Mille)",
+					],
+					[
+						'photo' => "Anisha_Singh.png",
+						'name' => "Anisha Singh",
+						'description' => "Founder, She Capital",
+					],
+					[
+						'photo' => "Prashant_Tandon.png",
+						'name' => "Prashant Tandon",
+						'description' => "CEO & Co-Founder, Tata 1mg",
+					],
+					[
+						'photo' => "Vivek_Gambhir.png",
+						'name' => "Vivek Gambhir",
+						'description' => "Venture Partner, Lightspeed India",
+					],
+					[
+						'photo' => "CP_Gurnani.png",
+						'name' => "CP Gurnani",
+						'description' => "CEO & Co-Founder, AIonOS",
+					],
+					[
+						'photo' => "A_Velumani.png",
+						'name' => "Dr A Velumani",
+						'description' => "Creator, Thyrocare",
+					],
+					[
+						'photo' => "Padmaja_Ruparel.png",
+						'name' => "Padmaja Ruparel",
+						'description' => "Co-Founder, IAN Group",
+					],
+					[
+						'photo' => "Abhinandan_Lodha.png",
+						'name' => "Abhinandan Lodha",
+						'description' => "Chairman, The House of Abhinandan Lodha, HoABL Group",
+					],
+					[
+						'photo' => "Sahil_Malik.png",
+						'name' => "Sahil Malik",
+						'description' => "MD & CEO, Da Milano & Rosso Brunello",
+					],
+					[
+						'photo' => "Hiroshi_Nishijima.png",
+						'name' => "Hiroshi Nishijima",
+						'description' => "CEO, Zoomcar",
+					],
+					[
+						'photo' => "Vinod_Kumar.png",
+						'name' => "Vinod Kumar Wuthoo",
+						'description' => "President, India SME Forum",
+					],
+					[
+						'photo' => "Nilesh_Lele.png",
+						'name' => "Nilesh Lele",
+						'description' => "President, Chamber for Advancement of Small & Medium Businesses",
+					],
+					[
+						'photo' => "Prashant_Naigaonkar.png",
+						'name' => "Prashant Naigaonkar",
+						'description' => "Startup Mentor and SME Advisor",
+					],
+				];
+				$this->data['chief_guest'] = [
+					[
+						'photo' => "Anurag_Thakur.png",
+						'name' => "Anurag Singh Thakur",
+						'description' => "Former Union Minister, Chairman, Parliamentary Standing Committee on Coal, Mines & Steel",
+					],
+				];
+				$this->data['speakers'] = [
+					[
+						'photo' => "Aman_Gupta.png",
+						'name' => "Aman Gupta",
+						'description' => "Co-Founder & CMO, boAt Lifestyle",
+					],
+					[
+						'photo' => "Ashishkumar_Chauhan.png",
+						'name' => "Ashishkumar Chauhan",
+						'description' => "MD & CEO, NSE",
+					],
+					[
+						'photo' => "Akis_Evangelidis.png",
+						'name' => "Akis Evangelidis",
+						'description' => "Co-Founder & India President, Nothing",
+					],
+					[
+						'photo' => "Padmaja_Ruparel.png",
+						'name' => "Padmaja Ruparel",
+						'description' => "Co-Founder, IAN Group",
+					],
+					[
+						'photo' => "A_Velumani.png",
+						'name' => "Dr A Velumani",
+						'description' => "Creator, Thyrocare",
+					],
+					[
+						'photo' => "Radha_Kirthivasan.png",
+						'name' => "Radha Kirthivasan",
+						'description' => "Head, Listing and SME, BSE",
+					],
+					[
+						'photo' => "Vivek_Gambhir.png",
+						'name' => "Vivek Gambhir",
+						'description' => "Venture Partner, Lightspeed India",
+					],
+					[
+						'photo' => "Anisha_Singh.png",
+						'name' => "Anisha Singh",
+						'description' => "Founder, She Capital",
+					],
+					[
+						'photo' => "Bert_Mueller.png",
+						'name' => "Bert Mueller",
+						'description' => "Founder, California Burrito",
+					],
+					[
+						'photo' => "Spencer_Schneier.png",
+						'name' => "Spencer Schneier",
+						'description' => "Founder, Commenda",
+					],
+					// [
+					// 	'photo' => "Anand_Mane.png",
+					// 	'name' => "Anand Mane",
+					// 	'description' => "Founder, Joul",
+					// ],
+				];
+				$this->data['live'] = "gF5_3m-rS2A?si=7__x3paYx0udxCkk";
+				$this->data['partners'] = [
+					[
+						'text' => "Presenting Partner",
+						'logo' => "idfc.png",
+						'url' => null,
+					],
+					[
+						'text' => "Associate Partner",
+						'logo' => "adani.png",
+						'url' => null,
+					],
+					[
+						'text' => "Education Partner",
+						'logo' => "bennett.png",
+						'url' => null,
+					],
+				];
+				$this->data['winners'] = [
+					[
+						'organization' => "Plant Remedies",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Agri-Tech and Allied Services",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/PlantRemedies.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/PlantRemedies.jpg"
+						]
+					],
+					[
+						'organization' => "Synnova Gears And Transmissions",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Automobiles & Electric Vehicle",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Synnova.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Synnova.jpg"
+						]
+					],
+					[
+						'organization' => "Razzmatazz Design",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Lifestyle and Consumer Products",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Razzmatazz.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Razzmatazz.jpg"
+						]
+					],
+					[
+						'organization' => "Pluckk",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Food Processing & Packaging",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Pluckk.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Pluckk.jpg"
+						]
+					],
+					[
+						'organization' => "Jeevitam Livelihood Tech Solutions",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in EdTech and Skill Development",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Jeevitam.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Jeevitam.jpg"
+						]
+					],
+					[
+						'organization' => "Autosys Industrial Solutions",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Manufacturing",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Autosys.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Autosys.jpg"
+						]
+					],
+					[
+						'organization' => "Global Engineers",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Family Business Leadership",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Global.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Global.jpg"
+						]
+					],
+					[
+						'organization' => "Starkenn Technologies",
+						'organization' => "Whiteklay Technologies",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in IT/ITES and Electronics",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Whiteklay.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Whiteklay.jpg"
+						]
+					],
+					[
+						'organization' => "Vipragen Biosciences",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Health, Wellness & Ayurveda",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Vipragen.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Vipragen.jpg"
+						]
+					],
+					[
+						'organization' => "Enerture Technologies",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Digital Transformation",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Enerture.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Enerture.jpg"
+						]
+					],
+					[
+						'organization' => "Microlit",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Global Business Leadership Award",
+						'gallery' => NULL
+					],
+					[
+						'organization' => "Swachh Sustainable Solutions",
+						'type' => 'INDIVIDUAL',
+						'person' => "Rahul Nainani",
+						'designation' => "CEO & Co-Founder",
+						'category' => "Social Impact Entrepreneur of the Year",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Swachh.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Swachh.jpg"
+						]
+					],
+					[
+						'organization' => "AWL India",
+						'type' => 'INDIVIDUAL',
+						'person' => "Rahul Mehra",
+						'designation' => "Founder & CEO",
+						'category' => "Entrepreneur of the Year",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/AWL.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/AWL.jpg"
+						]
+					],
+
+					[
+						'organization' => "Urban Monk",
+						'type' => 'INDIVIDUAL',
+						'person' => "Ruchika Bhuwalka",
+						'designation' => "Founder",
+						'category' => "Women Entrepreneur of the Year",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/UrbanMonk.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/UrbanMonk.jpg"
+						]
+					],
+					[
+						'organization' => "Prathibha Biotech",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "Excellence in Green Revolution",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Prathibha.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Prathibha.jpg"
+						]
+					],
+					[
+						'organization' => "KAMA International Organic",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "IDFC FIRST Bank Rising Star",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/KAMA.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/KAMA.jpg"
+						]
+					],
+					[
+						'organization' => "Manjha Technologies",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "IDFC FIRST Bank Rising Star",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Manjha.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Manjha.jpg"
+						]
+					],
+					[
+						'organization' => "Ayurveda House",
+						'type' => 'MSME',
+						'person' =>  NULL,
+						'designation' =>  NULL,
+						'category' => "IDFC FIRST Bank Rising Star",
+						'gallery' => [
+							'main' => "assets/images/galleries/12/Ayurveda.jpg",
+							'thumb' => "assets/images/galleries/12/thumbs/Ayurveda.jpg"
+						]
+					],
+				];
+				break;
+
+			default:
+				redirect('history/season-' . $number);
 				break;
 		}
 	}

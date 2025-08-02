@@ -303,13 +303,7 @@ class AwardsController extends BaseController
 					'thumb' => "assets/images/galleries/12/thumbs/AWL.jpg"
 				]
 			],
-// 			// [
-// 			// 	'organization' => "Jeevitam Livelihood Tech Solution",
-// 			// 	'type' => 'INDIVIDUAL',
-// 			// 	'person' => "Munish Chawla",
-// 			// 	'designation' => "Co Founder and Chief Happiness Officer",
-// 			// 	'category' => "Social Impact Entrepreneur of the year",
-// 			// ],
+
 			[
 				'organization' => "Urban Monk",
 				'type' => 'INDIVIDUAL',

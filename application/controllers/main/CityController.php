@@ -20,12 +20,14 @@ class CityController extends BaseController
 	public function city_single($city)
 	{
 		$gallery = directory_map('./assets/images/cities/' . $city . '/gallery/');
-		foreach ($gallery as $key => $element) {
-			if (is_array($element)) {
-				unset($gallery[$key]);
+		if(is_array($gallery)){
+			foreach ($gallery as $key => $element) {
+				if (is_array($element)) {
+					unset($gallery[$key]);
+				}
 			}
+			$this->data['city']['gallery'] = $gallery;
 		}
-		$this->data['city']['gallery'] = $gallery;
 		switch (str_replace(' ', '-', $city)) {
 			case 'mumbai':
 				$this->data['page'] = [
