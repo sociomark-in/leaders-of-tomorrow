@@ -58,7 +58,7 @@ class HistoryController extends BaseController
 					"Nagpur",
 					"Kolkata",
 				];
-				
+
 				$city = $this->input->get('city') ?? "Mumbai";
 				switch ($city) {
 					case 'Mumbai':
@@ -801,7 +801,7 @@ class HistoryController extends BaseController
 				}
 
 				$gallery = directory_map('./assets/images/history/' . $number . '/springboards/' . strtolower($city) . '/gallery/');
-				if (is_array($gallery) && count($gallery) > 0){
+				if (is_array($gallery) && count($gallery) > 0) {
 					foreach ($gallery as $key => $element) {
 						if (is_array($element)) {
 							unset($gallery[$key]);
@@ -820,7 +820,7 @@ class HistoryController extends BaseController
 				// echo "<pre>";
 				// print_r($this->data);
 				// die;
-				$this->load->page('history/12', $this->data);
+				$this->load->page('history/12/home', $this->data);
 				break;
 			case '11':
 				$this->data['partners'] = [
@@ -1088,7 +1088,7 @@ class HistoryController extends BaseController
 				];
 				$this->data['awards']['live'] = "gF5_3m-rS2A?si=7__x3paYx0udxCkk";
 
-				$this->load->page('history/11', $this->data);
+				$this->load->page('history/11/home', $this->data);
 				break;
 
 			default:
@@ -1097,8 +1097,9 @@ class HistoryController extends BaseController
 		}
 	}
 
-	public function awards($number)
+	public function season_awards($number)
 	{
+		$this->data['season'] = $number;
 		switch ($number) {
 			case '12':
 				$this->data['grand_juries'] = [
@@ -1263,8 +1264,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Agri-Tech and Allied Services",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/PlantRemedies.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/PlantRemedies.jpg"
+							'main' => "PlantRemedies.jpg",
+							'thumb' => "thumbs/PlantRemedies.jpg"
 						]
 					],
 					[
@@ -1274,8 +1275,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Automobiles & Electric Vehicle",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Synnova.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Synnova.jpg"
+							'main' => "Synnova.jpg",
+							'thumb' => "thumbs/Synnova.jpg"
 						]
 					],
 					[
@@ -1285,8 +1286,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Lifestyle and Consumer Products",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Razzmatazz.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Razzmatazz.jpg"
+							'main' => "Razzmatazz.jpg",
+							'thumb' => "thumbs/Razzmatazz.jpg"
 						]
 					],
 					[
@@ -1296,8 +1297,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Food Processing & Packaging",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Pluckk.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Pluckk.jpg"
+							'main' => "Pluckk.jpg",
+							'thumb' => "thumbs/Pluckk.jpg"
 						]
 					],
 					[
@@ -1307,8 +1308,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in EdTech and Skill Development",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Jeevitam.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Jeevitam.jpg"
+							'main' => "Jeevitam.jpg",
+							'thumb' => "thumbs/Jeevitam.jpg"
 						]
 					],
 					[
@@ -1318,8 +1319,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Manufacturing",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Autosys.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Autosys.jpg"
+							'main' => "Autosys.jpg",
+							'thumb' => "thumbs/Autosys.jpg"
 						]
 					],
 					[
@@ -1329,8 +1330,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Family Business Leadership",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Global.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Global.jpg"
+							'main' => "Global.jpg",
+							'thumb' => "thumbs/Global.jpg"
 						]
 					],
 					[
@@ -1341,8 +1342,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in IT/ITES and Electronics",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Whiteklay.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Whiteklay.jpg"
+							'main' => "Whiteklay.jpg",
+							'thumb' => "thumbs/Whiteklay.jpg"
 						]
 					],
 					[
@@ -1352,8 +1353,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Health, Wellness & Ayurveda",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Vipragen.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Vipragen.jpg"
+							'main' => "Vipragen.jpg",
+							'thumb' => "thumbs/Vipragen.jpg"
 						]
 					],
 					[
@@ -1363,8 +1364,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Digital Transformation",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Enerture.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Enerture.jpg"
+							'main' => "Enerture.jpg",
+							'thumb' => "thumbs/Enerture.jpg"
 						]
 					],
 					[
@@ -1382,8 +1383,8 @@ class HistoryController extends BaseController
 						'designation' => "CEO & Co-Founder",
 						'category' => "Social Impact Entrepreneur of the Year",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Swachh.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Swachh.jpg"
+							'main' => "Swachh.jpg",
+							'thumb' => "thumbs/Swachh.jpg"
 						]
 					],
 					[
@@ -1393,8 +1394,8 @@ class HistoryController extends BaseController
 						'designation' => "Founder & CEO",
 						'category' => "Entrepreneur of the Year",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/AWL.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/AWL.jpg"
+							'main' => "AWL.jpg",
+							'thumb' => "thumbs/AWL.jpg"
 						]
 					],
 
@@ -1405,8 +1406,8 @@ class HistoryController extends BaseController
 						'designation' => "Founder",
 						'category' => "Women Entrepreneur of the Year",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/UrbanMonk.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/UrbanMonk.jpg"
+							'main' => "UrbanMonk.jpg",
+							'thumb' => "thumbs/UrbanMonk.jpg"
 						]
 					],
 					[
@@ -1416,8 +1417,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "Excellence in Green Revolution",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Prathibha.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Prathibha.jpg"
+							'main' => "Prathibha.jpg",
+							'thumb' => "thumbs/Prathibha.jpg"
 						]
 					],
 					[
@@ -1427,8 +1428,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "IDFC FIRST Bank Rising Star",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/KAMA.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/KAMA.jpg"
+							'main' => "KAMA.jpg",
+							'thumb' => "thumbs/KAMA.jpg"
 						]
 					],
 					[
@@ -1438,8 +1439,8 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "IDFC FIRST Bank Rising Star",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Manjha.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Manjha.jpg"
+							'main' => "Manjha.jpg",
+							'thumb' => "thumbs/Manjha.jpg"
 						]
 					],
 					[
@@ -1449,11 +1450,103 @@ class HistoryController extends BaseController
 						'designation' =>  NULL,
 						'category' => "IDFC FIRST Bank Rising Star",
 						'gallery' => [
-							'main' => "assets/images/galleries/12/Ayurveda.jpg",
-							'thumb' => "assets/images/galleries/12/thumbs/Ayurveda.jpg"
+							'main' => "Ayurveda.jpg",
+							'thumb' => "thumbs/Ayurveda.jpg"
 						]
 					],
 				];
+
+				$this->load->model('event/awards/CategoryModel');
+				$this->data['categories']['all'] = [
+					[
+						'id' => 1,
+						'name' => 'Excellence in IT/ITES and Electronics',
+						'code' => 2881,
+						'type' => '1_MSME',
+					],
+					[
+						'id' => 2,
+						'name' => 'Excellence in Automobiles & Electric Vehicle',
+						'code' => 2882,
+						'type' => '2_MSME',
+					],
+					[
+						'id' => 3,
+						'name' => 'Excellence in Health, Wellness and Ayurveda',
+						'code' => 2883,
+						'type' => '3_MSME',
+					],
+					[
+						'id' => 4,
+						'name' => 'Excellence in Food Processing & Packaging',
+						'code' => 2884,
+						'type' => '4_MSME',
+					],
+					[
+						'id' => 5,
+						'name' => 'Excellence in Manufacturing',
+						'code' => 2885,
+						'type' => '5_MSME',
+					],
+					[
+						'id' => 6,
+						'name' => 'Excellence in Lifestyle and Consumer Products',
+						'code' => 2886,
+						'type' => '6_MSME',
+					],
+					[
+						'id' => 7,
+						'name' => 'Excellence in E-Commerce and Service Delivery',
+						'code' => 2887,
+						'type' => '7_MSME',
+					],
+					[
+						'id' => 8,
+						'name' => 'Excellence in EdTech and Skill Development',
+						'code' => 2888,
+						'type' => '8_MSME',
+					],
+					[
+						'id' => 9,
+						'name' => 'Excellence in Agri-Tech and Allied Services',
+						'code' => 2889,
+						'type' => '9_MSME',
+					],
+					[
+						'id' => 10,
+						'name' => 'Excellence in Digital Transformation',
+						'code' => 2900,
+						'type' => '1_DIGITAL',
+					],
+					[
+						'id' => 11,
+						'name' => 'Excellence in Family Business Leadership',
+						'code' => 2911,
+						'type' => '1_FAMILY',
+					],
+					[
+						'id' => 12,
+						'name' => 'Global Business Leadership Award',
+						'code' => 2921,
+						'type' => '1_GLOBAL',
+					],
+					[
+						'id' => 13,
+						'name' => 'Social Impact Entrepreneur of The Year',
+						'code' => 2931,
+						'type' => '1_INDIVIDUAL',
+					],
+					[
+						'id' => 14,
+						'name' => 'Young Entrepreneur of The Year',
+						'code' => 2932,
+						'type' => '2_INDIVIDUAL',
+					],
+				];
+				// echo "<pre>";
+				// print_r($this->data);
+				// die;
+				$this->load->page('history/12/awards', $this->data);
 				break;
 
 			default:
