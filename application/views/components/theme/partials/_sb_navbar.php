@@ -1,37 +1,3 @@
-<?php
-
-switch ($city['name']) {
-	case 'Mumbai':
-	case 'Lucknow':
-	case 'Chandigarh':
-	case 'Hyderabad':
-	case 'Chennai':
-	case 'Coimbatore':
-	case 'Jaipur':
-	case 'Pune':
-	case 'Indore':
-	case 'Delhi':
-	case 'Bengaluru':
-	case 'Goa':
-	case 'Ahmedabad':
-	case 'Kolkata':
-		$past = "d-none";
-		break;
-
-	default:
-		$past = "d-block";
-		break;
-}
-switch ($city['name']) {
-	case 'Nagpur':
-		$active = "d-none";
-		break;
-
-	default:
-		$active = "d-block d-md-inline-block";
-		break;
-}
-?>
 <nav class="sub-navbar navbar navbar-expand-lg">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= base_url() ?>">
@@ -52,20 +18,26 @@ switch ($city['name']) {
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#about">About</a>
 				</li>
-				<li class="nav-item <?= $past ?>">
+				<?php if (isset($city['agenda'])) : ?>
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#agenda">Agenda</a>
 				</li>
+				<?php endif ?>
+				<?php if (isset($city['speakers'])) : ?>
 				<li class="nav-item ">
 					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#speakers">Speakers</a>
 				</li>
-				<li class="nav-item <?= $active ?> ">
+				<?php endif ?>
+				<?php if (isset($city['gallery'])) : ?>
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#gallery">Gallery</a>
 				</li>
+				<?php endif ?>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))) ?>#partners">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav gap-2 <?= $past ?>">
+			<ul class="navbar-nav gap-2 ">
 				<li class="nav-item">
 				    <div><script src=https://widget.konfhub.com/widget.js button_id="btn_a36e7c3bac78"></script></div>
 					<!--<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))  . '/register') ?>">Register to Attend</a>-->

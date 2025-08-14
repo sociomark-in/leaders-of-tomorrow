@@ -25,37 +25,20 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?= base_url('history/season-12') ?>">Season 12</a></li>
 						<li><a class="dropdown-item" href="<?= base_url('history/season-11') ?>">Season 11</a></li>
-						<li>
+						<!-- <li>
 							<hr class="dropdown-divider">
 						</li>
-						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Seasons</a></li>
+						<li><a class="dropdown-item" href="<?= base_url('history') ?>">All Seasons</a></li> -->
 					</ul>
 				</li>
-				<li class="nav-item d-none">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('all-cities') ?>">Springboards</a>
 				</li>
-				<li class="nav-item d-none">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('#articles') ?>">News</a>
 				</li>
-				<li class="nav-item d-none">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
-				</li>
-				<!-- <li class="nav-item">
-					<a class="btn btn-outline-red text-uppercase" href="<?= base_url('history/season-11') ?>">Past&nbsp;Season</a>
-				</li> -->
-				<li class="nav-item dropdown d-none">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Miscellaneous Menu
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="<?= base_url("#awards") ?>">Awards</a></li>
-						<li><a class="dropdown-item" href="<?= base_url("#articles") ?>">Articles</a></li>
-						<li><a class="dropdown-item" href="<?= base_url("gallery") ?>">Gallery</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<!-- <li><a class="dropdown-item" href="<?= base_url('history') ?>">All Other Seasons</a></li> -->
-					</ul>
 				</li>
 			</ul>
 			<ul class="navbar-nav g-4 d-none">

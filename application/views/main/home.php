@@ -11,16 +11,6 @@ if (!is_null($springboards)) {
 ?>
 
 <main>
-	<section class="p-0 d-none">
-		<div class="pseudo-kv">
-			<div class="media-content">
-				<video poster="<?= base_url('assets/video/') ?>banner-kv-poster.png" muted autoplay loop>
-					<source src="<?= base_url('assets/video/') ?>banner-kv.mp4">
-				</video>
-			</div>
-		</div>
-	</section>
-
 	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
@@ -96,7 +86,7 @@ if (!is_null($springboards)) {
 		</div>
 	</section>
 
-	<section class="d-none" id="about">
+	<section class="" id="about">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
@@ -108,13 +98,45 @@ if (!is_null($springboards)) {
 				</div>
 				<div class="col-xl-7 col-lg-6 col-12">
 					<div class="section-title" data-aos="fade-left">
-						<h2><span>Leaders of Tomorrow Season 12</span></h2>
+						<h2><span>Leaders of Tomorrow Season 13</span></h2>
 					</div>
 					<div class="desc">
 						<p data-aos="fade-left" data-aos-delay="400">
-							In today’s rapidly evolving entrepreneurial landscape, MSMEs are increasingly adopting a global mindset. A wave of ambition is rising among MSMEs across India, signalling that they are ready to broaden their horizons, think big and establish a global presence. In this context, we introduce the theme for Season&nbsp;12 - <strong class="text-red">Powering Entrepreneurs for the Global Stage.</strong> Airing daily from Monday to Friday on ET Now at 7.30 pm
+							For over 12 seasons, <strong class="text-red">Leaders of Tomorrow</strong> has stood as a beacon for India's small businesses - empowering the country's vast community of MSMEs and startups. With massive on-air visibility, digital presence and on-ground outreach, we've not only chronicled the entrepreneurial journey but championed it at every turn. Through the years, we've sparked conversations, spotlighted change-makers & built a credible platform. It's this unwavering commitment that has propelled Leaders of Tomorrow to the forefront - making it one of India's most watched entrepreneurship TV shows in its category.
+							But as the world changes, so must we.
+
 						</p>
 						<a data-aos="fade-left" data-aos-delay="500" href="https://www.youtube.com/playlist?list=PL51KTBvlQFEHy5ylSshdFAB9OtDCuhirQ" class="btn btn-yellow" target="_blank">View All Episodes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section pb-0">
+		<div class="container">
+			<div class="row g-3 g-md-4">
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>A New Lens for a New Era</span></h2>
+					</div>
+					<div class="text-content">
+						<p data-aos="fade-up">
+							MSMEs today are navigating an increasingly complex environment, marked by global trade tensions, technological disruptions like AI and ever-shifting market dynamics. These forces are rewriting the rules of business, demanding more than just resilience; they call for reinvention.
+						</p>
+						<p data-aos="fade-up">
+							Leaders of Tomorrow Season 13 rises to meet this moment. With a renewed lens and sharper focus, this season is designed to be an enabler - helping small businesses not just withstand change but lead through it with the right tools, insights & inspiration needed to navigate volatility, adapt with agility and emerge stronger than ever.
+						</p>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="section-title">
+						<h2><span>What India’s MSMEs Need</span></h2>
+					</div>
+					<div class="text-content">
+						<p data-aos="fade-up">
+						We’ve listened closely to the voice of our entrepreneurs. Today's MSMEs are not only looking for recognition - but they are also demanding real, actionable solutions like crisis-proof strategies for business continuity, access to cost-effective tech and digital solutions, clarity on tariffs, trade barriers, affordable financing models, guidance for entering and expanding in global markets & tools to build agile, future-ready workforces.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -132,6 +154,7 @@ if (!is_null($springboards)) {
 			</div>
 		</div>
 	</section>
+
 
 	<section id="categories" class="d-none">
 		<div class="container">
@@ -192,7 +215,7 @@ if (!is_null($springboards)) {
 		</div>
 	</section>
 
-	<section id="springboards" class="d-none section pb-0">
+	<section id="springboards" class="section pb-0">
 		<div class="container">
 			<div class="row g-3 align-items-center flex-row-reverse mb-3 mb-md-5">
 				<div class="col-12">
@@ -251,7 +274,7 @@ if (!is_null($springboards)) {
 		</div>
 	</section>
 
-	<section id="articles" class="d-none section pb-3">
+	<section id="articles" class="section pb-3">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
