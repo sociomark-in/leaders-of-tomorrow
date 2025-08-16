@@ -39,8 +39,7 @@
 			</ul>
 			<ul class="navbar-nav gap-2 ">
 				<li class="nav-item">
-				    <div><script src=https://widget.konfhub.com/widget.js button_id="btn_a36e7c3bac78"></script></div>
-					<!--<a class="btn btn-red text-uppercase" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($city['name']))  . '/register') ?>">Register to Attend</a>-->
+				    <div><script src=https://widget.konfhub.com/widget.js button_id="<?= $city['register'] ?>"></script></div>
 				</li>
 			</ul>
 		</div>

@@ -675,6 +675,20 @@ form .form-control {
   border-radius: 0.25rem;
 }
 
+.special-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem 0.15rem rgba(183, 32, 38, 0.3), 0 0 0 0.1rem #b72026;
+}
+.special-card.glass {
+  background-color: rgba(240, 242, 248, 0.2);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.special-card .card-body {
+  padding: max(3%, 3rem) max(4%, 1rem);
+}
+
 .signup-widget {
   min-height: max(500px, 60vmin);
 }
@@ -820,9 +834,9 @@ form .form-control {
 .speaker-tile.speaker-tile-01 .photo {
   padding: 1rem 0;
   position: relative;
+  background: url("../images/favicon_op30.png"), #ffffff;
 }
 .speaker-tile.speaker-tile-01 .photo img {
-  background-color: #ffffff;
   -webkit-mask-image: url("../images/masks/hexagon-rounded-01.svg");
           mask-image: url("../images/masks/hexagon-rounded-01.svg");
   -webkit-mask-repeat: no-repeat;
@@ -843,13 +857,12 @@ form .form-control {
   margin-top: -0.5rem;
 }
 .speaker-tile.speaker-tile-02 {
-  -webkit-clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
-          clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+  clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
 }
 .speaker-tile.speaker-tile-02 .photo {
   background: #ffffff;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 55%, #ffe772 55%, #ffe772 calc(55% + 1rem), #ffffff calc(55% + 1rem), #ffffff calc(55% + 1.3rem), #ffe772 calc(55% + 1.3rem), #ffe772 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 55%, rgb(255, 230.765625, 114) 55%, rgb(255, 230.765625, 114) calc(55% + 1rem), #ffffff calc(55% + 1rem), #ffffff calc(55% + 1.3rem), rgb(255, 230.765625, 114) calc(55% + 1.3rem), rgb(255, 230.765625, 114) 100%);
   overflow: hidden;
   position: relative;
 }

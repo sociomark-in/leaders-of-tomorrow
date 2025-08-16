@@ -738,6 +738,19 @@ form {
 	}
 }
 
+.special-card{
+	background-color: $color-white-0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1rem 0.15rem rgba($color-red, 0.3), 0 0 0 0.1rem $color-red;
+	&.glass {
+		background-color: rgba(rgb(240, 242, 248), 0.2);
+		backdrop-filter: blur(2px);
+	}
+	.card-body {
+		padding: calc(max(3%, 3rem)) calc(max(4%, 1rem));
+	}
+}
+
 .signup-widget {
 	min-height: calc(max(500px, 60vmin));
 }

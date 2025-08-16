@@ -51,19 +51,19 @@ form .form-check-input:focus {
 }
 .badge.bg-dark {
   background-color: rgba(28, 28, 28, 0.2) !important;
-  color: #030303 !important;
+  color: rgb(2.5, 2.5, 2.5) !important;
 }
 .badge.bg-danger {
   background-color: rgba(183, 32, 38, 0.2) !important;
-  color: #8c181d !important;
+  color: rgb(139.5906976744, 24.4093023256, 28.9860465116) !important;
 }
 .badge.bg-success {
   background-color: rgba(3, 148, 59, 0.2) !important;
-  color: #026227 !important;
+  color: rgb(1.9867549669, 98.0132450331, 39.0728476821) !important;
 }
 .badge.bg-warning {
   background-color: rgba(207, 139, 44, 0.2) !important;
-  color: #a56f23 !important;
+  color: rgb(164.9402390438, 110.7569721116, 35.0597609562) !important;
 }
 
 .nomination_detailed .tab-content {

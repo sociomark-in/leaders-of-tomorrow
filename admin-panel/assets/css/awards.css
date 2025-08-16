@@ -48,8 +48,7 @@
   z-index: 50;
   text-align: center;
   text-transform: uppercase;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 55% calc(100% - 1.7rem), 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 55% calc(100% - 1.7rem), 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 55% calc(100% - 1.7rem), 0 100%);
 }
 .awards-wrapper .hanging-ribbon p {
   line-height: 0.7;
@@ -64,14 +63,14 @@
   position: relative;
 }
 .staged_process__wrapper .stage__tile .stage__title {
-  color: dimgray;
+  color: rgb(104.5, 104.5, 104.5);
   margin-bottom: 1rem;
 }
 .staged_process__wrapper .stage__tile .stage__details {
   min-height: 200px;
   border: none;
   border-radius: 0.25rem;
-  color: dimgray;
+  color: rgb(104.5, 104.5, 104.5);
 }
 .staged_process__wrapper .stage__tile .stage__details .stage__content .icon img {
   filter: grayscale(1);

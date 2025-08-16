@@ -3,99 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require_once APPPATH . "controllers/BaseController.php";
 class CityController extends BaseController
 {
-	public $data;
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('directory');
-
-		$this->data['springboards'] = [
-			[
-				'name' => 'Mumbai',
-				'date' => '2025-08-21',
-				'image' => 'mumbai.jpg',
-				'status' => 1,
-			],
-			[
-				'name' => 'Bengaluru',
-				'date' => '2025-08-31',
-				'image' => 'bengaluru.jpg',
-				'status' => 0,
-			],
-			[
-				'name' => 'Chandigarh',
-				'image' => 'delhi.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Chennai',
-				'image' => 'chennai.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Coimbatore',
-				'image' => 'coimbatore.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Delhi',
-				'image' => 'delhi.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Goa',
-				'image' => 'goa.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Hyderabad',
-				'image' => 'hyderabad.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Indore',
-				'image' => 'indore.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Jaipur',
-				'image' => 'jaipur.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Kolkata',
-				'image' => 'kolkata.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Lucknow',
-				'image' => 'lucknow.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Nagpur',
-				'image' => 'nagpur.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			[
-				'name' => 'Pune',
-				'image' => 'pune.jpg',
-				'date' => '2025-08-31',
-				'status' => 0,
-			],
-			
-		];
 	}
 	public function index()
 	{
@@ -140,55 +51,69 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Mumbai",
-					'theme' =>[
-						'title' => "Springboard 2025",
-						'description' => "Empowering Entrepreneurs for a Sustainable Future",
-						'embed' => "https://www.youtube.com/embed/1a2b3c4d5e6f",
+					'banner' => false,
+					'theme' => [
+						'title' => 'Mumbai: Purpose, Progress & Prosperity',
+						'description' => "Bold thinkers, visionary leaders & emerging changemakers come together in Mumbai to explore the future of finance, innovation & leadership. In the heart of India's financial capital, we reimagine growth - not just as an economic goal, but as a mission driven by purpose. From scaling ambition to navigating disruption, join us at our first Leaders of Tomorrow Season 13 Springboard in the city of Mumbai.",
+						'embed' => '',
 					],
-					'guests' => [
+					'theme' => NULL,
+					'partners' => [
 						[
-							'photo' => "Devendra_Fadnavis.png",
-							'name' => "Devendra Fadnavis",
-							'description' => "Deputy Chief Minister, Maharashtra",
-						],
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png',
+							'url' => "https://www.tatatelebusiness.com/"
+						]
 					],
 					'speakers' => [
+						// [
+						// 	'photo' => "Mangalprabhat_Lodha.png",
+						// 	'name' => "Mangalprabhat Lodha",
+						// 	'description' => "Minister Skills, Employment, Entrepreneurship & Innovation, Maharashtra",
+						// ],
+						// [
+						// 	'photo' => "Ashish_Singh.png",
+						// 	'name' => "Ashish Singh",
+						// 	'description' => "Head, Retail Liabilities, IDFC FIRST Bank",
+						// ],
 						[
-							'photo' => "Chinmay_Dhoble.png",
-							'name' => "Chinmay Dhoble",
-							'description' => "Head, Retail Liabilities & Branch Banking, IDFC FIRST Bank",
+							'photo' => "Harjit_Singh.png",
+							'name' => "Harjit Singh",
+							'description' => "Managing Director, Tata Teleservices",
 						],
 						[
-							'photo' => "Dr_A_Velumani.png",
-							'name' => "Dr. A Velumani",
-							'description' => "Creator, Thyrocare ",
+							'photo' => "Vishal_Rally.png",
+							'name' => "Vishal Rally",
+							'description' => "President, Product Commercial & Marketing, Tata Teleservices",
 						],
 						[
-							'photo' => "Ajay_Thakur.png",
-							'name' => "Ajay Thakur",
-							'description' => "CEO & Managing Partner , TGI SME Capital Advisors LLP",
+							'photo' => "RS_Subramanian.png",
+							'name' => "RS Subramanian",
+							'description' => "SVP, South Asia, DHL Express",
 						],
+						// [
+						// 	'photo' => "Ashutosh_Limaye.png",
+						// 	'name' => "Ashutosh Limaye",
+						// 	'description' => "Director & Co-Head, Anarock Property Consultants",
+						// ],
 						[
-							'photo' => "Amisha_Vora.png",
-							'name' => "Amisha Vora",
-							'description' => "Chairperson & MD, PL Capital",
+							'photo' => "Neha_Motwani.png",
+							'name' => "Neha Motwani",
+							'description' => "CEO & Founder, Luma Fertility",
 						],
+						// [
+						// 	'photo' => "Naiyya_Saggi.png",
+						// 	'name' => "Naiyya Saggi",
+						// 	'description' => "Founder, Edition",
+						// ],
 						[
-							'photo' => "Aisshwarya_DKS_Hegde.png",
-							'name' => "Aisshwarya DKS Hegde",
-							'description' => "Edupreneur, Trustee Secretary, National Education Foundation",
+							'photo' => "Radhika_Bajoria.png",
+							'name' => "Radhika Bajoria",
+							'description' => "Founder, Radically Yours ",
 						],
-						[
-							'photo' => "Sushma_Morthania.png",
-							'name' => "Sushma Morthania",
-							'description' => "Director General, India SME Forum",
-						],
-						[
-							'photo' => "Pankaj_Mathpal.png",
-							'name' => "Pankaj Mathpal",
-							'description' => "Founder & MD, Optima Money Managers",
-						],
-					]
+						
+					],
+					'register' => "btn_cf43dc552efc"
 				];
 				break;
 			default:

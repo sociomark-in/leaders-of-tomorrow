@@ -1,5 +1,4 @@
 <footer class="">
-
 	<section class="section bg-black-0 blank" id="times-influence">
 		<div class="container">
 			<div class="wrapp">
@@ -56,7 +55,7 @@
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
 										</li>
-										<li class="nav-item d-none">
+										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
 										</li>
 										<li class="nav-item">
@@ -117,7 +116,7 @@
 								<div class="">
 									<h6>Quick Links</h6>
 									<ul class="footer-nav nav flex-column">
-										<li class="nav-item d-none">
+										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Previous Seasons</a>
 										</li>
 										<li class="nav-item">

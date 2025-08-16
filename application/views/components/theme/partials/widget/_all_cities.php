@@ -8,7 +8,7 @@ if (isset($live_springboard)):
 			<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
 				<div class="col-auto">
 					<div class="photo rounded-circle bg-red mb-3 p-2">
-						<img src="<?= base_url("assets/images/icons/city/new/") . str_replace(' ', '-', strtolower($sb['name'])) ?>.png" alt="Mumbai" height="100">
+						<img src="<?= base_url("assets/images/icons/city/new/") . $sb['image']?>" alt="Mumbai" height="100">
 					</div>
 				</div>
 				<div class="col">
@@ -33,7 +33,7 @@ if (!is_null($upcoming_springboards)):
 						<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $i * 10 ?>">
 							<div class="col-auto">
 								<div class="photo rounded-circle bg-red mb-3 p-2">
-									<img src="<?= base_url("assets/images/icons/city/new/") . str_replace(' ', '-', strtolower($sb['name'])) ?>.png" alt="<?= $sb['name'] ?>" height="100">
+									<img src="<?= base_url("assets/images/icons/city/new/") . $sb['image']?>" alt="<?= $sb['name'] ?>" height="100">
 								</div>
 							</div>
 							<div class="col">
@@ -52,7 +52,7 @@ if (!is_null($upcoming_springboards)):
 						<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
 							<div class="col-auto">
 								<div class="photo rounded-circle bg-red mb-3 p-2">
-									<img src="<?= base_url("assets/images/icons/city/new/") . str_replace(' ', '-', strtolower($sb['name'])) ?>.png" alt="Mumbai" height="100">
+									<img src="<?= base_url("assets/images/icons/city/new/") . $sb['image']?>" alt="Mumbai" height="100">
 								</div>
 							</div>
 							<div class="col">
@@ -82,7 +82,7 @@ if (!is_null($past_springboards)):
 					<div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="<?= $i * 10 ?>">
 						<div class="col-auto">
 							<div class="photo rounded-circle bg-red mb-3 p-2">
-								<img src="<?= base_url("assets/images/icons/city/new/") . str_replace(' ', '-', strtolower($sb['name'])) ?>.png" alt="Mumbai" height="100">
+								<img src="<?= base_url("assets/images/icons/city/new/") . $sb['image']?>" alt="Mumbai" height="100">
 							</div>
 						</div>
 						<div class="col">

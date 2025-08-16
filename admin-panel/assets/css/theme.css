@@ -10,7 +10,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #b72026 0%, #b72026 50%, #db2f36 50%, #db2f36 100%);
+  background: linear-gradient(90deg, #b72026 0%, #b72026 50%, rgb(218.6837209302, 47.3162790698, 54.1255813953) 50%, rgb(218.6837209302, 47.3162790698, 54.1255813953) 100%);
   border-radius: 1rem;
 }
 
@@ -105,7 +105,7 @@ footer::after {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, #de454b 0, #de454b 50%);
+  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, rgb(222.4790697674, 69.0209302326, 75.1186046512) 0, rgb(222.4790697674, 69.0209302326, 75.1186046512) 50%);
   background-size: 2rem 2rem;
 }
 
@@ -158,7 +158,7 @@ section {
   left: 0;
   width: max(8rem, 30%);
   height: 0.25rem;
-  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, #de454b 0, #de454b 50%);
+  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, rgb(222.4790697674, 69.0209302326, 75.1186046512) 0, rgb(222.4790697674, 69.0209302326, 75.1186046512) 50%);
   background-size: 2rem 2rem;
 }
 .section-title.text-white h2 > span::after {
@@ -205,11 +205,11 @@ section {
 }
 
 .tile.city-tile .photo.rounded-circle.bg-red {
-  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 50%, #db2f36 0, #db2f36 100%) !important;
+  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 50%, rgb(218.6837209302, 47.3162790698, 54.1255813953) 0, rgb(218.6837209302, 47.3162790698, 54.1255813953) 100%) !important;
   background-size: cover;
 }
 .tile.article-tile::after {
   content: "";
-  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, #de454b 0, #de454b 50%);
+  background-image: repeating-linear-gradient(45deg, #b72026 0, #b72026 0.8rem, rgb(222.4790697674, 69.0209302326, 75.1186046512) 0, rgb(222.4790697674, 69.0209302326, 75.1186046512) 50%);
   background-size: 2rem 2rem;
 }

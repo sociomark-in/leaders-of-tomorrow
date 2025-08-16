@@ -26,6 +26,7 @@
 			</div>
 		</div>
 	</section>
+	<?php if (isset($city['banner']) && $city['banner']) : ?>
 	<section class="pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -42,6 +43,8 @@
 			</div>
 		</div>
 	</section>
+	<?php endif ?>
+
 	<section class="section pb-0 blank" id="about">
 		<div class="container">
 			<div class="text-content text-lg mb-3 mb-md-5">
@@ -195,7 +198,7 @@
 													<a href="javascript:void(0)" class="speaker-tile normal">
 														<!-- <a href="<?= base_url('speaker/single') ?>" class="speaker-tile normal"> -->
 														<div class="speaker-photo rounded-circle mb-3">
-															<img src="<?= base_url('assets/images/cities/mumbai/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
+															<img src="<?= base_url('assets/images/cities/' . strtolower($city['name']) . '/speakers/' . $speaker['photo']) ?>" class="w-100" alt="<?= $speaker['name'] ?>">
 														</div>
 														<div class="desc text-center">
 															<h5><?= $speaker['name'] ?></h5>
