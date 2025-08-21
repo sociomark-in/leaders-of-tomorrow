@@ -51,10 +51,7 @@
 				<div class="glass-card">
 					<div class="card-body">
 						<p data-aos="fade-up">
-							MSMEs in India are vital for economic growth, contributing significantly to GDP, employment & exports. They drive innovation, support large industries through supply chain integration & promote regional economic development.
-						</p>
-						<p data-aos="fade-up" data-aos-delay="200">
-							Aligning with our theme <strong class="text-red">"Powering Entrepreneurs for the Global Stage."</strong>, these discussions will encompass topics such as policy support, streamlined regulations, digitization & impact of the budget, providing a comprehensive overview of macro-level challenges & opportunities for MSMEs to compete on a global scale.
+						    With our <strong class="text-red">Springboards</strong>, Leaders of Tomorrow hits the road, travelling to cities across India - from <strong class="text-red">Delhi</strong> to <strong class="text-red">Chennai</strong>, <strong class="text-red">Kolkata</strong> to <strong class="text-red">Mumbai</strong>. Each event becomes a live platform for dialogue, discovery & connection, bringing together policymakers, business leaders, startup founders and local MSMEs to explore regional growth stories, on-the-ground challenges & the way forward. From navigating tech transformations and entering global markets, to weathering trade wars and economic shocks, conversations will showcase the evolution of India’s true growth engines.
 						</p>
 					</div>
 				</div>
@@ -103,7 +100,7 @@
 							<a target="_blank" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda.pdf" ?>" class="btn btn-yellow">Download PDF<i class="ms-2 fa-solid fa-arrow-down"></i></a>
 						</div>
 					</div>
-					<div class="col-xl-6 col-lg-6 col-md-11 col-12">
+					<div class="col-xl-8 col-lg-6 col-md-11 col-12">
 						<div class="swiper agendaSwiper">
 							<div class="swiper-wrapper" id="agendaPages">
 								<a class="swiper-slide mb-2" href="<?= base_url('assets/images/cities/') . strtolower($city['name']) . "/agenda_page-0001.jpg" ?>">

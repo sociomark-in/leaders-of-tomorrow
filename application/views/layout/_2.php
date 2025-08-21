@@ -12,7 +12,7 @@
 			</div>
 		</div>
 </section>
-<?php $this->load->view('components/theme/partials/_footer'); ?>
+<?php $this->load->view('components/theme/partials/_footer_full'); ?>
 <!-- partial -->
 
 </div>

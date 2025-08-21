@@ -51,13 +51,13 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Mumbai",
-					'banner' => false,
+					'banner' => true,
+					'agenda' => true,
 					'theme' => [
 						'title' => 'Mumbai: Purpose, Progress & Prosperity',
-						'description' => "Bold thinkers, visionary leaders & emerging changemakers come together in Mumbai to explore the future of finance, innovation & leadership. In the heart of India's financial capital, we reimagine growth - not just as an economic goal, but as a mission driven by purpose. From scaling ambition to navigating disruption, join us at our first Leaders of Tomorrow Season 13 Springboard in the city of Mumbai.",
-						'embed' => '',
+						'description' => "Bold thinkers, visionary leaders & emerging changemakers come together in Mumbai to explore the future of finance, innovation & leadership. In the heart of India's financial capital, we reimagine growth - not just as an economic goal, but as a mission driven by purpose. From scaling ambition to navigating disruption, join us at our first <strong class='text-red'>Leaders of Tomorrow Season 13 Springboard</strong> in the city of Mumbai.",
+						'embed' => 'https://www.youtube.com/embed/dnMJ5hLuEtA?si=Y0fdaLqpGQ1rRCJw',
 					],
-					'theme' => NULL,
 					'partners' => [
 						[
 							'text' => 'Powered By',
@@ -65,47 +65,49 @@ class CityController extends BaseController
 							'url' => "https://www.tatatelebusiness.com/"
 						]
 					],
+					'guests' => [
+						[
+							'photo' => "Mangal_Lodha.png",
+							'name' => "Mangalprabhat Lodha",
+							'description' => "Minister Skills, Employment, Entrepreneurship & Innovation, Maharashtra",
+						],
+					],
 					'speakers' => [
-						// [
-						// 	'photo' => "Mangalprabhat_Lodha.png",
-						// 	'name' => "Mangalprabhat Lodha",
-						// 	'description' => "Minister Skills, Employment, Entrepreneurship & Innovation, Maharashtra",
-						// ],
-						// [
-						// 	'photo' => "Ashish_Singh.png",
-						// 	'name' => "Ashish Singh",
-						// 	'description' => "Head, Retail Liabilities, IDFC FIRST Bank",
-						// ],
+						[
+							'photo' => "Ashish_Singh.png",
+							'name' => "Ashish Singh",
+							'description' => "Head, Retail Liabilities, IDFC FIRST Bank",
+						],
 						[
 							'photo' => "Harjit_Singh.png",
 							'name' => "Harjit Singh",
 							'description' => "Managing Director, Tata Teleservices",
 						],
 						[
-							'photo' => "Vishal_Rally.png",
-							'name' => "Vishal Rally",
-							'description' => "President, Product Commercial & Marketing, Tata Teleservices",
+							'photo' => "Naiyya_Saggi.png",
+							'name' => "Naiyya Saggi",
+							'description' => "Founder, Edition",
 						],
 						[
 							'photo' => "RS_Subramanian.png",
 							'name' => "RS Subramanian",
 							'description' => "SVP, South Asia, DHL Express",
 						],
-						// [
-						// 	'photo' => "Ashutosh_Limaye.png",
-						// 	'name' => "Ashutosh Limaye",
-						// 	'description' => "Director & Co-Head, Anarock Property Consultants",
-						// ],
+						[
+							'photo' => "Vishal_Rally.png",
+							'name' => "Vishal Rally",
+							'description' => "President & Chief Revenue Officer, Tata Teleservices",
+						],
+						[
+							'photo' => "Ashutosh_Limaye.png",
+							'name' => "Ashutosh Limaye",
+							'description' => "Director & Co-Head, Anarock Property Consultants",
+						],
 						[
 							'photo' => "Neha_Motwani.png",
 							'name' => "Neha Motwani",
 							'description' => "CEO & Founder, Luma Fertility",
 						],
-						// [
-						// 	'photo' => "Naiyya_Saggi.png",
-						// 	'name' => "Naiyya Saggi",
-						// 	'description' => "Founder, Edition",
-						// ],
 						[
 							'photo' => "Radhika_Bajoria.png",
 							'name' => "Radhika Bajoria",

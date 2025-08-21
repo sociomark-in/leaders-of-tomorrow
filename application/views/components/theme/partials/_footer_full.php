@@ -47,7 +47,7 @@
 									<h6>Leaders of Tomorrow</h6>
 									<ul class="footer-nav nav flex-column">
 										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url() ?>">Season 12</a>
+											<a class="nav-link" href="<?= base_url() ?>">Season 13</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('#about') ?>">About</a>
@@ -55,7 +55,7 @@
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('#articles') ?>">Articles</a>
 										</li>
-										<li class="nav-item">
+										<li class="nav-item d-none">
 											<a class="nav-link" href="<?= base_url('#categories') ?>">All Categories</a>
 										</li>
 										<li class="nav-item">
@@ -68,6 +68,9 @@
 								<div class="">
 									<h6>All Seasons</h6>
 									<ul class="footer-nav nav flex-column">
+										<li class="nav-item">
+											<a class="nav-link" href="<?= base_url('history/season-12') ?>">Season 12</a>
+										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Season 11</a>
 										</li>
@@ -86,9 +89,9 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6 d-none">
 								<div class="">
-									<h6>Season 12 Awards</h6>
+									<h6>Season 13 Awards</h6>
 									<ul class="footer-nav nav flex-column">
 										<!-- <li class="nav-item">
 											<a class="nav-link" href="javascript:void(0)">Register</a>
@@ -117,7 +120,7 @@
 									<h6>Quick Links</h6>
 									<ul class="footer-nav nav flex-column">
 										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url('history/season-11') ?>">Previous Seasons</a>
+											<a class="nav-link" href="<?= base_url('history/season-' . EVENT_SEASON - 1) ?>">Previous Season</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('misc/privacy-policy') ?>">Privacy Policy</a>
@@ -139,10 +142,14 @@
 									<h6>Springboard Cities</h6>
 									<ul class="footer-nav nav">
 										<?php foreach ($springboards as $key => $sb) : ?>
-											<?php if ($key < 12) :
+											<?php 
+											if ($sb['status'] == 1) : 
+												// If the city is active, create a link to the city page
+												$city_slug = str_replace(" ", "-", strtolower($sb['name']));
+												$city_url = base_url('city/' . $city_slug);
 											?>
 												<li class="nav-item">
-													<a class="nav-link" href="<?= base_url('city/' . str_replace(" ", "-", strtolower($sb['name']))) ?>"><?= $sb['name'] ?></a>
+													<a class="nav-link" href="<?= $city_url ?>"><?= $sb['name'] ?></a>
 												</li>
 											<?php else: ?>
 												<li class="nav-item">

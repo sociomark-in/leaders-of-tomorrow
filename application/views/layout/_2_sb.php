@@ -12,7 +12,7 @@
 		</div>
 </section>
 <!-- partial:partials/_footer.html -->
-<?php $this->load->view('components/theme/partials/_footer'); ?>
+<?php $this->load->view('components/theme/partials/_footer_full'); ?>
 <!-- partial -->
 
 <?php $this->load->view('components/theme/partials/widget/_scrollto_top') ?>

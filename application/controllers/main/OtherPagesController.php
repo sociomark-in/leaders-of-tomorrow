@@ -12,13 +12,13 @@ class OtherPagesController extends BaseController
 	{
 		switch ($type) {
 			case 'disclaimer':
-				$this->load->page('legal/disclaimer');
+				$this->load->page('legal/disclaimer', $this->data);
 				break;
 			case 'terms-of-use':
-				$this->load->page('legal/terms_use');
+				$this->load->page('legal/terms_use', $this->data);
 				break;
 			case 'privacy-policy':
-				$this->load->page('legal/privacy');
+				$this->load->page('legal/privacy', $this->data);
 				break;
 
 			default:
