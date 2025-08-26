@@ -11,7 +11,7 @@ class BaseController extends CI_Controller
 		$this->data['springboards'] = [
 			[
 				'name' => 'Mumbai',
-				'date' => '2025-08-21',
+				'date' => '2025-08-22',
 				'image' => 'mumbai.png',
 				'status' => 1,
 			],
@@ -24,7 +24,7 @@ class BaseController extends CI_Controller
 					'description' => '',
 					'embed' => '',
 				],
-				'status' => 0,
+				'status' => 1,
 			],
 			[
 				'name' => 'Hyderabad',

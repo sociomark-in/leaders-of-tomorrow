@@ -8,6 +8,11 @@ class PagesController extends BaseController
 	{
 		$this->data['articles'] = [
 			[
+				'thumb' => "https://static.tnn.in/thumb/msid-152522058,thumbsize-164428,width-1280,height-720,resizemode-75/152522058.jpg?quality=100",
+				'title' => "IDFC FIRST Bank presents ET Now Leaders of Tomorrow Kicks Off Season 13",
+				'redirect' => "https://www.timesnownews.com/leaders-of-tomorrow/idfc-first-bank-presents-et-now-leaders-of-tomorrow-kicks-off-season-13-article-152522058"
+			],
+			[
 				'thumb' => "https://static.tnn.in/thumb/msid-119465723,thumbsize-164428,width-1280,height-720,resizemode-75/119465723.jpg?quality=100",
 				'title' => "Former Union Minister Anurag Thakur backs MSMEs & startup growth",
 				'redirect' => "https://www.timesnownews.com/web-stories/india/lot-awards-s12-anurag-singh-thakur-address-article-119465723"

@@ -70,7 +70,7 @@
 							</div>
 						</div>
 					<?php endif ?>
-					<div class="col-xl-7 col-lg-6 col-12">
+					<div class="col-md col-12">
 						<div class="section-title" data-aos="fade-left">
 							<h2><span><?= $city['theme']['title'] ?></span></h2>
 						</div>

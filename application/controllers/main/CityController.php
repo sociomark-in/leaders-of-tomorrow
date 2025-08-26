@@ -52,7 +52,7 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Mumbai",
 					'banner' => true,
-					'agenda' => true,
+					// 	'agenda' => true,
 					'theme' => [
 						'title' => 'Mumbai: Purpose, Progress & Prosperity',
 						'description' => "Bold thinkers, visionary leaders & emerging changemakers come together in Mumbai to explore the future of finance, innovation & leadership. In the heart of India's financial capital, we reimagine growth - not just as an economic goal, but as a mission driven by purpose. From scaling ambition to navigating disruption, join us at our first <strong class='text-red'>Leaders of Tomorrow Season 13 Springboard</strong> in the city of Mumbai.",
@@ -113,9 +113,23 @@ class CityController extends BaseController
 							'name' => "Radhika Bajoria",
 							'description' => "Founder, Radically Yours ",
 						],
-						
+
 					],
-					'register' => "btn_cf43dc552efc"
+				// 	'register' => "btn_cf43dc552efc"
+				];
+				break;
+			case 'gurgaon':
+				$this->data['page'] = [
+					'title' => "Gurgaon Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Gurgaon",
+					'register' => "btn_56a27aa9652e",
+					'theme' => [
+    					'title' => "Gurgaon: India's New-Age Startup Capital",
+    					'description' => 'Gurugram is emerging as India’s new-age startup capital, to shape the next chapter of Indian economic growth. From IT and EV to D2C and quick commerce, the city is powering some of India’s fastest-growing sectors. Join us as we explore how ambition, technology and resilience are building world-class businesses at <strong class="text-red">Leaders of Tomorrow Season 13 Springboard in Gurugram</strong> -  a pivotal stop on our pan-India roadshow series, only on ET NOW',
+    				// 	'embed' => '',
+    				],
 				];
 				break;
 			default:
