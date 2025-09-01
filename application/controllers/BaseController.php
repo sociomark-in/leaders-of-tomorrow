@@ -16,11 +16,11 @@ class BaseController extends CI_Controller
 				'status' => 1,
 			],
 			[
-				'name' => 'Gurgaon',
+				'name' => 'Gurugram',
 				'date' => '2025-09-05',
-				'image' => 'delhi.png',
+				'image' => 'gaziabad.png',
 				'theme' => [
-					'title' => "Gurgaon: India's New-Age Startup Capital",
+					'title' => "Gurugram: India's New-Age Startup Capital",
 					'description' => '',
 					'embed' => '',
 				],

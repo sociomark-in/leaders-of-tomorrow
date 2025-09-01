@@ -115,21 +115,50 @@ class CityController extends BaseController
 						],
 
 					],
-				// 	'register' => "btn_cf43dc552efc"
+					// 	'register' => "btn_cf43dc552efc"
 				];
 				break;
-			case 'gurgaon':
+			case 'gurugram':
 				$this->data['page'] = [
-					'title' => "Gurgaon Springboard" . " • " . APP_NAME . " " . date('Y'),
+					'title' => "Gurugram Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
+
 				$this->data['city'] = [
-					'name' => "Gurgaon",
+					'name' => "Gurugram",
 					'register' => "btn_56a27aa9652e",
 					'theme' => [
-    					'title' => "Gurgaon: India's New-Age Startup Capital",
-    					'description' => 'Gurugram is emerging as India’s new-age startup capital, to shape the next chapter of Indian economic growth. From IT and EV to D2C and quick commerce, the city is powering some of India’s fastest-growing sectors. Join us as we explore how ambition, technology and resilience are building world-class businesses at <strong class="text-red">Leaders of Tomorrow Season 13 Springboard in Gurugram</strong> -  a pivotal stop on our pan-India roadshow series, only on ET NOW',
-    				// 	'embed' => '',
-    				],
+						'title' => "Gurugram: India's New-Age Startup Capital",
+						'description' => 'Gurugram is emerging as India’s new-age startup capital, to shape the next chapter of Indian economic growth. From IT and EV to D2C and quick commerce, the city is powering some of India’s fastest-growing sectors. Join us as we explore how ambition, technology and resilience are building world-class businesses at <strong class="text-red">Leaders of Tomorrow Season 13 Springboard in Gurugram</strong> -  a pivotal stop on our pan-India roadshow series, only on ET NOW',
+						// 	'embed' => '',
+					],
+					
+					'speakers' => [
+						[
+							'photo' => "Bharat_Goyal.png",
+							'name' => "Bharat Goyal",
+							'description' => "Zonal Head-North, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Swati_Bhargava.png",
+							'name' => " Swati Bhargava",
+							'description' => "Co-Founder, CashKaro & EarnKaro",
+						],
+						[
+							'photo' => "Vinod_Khandelwal.png",
+							'name' => "Vinod Khandelwal",
+							'description' => "State President, Haryana Chamber of Commerce & Industry",
+						],
+						[
+							'photo' => "Aviral_Gupta.png",
+							'name' => "Aviral Gupta",
+							'description' => "Group CEO, Zostel & Zo",
+						],
+						[
+							'photo' => "Nikhil_Sareen.png",
+							'name' => "Nikhil Sareen",
+							'description' => "Co-Founder, Qubo",
+						],
+					],
 				];
 				break;
 			default:
