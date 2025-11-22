@@ -357,7 +357,7 @@ if (!is_null($springboards)) {
 								},
 								1024: {
 									slidesPerView: 3,
-									spaceBetween: 10,
+									spaceBetween: 40,
 								},
 							},
 						})

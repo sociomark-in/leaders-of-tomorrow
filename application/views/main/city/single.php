@@ -1,3 +1,9 @@
+<?php
+$dateObj = date_create_from_format("Y-m-d H:i:s", $city['date']);
+$dateTime = date_format($dateObj, 'F j, Y');
+$venue = ($city['venue'] == "") ? "Yet to be decided!" : $city['venue'];
+?>
+
 <main>
 	<section class="section pb-md-0">
 		<div class="container">
@@ -44,6 +50,30 @@
 		</div>
 	</section>
 	<?php endif ?>
+	<section class="p-0">
+		<div class="container">
+			<div class="text-content text-lg">
+        		<div class="row g-3 p-3 justify-content-center">
+        			<div class="col-xl-4 col-lg-6 col-12">
+        			    <div class="card event-ticket">
+        					<div class="card-body">
+        						<p class="mb-0">Date</p>
+        						<h3 class="text-red"><?= $dateTime ?></h3>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-xl-4 col-lg-6 col-12">
+        				<div class="card event-ticket">
+        					<div class="card-body">
+        						<p class="mb-0">Venue</p>
+        						<h3 class="text-red"><?= $venue ?></h3>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="section pb-0 blank" id="about">
 		<div class="container">
@@ -58,7 +88,6 @@
 			</div>
 		</div>
 	</section>
-
 	<?php if (isset($city['theme'])) : ?>
 		<section class="section pb-0">
 			<div class="container">

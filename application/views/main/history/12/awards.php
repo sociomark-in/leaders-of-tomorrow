@@ -35,7 +35,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Past Seasons</li>
-							<li class="breadcrumb-item"><a href="<?= base_url('history/season-'). $season ?>">Season <?= $season ?></a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('history/season-' . $season) ?>">Season <?= $season ?></a></li>
 							<li class="breadcrumb-item active" aria-current="page">Season <?= $season ?> Awards</li>
 						</ol>
 					</nav>

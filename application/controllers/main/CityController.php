@@ -53,6 +53,9 @@ class CityController extends BaseController
 					'name' => "Mumbai",
 					'banner' => true,
 					// 	'agenda' => true,
+					'gallery' => true,
+					'date' => "2025-08-22 19:00:00",
+					'venue' => 'Mumbai',
 					'theme' => [
 						'title' => 'Mumbai: Purpose, Progress & Prosperity',
 						'description' => "Bold thinkers, visionary leaders & emerging changemakers come together in Mumbai to explore the future of finance, innovation & leadership. In the heart of India's financial capital, we reimagine growth - not just as an economic goal, but as a mission driven by purpose. From scaling ambition to navigating disruption, join us at our first <strong class='text-red'>Leaders of Tomorrow Season 13 Springboard</strong> in the city of Mumbai.",
@@ -117,6 +120,7 @@ class CityController extends BaseController
 					],
 					// 	'register' => "btn_cf43dc552efc"
 				];
+
 				break;
 			case 'gurugram':
 				$this->data['page'] = [
@@ -125,13 +129,17 @@ class CityController extends BaseController
 
 				$this->data['city'] = [
 					'name' => "Gurugram",
-					'register' => "btn_56a27aa9652e",
+				// 	'agenda' => true,
+				// 	'register' => "btn_56a27aa9652e",
+					'gallery' => true,
+					'date' => "2025-09-05 19:00:00",
+					'venue' => 'Gurugram',
 					'theme' => [
 						'title' => "Gurugram: India's New-Age Startup Capital",
 						'description' => 'Gurugram is emerging as India’s new-age startup capital, to shape the next chapter of Indian economic growth. From IT and EV to D2C and quick commerce, the city is powering some of India’s fastest-growing sectors. Join us as we explore how ambition, technology and resilience are building world-class businesses at <strong class="text-red">Leaders of Tomorrow Season 13 Springboard in Gurugram</strong> -  a pivotal stop on our pan-India roadshow series, only on ET NOW',
-						// 	'embed' => '',
+						'embed' => 'https://www.youtube.com/embed/lEWIgpAzKks?si=h_ckUSjBbvb2xJ6F',
 					],
-					
+
 					'speakers' => [
 						[
 							'photo' => "Bharat_Goyal.png",
@@ -143,10 +151,15 @@ class CityController extends BaseController
 							'name' => " Swati Bhargava",
 							'description' => "Co-Founder, CashKaro & EarnKaro",
 						],
+						// [
+						// 	'photo' => "Vinod_Khandelwal.png",
+						// 	'name' => "Vinod Khandelwal",
+						// 	'description' => "State President, Haryana Chamber of Commerce & Industry",
+						// ],
 						[
-							'photo' => "Vinod_Khandelwal.png",
-							'name' => "Vinod Khandelwal",
-							'description' => "State President, Haryana Chamber of Commerce & Industry",
+							'photo' => "Pranav_Poddar.png",
+							'name' => "Pranav Poddar",
+							'description' => "Senior Member, Young Business Leader Forum, PHDCCI",
 						],
 						[
 							'photo' => "Aviral_Gupta.png",
@@ -158,6 +171,111 @@ class CityController extends BaseController
 							'name' => "Nikhil Sareen",
 							'description' => "Co-Founder, Qubo",
 						],
+					],
+				];
+				break;
+			case 'hyderabad':
+				$this->data['page'] = [
+					'title' => "Hyderabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Hyderabad",
+					'date' => "2025-09-19 19:00:00",
+					'venue' => 'Hyderabad',
+					'banner' => true,
+					'gallery' => true,
+					'theme' => [
+						'title' => 'Hyderabad: Booming Real Estate in Cyberabad',
+						'description' => "An unprecedented real estate surge is emerging in Hyderabad, driven by the thriving IT industry, bringing an influx of talent to the city’s urban landscape. <br>
+                                            Join <strong class='text-red'>ET NOW #LeadersOfTomorrow Springboard</strong> to explore how Hyderabad has become a tech-driven property powerhouse and top destination for real estate investors globally.",
+						'embed' => 'https://www.youtube.com/embed/5t7q9cYlLys?si=ZkyzgWnzKxAtbxmN',
+					],
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png',
+							'url' => "https://www.tatatelebusiness.com/"
+						]
+					],
+					'speakers' => [
+						[
+							'photo' => "Nirish_Lalan.png",
+							'name' => "Nirish Lalan",
+							'description' => "Zonal Head – South, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Vishal_Rally.png",
+							'name' => "Vishal Rally",
+							'description' => "President & Chief Revenue Officer, Tata Teleservices",
+						],
+						[
+							'photo' => "Prathibha_Kunda.png",
+							'name' => "Prathibha Kunda",
+							'description' => "Chairperson, FICCI FLO Hyderabad",
+						],
+						[
+							'photo' => "Sandip_Patnaik.png",
+							'name' => "Sandip Patnaik",
+							'description' => "Sr. Managing Director & Board of Director, JLL India",
+						],
+						[
+							'photo' => "Aravindbabu_Ramaraju.png",
+							'name' => "Aravind Babu Ramaraju",
+							'description' => "Head - Real Estate, Workplace Services (India), LTIMindtree",
+						],
+
+					],
+				];
+				break;
+			case 'pune':
+				$this->data['page'] = [
+					'title' => "Pune Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Pune",
+					'date' => "2025-10-15 19:00:00",
+					'venue' => 'Hotel Novotel, Pune',
+					'banner' => true,
+					'theme' => [
+						'title' => "Pune: At the Forefront of skilled growth & innovation",
+						'description' => 'Pune stands at the forefront of skilling, innovation, and growth, powered by one of the highest employability rates in the country. With a thriving IT, manufacturing, and startup ecosystem, the city is shaping the future of work and enterprise.<br>
+ 							To explore how this city is redefining India’s urban landscape, join <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong>.',
+						// 	'embed' => '',
+					],
+					// 	'agenda' => true,
+					'register' => "btn_d1f982455c9c",
+					'speakers' => [
+						[
+							'photo' => "Vishal_Rally.png",
+							'name' => "Vishal Rally",
+							'description' => "Chief Revenue Officer, Tata Teleservices",
+						],
+						[
+							'photo' => "Ramakrishnan_Raman.png",
+							'name' => "Dr. Ramakrishnan Raman",
+							'description' => "Vice Chancellor, Symbiosis International (Deemed University)",
+						],
+						[
+							'photo' => "Ganesh_Natarajan.png",
+							'name' => "Ganesh Natarajan",
+							'description' => "Chairman, 5F World & Honeywell Automation",
+						],
+						[
+							'photo' => "Payal_Rajpal.png",
+							'name' => "Payal Rajpal",
+							'description' => "Director, Robotex India",
+						],
+						// [
+						// 	'photo' => "Shazia_Khan.png",
+						// 	'name' => "Shazia Khan",
+						// 	'description' => "Zonal Head- West, IDFC FIRST Bank",
+						// ],
+					],
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png'
+						]
 					],
 				];
 				break;
@@ -183,55 +301,27 @@ class CityController extends BaseController
 					'title' => "Mumbai Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Mumbai";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'lucknow':
-				$this->data['page'] = [
-					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Lucknow";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'chandigarh':
-				$this->data['page'] = [
-					'title' => "Chandigarh Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Chandigarh";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'chennai':
-				$this->data['page'] = [
-					'title' => "Chennai Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Chennai";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'jaipur':
-				$this->data['page'] = [
-					'title' => "Jaipur Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
 				$this->data['city']['partners'] = [
 					[
-						'text' => 'Hospitality Partner',
-						'logo' => 'Pride.png',
-						'url' => ""
-					],
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
 				];
-				$this->data['city']['name'] = "Jaipur";
 				$this->load->city_view('gallery', $this->data);
 				break;
-			case 'coimbatore':
+			case 'gurugram':
 				$this->data['page'] = [
-					'title' => "Coimbatore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+					'title' => "Gurugram Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
-				$this->data['city']['name'] = "Coimbatore";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'pune':
-				$this->data['page'] = [
-					'title' => "Pune Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				$this->data['city']['name'] = "Gurugram";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
 				];
-				$this->data['city']['name'] = "Pune";
 				$this->load->city_view('gallery', $this->data);
 				break;
 			case 'hyderabad':
@@ -239,37 +329,30 @@ class CityController extends BaseController
 					'title' => "Hyderabad Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Hyderabad";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'indore':
-				$this->data['page'] = [
-					'title' => "Indore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Indore";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'delhi':
-				$this->data['page'] = [
-					'title' => "Delhi Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Delhi";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'bengaluru':
-				$this->data['page'] = [
-					'title' => "Bengaluru Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
-				];
-				$this->data['city']['name'] = "Bengaluru";
-				$this->load->city_view('gallery', $this->data);
-				break;
-			case 'goa':
 				$this->data['city']['partners'] = [
 					[
-						'text' => 'Hospitality Partner',
-						'logo' => 'Pride.png',
-						'url' => ""
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'pune':
+				$this->data['page'] = [
+					'title' => "Pune Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Pune",
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png',
+							'url' => "https://www.tatatelebusiness.com/"
+						]
 					],
 				];
+				$this->load->city_view('gallery', $this->data);
 				break;
 
 			default:
@@ -292,16 +375,6 @@ class CityController extends BaseController
 			$this->data['city'] = $sb;
 			switch ($city) {
 				case 'pune':
-				case 'jaipur':
-				case 'goa':
-				case 'ahmedabad':
-					$this->data['city']['partners'] = [
-						[
-							'text' => 'Hospitality Partner',
-							'logo' => 'Pride.png',
-							'url' => ""
-						],
-					];
 					break;
 
 				default:

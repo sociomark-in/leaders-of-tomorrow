@@ -37,7 +37,7 @@
 												<a class="btn p-0 btn-light" href="">
 													<i class="p-1" data-feather="refresh-ccw"></i>
 												</a>
-												<a class="btn p-0 btn-primary" href="<?= base_url('dashboard/agent/' . $agent['agent_id']) ?>">
+												<a class="btn p-0 btn-primary" href="<?= base_url('agent/' . $agent['agent_id']) ?>">
 													<i class="p-1" data-feather="arrow-right"></i>
 												</a>
 											</div>

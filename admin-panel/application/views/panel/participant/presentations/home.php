@@ -5,7 +5,7 @@
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('') ?>">Dashboard</a></li>
 				<li class="breadcrumb-item active" aria-current="page">My Presentations</li>
 			</ol>
 		</nav>
@@ -48,12 +48,12 @@
 																<?php
 																switch ($application['status']) {
 																	case '2':
-																		$redirect = base_url('dashboard/presentation/' . $application['presentation_id']) . "/edit";
+																		$redirect = base_url('presentation/' . $application['presentation_id']) . "/edit";
 																		$text = "Edit Presentation";
 																		break;
 
 																	default:
-																		$redirect = base_url('dashboard/presentation/' . $application['presentation_id']) . "/edit";
+																		$redirect = base_url('presentation/' . $application['presentation_id']) . "/edit";
 																		$text = "";
 																		break;
 																}

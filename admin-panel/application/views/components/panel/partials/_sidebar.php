@@ -18,8 +18,8 @@
 				</a>
 			</li>
 			<?php if (in_array($_SESSION['awards_panel_user']['role'], ['participant'])) : ?>
-				<li class="nav-item <?= link_is_active("my-applications") ?>">
-					<a href="<?= base_url('my-applications') ?>" class="nav-link">
+				<li class="nav-item <?= link_is_active("my-nominations") ?>">
+					<a href="<?= base_url('my-nominations') ?>" class="nav-link">
 						<i class="link-icon" data-feather="database"></i>
 						<span class="link-title">Nominations</span>
 					</a>

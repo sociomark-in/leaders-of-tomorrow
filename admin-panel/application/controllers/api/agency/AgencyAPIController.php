@@ -15,7 +15,7 @@ class AgencyAPIController extends CI_Controller
 		];
 		$this->load->model('panel/AgentModel');
 		if($this->AgentModel->insert($this->data)){
-			redirect('dashboard/all-agents');
+			redirect('all-agents');
 		}
 	}
 }

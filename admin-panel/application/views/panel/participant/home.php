@@ -59,11 +59,11 @@
 														<?php
 														switch ($application['status']) {
 															case '2':
-																$redirect = base_url('application/' . $application['nomination_id']) . "/edit";
+																$redirect = base_url('nomination/' . $application['nomination_id']) . "/edit";
 																$text = "Edit Application";
 																break;
 															case '4':
-																$redirect = base_url('application/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
+																$redirect = base_url('nomination/' . $application['nomination_id']) . "?stage=" . (int)$application['stage_status'];
 																$text = "Complete Application";
 																break;
 															case '1':
@@ -77,7 +77,7 @@
 																			break;
 
 																		default:
-																			$redirect = base_url('application/' . $application['nomination_id'] . "/presentation");
+																			$redirect = base_url('nomination/' . $application['nomination_id'] . "/presentation");
 																			$text = "Prepare Presentation for Stage II";
 																			break;
 																	}
@@ -85,7 +85,7 @@
 																break;
 
 															default:
-																$redirect = base_url('application/' . $application['nomination_id']) . "/edit";
+																$redirect = base_url('nomination/' . $application['nomination_id']) . "/edit";
 																$text = "";
 																break;
 														}

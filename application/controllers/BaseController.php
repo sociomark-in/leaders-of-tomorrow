@@ -19,36 +19,20 @@ class BaseController extends CI_Controller
 				'name' => 'Gurugram',
 				'date' => '2025-09-05',
 				'image' => 'gaziabad.png',
-				'theme' => [
-					'title' => "Gurugram: India's New-Age Startup Capital",
-					'description' => '',
-					'embed' => '',
-				],
 				'status' => 1,
 			],
 			[
 				'name' => 'Hyderabad',
 				'image' => 'hyderabad.png',
 				'date' => '2025-09-19',
-				'theme' => [
-					'title' => "Hyderabad: India's Silicon Valley Fuelling a Real Estate Surge",
-					'description' => '',
-					'embed' => '',
-				],
-				'partners' => [
-					[
-						'text' => 'Powered By',
-						'logo' => 'tata-tele.png'
-					]
-				],
-				'status' => 0,
+				'status' => 1,
 			],
 			[
-				'name' => 'Bengaluru',
-				'image' => 'bengaluru.png',
-				'date' => '2025-10-10',
+				'name' => 'Pune',
+				'image' => 'pune.png',
+				'date' => '2026-03-20',
 				'theme' => [
-					'title' => "Bengaluru: Shaping India’s Global Tech Identity",
+					'title' => "Pune: At the Forefront of skilled growth & innovation",
 					'description' => '',
 					'embed' => '',
 				],
@@ -58,7 +42,7 @@ class BaseController extends CI_Controller
 						'logo' => 'tata-tele.png'
 					]
 				],
-				'status' => 0,
+				'status' => 1,
 			],
 			[
 				'name' => 'Chennai',
@@ -184,14 +168,9 @@ class BaseController extends CI_Controller
 				'status' => 0,
 			],
 			[
-				'name' => 'Pune',
-				'image' => 'pune.png',
-				'date' => '2026-03-20',
-				'theme' => [
-					'title' => "Pune: At the Forefront of skilled growth & innovation",
-					'description' => '',
-					'embed' => '',
-				],
+				'name' => 'Bengaluru',
+				'image' => 'bengaluru.png',
+				'date' => '2025-10-10',
 				'partners' => [
 					[
 						'text' => 'Powered By',

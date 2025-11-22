@@ -2,13 +2,13 @@
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="d-flex gap-2 align-items-baseline">
 			<h4 class="mb-3 mb-md-0">Edit Presentation <?= $presentation['category']['name'] ?></h4>
-			<p class="m-0 text-muted">(#<?= $application['nomination_id'] ?>)</p>
+			<p class="m-0 text-muted">(#<?= $presentation['presentation_id'] ?>)</p>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/my-applications') ?>">My Applications</a></li>
-				<li class="breadcrumb-item active" aria-current="page">New Presentation</li>
+				<li class="breadcrumb-item"><a href="<?= base_url('') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('my-presentations') ?>">My Presentations</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Edit Presentation</li>
 			</ol>
 		</nav>
 	</div>

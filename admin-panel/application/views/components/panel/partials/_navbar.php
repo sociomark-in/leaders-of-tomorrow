@@ -14,7 +14,7 @@
 		<?php endif ?>
 		<ul class="navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url("dashboard/my-profile") ?>">Welcome, <?= $user['name'] ?>!</a>
+				<a class="nav-link" href="<?= base_url("my-profile") ?>">Welcome, <?= $user['name'] ?>!</a>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,7 +32,7 @@
 					</div>
 					<ul class="list-unstyled p-1">
 						<li class="dropdown-item py-2">
-							<a href="<?= base_url("dashboard/my-profile") ?>" class="text-body ms-0">
+							<a href="<?= base_url("my-profile") ?>" class="text-body ms-0">
 								<i class="me-2 icon-md" data-feather="user"></i>
 								<span>Profile</span>
 							</a>

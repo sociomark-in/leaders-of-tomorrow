@@ -59,20 +59,20 @@ $route['register/social'] = 'auth/Example';
 $route['multi-login'] = 'auth/LoginController/multi';
 
 // Participant
-$route['my-applications'] = 'NominationsController/user_side';
+$route['my-nominations'] = 'NominationsController/user_side';
 $route['my-presentations'] = 'PresentationsController';
 
 $route['category/(:any)/nominate'] = 'NominationsController/nominate/$1';
 
 // Jury
-$route['applications'] = 'NominationsController';
-$route['application/(:any)'] = 'NominationsController/single/$1';
-$route['application/(:any)/edit'] = 'NominationsController/user_edit/$1';
-$route['application/(:any)/download'] = 'NominationsController/download/$1';
-$route['application/(:any)/reject'] = 'api/awards/NominationAPIController/reject_default_comment/$1';
+$route['nominations'] = 'NominationsController';
+$route['nomination/(:any)'] = 'NominationsController/single/$1';
+$route['nomination/(:any)/edit'] = 'NominationsController/user_edit/$1';
+$route['nomination/(:any)/download'] = 'NominationsController/download/$1';
+$route['nomination/(:any)/reject'] = 'api/awards/NominationAPIController/reject_default_comment/$1';
 
 $route['presentations'] = 'PresentationsController';
-$route['application/(:any)/presentation'] = 'PresentationsController/new_presentation/$1';
+$route['nomination/(:any)/presentation'] = 'PresentationsController/new_presentation/$1';
 $route['presentation/(:any)/view'] = 'PresentationsController/single/$1';
 $route['presentation/(:any)/edit'] = 'PresentationsController/edit/$1';
 $route['presentation/(:any)/download'] = 'PresentationsController/download/$1';

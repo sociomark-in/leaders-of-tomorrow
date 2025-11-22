@@ -79,19 +79,19 @@
 												<tr>
 												<td>
 														<?php if ($edit) : ?>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">
+															<a href="<?= base_url('dashboard/nomination/' . $application['nomination_id']) ?>">
 																<i class="link-icon px-1 mb-1" data-feather="eye"></i>
 															</a>
-															<a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>/reject">
+															<a href="<?= base_url('dashboard/nomination/' . $application['nomination_id']) ?>/reject">
 																<i class="link-icon px-1 mb-1" data-feather="x"></i>
 															</a>
 														<?php endif ?>
-														<a target="_blank" href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
+														<a target="_blank" href="<?= base_url('dashboard/nomination/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>"><i class="link-icon px-1 mb-1 text-dark" data-feather="download"></i></a>
 														<!-- <a href=""><i class="link-icon px-1 mb-1 text-success" data-feather="check"></i></a>
 														<a href=""><i class="link-icon px-1 mb-1 text-danger" data-feather="x"></i></a> -->
 													</td>
 													<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $application['created_at']), 'F d, Y H:iA')  ?></td>
-													<td>(<span class="text-red"><a href="<?= base_url('dashboard/application/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
+													<td>(<span class="text-red"><a href="<?= base_url('dashboard/nomination/' . $application['nomination_id']) ?>">#<?= $application['nomination_id'] ?></a></span>)</td>
 													<td><?= $application['category']['name'] ?></td>
 													<td><?= $application['name'] ?></td>
 													<td><?= $application['status_text'] ?></td>

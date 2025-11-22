@@ -358,7 +358,7 @@ class NominationsController extends PanelController
 			// 	$zip->close();
 			// }
 		} else {
-			redirect('dashboard');
+			redirect('');
 		}
 	}
 }
