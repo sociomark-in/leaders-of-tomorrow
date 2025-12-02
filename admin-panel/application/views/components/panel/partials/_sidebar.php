@@ -55,8 +55,8 @@
 				<!-- Nominations -->
 				<li class="nav-item nav-category">Nominations Management</li>
 				<!-- Access Level: jury -->
-				<li class="nav-item <?= link_is_active("applications") ?>">
-					<a href="<?= base_url('applications') ?>" class="nav-link">
+				<li class="nav-item <?= link_is_active("nominations") ?>">
+					<a href="<?= base_url('nominations') ?>" class="nav-link">
 						<i class="link-icon" data-feather="database"></i>
 						<span class="link-title">Nominations</span>
 					</a>

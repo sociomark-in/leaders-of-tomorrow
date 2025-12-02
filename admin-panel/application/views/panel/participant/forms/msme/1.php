@@ -20,7 +20,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 			<div class="row g-3">
 				<div class="col-xl-6 col-lg-6 col-12">
 					<div class="">
-						<label for="" class="form-label">Name of the Participating Entity</label>
+						<label for="" class="form-label">Participating Entity (Organization Name)</label>
 						<input required type="text" name="organization[name]" class="form-control">
 					</div>
 				</div>
@@ -36,13 +36,13 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 						<input required type="text" name="designation" class="form-control">
 					</div>
 				</div>
-				<!-- <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Date of Birth</label>
 						<input required type="text" data-type="date" name="dob" class="form-control">
 						<span class="form-text">(in DD/MM/YYYY)</span>
 					</div>
-				</div> -->
+				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 					<div class="">
 						<label for="" class="form-label">Business Segment</label>
@@ -103,7 +103,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 					</div>
 				</div>
 
-				<!-- <div class="col-xxl-3 col-xl-4 col-12">
+				<div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Business</label>
 						<select required name="organization[business]" id="" class="form-select">
@@ -112,7 +112,7 @@ $this->load->view('components/panel/partials/_category_eligibility_requirements'
 							<option value="Service">Service</option>
 						</select>
 					</div>
-				</div> -->
+				</div>
 				<div class="col-xxl-3 col-xl-4 col-12">
 					<div class="">
 						<label for="" class="form-label">Type of Ownership</label>

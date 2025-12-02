@@ -4,9 +4,65 @@
 <input type="hidden" name="utm" value="<?= $utm ?>">
 <input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 <input type="hidden" name="stage" value="<?= $stage ?>">
-<div class="row gap-3">
+<div class="row g-3 g-xl-5">
 	<div class="col-12">
-		<div class="form-check">
+		<div class="row g-md-5 g-3">
+			<fieldset class="col-12">
+				<legend class="card-title mb-0">
+					<h5>Individual Category Preference & Entrepreneur Insight<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+				<div class="row g-3">
+					<div class="col-12">
+						<p>I wish to additionally be considered for:</p>
+					</div>
+					<div class="col-xl-4">
+						<div class="border rounded-1 p-2 p-lg-3">
+							<div class="form-check">
+								<input required name="alt_category_id" value="1_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption1">
+								<label class="form-check-label" for="checkOption1">
+									<h5 class="mb-2">Entrepreneur of the Year</h5>
+									<small class="text-muted">
+										I confirm that I am <strong>more than 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 years</strong> old.
+									</small>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="border rounded-1 p-2 p-lg-3">
+							<div class="form-check">
+								<input required name="alt_category_id" value="2_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption2">
+								<label class="form-check-label" for="checkOption2">
+									<h5 class="mb-2">Next Gen Innovator</h5>
+									<small class="text-muted">
+										I confirm that I am <strong>up to 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 and less than 5 years</strong> old.
+									</small>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="border rounded-1 p-2 p-lg-3">
+							<div class="form-check">
+								<input required name="alt_category_id" value="3_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption3">
+								<label class="form-check-label" for="checkOption3">
+									<h5 class="mb-2">Woman Entrepreneur of the Year</h5>
+									<small class="text-muted">
+										I confirm that I am <strong>a woman entrepreneur</strong> and hold <strong>at least 33% equity stake</strong> in the organization
+									</small>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-text">
+					<p>(Please tick only those that are relevant and for which you meet the eligibility criteria)</p>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="form-check mb-3">
 			<input class="form-check-input" name="confirm" type="checkbox" id="flexCheckChecked" required>
 			<label class="form-check-label" for="flexCheckChecked">
 				I, holding the position in
@@ -14,9 +70,6 @@
 				hereby declare the following:
 			</label>
 		</div>
-
-	</div>
-	<div class="col-12">
 		<div class="p-3 bg-light">
 			<ul class="mb-3">
 				<li>

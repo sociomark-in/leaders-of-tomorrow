@@ -32,7 +32,7 @@
 				<?php if (count($categories['active']) > 0) : ?>
 					<?php foreach ($categories['active'] as $key => $category): ?>
 						<div class="col-xxl-4 col-lg-6">
-							<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+							<a class="card glw-card h-100" id="categoryModalHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModal">
 								<div class="card-body">
 									<div class="row h-100 align-items-center">
 										<div class="col-auto">
@@ -49,7 +49,7 @@
 								</div>
 							</a>
 							<script>
-								$button = $("#categoryModelHandler<?= $key ?>");
+								$button = $("#categoryModalHandler<?= $key ?>");
 								$button.on("click", () => {
 									$.ajax({
 										url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
@@ -58,8 +58,8 @@
 										},
 										success: function(result) {
 											console.log(result);
-											$("#categoryModel .modal-title").text(result.name)
-											$("#categoryModel .modal-body").html(
+											$("#categoryModal .modal-title").text(result.name)
+											$("#categoryModal .modal-body").html(
 												"<p>" + result.description + "</p>"
 											)
 										}
@@ -71,7 +71,7 @@
 				<?php else: ?>
 					<?php foreach ($categories['all'] as $key => $category): ?>
 						<div class="col-xxl-4 col-lg-6">
-							<a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel">
+							<a class="card glw-card h-100" id="categoryModalHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModal">
 								<div class="card-body">
 									<div class="row h-100 align-items-center">
 										<div class="col-auto">
@@ -87,27 +87,42 @@
 									</div>
 								</div>
 							</a>
-							<!-- <script>
-										$button = $("#categoryModelHandler<?= $key ?>");
-										$button.on("click", () => {
-											$.ajax({
-												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
-												data: {
-													category: "<?= $category['code'] ?>"
-												},
-												success: function(result) {
-													console.log(result);
-													$("#categoryModel .modal-title").text(result.name)
-													$("#categoryModel .modal-body").html(
-														"<p>" + result.description + "</p>"
-													)
-												}
-											})
-										})
-									</script> -->
+							<script>
+								$button = $("#categoryModalHandler<?= $key ?>");
+								$button.on("click", () => {
+									$.ajax({
+										url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
+										data: {
+											category: "<?= $category['code'] ?>"
+										},
+										success: function(result) {
+											console.log(result);
+											$("#categoryModal .modal-title").text(result.name)
+											$("#categoryModal .modal-body").html(
+												"<p>" + result.description + "</p>"
+											)
+										}
+									})
+								})
+							</script>
 						</div>
 					<?php endforeach ?>
 				<?php endif ?>
+			</div>
+		</div>
+		<div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModelLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5">Modal title</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<a href="<?=  ?>" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+						<button type="button" class="btn btn-red">Save changes</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

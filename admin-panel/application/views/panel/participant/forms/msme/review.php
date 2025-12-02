@@ -125,18 +125,18 @@
 									</div>
 									<div class="col-xl-4 col-lg-6 col-12">
 										<label for="" class="form-label">City</label>
-											<!--<input type="text" value="<?= $application['organization_city']  ?>" name="organization[address][city]" class="form-control mb-2">-->
-            							<select required name="organization[address][city]" id="citySelect" class="form-select">
-            								<option value="">Select City</option>
-            								<?php foreach ($locations['cities'] as $key => $option)  : ?>
-            									<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
-            								<?php endforeach ?>
-            							</select>
+										<!--<input type="text" value="<?= $application['organization_city']  ?>" name="organization[address][city]" class="form-control mb-2">-->
+										<select required name="organization[address][city]" id="citySelect" class="form-select">
+											<option value="">Select City</option>
+											<?php foreach ($locations['cities'] as $key => $option) : ?>
+												<option <?= ($application['organization_city'] == $option['city_name']) ? "selected" : "" ?> value="<?= $option['city_name'] ?>"><?= $option['city_name'] ?></option>
+											<?php endforeach ?>
+										</select>
 									</div>
 								</div>
 							</div>
 
-							<!-- <div class="col-xxl-3 col-xl-4 col-12">
+							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Business</label>
 									<select required name="organization[business]" id="" class="form-select">
@@ -145,7 +145,7 @@
 										<option value="Service">Service</option>
 									</select>
 								</div>
-							</div> -->
+							</div>
 							<div class="col-xxl-3 col-xl-4 col-12">
 								<div class="">
 									<label for="" class="form-label">Type of Ownership</label>
@@ -166,7 +166,7 @@
 							</div>
 						</div>
 					</fieldset>
-					
+
 					<fieldset class="col-12">
 						<legend class="card-title mb-0">
 							<h5>Contact Person of Organization<sup class="text-danger">&ast;</sup></h5>
@@ -398,14 +398,25 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
+								<h5>Innovation & Initiative Overview<sup class="text-danger">&ast;</sup></h5>
 							</legend>
+							<!-- <p class="text-muted"></p> -->
 						</div>
-						<div class="row g-3">
-							<div class="col-12">
+						<div class="row g-3 flex-row-reverse">
+							<div class="col-lg-4">
+								<div class="bg-light p-3">
+									<p>Please cover:</p>
+									<ul>
+										<li>The problem/opportunity you aimed to address</li>
+										<li>The innovation or distinctive approach (product, process, technology, business model, market entry, etc.)</li>
+										<li>How this initiative aligns with your overall business strategy</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-8 col-12">
 								<div class="">
-									<label for="" class="form-label">Describe the initiative/product/service that you organization has developed between the period of April 01, 2022, to March 31, 2024, that has led to business success. What was the problem that you aimed to address through the initiative/product/service?</label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255301'] ?></textarea>
+									<label for="" class="form-label">Describe the key initiative/product/service or business transformation your organisation implemented between April 01, 2023 and March 31, 2025? </label>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -414,14 +425,26 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
+								<h5>Measurable Outcomes & Business Impact<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
-						<div class="row g-3">
-							<div class="col-12">
+						<div class="row g-3 flex-row-reverse">
+							<div class="col-lg-4">
+								<div class="p-3 bg-light">
+									<p>Wherever possible, include metrics such as (as applicable):</p>
+									<ul>
+										<li>Revenue growth, profitability, or margin improvement</li>
+										<li>Operational efficiency, productivity gains, or cost optimisation</li>
+										<li>Customer acquisition/retention, NPS/CSAT, market share</li>
+										<li>Sustainability/ESG improvements (e.g., waste reduction, energy savings)</li>
+									</ul>
+									<p>Avoid generic statements; focus on specific, measurable results</p>
+								</div>
+							</div>
+							<div class="col-xl-8">
 								<div class="">
-									<label for="" class="form-label">Outline your growth trajectory over the past two years, providing specific metrics such as revenue growth, market share, or client acquisition</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255302'] ?></textarea>
+									<label for="" class="form-label">Share the quantifiable outcomes achieved during the eligibility period because of this initiative </label>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -430,14 +453,27 @@
 					<fieldset class="col-12">
 						<div class="mb-3">
 							<legend class="card-title mb-0">
-								<h5>Sustainability and Social Responsibility<sup class="text-danger">&ast;</sup></h5>
+								<h5>Scalability & Future Growth Plan<sup class="text-danger">&ast;</sup></h5>
 							</legend>
 						</div>
-						<div class="row g-3">
-							<div class="col-12">
+						<div class="row g-3 flex-row-reverse">
+							<div class="col-lg-4">
+								<div class="p-3 bg-light">
+									<p>You may highlight:</p>
+									<ul>
+										<li>Planned geographic or market expansion</li>
+										<li>Technology upgrades or digital transformation roadmap</li>
+										<li>Talent and capability building</li>
+										<li>Investments in capacity, R&D, partnerships</li>
+										<li>How you will ensure long-term sustainability and competitiveness</li>
+									</ul>
+
+								</div>
+							</div>
+							<div class="col-xl-8">
 								<div class="">
-									<label for="" class="form-label">Describe the key initiative your organization has undertaken to promote environmental sustainability or create a positive social impact through this initiative. How has this initiative contributed to your business and the community</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application['id_255303'] ?></textarea>
+									<label for="" class="form-label">Explain how you plan to scale this initiative and your business over the next 3–5 years</label>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>

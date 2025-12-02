@@ -210,7 +210,7 @@ class NominationAPIController extends CI_Controller
 						$this->data['data'] = $data;
 
 						if ($this->EntriesModel->insert($this->data['data'])) {
-							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+							redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 						};
 						break;
 					case 1: # ☑ Organization Details
@@ -300,10 +300,10 @@ class NominationAPIController extends CI_Controller
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
-								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 
@@ -324,7 +324,6 @@ class NominationAPIController extends CI_Controller
 						}
 						$data = [
 							'stage_status' => $s,
-
 							"name" => 	$this->request['name'],
 							"email" => $this->request['contact_person']['email'] ?? null,
 							"designation" => 	$this->request['designation'],
@@ -388,7 +387,7 @@ class NominationAPIController extends CI_Controller
 							'id_255405' =>  $response[4],
 							'id_255406' =>  $response[5],
 
-							'status' =>  3,
+							'status' =>  4,
 						];
 
 						// Sanitize $data Array for DB Insert
@@ -402,7 +401,7 @@ class NominationAPIController extends CI_Controller
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 6:	# ☑ Success & Email Send
@@ -463,7 +462,7 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard/my-applications');
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+							redirect('nomination/' . $application_id . '?stage=' . $stage);
 						}
 
 						break;
@@ -511,7 +510,7 @@ class NominationAPIController extends CI_Controller
 						$this->data['data'] = $data;
 
 						if ($this->EntriesModel->insert($this->data['data'])) {
-							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+							redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 						};
 						break;
 					case 1: # ☑ Organization Details
@@ -600,10 +599,10 @@ class NominationAPIController extends CI_Controller
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
-								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 
@@ -692,7 +691,7 @@ class NominationAPIController extends CI_Controller
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 6:	# ☑ Success & Email Send
@@ -748,7 +747,7 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard/my-applications');
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+							redirect('nomination/' . $application_id . '?stage=' . $stage);
 						}
 
 						break;
@@ -796,7 +795,7 @@ class NominationAPIController extends CI_Controller
 						$this->data['data'] = $data;
 
 						if ($this->EntriesModel->insert($this->data['data'])) {
-							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+							redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 						};
 						break;
 					case 1: # ☑ Organization Details
@@ -880,10 +879,10 @@ class NominationAPIController extends CI_Controller
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
-								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 
@@ -970,7 +969,7 @@ class NominationAPIController extends CI_Controller
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 6:	# ☑ Success & Email Send
@@ -1026,7 +1025,7 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard/my-applications');
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+							redirect('nomination/' . $application_id . '?stage=' . $stage);
 						}
 
 						break;
@@ -1074,7 +1073,7 @@ class NominationAPIController extends CI_Controller
 						$this->data['data'] = $data;
 
 						if ($this->EntriesModel->insert($this->data['data'])) {
-							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+							redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 						};
 						break;
 					case 1: # ☑ Organization Details
@@ -1165,10 +1164,10 @@ class NominationAPIController extends CI_Controller
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
-								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 
@@ -1263,7 +1262,7 @@ class NominationAPIController extends CI_Controller
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 6:	# ☑ Success & Email Send
@@ -1319,7 +1318,7 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard/my-applications');
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+							redirect('nomination/' . $application_id . '?stage=' . $stage);
 						}
 
 						break;
@@ -1367,7 +1366,7 @@ class NominationAPIController extends CI_Controller
 						$this->data['data'] = $data;
 
 						if ($this->EntriesModel->insert($this->data['data'])) {
-							redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+							redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 						};
 						break;
 					case 1: # ☑ Organization Details
@@ -1450,10 +1449,10 @@ class NominationAPIController extends CI_Controller
 							if ($rows == 0) {
 								redirect($this->request['referrer'] . '?stage=' . $stage);
 							} else {
-								redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 5:	# ☑ Review Application
@@ -1539,7 +1538,7 @@ class NominationAPIController extends CI_Controller
 						if ($rows == 0) {
 							redirect($this->request['referrer'] . '?stage=' . $stage);
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
 					case 6:	# ☑ Success & Email Send
@@ -1580,7 +1579,7 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard/my-applications');
 							}
 						} else {
-							redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+							redirect('nomination/' . $application_id . '?stage=' . $stage);
 						}
 
 						break;
@@ -1631,7 +1630,7 @@ class NominationAPIController extends CI_Controller
 								];
 								$this->data['data'] = $data;
 								if ($this->EntriesModel->insert($this->data['data'])) {
-									redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+									redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 								};
 								break;
 							case 1: 	# ☑ Organization Details							
@@ -1712,10 +1711,10 @@ class NominationAPIController extends CI_Controller
 									if ($rows == 0) {
 										redirect($this->request['referrer'] . '?stage=' . $stage);
 									} else {
-										redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 									}
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 								}
 								break;
 							case 5:		# ☑ Review Application
@@ -1801,7 +1800,7 @@ class NominationAPIController extends CI_Controller
 								if ($rows == 0) {
 									redirect($this->request['referrer'] . '?stage=' . $stage);
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 								}
 								break;
 							case 6:		# ☑ Success & Email Send
@@ -1842,7 +1841,7 @@ class NominationAPIController extends CI_Controller
 										redirect('dashboard/my-applications');
 									}
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+									redirect('nomination/' . $application_id . '?stage=' . $stage);
 								}
 
 								break;
@@ -1890,7 +1889,7 @@ class NominationAPIController extends CI_Controller
 								$this->data['data'] = $data;
 
 								if ($this->EntriesModel->insert($this->data['data'])) {
-									redirect(base_url('dashboard/application/' . $application_id) . '?stage=' . ++$stage);
+									redirect(base_url('nomination/' . $application_id) . '?stage=' . ++$stage);
 								};
 								break;
 							case 1: 	# ☑ Organization Details							
@@ -1974,15 +1973,13 @@ class NominationAPIController extends CI_Controller
 									if ($rows == 0) {
 										redirect($this->request['referrer'] . '?stage=' . $stage);
 									} else {
-										redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 									}
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 								}
 								break;
 							case 5:		# ☑ Review Application
-								/* Change Application Status */
-
 								$category_id = $this->input->post('category_id');
 								$f = 1;
 								foreach ($_FILES as $key => $file) {
@@ -1992,9 +1989,6 @@ class NominationAPIController extends CI_Controller
 									}
 								}
 
-								if ($f) {
-									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-								}
 								$data = [
 									'stage_status' => $s,
 
@@ -2020,10 +2014,6 @@ class NominationAPIController extends CI_Controller
 									'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
 									'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
 
-									'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
-									'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
-									'id_255008'	=> $this->request['dob'],							//date_of_birth
-
 									'id_255101' => $this->request["organization_revenue_2"],
 									'id_255102' => $this->request["organization_revenue_1"],
 									'id_255103' => $this->request["organization_growth_2"],
@@ -2043,14 +2033,18 @@ class NominationAPIController extends CI_Controller
 									'id_255304' => $this->request['case_study_4'],
 									'id_255305' => $this->request['case_study_5'],
 
-									'id_255401' =>  $response[0],
-									'id_255402' =>  $response[1],
-									'id_255403' =>  $response[2],
-									'id_255404' =>  $response[3],
-									'id_255405' =>  $response[4],
-
-									'status' =>  3,
+									'status' =>  4,
 								];
+
+								if ($f) {
+									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+
+									$data['id_255401'] =  $response[0];
+									$data['id_255402'] =  $response[1];
+									$data['id_255403'] =  $response[2];
+									$data['id_255404'] =  $response[3];
+									$data['id_255405'] =  $response[4];
+								}
 
 								// Sanitize $data Array for DB Insert
 								foreach ($data as $key => $value) {
@@ -2059,17 +2053,35 @@ class NominationAPIController extends CI_Controller
 										unset($data[$key]);
 									}
 								}
-								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id], strtolower($c[1]));
+								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 								if ($rows == 0) {
 									redirect($this->request['referrer'] . '?stage=' . $stage);
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . ++$stage);
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 								}
 								break;
-							case 6:		# ☑ Success & Email Send
-								$this->request = $this->input->post();
+							case 6:		# ☑ Alternating Application, Success & Email Send
+								/* Change Application Status */
 
-								$email_data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+								$this->request = $this->input->post();
+								$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
+
+								
+								/**
+								 * Duplicate Application Data for Individual Category
+								 * ===================================
+								 * 		Application Data
+								 * 		Uploads Data
+								*/
+								echo "<pre>";
+								print_r($application);
+								die;
+								
+								
+								/**
+								 * ☑ Send Email Functionality
+								 */
+								$email_data['application'] = $application;
 								$email_data['application']['category']['name'] = $category['name'];
 								$email_data['applicant'] = [
 									'name' => $this->usersession['name'],
@@ -2086,7 +2098,7 @@ class NominationAPIController extends CI_Controller
 									'agent_referral' => $this->request['agent_referrer'],
 									'agent_name' => $this->request['agent_name'],
 									'created_at' => date('Y-m-d H:i:s'),
-									'status' => '3'
+									'status' => 3
 								];
 
 								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
@@ -2104,7 +2116,7 @@ class NominationAPIController extends CI_Controller
 										redirect('dashboard/my-applications');
 									}
 								} else {
-									redirect('dashboard/application/' . $application_id . '?stage=' . $stage);
+									redirect('nomination/' . $application_id . '?stage=' . $stage);
 								}
 
 								break;
@@ -2648,7 +2660,7 @@ class NominationAPIController extends CI_Controller
 		if ($rows > 0) {
 			redirect(base_url('dashboard/my-applications'));
 		} else {
-			redirect('dashboard/application/' . $application_id . '/edit');
+			redirect('nomination/' . $application_id . '/edit');
 		}
 	}
 
@@ -2694,7 +2706,7 @@ class NominationAPIController extends CI_Controller
 							'is_nominated' => 1
 						];
 						if ($this->UserModel->update($u, ['id' => $applicant['id']])) {
-							redirect('dashboard/applications');
+							redirect('nominations');
 						}
 					}
 				}
@@ -2745,7 +2757,7 @@ class NominationAPIController extends CI_Controller
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/applications');
+							redirect('nominations');
 						}
 					}
 				}
@@ -2796,7 +2808,7 @@ class NominationAPIController extends CI_Controller
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/applications');
+							redirect('nominations');
 						}
 					}
 				}
@@ -2850,7 +2862,7 @@ class NominationAPIController extends CI_Controller
 						$body = "Hi " .  $applicant['name'] . ", your application [#" . $nomination['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/applications');
+							redirect('nominations');
 						}
 					}
 				}
