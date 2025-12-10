@@ -7,7 +7,7 @@ class StateModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table = 'states';
+		$this->table = 'cities_megadata';
 	}
 
 	/**
@@ -21,15 +21,15 @@ class StateModel extends CI_Model
 	 */
 	public function get($select = null, $where = null)
 	{
-		$this->db->where(['country' => 1]);
+		// $this->db->where(['country' => 1]);
+		$this->db->select('city_state')->distinct();
 		if (!is_null($select)) {
 			$this->db->select($select);
 		}
 		if (!is_null($where)) {
 			$this->db->where($where);
 		}
-		$this->db->where(['status' => 1]);
-		$this->db->order_by('title', "ASC");
+		$this->db->order_by('city_state', "ASC");
 		return json_encode($this->db->get($this->table)->result_array());
 	}
 }

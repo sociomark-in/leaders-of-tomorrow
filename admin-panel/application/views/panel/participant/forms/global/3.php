@@ -17,39 +17,110 @@
  	-->
 
 	<div class="row g-3 g-md-4">
-			<fieldset class="col-12">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<p class="text-muted">(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">Describe an innovative solution, product, or service introduced to global markets that has significantly impacted your business. Highlight how it was adapted to meet the needs of diverse international audiences</label>
-							<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+		<!-- 3. CASE STUDIES -->
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Export & International Expansion Strategy<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+				<!-- <p class="text-muted"></p> -->
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="bg-light p-3">
+						<p>You may include:</p>
+						<ul>
+							<li>New markets entered or existing ones deepened</li>
+							<li>Channels used (distributors, e-commerce, direct sales, partnerships)</li>
+							<li>Product/service adaptations for global markets</li>
+							<li>Investments in capacity, certifications, or capabilities for international business</li>
+						</ul>
 					</div>
 				</div>
-			</fieldset>
-			<fieldset class="col-12">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Business Performance and Market Impact<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">Provide an overview of your business’s performance in global markets, including key achievements, market share growth, and any notable recognitions or awards. How has your organization impacted the industries you operate in?</label>
-							<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+				<div class="col-xl-8 col-12">
+					<div class="">
+						<label for="" class="form-label">Describe your key export/international business strategy adopted during April 01, 2023, to March 31, 2025, that has led to business success. What was the problem that you aimed to address through the initiative/product/service? </label>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255301'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
-			</fieldset>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>International Positioning & Differentiation<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					
+				</div>
+				<div class="col-xl-8">
+					<div class="">
+						<label for="" class="form-label">How are your products/services positioned internationally (price, quality, niche, brand, innovation)? What sets you apart from global competitors?</label>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255302'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Measurable outcomes/Business Impact<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="p-3 bg-light">
+						<p>You may include:</p>
+						<ul>
+							<li>Export revenue growth and share of total business</li>
+							<li>Number of new markets/customers/distributors added</li>
+							<li>Improvement in margins, order sizes, repeat business</li>
+							<li>Recognition through global certifications, awards, or key marquee clients</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<div class="">
+						<label for="" class="form-label">Explain the measurable outcomes achieved in this period.</label>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255303'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Building a Future-Ready Global Enterprise<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="p-3 bg-light">
+						<p>You may highlight:</p>
+						<ul>
+							<li>Target regions/segments and go-to-market approach</li>
+							<li>Continuous improvement in quality/compliance/sustainability</li>
+							<li>Digital, logistics, and supply-chain strategies for global competitiveness</li>
+							<li>Role of innovation and partnerships in your global journey</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<div class="">
+						<label for="" class="form-label">Describe how you plan to strengthen and scale your global business over the next 3–5 years</label>
+						<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255304'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<!-- 3. CASE STUDIES -->
 	</div>
 </div>
 <div class="row g-3">
@@ -109,6 +180,14 @@
 				maxlength: 5000,
 				minlength: 50
 			},
+			case_study_3: {
+				maxlength: 5000,
+				minlength: 50
+			},
+			case_study_4: {
+				maxlength: 5000,
+				minlength: 50
+			},
 			initiative_strategy: {
 				maxlength: 5000,
 				minlength: 50
@@ -123,6 +202,14 @@
 				minlength: "Please enter at least 50 characters.",
 			},
 			case_study_2: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_3: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_4: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},

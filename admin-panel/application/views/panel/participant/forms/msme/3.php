@@ -17,6 +17,7 @@
  	-->
 
 	<div class="row g-3 g-md-4">
+		<!-- 3. CASE STUDIES -->
 		<fieldset class="col-12">
 			<div class="mb-3">
 				<legend class="card-title mb-0">
@@ -38,7 +39,7 @@
 				<div class="col-xl-8 col-12">
 					<div class="">
 						<label for="" class="form-label">Describe the key initiative/product/service or business transformation your organisation implemented between April 01, 2023 and March 31, 2025? </label>
-						<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255301'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
@@ -66,7 +67,7 @@
 				<div class="col-xl-8">
 					<div class="">
 						<label for="" class="form-label">Share the quantifiable outcomes achieved during the eligibility period because of this initiative </label>
-						<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255302'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
@@ -95,12 +96,13 @@
 				<div class="col-xl-8">
 					<div class="">
 						<label for="" class="form-label">Explain how you plan to scale this initiative and your business over the next 3–5 years</label>
-						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255303'] ?></textarea>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255303'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
 			</div>
 		</fieldset>
+		<!-- 3. CASE STUDIES -->
 	</div>
 </div>
 <div class="row g-3">

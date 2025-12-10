@@ -9,8 +9,12 @@ $tabs = [
 		'identifier' => "finance",
 	],
 	[
-		'name' => "Case Studies I",
+		'name' => "Case Studies",
 		'identifier' => "case_1",
+	],
+	[
+		'name' => "Individual Category",
+		'identifier' => "case_2",
 	],
 	[
 		'name' => "Document Uploads",

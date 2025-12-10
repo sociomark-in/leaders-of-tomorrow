@@ -18,7 +18,10 @@
 
 <script>
 	$('main select.form-select').each((index, elem) => {
-		$(elem).select2();
+		$(elem).select2({
+			width: '100%',
+			placeholder: $(elem).attr('data-placeholder') || 'Select an option',
+		});
 	})
 	$('main input[data-type=date]').each((index, elem) => {
 		$(elem).datepicker({

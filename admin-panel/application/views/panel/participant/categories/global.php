@@ -9,11 +9,11 @@ $tabs = [
 		'identifier' => "finance",
 	],
 	[
-		'name' => "Case Studies I",
+		'name' => "Case Studies",
 		'identifier' => "case_1",
 	],
 	[
-		'name' => "Case Studies II",
+		'name' => "Individual Category",
 		'identifier' => "case_2",
 	],
 	[
@@ -36,7 +36,7 @@ $tabs = [
 			<?php if ($i == $stage): ?>
 				<li class="nav-item" role="presentation">
 					<!-- <button class="nav-link active" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="true"><?= $tabs[$i]['name'] ?></button> -->
-					<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link active"><i class="link-icon px-1 pb-1" data-feather="info"></i><?= $tabs[$i]['name'] ?></a>
+					<a href="<?= base_url('nomination/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link active"><i class="link-icon px-1 pb-1" data-feather="info"></i><?= $tabs[$i]['name'] ?></a>
 				</li>
 			<?php elseif ($i < $stage): ?>
 				<li class="nav-item" role="presentation">
@@ -44,13 +44,13 @@ $tabs = [
 					<?php if ($i == 0) : ?>
 						<a href="javascript:void(0)" class="nav-link success"><i class="link-icon mr-2 px-1 pb-1" data-feather="lock"></i><?= $tabs[$i]['name'] ?></a>
 					<?php else: ?>
-						<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $i) ?>" class="nav-link success"><i class="link-icon px-1 pb-1" data-feather="check"></i><?= $tabs[$i]['name'] ?></a>
+						<a href="<?= base_url('nomination/' . $application['nomination_id'] . '?stage=' . $i) ?>" class="nav-link success"><i class="link-icon px-1 pb-1" data-feather="check"></i><?= $tabs[$i]['name'] ?></a>
 					<?php endif ?>
 				</li>
 			<?php else: ?>
 				<li class="nav-item" role="presentation">
 					<!-- <button class="nav-link disabled" id="<?= $tabs[$i]['identifier'] ?>-tab" data-bs-toggle="tab" data-bs-target="#<?= $tabs[$i]['identifier'] ?>-tab-pane" type="button" role="tab" aria-controls="<?= $tabs[$i]['identifier'] ?>-tab-pane" aria-selected="false"><?= $tabs[$i]['name'] ?></button> -->
-					<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link disabled"><?= $tabs[$i]['name'] ?></a>
+					<a href="<?= base_url('nomination/' . $application['nomination_id'] . '?stage=' . $stage) ?>" class="nav-link disabled"><?= $tabs[$i]['name'] ?></a>
 				</li>
 			<?php endif ?>
 		<?php endfor ?>

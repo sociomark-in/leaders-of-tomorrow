@@ -16,12 +16,6 @@ class StatesAPIController extends CI_Controller
 		$this->load->model('data/CityModel');
 		
 		$data['states'] = json_decode($this->StateModel->get(), true);
-
-		// foreach ($data['states'] as $key => $state) {
-		// 	$data['states'][$key]['cities'] => $this->CityModel->get(null, [''])
-		// }
-
-
 		$this->output->set_output(json_encode($data));
 	}
 

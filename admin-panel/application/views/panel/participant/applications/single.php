@@ -106,6 +106,7 @@ if ($nomination['stage'] >= 1) {
 							$state = $('#stateSelect');
 							$city = $('#citySelect');
 
+							$htmlData = "<option>Select City</option>";
 							$cityValue = "<?= $application['organization_city'] ?>";
 							if ($cityValue != "") {
 								$htmlData += "<option selected value='" + $cityValue + "'>" + $cityValue + "</option>";

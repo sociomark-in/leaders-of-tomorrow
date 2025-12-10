@@ -6,62 +6,6 @@
 <input type="hidden" name="stage" value="<?= $stage ?>">
 <div class="row g-3 g-xl-5">
 	<div class="col-12">
-		<div class="row g-md-5 g-3">
-			<fieldset class="col-12">
-				<legend class="card-title mb-0">
-					<h5>Individual Category Preference & Entrepreneur Insight<sup class="text-danger">&ast;</sup></h5>
-				</legend>
-				<div class="row g-3">
-					<div class="col-12">
-						<p>I wish to additionally be considered for:</p>
-					</div>
-					<div class="col-xl-4">
-						<div class="border rounded-1 p-2 p-lg-3">
-							<div class="form-check">
-								<input required name="alt_category_id" value="1_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption1">
-								<label class="form-check-label" for="checkOption1">
-									<h5 class="mb-2">Entrepreneur of the Year</h5>
-									<small class="text-muted">
-										I confirm that I am <strong>more than 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 years</strong> old.
-									</small>
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-4">
-						<div class="border rounded-1 p-2 p-lg-3">
-							<div class="form-check">
-								<input required name="alt_category_id" value="2_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption2">
-								<label class="form-check-label" for="checkOption2">
-									<h5 class="mb-2">Next Gen Innovator</h5>
-									<small class="text-muted">
-										I confirm that I am <strong>up to 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 and less than 5 years</strong> old.
-									</small>
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-4">
-						<div class="border rounded-1 p-2 p-lg-3">
-							<div class="form-check">
-								<input required name="alt_category_id" value="3_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption3">
-								<label class="form-check-label" for="checkOption3">
-									<h5 class="mb-2">Woman Entrepreneur of the Year</h5>
-									<small class="text-muted">
-										I confirm that I am <strong>a woman entrepreneur</strong> and hold <strong>at least 33% equity stake</strong> in the organization
-									</small>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-text">
-					<p>(Please tick only those that are relevant and for which you meet the eligibility criteria)</p>
-				</div>
-			</fieldset>
-		</div>
-	</div>
-	<div class="col-12">
 		<div class="form-check mb-3">
 			<input class="form-check-input" name="confirm" type="checkbox" id="flexCheckChecked" required>
 			<label class="form-check-label" for="flexCheckChecked">
@@ -96,25 +40,42 @@
 		</div>
 	</div>
 
-	<!-- <div class="col-xl-4 col-lg-6 col-12">
+	<div class="col-xl-6 col-12">
 		<div class="">
-			<label for="" class="form-label">Are you an existing IDFC FIRST Bank Customer?</label>
-			<div class="row ms-1">
+			<label for="" class="form-label">Are you a winner of Leaders of tomorrow in the previous editions?</label>
+			<div class="row my-1">
 				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="is_idfc_customer" value="yes" id="idfcReferred" required>
-					<label class="form-check-label" for="flexRadioDefault2">
+					<input class="form-check-input" type="radio" name="last_winner[status]" value="yes" id="isWinnerYes" required>
+					<label class="form-check-label" for="isWinnerYes">
 						Yes
 					</label>
 				</div>
 				<div class="col-auto form-check">
-					<input class="form-check-input" type="radio" name="is_idfc_customer" value="no" required>
-					<label class="form-check-label" for="flexRadioDefault1">
+					<input class="form-check-input" type="radio" name="last_winner[status]" value="no" id="isWinnerNo" required>
+					<label class="form-check-label" for="isWinnerNo">
 						No
 					</label>
 				</div>
 			</div>
+			<div class="" id="other-text-input" style="display:none;">
+				<div class="row">
+					<div class="col-xl-4 col-lg-6">
+						<label for="" class="form-label">Year</label>
+						<select class="form-select" name="last_winner[year]" id="">
+							<option value="">Select A Year</option>
+							<?php for ($yr = date('Y'); $yr >= 2015; $yr--) : ?>
+								<option value="<?= $yr ?>"><?= $yr ?></option>
+							<?php endfor; ?>
+						</select>
+					</div>
+					<div class="col-xl col-lg-6">
+						<label for="" class="form-label">Category</label>
+						<input type="text" name="last_winner[category]" class="form-control">
+					</div>
+				</div>
+			</div>
 		</div>
-	</div> -->
+	</div>
 
 	<input type="hidden" name="is_idfc_customer" value="yes">
 
@@ -175,21 +136,50 @@
 </div>
 <?= form_close() ?>
 <script>
-	$("#agentDetails").hide();
-	$("input[type='radio'][name='agent_referrer'").change(function() {
-		if ($(this).val() == "yes") {
-			$("#agentDetails").show();
-			$("input[name='agent_name']").each(function(index, element) {
-				$(element).prop("required", true);
-			});
-		} else {
-			$("#agentDetails").hide();
-			$("input[name='agent_name']").each(function(index, element) {
-				$(element).prop("required", false);
-			});
-		}
+	$(document).ready(function() {
 
+		const $radioGroup = $('input[name="last_winner[status]"]');
+		const $otherContainer = $('#other-text-input');
+		const $otherInput = $($otherContainer.find('input, select'));
+
+		// 2. Listen for changes on the Select2 element
+		$radioGroup.on('change', function() {
+			const selectedValue = $radioGroup.filter(':checked').val();
+			console.log(selectedValue);
+
+
+			if (selectedValue === 'yes') {
+				$otherContainer.slideDown(200, function() {
+					$otherInput.focus();
+				});
+				$otherInput.prop('required', true);
+
+			} else {
+				$otherContainer.slideUp(200);
+				$otherInput.val('');
+				$otherInput.prop('required', false);
+			}
+		});
+
+			
+		//Agent Referrer
+		$("#agentDetails").hide();
+		$("input[type='radio'][name='agent_referrer'").change(function() {
+			if ($(this).val() == "yes") {
+				$("#agentDetails").show();
+				$("input[name='agent_name']").each(function(index, element) {
+					$(element).prop("required", true);
+				});
+			} else {
+				$("#agentDetails").hide();
+				$("input[name='agent_name']").each(function(index, element) {
+					$(element).prop("required", false);
+				});
+			}
+
+		});
 	});
+	
 	$("#formView").validate({
 		ignore: [
 			":hidden", ":focus"

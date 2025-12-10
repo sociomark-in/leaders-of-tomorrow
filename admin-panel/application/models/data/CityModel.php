@@ -7,7 +7,7 @@ class CityModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table = 'cities';
+		$this->table = 'cities_megadata';
 	}
 
 	/**

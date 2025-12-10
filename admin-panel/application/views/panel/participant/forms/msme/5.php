@@ -14,6 +14,7 @@
 -->
 
 <div class="row g-3 g-md-4 mb-3">
+	<!-- 5. UPLOAD FILES -->
 	<fieldset class="col-12">
 		<legend class="card-title mb-3">
 			<h5>Upload Files<sup class="text-danger">&ast;</sup></h5>
@@ -33,44 +34,46 @@
 		<div class="row g-3 mb-3">
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">MSME Certificate</label>
-					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application_temp['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<?php if (isset($application['id_255401'])): ?>
+						<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url() ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php endif ?>
+					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Incorporation Certificate</label>
-					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application_temp['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(PDF of Maximum Size 2MB)</span>
-				</div>
-			</div>
-			<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Applicable Environmental Certifications</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
-									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 2MB)</span>
-								</div>
-							</div> -->
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application_temp['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<?php if (isset($application['id_255402'])): ?>
+						<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php endif ?>
+					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Collaterals to Support the Impact</label>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application_temp['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<?php if (isset($application['id_255403'])): ?>
+						<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php endif ?>
+					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<span class="form-text">(PDF of Maximum Size 2MB)</span>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+				<div class="">
+					<?php if (isset($application['id_255404'])): ?>
+						<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php endif ?>
+					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Any other Collaterals</label>
-					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application_temp['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<?php if (isset($application['id_255405'])): ?>
+						<label for="" class="form-label">Any other Collaterals&nbsp;<a class="link-icon" href="<?= base_url($application['id_255405']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php endif ?>
+					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
@@ -92,17 +95,6 @@
 					'minHeight': 'The image height is too small ({{ value }}}px min).',
 					'maxHeight': 'The image height is too big ({{ value }}px max).',
 					'imageFormat': 'The image format is not allowed ({{ value }} only).'
-				}
-			});
-
-			$("input[type='file']").each(function(index, element) {
-				if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
-					$(element).prop("required", true);
-					console.log("Absent");
-					
-				} else {
-					$(element).prop("required", false);
-					console.log("Present");
 				}
 			});
 			/* PDF.js - Run PDF Version Check */
@@ -143,10 +135,11 @@
 			});
 		</script>
 	</fieldset>
+	<!-- 5. UPLOAD FILES -->
 </div>
 <div class="row g-3">
 	<div class="col-md-auto">
-		<a href="<?= base_url('dashboard/application/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
+		<a href="<?= base_url('nomination/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
 	</div>
 	<div class="col-md-auto">
 		<button type="submit" class="btn btn-primary">Save and Next</button>

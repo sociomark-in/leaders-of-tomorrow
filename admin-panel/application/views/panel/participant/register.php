@@ -128,10 +128,10 @@ if ($nomination['stage'] >= 1) {
 				$htmlData = "<option>Select City</option>";
 
 				if (data.length == 0) {
-					$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
+					$htmlData += "<option value='" + $state.val() + "'>" + $state.val() + "</option>"
 				} else {
 					data.forEach(city => {
-						$htmlData += "<option value=" + city.city_name + ">" + city.city_name + "</option>"
+						$htmlData += "<option value='" + city.city_name + "'>" + city.city_name + "</option>"
 					});
 				}
 
