@@ -16,31 +16,92 @@
 	75525	initiative_strategy	
  	-->
 
-	 <div class="row g-3 g-md-4">
-			<fieldset class="col-12">
-				<div class="mb-3">
-					<legend class="card-title mb-0">
-						<h5>Innovation and Adaptability<sup class="text-danger">&ast;</sup></h5>
-					</legend>
-					<p class="text-muted">(The initiative or innovation can be a new product/ solution development, digitization, technical innovation, process improvement, entering new market, etc.)</p>
-				</div>
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">How has your family business balanced tradition with innovation? Please provide examples of how traditional practices have been updated or combined with new approaches (Max 200 words)</label>
-							<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255301'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="">
-							<label for="" class="form-label">What technological innovations have you adopted to enhance business operations or expand your market reach? How has technology helped in improving efficiency and competitiveness?</label>
-							<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"> <?= $application_temp['id_255302'] ?></textarea>
-							<span class="form-text">(50 - 5000 characters)</span>
-						</div>
+	<div class="row g-3 g-md-4">
+		<!-- 3. CASE STUDIES -->
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Innovation & Strategic Shifts in the Family Business<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+				<!-- <p class="text-muted"></p> -->
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="bg-light p-3">
+						<p>Please cover:</p>
+						<ul>
+							<li>New products/markets/technologies adopted</li>
+							<li>Professionalisation or process improvements</li>
+							<li>Any major pivot or restructuring you led</li>
+						</ul>
 					</div>
 				</div>
-			</fieldset>
+				<div class="col-xl-8 col-12">
+					<div class="">
+						<label for="" class="form-label">Describe the key innovations, changes, or strategic initiatives introduced by the current generation during this period</label>
+						<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255301'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Business Outcomes & Continuity of Legacy<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="p-3 bg-light">
+						<p>You may cover:</p>
+						<ul>
+							<li>Challenges faced and outcomes achieved</li>
+							<li>Growth in revenue, profitability, customers, or capacity</li>
+							<li>Improved resilience, risk management, or diversification</li>
+							<li>How the business has preserved and evolved the founding legacy through these changes</li>
+						</ul>
+						<p>Avoid generic statements; focus on specific, measurable results</p>
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<div class="">
+						<label for="" class="form-label">Explain the measurable impact of these initiatives </label>
+						<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255302'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="col-12">
+			<div class="mb-3">
+				<legend class="card-title mb-0">
+					<h5>Succession, Governance & Future-Ready Growth Plan<sup class="text-danger">&ast;</sup></h5>
+				</legend>
+			</div>
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="p-3 bg-light">
+						<p>You may include:</p>
+						<ul>
+							<li>Succession planning and role clarity between family members</li>
+							<li>Governance and professional management practices</li>
+							<li>Long-term strategy for scaling, diversifying, or institutionalising the business</li>
+						</ul>
+
+
+					</div>
+				</div>
+				<div class="col-xl-8">
+					<div class="">
+						<label for="" class="form-label">Describe how you are strengthening the business for the next decade.</label>
+						<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255303'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<!-- 3. CASE STUDIES -->
 	</div>
 </div>
 <div class="row g-3">
@@ -100,6 +161,10 @@
 				maxlength: 5000,
 				minlength: 50
 			},
+			case_study_3: {
+				maxlength: 5000,
+				minlength: 50
+			},
 			initiative_strategy: {
 				maxlength: 5000,
 				minlength: 50
@@ -114,6 +179,10 @@
 				minlength: "Please enter at least 50 characters.",
 			},
 			case_study_2: {
+				maxlength: "Please enter no more than 5000 characters.",
+				minlength: "Please enter at least 50 characters.",
+			},
+			case_study_3: {
 				maxlength: "Please enter no more than 5000 characters.",
 				minlength: "Please enter at least 50 characters.",
 			},

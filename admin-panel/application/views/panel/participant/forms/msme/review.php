@@ -6,39 +6,7 @@
 		<input type="hidden" name="utm" value="<?= $utm ?>">
 		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
 		<input type="hidden" name="stage" value="<?= $stage ?>">
-		<!-- 
-	75502	organization_industry	
-	75503	organization_overview	
-	75508	organization_mission_vision	
-	75509	organization_services	
-	75510	organization_reveue_23	
-	75511	organization_reveue_22	
-	75512	organization_growth_23	
-	75513	organization_growth_22	
-	75514	organization_profit_23	
-	75515	organization_profit_22	
-	75516	organization_assets_23	
-	75517	organization_assets_22	
-	75518	organization_der_23	
-	75519	organization_der_22
 
-	75520	initiative_name
-	75521	initiative_start_date	
-	75522	initiative_end_date	
-	75523	initiative_desc	
-	75524	initiative_challenges	
-	75525	initiative_strategy	
-
-	75526	initiative_tech
-	75527	initiative_impact	
-	75528	initiative_scalability	
-	75529	initiative_info	
-
-	75530	doc1
-	75531	doc2	
-	75532	doc3	
-	75533	doc4	
- -->
 		<div class="row g-3">
 			<div class="col-12">
 				<div class="row g-md-5 g-3">

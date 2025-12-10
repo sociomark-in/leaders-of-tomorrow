@@ -1,7 +1,7 @@
 <?php
 $category_id = $application['category_id'];
 $application_id = $application['nomination_id'] ?? null;
-$utm = $utm;
+$utm = $utm ?? null;
 ?>
 <main class="page-content">
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
@@ -23,11 +23,14 @@ $utm = $utm;
 					<div class="card input-group-card">
 						<div class="card-body">
 							<div class="col-12 grid-margin stretch-card">
+								<?= form_open_multipart('api/v2/awards/nomination/single/edit', ['id' => 'formFullView']) ?>
+								<input type="hidden" name="category_id" value="<?= $category_id ?>">
+								<input type="hidden" name="application_id" value="<?= $id ?? null ?>">
+								<input type="hidden" name="utm" value="<?= $utm ?? null ?>">
+								<input type="hidden" name="agent_id" value="<?= $agent_id ?? null ?>">
+
 								<?php
 								switch ($category_id) {
-									case '1_DIGITAL':
-										include_once APPPATH . '/views/panel/participant/applications/edit/digital.php';
-										break;
 									case '1_GLOBAL':
 										include_once APPPATH . '/views/panel/participant/applications/edit/global.php';
 										break;
@@ -41,12 +44,12 @@ $utm = $utm;
 										include_once APPPATH . '/views/panel/participant/applications/edit/individual_2.php';
 										break;
 
-										default:
+									default:
 										switch (explode('_', $category['type'])[1]) {
 											case 'IDFC':
 												include_once APPPATH . '/views/panel/participant/applications/edit/idfc.php';
 												break;
-		
+
 											default:
 												include_once APPPATH . '/views/panel/participant/applications/edit/msme.php';
 												break;
@@ -54,6 +57,16 @@ $utm = $utm;
 										break;
 								}
 								?>
+								<div class="row">
+									<div class="col-12">
+										<div class="row">
+											<div class="col-md-auto">
+												<button type="submit" class="btn btn-primary">Confirm and Submit</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<?= form_close() ?>
 							</div>
 							<div class="modal fade" id="uploadInstructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -122,23 +135,21 @@ $utm = $utm;
 							<script>
 								$state = $('#stateSelect');
 								$city = $('#citySelect');
-								
-								$htmlData = "";
 
+								$htmlData = "<option>Select City</option>";
 								$cityValue = "<?= $application['organization_city'] ?>";
-								$stateValue = "<?= $application['organization_state'] ?>";
-								if ($cityValue != "" || $cityValue != "Select State First" || $cityValue != $stateValue) {
+								if ($cityValue != "") {
 									$htmlData += "<option selected value='" + $cityValue + "'>" + $cityValue + "</option>";
 								}
 
 								$city.html(
-									"<option value=''>Select State First</option>"
+									"<option value=''> Select State First</option>"
 								);
 								$.ajax({
 									url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
 									success: function(data) {
-
 										$htmlData += "<option value=''>Select City</option>";
+
 										if (data.length == 0) {
 											$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
 										} else {
@@ -154,7 +165,7 @@ $utm = $utm;
 									$.ajax({
 										url: "<?= base_url('api/data/StatesAPIController/get_cities_by_state?state=') ?>" + $state.val(),
 										success: function(data) {
-											$htmlData = "<option  value=''>Select City</option>";
+											$htmlData = "<option value=''>Select City</option>";
 
 											if (data.length == 0) {
 												$htmlData += "<option value=" + $state.val() + ">" + $state.val() + "</option>"
@@ -168,6 +179,72 @@ $utm = $utm;
 										}
 									})
 								})
+							</script>
+
+							<script>
+								$.validator.addMethod("emailregex", function(value, element) {
+									return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+								})
+								$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+									return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+								})
+								$.validator.addMethod("letters", function(value, element) {
+									return this.optional(element) || /^[a-zA-Z\s]*$/i.test(value);
+								});
+								$.validator.addMethod("phone", function(value, element) {
+									return this.optional(element) || /^[0-9]*$/i.test(value);
+								});
+								$("#form_option_01").validate({
+
+									rules: {
+										"name": {
+											letters: true,
+										},
+										"organization[address][state]": {
+											letters: true,
+										},
+										"organization[address][city]": {
+											letters: true,
+										},
+										'organization[inc_date]': {
+											ddmmyyyyregex: true,
+										},
+
+										"contact_person[name]": {
+											letters: true,
+										},
+										"contact_person[email]": {
+											emailregex: true
+										},
+										"contact_person[contact]": {
+											phone: true
+										}
+									},
+									messages: {
+										'name': {
+											letters: "Please enter a valid name."
+										},
+										'organization[address][state]': {
+											letters: "Please enter a valid State."
+										},
+										'organization[address][city]': {
+											letters: "Please enter a valid City."
+										},
+										'organization[inc_date]': {
+											ddmmyyyyregex: "Please enter a valid date!"
+										},
+
+										'contact_person[name]': {
+											letters: "Please enter a valid name."
+										},
+										'contact_person[email]': {
+											emailregex: 'Please enter a valid email address.'
+										},
+										'contact_person[contact]': {
+											phone: 'Please enter a valid contact number'
+										}
+									}
+								});
 							</script>
 						</div>
 					</div>
