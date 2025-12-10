@@ -438,7 +438,7 @@ class NominationAPIController extends CI_Controller
 							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						break;
-					case 6:		# ☑ Alternating Application, Success & Email Send
+					case 6:	# ☑ Alternating Application, Success & Email Send
 						/* Change Application Status */
 
 						$this->request = $this->input->post();
@@ -1123,8 +1123,8 @@ class NominationAPIController extends CI_Controller
 		$c = explode("_", $category_id);
 		$application_id = $this->request['application_id'];
 
-		
-		
+
+
 		# ☑ Check if $_FILES Exists
 		$f = 1;
 		foreach ($_FILES as $key => $file) {
@@ -1137,6 +1137,16 @@ class NominationAPIController extends CI_Controller
 		$category = json_decode($this->CategoryModel->get(null, ['type' => $category_id]), true)[0];
 		switch ($category['type']) {
 			case '1_GLOBAL':
+				$certifications = [];
+				if (isset($this->request['organization']['certifications'])) {
+					for ($i = 0; $i < count($this->request['organization']['certifications']); $i++) {
+						if ($this->request['organization']['certifications'][$i] == 'Other') {
+							$certifications[] = "Other - (" . $this->request['organization']['certifications_other'] . ")";
+						} else {
+							$certifications[] = $this->request['organization']['certifications'][$i];
+						}
+					}
+				}
 				$data = [
 					'stage_status' => 6,
 
@@ -1147,39 +1157,48 @@ class NominationAPIController extends CI_Controller
 					"organization_url" => $this->request['organization']['url'],
 					"organization_city" => $this->request['organization']['address']['city'],
 					"organization_state" => $this->request['organization']['address']['state'],
-
 					"id_255901" => $this->request['contact_person']['name'],
 					"id_255902" => $this->request['contact_person']['email'],
 					"id_255903" => $this->request['contact_person']['contact'],
+					"created_by" => $this->usersession['id'],
 
 					"id_255001" => json_encode([
 						$this->request['organization']['address']['line_1'],
 						$this->request['organization']['address']['line_2'],
 						$this->request['organization']['address']['line_3'],
 					]),
-					'id_255002'	=> $this->request['organization']['inc_date'],		//organization_inc_date
-					'id_255003'	=> $this->request['organization']['segment'],		//organization_inc_date
-					'id_255004'	=> $this->request['organization']['business'],		//organization_inc_date
-					'id_255005'	=> $this->request['organization']['ownership'],		//organization_inc_date
+					'id_255000'	=> $this->request['organization']['industry'],
+					'id_255002'	=> $this->request['organization']['inc_date'],
+					'id_255003'	=> $this->request['organization']['segment'],
+					'id_255004'	=> json_encode($this->request['partner']),
+					'id_255005'	=> $this->request['organization']['ownership'],
 
-					'id_255006'	=> $this->request['experience']['total'],			//organization_inc_date
-					'id_255007'	=> $this->request['experience']['current'],			//organization_inc_date
+					'id_255007'	=> $this->request['gender'],							//date_of_birth
 					'id_255008'	=> $this->request['dob'],							//date_of_birth
 
-					'id_255101' => $this->request["organization_revenue_2"],
-					'id_255102' => $this->request["organization_revenue_1"],
-					'id_255103' => $this->request["organization_growth_2"],
-					'id_255104' => $this->request["organization_growth_1"],
-					'id_255105' => $this->request["organization_profit"],
+					'id_255009'	=> $this->request['organization']['iec_code'],
+					'id_255010'	=> $this->request['organization']['epc'],
+					'id_255011'	=> json_encode($certifications),
 
+					'id_255101' => $this->request["financial_1_2"],
+					'id_255102' => $this->request["financial_1_1"],
+					'id_255103' => $this->request["financial_2_2"],
+					'id_255104' => $this->request["financial_2_1"],
+					'id_255105' => $this->request["financial_3_2"],
+					'id_255106' => $this->request["financial_3_1"],
+					'id_255107' => $this->request["financial_4_2"],
+					'id_255108' => $this->request["financial_4_1"],
+					'id_255109' => $this->request["financial_5_1"],
 					'id_255201' => $this->request["organization"]['size'],
-					'id_255202' => $this->request["organization"]['global_size'],
-					'id_255203' => $this->request["organization_presence"],
-					'id_255204' => $this->request["organization_operation"],
-					'id_255205' => $this->request["organization_collabs"],
-					'id_255206' => $this->request["organization_expansion"],
-					'id_255207' => $this->request["organization_overview"],
-					'id_255208' => $this->request["organization_services"],
+					'id_255202' => $this->request["organization_overview"],
+					'id_255203' => $this->request["organization_services"],
+					'id_255204' => $this->request["organization"]['domestic'],
+					'id_255205' => $this->request["organization"]['international'],
+					'id_255206' => $this->request["organization"]['size_global'],
+					'id_255207' => $this->request["organization_collaborations"],
+
+					'id_255601' => $this->request['alt_category_id'],
+					'id_255602' => $this->request['case_study_individual'],
 
 					'id_255301' => $this->request['case_study_1'],
 					'id_255302' => $this->request['case_study_2'],

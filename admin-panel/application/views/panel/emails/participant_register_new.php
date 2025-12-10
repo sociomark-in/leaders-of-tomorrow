@@ -156,7 +156,7 @@
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
 											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit 
-											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('my-nominations') ?>"> Awards Dashboard</a>.
 										</div>
 									</td>
 								</tr>

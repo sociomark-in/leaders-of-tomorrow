@@ -120,7 +120,7 @@
 
 													<div style="line-height:1.5">
 														<a style="background:#b72026;padding:12px;font-size:18px;color:#fff;text-decoration: none;border-radius:3px;display:block;width:300px;margin:0 auto;text-align:center"
-															href="<?= base_url('dashboard/application/' . $application['nomination_id'] . "/edit") ?>" target="_blank">
+															href="<?= base_url('nomination/' . $application['nomination_id'] . "/edit") ?>" target="_blank">
 															Access Your Nomination
 														</a>
 													</div>
@@ -184,7 +184,7 @@
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
 											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit
-											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('my-nominations') ?>"> Awards Dashboard</a>.
 										</div>
 									</td>
 								</tr>

@@ -82,7 +82,7 @@
 															Thank you for submitting your nomination for the <strong><?= APP_NAME ?> Awards 2025</strong>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We have received your entry with Unique ID <a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>">#<?= $application['nomination_id'] ?></a>
+															We have received your entry with Unique ID <a style="text-decoration: none; color:#b72026;" href="<?= base_url('my-nominations') ?>">#<?= $application['nomination_id'] ?></a>
 															under the category <strong><?= $application['category']['name'] ?></strong> for <?= $application['organization_name'] ?>.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
@@ -90,7 +90,7 @@
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															<a style="background:#ffde3f;padding:12px;font-size:18px;color:#1d1d1d;font-weight:600;text-decoration: none;border-radius:3px;display:block;width:300px;margin:30px auto;text-align:center"
-																href="<?= base_url('dashboard/my-applications') ?>"
+																href="<?= base_url('my-nominations') ?>"
 																target="_blank">
 																View All Nominations
 															</a>
@@ -150,7 +150,7 @@
 										<div
 											style="border-top:1px solid #e9eaed;font-size:13px;color:#495664;line-height:18px;padding:10px 30px;background-color: #E9EAED">
 											*This email was sent automatically by <?= APP_NAME ?>. Please do not reply to this message. For assistance, visit
-											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('dashboard/my-applications') ?>"> Awards Dashboard</a>.
+											<a style="text-decoration: none; color:#b72026;" href="<?= base_url('my-nominations') ?>"> Awards Dashboard</a>.
 										</div>
 									</td>
 								</tr>
