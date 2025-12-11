@@ -65,18 +65,6 @@ if ($nomination['stage'] >= 1) {
 									# code...
 									include_once APPPATH . '/views/panel/moderator/full_view/global.php';
 									break;
-								case '1_DIGITAL':
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/digital.php';
-									break;
-								case '1_INDIVIDUAL':
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/individual_1.php';
-									break;
-								case '2_INDIVIDUAL':
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/individual_2.php';
-									break;
 								case '1_FAMILY':
 									# code...
 									include_once APPPATH . '/views/panel/moderator/full_view/family.php';
@@ -84,10 +72,6 @@ if ($nomination['stage'] >= 1) {
 
 								default:
 								switch (explode('_', $category['type'])[1]) {
-									case 'IDFC':
-										include_once APPPATH . '/views/panel/moderator/full_view/idfc.php';
-										break;
-
 									default:
 										include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
 										break;

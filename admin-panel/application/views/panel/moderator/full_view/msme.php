@@ -8,9 +8,9 @@
 	<li class="nav-item" role="presentation">
 		<button class="nav-link" id="casestudy-tab" data-bs-toggle="tab" data-bs-target="#casestudy-tab-pane" type="button" role="tab" aria-controls="casestudy-tab-pane" aria-selected="false">Case Studies</button>
 	</li>
-	<!-- <li class="nav-item" role="presentation">
-		<button class="nav-link" id="casestudy2-tab" data-bs-toggle="tab" data-bs-target="#casestudy2-tab-pane" type="button" role="tab" aria-controls="casestudy2-tab-pane" aria-selected="false">Case Study II</button>
-	</li> -->
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="individual-tab" data-bs-toggle="tab" data-bs-target="#individual-tab-pane" type="button" role="tab" aria-controls="individual-tab-pane" aria-selected="false">Individual Details</button>
+	</li>
 	<!-- <li class="nav-item" role="presentation">
 		<button class="nav-link" id="casestudy3-tab" data-bs-toggle="tab" data-bs-target="#casestudy3-tab-pane" type="button" role="tab" aria-controls="casestudy3-tab-pane" aria-selected="false">Case Study III</button>
 	</li> -->
@@ -20,6 +20,10 @@
 </ul>
 <div class="tab-content" id="myTabContent">
 	<!-- Step 1 -->
+	<?php
+	$address = json_decode($application['id_255001'], true);
+	$equity = json_decode($application['id_255004'], true);
+	?>
 	<div class="tab-pane fade show active" id="personal-tab-pane" role="tabpanel" aria-labelledby="personal-tab" tabindex="0">
 		<div class="row mt-2">
 			<div class="col-12 grid-margin stretch-card">
@@ -28,72 +32,168 @@
 						<div class="row g-4">
 							<fieldset class="col-12">
 								<legend class="card-title mb-0">
-									<h5>Participating Entity</h5>
+									<h5>Participating Entity<sup class="text-danger">&ast;</sup></h5>
 								</legend>
 								<div class="row g-3">
 									<div class="col-xl-6 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Name of the Participating Entity</p>
-											<h5><?= $application['organization_name'] ?></h5>
-										</div>
-									</div>
-									<div class="col-xl-6 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">Name of the Applicant</p>
-											<h5><?= $application['name'] ?></h5>
+											<p>Participating Entity (Organization Name)</p>
+											<h5><?= $application['organization_name'] ?? '' ?></h5>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Designation</p>
-											<h5><?= $application['designation'] ?></h5>
+											<p>Business Segment</p>
+											<h5><?= $application['id_255003'] ?? '' ?></h5>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
 										<div class="">
-											<p class="form-label">Business Segment</p>
-											<h5><?= $application['id_255003'] ?></h5>
-										</div>
-									</div>
-									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-										<div class="">
-											<p class="form-label">Date of Company Incorporation</p>
-											<h5><?= $application['id_255002'] ?></h5>
+											<p>Date of Company Incorporation</p>
+											<h5><?= $application['id_255002'] ?? '' ?></h5>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="row g-3">
 											<div class="col-12">
-												<?php
-												if(is_array(json_decode($application['id_255001']))){
-													$address = implode(', ', json_decode($application['id_255001']));
-												} else {
-													$address = $application['id_255001'];
-												}
-												?>
-												<p class="form-label">Registered Address Participating Entity</p>
-												<h5><?= $address ?></h5>
-											</div>
-											<div class="col-xl-4 col-lg-6 col-12">
-												<p class="form-label">State</p>
-												<h5><?= $application['organization_state'] ?></h5>
-											</div>
-											<div class="col-xl-4 col-lg-6 col-12">
-												<p class="form-label">City</p>
-												<h5><?= $application['organization_city'] ?></h5>
+												<p>Registered Address Participating Entity</p>
+												<h5><?= implode(', ', [$address['0'] ?? '', $address['1'] ?? '',  $address['2'] ?? '']) ?></h5>
+												<h5><?= $application['organization_city'] ?? '' ?>, <?= $application['organization_state'] ?? ''?></h5>
 											</div>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-4 col-12">
 										<div class="">
-											<p class="form-label">Type of Ownership</p>
-											<h5><?= $application['id_255005'] ?></h5>
+											<p>Type of Ownership</p>
+											<h5><?= $application['id_255005'] ?? '' ?>
+											<div id="other-text-input" style="display:none;">
+												<input type="text" class="form-control mt-2" name="organization[ownership]" value="<?= $application['255005'] ?? '' ?>">
+											</div>
+											<script>
+												$(document).ready(function() {
+
+													const $select = $('#my-select');
+													const $otherContainer = $('#other-text-input');
+													const $otherInput = $('#other-text-input input');
+
+													// 2. Listen for changes on the Select2 element
+													$select.on('change', function() {
+														const selectedValue = $select.val();
+														console.log(selectedValue);
+
+
+														if (selectedValue === 'Other') {
+															$otherContainer.slideDown(200, function() {
+																$otherInput.focus();
+															});
+															$otherInput.prop('required', true);
+
+														} else {
+															$otherContainer.slideUp(200);
+															$otherInput.val(selectedValue);
+															$otherInput.prop('required', false);
+														}
+													});
+													$select.trigger('change');
+												});
+											</script>
 										</div>
 									</div>
 									<div class="col-xxl-6 col-xl-8 col-12">
 										<div class="">
-											<p class="form-label">Website URL</p>
-											<h5><a href="<?= $application['organization_url'] ?>" target="_blank"><?= $application['organization_url'] ?></a></h5>
+											<p>Website URL</p>
+											<input type="url" placeholder="https://www.domain.xyz" value="<?= $application['organization_url'] ?? '' ?>" name="organization[url]" class="form-control">
+										</div>
+									</div>
+									<div class="col-12">
+										<!-- EQUITY SPLIT -->
+										<p>Equity Split Between Partners</p>
+										<table class="table table-bordered mb-2" id="equityTable">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Gender</th>
+													<th>Designation</th>
+													<th>Equity (%)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php if (isset($equity) && is_array($equity)) : ?>
+													<?php foreach ($equity as $index => $partner) : ?>
+														<tr>
+															<td>
+																<input type="text" class="form-control" name="partner[<?= $index ?>][name]" value="<?= $partner['name'] ?? '' ?>">
+															</td>
+															<td>
+																<select name="partner[<?= $index ?>][gender]" class="form-select">
+																	<option value="">Select Gender</option>
+																	<option value="Male" <?= ($partner['gender'] ?? '') === 'Male' ? 'selected' : '' ?>>Male</option>
+																	<option value="Female" <?= ($partner['gender'] ?? '') === 'Female' ? 'selected' : '' ?>>Female</option>
+																	<option value="Other" <?= ($partner['gender'] ?? '') === 'Other' ? 'selected' : '' ?>>Other</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" name="partner[<?= $index ?>][designation]" value="<?= $partner['designation'] ?? '' ?>">
+															</td>
+															<td>
+																<input type="text" class="form-control" name="partner[<?= $index ?>][equity]" value="<?= $partner['equity'] ?? '' ?>">
+															</td>
+														</tr>
+													<?php endforeach ?>
+												<?php endif ?>
+											</tbody>
+										</table>
+										<button type="button" class="btn btn-primary" id="addPartnerButton">Add Partner</button>
+										<template id="partnerNode">
+											<tr>
+												<td>
+													<input type="text" class="form-control" name="partner[__INDEX__][name]">
+												</td>
+												<td>
+													<select name="partner[__INDEX__][gender]" class="form-select">
+														<option value="">Select Gender</option>
+														<option value="Male">Male</option>
+														<option value="Female">Female</option>
+														<option value="Other">Other</option>
+													</select>
+												</td>
+												<td>
+													<input type="text" class="form-control" name="partner[__INDEX__][designation]">
+												</td>
+												<td>
+													<input type="text" class="form-control" name="partner[__INDEX__][equity]">
+												</td>
+											</tr>
+										</template>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p>Name of the Applicant (MD/CEO/Founder or equivalent)</p>
+											<input required type="text" name="name" value="<?= $application['name'] ?? '' ?>" class="form-control">
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p>Designation</p>
+											<input required type="text" name="designation" value="<?= $application['designation'] ?? '' ?>" class="form-control">
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p>Date of Birth</p>
+											<input required type="text" data-type="date" name="dob" value="<?= $application['id_255008'] ?? '' ?>" class="form-control">
+											<span class="form-text">(in DD/MM/YYYY)</span>
+										</div>
+									</div>
+									<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+										<div class="">
+											<p>Gender</p>
+											<select required name="gender" class="form-select">
+												<option value="">Select Gender</option>
+												<option value="Male" <?= ($application['id_255007'] ?? '') === 'Male' ? 'selected' : '' ?>>Male</option>
+												<option value="Female" <?= ($application['id_255007'] ?? '') === 'Female' ? 'selected' : '' ?>>Female</option>
+												<option value="Other" <?= ($application['id_255007'] ?? '') === 'Other' ? 'selected' : '' ?>>Other</option>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -108,28 +208,27 @@
 						<div class="row g-4">
 							<fieldset class="col-12">
 								<legend class="card-title mb-0">
-									<h5>Contact Person of Organization</h5>
+									<h5>Primary Contact for Award Coordination<sup class="text-danger">&ast;</sup></h5>
 								</legend>
 								<div class="row g-3">
-
 									<div id="sectionChange" class="col-12">
 										<div class="row g-3">
 											<div class="col-xl-3 col-lg-6 col-12">
 												<div class="">
-													<p for="" class="form-label">Full Name of Individual</p>
-													<h5><?= $application['id_255901'] ?></h5>
+													<p>Full Name of Individual</p>
+													<input required name="contact_person[name]" value="<?= $application['id_255901'] ?? '' ?>" type="text" class="form-control">
 												</div>
 											</div>
 											<div class="col-lg-6 col-12">
 												<div class="">
-													<p class="form-label">Email Address</p>
-													<h5><?= $application['id_255902'] ?></h5>
+													<p>Email Address</p>
+													<input required name="contact_person[email]" value="<?= $application['id_255902'] ?? '' ?>" type="email" class="form-control">
 												</div>
 											</div>
 											<div class="col-xl-3 col-lg-6 col-12">
 												<div class="">
-													<p class="form-label">Contact Number</p>
-													<h5><?= $application['id_255903'] ?></h5>
+													<p>Contact Number</p>
+													<input required name="contact_person[contact]" value="<?= $application['id_255903'] ?? '' ?>" minlength="10" maxlength="10" type="text" class="form-control">
 												</div>
 											</div>
 										</div>
@@ -360,6 +459,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="tab-pane fade" id="individual-tab-pane" role="tabpanel" aria-labelledby="individual-tab" tabindex="0"></div>
 	<div class="tab-pane fade" id="downloads-tab-pane" role="tabpanel" aria-labelledby="downloads-tab" tabindex="0">
 		<div class="row g-3 mt-2">
 			<div class="col-12 grid-margin stretch-card">

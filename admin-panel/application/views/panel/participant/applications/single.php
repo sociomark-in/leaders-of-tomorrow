@@ -37,7 +37,7 @@ if ($nomination['stage'] >= 1) {
 								</div>
 								<div class="col-auto">
 									<div class="row">
-										<a href="<?= base_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Category Details</a>
+										<a href="<?= app_url('awards/category/' . $category['code']) ?>" target="_blank" class="btn btn-primary">View Category Details</a>
 									</div>
 								</div>
 							</div>

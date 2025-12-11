@@ -72,8 +72,10 @@ class NominationsController extends PanelController
 							break;
 					}
 				}
+
+				$agent = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true) ?? [];
 				$applications['msme'][$i]['status_2_text'] = $s;
-				$applications['msme'][$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true)[0]['name'];
+				$applications['msme'][$i]['agent_name'] = $agent['name'] ?? NULL;
 			}
 		}
 		switch ($this->user_session['role']) {

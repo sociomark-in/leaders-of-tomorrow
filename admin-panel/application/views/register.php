@@ -60,7 +60,7 @@
 										}
 									</style>
 									<div class="row g-3 g-md-4">
-										<div class="col-12">
+										<div class="col-12 d-none">
 											<?php if (isset($googleusercontent)): ?>
 												<?php
 												if ($googleusercontent['status'] == "SUCCESS"):

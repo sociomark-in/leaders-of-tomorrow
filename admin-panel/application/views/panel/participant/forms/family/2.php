@@ -207,7 +207,7 @@
 							<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 							<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 						</select>
-						<span class="form-text">(On payroll + On contract) as on March 31, 2024</span>
+						<span class="form-text">(On payroll + On contract) as on March 31, 2025</span>
 					</div>
 				</div>
 				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -247,7 +247,7 @@
 						<label for="" class="form-label">Equity spilt between family members and investors</label>
 						<div class="row g-3">
 							<?php
-							$investment = explode('-', $application_temp['id_255206']);
+							$investment = explode('-', $application['id_255206'] ?? "---");
 							?>
 							<div class="col-lg-auto col-12">
 								<input required placeholder="% Family Equity" type="number" min="0" max="100" value="<?= $investment[0] ?>" name="organization[investment][family]" class="form-control">
@@ -256,39 +256,35 @@
 								<input placeholder="% Investor Equity" type="number" min="0" max="100" value="<?= $investment[1]  ?>" name="organization[investment][investors]" class="form-control">
 							</div>
 							<div class="col-lg-auto col-12">
-								<input placeholder="& Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment][others]" class="form-control">
+								<input placeholder="% Other Equity" type="number" min="0" max="100" value="<?= $investment[2]  ?>" name="organization[investment][others]" class="form-control">
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-					<div class="">
-						<label for="" class="form-label">Years the current generation has been leading the business</label>
-						<select required name="organization[generation]" id="" class="form-select">
-							<option value="">Select Option</option>
-							<option <?= ($application['id_255207'] == "Upto 10 Years") ? "selected" : "" ?> value="Upto 10 Years">Upto 10 Years</option>
-							<option <?= ($application['id_255207'] == "10 - 15 Years") ? "selected" : "" ?> value="10 - 15 Years">10 - 15 Years</option>
-							<option <?= ($application['id_255207'] == "15 - 20 Years") ? "selected" : "" ?> value="15 - 20 Years">15 - 20 Years</option>
-							<option <?= ($application['id_255207'] == "More than 20 Years") ? "selected" : "" ?> value="More than 20 Years">More than 20 Years</option>
-						</select>
-					</div>
-				</div>
 				<div class="col-12">
 					<div class="">
-						<label for="" class="form-label">How has the business evolved from one generation to the next? Describe the key transitions in leadership, vision, and strategy between generations</label>
-						<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application_temp['id_255202'] ?></textarea>
+						<label for="" class="form-label">Brief History of the Family Business</label>
+						<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255202'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
 				<div class="col-12">
 					<div class="">
-						<label for="" class="form-label">Core Products / Services Offered</label>
-						<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application_temp['id_255203'] ?></textarea>
+						<label for="" class="form-label">Briefly describe how responsibilities are currently shared between generations (founder, second-generation, third generation, etc.) and key decision-making processes. </label>
+						<textarea required name="organization_services" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
+						<span class="form-text">(50 - 5000 characters)</span>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="">
+						<label for="" class="form-label">Highlight governance discipline in your family business (e.g., formal board, advisory board, family council, succession planning, documented policies, external professionals, auditors).</label>
+						<textarea required name="organization_family" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>
 			</div>
 		</fieldset>
+		<!-- 2. FINANCIAL DETAILS -->
 	</div>
 </div>
 <div class="row g-3">
