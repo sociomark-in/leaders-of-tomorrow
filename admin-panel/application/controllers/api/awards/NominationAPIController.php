@@ -243,6 +243,7 @@ class NominationAPIController extends CI_Controller
 							'id_255205' => $this->request["organization"]['international'],
 							'id_255206' => $this->request["organization"]['size_global'],
 							'id_255207' => $this->request["organization_collaborations"],
+							'id_255208' => $this->request["organization_expansion"],
 							'stage_status' => $s
 						];
 						$rows  = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
@@ -394,6 +395,7 @@ class NominationAPIController extends CI_Controller
 							'id_255205' => $this->request["organization"]['international'],
 							'id_255206' => $this->request["organization"]['size_global'],
 							'id_255207' => $this->request["organization_collaborations"],
+							'id_255208' => $this->request["organization_expansion"],
 
 							'id_255601' => $this->request['alt_category_id'],
 							'id_255602' => $this->request['case_study_individual'],

@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Submission Received for Leaders of Tomorrow Awards 2025</title>
+	<title>Submission Received for Leaders of Tomorrow Awards 2026</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -79,7 +79,7 @@
 															Dear <strong><?= $applicant['name'] ?></strong>,
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															Thank you for submitting your nomination for the <strong><?= APP_NAME ?> Awards 2025</strong>
+															Thank you for submitting your nomination for the <strong><?= APP_NAME ?> Awards 2026</strong>
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															We have received your entry with Unique ID <a style="text-decoration: none; color:#b72026;" href="<?= base_url('my-nominations') ?>">#<?= $application['nomination_id'] ?></a>
@@ -101,7 +101,7 @@
 														</div>
 														<br>
 														<div>Best Regards,</div>
-														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2026</strong></div>
 													</div>
 												</td>
 											</tr>

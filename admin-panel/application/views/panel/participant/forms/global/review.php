@@ -361,17 +361,17 @@
 						<legend class="card-title mb-0">
 							<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 						</legend>
-						<div class="row g-3">
+						<div class="row g-3 mb-3">
 							<div class="col-12">
 								<div class="row g-3">
 									<div class="col-xxl-4 col-12">
 
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
-										FY 2024
+										FY 2024 - 2025
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
-										FY 2023
+										FY 2024 - 2023
 									</div>
 								</div>
 							</div>
@@ -383,21 +383,21 @@
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="financial_1_2" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255101'] == "Less than 25") ? "selected" : "" ?> value="Less than 25">Less than 25</option>
+											<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
 											<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-											<option <?= ($application['id_255101'] == "50 - 149") ? "selected" : "" ?> value="50 - 149">50 - 149</option>
-											<option <?= ($application['id_255101'] == "150 - 300") ? "selected" : "" ?> value="150 - 300">150 - 300</option>
-											<option <?= ($application['id_255101'] == "301 - 500") ? "selected" : "" ?> value="301 - 500">301 - 500</option>
+											<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+											<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
 										</select>
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="financial_1_1" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255102'] == "Less than 25") ? "selected" : "" ?> value="Less than 25">Less than 25</option>
+											<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
 											<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-											<option <?= ($application['id_255102'] == "50 - 149") ? "selected" : "" ?> value="50 - 149">50 - 149</option>
-											<option <?= ($application['id_255102'] == "150 - 300") ? "selected" : "" ?> value="150 - 300">150 - 300</option>
-											<option <?= ($application['id_255102'] == "301 - 500") ? "selected" : "" ?> value="301 - 500">301 - 500</option>
+											<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+											<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+											<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
 										</select>
 									</div>
 								</div>
@@ -468,21 +468,25 @@
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="financial_4_2" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255107'] == "< 10%") ? "selected" : "" ?> value="< 10%">
-												< 10%</option>
-											<option <?= ($application['id_255107'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255107'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255107'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
+											<option <?= ($application['id_255107'] == "Break - even / Negative") ? "selected" : "" ?> value="Break - even / Negative">
+												Break - even / Negative</option>
+											<option <?= ($application['id_255107'] == "1% - 4%") ? "selected" : "" ?> value="1% - 4%">1% - 4%</option>
+											<option <?= ($application['id_255107'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
+											<option <?= ($application['id_255107'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
+											<option <?= ($application['id_255107'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
 										</select>
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
 										<select required name="financial_4_1" id="" class="form-select">
 											<option value="">Select Option</option>
-											<option <?= ($application['id_255107'] == "< 10%") ? "selected" : "" ?> value="< 10%">
-												< 10%</option>
-											<option <?= ($application['id_255107'] == "11% - 15%") ? "selected" : "" ?> value="11% - 15%">11% - 15%</option>
-											<option <?= ($application['id_255107'] == "16% - 20%") ? "selected" : "" ?> value="16% - 20%">16% - 20%</option>
-											<option <?= ($application['id_255107'] == "21% - 25%") ? "selected" : "" ?> value="21% - 25%">21% - 25%</option>
+											<option <?= ($application['id_255108'] == "Break - even / Negative") ? "selected" : "" ?> value="Break - even / Negative">
+												Break - even / Negative</option>
+											<option <?= ($application['id_255108'] == "1% - 4%") ? "selected" : "" ?> value="1% - 4%">1% - 4%</option>
+											<option <?= ($application['id_255108'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
+											<option <?= ($application['id_255108'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
+											<option <?= ($application['id_255108'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
+											<option <?= ($application['id_255108'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
+											<option <?= ($application['id_255108'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
 										</select>
 									</div>
 								</div>
@@ -507,6 +511,7 @@
 								</div>
 							</div>
 						</div>
+						<small class="text-muted">Note: The shortlisted participants will have to submit the copy of the audited financials/Acknowledgement letter from a CA or chartered account firm for the past 2 years supporting the above selection</small>
 					</fieldset>
 					<fieldset class="col-12">
 						<legend class="card-title mb-0">
@@ -524,6 +529,7 @@
 										<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<small class="text-muted">(On payroll + On contract) as on March 31, 2025</small>
 								</div>
 							</div>
 							<div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
@@ -537,6 +543,7 @@
 										<option <?= ($application['id_255206'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 										<option <?= ($application['id_255206'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 									</select>
+									<small class="text-muted">(On payroll + On contract) as on March 31, 2025</small>
 								</div>
 							</div>
 							<div class="col-xl-6 col-12">
@@ -555,7 +562,7 @@
 
 							<div class="col-12">
 								<div class="">
-									<label for="" class="form-label">Brief Description of the Business</label>
+									<label for="" class="form-label">Briefly describe what you export and your key value proposition in global markets</label>
 									<textarea required name="organization_overview" id="" class="form-control" rows="5"><?= $application['id_255202'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -574,7 +581,16 @@
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
+							<div class="col-12">
+								<div class="">
+									<label for="" class="form-label">Market Expansion in the Last 2 Years as on March 31, 2025</label>
+									<textarea required name="organization_expansion" id="" class="form-control" rows="5"><?= $application['id_255208'] ?></textarea>
+									<span class="form-text">(50 - 5000 characters)</span>
+								</div>
+							</div>
 						</div>
+						<small>Note: The shortlisted participants will have to submit the copy of the audited financials/Acknowledgement letter from a CA or chartered account firm for the past 2 years supporting the above selection</small>
+
 					</fieldset>
 					<!-- 2. FINANCIAL DETAILS -->
 
@@ -743,8 +759,21 @@
 							</legend>
 							<p class="text-muted">(The response to this question will be used to evaluate and determine the finalists for the "Entrepreneur of the Year" category. By submitting this response, you consent to its consideration for this awards category.)</p>
 						</div>
-						<div class="row g-3">
-							<div class="col-12">
+						<div class="row g-3 flex-row-reverse">
+							<div class="col-lg-4">
+								<div class="p-3 bg-light">
+
+
+
+									<p>In your response, you may cover:</p>
+									<ul>
+										<li><strong>Agility in Action</strong> – How did you respond to market volatility, supply-chain changes, competition, or technological disruption? What tough calls or course-corrections did you lead to keep the business resilient and future-ready?</li>
+										<li><strong>Ambition with Purpose</strong> – How have you pushed the boundaries for your business (new markets, new products, new models) while staying rooted in a clear purpose or mission?</li>
+										<li><strong>Ascent to Impact</strong> – How has your leadership contributed to meaningful growth – in terms of revenues, jobs, customer value, or competitiveness – and strengthened your organisation’s role in India’s economic story?</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-8">
 								<div class="">
 									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
 									<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>
@@ -756,7 +785,7 @@
 					<!-- 4. INDIVIDUAL CATEGORY -->
 
 					<!-- 5. UPLOAD FILES -->
-					<fieldset class="col-12">
+					<fieldset class="mb-3">
 						<legend class="card-title mb-3">
 							<h5>Upload Files<sup class="text-danger">&ast;</sup></h5>
 						</legend>
@@ -775,43 +804,77 @@
 						<div class="row g-3 mb-3">
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255401']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php if (isset($application['id_255401'])): ?>
+										<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url() ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">MSME Certificate<sup class="text-danger">&ast;</sup></label>
+									<?php endif ?>
 									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php if (isset($application['id_255402'])): ?>
+										<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">Incorporation Certificate<sup class="text-danger">&ast;</sup></label>
+									<?php endif ?>
 									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
-							<!-- <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="">
-									<label for="" class="form-label">Applicable Environmental Certifications</label>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(ISO 14001: Environmental Management System (EMS), LEED,
-									GreenCO, Ecomark certificate, etc.) (PDF of Maximum Size 2MB)</span>
-								</div>
-							</div> -->
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php if (isset($application['id_255406'])): ?>
+										<label for="" class="form-label">IEC Copy&nbsp;<a class="link-icon" href="<?= base_url($application['id_255406']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">IEC Copy<sup class="text-danger">&ast;</sup></label>
+									<?php endif ?>
+									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">(PDF of Maximum Size 2MB)</span>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+								<div class="">
+									<?php if (isset($application['id_255407'])): ?>
+										<label for="" class="form-label">Export performance certificates from EPCs, key international certification&nbsp;<a class="link-icon" href="<?= base_url($application['id_255407']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">Export performance certificates from EPCs, key international certification<sup class="text-danger">&ast;</sup></label>
+									<?php endif ?>
+									<input type="file" accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application_temp['id_255407'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">All Certificates in a Single PDF (PDF of Maximum Size 2MB)</span>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
+								<div class="">
+									<?php if (isset($application['id_255403'])): ?>
+										<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+									<?php endif ?>
 									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php if (isset($application['id_255404'])): ?>
+										<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">Collaterals to Support the Impact</label>
+									<?php endif ?>
 									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
-									<label for="" class="form-label">Any other Collaterals&nbsp;<a class="link-icon" href="<?= base_url($application['id_255405']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php if (isset($application['id_255405'])): ?>
+										<label for="" class="form-label">Any other Collaterals&nbsp;<a class="link-icon" href="<?= base_url($application['id_255405']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+									<?php else: ?>
+										<label for="" class="form-label">Any other Collaterals</label>
+									<?php endif ?>
 									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
 								</div>
@@ -826,6 +889,13 @@
 						<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 						<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
 						<script>
+							$("input[type='file']").each(function(index, element) {
+								if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+									$(element).prop("required", true);
+								} else {
+									$(element).prop("required", false);
+								}
+							});
 							$('.dropify').dropify({
 								error: {
 									'fileSize': 'The file size is too big ({{ value }} max).',

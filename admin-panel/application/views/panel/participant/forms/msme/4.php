@@ -77,8 +77,21 @@
 				</legend>
 				<p class="text-muted">(The response to this question will be used to evaluate and determine the finalists for the "Entrepreneur of the Year" category. By submitting this response, you consent to its consideration for this awards category.)</p>
 			</div>
-			<div class="row g-3">
-				<div class="col-12">
+			<div class="row g-3 flex-row-reverse">
+				<div class="col-lg-4">
+					<div class="p-3 bg-light">
+						
+
+
+						<p>In your response, you may cover:</p>
+						<ul>
+							<li><strong>Agility in Action</strong> – How did you respond to market volatility, supply-chain changes, competition, or technological disruption? What tough calls or course-corrections did you lead to keep the business resilient and future-ready?</li>
+							<li><strong>Ambition with Purpose</strong> – How have you pushed the boundaries for your business (new markets, new products, new models) while staying rooted in a clear purpose or mission?</li>
+							<li><strong>Ascent to Impact</strong> – How has your leadership contributed to meaningful growth – in terms of revenues, jobs, customer value, or competitiveness – and strengthened your organisation’s role in India’s economic story?</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-8">
 					<div class="">
 						<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
 						<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>

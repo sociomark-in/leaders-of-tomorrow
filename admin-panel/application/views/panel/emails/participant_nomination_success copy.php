@@ -9,7 +9,7 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta name="color-scheme" content="light dark">
 	<meta name="supported-color-schemes" content="light dark">
-	<title>Your Nomination Has Been Accepted - Leaders of Tomorrow Awards 2025</title>
+	<title>Your Nomination Has Been Accepted - Leaders of Tomorrow Awards 2026</title>
 	<!--[if mso]>
   <noscript>
     <xml>
@@ -110,7 +110,7 @@
 														</div>
 														<br>
 														<div>Best Regards,</div>
-														<div><strong>Team <?= APP_NAME ?> Awards 2025</strong></div>
+														<div><strong>Team <?= APP_NAME ?> Awards 2026</strong></div>
 
 													</div>
 												</td>

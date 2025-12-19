@@ -38,7 +38,7 @@
 									<div class="d-flex justify-content-between align-items-baseline">
 										<h6 class="card-title mb-0">All Nominations</h6>
 										<div>
-											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('dashboard/applications') ?>">View All</a>
+											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('nominations') ?>">View All</a>
 										</div>
 									</div>
 									<div class="row">
@@ -59,7 +59,7 @@
 									<div class="d-flex justify-content-between align-items-baseline">
 										<h6 class="card-title mb-0">New Nominations</h6>
 										<div>
-											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('dashboard/applications') ?>">View All</a>
+											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('nominations') ?>">View All</a>
 										</div>
 									</div>
 									<div class="row">
@@ -81,7 +81,7 @@
 									<div class="d-flex justify-content-between align-items-baseline">
 										<h6 class="card-title mb-0">Approved</h6>
 										<div>
-											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('dashboard/applications') ?>">View All</a>
+											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('nominations') ?>">View All</a>
 										</div>
 									</div>
 									<div class="row">
@@ -103,7 +103,7 @@
 									<div class="d-flex justify-content-between align-items-baseline">
 										<h6 class="card-title mb-0">Rejected</h6>
 										<div>
-											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('dashboard/applications') ?>">View All</a>
+											<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('nominations') ?>">View All</a>
 										</div>
 									</div>
 									<div class="row">
@@ -131,7 +131,7 @@
 							<div class="d-flex justify-content-between align-items-baseline mb-2">
 								<h6 class="card-title mb-0">Monthly sales</h6>
 								<div>
-									<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('dashboard/applications') ?>">View All</a>
+									<a class="btn p-0 btn-icon-text text-dark" href="<?= base_url('nominations') ?>">View All</a>
 								</div>
 							</div>
 							<p class="text-secondary">Sales are activities related to selling or the number of goods or services sold in a given time period.</p>

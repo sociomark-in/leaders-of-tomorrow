@@ -28,17 +28,17 @@
 			<legend class="card-title mb-0">
 				<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 			</legend>
-			<div class="row g-3">
+			<div class="row g-3 mb-3">
 				<div class="col-12">
 					<div class="row g-3">
 						<div class="col-xxl-4 col-12">
 
 						</div>
 						<div class="col-xxl-4 col-lg-6 col-12">
-							FY 2024
+							FY 2024 - 2025
 						</div>
 						<div class="col-xxl-4 col-lg-6 col-12">
-							FY 2023
+							FY 2023 - 2024
 						</div>
 					</div>
 				</div>
@@ -128,46 +128,17 @@
 				<div class="col-12">
 					<div class="row g-3">
 						<div class="col-xxl-4 col-12">
-							Net Profit Margin (In %)
-						</div>
-						<div class="col-xxl-4 col-lg-6 col-12">
-							<select required name="financial_4_2" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255107'] == "Break-even / negative") ? "selected" : "" ?> value="Break-even / negative">
-									Break-even / negative</option>
-								<option <?= ($application['id_255107'] == "1%-4%") ? "selected" : "" ?> value="1%-4%">1%-4%</option>
-								<option <?= ($application['id_255107'] == "5-10%") ? "selected" : "" ?> value="5-10%">5-10%</option>
-								<option <?= ($application['id_255107'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
-								<option <?= ($application['id_255107'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
-							</select>
-						</div>
-						<div class="col-xxl-4 col-lg-6 col-12">
-							<select required name="financial_4_1" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255108'] == "Break-even / negative") ? "selected" : "" ?> value="Break-even / negative">
-									Break-even / negative</option>
-								<option <?= ($application['id_255108'] == "1%-4%") ? "selected" : "" ?> value="1%-4%">1%-4%</option>
-								<option <?= ($application['id_255108'] == "5-10%") ? "selected" : "" ?> value="5-10%">5-10%</option>
-								<option <?= ($application['id_255108'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
-								<option <?= ($application['id_255108'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="row g-3">
-						<div class="col-xxl-4 col-12">
-							Revenue Growth %
+							Revenue Growth % (FY 2024-25 over FY 2023-24)
 						</div>
 						<div class="col-xxl-4 col-lg-6 col-12">
 							<select required name="financial_5_1" id="" class="form-select">
 								<option value="">Select Option</option>
-								<option <?= ($application['id_255109'] == "< 10%") ? "selected" : "" ?> value="< 10%">
+								<option <?= ($application['id_255107'] == "< 10%") ? "selected" : "" ?> value="< 10%">
 									< 10%</option>
-								<option <?= ($application['id_255109'] == "10-25%") ? "selected" : "" ?> value="10-25%">10-25%</option>
-								<option <?= ($application['id_255109'] == "26-50%") ? "selected" : "" ?> value="26-50%">26-50%</option>
-								<option <?= ($application['id_255109'] == "51-100%") ? "selected" : "" ?> value="51-100%">51-100%</option>
-								<option <?= ($application['id_255109'] == "> 100%") ? "selected" : "" ?> value="> 100%">> 100%</option>
+								<option <?= ($application['id_255107'] == "10-25%") ? "selected" : "" ?> value="10-25%">10-25%</option>
+								<option <?= ($application['id_255107'] == "26-50%") ? "selected" : "" ?> value="26-50%">26-50%</option>
+								<option <?= ($application['id_255107'] == "51-100%") ? "selected" : "" ?> value="51-100%">51-100%</option>
+								<option <?= ($application['id_255107'] == "> 100%") ? "selected" : "" ?> value="> 100%">> 100%</option>
 							</select>
 						</div>
 					</div>
@@ -175,21 +146,22 @@
 				<div class="col-12">
 					<div class="row g-3">
 						<div class="col-xxl-4 col-12">
-							Debt-to-Equity Ratio
+							Debt-to-Equity Ratio (as on March 31, 2025)
 						</div>
 						<div class="col-xxl-4 col-lg-6 col-12">
 							<select required name="financial_6_1" id="" class="form-select">
 								<option value="">Select Option</option>
-								<option <?= ($application['id_255110'] == " < 1.0") ? "selected" : "" ?> value="< 1.0">
+								<option <?= ($application['id_255108'] == " < 1.0") ? "selected" : "" ?> value="< 1.0">
 									< 1.0</option>
-								<option <?= ($application['id_255110'] == "1.0 - 2.0") ? "selected" : "" ?> value="1.0 - 2.0">1.0 - 2.0</option>
-								<option <?= ($application['id_255110'] == "2.0 - 3.0") ? "selected" : "" ?> value="2.0 - 3.0">2.0 - 3.0</option>
-								<option <?= ($application['id_255110'] == "> 3.0") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+								<option <?= ($application['id_255108'] == "1.0 - 2.0") ? "selected" : "" ?> value="1.0 - 2.0">1.0 - 2.0</option>
+								<option <?= ($application['id_255108'] == "2.0 - 3.0") ? "selected" : "" ?> value="2.0 - 3.0">2.0 - 3.0</option>
+								<option <?= ($application['id_255108'] == "> 3.0") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
 							</select>
 						</div>
 					</div>
 				</div>
 			</div>
+			<small>Note: The shortlisted participants will have to submit the copy of the audited financials/Acknowledgement letter from a CA or chartered account firm for the past 2 years supporting the above selection</small>
 		</fieldset>
 		<fieldset class="col-12">
 			<legend class="card-title mb-0">
@@ -207,6 +179,7 @@
 							<option <?= ($application['id_255201'] == "200 - 400") ? "selected" : "" ?> value="200 - 400">200 - 400</option>
 							<option <?= ($application['id_255201'] == "More than 400") ? "selected" : "" ?> value="More than 400">More than 400</option>
 						</select>
+						<small class="text-muted">(On payroll + On contract) as on March 31, 2025</small>
 					</div>
 				</div>
 				<div class="col-xl-6 col-12">

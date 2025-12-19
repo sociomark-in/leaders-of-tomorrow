@@ -36,7 +36,7 @@
 					<?php if (isset($application['id_255401'])): ?>
 						<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url() ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">MSME Certificate</label>
+						<label for="" class="form-label">MSME Certificate<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
 					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
@@ -47,7 +47,7 @@
 					<?php if (isset($application['id_255402'])): ?>
 						<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">Incorporation Certificate</label>
+						<label for="" class="form-label">Incorporation Certificate<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
 					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 2MB)</span>
@@ -58,7 +58,7 @@
 					<?php if (isset($application['id_255406'])): ?>
 						<label for="" class="form-label">IEC Copy&nbsp;<a class="link-icon" href="<?= base_url($application['id_255406']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">IEC Copy</label>
+						<label for="" class="form-label">IEC Copy<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
 					<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 2MB)</span>
@@ -66,7 +66,11 @@
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
-					<label for="" class="form-label">Export performance certificates from EPCs, key international certification</label>
+					<?php if (isset($application['id_255407'])): ?>
+						<label for="" class="form-label">Export performance certificates from EPCs, key international certification&nbsp;<a class="link-icon" href="<?= base_url($application['id_255407']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+					<?php else: ?>
+						<label for="" class="form-label">Export performance certificates from EPCs, key international certification<sup class="text-danger">&ast;</sup></label>
+					<?php endif ?>
 					<input type="file" accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application_temp['id_255407'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">All Certificates in a Single PDF (PDF of Maximum Size 2MB)</span>
 				</div>

@@ -269,7 +269,7 @@
 				letters: 'Please enter a valid name',
 			},
 			contact: {
-				letters: 'Please enter a valid phone number',
+				numbers: 'Please enter a valid phone number',
 			},
 		}
 	});

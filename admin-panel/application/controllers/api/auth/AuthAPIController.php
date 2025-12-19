@@ -64,16 +64,18 @@ class AuthAPIController extends CI_Controller
 	{
 		$this->request = $this->input->post();
 
+		
 		$contact = $this->request['contact'];
 		$this->request['password'] = hash('md5', hash('sha256', $contact));
-
+		
 		$data['name'] = $this->request['name'];
-		$data['email'] = $this->request['email'];
+		$data['email'] = strtolower(trim(str_replace(' ', '', $this->request['email']), "\t\n\r\0\x0B"));
 		$data['contact'] = $this->request['contact'];
 		$data['role'] = 'participant';
 		$data['useremail'] = $data['email'];
 		$data['password'] = $this->request['password'];
-		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true)[0];
+		
+		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true);
 
 		$session = [
 			'status' => 'UNDEFINED',
@@ -113,12 +115,12 @@ class AuthAPIController extends CI_Controller
 						"name" =>  $data['name']
 					]
 				];
-				$subject = "Welcome, to " . APP_NAME . " Awards 2025!!";
-				$body = "Hi " .  $this->usersession['name'] . ",<br>Your login Details are as follows:<br>Username:" . $data['email'] . "<br>Password:" . $data['contact'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
+				$subject = "Welcome, to " . APP_NAME . " Awards 2026!!";
+				$body = "Hi " .  $data['name'] . ",<br>Your login Details are as follows:<br>Username:" . $data['email'] . "<br>Password:" . $data['contact'] . "<br>Please <a href=" . base_url('login') . ">Login</a>";
 				$htmlbody = $this->load->view('panel/emails/participant_register_new', $email_data, true);
 				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
 					$session['status'] = 'SUCCESS';
-					$session['message'] = 'You have successfully registered. Please Check your Email for the Login Credentials Email Verification Link.';
+					$session['message'] = 'You have successfully registered. Please Check your Email for the Login Credentials.';
 					$this->session->set_flashdata('user_login_status', $session);
 					redirect('login');
 				}

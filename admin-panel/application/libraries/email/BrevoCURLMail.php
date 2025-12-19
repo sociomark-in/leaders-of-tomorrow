@@ -23,7 +23,6 @@ class BrevoCURLMail
 		foreach ($this->result as $key => $row) {
 			$this->keys[$row['config_key']] = $this->CI->encryption->decrypt($row['value']);
 		}
-
 	}
 
 	public function _init_($sandboxMode = true)
@@ -103,12 +102,20 @@ class BrevoCURLMail
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
 
-		$result = curl_exec($ch);
-		if (curl_errno($ch)) {
-			echo 'Error:' . curl_error($ch);
+		/* THE FIRE AND FORGET */
+		// curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1);
+		// curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
+		// curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+		/* THE FIRE AND FORGET */
+
+		curl_exec($ch);
+		$err = curl_errno($ch);
+		if ($err) {
+			if ($err !== 28) {
+				echo 'Error:' . curl_error($ch);
+			}
 		} else {
 			return true;
 		}
-		curl_close($ch);
 	}
 }
