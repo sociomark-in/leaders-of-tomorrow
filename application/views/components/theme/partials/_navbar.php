@@ -41,11 +41,11 @@ use phpseclib3\Crypt\EC\BaseCurves\Base;
 					<a class="nav-link" href="<?= base_url('#partners') ?>">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav g-4 d-none">
+			<ul class="navbar-nav g-4">
 				<li class="nav-item">
 					<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
 						<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
-						Awards&nbsp;<?= date('Y') ?>
+						Awards&nbsp;2026
 					</a>
 				</li>
 			</ul>

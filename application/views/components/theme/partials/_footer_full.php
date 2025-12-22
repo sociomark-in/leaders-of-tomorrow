@@ -89,7 +89,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-auto col-lg-3 col-md-6 col-6 d-none">
+							<div class="col-xl-auto col-lg-3 col-md-6 col-6">
 								<div class="">
 									<h6>Season 13 Awards</h6>
 									<ul class="footer-nav nav flex-column">
@@ -103,9 +103,9 @@
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('awards#categories') ?>">All Categories</a>
 										</li>
-										<li class="nav-item">
+										<!-- <li class="nav-item">
 											<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Awards Gallery</a>
-										</li>
+										</li> -->
 										<li class="nav-item">
 											<a class="nav-link" href="<?= base_url('login') ?>">Login</a>
 										</li>

@@ -6,7 +6,7 @@
 		</div>
 	</div>
 
-	<div class="fireworks">
+	<div class="fireworks d-none">
 		<button class="btn btn-red" id="party"></button>
 		<style>
 			#party {
@@ -85,14 +85,14 @@
 				<div class="col-xl-10 col-12">
 					<div class="media-content springboard-banner">
 						<div class="wrap">
-							<!-- <a href="<?= base_url('panel') ?>">
+							<a href="#">
 								<picture>
-									<source srcset="<?= base_url('assets/images/banners/awards_banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-									<source srcset="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-									<img class="w-100" src="<?= base_url('assets/images/banners/awards_banner_v.jpg') ?>" alt="">
+									<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+									<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+									<img class="w-100" src="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" alt="">
 								</picture>
-							</a> -->
-							<iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</a>
+							<!-- <iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 						</div>
 					</div>
 				</div>
@@ -131,13 +131,11 @@
 					<div class="glass-card">
 						<div class="">
 							<div class="desc text-lg">
-								<p data-aos="fade-left">
-									Leaders of Tomorrow Season 12 Awards will continue to spotlight outstanding MSMEs, carry forward its rich legacy. This year, the awards are aligned with our vision to propel India’s global aspirations, embracing the theme: <strong class="text-red">Powering Entrepreneurs for the Global Stage</strong>.
-									The Leaders of Tomorrow Season 12 Awards is scheduled to take place in March 2025 as a half-day ceremony in Delhi, attended by over 200 audience members largely comprising of CXOs from large and mid-enterprises.
+								<p data-aos="fade-up">
+									<strong class="text-red">Leaders of Tomorrow Season 13 Awards</strong> returns with the theme <strong class="text-red">“Agility. Ambition. Ascent.”</strong>, reflecting the evolving mindset of India’s next generation of entrepreneurs. The awards celebrate MSMEs that adapt swiftly, think boldly & scale sustainably in a rapidly changing global landscape. Scheduled for <strong class="text-red">March 2026</strong>, the initiative will honour outstanding businesses and leaders driving transformation through resilience, innovation & sustainable growth across diverse sectors. The half-day event will feature panel discussions, keynotes fireside chats, and culminate in the Awards Ceremony, spotlighting those shaping the future of Indian enterprise.
 								</p>
-								<p data-aos="fade-left" data-aos-delay="200">
-									In the lead-up to the event, we will reach out to the MSME community to drive registrations through a Call for Entries (CFE) campaign, leveraging promotional activities and agency outreach over a month. Following this, entries will undergo a rigorous review process, in collaboration with our knowledge partner, EY, to ensure eligibility criteria are met.
-									Eligible submissions will then be evaluated by a screening jury, with shortlisted candidates identified based on jury scores and financial analysis. These shortlisted entries will be presented to a Grand Jury, comprising 7-10 distinguished industry leaders from various sectors. The Grand Jury, convening for a day in either Delhi or Mumbai, will finalize the winners through detailed deliberation on the same day.
+								<p data-aos="fade-up">
+									In the lead-up to the event, a Call for Entries (CFE) campaign will engage the MSME community and drive registrations through a month-long promotional push and agency outreach. All entries will undergo a rigorous eligibility review in collaboration with our knowledge partner, EY. Eligible submissions will then be assessed by a screening jury, with shortlists determined through jury scores and financial analysis. The shortlisted entries will be presented to a Grand Jury comprising 10 distinguished industry leaders, who will deliberate in depth and finalize the winners of <strong class="text-red">Leaders of Tomorrow Season 13 Awards</strong>.
 								</p>
 							</div>
 						</div>
@@ -147,7 +145,7 @@
 		</div>
 	</section>
 
-	<section id="winners" class="pb-0">
+	<section id="winners" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -288,7 +286,7 @@
 		</div>
 	</section>
 
-	<section id="grand-juries" class="pb-0">
+	<section id="grand-juries" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -400,7 +398,7 @@
 		</div>
 	</section>
 
-	<section id="speakers" class="pb-0">
+	<section id="speakers" class="pb-0 d-none">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -711,4 +709,4 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.4/tsparticles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.42.4/tsparticles.preset.confetti.min.js"></script>
-<script src="<?= base_url('assets/js/awards.js') ?>"></script>
+<!-- <script src="<?= base_url('assets/js/awards.js') ?>"></script> -->

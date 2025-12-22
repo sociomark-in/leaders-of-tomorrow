@@ -292,12 +292,45 @@ if (!is_null($springboards)) {
 		</div>
 	</section>
 
+	<section id="awards" class="section pb-0">
+		<div class="container">
+			<div class="special-card">
+				<div class="card-body">
+					<div class="row justify-content-center g-4">
+						<div class="col-12">
+							<div class="section-title">
+								<h2><span>Awards</span></h2>
+							</div>
+							<div class="mb-3">
+								<p data-aos="fade-up">
+									The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
+								</p>
+							</div>
+							<div class="row g-2">
+								<div class="col-auto">
+									<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
+										<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
+										Awards 2026
+									</a>
+								</div>
+								<!-- <div class="col-auto">
+									<a class="btn btn-yellow text-uppercase" href="<?= base_url('awards/register-to-attend') ?>">
+										Register to Attend
+									</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	
 	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12">
-					<div class="special-card">
+					<div class="">
 						<div class="card-body">
 							<div class="row g-3 g-md-4">
 								<div class="col-12">
@@ -323,40 +356,6 @@ if (!is_null($springboards)) {
 										</p>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="awards" class="d-none section pb-0">
-		<div class="container">
-			<div class="glass-card">
-				<div class="card-body">
-					<div class="row justify-content-center g-4">
-						<div class="col-12">
-							<div class="section-title">
-								<h2><span>Awards</span></h2>
-							</div>
-							<div class="mb-3">
-								<p data-aos="fade-up">
-									The Annual Leaders of Tomorrow Awards will focus on uncovering & recognising the most promising MSMEs from across India, carrying forward its long-standing heritage. This prestigious event remains a cornerstone of our initiative, celebrating outstanding achievements in the MSME sector and shining a spotlight on emerging leaders nationwide. In the lead-up to the awards, we will actively engage with the MSME community to garner registrations. A distinguished Grand Jury will then evaluate the entries, culminating in the selection of winners across a diverse range of categories.
-								</p>
-							</div>
-							<div class="row g-2">
-								<div class="col-auto">
-									<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('awards') ?>">
-										<img src="<?= base_url('assets/images/icons/') ?>award.png" class="icon" alt="Award Icon">
-										Awards 2025
-									</a>
-								</div>
-								<!-- <div class="col-auto">
-									<a class="btn btn-yellow text-uppercase" href="<?= base_url('awards/register-to-attend') ?>">
-										Register to Attend
-									</a>
-								</div> -->
 							</div>
 						</div>
 					</div>

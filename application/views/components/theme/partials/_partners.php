@@ -1,6 +1,6 @@
 
 <?php if ($this->uri->segment(1) == "awards") {
-	$this->load->view('components/theme/partials/partners/season-12/_awards');
+	$this->load->view('components/theme/partials/partners/_awards');
 } else {
 	switch ($this->uri->segment(2)) {
 			// Seasons
@@ -12,7 +12,7 @@
 			break;
 
 		default:
-			$this->load->view('components/theme/partials/partners/season-12/_main');
+			$this->load->view('components/theme/partials/partners/_main');
 			break;
 	}
 }

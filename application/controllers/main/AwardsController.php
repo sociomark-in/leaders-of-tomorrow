@@ -6,6 +6,13 @@ class AwardsController extends BaseController
 	{
 		parent::__construct();
 		$this->load->model('event/awards/CategoryModel');
+		// $this->data['partners'] = [
+		// 	[
+		// 		'text' => 'Powered By',
+		// 		'logo' => 'tata-tele.png',
+		// 		'url' => "https://www.tatatelebusiness.com/"
+		// 	]
+		// ];
 	}
 	public function index()
 	{
@@ -160,7 +167,6 @@ class AwardsController extends BaseController
 			// 	'description' => "Founder, Joul",
 			// ],
 		];
-		
 		$this->data['winners'] = [
 			[
 				'organization' => "Plant Remedies",
@@ -361,7 +367,7 @@ class AwardsController extends BaseController
 			],
 		];
 		$utm = NULL;
-		if(!is_null($this->input->get('utm_source'))){
+		if (!is_null($this->input->get('utm_source'))) {
 			$utm = [
 				'utm_source' 	=> $this->input->get('utm_source'),
 				'utm_medium' 	=> $this->input->get('utm_medium'),
@@ -375,7 +381,7 @@ class AwardsController extends BaseController
 		$this->data['categories']['all'] = json_decode($this->CategoryModel->get(null, ['id <=' => 14]), true);
 
 		$this->data['page'] = [
-			'title' => "IDFC FIRST Bank presents ET NOW " .  APP_NAME . " Awards 2025",
+			'title' => "IDFC FIRST Bank presents ET NOW " .  APP_NAME . " Awards 2026",
 			'description' => "The Awards by ET NOW Leaders of Tomorrow recognize exceptional individuals and businesses making a significant impact across industries. This prestigious platform celebrates innovation, leadership, and excellence, honoring visionaries shaping the future. Join us in acknowledging the leaders of tomorrow, driving change and inspiring success.",
 			'thumb' => base_url("assets/images/banners/awards_banner_h.jpg"),
 		];
@@ -383,7 +389,8 @@ class AwardsController extends BaseController
 		$this->load->award_page('home', $this->data);
 	}
 
-	public function gallery(){
+	public function gallery()
+	{
 		$this->data['gallery'] = directory_map('assets/images/galleries/12/thumbs/');
 		$this->load->award_page('gallery', $this->data);
 	}
@@ -528,7 +535,8 @@ class AwardsController extends BaseController
 		}
 	}
 
-	public function attendee_register() {
+	public function attendee_register()
+	{
 		$this->data['award_event'] = [
 			'date' => '2025-03-10 16:00:00',
 			'venue' => "Taj Hotel, Delhi"
@@ -556,88 +564,88 @@ class AwardsController extends BaseController
 			'title' =>  APP_NAME . " Awards • " . APP_NAME,
 			'description' => "",
 		];
-		 $this->data ['faq'] = [
-        [
-            'que' => "What are the Leaders of Tomorrow Awards?",
-            'answer' => "The Leaders of Tomorrow Awards is a prestigious initiative by ET NOW to recognize and reward the
+		$this->data['faq'] = [
+			[
+				'que' => "What are the Leaders of Tomorrow Awards?",
+				'answer' => "The Leaders of Tomorrow Awards is a prestigious initiative by ET NOW to recognize and reward the
             Micro, Small and Medium Enterprises (MSMEs) for their contribution in the industry and to the
             economy of India"
-        ],
-        [
-            'que' => "Who can participate in the awards?",
-            'answer' => "Indian MSMEs with a valid MSME/Udyam certificate, at least two years of registered presence in
+			],
+			[
+				'que' => "Who can participate in the awards?",
+				'answer' => "Indian MSMEs with a valid MSME/Udyam certificate, at least two years of registered presence in
             India as on March 31, 2025, and an annual turnover of upto INR 500 crore in the last two financial
             years (2022-23, 2023-24) are eligible to participate. Detailed eligibility criteria are available on our
             website."
-        ],
-        [
-            'que' => "How can I apply for the awards?",
-            'answer' => "To apply, visit [www.leadersoftomorrow.co.in](http://www.leadersoftomorrow.co.in), fill out the
+			],
+			[
+				'que' => "How can I apply for the awards?",
+				'answer' => "To apply, visit [www.leadersoftomorrow.co.in](http://www.leadersoftomorrow.co.in), fill out the
             online application form, and submit the required documents."
-        ],
-        [
-            'que' => "What are the award categories?",
-            'answer' => "The awards include categories such as Excellence in Global exports and international business,
+			],
+			[
+				'que' => "What are the award categories?",
+				'answer' => "The awards include categories such as Excellence in Global exports and international business,
             Excellence in D2C Design &amp; Lifestyle Innovation, Excellence in Digital &amp; AI Transformation, Next-Gen
             Innovator, and various sector-specific categories like Technology, Health &amp; Wellness, Manufacturing,
             EdTech, Sustainability, Agriculture and more."
-        ],
-        [
-            'que' => "Is there a participation fee for the awards?",
-            'answer' => "No, there are no fees to participate in the Leaders of Tomorrow Awards 2026."
-        ],
-        [
-            'que' => "What is the application deadline?",
-            'answer' => "The application deadline is *January 18 th , 2026*. Ensure that all submissions are complete and
+			],
+			[
+				'que' => "Is there a participation fee for the awards?",
+				'answer' => "No, there are no fees to participate in the Leaders of Tomorrow Awards 2026."
+			],
+			[
+				'que' => "What is the application deadline?",
+				'answer' => "The application deadline is *January 18 th , 2026*. Ensure that all submissions are complete and
             uploaded by this date."
-        ],
-        [
-            'que' => "Can I edit my submission after applying?",
-            'answer' => "Yes, you can edit your submission if required. If our process advisors suggest improvements, you will
+			],
+			[
+				'que' => "Can I edit my submission after applying?",
+				'answer' => "Yes, you can edit your submission if required. If our process advisors suggest improvements, you will
             be notified via email, and you can update your submission through the dashboard."
-        ],
-        [
-            'que' => "Who will review my application?",
-            'answer' => "Your application will be reviewed by our process advisors, *Ernst &amp; Young (E&amp;Y)*. Shortlisted entries
+			],
+			[
+				'que' => "Who will review my application?",
+				'answer' => "Your application will be reviewed by our process advisors, *Ernst &amp; Young (E&amp;Y)*. Shortlisted entries
             will then be evaluated by a pre-jury panel and, if selected, forwarded to the grand jury."
-        ],
-        [
-            'que' => "How will I know if my nomination is accepted?",
-            'answer' => "You will receive an email notification once your nomination is accepted. You can also track the status
+			],
+			[
+				'que' => "How will I know if my nomination is accepted?",
+				'answer' => "You will receive an email notification once your nomination is accepted. You can also track the status
             of your application through your dashboard."
-        ],
-        [
-            'que' => "What happens after my nomination is accepted?",
-            'answer' => "Once accepted, your nomination will be reviewed by the pre-jury. If it progresses further, it will be
+			],
+			[
+				'que' => "What happens after my nomination is accepted?",
+				'answer' => "Once accepted, your nomination will be reviewed by the pre-jury. If it progresses further, it will be
             presented to the grand jury. Details of the grand jury evaluation will be shared later."
-        ],
-        [
-            'que' => "What if my nomination is rejected?",
-            'answer' => "If your nomination is not shortlisted, you will be notified via email. Feedback and reasons for
+			],
+			[
+				'que' => "What if my nomination is rejected?",
+				'answer' => "If your nomination is not shortlisted, you will be notified via email. Feedback and reasons for
             rejection can be accessed by logging into your dashboard."
-        ],
-        [
-            'que' => "Can I apply for multiple categories?",
-            'answer' => "Yes, MSMEs can apply for multiple categories, provided they meet the eligibility criteria for each
+			],
+			[
+				'que' => "Can I apply for multiple categories?",
+				'answer' => "Yes, MSMEs can apply for multiple categories, provided they meet the eligibility criteria for each
             category."
-        ],
-        [
-            'que' => "What documents are required for submission?",
-            'answer' => "You must submit your MSME certificate, GST registration, audited financials for the last two years,
+			],
+			[
+				'que' => "What documents are required for submission?",
+				'answer' => "You must submit your MSME certificate, GST registration, audited financials for the last two years,
             and other supporting documents in formats like PDF, DOC, or JPEG (maximum size 2 MB per
             document)."
-        ],
-        [
-            'que' => "How will winners be announced?",
-            'answer' => "The winners will be announced during the grand awards ceremony. Details of the ceremony will be
+			],
+			[
+				'que' => "How will winners be announced?",
+				'answer' => "The winners will be announced during the grand awards ceremony. Details of the ceremony will be
             shared with shortlisted participants closer to the date."
-        ],
-        [
-            'que' => "Who can I contact for assistance?",
-            'answer' => "For any queries, please email us at *lotmails@timesgroup.com*. Our team will assist you with the
+			],
+			[
+				'que' => "Who can I contact for assistance?",
+				'answer' => "For any queries, please email us at *lotmails@timesgroup.com*. Our team will assist you with the
             application process and related questions."
-        ],
-    ];
+			],
+		];
 
 		$this->load->award_page('faq', $this->data);
 	}
