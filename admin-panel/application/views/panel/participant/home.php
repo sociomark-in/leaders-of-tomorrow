@@ -116,7 +116,7 @@
 					</div>
 					<div class="col-12">
 						<div class="text-center">
-							<a class="btn btn-primary" href="<?= base_url('my-applications') ?>">View All Categories</a>
+							<a class="btn btn-primary" href="<?= base_url('my-nominations') ?>">View All Categories</a>
 						</div>
 					</div>
 				</div>

@@ -62,7 +62,7 @@ $venue = ($city['venue'] == "") ? "Yet to be decided!" : $city['venue'];
         					</div>
         				</div>
         			</div>
-        			<div class="col-xl-4 col-lg-6 col-12">
+        			<div class="col-xl-6 col-lg-6 col-12">
         				<div class="card event-ticket">
         					<div class="card-body">
         						<p class="mb-0">Venue</p>

@@ -80,9 +80,6 @@
 			<div class="row g-3 flex-row-reverse">
 				<div class="col-lg-4">
 					<div class="p-3 bg-light">
-						
-
-
 						<p>In your response, you may cover:</p>
 						<ul>
 							<li><strong>Agility in Action</strong> – How did you respond to market volatility, supply-chain changes, competition, or technological disruption? What tough calls or course-corrections did you lead to keep the business resilient and future-ready?</li>
@@ -93,7 +90,7 @@
 				</div>
 				<div class="col-lg-8">
 					<div class="">
-						<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
+						<label for="" class="form-label">Between April 01, 2023 and March 31, 2025, how have you personally embodied “Agility. Ambition. Ascent.” as an entrepreneur/innovator </label>
 						<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>

@@ -52,7 +52,7 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Mumbai",
 					'banner' => true,
-					// 	'agenda' => true,
+					
 					'gallery' => true,
 					'date' => "2025-08-22 19:00:00",
 					'venue' => 'Mumbai',
@@ -129,6 +129,7 @@ class CityController extends BaseController
 
 				$this->data['city'] = [
 					'name' => "Gurugram",
+					'banner' => true,
 				// 	'agenda' => true,
 				// 	'register' => "btn_56a27aa9652e",
 					'gallery' => true,
@@ -236,14 +237,21 @@ class CityController extends BaseController
 					'date' => "2025-10-15 19:00:00",
 					'venue' => 'Hotel Novotel, Pune',
 					'banner' => true,
+					'gallery' => true,
+				// 	'agenda' => true,
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png'
+						]
+					],
 					'theme' => [
 						'title' => "Pune: At the Forefront of skilled growth & innovation",
 						'description' => 'Pune stands at the forefront of skilling, innovation, and growth, powered by one of the highest employability rates in the country. With a thriving IT, manufacturing, and startup ecosystem, the city is shaping the future of work and enterprise.<br>
  							To explore how this city is redefining India’s urban landscape, join <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong>.',
-						// 	'embed' => '',
+						'embed' => 'https://www.youtube.com/embed/t-k3m8_fvY8',
 					],
-					// 	'agenda' => true,
-					'register' => "btn_d1f982455c9c",
+				// 	'register' => "btn_d1f982455c9c",
 					'speakers' => [
 						[
 							'photo' => "Vishal_Rally.png",
@@ -265,18 +273,281 @@ class CityController extends BaseController
 							'name' => "Payal Rajpal",
 							'description' => "Director, Robotex India",
 						],
-						// [
-						// 	'photo' => "Shazia_Khan.png",
-						// 	'name' => "Shazia Khan",
-						// 	'description' => "Zonal Head- West, IDFC FIRST Bank",
-						// ],
+						[
+							'photo' => "Shazia_Khan.png",
+							'name' => "Shazia Khan",
+							'description' => "Zonal Head- West, IDFC FIRST Bank",
+						],
 					],
+				];
+				break;
+			case 'lucknow':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Lucknow",
+					'date' => "2025-10-31 19:00:00",
+					'venue' => 'Golden Tulip, Lucknow',
+					'theme' => [
+						'title' => "Lucknow: Engine of Growth & Governance in the Heart of UP",
+						'description' => 'Lucknow is emerging as the engine of growth and governance in the heart of Uttar Pradesh, driven by strong infrastructure, administrative efficiency and a growing business ecosystem. With strategic government initiatives, improved connectivity and skilled workforce, the city is attracting investments across sectors. To understand how Lucknow is shaping the future of entrepreneurship in the state, join <strong class="text-red">Leaders of Tomorrow Lucknow Springboard</strong>. - one pit stop on our pan-India roadshow series, only on ET NOW.',
+						'embed' => 'https://www.youtube.com/embed/DH3aOptcmu0?si=ZW15NRGNXPGm_s0F'
+					],
+				// 	'register' => "btn_7481017a2494",
+					'banner' => true,
+				// 	'agenda' => true,
+					'gallery' => true,
+					'speakers' => [
+						[
+							'photo' => "Madhukar_Pant.png",
+							'name' => "Madhukar Pant",
+							'description' => "Business Head-Loan Against Property, IDFC FIRST Bank"
+						],	  
+						[
+							'photo' => "Jayant_Krishna.png",
+							'name' => "Jayant Krishna",
+							'description' => "Former CEO, NSDC | Senior Fellow, Chair in US-India Policy Studies, CSIS"
+						],
+						[
+							'photo' => "Dinesh_Goyal.png",
+							'name' => "Dinesh Goyal",
+							'description' => "President, Indian Industries Association"
+						],
+						[
+							'photo' => "Prateek_Rastogi.png",
+							'name' => "Prateek Rastogi",
+							'description' => "Founder & CEO, Better Nutrition & Greenday"
+						],
+						[
+							'photo' => "Bhaavya_Kapur.png",
+							'name' => "Bhaavya Kapur",
+							'description' => "Founder, BK Makeup Studio and Academy"
+						],
+					],
+				];
+				break;
+			case 'chennai':
+				$this->data['page'] = [
+					'title' => "Chennai Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Chennai",
+					'date' => "2025-11-14 19:00:00",
+					'venue' => 'Chennai',
 					'partners' => [
 						[
 							'text' => 'Powered By',
-							'logo' => 'tata-tele.png'
+							'logo' => 'tata-tele.png',
+							'url' => "https://www.tatatelebusiness.com/"
 						]
 					],
+					'theme' => [
+						'title' => "Chennai: The Industrial Powerhouse Of South India ",
+						'description' => 'Chennai is gearing up to showcase why it’s hailed as South India’s industrial powerhouse! From automotive to electronics and aerospace, the city continues to set the pace for India’s manufacturing future. Catch the <strong class="text-red">Leaders of Tomorrow Chennai Springboard on 14th November</strong> — mark your calendars',
+						'embed' => 'https://www.youtube.com/embed/Uttx8h4NUKk?si=LGz8bqRIYTBNsAp-'
+					],
+				// 	'register' => "btn_f2b8650f63e7",
+					'banner' => true,
+				// 	'agenda' => true,
+					'gallery' => true,
+    				'speakers' => [
+						[
+							'photo' => "Prakash_Venkatrao.png",
+							'name' => "Prakash Venkatrao",
+							'description' => "Head Client Coverage-South, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Anvize_Rodrigues.png",
+							'name' => "Anvize Rodrigues",
+							'description' => "Chief Information Officer, Tata Teleservices",
+						],
+						[
+							'photo' => "Vikram_Srinivas.png",
+							'name' => "Vikram Srinivas",
+							'description' => "Office Managing Partner-Chennai, KPMG in India",
+						],
+						[
+							'photo' => "Dr_Arunkumar.png",
+							'name' => "Dr. Arunkumar Govindarajan",
+							'description' => "ED & Radiologist, Aarthi Scans & Labs",
+						],
+						[
+							'photo' => "AS_Keshav.png",
+							'name' => "AS Keshav",
+							'description' => "CEO & Co-Founder, KS Smart Solutions",
+						],
+    				]
+    			];
+				break;
+			case 'indore':
+				$this->data['page'] = [
+					'title' => "Indore Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Indore",
+				// 	'agenda' => true,
+					'gallery' => true,
+					'date' => "2025-11-28 19:00:00",
+					'venue' => 'Sheraton Grand Palace',
+					'theme' => [
+						'title' => "Indore: Building Businesses in the Heart of India",
+						'description' => 'Indore, the commercial capital of Madhya Pradesh, thrives as a hub of manufacturing, textiles, pharmaceuticals, and emerging startups. With a strong focus on sustainability, cleanliness, and innovation, Indore is redefining what it means to build businesses in the heart of India. To explore how Indore is powering Central India’s growth story, join <strong class="text-red">Leaders of Tomorrow Indore Springboard</strong> - one pitstop on our pan-India roadshow series, only <strong class="text-red">on 28th of November, 2025</strong>',
+						'embed' => 'https://www.youtube.com/embed/0KTi1KiRwvM'
+					],
+				    'speakers' => [
+						[
+							'photo' => "Sumeer_Raina.png",
+							'name' => "Sumeer Raina",
+							'description' => "Business Head, Business Loans & SEPL, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Punyashlok_Dwibedy.png",
+							'name' => "Dr. Punyashlok Dwibedy",
+							'description' => "Assistant Professor, Strategic Management & Chairperson, IIO, IIM Indore",
+						],
+						[
+							'photo' => "Yugansh_Soni.png",
+							'name' => "Yugansh Soni",
+							'description' => "Founder, Laabham group",
+						],
+				// 		[
+				// 			'photo' => "Anupama_Modi.png",
+				// 			'name' => "Anupama Modi",
+				// 			'description' => "COO, AIIH Foundation",
+				// 		],
+						[
+							'photo' => "Shweta_Agarwal.png",
+							'name' => "Shweta Agarwal",
+							'description' => "Chairperson, FICCI FLO Indore",
+						],
+
+					],
+					'banner' => true,
+				// 	'register' => "btn_064b0b816ca1",
+    			];
+				break;
+			case 'bengaluru':
+				$this->data['page'] = [
+					'title' => "Bengaluru Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Bengaluru",
+				// 	'agenda' => true,
+					'date' => "2025-12-10 19:00:00",
+					'venue' => 'The Zuri Whitefield, Bengaluru',
+					'gallery' => true,
+					'theme' => [
+						'title' => "Bengaluru: Shaping India’s Global Tech Identity",
+						'description' => 'Bengaluru’s innovation story takes centre stage as we bring the Springboard to the heart of India’s tech hub on <strong class="text-red">10th December </strong>. Join us for insights, conversations, and growth opportunities for MSMEs. Mark your calendars.',
+						'embed' => 'https://www.youtube.com/embed/-WAC9WgjzJk'
+					],
+						    'speakers' => [
+				// 		[
+				// 			'photo' => "Girish_Malhotra.png",
+				// 			'name' => "Girish Malhotra",
+				// 			'description' => "Head New Economy Group, IDFC FIRST Bank",
+				// 		],
+						[
+							'photo' => "Pravir_Dahiya.png",
+							'name' => "Pravir Dahiya",
+							'description' => "Chief Technology Officer, Tata Teleservices",
+						],
+						[
+							'photo' => "Madan_Padaki.png",
+							'name' => "Madan Padaki",
+							'description' => "President, TiE Bengaluru",
+						],
+						[
+							'photo' => "Sahmita_R.png",
+							'name' => "Sahmita R",
+							'description' => "Founding CEO, Resilience AI",
+						],
+						[
+							'photo' => "Bhaskar_Verma.png",
+							'name' => "Bhaskar Verma",
+							'description' => "Regional Director, Board Member, Nasscom, Karnataka Digital Economy Mission ",
+						],
+
+					],
+					'banner' => true,
+					'register' => "btn_159777224b9b",
+    				'partners' => [
+    					[
+    						'text' => 'Powered By',
+    						'logo' => 'tata-tele.png'
+    					]
+    				],
+					
+    			];
+				break;
+			case 'coimbatore':
+				$this->data['page'] = [
+					'title' => "Coimbatore Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Coimbatore",
+					'agenda' => true,
+				    'banner' => true,
+					'date' => "2025-12-19 19:00:00",
+					'venue' => 'Le Meridian, Coimbatore',
+					'theme' => [
+						'title' => "Coimbatore: India’s China Plus One MSME Hub",
+						'description' => 'Once a textile mill town, Coimbatore has transformed into Tamil Nadus second-largest city and an industrial powerhouse in just ten years. Fueled by an 84% literacy rate and diverse manufacturing capabilities, this rising hub now attracts US and European companies seeking a compelling alternative to China for their production needs. To discover how MSMEs can capitalise this momentum, join us at the <strong class="text-red">Coimbatore Springboard – one pitstop on our pan India roadshow series </strong>, <strong class="text-red">on the 19th of December 2025</strong>',
+    					'embed' => 'https://www.youtube.com/embed/EPJ-yMm9V_A',
+					],
+				    'speakers' => [
+						[
+							'photo' => "Anto_Alan.png",
+							'name' => "Anto Alan",
+							'description' => "Head - Business Banking & Agri, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Aparna_Sunku.png",
+							'name' => "Aparna Sunku",
+							'description' => "Chairperson,Federation of Indian Chambers of Commerce & Industry Ladies Organisation (FICCI FLO), Coimbatore Chapter",
+						],
+						[
+							'photo' => "Rajiv_Sundar.png",
+							'name' => "Rajiv Sundar",
+							'description' => "Partner, Deloitte India",
+						],
+						[
+							'photo' => "S_Manikandan.png",
+							'name' => "S Manikandan",
+							'description' => "Board Member & Chair,Southern India Chamber of Commerce and Industry (SICCI)",
+						],
+						[
+							'photo' => "M_Karthikeyan.png",
+							'name' => "M Karthikeyan",
+							'description' => "President , CODISSIA",
+						],
+
+					],
+					'register' => "btn_702175a4b3d4",
+    			];
+				break;
+			case 'delhi':
+				$this->data['page'] = [
+					'title' => "Delhi Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Delhi",
+				// 	'agenda' => true,
+				    'banner' => true,
+					'date' => "2026-01-09 19:00:00",
+					'venue' => 'New Delhi',
+				// 	'theme' => [
+    // 					'title' => "Delhi: Where Policy Meets Progress",
+    // 					'description' => '',
+    // 					'embed' => '',
+    // 				],
+    				'partners' => [
+    					[
+    						'text' => 'Powered By',
+    						'logo' => 'tata-tele.png'
+    					]
+    				],
 				];
 				break;
 			default:
@@ -315,13 +586,6 @@ class CityController extends BaseController
 					'title' => "Gurugram Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Gurugram";
-				$this->data['city']['partners'] = [
-					[
-						'text' => 'Powered By',
-						'logo' => 'tata-tele.png',
-						'url' => "https://www.tatatelebusiness.com/"
-					]
-				];
 				$this->load->city_view('gallery', $this->data);
 				break;
 			case 'hyderabad':
@@ -342,16 +606,49 @@ class CityController extends BaseController
 				$this->data['page'] = [
 					'title' => "Pune Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
-				$this->data['city'] = [
-					'name' => "Pune",
-					'partners' => [
-						[
-							'text' => 'Powered By',
-							'logo' => 'tata-tele.png',
-							'url' => "https://www.tatatelebusiness.com/"
-						]
-					],
+				$this->data['city']['name'] = "Pune";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
 				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'chennai':
+				$this->data['page'] = [
+					'title' => "Chennai Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Chennai";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'lucknow':
+				$this->data['page'] = [
+					'title' => "Lucknow Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Lucknow";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'indore':
+				$this->data['page'] = [
+					'title' => "Indore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Indore";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'bengaluru':
+				$this->data['page'] = [
+					'title' => "Bengaluru Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Bengaluru";
 				$this->load->city_view('gallery', $this->data);
 				break;
 

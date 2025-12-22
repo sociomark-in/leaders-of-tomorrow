@@ -71,6 +71,7 @@ $route['city/(:any)/rsvp/thank-you'] = 'main/CityController/rsvp_thankyou/$1';
 $route['awards'] = 'main/AwardsController';
 $route['awards/gallery'] = 'main/AwardsController/gallery';
 $route['awards/terms-and-conditions'] = 'main/AwardsController/terms_conditions';
+$route['awards/faq'] = 'main/AwardsController/faq';
 $route['awards/categories'] = 'main/AwardsController/categories';
 $route['awards/category/(:any)'] = 'main/AwardsController/category_single/$1';
 $route['awards/register-to-attend'] = 'main/AwardsController/attendee_register';

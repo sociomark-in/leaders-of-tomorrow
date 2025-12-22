@@ -11,7 +11,7 @@ if (!is_null($springboards)) {
 ?>
 
 <main>
-	<section class="p-0">
+	<section class="pt-0">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
@@ -40,16 +40,67 @@ if (!is_null($springboards)) {
 						</div>
 					</div>
 				</div>
-				<?php if ((date('Y-m-d H:i:s') > '2024-10-24 09:23:00') && date('Y-m-d H:i:s') < '2024-11-01 12:00:00') : ?>
+				<?php if ((date('Y-m-d H:i:s') > '2025-11-11 11:30:00') && date('Y-m-d H:i:s') < '2025-11-16 23:00:00'): ?>
 					<div class="swiper-slide">
 						<div class="diwali-section bg-red">
-							<div class="">
+							<a href="https://www.youtube.com/watch?v=IkMY4dBiF-A" target="_blank" class="d-block">
 								<div class="row justify-content-center">
 									<div class="col-12">
 										<picture>
-											<source srcset="<?= base_url('assets/images/banners/home_01-h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-											<source srcset="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-											<img class="w-100" src="<?= base_url('assets/images/banners/home_01-v.jpg') ?>" alt="">
+											<source srcset="<?= base_url('assets/images/banners/banner_1900x1000_1.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/banners/banner_900x1400_1.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/banners/banner_900x1400_1.jpg') ?>" alt="">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif ?>
+				<?php if ((date('Y-m-d H:i:s') > '2025-11-17 11:30:00') && date('Y-m-d H:i:s') < '2025-11-21 23:00:00'): ?>
+					<div class="swiper-slide">
+						<div class="diwali-section bg-red">
+							<a href="https://www.youtube.com/watch?v=9uhEy4mElJ4&list=PL51KTBvlQFEE58gLiFYhQNnTpxr8xQxxT" target="_blank" class="d-block">
+								<div class="row justify-content-center">
+									<div class="col-12">
+										<picture>
+											<source srcset="<?= base_url('assets/images/banners/banner_1900x1000_2.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/banners/banner_900x1400_2.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/banners/banner_900x1400_2.jpg') ?>" alt="">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif ?>
+				<?php if ((date('Y-m-d H:i:s') > '2025-12-01 11:30:00') && date('Y-m-d H:i:s') < '2025-12-05 23:00:00'): ?>
+					<div class="swiper-slide">
+						<div class="diwali-section bg-red">
+							<a href="https://www.youtube.com/watch?v=9uhEy4mElJ4&list=PL51KTBvlQFEE58gLiFYhQNnTpxr8xQxxT" target="_blank" class="d-block">
+								<div class="row justify-content-center">
+									<div class="col-12">
+										<picture>
+											<source srcset="<?= base_url('assets/images/banners/banner_1900x1000_3.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/banners/banner_900x1400_3.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/banners/banner_900x1400_3.jpg') ?>" alt="">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif ?>
+				<?php if ((date('Y-m-d H:i:s') > '2025-12-08 11:30:00') && date('Y-m-d H:i:s') < '2025-12-12 23:00:00'): ?>
+					<div class="swiper-slide">
+						<div class="diwali-section bg-red">
+							<a href="https://youtu.be/smxSd4HlfGU?si=ktodckEMWmYh7voF" target="_blank" class="d-block">
+								<div class="row justify-content-center">
+									<div class="col-12">
+										<picture>
+											<source srcset="<?= base_url('assets/images/banners/banner_1900x1000_4.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
+											<source srcset="<?= base_url('assets/images/banners/banner_900x1400_4.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
+											<img class="w-100" src="<?= base_url('assets/images/banners/banner_900x1400_4.jpg') ?>" alt="">
 										</picture>
 									</div>
 								</div>
