@@ -13,6 +13,8 @@
 	submitting the application form itself on the website</li>
 	<li>The final eligibility of the nominees is subject to the discretion and approval of the Award
 	management and Jury</li>
+	<li>Your responses will be saved as a draft only after completing all mandatory fields in the section and
+clicking Save &amp; Continue. You may then proceed or close the form and return later.</li>
 	<li>In case of any queries relating to the application form or participation in the awards please write
 	to us on: lotmails@timesgroup.com</li>
 </ul>

@@ -75,19 +75,10 @@ if ($nomination['stage'] >= 1) {
 							include_once APPPATH . '/views/panel/participant/categories/global.php';
 							# code...
 							break;
-						case '1_INDIVIDUAL':
-							include_once APPPATH . '/views/panel/participant/categories/individual_1.php';
-							# code...
-							break;
-						case '2_INDIVIDUAL':
-							include_once APPPATH . '/views/panel/participant/categories/individual_2.php';
-							# code...
-							break;
 
 						default:
 							switch (explode('_', $category['type'])[1]) {
 								case 'IDFC':
-									include_once APPPATH . '/views/panel/participant/categories/idfc.php';
 									break;
 
 								default:
