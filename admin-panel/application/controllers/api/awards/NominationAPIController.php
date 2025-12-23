@@ -66,25 +66,27 @@ class NominationAPIController extends CI_Controller
 		$r = random_string();
 		$this->load->library('upload', $config);
 		foreach ($_files as $key => $file) {
-			$new_name = time() . "_" . $r . "_" . $file['name'];
-			$config['file_name'] = $new_name;
+			if ($file['size'] > 0) {
+				$new_name = time() . "_" . $r . "_" . $file['name'];
+				$config['file_name'] = $new_name;
 
-			/* PDF Merger Script */
-			// $tmp = $file['tmp_name'];
-			// $pdf->addPDF($tmp);
-			// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
-			/* PDF Merger Script */
+				/* PDF Merger Script */
+				// $tmp = $file['tmp_name'];
+				// $pdf->addPDF($tmp);
+				// shell_exec("gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" . $tmp . " " . $tmp . "");
+				/* PDF Merger Script */
 
-			/* File Upload Script */
-			$this->upload->initialize($config);
-			if (!$this->upload->do_upload($key)) {
-				// An error occurred
-				echo "Error: " . $this->upload->display_errors();
-			} else {
-				/* No Error - File Upload Script */
-				/* Data Upload */
-				$response[$i] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
-				$i++;
+				/* File Upload Script */
+				$this->upload->initialize($config);
+				if (!$this->upload->do_upload($key)) {
+					// An error occurred
+					echo "Error: " . $this->upload->display_errors();
+				} else {
+					/* No Error - File Upload Script */
+					/* Data Upload */
+					$response[$i] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
+					$i++;
+				}
 			}
 		}
 		// $pdf->merge('file', $docket_name, 'P');
@@ -301,13 +303,12 @@ class NominationAPIController extends CI_Controller
 							$data = [
 								'stage_status' => $s,
 
-								'id_255401' =>  $response[0],
-								'id_255402' =>  $response[1],
-								'id_255403' =>  $response[2],
-								'id_255404' =>  $response[3],
-								'id_255405' =>  $response[4],
-								'id_255406' =>  $response[5],
-								'id_255407' =>  $response[6],
+								'id_255401' =>  $response[0] ?? null,
+								'id_255402' =>  $response[1] ?? null,
+								'id_255406' =>  $response[2] ?? null,
+								'id_255407' =>  $response[3] ?? null,
+								'id_255404' =>  $response[4] ?? null,
+								'id_255405' =>  $response[5] ?? null,
 							];
 							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 							if ($rows == 0) {
@@ -412,13 +413,12 @@ class NominationAPIController extends CI_Controller
 							$data = [
 								'stage_status' => $s,
 
-								'id_255401' =>  $response[0],
-								'id_255402' =>  $response[1],
-								'id_255403' =>  $response[2],
-								'id_255404' =>  $response[3],
-								'id_255405' =>  $response[4],
-								'id_255406' =>  $response[5],
-								'id_255407' =>  $response[6],
+								'id_255401' =>  $response[0] ?? null,
+								'id_255402' =>  $response[1] ?? null,
+								'id_255406' =>  $response[2] ?? null,
+								'id_255407' =>  $response[3] ?? null,
+								'id_255404' =>  $response[4] ?? null,
+								'id_255405' =>  $response[5] ?? null,
 							];
 						}
 
@@ -553,16 +553,14 @@ class NominationAPIController extends CI_Controller
 						break;
 					case 1: # 	 Organization Details
 						$data = [
-							'id_255101' => $this->request["financial_1_1"],
-							'id_255102' => $this->request["financial_1_2"],
-							'id_255103' => $this->request["financial_2_1"],
-							'id_255104' => $this->request["financial_2_2"],
-							'id_255105' => $this->request["financial_3_1"],
-							'id_255106' => $this->request["financial_3_2"],
-							'id_255107' => $this->request["financial_4_1"],
-							'id_255108' => $this->request["financial_4_2"],
-							'id_255109' => $this->request["financial_5_1"],
-							'id_255110' => $this->request["financial_6_1"],
+							'id_255101' => $this->request["financial_1_2"],
+							'id_255102' => $this->request["financial_1_1"],
+							'id_255103' => $this->request["financial_2_2"],
+							'id_255104' => $this->request["financial_2_1"],
+							'id_255105' => $this->request["financial_4_2"],
+							'id_255106' => $this->request["financial_4_1"],
+							'id_255107' => $this->request["financial_5_1"],
+							'id_255108' => $this->request["financial_6_1"],
 
 							'id_255201' => $this->request["organization"]['size'],
 							'id_255202' => $this->request["organization_overview"],
@@ -623,21 +621,20 @@ class NominationAPIController extends CI_Controller
 						$category_id = $this->input->post('category_id');
 						$f = 1;
 						foreach ($_FILES as $key => $file) {
-							if ($file['size'] == 0) {
-								$f = 0;
-								break;
-							}
+							// if ($file['size'] == 0) {
+							// 	$f = 0;
+							// 	break;
+							// }
 						}
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 							$data = [
 								'stage_status' => $s,
 
-								'id_255401' =>  $response[0],
-								'id_255402' =>  $response[1],
-								'id_255403' =>  $response[2],
-								'id_255404' =>  $response[3],
-								'id_255405' =>  $response[4],
+								'id_255401' =>  $response[0] ?? null,
+								'id_255402' =>  $response[1] ?? null,
+								'id_255403' =>  $response[2] ?? null,
+								'id_255405' =>  $response[3] ?? null,
 							];
 							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 							if ($rows == 0) {
@@ -656,10 +653,10 @@ class NominationAPIController extends CI_Controller
 						$category_id = $this->input->post('category_id');
 						$f = 1;
 						foreach ($_FILES as $key => $file) {
-							if ($file['size'] == 0) {
-								$f = 0;
-								break;
-							}
+							// if ($file['size'] == 0) {
+							// 	$f = 0;
+							// 	break;
+							// }
 						}
 
 						$data = [
@@ -697,16 +694,14 @@ class NominationAPIController extends CI_Controller
 							'id_255007'	=> $this->request['gender'],							//date_of_birth
 							'id_255008'	=> $this->request['dob'],							//date_of_birth
 
-							'id_255101' => $this->request["financial_1_1"],
-							'id_255102' => $this->request["financial_1_2"],
-							'id_255103' => $this->request["financial_2_1"],
-							'id_255104' => $this->request["financial_2_2"],
-							'id_255105' => $this->request["financial_3_1"],
-							'id_255106' => $this->request["financial_3_2"],
-							'id_255107' => $this->request["financial_4_1"],
-							'id_255108' => $this->request["financial_4_2"],
-							'id_255109' => $this->request["financial_5_1"],
-							'id_255110' => $this->request["financial_6_1"],
+							'id_255101' => $this->request["financial_1_2"],
+							'id_255102' => $this->request["financial_1_1"],
+							'id_255103' => $this->request["financial_2_2"],
+							'id_255104' => $this->request["financial_2_1"],
+							'id_255105' => $this->request["financial_4_2"],
+							'id_255106' => $this->request["financial_4_1"],
+							'id_255107' => $this->request["financial_5_1"],
+							'id_255108' => $this->request["financial_6_1"],
 
 							'id_255201' => $this->request["organization"]['size'],
 							'id_255202' => $this->request["organization_overview"],
@@ -733,11 +728,10 @@ class NominationAPIController extends CI_Controller
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 
-							$data['id_255401'] =  $response[0];
-							$data['id_255402'] =  $response[1];
-							$data['id_255403'] =  $response[2];
-							$data['id_255404'] =  $response[3];
-							$data['id_255405'] =  $response[4];
+							$data['id_255401'] =  $response[0] ?? null;
+							$data['id_255402'] =  $response[1] ?? null;
+							$data['id_255403'] =  $response[2] ?? null;
+							$data['id_255405'] =  $response[3] ?? null;
 						}
 						// Sanitize $data Array for DB Insert
 						foreach ($data as $key => $value) {
@@ -866,16 +860,14 @@ class NominationAPIController extends CI_Controller
 								break;
 							case 1: 	# ☑ Organization Details							
 								$data = [
-									'id_255101' => $this->request["financial_1_1"],
-									'id_255102' => $this->request["financial_1_2"],
-									'id_255103' => $this->request["financial_2_1"],
-									'id_255104' => $this->request["financial_2_2"],
-									'id_255105' => $this->request["financial_3_1"],
-									'id_255106' => $this->request["financial_3_2"],
-									'id_255107' => $this->request["financial_4_1"],
-									'id_255108' => $this->request["financial_4_2"],
-									'id_255109' => $this->request["financial_5_1"],
-									'id_255110' => $this->request["financial_6_1"],
+									'id_255101' => $this->request["financial_1_2"],
+									'id_255102' => $this->request["financial_1_1"],
+									'id_255103' => $this->request["financial_2_2"],
+									'id_255104' => $this->request["financial_2_1"],
+									'id_255105' => $this->request["financial_3_2"],
+									'id_255106' => $this->request["financial_3_1"],
+									'id_255107' => $this->request["financial_5_1"],
+									'id_255108' => $this->request["financial_6_1"],
 
 									'id_255201' => $this->request["organization"]['size'],
 									'id_255202' => $this->request["organization_overview"],
@@ -930,21 +922,20 @@ class NominationAPIController extends CI_Controller
 								$category_id = $this->input->post('category_id');
 								$f = 1;
 								foreach ($_FILES as $key => $file) {
-									if ($file['size'] == 0) {
-										$f = 0;
-										break;
-									}
+									// if ($file['size'] == 0) {
+									// 	$f = 0;
+									// 	break;
+									// }
 								}
 								if ($f) {
 									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 									$data = [
 										'stage_status' => $s,
 
-										'id_255401' =>  $response[0],
-										'id_255402' =>  $response[1],
-										'id_255403' =>  $response[2],
-										'id_255404' =>  $response[3],
-										'id_255405' =>  $response[4],
+										'id_255401' =>  $response[0] ?? null,
+										'id_255402' =>  $response[1] ?? null,
+										'id_255403' =>  $response[2] ?? null,
+										'id_255405' =>  $response[3] ?? null,
 									];
 									$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
 									if ($rows == 0) {
@@ -993,16 +984,14 @@ class NominationAPIController extends CI_Controller
 									'id_255007'	=> $this->request['gender'],							//date_of_birth
 									'id_255008'	=> $this->request['dob'],							//date_of_birth
 
-									'id_255101' => $this->request["financial_1_1"],
-									'id_255102' => $this->request["financial_1_2"],
-									'id_255103' => $this->request["financial_2_1"],
-									'id_255104' => $this->request["financial_2_2"],
-									'id_255105' => $this->request["financial_3_1"],
-									'id_255106' => $this->request["financial_3_2"],
-									'id_255107' => $this->request["financial_4_1"],
-									'id_255108' => $this->request["financial_4_2"],
-									'id_255109' => $this->request["financial_5_1"],
-									'id_255110' => $this->request["financial_6_1"],
+									'id_255101' => $this->request["financial_1_2"],
+									'id_255102' => $this->request["financial_1_1"],
+									'id_255103' => $this->request["financial_2_2"],
+									'id_255104' => $this->request["financial_2_1"],
+									'id_255105' => $this->request["financial_3_2"],
+									'id_255106' => $this->request["financial_3_1"],
+									'id_255107' => $this->request["financial_5_1"],
+									'id_255108' => $this->request["financial_6_1"],
 
 									'id_255201' => $this->request["organization"]['size'],
 									'id_255202' => $this->request["organization_overview"],
@@ -1024,11 +1013,10 @@ class NominationAPIController extends CI_Controller
 								if ($f) {
 									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 
-									$data['id_255401'] =  $response[0];
-									$data['id_255402'] =  $response[1];
-									$data['id_255403'] =  $response[2];
-									$data['id_255404'] =  $response[3];
-									$data['id_255405'] =  $response[4];
+									$data['id_255401'] =  $response[0] ?? null;
+									$data['id_255402'] =  $response[1] ?? null;
+									$data['id_255403'] =  $response[2] ?? null;
+									$data['id_255405'] =  $response[3] ?? null;
 								}
 
 								// Sanitize $data Array for DB Insert

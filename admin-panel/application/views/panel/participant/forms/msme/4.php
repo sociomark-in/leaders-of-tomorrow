@@ -44,7 +44,7 @@
 						<div class="form-check">
 							<input required name="alt_category_id" value="2_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption2" <?= ($application['id_255601'] == "2_INDIVIDUAL") ?	 "checked" : "" ?>>
 							<label class="form-check-label" for="checkOption2">
-								<h5 class="mb-2">Next Gen Innovator</h5>
+								<h5 class="mb-2">Next Gen Entrepreneur</h5>
 								<small class="text-muted">
 									I confirm that I am <strong>up to 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 and less than 5 years</strong> old.
 								</small>
@@ -93,7 +93,7 @@
 				</div>
 				<div class="col-lg-8">
 					<div class="">
-						<label for="" class="form-label">Between April 01, 2023 and March 31, 2025, how have you personally embodied “Agility. Ambition. Ascent.” as an entrepreneur/innovator</label>
+						<label for="" class="form-label">Between April 01, 2023 and March 31, 2025, how have you personally embodied “Agility. Ambition. Ascent.” as an entrepreneur/innovator </label>
 						<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>

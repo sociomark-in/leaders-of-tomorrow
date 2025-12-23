@@ -37,42 +37,31 @@
 					<?php if (isset($application['id_255401'])): ?>
 						<label for="" class="form-label">MSME Certificate&nbsp;<a class="link-icon" href="<?= base_url() ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">MSME Certificate</label>
+						<label for="" class="form-label">MSME Certificate<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
-					<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<input type="file" required accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<?php if (isset($application['id_255402'])): ?>
-						<label for="" class="form-label">Incorporation Certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+						<label for="" class="form-label">Company incorporation certificate/Business registration/GST certificate&nbsp;<a class="link-icon" href="<?= base_url($application['id_255402']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">Incorporation Certificate</label>
+						<label for="" class="form-label">Company incorporation certificate/Business registration/GST certificate<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
-					<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<input type="file" required accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 				<div class="">
 					<?php if (isset($application['id_255403'])): ?>
-						<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+						<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 					<?php else: ?>
-						<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+						<label for="" class="form-label">Collaterals to Support the Impact<sup class="text-danger">&ast;</sup></label>
 					<?php endif ?>
-					<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-					<span class="form-text">(PDF of Maximum Size 2MB)</span>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-				<div class="">
-					<?php if (isset($application['id_255404'])): ?>
-						<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
-					<?php else: ?>
-						<label for="" class="form-label">Collaterals to Support the Impact</label>
-					<?php endif ?>
-					<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<input type="file" required accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 				</div>
 			</div>
@@ -83,7 +72,7 @@
 					<?php else: ?>
 						<label for="" class="form-label">Any other Collaterals</label>
 					<?php endif ?>
-					<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+					<input type="file" required accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 					<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
 				</div>
 			</div>
@@ -97,6 +86,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
 		<script>
+			$("input[type='file']").each(function(index, element) {
+				if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+					$(element).prop("required", true);
+				} else {
+					$(element).prop("required", false);
+				}
+			});
 			$('.dropify').dropify({
 				error: {
 					'fileSize': 'The file size is too big ({{ value }} max).',

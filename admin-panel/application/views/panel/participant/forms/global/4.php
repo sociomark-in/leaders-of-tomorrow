@@ -44,7 +44,7 @@
 						<div class="form-check">
 							<input required name="alt_category_id" value="2_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption2" <?= ($application['id_255601'] == "2_INDIVIDUAL") ?	 "checked" : "" ?>>
 							<label class="form-check-label" for="checkOption2">
-								<h5 class="mb-2">Next Gen Innovator</h5>
+								<h5 class="mb-2">Next Gen Entrepreneur</h5>
 								<small class="text-muted">
 									I confirm that I am <strong>up to 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 and less than 5 years</strong> old.
 								</small>

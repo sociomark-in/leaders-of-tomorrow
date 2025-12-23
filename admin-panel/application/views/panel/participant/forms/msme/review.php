@@ -548,7 +548,7 @@
 									<div class="form-check">
 										<input required name="alt_category_id" value="2_INDIVIDUAL" class="form-check-input" type="radio" id="checkOption2" <?= ($application['id_255601'] == "2_INDIVIDUAL") ?	 "checked" : "" ?>>
 										<label class="form-check-label" for="checkOption2">
-											<h5 class="mb-2">Next Gen Innovator</h5>
+											<h5 class="mb-2">Next Gen Entrepreneur</h5>
 											<small class="text-muted">
 												I confirm that I am <strong>up to 35 years</strong> of age as on <strong>March 31, 2025</strong>, and my MSME is <strong>more than 2 and less than 5 years</strong> old.
 											</small>
@@ -584,6 +584,9 @@
 						<div class="row g-3 flex-row-reverse">
 							<div class="col-lg-4">
 								<div class="p-3 bg-light">
+
+
+
 									<p>In your response, you may cover:</p>
 									<ul>
 										<li><strong>Agility in Action</strong> – How did you respond to market volatility, supply-chain changes, competition, or technological disruption? What tough calls or course-corrections did you lead to keep the business resilient and future-ready?</li>
@@ -594,7 +597,7 @@
 							</div>
 							<div class="col-lg-8">
 								<div class="">
-									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
+									<label for="" class="form-label">Between April 01, 2023 and March 31, 2025, how have you personally embodied “Agility. Ambition. Ascent.” as an entrepreneur/innovator </label>
 									<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
@@ -628,7 +631,7 @@
 									<?php else: ?>
 										<label for="" class="form-label">MSME Certificate<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
@@ -639,30 +642,19 @@
 									<?php else: ?>
 										<label for="" class="form-label">Company incorporation certificate/Business registration/GST certificate<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="">
-									<?php if (isset($application['id_255404'])): ?>
-										<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
-									<?php else: ?>
-										<label for="" class="form-label">Collaterals to Support the Impact<sup class="text-danger">&ast;</sup></label>
-									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
 								<div class="">
 									<?php if (isset($application['id_255403'])): ?>
-										<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
+										<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<?php else: ?>
-										<label for="" class="form-label">Photographs or Videos of products/services offered</label>
+										<label for="" class="form-label">Collaterals to Support the Impact<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -672,7 +664,7 @@
 									<?php else: ?>
 										<label for="" class="form-label">Any other Collaterals</label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
@@ -686,6 +678,13 @@
 						<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 						<link rel="stylesheet" href="<?= base_url("assets/css/") ?>dropify-custom.min.css">
 						<script>
+							$("input[type='file']").each(function(index, element) {
+								if ($(element).attr("data-default-file") == "" || $(element).attr("data-default-file") == null) {
+									$(element).prop("required", true);
+								} else {
+									$(element).prop("required", false);
+								}
+							});
 							$('.dropify').dropify({
 								error: {
 									'fileSize': 'The file size is too big ({{ value }} max).',
