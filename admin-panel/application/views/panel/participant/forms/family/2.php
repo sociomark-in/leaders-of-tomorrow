@@ -265,7 +265,7 @@
 				<div class="col-12">
 					<div class="">
 						<label for="" class="form-label">Highlight governance discipline in your family business (e.g., formal board, advisory board, family council, succession planning, documented policies, external professionals, auditors).</label>
-						<textarea required name="organization_family" id="" class="form-control" rows="5"><?= $application['id_255203'] ?></textarea>
+						<textarea required name="organization_family" id="" class="form-control" rows="5"><?= $application['id_255207'] ?></textarea>
 						<span class="form-text">(50 - 5000 characters)</span>
 					</div>
 				</div>

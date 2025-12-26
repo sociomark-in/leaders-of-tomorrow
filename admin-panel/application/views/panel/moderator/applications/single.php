@@ -12,14 +12,14 @@ if ($nomination['stage'] >= 1) {
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/applications') ?>">Applications</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('nominations') ?>">Applications</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Application #<?= $id ?></li>
 			</ol>
 		</nav>
 	</div>
 
 	<div class="row">
-		<div class="col-xl col-12">
+		<div class="col-12">
 			<div class="row">
 				<div class="col-12 grid-margin stretch-card">
 					<div class="card input-group-card">
@@ -27,7 +27,7 @@ if ($nomination['stage'] >= 1) {
 							<div class="row justify-content-between">
 								<div class="col">
 									<h5 class="card-title">Application for <?= $category['name'] ?></h5>
-									<p><a class="link-icon" href="<?= base_url('awards/category/') . $category['code'] ?>" target="_blank">View Category Details<i class="mb-1 px-1" data-feather="external-link"></i></a></p>
+									<p><a class="link-icon" href="<?= app_url('awards/category/') . $category['code'] ?>" target="_blank">View Category Details<i class="mb-1 px-1" data-feather="external-link"></i></a></p>
 								</div>
 								<div class="col-auto">
 									<div class="row g-3">
@@ -47,7 +47,7 @@ if ($nomination['stage'] >= 1) {
 											<?= form_close() ?> 
 											-->
 
-											<a href="<?= base_url('dashboard/application/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
+											<a href="<?= base_url('nomination/' . $application['nomination_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['nomination_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Docket</a>
 										</div>
 									</div>
 								</div>
@@ -55,30 +55,34 @@ if ($nomination['stage'] >= 1) {
 						</div>
 					</div>
 				</div>
-				
-				<div class="col-xl-9 col-12 grid-margin stretch-card">
-					<div class="col-12">
-						<div class="nomination_detailed">
-							<?php
-							switch ($category['type']) {
-								case '1_GLOBAL':
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/global.php';
-									break;
-								case '1_FAMILY':
-									# code...
-									include_once APPPATH . '/views/panel/moderator/full_view/family.php';
-									break;
 
-								default:
-								switch (explode('_', $category['type'])[1]) {
-									default:
-										include_once APPPATH . '/views/panel/moderator/full_view/msme.php';
-										break;
-								}
-								break;
-							}
-							?>
+				<div class="col-xl-9 col-12 grid-margin stretch-card">
+					<div class="row">
+						<div class="col-12">
+							<div class="nomination_detailed">
+								<div class="">
+									<?php
+									switch ($category['type']) {
+										case '1_GLOBAL':
+											# code...
+											include_once APPPATH . '/views/panel/moderator/view/global.php';
+											break;
+										case '1_FAMILY':
+											# code...
+											include_once APPPATH . '/views/panel/moderator/view/family.php';
+											break;
+
+										default:
+											switch (explode('_', $category['type'])[1]) {
+												default:
+													include_once APPPATH . '/views/panel/moderator/view/msme.php';
+													break;
+											}
+											break;
+									}
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -149,4 +153,5 @@ if ($nomination['stage'] >= 1) {
 				</div>
 			</div>
 		</div>
+	</div>
 </main>

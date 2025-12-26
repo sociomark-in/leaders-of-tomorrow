@@ -39,3 +39,4 @@ License: For each use you must have a valid license purchased only from above li
 			<!-- partial:partials/_navbar.html -->
 			<?php $this->load->view('components/panel/partials/_navbar'); ?>
 			<!-- partial -->
+			 

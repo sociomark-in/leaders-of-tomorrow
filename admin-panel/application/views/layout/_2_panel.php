@@ -1,9 +1,8 @@
 <!-- partial:partials/_footer.html -->
 <?php $this->load->view('components/panel/partials/_footer'); ?>
 <!-- partial -->
+</div>
 
-</div>
-</div>
 
 <?php $this->load->view('components/panel/partials/_js') ?>
 
