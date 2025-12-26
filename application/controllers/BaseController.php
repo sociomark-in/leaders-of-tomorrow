@@ -60,14 +60,14 @@ class BaseController extends CI_Controller
 				[
 				'name' => 'Coimbatore',
 				'image' => 'coimbatore.png',
-				'date' => '2026-11-19',
+				'date' => '2025-12-19',
 				'status' => 1,
 			],
 			[
 				'name' => 'Delhi',
 				'date' => '2026-01-09',
 				'image' => 'delhi.png',
-				'status' => 0,
+				'status' => 1,
 			],
 			[
 				'name' => 'Ghaziabad',

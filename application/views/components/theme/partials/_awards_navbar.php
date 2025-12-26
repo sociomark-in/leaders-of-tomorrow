@@ -23,18 +23,18 @@ $utm = $this->input->get();
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
 				</li>
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
-				</li> -->
+				<!--<li class="nav-item">-->
+				<!--	<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>-->
+				<!--</li>-->
 				<!-- <li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#agenda") ?>">Agenda</a>
 				</li> -->
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>
-				</li> -->
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key&nbsp;Speakers</a>
-				</li> -->
+				<!--<li class="nav-item">-->
+				<!--	<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>-->
+				<!--</li>-->
+				<!--<li class="nav-item">-->
+				<!--	<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key&nbsp;Speakers</a>-->
+				<!--</li>-->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Categories</a>
 				</li>
@@ -56,18 +56,18 @@ $utm = $this->input->get();
 				<!-- <li class="nav-item">
 					<a class="btn btn-red disabled text-white" href="<?= base_url('awards/register-to-attend' . $q) ?>">Registrations&nbsp;Closed</a>
 				</li> -->
-				<?php if (isset($_SESSION['awards_panel_user'])) : ?>
+				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
-						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= app_url('') ?>">My Dashboard</a>
+						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url('logout') ?>">Logout</a>
 					</li>
 				<?php else: ?>
 					<li class="nav-item">
-						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
+						<a class="btn btn-icon-prepend btn-outline red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
 					</li>
-				<?php endif ?>
+				<?php endif ?> -->
 			</ul>
 		</div>
 		<a class="navbar-brand d-none d-lg-block" href="https://www.timesnownews.com/" target="_blank">

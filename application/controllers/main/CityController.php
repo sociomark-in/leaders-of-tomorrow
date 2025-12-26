@@ -126,7 +126,6 @@ class CityController extends BaseController
 				$this->data['page'] = [
 					'title' => "Gurugram Springboard" . " • " . APP_NAME . " " . date('Y'),
 				];
-
 				$this->data['city'] = [
 					'name' => "Gurugram",
 					'banner' => true,
@@ -489,6 +488,7 @@ class CityController extends BaseController
 					'name' => "Coimbatore",
 					'agenda' => true,
 				    'banner' => true,
+				    'gallery' => true,
 					'date' => "2025-12-19 19:00:00",
 					'venue' => 'Le Meridian, Coimbatore',
 					'theme' => [
@@ -536,7 +536,7 @@ class CityController extends BaseController
 				// 	'agenda' => true,
 				    'banner' => true,
 					'date' => "2026-01-09 19:00:00",
-					'venue' => 'New Delhi',
+					'venue' => 'Taj Palace, Panchi Bagh, Chanakyapuri',
 				// 	'theme' => [
     // 					'title' => "Delhi: Where Policy Meets Progress",
     // 					'description' => '',
@@ -649,6 +649,13 @@ class CityController extends BaseController
 					'title' => "Bengaluru Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
 				];
 				$this->data['city']['name'] = "Bengaluru";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'coimbatore':
+				$this->data['page'] = [
+					'title' => "Coimbatore Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Coimbatore";
 				$this->load->city_view('gallery', $this->data);
 				break;
 

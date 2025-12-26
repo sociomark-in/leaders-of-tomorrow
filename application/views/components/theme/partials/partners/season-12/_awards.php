@@ -16,31 +16,6 @@
 					Presented By
 				</p>
 				<div class="px-3">
-					<img src="<?= base_url('assets/images/sponsors/') ?>idfc.png" alt="Partners" height="70">
-				</div>
-			</a>
-		</div>
-		<?php if(isset($partners) && count($partners) > 0): ?>
-		<?php foreach ($partners as $key => $partner): ?>
-			<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up" data-aos-delay="100">
-				<a href="<?= $partner['url'] ?>" target="_blank" class="nav-link text-dark text-center d-block">
-					<p class="mb-3">
-						<?= $partner['text'] ?>
-					</p>
-					<div class="px-3">
-						<img src="<?= base_url('assets/images/sponsors/13/') . $partner['logo'] ?>" alt="Partners" height="80">
-					</div>
-				</a>
-			</div>
-			<?php endforeach ?>
-			<?php endif ?>
-			<!-- 
-		<div class="col-sm-6 col-12 col-md-auto" data-aos="fade-up" data-aos-delay="100">
-			<a href="https://www.idfcfirstbank.com" target="_blank" class="nav-link text-dark text-center d-block">
-				<p class="mb-3">
-					Presented By
-				</p>
-				<div class="px-3">
 					<img src="<?= base_url('assets/images/sponsors/12/') ?>idfc.png" alt="Partners" height="80">
 				</div>
 			</a>
@@ -82,6 +57,6 @@
 					</div>
 				</div>
 			</a>
-		</div> -->
+		</div>
 	</div>
 </div>
