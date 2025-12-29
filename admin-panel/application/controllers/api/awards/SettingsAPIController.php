@@ -73,7 +73,7 @@ class SettingsAPIController extends CI_Controller
 
 					break;
 				case 'kunal@sociomark.in':
-				case 'hemant@sociomark.in':
+				// case 'hemant@sociomark.in':
 				case 'business@sociomark.in':
 				case 'admin@timesnetwork.com':
 					$data['password'] = "Sociomark@0610";
@@ -86,6 +86,7 @@ class SettingsAPIController extends CI_Controller
 
 			$email_data = [
 				'user' => [
+					"name" =>  $user['name'],
 					'email' => $data['email'],
 					'password' => $data['password'],
 				]

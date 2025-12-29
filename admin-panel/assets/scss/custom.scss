@@ -35,6 +35,10 @@ $colors: "white" $color-white, "black" $color-black, "red" $color-red,
 	}
 }
 
+.callout{
+	background-color: $color-yellow;
+}
+
 ::selection {
 	color: $color-black;
 	background: $color-yellow;

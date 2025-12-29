@@ -82,6 +82,10 @@
   border-color: #f05c27 !important;
 }
 
+.callout {
+  background-color: #ffde3f;
+}
+
 ::-moz-selection {
   color: #1c1c1c;
   background: #ffde3f;

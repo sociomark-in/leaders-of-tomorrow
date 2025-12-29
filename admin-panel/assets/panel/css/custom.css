@@ -66,6 +66,10 @@ form .form-check-input:focus {
   color: rgb(164.9402390438, 110.7569721116, 35.0597609562) !important;
 }
 
+.callout {
+  background-color: #ffde3f;
+}
+
 .nomination_detailed .tab-content {
   margin-top: 1rem;
 }

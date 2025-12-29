@@ -1,4 +1,4 @@
-<?php $this->load->view('components/panel/_forgot_password_reset_modal');?>
+<?php $this->load->view('components/panel/_forgot_password_reset_modal'); ?>
 
 <main class="w-fullscreen">
 	<section class="section signup-widget">
@@ -17,35 +17,37 @@
 									<img src="<?= base_url('assets/images/') ?>main.png" alt="" height="40">
 								</div>
 								<div class="col-12">
-									<?php
-									switch ($_SESSION['user_login_status']['status']):
-										case 'SUCCESS': ?>
-											<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
-												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
+									<?php if (isset($_SESSION['user_login_status'])) : ?>
 										<?php
-										case 'WARNING': ?>
-											<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
-												<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
-										<?php
-										case 'ERROR': ?>
-											<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
-												<?= $_SESSION['user_login_status']['message'] ?>
-												<!-- <strong><a href="#" class="alert-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Forgot Password</a></strong>  -->
-												<!-- <strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong>  -->
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											<?php break; ?>
+										switch ($_SESSION['user_login_status']['status']):
+											case 'SUCCESS': ?>
+												<div class="alert w-100 alert-success alert-dismissible fade show" role="alert">
+													<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
+													<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+												</div>
+												<?php break; ?>
+											<?php
+											case 'WARNING': ?>
+												<div class="alert w-100 alert-warning alert-dismissible fade show" role="alert">
+													<strong></strong> <?= $_SESSION['user_login_status']['message'] ?>
+													<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+												</div>
+												<?php break; ?>
+											<?php
+											case 'ERROR': ?>
+												<div class="alert w-100 alert-danger alert-dismissible fade show" role="alert">
+													<?= $_SESSION['user_login_status']['message'] ?>
+													<!-- <strong><a href="#" class="alert-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Forgot Password</a></strong>  -->
+													<!-- <strong><a href="<?= base_url('forgot-password') ?>" class="alert-link">Forgot Password</a></strong>  -->
+													<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+												</div>
+												<?php break; ?>
 
-										<?php
-										default: ?>
-											<?php break; ?>
-									<?php endswitch ?>
+											<?php
+											default: ?>
+												<?php break; ?>
+										<?php endswitch ?>
+									<?php endif ?>
 								</div>
 								<div class="col-12">
 									<?= form_open('api/v2/auth/forgot-password/resend-password', ['id' => "loginForm"]) ?>

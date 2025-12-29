@@ -46,6 +46,10 @@ h5 {
   background-color: rgba(207, 139, 44, 0.2);
 }
 
+.callout {
+  background-color: #ffde3f;
+}
+
 .staged-tab-wizard .nav[role=tablist] .nav-item .nav-link.success {
   background-color: #28a758;
   color: #efefef;
