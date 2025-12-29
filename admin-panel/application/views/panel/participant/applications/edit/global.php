@@ -1,11 +1,10 @@
 <div class="row g-3">
 	<div class="col-12 grid-margin stretch-card">
-		<?= form_open_multipart('api/v2/awards/nomination/single/new', ['id' => 'formFullView']) ?>
 		<input type="hidden" name="category_id" value="<?= $category_id ?>">
 		<input type="hidden" name="application_id" value="<?= $id ?? null ?>">
-		<input type="hidden" name="utm" value="<?= $utm ?>">
-		<input type="hidden" name="agent_id" value="<?= $agent_id ?>">
-		<input type="hidden" name="stage" value="<?= $stage ?>">
+		<!-- <input type="hidden" name="utm" value="<?= $utm ?>"> -->
+		<!-- <input type="hidden" name="agent_id" value="<?= $agent_id ?>"> -->
+		<!-- <input type="hidden" name="stage" value="<?= $stage ?>"> -->
 		<!-- 
 	75502	organization_industry	
 	75503	organization_overview	
@@ -617,7 +616,7 @@
 							<div class="col-xl-8 col-12">
 								<div class="">
 									<label for="" class="form-label">Describe your key export/international business strategy adopted during April 01, 2023, to March 31, 2025, that has led to business success. What was the problem that you aimed to address through the initiative/product/service? </label>
-									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255301'] ?></textarea>
+									<textarea required name="case_study_1" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255301'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -636,7 +635,7 @@
 							<div class="col-xl-8">
 								<div class="">
 									<label for="" class="form-label">How are your products/services positioned internationally (price, quality, niche, brand, innovation)? What sets you apart from global competitors?</label>
-									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255302'] ?></textarea>
+									<textarea required name="case_study_2" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255302'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -663,7 +662,7 @@
 							<div class="col-xl-8">
 								<div class="">
 									<label for="" class="form-label">Explain the measurable outcomes achieved in this period.</label>
-									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255303'] ?></textarea>
+									<textarea required name="case_study_3" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255303'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -691,7 +690,7 @@
 							<div class="col-xl-8">
 								<div class="">
 									<label for="" class="form-label">Describe how you plan to strengthen and scale your global business over the next 3–5 years</label>
-									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255304'] ?></textarea>
+									<textarea required name="case_study_4" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255304'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -776,7 +775,7 @@
 							<div class="col-lg-8">
 								<div class="">
 									<label for="" class="form-label">Describe the most significant innovation or transformation you have implemented in your business and its impact on your organization&#39;s growth and outcomes. Highlight how this has set your business apart in the industry.</label>
-									<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application_temp['id_255602'] ?></textarea>
+									<textarea required name="case_study_individual" id="" class="form-control" maxlength="5000" rows="5"><?= $application['id_255602'] ?></textarea>
 									<span class="form-text">(50 - 5000 characters)</span>
 								</div>
 							</div>
@@ -820,7 +819,7 @@
 									<?php else: ?>
 										<label for="" class="form-label">Incorporation Certificate<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
@@ -831,7 +830,7 @@
 									<?php else: ?>
 										<label for="" class="form-label">IEC Copy<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application['id_255406'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
@@ -842,19 +841,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">Export performance certificates from EPCs, key international certification<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application_temp['id_255407'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application['id_255407'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">All Certificates in a Single PDF (PDF of Maximum Size 2MB)</span>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
-								<div class="">
-									<?php if (isset($application['id_255403'])): ?>
-										<label for="" class="form-label">Photographs or Videos of products/services offered&nbsp;<a class="link-icon" href="<?= base_url($application['id_255403']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
-									<?php else: ?>
-										<label for="" class="form-label">Photographs or Videos of products/services offered</label>
-									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc3" class="dropify" data-default-file="<?= $application['id_255403'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -862,9 +850,9 @@
 									<?php if (isset($application['id_255404'])): ?>
 										<label for="" class="form-label">Collaterals to Support the Impact&nbsp;<a class="link-icon" href="<?= base_url($application['id_255404']) ?>" target="_blank">View Document<i class="mb-1 px-1" data-feather="external-link"></i></a></label>
 									<?php else: ?>
-										<label for="" class="form-label">Collaterals to Support the Impact</label>
+										<label for="" class="form-label">Collaterals to Support the Impact<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
 								</div>
 							</div>
@@ -875,7 +863,7 @@
 									<?php else: ?>
 										<label for="" class="form-label">Any other Collaterals</label>
 									<?php endif ?>
-									<input type="file" accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
+									<input type="file" required accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
 									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
 								</div>
 							</div>
@@ -947,18 +935,7 @@
 					<!-- 5. UPLOAD FILES -->
 				</div>
 			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-md-auto">
-						<a href="<?= base_url('nomination/' . $application_id . '?stage=' . $stage - 1) ?>" class="btn btn-outline-secondary">Back</a>
-					</div>
-					<div class="col-md-auto">
-						<button type="submit" class="btn btn-primary">Confirm and Submit</button>
-					</div>
-				</div>
-			</div>
 		</div>
-		<?= form_close() ?>
 	</div>
 </div>
 <script>

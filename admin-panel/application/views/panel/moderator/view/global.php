@@ -125,21 +125,14 @@
 										<div id="certificationsDiv" class="">
 											<?php
 											$c = json_decode($application['id_255011'] ?? '[]', true);
-											$s = NULL;
-											$isOtherCert = false;
-											foreach ($c as $key => $value) {
-												$c[$key] = trim($value);
-												if (str_contains($value, 'Other')) {
-													$isOtherCert = true;
-													$s = str_replace(['(', ')'], '', ltrim($value, 'Other - '));
-												} else {
-													$isOtherCert = false;
-												}
+											$s = "";
+											if(count($c) > 0){
+												$s = implode(', ', $c); 
 											}
 											$isOtherCert = true; ?>
 											<h5 class="form-label">Key International Certifications</h5>
 											<div class="p-2 bg-light">
-												<?= $application['id_255011'] ?? '' ?>
+												<?= $s ?? '' ?>
 											</div>
 										</div>
 									</div>

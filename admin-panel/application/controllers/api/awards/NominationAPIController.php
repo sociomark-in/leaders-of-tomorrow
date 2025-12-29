@@ -566,9 +566,6 @@ class NominationAPIController extends CI_Controller
 							'id_255202' => $this->request["organization_overview"],
 							'id_255203' => $this->request["organization_services"],
 
-							'id_255204' => $this->request["organization"]['domestic'],
-							'id_255205' => $this->request["organization"]['international'],
-
 							'id_255204' => $this->request["organization"]['beneficiary'],
 							'id_255205' => $this->request["organization"]['members'],
 							'id_255206' => implode('-', $this->request["organization"]['investment']),
@@ -1245,7 +1242,6 @@ class NominationAPIController extends CI_Controller
 					"id_255901" => $this->request['contact_person']['name'],
 					"id_255902" => $this->request['contact_person']['email'],
 					"id_255903" => $this->request['contact_person']['contact'],
-					"status" => '4',
 					"created_by" => $this->usersession['id'],
 
 					"id_255001" => json_encode([
@@ -1265,23 +1261,18 @@ class NominationAPIController extends CI_Controller
 					'id_255007'	=> $this->request['gender'],							//date_of_birth
 					'id_255008'	=> $this->request['dob'],							//date_of_birth
 
-					'id_255101' => $this->request["financial_1_1"],
-					'id_255102' => $this->request["financial_1_2"],
-					'id_255103' => $this->request["financial_2_1"],
-					'id_255104' => $this->request["financial_2_2"],
-					'id_255105' => $this->request["financial_3_1"],
-					'id_255106' => $this->request["financial_3_2"],
-					'id_255107' => $this->request["financial_4_1"],
-					'id_255108' => $this->request["financial_4_2"],
-					'id_255109' => $this->request["financial_5_1"],
-					'id_255110' => $this->request["financial_6_1"],
+					'id_255101' => $this->request["financial_1_2"],
+					'id_255102' => $this->request["financial_1_1"],
+					'id_255103' => $this->request["financial_2_2"],
+					'id_255104' => $this->request["financial_2_1"],
+					'id_255105' => $this->request["financial_4_2"],
+					'id_255106' => $this->request["financial_4_1"],
+					'id_255107' => $this->request["financial_5_1"],
+					'id_255108' => $this->request["financial_6_1"],
 
 					'id_255201' => $this->request["organization"]['size'],
 					'id_255202' => $this->request["organization_overview"],
 					'id_255203' => $this->request["organization_services"],
-
-					'id_255204' => $this->request["organization"]['domestic'],
-					'id_255205' => $this->request["organization"]['international'],
 
 					'id_255204' => $this->request["organization"]['beneficiary'],
 					'id_255205' => $this->request["organization"]['members'],
@@ -1294,8 +1285,6 @@ class NominationAPIController extends CI_Controller
 
 					'id_255601' => $this->request['alt_category_id'],
 					'id_255602' => $this->request['case_study_individual'],
-
-					'status' =>  3,
 				];
 
 				if ($f) {
