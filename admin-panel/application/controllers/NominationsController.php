@@ -206,7 +206,7 @@ class NominationsController extends PanelController
 					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
 				} elseif ($stage == 6) {
 					$this->session->set_tempdata('application_temp', $this->data['application'], 600);
-					$lead = json_decode($this->LeadsModel->get(null, ['email' => $this->user_session['useremail']]), true)[0];
+					$lead = json_decode($this->LeadsModel->get(null, ['email' => $this->user_session['useremail']]), true)[0] ?? NULL;
 					$this->data['lead'] = $lead;
 				}
 

@@ -29,6 +29,36 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-12 d-none">
+				<div class="row">
+					<div class="col-xl-3 col-lg-4 col-12">
+						<div class="row">
+							<div class="col-12 grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<div class="d-flex justify-content-between align-items-baseline">
+											<h6 class="card-title mb-0">All Leads</h6>
+											<div>
+												<a target="_blank" class="btn p-0 btn-icon-text text-dark" href="<?= base_url('awards/agency-register/' . $agency['agent_id']) ?>">View Page Preview</a>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-12">
+												<h3 class="mb-2">3,897</h3>
+												<div class="d-flex align-items-baseline">
+													<p class="text-success">
+														<span>+3.3%</span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="col-12">
 				<ul class="nav nav-pills" id="myTab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -172,69 +202,70 @@
 							</script>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-						<div class="row p-3">
-							<div class="col-12">
-								<div class="row">
-									<div class="col-12 grid-margin stretch-card">
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col">
-														<div class="row">
-															<div class="col-12">
-																<h6 class="card-title">All Profiles</h6>
-															</div>
+				</div>
+				<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+					<div class="row p-3">
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 grid-margin stretch-card">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col">
+													<div class="row">
+														<div class="col-12">
+															<h6 class="card-title">All Profiles</h6>
 														</div>
 													</div>
 												</div>
-												<div class="row">
-													<div class="col-12">
-														<table class="table w-100 table-bordered" id="agentLeads">
-															<thead>
+											</div>
+
+											<div class="row">
+												<div class="col-12">
+													<table class="table w-100 table-bordered" id="agentLeads">
+														<thead>
+															<tr>
+																<th>Date & Time</th>
+																<th>Name</th>
+																<th>Email</th>
+																<th>Contact</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php foreach ($agency['data']['users'] as $key => $user): ?>
 																<tr>
-																	<th>Date & Time</th>
-																	<th>Name</th>
-																	<th>Email</th>
-																	<th>Contact</th>
+																	<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $user['created_at']), 'F j, Y H:iA')  ?></td>
+																	<td><?= $user['name'] ?></td>
+																	<td><?= $user['email'] ?></td>
+																	<td><?= $user['contact'] ?></td>
 																</tr>
-															</thead>
-															<tbody>
-																<?php foreach ($agency['data']['users'] as $key => $user): ?>
-																	<tr>
-																		<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $user['created_at']), 'F j, Y H:iA')  ?></td>
-																		<td><?= $user['name'] ?></td>
-																		<td><?= $user['email'] ?></td>
-																		<td><?= $user['contact'] ?></td>
-																	</tr>
-																<?php endforeach ?>
-															</tbody>
-														</table>
-													</div>
+															<?php endforeach ?>
+														</tbody>
+													</table>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<script>
-									new DataTable("#agentLeads", {
-										paging: false,
-										layout: {
-											topStart: {
-												buttons: [{
-														extend: 'excelHtml5',
-														title: 'Export_<?= date('YmdHis') ?>'
-													},
-													{
-														extend: 'csvHtml5',
-														title: 'Export_<?= date('YmdHis') ?>'
-													}
-												]
-											}
-										}
-									});
-								</script>
 							</div>
+							<script>
+								new DataTable("#agentLeads", {
+									paging: false,
+									layout: {
+										topStart: {
+											buttons: [{
+													extend: 'excelHtml5',
+													title: 'Export_<?= date('YmdHis') ?>'
+												},
+												{
+													extend: 'csvHtml5',
+													title: 'Export_<?= date('YmdHis') ?>'
+												}
+											]
+										}
+									}
+								});
+							</script>
 						</div>
 					</div>
 				</div>
