@@ -24,12 +24,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://lotawards.apogeedigitech.in/admin-panel/';
-$config['base_url'] = 'http://localhost/times-now/leaders-of-tomorrow/admin-panel/';
 $config['base_url'] = 'https://leadersoftomorrow.co.in/admin-panel/';
+$config['base_url'] = 'http://localhost/times-now/leaders-of-tomorrow/admin-panel/';
 
 $config['app_url'] = 'https://lotawards.apogeedigitech.in/';
-$config['app_url'] = 'http://localhost/times-now/leaders-of-tomorrow/';
 $config['app_url'] = 'https://leadersoftomorrow.co.in/';
+$config['app_url'] = 'http://localhost/times-now/leaders-of-tomorrow/';
 
 /*
 |--------------------------------------------------------------------------

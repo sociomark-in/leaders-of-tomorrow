@@ -22,24 +22,26 @@ class MergePDF
 
 	public function config()
 	{
-	    $result = $this->CI->db->get('app_config')->result_array();
+		$result = $this->CI->db->get('app_config')->result_array();
+		$i = 1;
 		foreach ($result as $key => $row) {
-	        $i = 0;
-            if($i<=5){
-                if($row['config_key'] == 'ilovepdf_public_key_00'. $i){
-                    if($row['usage_count'] < ILOVEPDF_API_REQUEST_LIMIT){
-                        $this->key['name'] = $row['config_key'];
-                        $value = json_decode($row['value'], true);
-                        $this->key['public_key'] = $this->CI->encryption->decrypt($value[0]);
-                        $this->key['secret_key'] = $this->CI->encryption->decrypt($value[1]);
-                        return $this;
-                    } else {
-						break;
-                    }
-                }
-                $i++;
-            }
-	   }
+			if ($row['config_key'] == 'ilovepdf_public_key_00' . $i) {
+				echo "<pre>";
+				print_r($row);
+				echo "<br>";
+				if ($i <= 5) {
+					if ($row['usage_count'] < ILOVEPDF_API_REQUEST_LIMIT) {
+						$this->key['name'] = $row['config_key'];
+						$value = json_decode($row['value'], true);
+						$this->key['public_key'] = $this->CI->encryption->decrypt($value[0]);
+						$this->key['secret_key'] = $this->CI->encryption->decrypt($value[1]);
+						return $this;
+					}
+				}
+				$i++;
+			}
+		}
+		die;
 	}
 
 	public function merge($files, $destination_folder, $filename)

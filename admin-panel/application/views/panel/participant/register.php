@@ -77,8 +77,9 @@ if ($nomination['stage'] >= 1) {
 							break;
 
 						default:
-							switch (explode('_', $category['type'])[1]) {
+							switch (explode('_', $category['type'])[0]) {
 								case 'IDFC':
+									include_once APPPATH . '/views/panel/participant/categories/idfc.php';
 									break;
 
 								default:

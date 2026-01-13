@@ -490,7 +490,7 @@
 												<div class="col-auto">
 													<div class="glw-image">
 														<div class="glw-icon p-2 pb-3">
-															<img src="<?= base_url('assets/images/icons/categories/' . $category['code'] . '.png') ?>" class="w-100" alt="">
+															<img src="<?= base_url('assets/images/icons/categories/' . ($category['code'] < 13900 ? $category['code'] : 'idfc') . '.png') ?>" class="w-100" alt="">
 														</div>
 													</div>
 												</div>

@@ -1,20 +1,30 @@
+<div class="card callout mb-3">
+	<div class="card-body">
+		<h5><strong>Please Note:</strong></h5>
+		<p>
+			Previous year winners cannot apply in the same category. If found so, their entry will be disqualified!
+		</p>
+	</div>
+</div>
 <h3 class="text-primary mb-3">Instructions</h3>
 <ul>
 	<li>Forms should be filled in English only</li>
 	<li>All questions must be answered. Incomplete forms will not be considered</li>
-	<li>All forms must be received by the management by latest Febraury 15, 2025, 11:59pm IST</li>
+	<li>All forms must be received by the management by latest February 09, 2025, 11:59pm IST</li>
 	<li>Please provide up to 5 supporting documents wherever possible, to support your entry details.</li>
 	<li>Supporting documents must be in the PDF format only. Size of each
-	document cannot exceed 2 MB</li>
+		document cannot exceed 2 MB</li>
 	<li>Mandatory to attach MSME certificate document received from Ministry of MSME, Govt. of India</li>
 	<li>The declaration (at the end of this form) must be signed by a senior functionary of the
-	organization (MD/Owner/Director/Any other senior functionary with signing authority)</li>
+		organization (MD/Owner/Director/Any other senior functionary with signing authority)</li>
 	<li>Additional collaterals can be submitted in the form of a Google Drive link or attachment while
-	submitting the application form itself on the website</li>
+		submitting the application form itself on the website</li>
 	<li>The final eligibility of the nominees is subject to the discretion and approval of the Award
-	management and Jury</li>
+		management and Jury</li>
+	<li>Your responses will be saved as a draft only after completing all mandatory fields in the section and
+		clicking Save &amp; Continue. You may then proceed or close the form and return later.</li>
 	<li>In case of any queries relating to the application form or participation in the awards please write
-	to us on: lotmails@timesgroup.com</li>
+		to us on: <a href="mailto:lotmails@timesgroup.com">lotmails@timesgroup.com</a></li>
 </ul>
 <h3 class="text-primary mb-3">Eligibility Criteria</h3>
 <ul>
@@ -62,7 +72,7 @@
 	</li>
 	<li>
 		Participation in the Awards is subject to defined in the Terms &amp; Conditions available on website
-		www.leadersoftomorrow.co.in
+		<a href="www.leadersoftomorrow.co.in">www.leadersoftomorrow.co.in</a>
 	</li>
 	<li>
 		The Award categories may be changed / modified / split / merged / increased or cancelled by the

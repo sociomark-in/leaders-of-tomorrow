@@ -87,9 +87,8 @@ class NominationAPIController extends CI_Controller
 					$response[$i] =  explode(FCPATH, $config['upload_path'])[1] . '/' . $this->upload->data('file_name');
 					$i++;
 				}
-			}
-			else {
-			    $response = NULL;
+			} else {
+				$response = NULL;
 			}
 		}
 		// $pdf->merge('file', $docket_name, 'P');
@@ -303,21 +302,25 @@ class NominationAPIController extends CI_Controller
 						}
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-							$data = [
-								'stage_status' => $s,
-
-								'id_255401' =>  $response[0] ?? null,
-								'id_255402' =>  $response[1] ?? null,
-								'id_255406' =>  $response[2] ?? null,
-								'id_255407' =>  $response[3] ?? null,
-								'id_255404' =>  $response[4] ?? null,
-								'id_255405' =>  $response[5] ?? null,
-							];
-							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
-							if ($rows == 0) {
-								redirect($this->request['referrer'] . '?stage=' . $stage);
-							} else {
+							if ($response == NULL) {
 								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+							} else {
+								$data = [
+									'stage_status' => $s,
+
+									'id_255401' =>  $response[0] ?? null,
+									'id_255402' =>  $response[1] ?? null,
+									'id_255406' =>  $response[2] ?? null,
+									'id_255407' =>  $response[3] ?? null,
+									'id_255404' =>  $response[4] ?? null,
+									'id_255405' =>  $response[5] ?? null,
+								];
+								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+								if ($rows == 0) {
+									redirect($this->request['referrer'] . '?stage=' . $stage);
+								} else {
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+								}
 							}
 						} else {
 							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
@@ -413,16 +416,22 @@ class NominationAPIController extends CI_Controller
 						];
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-							$data = [
-								'stage_status' => $s,
+							if ($response == NULL) {
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+							} else {
+								$data = [
+									'stage_status' => $s,
 
-								'id_255401' =>  $response[0] ?? null,
-								'id_255402' =>  $response[1] ?? null,
-								'id_255406' =>  $response[2] ?? null,
-								'id_255407' =>  $response[3] ?? null,
-								'id_255404' =>  $response[4] ?? null,
-								'id_255405' =>  $response[5] ?? null,
-							];
+									'id_255401' =>  $response[0] ?? null,
+									'id_255402' =>  $response[1] ?? null,
+									'id_255406' =>  $response[2] ?? null,
+									'id_255407' =>  $response[3] ?? null,
+									'id_255404' =>  $response[4] ?? null,
+									'id_255405' =>  $response[5] ?? null,
+								];
+							}
+						} else {
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 
 						// Sanitize $data Array for DB Insert
@@ -628,19 +637,23 @@ class NominationAPIController extends CI_Controller
 						}
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-							$data = [
-								'stage_status' => $s,
-
-								'id_255401' =>  $response[0] ?? null,
-								'id_255402' =>  $response[1] ?? null,
-								'id_255403' =>  $response[2] ?? null,
-								'id_255405' =>  $response[3] ?? null,
-							];
-							$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
-							if ($rows == 0) {
-								redirect($this->request['referrer'] . '?stage=' . $stage);
-							} else {
+							if ($response == NULL) {
 								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+							} else {
+								$data = [
+									'stage_status' => $s,
+
+									'id_255401' =>  $response[0] ?? null,
+									'id_255402' =>  $response[1] ?? null,
+									'id_255403' =>  $response[2] ?? null,
+									'id_255405' =>  $response[3] ?? null,
+								];
+								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+								if ($rows == 0) {
+									redirect($this->request['referrer'] . '?stage=' . $stage);
+								} else {
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+								}
 							}
 						} else {
 							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
@@ -727,11 +740,26 @@ class NominationAPIController extends CI_Controller
 
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
+							if ($response == NULL) {
+								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+							} else {
+								$data = [
+									'stage_status' => $s,
 
-							$data['id_255401'] =  $response[0] ?? null;
-							$data['id_255402'] =  $response[1] ?? null;
-							$data['id_255403'] =  $response[2] ?? null;
-							$data['id_255405'] =  $response[3] ?? null;
+									'id_255401' =>  $response[0] ?? null,
+									'id_255402' =>  $response[1] ?? null,
+									'id_255403' =>  $response[2] ?? null,
+									'id_255405' =>  $response[3] ?? null,
+								];
+								$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+								if ($rows == 0) {
+									redirect($this->request['referrer'] . '?stage=' . $stage);
+								} else {
+									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+								}
+							}
+						} else {
+							redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 						}
 						// Sanitize $data Array for DB Insert
 						foreach ($data as $key => $value) {
@@ -815,11 +843,11 @@ class NominationAPIController extends CI_Controller
 				break;
 
 			default:
-				switch (explode('_', $category['type'])[1]) {
-					case 'IDFC':
-						break;
+				// switch (explode('_', $category['type'])[1]) {
+				// 	case 'IDFC':
+				// 		break;
 
-					default: # ☑ Working & Tested
+				// 	default: # ☑ Working & Tested
 						switch ($stage) {
 							case 0: 	# ☑ Personal Information
 								$data = [
@@ -929,23 +957,23 @@ class NominationAPIController extends CI_Controller
 								}
 								if ($f) {
 									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-									if($response == NULL){
-									    redirect('nomination/' . $application_id . '?stage=' . ++$stage);
-									}else{
-									    $data = [
-    										'stage_status' => $s,
-    
-    										'id_255401' =>  $response[0] ?? null,
-    										'id_255402' =>  $response[1] ?? null,
-    										'id_255403' =>  $response[2] ?? null,
-    										'id_255405' =>  $response[3] ?? null,
-    									];
-    									$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
-    									if ($rows == 0) {
-    										redirect($this->request['referrer'] . '?stage=' . $stage);
-    									} else {
-    										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
-    									}
+									if ($response == NULL) {
+										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+									} else {
+										$data = [
+											'stage_status' => $s,
+
+											'id_255401' =>  $response[0] ?? null,
+											'id_255402' =>  $response[1] ?? null,
+											'id_255403' =>  $response[2] ?? null,
+											'id_255405' =>  $response[3] ?? null,
+										];
+										$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+										if ($rows == 0) {
+											redirect($this->request['referrer'] . '?stage=' . $stage);
+										} else {
+											redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+										}
 									}
 								} else {
 									redirect('nomination/' . $application_id . '?stage=' . ++$stage);
@@ -1016,23 +1044,23 @@ class NominationAPIController extends CI_Controller
 
 								if ($f) {
 									$response = $this->_document_uploads($_FILES, $category_id, $application_id);
-                                    if($response == NULL){
-									    redirect('nomination/' . $application_id . '?stage=' . ++$stage);
-									}else{
-									    $data = [
-    										'stage_status' => $s,
-    
-    										'id_255401' =>  $response[0] ?? null,
-    										'id_255402' =>  $response[1] ?? null,
-    										'id_255403' =>  $response[2] ?? null,
-    										'id_255405' =>  $response[3] ?? null,
-    									];
-    									$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
-    									if ($rows == 0) {
-    										redirect($this->request['referrer'] . '?stage=' . $stage);
-    									} else {
-    										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
-    									}
+									if ($response == NULL) {
+										redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+									} else {
+										$data = [
+											'stage_status' => $s,
+
+											'id_255401' =>  $response[0] ?? null,
+											'id_255402' =>  $response[1] ?? null,
+											'id_255403' =>  $response[2] ?? null,
+											'id_255405' =>  $response[3] ?? null,
+										];
+										$rows = $this->EntriesModel->update($data, ['nomination_id' => $application_id]);
+										if ($rows == 0) {
+											redirect($this->request['referrer'] . '?stage=' . $stage);
+										} else {
+											redirect('nomination/' . $application_id . '?stage=' . ++$stage);
+										}
 									}
 								}
 
@@ -1118,8 +1146,8 @@ class NominationAPIController extends CI_Controller
 								redirect('dashboard');
 								break;
 						}
-						break;
-				}
+				// 		break;
+				// }
 				break;
 		}
 	}
@@ -1318,11 +1346,11 @@ class NominationAPIController extends CI_Controller
 				}
 
 			default:
-				switch (explode('_', $category['type'])[1]) {
-					case 'IDFC':
+				// switch (explode('_', $category['type'])[1]) {
+				// 	case 'IDFC':
 
-						break;
-					default:
+				// 		break;
+				// 	default:
 						$data = [
 							"name" => 	$this->request['name'],
 							"email" => $this->request['contact_person']['email'] ?? null,
@@ -1385,7 +1413,7 @@ class NominationAPIController extends CI_Controller
 							$data['id_255404'] =  $response[3];
 							$data['id_255405'] =  $response[4];
 						}
-				}
+				// }
 		}
 		# ☑ Sanitize Data for DB Insert
 		foreach ($data as $key => $value) {

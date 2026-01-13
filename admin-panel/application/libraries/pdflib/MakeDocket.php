@@ -44,7 +44,7 @@ class MakeDocket extends Fpdf
 		$this->SetFont('Arial', 'I', 8);
 		$this->SetTextColor(25, 25, 25);
 		// Page number
-		$this->Cell(97, 10, APP_NAME . ' - Season 12', 0, 0, 'L');
+		$this->Cell(97, 10, APP_NAME . ' - Season 13', 0, 0, 'L');
 		$this->Cell(97, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'R');
 	}
 

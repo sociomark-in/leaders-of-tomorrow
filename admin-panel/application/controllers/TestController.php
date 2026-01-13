@@ -6,6 +6,10 @@ class TestController extends CI_Controller
 		echo "TestController is working!";
 	}
 
+	public function test(){
+		print_r(hash('md5', hash('sha256', "EY@Awards2026")));
+	}
+
 	public function encrypt()
 	{
 

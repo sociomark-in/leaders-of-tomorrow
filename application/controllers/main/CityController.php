@@ -52,7 +52,7 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Mumbai",
 					'banner' => true,
-					
+
 					'gallery' => true,
 					'date' => "2025-08-22 19:00:00",
 					'venue' => 'Mumbai',
@@ -129,8 +129,8 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Gurugram",
 					'banner' => true,
-				// 	'agenda' => true,
-				// 	'register' => "btn_56a27aa9652e",
+					// 	'agenda' => true,
+					// 	'register' => "btn_56a27aa9652e",
 					'gallery' => true,
 					'date' => "2025-09-05 19:00:00",
 					'venue' => 'Gurugram',
@@ -237,7 +237,7 @@ class CityController extends BaseController
 					'venue' => 'Hotel Novotel, Pune',
 					'banner' => true,
 					'gallery' => true,
-				// 	'agenda' => true,
+					// 	'agenda' => true,
 					'partners' => [
 						[
 							'text' => 'Powered By',
@@ -250,7 +250,7 @@ class CityController extends BaseController
  							To explore how this city is redefining India’s urban landscape, join <strong class="text-red">Leaders of Tomorrow Pune Springboard</strong>.',
 						'embed' => 'https://www.youtube.com/embed/t-k3m8_fvY8',
 					],
-				// 	'register' => "btn_d1f982455c9c",
+					// 	'register' => "btn_d1f982455c9c",
 					'speakers' => [
 						[
 							'photo' => "Vishal_Rally.png",
@@ -293,16 +293,16 @@ class CityController extends BaseController
 						'description' => 'Lucknow is emerging as the engine of growth and governance in the heart of Uttar Pradesh, driven by strong infrastructure, administrative efficiency and a growing business ecosystem. With strategic government initiatives, improved connectivity and skilled workforce, the city is attracting investments across sectors. To understand how Lucknow is shaping the future of entrepreneurship in the state, join <strong class="text-red">Leaders of Tomorrow Lucknow Springboard</strong>. - one pit stop on our pan-India roadshow series, only on ET NOW.',
 						'embed' => 'https://www.youtube.com/embed/DH3aOptcmu0?si=ZW15NRGNXPGm_s0F'
 					],
-				// 	'register' => "btn_7481017a2494",
+					// 	'register' => "btn_7481017a2494",
 					'banner' => true,
-				// 	'agenda' => true,
+					// 	'agenda' => true,
 					'gallery' => true,
 					'speakers' => [
 						[
 							'photo' => "Madhukar_Pant.png",
 							'name' => "Madhukar Pant",
 							'description' => "Business Head-Loan Against Property, IDFC FIRST Bank"
-						],	  
+						],
 						[
 							'photo' => "Jayant_Krishna.png",
 							'name' => "Jayant Krishna",
@@ -346,11 +346,11 @@ class CityController extends BaseController
 						'description' => 'Chennai is gearing up to showcase why it’s hailed as South India’s industrial powerhouse! From automotive to electronics and aerospace, the city continues to set the pace for India’s manufacturing future. Catch the <strong class="text-red">Leaders of Tomorrow Chennai Springboard on 14th November</strong> — mark your calendars',
 						'embed' => 'https://www.youtube.com/embed/Uttx8h4NUKk?si=LGz8bqRIYTBNsAp-'
 					],
-				// 	'register' => "btn_f2b8650f63e7",
+					// 	'register' => "btn_f2b8650f63e7",
 					'banner' => true,
-				// 	'agenda' => true,
+					// 	'agenda' => true,
 					'gallery' => true,
-    				'speakers' => [
+					'speakers' => [
 						[
 							'photo' => "Prakash_Venkatrao.png",
 							'name' => "Prakash Venkatrao",
@@ -376,8 +376,8 @@ class CityController extends BaseController
 							'name' => "AS Keshav",
 							'description' => "CEO & Co-Founder, KS Smart Solutions",
 						],
-    				]
-    			];
+					]
+				];
 				break;
 			case 'indore':
 				$this->data['page'] = [
@@ -385,7 +385,7 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Indore",
-				// 	'agenda' => true,
+					// 	'agenda' => true,
 					'gallery' => true,
 					'date' => "2025-11-28 19:00:00",
 					'venue' => 'Sheraton Grand Palace',
@@ -394,7 +394,7 @@ class CityController extends BaseController
 						'description' => 'Indore, the commercial capital of Madhya Pradesh, thrives as a hub of manufacturing, textiles, pharmaceuticals, and emerging startups. With a strong focus on sustainability, cleanliness, and innovation, Indore is redefining what it means to build businesses in the heart of India. To explore how Indore is powering Central India’s growth story, join <strong class="text-red">Leaders of Tomorrow Indore Springboard</strong> - one pitstop on our pan-India roadshow series, only <strong class="text-red">on 28th of November, 2025</strong>',
 						'embed' => 'https://www.youtube.com/embed/0KTi1KiRwvM'
 					],
-				    'speakers' => [
+					'speakers' => [
 						[
 							'photo' => "Sumeer_Raina.png",
 							'name' => "Sumeer Raina",
@@ -410,11 +410,11 @@ class CityController extends BaseController
 							'name' => "Yugansh Soni",
 							'description' => "Founder, Laabham group",
 						],
-				// 		[
-				// 			'photo' => "Anupama_Modi.png",
-				// 			'name' => "Anupama Modi",
-				// 			'description' => "COO, AIIH Foundation",
-				// 		],
+						// 		[
+						// 			'photo' => "Anupama_Modi.png",
+						// 			'name' => "Anupama Modi",
+						// 			'description' => "COO, AIIH Foundation",
+						// 		],
 						[
 							'photo' => "Shweta_Agarwal.png",
 							'name' => "Shweta Agarwal",
@@ -423,8 +423,8 @@ class CityController extends BaseController
 
 					],
 					'banner' => true,
-				// 	'register' => "btn_064b0b816ca1",
-    			];
+					// 	'register' => "btn_064b0b816ca1",
+				];
 				break;
 			case 'bengaluru':
 				$this->data['page'] = [
@@ -432,7 +432,7 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Bengaluru",
-				// 	'agenda' => true,
+					// 	'agenda' => true,
 					'date' => "2025-12-10 19:00:00",
 					'venue' => 'The Zuri Whitefield, Bengaluru',
 					'gallery' => true,
@@ -441,12 +441,12 @@ class CityController extends BaseController
 						'description' => 'Bengaluru’s innovation story takes centre stage as we bring the Springboard to the heart of India’s tech hub on <strong class="text-red">10th December </strong>. Join us for insights, conversations, and growth opportunities for MSMEs. Mark your calendars.',
 						'embed' => 'https://www.youtube.com/embed/-WAC9WgjzJk'
 					],
-						    'speakers' => [
-				// 		[
-				// 			'photo' => "Girish_Malhotra.png",
-				// 			'name' => "Girish Malhotra",
-				// 			'description' => "Head New Economy Group, IDFC FIRST Bank",
-				// 		],
+					'speakers' => [
+						// 		[
+						// 			'photo' => "Girish_Malhotra.png",
+						// 			'name' => "Girish Malhotra",
+						// 			'description' => "Head New Economy Group, IDFC FIRST Bank",
+						// 		],
 						[
 							'photo' => "Pravir_Dahiya.png",
 							'name' => "Pravir Dahiya",
@@ -471,14 +471,14 @@ class CityController extends BaseController
 					],
 					'banner' => true,
 					'register' => "btn_159777224b9b",
-    				'partners' => [
-    					[
-    						'text' => 'Powered By',
-    						'logo' => 'tata-tele.png'
-    					]
-    				],
-					
-    			];
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png'
+						]
+					],
+
+				];
 				break;
 			case 'coimbatore':
 				$this->data['page'] = [
@@ -487,16 +487,16 @@ class CityController extends BaseController
 				$this->data['city'] = [
 					'name' => "Coimbatore",
 					'agenda' => true,
-				    'banner' => true,
-				    'gallery' => true,
+					'banner' => true,
+					'gallery' => true,
 					'date' => "2025-12-19 19:00:00",
 					'venue' => 'Le Meridian, Coimbatore',
 					'theme' => [
 						'title' => "Coimbatore: India’s China Plus One MSME Hub",
 						'description' => 'Once a textile mill town, Coimbatore has transformed into Tamil Nadus second-largest city and an industrial powerhouse in just ten years. Fueled by an 84% literacy rate and diverse manufacturing capabilities, this rising hub now attracts US and European companies seeking a compelling alternative to China for their production needs. To discover how MSMEs can capitalise this momentum, join us at the <strong class="text-red">Coimbatore Springboard – one pitstop on our pan India roadshow series </strong>, <strong class="text-red">on the 19th of December 2025</strong>',
-    					'embed' => 'https://www.youtube.com/embed/EPJ-yMm9V_A',
+						'embed' => 'https://www.youtube.com/embed/EPJ-yMm9V_A',
 					],
-				    'speakers' => [
+					'speakers' => [
 						[
 							'photo' => "Anto_Alan.png",
 							'name' => "Anto Alan",
@@ -525,7 +525,7 @@ class CityController extends BaseController
 
 					],
 					'register' => "btn_702175a4b3d4",
-    			];
+				];
 				break;
 			case 'delhi':
 				$this->data['page'] = [
@@ -533,21 +533,48 @@ class CityController extends BaseController
 				];
 				$this->data['city'] = [
 					'name' => "Delhi",
-				// 	'agenda' => true,
-				    'banner' => true,
+					// 	'agenda' => true,
+					'banner' => true,
 					'date' => "2026-01-09 19:00:00",
 					'venue' => 'Taj Palace, Panchi Bagh, Chanakyapuri',
-				// 	'theme' => [
-    // 					'title' => "Delhi: Where Policy Meets Progress",
-    // 					'description' => '',
-    // 					'embed' => '',
-    // 				],
-    				'partners' => [
-    					[
-    						'text' => 'Powered By',
-    						'logo' => 'tata-tele.png'
-    					]
-    				],
+					// 	'theme' => [
+					// 					'title' => "Delhi: Where Policy Meets Progress",
+					// 					'description' => '',
+					// 					'embed' => '',
+					// 				],
+					'speakers' => [
+						[
+							'photo' => "Harjit_Singh.png",
+							'name' => "Harjit Singh",
+							'description' => "Managing Director, Tata Teleservices",
+						],
+						[
+							'photo' => "Roopak_Jain.png",
+							'name' => "Roopak Jain",
+							'description' => "Head Corporate Coverage, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Lalit_Agarwal.png",
+							'name' => "Lalit Agarwal",
+							'description' => "Founder & MD, V- Mart Retail & Co-Chair, FICCI Retail & Internal Trade Committee",
+						],
+						[
+							'photo' => "Manish_Singhal.png",
+							'name' => "Manish Singhal",
+							'description' => "Secretary General, ASSOCHAM",
+						],
+						[
+							'photo' => "Rajiv_Chawla.png",
+							'name' => "Rajiv K Chawla",
+							'description' => " Chairman, IamSMEofIndia & JaiRaj Group",
+						],
+					],
+					'partners' => [
+						[
+							'text' => 'Powered By',
+							'logo' => 'tata-tele.png'
+						]
+					],
 				];
 				break;
 			default:
