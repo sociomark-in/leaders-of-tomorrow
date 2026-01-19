@@ -20,11 +20,11 @@
 				<li>I/We declare that all information submitted as part of our application is complete, true and accurate. We understand that any kind of misrepresentation/ false claims could lead to disqualification at any point of evaluation during the Awards. </li>
 				<li>I/We declare that the Promoters and Key Managerial Personnel of the participating entity and the participant entity itself are not subject to any litigations or disqualifications by any court of law or regulatory authorities.</li>
 				<li>We authorize the Awards Management to use the content submitted as part of my/our entry, in whole or in part and use and display such entry, which shall include trade publications, press releases, electronic posting on the Awards website, electronic hyperlinks to the website of the Participant, and any display format selected by the Awards Management during or after the Awards event.</li>
-				<li>I/ We further declare and confirm  that 
-				<ol>
-					<li>the decision taken by the investors and/or BCCL will be final and binding and we shall not raise or make any claims, allegations or action in respect of the same and the event or any part thereof against the investors and/or BCCL, its channels, directors, managements, employees, agents or authorised representatives;</li>
-					<li>we shall not make any statements, claims or press releases, in any manner, directly or through any third party, on any public platform including any social media or any other online media in respect of our participation, selection and shortlisting or winning (as the case may be)  relating to the event and that such act may lead to disqualification</li>
-				</ol>
+				<li>I/ We further declare and confirm that
+					<ol>
+						<li>the decision taken by the investors and/or BCCL will be final and binding and we shall not raise or make any claims, allegations or action in respect of the same and the event or any part thereof against the investors and/or BCCL, its channels, directors, managements, employees, agents or authorised representatives;</li>
+						<li>we shall not make any statements, claims or press releases, in any manner, directly or through any third party, on any public platform including any social media or any other online media in respect of our participation, selection and shortlisting or winning (as the case may be) relating to the event and that such act may lead to disqualification</li>
+					</ol>
 				</li>
 			</ul>
 			<div class="">
@@ -35,7 +35,7 @@
 		</div>
 	</div>
 
-	<div class="col-xl-6 col-12">
+	<div class="col-xl-6">
 		<div class="">
 			<label for="" class="form-label">Are you a winner of Leaders of tomorrow in the previous editions?</label>
 			<div class="row my-1">
@@ -72,6 +72,51 @@
 		</div>
 	</div>
 
+	<div class="col-xl-6">
+		<div class="">
+			<label for="" class="form-label">How did you get to know about the Awards?</label>
+			<select required name="agent_referrer" id="my-select" class="form-select mb-1">
+				<option value="">Select Source</option>
+				<option value="Television">Television</option>
+				<option value="Social Media">Social Media</option>
+				<option value="Through Agency">Through Agency</option>
+				<option value="Other">Other (Please Specify)</option>
+			</select>
+			<div id="other-source-input" style="display:none;">
+				<input type="text" class="form-control mt-2" name="agent_referrer">
+			</div>
+
+			<script>
+				$(document).ready(function() {
+
+					const $select = $('#my-select');
+					const $otherContainer = $('#other-source-input');
+					const $otherInput = $('#other-source-input input');
+
+					// 2. Listen for changes on the Select2 element
+					$select.on('change', function() {
+						const selectedValue = $select.val();
+						console.log(selectedValue);
+
+
+						if (selectedValue === 'Other') {
+							$otherContainer.slideDown(200, function() {
+								$otherInput.focus();
+							});
+							$otherInput.prop('required', true);
+
+						} else {
+							$otherContainer.slideUp(200);
+							$otherInput.val(selectedValue);
+							$otherInput.prop('required', false);
+						}
+					});
+					$select.trigger('change');
+				});
+			</script>
+		</div>
+	</div>
+
 
 	<div class="col-12">
 		<button type="submit" class="btn btn-primary">Submit Nomination & Return to Dashboard</button>
@@ -104,7 +149,7 @@
 			}
 		});
 
-			
+
 		//Agent Referrer
 		$("#agentDetails").hide();
 		$("input[type='radio'][name='agent_referrer'").change(function() {
@@ -122,7 +167,7 @@
 
 		});
 	});
-	
+
 	$("#formView").validate({
 		ignore: [
 			":hidden", ":focus"
