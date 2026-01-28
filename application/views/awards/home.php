@@ -520,10 +520,26 @@
 									</script>
 								</div>
 							<?php endforeach ?>
+    						<div class="modal fade" id="categoryModel" tabindex="-1" aria-labelledby="categoryModelLabel" aria-hidden="true">
+    							<div class="modal-dialog modal-lg">
+    								<div class="modal-content">
+    									<div class="modal-header">
+    										<h1 class="modal-title fs-5" id="categoryModelLabel">Modal title</h1>
+    										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    									</div>
+    									<div class="modal-body">
+    										...
+    									</div>
+    									<div class="modal-footer">
+    										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    										<a href="<?= base_url('awards/category/' . $category['code'] . '/nominate') ?>" class="btn btn-red">Nominate Now</a>
+    									</div>
+    								</div>
+    							</div>
+    						</div>
 						<?php else: ?>
 							<?php foreach ($categories['all'] as $key => $category): ?>
 								<div class="col-xxl-4 col-lg-6">
-									<!-- <a class="card glw-card h-100" id="categoryModelHandler<?= $key ?>" data-modal-category="<?= $category['code'] ?>" data-bs-toggle="modal" data-bs-target="#categoryModel"> -->
 									<a class="card glw-card h-100">
 										<div class="card-body">
 											<div class="row h-100 align-items-center">
@@ -540,44 +556,9 @@
 											</div>
 										</div>
 									</a>
-									<!-- <script>
-										$button = $("#categoryModelHandler<?= $key ?>");
-										$button.on("click", () => {
-											$.ajax({
-												url: "<?= base_url('api/data/CategoryAPIController/get_category_by_code') ?>",
-												data: {
-													category: "<?= $category['code'] ?>"
-												},
-												success: function(result) {
-													console.log(result);
-													$("#categoryModel .modal-title").text(result.name)
-													$("#categoryModel .modal-body").html(
-														"<p>" + result.description + "</p>"
-													)
-												}
-											})
-										})
-									</script> -->
 								</div>
 							<?php endforeach ?>
 						<?php endif ?>
-						<div class="modal fade" id="categoryModel" tabindex="-1" aria-labelledby="categoryModelLabel" aria-hidden="true">
-							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="categoryModelLabel">Modal title</h1>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										...
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										<a href="<?= base_url('awards/category/' . $category['code'] . '/nominate') ?>" class="btn btn-red">Nominate Now</a>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

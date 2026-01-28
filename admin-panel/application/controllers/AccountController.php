@@ -14,7 +14,7 @@ class AccountController extends PanelController
 		$this->load->model('panel/EntriesModel');
 		$this->load->model('event/awards/CategoryModel');
 
-		$categories['msme'] = json_decode($this->CategoryModel->get(), true);
+		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['status' => 1]), true);
 		$this->data['categories'] = $categories;
 
 		$applications_count = [

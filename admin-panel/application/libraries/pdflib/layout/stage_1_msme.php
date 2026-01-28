@@ -222,8 +222,9 @@
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
 	$this->pdf->Cell(0, 6, 'Innovation & Initiative Overview', 0, 1, '');
-	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Describe the key initiative/product/service or business transformation your organisation implemented between April 01, 2023 and March 31, 2025?', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->Cell(0, 1, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->MultiCell(0, 4, $data['id_255301'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
@@ -233,8 +234,9 @@
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
 	$this->pdf->Cell(0, 6, 'Measurable Outcomes & Business Impact', 0, 1, '');
-	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Share the quantifiable outcomes achieved during the eligibility period because of this initiative', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->Cell(0, 1, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->MultiCell(0, 4, $data['id_255302'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
@@ -244,10 +246,35 @@
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
 	$this->pdf->Cell(0, 6, 'Scalability & Future Growth Plan', 0, 1, '');
-	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Explain how you plan to scale this initiative and your business over the next 3–5 years', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
 	$this->pdf->Cell(0, 1, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->MultiCell(0, 4, $data['id_255303'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	", 0);
+}
+{
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 5, '', 0, 1, '');
+	$this->pdf->SetFillColor(183, 32, 38);
+	$this->pdf->SetTextColor(255, 255, 255);
+	$this->pdf->Cell(0, 6, 'Individual Category Preference', 0, 1, '', true);
+
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->Cell(79, 6, 'Individual Category', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->Cell(79, 4, $data['individual_category']['name'] ?? "Excellence in IT/ITES and Electronics", 0, 1, '');
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
+	$this->pdf->Cell(0, 6, 'Entrepreneur Insight', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Between April 01, 2023 and March 31, 2025, how have you personally embodied "Agility. Ambition. Ascent." as an entrepreneur/innovator', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
+	$this->pdf->Cell(0, 1, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->MultiCell(0, 4, $data['id_255602'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 	", 0);
 }

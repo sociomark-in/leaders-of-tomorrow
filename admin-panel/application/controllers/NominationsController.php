@@ -99,7 +99,7 @@ class NominationsController extends PanelController
 	{
 		$this->data['my_applications'] = [];
 
-		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
+		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'status' => 1]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
 			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status', 'status_2'], ['created_by' => $this->user_session['id']]), true),
@@ -277,12 +277,13 @@ class NominationsController extends PanelController
 		if (!file_exists(FCPATH . 'uploads/' . $application['nomination_id'])) {
 			mkdir(FCPATH . 'uploads/' . $application['nomination_id'], 0777, true);
 		}
-		$categories = json_decode($this->CategoryModel->get(['id', 'code', 'type'], null), true);
 		if (in_array($this->user_session['role'], ['jury', 'admin'])) {
 			$this->load->library('pdflib/MakeDocket');
 
-			$category_details = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
-			$application['category'] = $category_details;
+			$cm = json_decode($this->CategoryModel->get(null, ['type' => $application['category_id']]), true)[0];
+			$ci = json_decode($this->CategoryModel->get(null, ['type' => $application['id_255601'], 'status' => 2]), true)[0];
+			$application['category'] = $cm;
+			$application['individual_category'] = $ci;
 			$docketname =  'uploads/' . $application['nomination_id'] . '/docket_page.pdf';
 			if (file_exists($docketname)) {
 				unlink(FCPATH . $docketname);
@@ -311,7 +312,7 @@ class NominationsController extends PanelController
 					// }
 			}
 
-			$filename = "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . ".pdf";
+			$filename = "LOTS12_" . $cm['code']  . "_" . $application['nomination_id'] . ".pdf";
 
 			$attachments = [];
 			array_push($attachments, FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');

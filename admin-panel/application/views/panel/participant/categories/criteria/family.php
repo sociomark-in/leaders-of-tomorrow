@@ -20,28 +20,24 @@
 </ul>
 <h3 class="text-primary mb-3">Eligibility Criteria</h3>
 <ul>
-	<li>The participating entity must be an Indian-registered MSME with at least two years of registered presence in India as on March 31, 2025, and must hold a valid MSME/Udyam certificate.</li>
-	<li>The MSME must be actively exporting products or services outside India as of March 31, 2025</li>
-	<li>Exports should contribute a meaningful share of total revenue (suggested minimum: 20% of total turnover in any one year between FY 2023–24 and FY 2024–25)</li>
-	<li>MSME classification will be accepted as per the Udyam certificate that is valid and active as of March 31, 2025 (pre- or post-April 1, 2025 norms).</li>
+	<li>The Participating entity must be an Indian-registered MSME with at least two years of registered presence in India as on March 31, 2025, and must hold a valid MSME/Udyam certificate.</li>
+	<li>MSME classification will be accepted as per the Udyam certificate that is valid and active as of March 31, 2025 (pre- or post-April 1, 2025, norms).</li>
 	<li>The MSME must have an annual turnover of up to INR 500 crores as on March 31, 2025.</li>
-	<li>The case study / initiative should demonstrate export growth and international business expansion during April 01, 2023 – March 31, 2025</li>
-	<li>The initiative/innovation being showcased must be launched, implemented and operational between April 01, 2023 and March 31, 2025 in the Indian market, or a substantial part of the initiative must fall within this period.</li>
+	<li>The initiative/innovation being showcased must be launched, implemented and operational between April 01, 2023, and March 31, 2025 in the Indian market, or a substantial part of the initiative must fall within this period.</li>
 	<li>If the initiative started before April 01, 2023, the participant must clearly specify the distinct innovation and impact achieved during April 01, 2023 – March 31, 2025.</li>
 	<li>The business should comply with relevant international standards/regulations (e.g., export compliances, quality certifications, sector-specific standards, where applicable).</li>
 	<li>The initiative cannot be in ideation or development-only stage; it must have been implemented with demonstrable outcomes.</li>
 	<li>The participating entity must have all applicable trade/ statutory registrations (e.g. Certificate of Incorporation, MSME Certificate, GST Registration, audited financials of the last 2 years, etc.).</li>
 	<li>The individual applicant must be a founder, Co-founder, owner, or prominent business leader (MD/CEO/Founder-equivalent) of the MSME and must have been in a senior leadership role for a minimum of 2 years as on March 31, 2025.</li>
-	<li>For Family-Owned MSME of the Year category at least 51% of the ownership is held by members of the same family. The business should be in its second generation of ownership/leadership. The business should have been in operations for minimum two years as on March 31, 2025 and should meet the other MSME criteria defined for the other categories</li>
+	<li>For the category “Excellence in Global Exports & International Business”, the case study / initiative should demonstrate export growth and international business expansion during April 01, 2023 – March 31, 2025</li>
+	<li>For the category “Excellence in Global Exports & International Business”, the MSME must be actively exporting products or services outside India as of March 31, 2025</li>
+	<li>For the category “Excellence in Global Exports & International Business”, exports should contribute a meaningful share of total revenue (suggested minimum: 20% of total turnover in any one year between FY 2023–24 and FY 2024–25)</li>
+	<li>For Family-Owned MSME of the Year category at least 51% of the ownership is held by members of the same family. The business should be in its second generation of ownership/leadership. The business should have been in operation for minimum two years as on March 31, 2025 and should meet the other MSME criteria defined for the other categories</li>
 	<li>Individual category finalists will be determined from the existing set of nominations received across Industry and segments. No separate standalone application is required for this category.</li>
-	<li>Additional eligibility for individual recognition categories (where applicable through this common form):
-		<ol>
-			<li>Next Gen Innovator: Individual must be up to 35 years of age as on March 31, 2025 and the MSME must be more than 2 and less than 5 years old.</li>
-			<li>Woman Entrepreneur of the Year: The woman entrepreneur must hold a minimum of 33% stake in the organisation</li>
-		</ol>
-	</li>
+	<li>Additional eligibility for individual recognition categories (where applicable through this common form):</li>
+	<li>Next Gen Innovator: Individual must be up to 35 years of age as on March 31, 2025 and the MSME must be more than 2 and less than 5 years old.</li>
+	<li>Woman Entrepreneur of the Year: The woman entrepreneur must hold a minimum of 33% stake in the organization</li>
 	<li>Employees and immediate family members of the Award management, sponsors and partners are not eligible to participate.</li>
-	<li>Previous two-year winners cannot participate in the same category with same or different initiatives</li>
-	<li>Participation is subject to the Terms & Conditions available on the Awards website</li>
+	<li>Previous two-year winners cannot participate in the same category with same or different initiatives </li>
 	<li>Award categories may be modified/split/merged/cancelled at the discretion of the Awards Management and/or Jury. The decision will be final and binding</li>
 </ul>

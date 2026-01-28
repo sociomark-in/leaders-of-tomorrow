@@ -56,7 +56,7 @@ $utm = $this->input->get();
 				<!-- <li class="nav-item">
 					<a class="btn btn-red disabled text-white" href="<?= base_url('awards/register-to-attend' . $q) ?>">Registrations&nbsp;Closed</a>
 				</li> -->
-				<!-- <?php if (isset($_SESSION['awards_panel_user'])) : ?>
+				<?php if (isset($_SESSION['awards_panel_user'])) : ?>
 					<li class="nav-item">
 						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('dashboard') ?>">My Dashboard</a>
 					</li>
@@ -65,9 +65,9 @@ $utm = $this->input->get();
 					</li>
 				<?php else: ?>
 					<li class="nav-item">
-						<a class="btn btn-icon-prepend btn-outline red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
+						<a class="btn btn-icon-prepend btn-red text-uppercase" href="<?= base_url('login') ?>">Login/Sign&nbsp;Up</a>
 					</li>
-				<?php endif ?> -->
+				<?php endif ?>
 			</ul>
 		</div>
 		<a class="navbar-brand d-none d-lg-block" href="https://www.timesnownews.com/" target="_blank">

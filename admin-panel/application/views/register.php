@@ -118,6 +118,8 @@
 																	<input type="email" name="email" class="form-control" required>
 																<?php endif ?>
 															</div>
+															<input type="hidden" name="utm_source" value="<?= $this->input->get('utm_source') ?? 'direct' ?>">
+															<input type="hidden" name="utm_medium" value="<?= $this->input->get('utm_medium') ?? 'organic' ?>">
 															<div class="col-12">
 																<div class="">
 																	<div class="form-check">
@@ -143,73 +145,72 @@
 																	Already Registered? <a href="<?= base_url('login') ?>">Click Here to Login</a>
 																</div>
 															</div>
-														</div>
-														<script>
-															$("#OTPContact").intlTelInput({
-																initialCountry: "in",
-																separateDialCode: true,
-																preferredCountries: ["in, us"],
-																hiddenInput: "full_contact",
-																formatOnDisplay: true,
-																nationalMode: false,
-																customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
-																	return "8655425357";
-																},
-																// allowDropdown: false,
-																geoIpLookup: function(callback) {
-																	$.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
-																		var countryCode = (resp && resp.country) ? resp.country : "";
-																		callback(countryCode);
-																	});
-																},
-																utilsScript: "../../build/js/utils.js?1562189064761",
-																utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/js/utils.js",
-															});
-
-															$.validator.addMethod("emailregex", function(value, element) {
-																return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
-															})
-															$.validator.addMethod("ddmmyyyyregex", function(value, element) {
-																return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
-															})
-															$.validator.addMethod("letters", function(value, element) {
-																return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
-															});
-															$.validator.addMethod("phone", function(value, element) {
-																return this.optional(element) || /^[0-9]*$/i.test(value);
-															});
-															$("#form_option_01").validate({
-																ignore: [
-																	":hidden", ":focus"
-																],
-																rules: {
-																	"name": {
-																		letters: true,
-																	},
-																	"email": {
-																		emailregex: true
-																	},
-																	"contact": {
-																		phone: true
-																	}
-																},
-																messages: {
-																	'name': {
-																		letters: "Please enter a valid name."
-																	},
-																	'email': {
-																		emailregex: 'Please enter a valid email address.'
-																	},
-																	'contact': {
-																		phone: 'Please enter a valid contact number'
-																	}
-																}
-															});
-														</script>
-													</fieldset>
-													<?= form_close() ?>
-
 												</div>
+												<script>
+													$("#OTPContact").intlTelInput({
+														initialCountry: "in",
+														separateDialCode: true,
+														preferredCountries: ["in, us"],
+														hiddenInput: "full_contact",
+														formatOnDisplay: true,
+														nationalMode: false,
+														customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+															return "8655425357";
+														},
+														// allowDropdown: false,
+														geoIpLookup: function(callback) {
+															$.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+																var countryCode = (resp && resp.country) ? resp.country : "";
+																callback(countryCode);
+															});
+														},
+														utilsScript: "../../build/js/utils.js?1562189064761",
+														utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/js/utils.js",
+													});
+
+													$.validator.addMethod("emailregex", function(value, element) {
+														return this.optional(element) || /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(value);
+													})
+													$.validator.addMethod("ddmmyyyyregex", function(value, element) {
+														return this.optional(element) || /^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/[1-9]\d{3}$/i.test(value);
+													})
+													$.validator.addMethod("letters", function(value, element) {
+														return this.optional(element) || /^[a-zA-Z'\s]*$/i.test(value);
+													});
+													$.validator.addMethod("phone", function(value, element) {
+														return this.optional(element) || /^[0-9]*$/i.test(value);
+													});
+													$("#form_option_01").validate({
+														ignore: [
+															":hidden", ":focus"
+														],
+														rules: {
+															"name": {
+																letters: true,
+															},
+															"email": {
+																emailregex: true
+															},
+															"contact": {
+																phone: true
+															}
+														},
+														messages: {
+															'name': {
+																letters: "Please enter a valid name."
+															},
+															'email': {
+																emailregex: 'Please enter a valid email address.'
+															},
+															'contact': {
+																phone: 'Please enter a valid contact number'
+															}
+														}
+													});
+												</script>
+												</fieldset>
+												<?= form_close() ?>
+
 											</div>
 										</div>
 									</div>
@@ -219,6 +220,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		</div>
 	</section>

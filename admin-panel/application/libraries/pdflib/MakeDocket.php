@@ -57,7 +57,7 @@ class MakeDocket extends Fpdf
 		return $this;
 	}
 
-	public function load($data = null, $layout = 'docket_msme')
+	public function load($data = null, $layout = '')
 	{
 		include_once __DIR__ . '/layout/' . $layout . '.php';
 		return $this;

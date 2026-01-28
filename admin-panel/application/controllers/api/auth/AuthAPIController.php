@@ -62,19 +62,23 @@ class AuthAPIController extends CI_Controller
 
 	public function participant_register()
 	{
+		$this->load->model('panel/LeadsModel');
+
 		$this->request = $this->input->post();
 
-		
 		$contact = $this->request['contact'];
 		$this->request['password'] = hash('md5', hash('sha256', $contact));
-		
+
 		$data['name'] = $this->request['name'];
 		$data['email'] = strtolower(trim(str_replace(' ', '', $this->request['email']), "\t\n\r\0\x0B"));
 		$data['contact'] = $this->request['contact'];
+
+		$lead = $data;
+
 		$data['role'] = 'participant';
 		$data['useremail'] = $data['email'];
 		$data['password'] = $this->request['password'];
-		
+
 		$existing_user = json_decode($this->UserModel->get(null, ['useremail' => $this->request['email']]), true);
 
 		$session = [
@@ -100,6 +104,10 @@ class AuthAPIController extends CI_Controller
 				$this->session->set_tempdata('email_verify_token', $token_session, 600);
 				$verification_link = base_url() . 'api/v2/auth/verify/email/verify?token=' . $token;
 
+				if(isset($this->request['utm_medium']) && $this->request['utm_medium'] == 'agency_referral') {
+					$lead['created_by'] = $this->request['utm_source'];
+					$this->LeadsModel->insert($lead);
+				}
 
 				$email_data = [
 					'user' => [
@@ -122,8 +130,8 @@ class AuthAPIController extends CI_Controller
 					$session['status'] = 'SUCCESS';
 					$session['message'] = 'You have successfully registered. Please Check your Email for the Login Credentials.';
 					$this->session->set_flashdata('user_login_status', $session);
-					redirect('login');
 				}
+				redirect('login');
 			} else {
 				$session['status'] = 'WARNING';
 				$this->session->set_flashdata('user_login_status', $session);

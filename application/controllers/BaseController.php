@@ -70,6 +70,12 @@ class BaseController extends CI_Controller
 				'status' => 1,
 			],
 			[
+				'name' => 'Ahmedabad',
+				'image' => 'ahmedabad.png',
+				'date' => '2026-01-23',
+				'status' => 1,
+			],
+			[
 				'name' => 'Ghaziabad',
 				'image' => 'gaziabad.png',
 				'date' => '2026-11-16',
@@ -100,23 +106,6 @@ class BaseController extends CI_Controller
 				'date' => '2026-12-06',
 				'theme' => [
 					'title' => "Kolkata: Gateway to Eastern India’s economic growth",
-					'description' => '',
-					'embed' => '',
-				],
-				'partners' => [
-					[
-						'text' => 'Powered By',
-						'logo' => 'tata-tele.png'
-					]
-				],
-				'status' => 0,
-			],
-			[
-				'name' => 'Ahmedabad',
-				'image' => 'ahmedabad.png',
-				'date' => '2026-02-20',
-				'theme' => [
-					'title' => "Ahmedabad: Building India’s next financial nerve centre",
 					'description' => '',
 					'embed' => '',
 				],

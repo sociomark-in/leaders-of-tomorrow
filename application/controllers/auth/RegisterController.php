@@ -17,13 +17,12 @@ class RegisterController extends BaseController
 	public function agency_register($code)
 	{
 		$this->load->model('panel/AgentModel');
-		$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $code]), true);
+		$agent = json_decode($this->AgentModel->get(null, ['agent_id' => $code]), true)[0];
 		$f = false;
 		if (count($agent) > 0) {
-			$this->data['agency'] = $agent[0];
-			$this->load->mini_view('agency_register', $this->data);
+			redirect($this->PANEL_URL . "/register?utm_source=" . $agent['agent_id'] . "&utm_medium=agency_referral");
 		} else {
-			redirect(base_url('register'));
+			redirect($this->PANEL_URL . "/register?utm_source=direct");
 		}
 	}
 }

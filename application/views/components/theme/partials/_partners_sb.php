@@ -9,6 +9,7 @@ if (isset($city['partners']) && in_array($this->uri->segment(2),
 	'kolkata',
 	'delhi',
 	'pune',
+	'ahmedabad',
 ])):
 	$data['city'] = $city['name'];
 	$data['partners'] = $city['partners'];
