@@ -73,13 +73,16 @@
 	</div>
 
 	<div class="col-xl-6">
+	    <?php if(!isset($lead) || count($lead) == 0): ?>
+	    <!-- If Not UTM then show this Section -->
 		<div class="">
 			<label for="" class="form-label">How did you get to know about the Awards?</label>
 			<select required name="agent_referrer" id="my-select" class="form-select mb-1">
 				<option value="">Select Source</option>
 				<option value="Television">Television</option>
 				<option value="Social Media">Social Media</option>
-				<option value="Through Agency">Through Agency</option>
+				<option value="1595014714">Agency: C2CM</option>
+				<option value="5167681127">Agency: Outreach 360</option>
 				<option value="Other">Other (Please Specify)</option>
 			</select>
 			<div id="other-source-input" style="display:none;">
@@ -103,6 +106,7 @@
 							$otherContainer.slideDown(200, function() {
 								$otherInput.focus();
 							});
+							$otherInput.val('');
 							$otherInput.prop('required', true);
 
 						} else {
@@ -115,6 +119,8 @@
 				});
 			</script>
 		</div>
+	    <!-- If Not UTM then show this Section -->
+	    <?php endif ?>
 	</div>
 
 

@@ -42,13 +42,17 @@
 
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
-	$this->pdf->Cell(97, 6, 'Participating Entity (Organization Name)', 0, 0, '');
-	$this->pdf->Cell(46, 6, 'Business Segment', 0, 0, '');
-	$this->pdf->Cell(46, 6, 'Date of Company Incorporation', 0, 1, '');
+	$this->pdf->Cell(107, 6, 'Participating Entity (Organization Name)', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
-	$this->pdf->Cell(97, 6, $data['organization_name'] ?? 'Lorem Ipsum', 0, 0, '');
+	$this->pdf->Cell(107, 6, $data['organization_name'] ?? 'Lorem Ipsum', 0, 1, '');
+	
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->Cell(46, 6, 'Business Segment', 0, 0, '');
+	$this->pdf->Cell(32, 6, 'Date of Company Incorporation', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->Cell(46, 4, $data['id_255003'] ?? 'Lorem Ipsum', 0, 0, '');
-	$this->pdf->Cell(46, 4, $data['id_255002'] ?? 'Lorem Ipsum', 0, 1, '');
+	$this->pdf->Cell(32, 4, $data['id_255002'] ?? 'Lorem Ipsum', 0, 1, '');
 
 	$this->pdf->Cell(0, 5, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
@@ -66,30 +70,36 @@
 
 	$this->pdf->Cell(0, 5, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
-	$this->pdf->Cell(63, 6, 'Type of Ownership', 0, 0, '');
-	$this->pdf->Cell(126, 6, 'Website URL', 0, 1, '');
+	$this->pdf->Cell(47, 6, 'Type of Ownership', 0, 0, '');
+	$this->pdf->Cell(63, 6, 'Current Generation Leading Years', 0, 0, '');
+	$this->pdf->Cell(79, 6, 'Website URL', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
-	$this->pdf->Cell(63, 4, $data['id_255005'] ?? "Lorem Ipsum" . ' Employees', 0, 0, '');
-	$this->pdf->Cell(126, 3, $data['organization_url'] ?? "http://guardian.co.uk", 0, 1, '');
+	$this->pdf->Cell(47, 4, $data['id_255005'] ?? "Lorem Ipsum" . ' Employees', 0, 0, '');
+	$this->pdf->Cell(63, 4, $data['id_255000'] ?? "Lorem Ipsum" . ' Employees', 0, 0, '');
+	$this->pdf->Cell(79, 4, $data['organization_url'] ?? "", 0, 1, '');
 
 
 	$this->pdf->Cell(0, 5, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetFillColor(180, 180, 180);
-	$this->pdf->Cell(189, 6, 'Equity Split Between Partners', 0, 1, '');
-	$this->pdf->Cell(63, 6, 'Name', 1, 0, '', true);
+	$this->pdf->Cell(189, 6, 'Family Ownership Structure', 0, 1, '');
+	$this->pdf->Cell(32, 6, 'Name', 1, 0, '', true);
 	$this->pdf->Cell(32, 6, 'Gender', 1, 0, '', true);
-	$this->pdf->Cell(46, 6, 'Designation', 1, 0, '', true);
-	$this->pdf->Cell(46, 6, 'Equity', 1, 1, '', true);
+	$this->pdf->Cell(32, 6, 'Relation', 1, 0, '', true);
+	$this->pdf->Cell(32, 6, 'Generation', 1, 0, '', true);
+	$this->pdf->Cell(32, 6, 'Designation', 1, 0, '', true);
+	$this->pdf->Cell(32, 6, 'Equity', 1, 1, '', true);
 
 	$partners = json_decode($data['id_255004'], true);
 
 	$this->pdf->SetFont('Arial', '', 9);
 	foreach ($partners as $key => $partner) {
-		$this->pdf->Cell(63, 6, $partner['name'] ?? 'Lorem Ipsum', 1, 0, '');
+		$this->pdf->Cell(32, 6, $partner['name'] ?? 'Lorem Ipsum', 1, 0, '');
 		$this->pdf->Cell(32, 6, $partner['gender'] ?? 'Lorem Ipsum', 1, 0, '');
-		$this->pdf->Cell(46, 6, $partner['designation'] ?? 'Lorem Ipsum', 1, 0, '');
-		$this->pdf->Cell(46, 6, $partner['equity'] ?? '0.00', 1, 1, '');
+		$this->pdf->Cell(32, 6, $partner['founder_relation'] ?? 'Lorem Ipsum', 1, 0, '');
+		$this->pdf->Cell(32, 6, $partner['generation'] ?? 'Lorem Ipsum', 1, 0, '');
+		$this->pdf->Cell(32, 6, $partner['designation'] ?? 'Lorem Ipsum', 1, 0, '');
+		$this->pdf->Cell(32, 6, $partner['equity'] ?? '0.00', 1, 1, '');
 	}
 	
 	
@@ -182,29 +192,101 @@
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
-	$this->pdf->Cell(63, 6, 'No. Of Employees', 0, 0, '');
-	$this->pdf->Cell(126, 6, 'Target Market Segment & Geographic Reach', 0, 1, '');
+	$this->pdf->Cell(32, 6, 'No. Of Employees', 0, 0, '');
+	$this->pdf->Cell(32, 6, 'Generation', 0, 0, '');
+	$this->pdf->Cell(63, 6, 'Family members actively involved', 0, 0, '');
+	$this->pdf->Cell(63, 6, 'Equity', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->SetTextColor(25, 25, 25);
-	$this->pdf->Cell(63, 4, $data['id_255201'] ?? "Lorem Ipsum", 0, 0);
-	$this->pdf->Cell(63, 4, $data['id_255204'] ?? "Lorem Ipsum", 0, 0);
-	$this->pdf->Cell(63, 4, $data['id_255205'] ?? "Lorem Ipsum", 0, 1);
+	$this->pdf->Cell(32, 4, $data['id_255201'] ?? "Lorem Ipsum", 0, 0);
+	$this->pdf->Cell(32, 4, $data['id_255204'] ?? "Lorem Ipsum", 0, 0);
+	$this->pdf->Cell(63, 4, $data['id_255205'] ?? "Lorem Ipsum", 0, 0);
+	$this->pdf->Cell(63, 4, $data['id_255206'] ?? "Lorem Ipsum", 0, 1);
 	
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
-	$this->pdf->Cell(0, 6, 'Brief Description of the Business', 0, 1, '');
+	$this->pdf->Cell(0, 6, 'Brief History of the Family Business', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->SetTextColor(25, 25, 25);
-	$this->pdf->MultiCell(0, 4, $data['id_255202'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	$this->pdf->MultiCell(0, 4, $data['id_255202'] ?? "", 0);
+	
+	$this->pdf->Cell(0, 4, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
+	$this->pdf->MultiCell(0, 4, 'Briefly describe how responsibilities are currently shared between generations (founder, second-generation, third generation, etc.) and key decision-making processes.', 0);
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, $data['id_255203'] ?? "", 0);
+}
+
+// [ ] Case Studies
+{
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 5, '', 0, 1, '');
+	$this->pdf->SetFillColor(183, 32, 38);
+	$this->pdf->SetTextColor(255, 255, 255);
+	$this->pdf->Cell(0, 6, 'Case Studies', 0, 1, '', true);
+	
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
+	$this->pdf->Cell(0, 6, 'Innovation & Strategic Shifts in the Family Business', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Describe the key innovations, changes, or strategic initiatives introduced by the current generation during this period.', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
+	$this->pdf->Cell(0, 1, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->MultiCell(0, 4, $data['id_255301'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 	", 0);
 	
 	$this->pdf->Cell(0, 4, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
-	$this->pdf->Cell(0, 6, 'Core Products / Services Offered', 0, 1, '');
-	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 6, 'Business Outcomes & Continuity of Legacy', 0, 1, '');
 	$this->pdf->SetTextColor(25, 25, 25);
-	$this->pdf->MultiCell(0, 4, $data['id_255203'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	$this->pdf->MultiCell(0, 4, 'Explain the measurable impact of these initiatives', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
+	$this->pdf->Cell(0, 1, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->MultiCell(0, 4, $data['id_255302'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	", 0);
+	
+	$this->pdf->Cell(0, 4, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
+	$this->pdf->Cell(0, 6, 'Succession, Governance & Future-Ready Growth Plan', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Describe how you are strengthening the business for the next decade', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
+	$this->pdf->Cell(0, 1, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->MultiCell(0, 4, $data['id_255303'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	", 0);
+}
+
+// [ ] Individual Category
+{
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 5, '', 0, 1, '');
+	$this->pdf->SetFillColor(183, 32, 38);
+	$this->pdf->SetTextColor(255, 255, 255);
+	$this->pdf->Cell(0, 6, 'Individual Category Preference', 0, 1, '', true);
+
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->Cell(79, 6, 'Individual Category', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->Cell(79, 4, $data['individual_category']['name'] ?? "Excellence in IT/ITES and Electronics", 0, 1, '');
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
+	$this->pdf->Cell(0, 6, 'Entrepreneur Insight', 0, 1, '');
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->MultiCell(0, 4, 'Between April 01, 2023 and March 31, 2025, how have you personally embodied "Agility. Ambition. Ascent." as an entrepreneur/innovator', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 7);
+	$this->pdf->Cell(0, 1, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->MultiCell(0, 4, $data['id_255602'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
 	", 0);
 }

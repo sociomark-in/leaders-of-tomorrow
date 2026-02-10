@@ -81,10 +81,12 @@ class PresentationsController extends PanelController
 								break;
 						}
 						$presentations[$i]['status_text'] = $s;
-						$presentations[$i]['agent_name'] = json_decode($this->AgentModel->get(['name'], ['agent_id' => $presentations[$i]['agent_name']]), true)[0]['name'];
 					}
 				}
 				$this->data['all_applications'] = $presentations;
+				
+				// echo "<pre>";
+				// print_r($presentations);die;
 
 				$this->load->moderator_view('presentations/home', $this->data);
 				break;

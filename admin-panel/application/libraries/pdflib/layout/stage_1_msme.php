@@ -43,13 +43,17 @@
 
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
-	$this->pdf->Cell(97, 6, 'Participating Entity (Organization Name)', 0, 0, '');
-	$this->pdf->Cell(46, 6, 'Business Segment', 0, 0, '');
-	$this->pdf->Cell(46, 6, 'Date of Company Incorporation', 0, 1, '');
+	$this->pdf->Cell(107, 6, 'Participating Entity (Organization Name)', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
-	$this->pdf->Cell(97, 6, $data['organization_name'] ?? 'Lorem Ipsum', 0, 0, '');
+	$this->pdf->Cell(107, 6, $data['organization_name'] ?? 'Lorem Ipsum', 0, 1, '');
+	
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->Cell(46, 6, 'Business Segment', 0, 0, '');
+	$this->pdf->Cell(32, 6, 'Date of Company Incorporation', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->Cell(46, 4, $data['id_255003'] ?? 'Lorem Ipsum', 0, 0, '');
-	$this->pdf->Cell(46, 4, $data['id_255002'] ?? 'Lorem Ipsum', 0, 1, '');
+	$this->pdf->Cell(32, 4, $data['id_255002'] ?? 'Lorem Ipsum', 0, 1, '');
 
 	$this->pdf->Cell(0, 5, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
@@ -183,13 +187,21 @@
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);
 	$this->pdf->SetTextColor(183, 32, 38);
-	$this->pdf->Cell(63, 6, 'No. Of Employees', 0, 0, '');
+	$this->pdf->Cell(63, 6, 'No. Of Employees', 0, 1, '');
+	$this->pdf->SetFont('Arial', '', 9);
+	$this->pdf->SetTextColor(25, 25, 25);
+	$this->pdf->Cell(63, 4, $data['id_255201'] ?? "Lorem Ipsum", 0, 1);
+
+	$this->pdf->Cell(0, 2, '', 0, 1, '');
+	$this->pdf->SetFont('Arial', 'B', 9);
+	$this->pdf->SetTextColor(183, 32, 38);
 	$this->pdf->Cell(126, 6, 'Target Market Segment & Geographic Reach', 0, 1, '');
 	$this->pdf->SetFont('Arial', '', 9);
 	$this->pdf->SetTextColor(25, 25, 25);
-	$this->pdf->Cell(63, 4, $data['id_255201'] ?? "Lorem Ipsum", 0, 0);
-	$this->pdf->Cell(63, 4, $data['id_255204'] ?? "Lorem Ipsum", 0, 0);
-	$this->pdf->Cell(63, 4, $data['id_255205'] ?? "Lorem Ipsum", 0, 1);
+	$this->pdf->MultiCell(0, 4, $data['id_255204'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	", 0);
+	$this->pdf->MultiCell(0, 4, $data['id_255205'] ?? "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem repellat voluptatem ex quos consectetur voluptatum nemo, odio impedit veritatis tempora asperiores autem dolorum minus repellendus aliquid nesciunt deserunt vel placeat saepe? Dolor, ducimus. Ex inventore ea perspiciatis exercitationem, minus ipsam officiis, facere libero repudiandae quasi esse consectetur qui temporibus dolorum officia quia quis deleniti ab a! Incidunt nulla iure tempora distinctio dolorum vel consequuntur quod, beatae voluptatum a, dolor, nihil enim quisquam ullam ea alias totam aspernatur nisi praesentium! Neque, recusandae eos. Placeat, maxime iure quisquam aut recusandae consequatur iste cum dignissimos quas sint dicta pariatur incidunt provident facilis vitae.
+	", 0);
 	
 	$this->pdf->Cell(0, 2, '', 0, 1, '');
 	$this->pdf->SetFont('Arial', 'B', 9);

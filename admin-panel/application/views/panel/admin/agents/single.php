@@ -12,7 +12,7 @@
 
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div class="">
-			<h4 class="mb-3 mb-md-0"><?= $agency['name'] ?></h4>
+			<h4 class="mb-3 mb-md-0">Agency Name: <?= $agency['details']['name'] ?></h4>
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">

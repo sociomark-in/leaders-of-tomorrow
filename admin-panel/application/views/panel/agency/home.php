@@ -62,16 +62,16 @@
 			<div class="col-12">
 				<ul class="nav nav-pills" id="myTab" role="tablist">
 					<li class="nav-item" role="presentation">
-						<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">All Applications</button>
+						<button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">All Profiles</button>
 					</li>
 					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">All Profiles</button>
+						<button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">All Applications</button>
 					</li>
 				</ul>
 			</div>
 			<div class="col-12">
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+					<div class="tab-pane fade" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 						<div class="row p-3">
 							<div class="col-12">
 								<div class="row">
@@ -97,6 +97,7 @@
 																	<th>Date & Time</th>
 																	<th>ID</th>
 																	<th>Category</th>
+																	<th>Status</th>
 																	<th>Name</th>
 																	<th>Email</th>
 																	<th>Organization Name</th>
@@ -104,7 +105,6 @@
 																	<th>State</th>
 																	<th>City</th>
 																	<th>Website</th>
-																	<th>Status</th>
 																</tr>
 															</thead>
 															<tbody>
@@ -149,8 +149,9 @@
 																			</script>
 																		</td>
 																		<td><?= date_format(date_create_from_format('Y-m-d H:i:s', $application['created_at']), 'F j, Y H:iA')  ?></td>
-																		<td><?= $application['nomination_id'] ?></td>
+																		<td><a href="<?= ($application['status'] !=4 )? base_url('nomination/' . $application['nomination_id']) : 'javascript:void(0)' ?>"><?= $application['nomination_id'] ?></a></td>
 																		<td><?= $application['category']['name'] ?></td>
+																		<td><?= $application['status'] ?></td>
 																		<td><?= $application['name'] ?></td>
 																		<td><?= $application['email'] ?></td>
 																		<td><?= $application['organization_name'] ?></td>
@@ -158,7 +159,6 @@
 																		<td><?= $application['organization_state'] ?></td>
 																		<td><?= $application['organization_city'] ?></td>
 																		<td><?= $application['organization_url'] ?></td>
-																		<td><?= $application['status'] ?></td>
 																	</tr>
 																<?php endforeach ?>
 															</tbody>
@@ -183,7 +183,7 @@
 									scrollX: true,
 									paging: false,
 									order: [
-										[0, 'asc']
+										[1, 'asc']
 									],
 									layout: {
 										topStart: {
@@ -202,8 +202,7 @@
 							</script>
 						</div>
 					</div>
-				</div>
-				<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+				    <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="row">
@@ -268,6 +267,7 @@
 							</script>
 						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -1,9 +1,3 @@
-<?php
-$stage = 0;
-if ($nomination['stage'] >= 1) {
-	$stage = $nomination['stage'];
-}
-?>
 <main class="page-content">
 	<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 		<div>
@@ -11,8 +5,8 @@ if ($nomination['stage'] >= 1) {
 		</div>
 		<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/presentations') ?>">All Presentations</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url() ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('presentations') ?>">All Presentations</a></li>
 				<li class="breadcrumb-item active" aria-current="page">#<?= $application['presentation_id'] ?></li>
 			</ol>
 		</nav>
@@ -47,7 +41,7 @@ if ($nomination['stage'] >= 1) {
 											</div>
 										<?php endif ?>
 										<div class="col-lg-auto col-12">
-											<a href="<?= base_url('dashboard/presentation/' . $application['presentation_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['presentation_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Presentation</a>
+											<a href="<?= base_url('presentation/' . $application['presentation_id'] . '/download?key=' . urlencode($this->encryption->encrypt($application['presentation_id']))) ?>" class="btn d-flex btn-yellow btn-icon-text"><i class="btn-icon-prepend" data-feather="download"></i>Download Presentation</a>
 										</div>
 									</div>
 								</div>
@@ -111,15 +105,17 @@ if ($nomination['stage'] >= 1) {
 										<h5 class="card-title">Previous Comments</h5>
 										<div class="row">
 											<div class="col-12">
-												<?php foreach ($comments as $key => $comment): ?>
-													<div class="bg-light">
-														<blockquote class="blockquote p-3">
-															<p class="mb-4"><?= $comment['comment'] ?></p>
-															<footer class="blockquote-footer">
-																<?= $comment['created_by']['name'] ?>,&nbsp;(<cite title="Source Title"><?= ucfirst($comment['created_at']) ?></cite>)</footer>
-														</blockquote>
-													</div>
-												<?php endforeach ?>
+												<?php if(isset($comments) && count($comments) > 0): ?>
+    												<?php foreach ($comments as $key => $comment): ?>
+    													<div class="bg-light">
+    														<blockquote class="blockquote p-3">
+    															<p class="mb-4"><?= $comment['comment'] ?></p>
+    															<footer class="blockquote-footer">
+    																<?= $comment['created_by']['name'] ?>,&nbsp;(<cite title="Source Title"><?= ucfirst($comment['created_at']) ?></cite>)</footer>
+    														</blockquote>
+    													</div>
+    												<?php endforeach ?>
+												<?php endif ?>
 											</div>
 										</div>
 									</div>

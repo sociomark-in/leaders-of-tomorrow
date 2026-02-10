@@ -1,13 +1,14 @@
 <?php
 class TestController extends CI_Controller
 {
+    public $keys;
 	public function index()
 	{
 		echo "TestController is working!";
 	}
 
 	public function test(){
-		print_r(hash('md5', hash('sha256', "EY@Awards2026")));
+		print_r(hash('md5', hash('sha256', "8980940833")));
 	}
 
 	public function encrypt()
@@ -23,7 +24,18 @@ class TestController extends CI_Controller
 		);
 
 		foreach ($this->result as $key => $row) {
-			$this->keys[$row['config_key']] = $this->encryption->decrypt($row['value']);
+		    if(str_contains($row['config_key'], "ilovepdf")){
+		        echo $key . "<br>";
+		        $j = json_decode($row['value'], true);
+		        $k = [];
+		        if(!is_null($j)){
+		            $k = [];
+    		        foreach($j as $a => $m){
+    		            $k[$a] = $this->encryption->decrypt($m);
+    		        }
+    			    $this->keys[$row['config_key']] = $k;
+		        }
+		    }
 		}
 		echo "<pre>";
 		print_r($this->keys);

@@ -381,25 +381,27 @@
 										Revenue/ Turnover (in INR Crores)
 									</div>
 									<div class="col-xxl-4 col-lg-6 col-12">
-										<select required name="financial_1_2" id="" class="form-select">
-											<option value="">Select Option</option>
-											<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-											<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-											<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-											<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
-											<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
-										</select>
-									</div>
-									<div class="col-xxl-4 col-lg-6 col-12">
-										<select required name="financial_1_1" id="" class="form-select">
-											<option value="">Select Option</option>
-											<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-											<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-											<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-											<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
-											<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
-										</select>
-									</div>
+            							<select required name="financial_1_2" id="" class="form-select">
+            								<option value="">Select Option</option>
+            								<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+            								<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+            								<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+            								<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+            								<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
+            								<option <?= ($application['id_255101'] == "251 - 500") ? "selected" : "" ?> value="251 - 500">201 - 250</option>
+            							</select>
+            						</div>
+            						<div class="col-xxl-4 col-lg-6 col-12">
+            							<select required name="financial_1_1" id="" class="form-select">
+            								<option value="">Select Option</option>
+            								<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+            								<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+            								<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+            								<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+            								<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
+            								<option <?= ($application['id_255102'] == "251 - 500") ? "selected" : "" ?> value="251 - 500">201 - 250</option>
+            							</select>
+            						</div>
 								</div>
 							</div>
 							<div class="col-12">
@@ -809,8 +811,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">MSME Certificate<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc1" class="dropify" data-default-file="<?= $application['id_255401'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">document supporting received from Ministry of MSME, Govt. of India (PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -820,8 +822,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">Incorporation Certificate<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc2" class="dropify" data-default-file="<?= $application['id_255402'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">(PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -831,8 +833,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">IEC Copy<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc6" class="dropify" data-default-file="<?= $application_temp['id_255406'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">(PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -842,8 +844,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">Export performance certificates from EPCs, key international certification<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application_temp['id_255407'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">All Certificates in a Single PDF (PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc7" class="dropify" data-default-file="<?= $application_temp['id_255407'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">All Certificates in a Single PDF (PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -853,8 +855,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">Collaterals to Support the Impact<sup class="text-danger">&ast;</sup></label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">Collaterals to support impact mentioned in the application form</span>
+									<input type="file" required accept="application/pdf" name="doc4" class="dropify" data-default-file="<?= $application['id_255404'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">Collaterals to support impact mentioned in the application form (PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12">
@@ -864,8 +866,8 @@
 									<?php else: ?>
 										<label for="" class="form-label">Any other Collaterals</label>
 									<?php endif ?>
-									<input type="file" required accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="2M" data-allowed-file-extensions="pdf" />
-									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 2MB)</span>
+									<input type="file" required accept="application/pdf" name="doc5" class="dropify" data-default-file="<?= $application['id_255405'] ?>" data-max-file-size="4M" data-allowed-file-extensions="pdf" />
+									<span class="form-text">(Awards / Articles / Certificates, etc.) in a Single PDF (PDF of Maximum Size 4MB)</span>
 								</div>
 							</div>
 						</div>

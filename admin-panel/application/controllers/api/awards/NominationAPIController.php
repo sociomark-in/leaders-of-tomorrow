@@ -58,7 +58,7 @@ class NominationAPIController extends CI_Controller
 		if (!file_exists($config['upload_path'])) {
 			mkdir($config['upload_path'], 0777);
 		} else {
-			delete_files($config['upload_path']);
+// 			delete_files($config['upload_path']);
 		}
 
 		// $pdf = new PDFMerger;
@@ -155,6 +155,10 @@ class NominationAPIController extends CI_Controller
 		$this->load->helper('directory');
 
 		$this->request = $this->input->post();
+		
+		$this->load->model('panel/LeadsModel');
+		$lead = json_decode($this->LeadsModel->get(null, ['email' => $this->usersession['useremail']]), true)[0] ?? NULL;
+		$this->request['agent_referral'] = $lead['created_by'];
 
 		$this->load->model('event/awards/CategoryModel');
 		$stage = $this->input->post('stage') ?? 0;
@@ -164,7 +168,9 @@ class NominationAPIController extends CI_Controller
 		$this->request['stage'] = $stage;
 
 		$application_id = $this->request['application_id'];
+		
 
+		
 		if ($stage == 6) {
 			$this->session->unset_userdata('temp_application_session');
 		} else {
@@ -191,6 +197,7 @@ class NominationAPIController extends CI_Controller
 						$data = [
 							"nomination_id" => $this->request['application_id'],
 							"category_id" => $category['type'],
+							"agent_referral" => $this->request['agent_referral'] ?? "no",
 							"name" => 	$this->request['name'],
 							"email" => $this->request['contact_person']['email'] ?? null,
 							"designation" => 	$this->request['designation'],
@@ -473,17 +480,15 @@ class NominationAPIController extends CI_Controller
 							'contact' => $this->usersession['contact'],
 						];
 						$this->load->model('panel/AgentModel');
-						$agents = json_decode($this->AgentModel->get(), true);
-
-						foreach ($agents as $key => $agent) {
-						}
-						$data = [
-							// 'is_idfc_customer' => $this->request['is_idfc_customer'],
-							// 'agent_referral' => $this->request['agent_referrer'],
-							// 'agent_name' => $this->request['agent_name'],
+					    
+					    $data = [
 							'created_at' => date('Y-m-d H:i:s'),
 							'status' => 3
 						];
+
+						if (isset($this->request['agent_referral']) || $this->request['agent_referral'] != '') {
+						    $data['agent_referral'] = $this->request['agent_referral'];
+						}
 
 						if ($this->request['last_winner']['status'] == 'yes') {
 							$data['id_255603'] = $this->request['last_winner']['year'];
@@ -521,6 +526,7 @@ class NominationAPIController extends CI_Controller
 						$data = [
 							"nomination_id" => $this->request['application_id'],
 							"category_id" => $category['type'],
+							"agent_referral" => $this->request['agent_referral'] ?? "no",
 							"name" => 	$this->request['name'],
 							"email" => $this->request['contact_person']['email'] ?? null,
 							"designation" => 	$this->request['designation'],
@@ -666,10 +672,10 @@ class NominationAPIController extends CI_Controller
 						$category_id = $this->input->post('category_id');
 						$f = 1;
 						foreach ($_FILES as $key => $file) {
-							// if ($file['size'] == 0) {
-							// 	$f = 0;
-							// 	break;
-							// }
+							if ($file['size'] == 0) {
+								$f = 0;
+								break;
+							}
 						}
 
 						$data = [
@@ -720,8 +726,8 @@ class NominationAPIController extends CI_Controller
 							'id_255202' => $this->request["organization_overview"],
 							'id_255203' => $this->request["organization_services"],
 
-							'id_255204' => $this->request["organization"]['domestic'],
-							'id_255205' => $this->request["organization"]['international'],
+							'id_255204' => $this->request["organization"]['domestic'] ?? NULL,
+							'id_255205' => $this->request["organization"]['international']?? NULL,
 
 							'id_255204' => $this->request["organization"]['beneficiary'],
 							'id_255205' => $this->request["organization"]['members'],
@@ -741,8 +747,10 @@ class NominationAPIController extends CI_Controller
 						if ($f) {
 							$response = $this->_document_uploads($_FILES, $category_id, $application_id);
 							if ($response == NULL) {
+							    print_r("No File Change");die;
 								redirect('nomination/' . $application_id . '?stage=' . ++$stage);
 							} else {
+							    print_r($response);die;
 								$data = [
 									'stage_status' => $s,
 
@@ -799,18 +807,15 @@ class NominationAPIController extends CI_Controller
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
-						$this->load->model('panel/AgentModel');
-						$agents = json_decode($this->AgentModel->get(), true);
-
-						foreach ($agents as $key => $agent) {
-						}
+						
 						$data = [
-							// 'is_idfc_customer' => $this->request['is_idfc_customer'],
-							// 'agent_referral' => $this->request['agent_referrer'],
-							// 'agent_name' => $this->request['agent_name'],
 							'created_at' => date('Y-m-d H:i:s'),
 							'status' => 3
 						];
+
+						if (isset($this->request['agent_referral']) || $this->request['agent_referral'] != '') {
+						    $data['agent_referral'] = $this->request['agent_referral'];
+						}
 
 						if ($this->request['last_winner']['status'] == 'yes') {
 							$data['id_255603'] = $this->request['last_winner']['year'];
@@ -853,6 +858,7 @@ class NominationAPIController extends CI_Controller
 						$data = [
 							"nomination_id" => $this->request['application_id'],
 							"category_id" => $category['type'],
+							"agent_referral" => $this->request['agent_referral'] ?? "no",
 							"name" => 	$this->request['name'],
 							"email" => $this->request['contact_person']['email'] ?? null,
 							"designation" => 	$this->request['designation'],
@@ -1085,9 +1091,9 @@ class NominationAPIController extends CI_Controller
 
 						$this->request = $this->input->post();
 
-						echo "<pre>";
-						print_r($this->request);
-						die;
+				// 		echo "<pre>";
+				// 		print_r($this->request);
+				// 		die;
 						$application = json_decode($this->EntriesModel->get(null, ['nomination_id' => $application_id], strtolower($category['type'])), true)[0];
 
 
@@ -1108,19 +1114,15 @@ class NominationAPIController extends CI_Controller
 							'email' => $this->usersession['email'],
 							'contact' => $this->usersession['contact'],
 						];
-						$this->load->model('panel/AgentModel');
-						$agents = json_decode($this->AgentModel->get(), true);
-
-						foreach ($agents as $key => $agent) {
-						}
+						
 						$data = [
-							// 'is_idfc_customer' => $this->request['is_idfc_customer'],
-							'agent_referral' => $this->request['agent_referrer'],
-							// 'agent_name' => $this->request['agent_name'],
 							'created_at' => date('Y-m-d H:i:s'),
 							'status' => 3
 						];
 
+						if (isset($this->request['agent_referral']) || $this->request['agent_referral'] != '') {
+						    $data['agent_referral'] = $this->request['agent_referral'];
+						}
 						if ($this->request['last_winner']['status'] == 'yes') {
 							$data['id_255603'] = $this->request['last_winner']['year'];
 							$data['id_255604'] = $this->request['last_winner']['category'];

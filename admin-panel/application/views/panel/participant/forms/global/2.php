@@ -48,25 +48,27 @@
 							Revenue/ Turnover (in INR Crores)
 						</div>
 						<div class="col-xxl-4 col-lg-6 col-12">
-							<select required name="financial_1_2" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-								<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-								<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-								<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
-								<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
-							</select>
-						</div>
-						<div class="col-xxl-4 col-lg-6 col-12">
-							<select required name="financial_1_1" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
-								<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
-								<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
-								<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
-								<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
-							</select>
-						</div>
+    						<select required name="financial_1_2" id="" class="form-select">
+    							<option value="">Select Option</option>
+    							<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+    							<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+    							<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+    							<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+    							<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
+    							<option <?= ($application['id_255101'] == "251 - 500") ? "selected" : "" ?> value="251 - 500">251 - 500</option>
+    						</select>
+    					</div>
+    					<div class="col-xxl-4 col-lg-6 col-12">
+    						<select required name="financial_1_1" id="" class="form-select">
+    							<option value="">Select Option</option>
+    							<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+    							<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+    							<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+    							<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+    							<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
+    							<option <?= ($application['id_255102'] == "251 - 500") ? "selected" : "" ?> value="251 - 500">251 - 500</option>
+    						</select>
+    					</div>
 					</div>
 				</div>
 				<div class="col-12">

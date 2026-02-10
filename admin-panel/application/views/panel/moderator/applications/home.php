@@ -69,8 +69,6 @@
 												<th>Designation</th>
 												<th>State</th>
 												<th>City</th>
-												<th>Revenue Turnover (in Cr.)</th>
-												<th>Revenue Turnover (in Cr.)</th>
 												<th>Website</th>
 											</tr>
 										</thead>
@@ -103,8 +101,6 @@
 													<td><?= $application['designation'] ?></td>
 													<td><?= $application['organization_state'] ?></td>
 													<td><?= $application['organization_city'] ?></td>
-													<td><?= $application['id_255101'] . " Cr."?></td>
-													<td><?= $application['id_255102'] . " Cr."?></td>
 													<td><?= $application['organization_url'] ?></td>
 												</tr>
 												<?php endforeach ?>

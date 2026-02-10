@@ -73,9 +73,9 @@ class NominationsController extends PanelController
 					}
 				}
 
-				$agent = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_name']]), true) ?? [];
+				$agent = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_referral']]), true) ?? [];
 				$applications['msme'][$i]['status_2_text'] = $s;
-				$applications['msme'][$i]['agent_name'] = $agent['name'] ?? NULL;
+				$applications['msme'][$i]['agent_name'] = $agent[0]['name'] ?? NULL;
 			}
 		}
 		switch ($this->user_session['role']) {
@@ -85,8 +85,16 @@ class NominationsController extends PanelController
 			case 'jury':
 			case 'admin':
 			case 'super-admin':
+				
+				
+				// for ($i = 0; $i < count($applications['msme']); $i++){
+				//     $agent = json_decode($this->AgentModel->get(['name'], ['agent_id' => $applications['msme'][$i]['agent_referral']]), true) ?? [];
+				//     $applications['msme'][$i]['agent_name'] = $agent['name'] ?? NULL;
+				// }
+				// echo "<pre>";
+				// print_r($applications);die;
 				$this->data['all_applications'] = $applications;
-
+				
 				$this->load->moderator_view('applications/home', $this->data);
 				break;
 
@@ -99,7 +107,7 @@ class NominationsController extends PanelController
 	{
 		$this->data['my_applications'] = [];
 
-		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s"), 'status' => 1]), true);
+		$categories['msme'] = json_decode($this->CategoryModel->get(null, ['valid_until >' => date("Y-m-d H:i:s")]), true);
 		$this->data['categories'] = $categories;
 		$applications = [
 			'msme' => json_decode($this->EntriesModel->get(['nomination_id', 'category_id', 'stage_status', 'created_at', 'updated_at', 'status', 'status_2'], ['created_by' => $this->user_session['id']]), true),
@@ -230,6 +238,21 @@ class NominationsController extends PanelController
 
 				$this->load->moderator_view('applications/single', $this->data);
 				break;
+			case 'agency':
+				$this->load->model('panel/CommentModel');
+				$comments = json_decode($this->CommentModel->get(null, ['nomination_id' => $slug]), true);
+
+				for ($i = 0; $i < count($comments); $i++) {
+					$comments[$i]['created_by'] = json_decode($this->UserModel->get(null, ['id' => $comments[$i]['created_by']]), true)[0];
+					$comments[$i]['created_at'] = date_format(date_create_from_format('Y-m-d H:i:s', $comments[$i]['created_at']), 'F j, Y');
+				}
+				$this->data['comments'] = $comments;
+				$this->data['page']['title'] = "Awards Registration" . " • " .  APP_NAME . " " . date('Y');
+				$this->data['nomination']['stage'] = $stage;
+				$this->data['application'] = json_decode($this->EntriesModel->get(null, ['nomination_id' => $slug]), true)[0];
+
+				$this->load->moderator_view('applications/single_view', $this->data);
+				break;
 			default:
 				break;
 		}
@@ -285,6 +308,7 @@ class NominationsController extends PanelController
 			$application['category'] = $cm;
 			$application['individual_category'] = $ci;
 			$docketname =  'uploads/' . $application['nomination_id'] . '/docket_page.pdf';
+			$docketname =  'uploads/' . "LOTS12_" . $cm['code']  . "_" . $application['nomination_id'] . ".pdf";
 			if (file_exists($docketname)) {
 				unlink(FCPATH . $docketname);
 			}
@@ -315,9 +339,11 @@ class NominationsController extends PanelController
 			$filename = "LOTS12_" . $cm['code']  . "_" . $application['nomination_id'] . ".pdf";
 
 			$attachments = [];
-			array_push($attachments, FCPATH . 'uploads/' . $application['nomination_id'] . '/docket_page.pdf');
+			array_push($attachments, FCPATH . $docketname);
 			foreach ($temp as $key => $file) {
-				array_push($attachments, $file);
+			    if (file_exists($file)){
+				    array_push($attachments, $file);
+			    }
 			}
 
 			/*
@@ -336,15 +362,18 @@ class NominationsController extends PanelController
 				unlink(FCPATH . 'uploads/' . $application['nomination_id'] . "/" . $filename);
 			}
 
-			// $this->load->library('pdflib/MergePDF');
-			// $this->mergepdf->config()->merge(
-			// 	$attachments,
-			// 	FCPATH . 'uploads/' . $application['nomination_id'],
-			// 	$filename
-			// );
+            if(count($attachments) > 2){
+    			$this->load->library('pdflib/MergePDF');
+    			$this->mergepdf->config()->merge(
+    				$attachments,
+    				FCPATH . 'uploads/' . $application['nomination_id'],
+    				$filename
+    			);
+			    redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
+            } else {
+                redirect(base_url($docketname));
+            }
 
-			// redirect(base_url('uploads/' . $application['nomination_id'] . "/" . $filename));
-			redirect(base_url($docketname));
 
 			// $zip = new ZipArchive;
 			// if (file_exists('uploads/' . $application['nomination_id'] . '/' . "LOTS12_" . $category_details['code']  . "_" . $application['nomination_id'] . '_docket.zip')) {
