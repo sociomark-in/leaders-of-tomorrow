@@ -112,6 +112,7 @@ class PresentationsController extends PanelController
 		$this->data['application'] = $application;
 		$this->data['presentation_id'] = $presentation_id;
 		$this->data['category'] = $category_details;
+			
 		$this->load->panel_view('presentations/single', $this->data);
 	}
 
@@ -142,11 +143,10 @@ class PresentationsController extends PanelController
 
 		
 		$presentation = json_decode($this->PresentationsModel->get(null, ['presentation_id' => $slug]), true)[0];
-		$presentation['category'] = json_decode($this->CategoryModel->get(['name'], ['type' => $presentation['category_id']]), true)[0];
+		$presentation['category'] = json_decode($this->CategoryModel->get(null, ['type' => $presentation['category_id']]), true)[0];
 
 		$filename = "LOTS12_" . $presentation['category']['code']  . "_" . $presentation['presentation_id'] . ".pdf";
 		
-		// echo "<pre>"; print_r($presentation);die;
 		switch ($presentation['category_id']) {
 			case '1_INDIVIDUAL':
 				$this->makepresentation->init('L', 'mm', ['350', '200'])->load($presentation, 'stage_2_social_entrepreneur')->generate('I', $filename);

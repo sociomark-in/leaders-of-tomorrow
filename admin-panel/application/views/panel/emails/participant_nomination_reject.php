@@ -80,7 +80,7 @@
 														Dear <?= $applicant['name'] ?>,</div>
 													<div>
 														<div style="margin-bottom:10px;line-height:1.5">
-															We sincerely appreciate your participation in the <strong>IDFC FIRST Bank Presents ET Now Leaders of Tomorrow Season 12 Awards</strong>. 
+															We sincerely appreciate your participation in the <strong>IDFC FIRST Bank Presents ET Now Leaders of Tomorrow Season 13 Awards</strong>. 
 															Your journey as an entrepreneur and the incredible work you are doing in the MSME sector are truly commendable.
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
@@ -94,7 +94,7 @@
 														</div>
 														<div style="margin-bottom:10px;line-height:1.5">
 															We encourage you to continue your journey of growth and success. <strong>The Leaders of Tomorrow Awards will return next year</strong>,
-															and we would love to see your application again for Season 13.
+															and we would love to see your application again for Season 14.
 														</div>
 													</div>
 												</td>

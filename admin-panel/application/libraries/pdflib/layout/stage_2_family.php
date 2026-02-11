@@ -18,14 +18,14 @@
 
 $files = [
 	"logo_image" => $data["logo_image"],
-	"id_255401" => $data["id_255401"],
-	"id_255402" => $data["id_255402"],
-	"id_255403" => $data["id_255403"],
-	"id_255404" => $data["id_255404"],
-	"id_255405" => $data["id_255405"],
-	"id_255406" => $data["id_255406"],
-	"id_255407" => $data["id_255407"],
-	"id_255408" => $data["id_255408"],
+	"id_255401" => $data["id_255401"] ?? "",
+	"id_255402" => $data["id_255402"] ?? "",
+	"id_255403" => $data["id_255403"] ?? "",
+	"id_255404" => $data["id_255404"] ?? "",
+	"id_255405" => $data["id_255405"] ?? "",
+	"id_255406" => $data["id_255406"] ?? "",
+	"id_255407" => $data["id_255407"] ?? "",
+	"id_255408" => $data["id_255408"] ?? "",
 ];
 foreach ($files as $key => $file) {
 	if($file == '' || $file == NULL){
@@ -74,8 +74,8 @@ $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
 $this->pdf->Cell(70, 15, "Information", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2024", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2023", 1, 1, '', false);
+$this->pdf->Cell(35, 15, "FY 2025", 1, 0, '', false);
+$this->pdf->Cell(35, 15, "FY 2024", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "Generational Status", 1, 0, '', false);
@@ -126,6 +126,13 @@ $this->pdf->MultiCell(300, 15, "Family: " . $split[0] . "% - Investors: " . $spl
 
 $test = "LOREM IPSUM DOLOR SIT AMET CONSECTETUR, ADIPISICING ELIT. DOLORUM QUOS VOLUPTATEM INCIDUNT. IMPEDIT LABORIOSAM POSSIMUS ATQUE TEMPORA REPREHENDERIT NULLA NECESSITATIBUS HARUM VERITATIS MODI DESERUNT VEL MOLESTIAS ILLO, CUPIDITATE DELENITI EUM ID MOLLITIA ITAQUE? SIMILIQUE RATIONE, MOLLITIA QUAS ILLO OMNIS EA ALIQUID EIUS QUIS IPSA EAQUE DOLORUM. NON INVENTORE IN DOLORUM NIHIL DOLORE REM QUASI QUAS, VERO IPSUM PERFERENDIS EX NEMO. OFFICIA LAUDANTIUM QUISQUAM SUSCIPIT SAPIENTE PERFERENDIS ALIAS DUCIMUS NULLA INVENTORE REPUDIANDAE QUIA. ILLO, DOLOREM CULPA SAPIENTE VERO IPSAM IUSTO? ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE! ASSUMENDA DOLORIBUS VERITATIS MAIORES TEMPORA! EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO, FUGIT APERIAM VEL MAGNI VOLUPTATIBUS ISTE!  EXCEPTURI AT DOLORE SEQUI PORRO VERO ALIQUAM VOLUPTATEM RATIONE, NEMO?? FUGIT APERIAM VEL!";
 
+
+$this->pdf->addPage();
+$this->pdf->SetFont('Arial', 'B', 18);
+$this->pdf->MultiCell(300, 10, ucwords(strtolower("Core Products Services Offered")), 0, 'L');
+$this->pdf->SetFont('Arial', '', 16);
+$this->pdf->Cell(300, 7, "", 0, 1, '', false);
+$this->pdf->MultiCell(300, 10, ucwords(strtolower($data['id_255201'])), 0, 'L');
 
 $this->pdf->addPage();
 $this->pdf->SetFont('Arial', 'B', 18);

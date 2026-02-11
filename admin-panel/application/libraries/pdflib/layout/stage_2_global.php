@@ -18,14 +18,14 @@
 
 $files = [
 	"logo_image" => $data["logo_image"],
-	"id_255401" => $data["id_255401"],
-	"id_255402" => $data["id_255402"],
-	"id_255403" => $data["id_255403"],
-	"id_255404" => $data["id_255404"],
-	"id_255405" => $data["id_255405"],
-	"id_255406" => $data["id_255406"],
-	"id_255407" => $data["id_255407"],
-	"id_255408" => $data["id_255408"],
+	"id_255401" => $data["id_255401"] ?? "",
+	"id_255402" => $data["id_255402"] ?? "",
+	"id_255403" => $data["id_255403"] ?? "",
+	"id_255404" => $data["id_255404"] ?? "",
+	"id_255405" => $data["id_255405"] ?? "",
+	"id_255406" => $data["id_255406"] ?? "",
+	"id_255407" => $data["id_255407"] ?? "",
+	"id_255408" => $data["id_255408"] ?? "",
 ];
 foreach ($files as $key => $file) {
 	if ($file == '' || $file == NULL) {
@@ -74,8 +74,8 @@ $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
 $this->pdf->Cell(70, 15, "Information", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2024", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2023", 1, 1, '', false);
+$this->pdf->Cell(35, 15, "FY 2025", 1, 0, '', false);
+$this->pdf->Cell(35, 15, "FY 2024", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "No. Of Employees", 1, 0, '', false);
@@ -89,7 +89,7 @@ $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "No. Of Employees Global", 1, 0, '', false);
 $this->pdf->Cell(70, 15, $data['id_255009'] . " Employees" ?? "", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
-$this->pdf->Cell(70, 15, "Revenue Growth (in %)", 1, 0, '', false);
+$this->pdf->Cell(70, 15, "Global Markets (% Total)", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255103'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255104'] ?? "", 1, 1, '', false);
 
@@ -97,20 +97,9 @@ $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "Incorporation Date", 1, 0, '', false);
 $this->pdf->Cell(70, 15, $data['id_255002'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
-$this->pdf->Cell(70, 15, "Net Profit Margin", 1, 0, '', false);
+$this->pdf->Cell(70, 15, "Investment in R&D", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255105'] ?? "", 1, 0, '', false);
 $this->pdf->Cell(35, 15, $data['id_255106'] ?? "", 1, 1, '', false);
-
-$this->pdf->SetFont('Arial', '', 16);
-$this->pdf->Cell(160, 15, "", 0, 0, true);
-$this->pdf->Cell(70, 15, "Asset Valuation", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255107'] ?? "", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255108'] ?? "", 1, 1, '', false);
-
-$this->pdf->Cell(160, 15, "", 0, 0, true);
-$this->pdf->Cell(70, 15, "Debt Equity Ratio", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255109'] ?? "", 1, 0, '', false);
-$this->pdf->Cell(35, 15, $data['id_255110'] ?? "", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', 'B', 16);
 $this->pdf->Cell(20, 15, "", 0, 1, true);

@@ -392,9 +392,8 @@
 											<option <?= ($application['id_255106'] == "1% - 4%") ? "selected" : "" ?> value="1% - 4%">1% - 4%</option>
 											<option <?= ($application['id_255106'] == "5% - 10%") ? "selected" : "" ?> value="5% - 10%">5% - 10%</option>
 											<option <?= ($application['id_255106'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
-											<option <?= ($application['id_255106'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
-											<option <?= ($application['id_255106'] == "11% - 20%") ? "selected" : "" ?> value="11% - 20%">11% - 20%</option>
-											<option <?= ($application['id_255106'] == "> 20%") ? "selected" : "" ?> value="> 20%">> 20%</option>
+											<option <?= ($application['id_255106'] == "21% - 50%") ? "selected" : "" ?> value="21% - 50%">21% - 50%</option>
+											<option <?= ($application['id_255106'] == "> 50%") ? "selected" : "" ?> value="> 50%">> 50%</option>
 										</select>
 									</div>
 								</div>

@@ -15,14 +15,6 @@
 	<?php
 	$c = explode('_', $category['type']);
 	switch ($category['type']) {
-		case '1_INDIVIDUAL':
-			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_new/social_entrepreneur.php';
-			break;
-		case '2_INDIVIDUAL':
-			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_new/young_entrepreneur.php';
-			break;
 		case '1_GLOBAL':
 			# code...
 			include_once APPPATH . 'views/panel/participant/presentations/category_new/global.php';
@@ -31,11 +23,6 @@
 			# code...
 			include_once APPPATH . 'views/panel/participant/presentations/category_new/family.php';
 			break;
-		case '1_DIGITAL':
-			# code...
-			include_once APPPATH . 'views/panel/participant/presentations/category_new/digital.php';
-			break;
-
 		default:
 			include_once APPPATH . 'views/panel/participant/presentations/category_new/msme.php';
 			break;

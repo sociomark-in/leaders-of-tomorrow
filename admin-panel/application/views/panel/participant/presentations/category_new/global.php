@@ -34,19 +34,19 @@
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
-										<input required type="text" name="organization[name]" class="form-control">
+										<input required type="text" value="<?= $application['organization_name'] ?>" disabled name="organization[name]" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Presenter</label>
-										<input required type="text" name="name" class="form-control">
+										<input required type="text" value="<?= $application['name'] ?>" name="name" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-6 col-12">
 									<div class="">
 										<label for="" class="form-label">Designation</label>
-										<input required type="text" name="designation" class="form-control">
+										<input required type="text" value="<?= $application['designation'] ?>" name="designation" class="form-control">
 									</div>
 								</div>
 								<!-- Backend Missing -->
@@ -140,76 +140,47 @@
 	<div class="col-12 grid-margin stretch-card">
 		<div class="card input-group-card">
 			<div class="card-body">
-				<fieldset class="">
+				<fieldset class="col-12">
 					<legend class="card-title mb-0">
 						<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-3">
+					<div class="row g-3 mb-3">
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
 
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									FY 2024
+									FY 2024 - 2025
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									FY 2023
+									FY 2024 - 2023
 								</div>
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Revenue / Turnover (in INR Crores)
+									Revenue/ Turnover (in INR Crores)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_24" id="" class="form-select">
+									<select required name="financial_1_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="Less than 24">Less than 24</option>
-										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
+										<option <?= ($application['id_255101'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255101'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255101'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255101'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+										<option <?= ($application['id_255101'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_23" id="" class="form-select">
+									<select required name="financial_1_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="Less than 24">Less than 24</option>
-										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="row g-3">
-								<div class="col-xxl-4 col-12">
-									Revenue Growth (in %)
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_24" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_23" id="" class="form-select">
-										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option <?= ($application['id_255102'] == "5 - 24") ? "selected" : "" ?> value="5 - 24">5 - 24</option>
+										<option <?= ($application['id_255102'] == "25 - 49") ? "selected" : "" ?> value="25 - 49">25 - 49</option>
+										<option <?= ($application['id_255102'] == "50 - 100") ? "selected" : "" ?> value="50 - 100">50 - 100</option>
+										<option <?= ($application['id_255102'] == "101 - 200") ? "selected" : "" ?> value="101 - 200">101 - 200</option>
+										<option <?= ($application['id_255102'] == "201 - 250") ? "selected" : "" ?> value="201 - 250">201 - 250</option>
 									</select>
 								</div>
 							</div>
@@ -217,28 +188,28 @@
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Net Profit Margin (in %)
+									Revenue from Global Markets (as a percentage of total revenue)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_24" id="" class="form-select">
+									<select required name="financial_2_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option <?= ($application['id_255103'] == "< 20%") ? "selected" : "" ?> value="< 20%">
+											< 20%</option>
+										<option <?= ($application['id_255103'] == "20%-39%") ? "selected" : "" ?> value="20%-39%">20%-39%</option>
+										<option <?= ($application['id_255103'] == "40%-59%") ? "selected" : "" ?> value="40%-59%">40%-59%</option>
+										<option <?= ($application['id_255103'] == "60%-80%") ? "selected" : "" ?> value="60%-80%">60%-80%</option>
+										<option <?= ($application['id_255103'] == "> 80%") ? "selected" : "" ?> value="> 80%">> 80%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_23" id="" class="form-select">
+									<select required name="financial_2_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option <?= ($application['id_255104'] == "< 20%") ? "selected" : "" ?> value="< 20%">
+											< 20%</option>
+										<option <?= ($application['id_255104'] == "20%-39%") ? "selected" : "" ?> value="20%-39%">20%-39%</option>
+										<option <?= ($application['id_255104'] == "40%-59%") ? "selected" : "" ?> value="40%-59%">40%-59%</option>
+										<option <?= ($application['id_255104'] == "60%-80%") ? "selected" : "" ?> value="60%-80%">60%-80%</option>
+										<option <?= ($application['id_255104'] == "> 80%") ? "selected" : "" ?> value="> 80%">> 80%</option>
 									</select>
 								</div>
 							</div>
@@ -246,57 +217,26 @@
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Return from Global Markets (in %)
+									Investment in R&D for Global Markets (as a percentage of revenue)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_24" id="" class="form-select">
+									<select required name="financial_3_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="< 20%"> < 20%</option>
+										<option value="20%-39%">20%-39%</option>
+										<option value="40%-59%">40%-59%</option>
+										<option value="60%-80%">60%-80%</option>
+										<option value="> 80%">> 80%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_23" id="" class="form-select">
+									<select required name="financial_3_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="row g-3">
-								<div class="col-xxl-4 col-12">
-									Investment in R&D in Global Markets (% of Revenue)
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_24" id="" class="form-select">
-									<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
-									</select>
-								</div>
-								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_23" id="" class="form-select">
-									<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="< 20%"> < 20%</option>
+										<option value="20%-39%">20%-39%</option>
+										<option value="40%-59%">40%-59%</option>
+										<option value="60%-80%">60%-80%</option>
+										<option value="> 80%">> 80%</option>
 									</select>
 								</div>
 							</div>

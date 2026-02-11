@@ -34,7 +34,7 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
-										<input required type="text" name="organization[name]" class="form-control">
+										<input required type="text" name="organization[name]" disabled value="<?= $application['organization_name'] ?>" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-8 col-lg-6 col-12">
@@ -94,57 +94,104 @@
 					<legend class="card-title mb-2">
 						<h5>About the Organization<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-3">
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Generational Status</label>
-							<select required name="organization[beneficiary]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option value="1st">1st</option>
-								<option value="2nd">2nd</option>
-								<option value="3rd">3rd</option>
-								<option value="4th">4th</option>
-								<option value="5th">5th</option>
-								<option value="6th">6th</option>
-								<option value="7th">7th</option>
-								<option value="8th">8th</option>
-								<option value="9th">9th</option>
-								<option value="10th">10th</option>
-								<option value="Greater than 10th">Greater than 10th</option>
-							</select>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Equity spilt between family members and investors</label>
-							<div class="row g-2">
-								<div class="col-xl col-lg-auto col-12">
-									<input required placeholder="% Family Equity" type="number" min="0" max="100" name="organization[investment][family]" class="form-control">
-								</div>
-								<div class="col-xl col-lg-auto col-12">
-									<input placeholder="% Investor Equity" type="number" min="0" max="100" name="organization[investment][investors]" class="form-control">
-								</div>
-								<div class="col-xl col-lg-auto col-12">
-									<input placeholder="& Other Equity" type="number" min="0" max="100" name="organization[investment][others]" class="form-control">
-								</div>
+					<div class="row g-3 flex-row-reverse">
+						<div class="col-xl-7 col-lg-6">
+							<div class="bg-light p-3">
+								<p><strong>Guidelines</strong></p>
+								<p>While presenting to the jury on this slide, talk about :</p>
+								<li>
+									<li>
+										Who we are:
+										<ul>
+											<li>Company name, HQ/location(s), industry/segment</li>
+											<li>What you do in one line (core offering + who you serve)</li>
+										</ul>
+									</li>
+									<li>
+										Legacy + family context 
+										<ul>
+											<li>Incorporation year + a 1-line origin story (why it started)</li>
+											<li>Generational status (1st/2nd/3rd) and leadership transition (who leads today)</li>
+											<li>What changed in the current generation (professionalisation, scale, tech, new markets)</li>
+										</ul>
+									</li>
+									<li>
+										Business model snapshot
+										<ul>
+											<li>Core products/services (2–3 buckets max)</li>
+											<li>Primary customer segments (B2B/B2C, industries served)</li>
+											<li>Value proposition / differentiator (quality, speed, customisation, tech, trust, compliance, reach)</li>
+										</ul>
+									</li>
+									<li>
+										Scale & operating footprint
+										<ul>
+											<li>Employee strength (payroll + contract)</li>
+											<li>Manufacturing units / branches (if any) and capacity pointer (optional)</li>
+											<li>Any major capability markers (certifications, automation level, R&D/design cell, distribution network)</li>
+										</ul>
+									</li>
+								</ol>
 							</div>
 						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label class="form-label">No. of Family Members Actively Involved</label>
-							<select required name="organization[members]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option <?= ($application['id_255205'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
-								<option <?= ($application['id_255205'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
-								<option <?= ($application['id_255205'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
-								<option <?= ($application['id_255205'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
-							</select>
-						</div>
-						<div class="col-xxl-3 col-xl-4 col-12">
-							<label for="" class="form-label">Years the Current Generation Leading the Business</label>
-							<select required name="organization[generation]" id="" class="form-select">
-								<option value="">Select Option</option>
-								<option value="Upto 10 Years">Upto 10 Years</option>
-								<option value="10 - 15 Years">10 - 15 Years</option>
-								<option value="15 - 20 Years">15 - 20 Years</option>
-								<option value="More than 20 Years">More than 20 Years</option>
-							</select>
+						<div class="col-xl-5 col-lg-6">
+							<div class="row g-3">
+								<div class="col-12">
+									<label for="" class="form-label">Generational Status</label>
+									<select required name="organization[beneficiary]" id="" class="form-select">
+										<option value="">Select Option</option>
+										<option value="1st">1st</option>
+										<option value="2nd">2nd</option>
+										<option value="3rd">3rd</option>
+										<option value="4th">4th</option>
+										<option value="5th">5th</option>
+										<option value="6th">6th</option>
+										<option value="7th">7th</option>
+										<option value="8th">8th</option>
+										<option value="9th">9th</option>
+										<option value="10th">10th</option>
+										<option value="Greater than 10th">Greater than 10th</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<label for="" class="form-label">Equity spilt between family members and investors</label>
+									<div class="row g-2">
+										<div class="col-xl col-lg-auto col-12">
+											<input required placeholder="% Family Equity" type="number" min="0" max="100" name="organization[investment][family]" class="form-control">
+										</div>
+										<div class="col-xl col-lg-auto col-12">
+											<input placeholder="% Investor Equity" type="number" min="0" max="100" name="organization[investment][investors]" class="form-control">
+										</div>
+										<div class="col-xl col-lg-auto col-12">
+											<input placeholder="& Other Equity" type="number" min="0" max="100" name="organization[investment][others]" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<label class="form-label">No. of Family Members Actively Involved</label>
+									<select required name="organization[members]" id="" class="form-select">
+										<option value="">Select Option</option>
+										<option <?= ($application['id_255205'] == "1 - 2") ? "selected" : "" ?> value="1 - 2">1 - 2</option>
+										<option <?= ($application['id_255205'] == "3 - 5") ? "selected" : "" ?> value="3 - 5">3 - 5</option>
+										<option <?= ($application['id_255205'] == "6 - 10") ? "selected" : "" ?> value="6 - 10">6 - 10</option>
+										<option <?= ($application['id_255205'] == "More than 10") ? "selected" : "" ?> value="More than 10">More than 10</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<label for="" class="form-label">Years the Current Generation Leading the Business</label>
+									<select required name="organization[generation]" id="" class="form-select">
+										<option value="">Select Option</option>
+										<option value="Upto 10 Years">Upto 10 Years</option>
+										<option value="10 - 15 Years">10 - 15 Years</option>
+										<option value="15 - 20 Years">15 - 20 Years</option>
+										<option value="More than 20 Years">More than 20 Years</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<label for="" class="form-label">Core Products Services Offered</label>
+									<textarea required rows="5" maxlength="150" name="case_study_1" class="form-control editor" id=""></textarea>
+								</div>
+							</div>
 						</div>
 					</div>
 				</fieldset>
@@ -154,47 +201,47 @@
 	<div class="col-12 grid-margin stretch-card">
 		<div class="card input-group-card">
 			<div class="card-body">
-				<fieldset class="">
+				<fieldset class="col-12">
 					<legend class="card-title mb-0">
 						<h5>Financial Details<sup class="text-danger">&ast;</sup></h5>
 					</legend>
-					<div class="row g-3">
+					<div class="row g-3 mb-3">
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
 
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									FY 2024
+									FY 2025 - 2024
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									FY 2023
+									FY 2024 - 2023
 								</div>
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Revenue / Turnover (in INR Crores)
+									Revenue/Turnover (INR in Crores)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_24" id="" class="form-select">
+									<select required name="financial_1_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="Less than 24">Less than 24</option>
+										<option value="Less than 25">Less than 25</option>
 										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
+										<option value="50 - 149">50 - 149</option>
+										<option value="150 - 300">150 - 300</option>
+										<option value="301 - 500">301 - 500</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_revenue_23" id="" class="form-select">
+									<select required name="financial_1_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="Less than 24">Less than 24</option>
+										<option value="Less than 25">Less than 25</option>
 										<option value="25 - 49">25 - 49</option>
-										<option value="50 - 100">50 - 100</option>
-										<option value="101 - 200">101 - 200</option>
-										<option value="201 - 250">201 - 250</option>
+										<option value="50 - 149">50 - 149</option>
+										<option value="150 - 300">150 - 300</option>
+										<option value="301 - 500">301 - 500</option>
 									</select>
 								</div>
 							</div>
@@ -202,28 +249,28 @@
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Revenue Growth (in %)
+									Revenue Growth %
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_24" id="" class="form-select">
+									<select required name="financial_2_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="< 10%">
+											< 10%</option>
+										<option value="10-25%">10-25%</option>
+										<option value="26-50%">26-50%</option>
+										<option value="51-100%">51-100%</option>
+										<option value="> 100%">> 100%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_growth_23" id="" class="form-select">
+									<select required name="financial_2_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="< 10%">
+											< 10%</option>
+										<option value="10-25%">10-25%</option>
+										<option value="26-50%">26-50%</option>
+										<option value="51-100%">51-100%</option>
+										<option value="> 100%">> 100%</option>
 									</select>
 								</div>
 							</div>
@@ -234,25 +281,25 @@
 									Net Profit Margin (In %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_24" id="" class="form-select">
+									<select required name="financial_3_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="Break - even / Negative">
+											Break - even / Negative</option>
+										<option value="1% - 4%">1% - 4%</option>
+										<option value="5% - 10%">5% - 10%</option>
+										<option value="11% - 20%">11% - 20%</option>
+										<option value="> 20%">> 20%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_profit_23" id="" class="form-select">
+									<select required name="financial_3_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="Break - even / Negative">Break - even / Negative</option>
+										<option value="1% - 4%">1% - 4%</option>
+										<option value="5% - 10%">5% - 10%</option>
+										<option value="11% - 20%">11% - 20%</option>
+										<option value="21% - 50%">21% - 50%</option>
+										<option value="> 50%">> 50%</option>
 									</select>
 								</div>
 							</div>
@@ -260,28 +307,28 @@
 						<div class="col-12">
 							<div class="row g-3">
 								<div class="col-xxl-4 col-12">
-									Return on Assets (in %)
+									Return on assets (ROA) (In %)
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_24" id="" class="form-select">
+									<select required name="financial_4_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="Break - even / Negative">
+											Break - even / Negative</option>
+										<option value="1% - 10%">1% - 10%</option>
+										<option value="11% - 20%">11% - 20%</option>
+										<option value="20% - 40%">20% - 40%</option>
+										<option value="> 40%">> 40%</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_roa_23" id="" class="form-select">
+									<select required name="financial_4_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option value="< 5%">
-											< 5%</option>
-										<option value="6% - 15%">6% - 15%</option>
-										<option value="16% - 25%">16% - 25%</option>
-										<option value="26% - 35%">26% - 35%</option>
-										<option value="> 36%">> 36%</option>
+										<option value="Break - even / Negative">
+											Break - even / Negative</option>
+										<option value="1% - 10%">1% - 10%</option>
+										<option value="11% - 20%">11% - 20%</option>
+										<option value="20% - 40%">20% - 40%</option>
+										<option value="> 40%">> 40%</option>
 									</select>
 								</div>
 							</div>
@@ -292,25 +339,23 @@
 									Current Ratio
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_24" id="" class="form-select">
+									<select required name="financial_5_2" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
+										<option value="< 1.0">
 											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+										<option value="1.0 - 2.0">1.0 - 2.0</option>
+										<option value="2.0 - 3.0">2.0 - 3.0</option>
+										<option value="> 3.0">> 3.0</option>
 									</select>
 								</div>
 								<div class="col-xxl-4 col-lg-6 col-12">
-									<select required name="organization_der_23" id="" class="form-select">
+									<select required name="financial_5_1" id="" class="form-select">
 										<option value="">Select Option</option>
-										<option <?= ($application['id_255108'] == "< 1.0") ? "selected" : "" ?> value="< 1.0">
+										<option value="< 1.0">
 											< 1.0</option>
-										<option <?= ($application['id_255108'] == "1.0 - 1.5") ? "selected" : "" ?> value="1.0 - 1.5">1.0 - 1.5</option>
-										<option <?= ($application['id_255108'] == "1.6 - 2.0") ? "selected" : "" ?> value="1.6 - 2.0">1.6 - 2.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="2.1 - 3.0">2.1 - 3.0</option>
-										<option <?= ($application['id_255108'] == "6% - 15%") ? "selected" : "" ?> value="> 3.0">> 3.0</option>
+										<option value="1.0 - 2.0">1.0 - 2.0</option>
+										<option value="2.0 - 3.0">2.0 - 3.0</option>
+										<option value="> 3.0">> 3.0</option>
 									</select>
 								</div>
 							</div>
@@ -332,6 +377,7 @@
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
+									<li>How has your business evolved across generations? Highlight key leadership, vision, and strategy transitions</li>
 									<li>How does your family business blend tradition with innovation? Share key examples.</li>
 									<li>What technological advancements have you adopted to improve operations or expand market reach?</li>
 								</ul>
@@ -385,11 +431,12 @@
 								<p><strong>Guidelines</strong></p>
 								<ul>
 									<li>Describe how does your business impact local community in terms of job creation, skill development, etc</li>
-									<li>Demonstrate commitment to environmental, social, and governance (ESG) standards</li>
 									<li>What is your strategy for scaling your business in the next 5 years?</li>
 									<li>How have you managed economic downturns and ensured business continuity during challenging times?</li>
 									<li>How are you preparing for future industry trends and challenges?</li>
 									<li>What investments have you made in technology and talent for future growth?</li>
+									<li>Demonstrate how are roles and responsibilities are defined between the family members and professional management?</li>
+									<li>Explain what is your long-term vision for leadership succession plan in the family-owned business?</li>
 								</ul>
 							</div>
 						</div>
@@ -567,7 +614,7 @@
 		rules: {
 			case_study_1: {
 				maxlength: 750,
-				minlength: 360
+				minlength: 100
 			},
 			case_study_2: {
 				maxlength: 750,
@@ -617,7 +664,7 @@
 		messages: {
 			case_study_1: {
 				maxlength: "Please enter no more than 750 characters.",
-				minlength: "Please enter at least 360 characters.",
+				minlength: "Please enter at least 100 characters.",
 			},
 			case_study_2: {
 				maxlength: "Please enter no more than 750 characters.",

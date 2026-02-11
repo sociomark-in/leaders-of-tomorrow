@@ -34,7 +34,7 @@
 								<div class="col-12">
 									<div class="">
 										<label for="" class="form-label">Name of the Participating Entity (Organization Name)</label>
-										<input required type="text" name="organization[name]" class="form-control">
+										<input required type="text" name="organization[name]" disabled value="<?= $application['organization_name'] ?>" class="form-control">
 									</div>
 								</div>
 								<div class="col-xl-8 col-lg-6 col-12">

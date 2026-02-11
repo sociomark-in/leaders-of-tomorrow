@@ -38,7 +38,7 @@ class MakePresentation extends FPDF
 		// Arial italic 8
 		$this->SetFont('Arial', 'I', 8);
 		// Page number
-		$this->Cell(97, 10, APP_NAME . ' - Season 12', 0, 0, 'L');
+		$this->Cell(97, 10, APP_NAME . ' - Season 13', 0, 0, 'L');
 		$this->Cell(97, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'R');
 
 		// Logo
@@ -62,7 +62,7 @@ class MakePresentation extends FPDF
 		return $this;
 	}
 
-	public function load($data = null, $layout = 'stage_2_layout_1')
+	public function load($data = null, $layout = 'stage_2_msme')
 	{
 		if (!is_null($data)) {
 			include_once __DIR__ . '/layout/' . $layout . '.php';

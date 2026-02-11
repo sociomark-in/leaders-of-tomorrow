@@ -95,26 +95,26 @@ class PresentationAPIController extends CI_Controller
 			'category_id' => $application['category_id'],
 			'nomination_id' => $this->request['nomination_id'],
 			'presentation_id' => $this->request['presentation_id'],
-			'organization_name' => $this->request['organization']['name'],
+			'organization_name' => $application['organization_name'],
 			'designation' => $this->request['designation'],
 			'name' => $this->request['name'],
 
-			'id_255002' => $this->request['organization']['inc_date'],
-			'id_255006' => $this->request['experience']['total'],
-			'id_255004' => $this->request['organization']['business'],
-			'id_255007' => $this->request['experience']['current'],
-			'id_255008' => $this->request['organization']['size'],
+			'id_255002' => $this->request['organization']['inc_date'] ?? "",
+			'id_255006' => $this->request['experience']['total'] ?? "",
+			'id_255004' => $this->request['organization']['business'] ?? "",
+			'id_255007' => $this->request['experience']['current'] ?? "",
+			'id_255008' => $this->request['organization']['size'] ?? "",
 
-			'id_255101' => $this->request['organization_revenue_24'],
-			'id_255102' => $this->request['organization_revenue_23'],
-			'id_255103' => $this->request['organization_growth_24'],
-			'id_255104' => $this->request['organization_growth_23'],
-			'id_255105' => $this->request['organization_profit_24'],
-			'id_255106' => $this->request['organization_profit_23'],
-			'id_255107' => $this->request['organization_roa_24'],
-			'id_255108' => $this->request['organization_roa_23'],
-			'id_255109' => $this->request['organization_der_24'],
-			'id_255110' => $this->request['organization_der_23'],
+			'id_255101' => $this->request['financial_1_2'] ?? "",
+			'id_255102' => $this->request['financial_1_1'] ?? "",
+			'id_255103' => $this->request['financial_2_2'] ?? "",
+			'id_255104' => $this->request['financial_2_1'] ?? "",
+			'id_255105' => $this->request['financial_3_2'] ?? "",
+			'id_255106' => $this->request['financial_3_1'] ?? "",
+			'id_255107' => $this->request['financial_4_2'] ?? "",
+			'id_255108' => $this->request['financial_4_1'] ?? "",
+			'id_255109' => $this->request['financial_5_2'] ?? "",
+			'id_255110' => $this->request['financial_5_1'] ?? "",
 
 			'id_255201' => $this->request['case_study_1'] ?? "",
 			'id_255202' => $this->request['case_study_2'] ?? "",
@@ -143,7 +143,6 @@ class PresentationAPIController extends CI_Controller
 			case 'FAMILY':
 				$this->data['id_255004'] = implode('-', $this->request['organization']['investment']);
 				$this->data['id_255005'] = $this->request['organization']['beneficiary'];
-				$this->data['id_255009'] = $this->request['organization']['size_global'];
 				$this->data['id_255010'] = $this->request['organization']['members'];
 				$this->data['id_255011'] = $this->request['organization']['generation'];
 				break;
@@ -162,6 +161,9 @@ class PresentationAPIController extends CI_Controller
 				break;
 		}
 
+		// echo "<pre>";
+		// print_r($this->data);
+		// die;
 
 		if ($this->PresentationsModel->insert($this->data)) {
 			if ($this->EntriesModel->update(['status_2' => 3], ['nomination_id' => $this->data['nomination_id']])) {
@@ -179,12 +181,12 @@ class PresentationAPIController extends CI_Controller
 					]
 				];
 				$subject = "Submission Received for " .  APP_NAME .  " Awards 2025";
-				$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $presentation_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+				$body = "Hi " .  $this->usersession['name'] . ", your application [#" . $presentation_id . "] for " . $category['name'] . " is in review! Please <a href=" . base_url('') . ">Visit Dashboard</a>";
 				$htmlbody = $this->load->view('panel/emails/participant_presentation_review', $email_data, true);
 				if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-					redirect('dashboard/my-applications');
+					redirect('my-presentations');
 				}
-				redirect('dashboard');
+				redirect('');
 			} else {
 				echo "Unknown Error!";
 			}
@@ -222,7 +224,7 @@ class PresentationAPIController extends CI_Controller
 						]
 					];
 					$subject = "Your Nomination Has Been Accepted - " . APP_NAME . " Awards 2025!";
-					$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] is Accepted! Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+					$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] is Accepted! Please <a href=" . base_url('') . ">Visit Dashboard</a>";
 
 					$email_data['application'] = $presentation;
 					$email_data['application']['category']['name'] = $category['name'];
@@ -239,7 +241,7 @@ class PresentationAPIController extends CI_Controller
 					];
 					if ($this->UserModel->update($u, ['id' => $applicant['id']])) {
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/presentations');
+							redirect('presentations');
 						}
 					}
 				}
@@ -293,10 +295,10 @@ class PresentationAPIController extends CI_Controller
 						];
 
 						$subject = "Update on Your Nomination - " . APP_NAME . " Awards 2025!";
-						$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+						$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] is Rejected with comment - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_reject', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/presentations');
+							redirect('presentations');
 						}
 					}
 				}
@@ -350,10 +352,10 @@ class PresentationAPIController extends CI_Controller
 							]
 						];
 						$subject = "Action Required - Update Your Submission for " . APP_NAME . " Awards 2025!";
-						$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('dashboard') . ">Visit Dashboard</a>";
+						$body = "Hi " .  $applicant['name'] . ", your application [#" . $presentation['nomination_id'] . "] requires improvements. <br>Please check comments - <br> " . $data['comment'] . "<br>Please <a href=" . base_url('') . ">Visit Dashboard</a>";
 						$htmlbody = $this->load->view('panel/emails/participant_nomination_update', $email_data, true);
 						if ($this->brevocurlmail->_init_()->config_email(null, $recipients, $subject, $htmlbody, $body)->send()) {
-							redirect('dashboard/presentations');
+							redirect('presentations');
 						}
 					}
 				}
@@ -482,7 +484,7 @@ class PresentationAPIController extends CI_Controller
 
 		if ($this->PresentationsModel->update($this->data, ['presentation_id' => $presentation_id])) {
 			if ($this->EntriesModel->update(['status_2' => 3], ['nomination_id' => $this->data['nomination_id']])) {
-				redirect('dashboard');
+				redirect('');
 			} else {
 				echo "Unknown Error!";
 			}

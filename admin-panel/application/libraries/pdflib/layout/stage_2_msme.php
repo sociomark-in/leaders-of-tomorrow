@@ -18,14 +18,14 @@
 
 $files = [
 	"logo_image" => $data["logo_image"],
-	"id_255401" => $data["id_255401"],
-	"id_255402" => $data["id_255402"],
-	"id_255403" => $data["id_255403"],
-	"id_255404" => $data["id_255404"],
-	"id_255405" => $data["id_255405"],
-	"id_255406" => $data["id_255406"],
-	"id_255407" => $data["id_255407"],
-	"id_255408" => $data["id_255408"],
+	"id_255401" => $data["id_255401"] ?? "",
+	"id_255402" => $data["id_255402"] ?? "",
+	"id_255403" => $data["id_255403"] ?? "",
+	"id_255404" => $data["id_255404"] ?? "",
+	"id_255405" => $data["id_255405"] ?? "",
+	"id_255406" => $data["id_255406"] ?? "",
+	"id_255407" => $data["id_255407"] ?? "",
+	"id_255408" => $data["id_255408"] ?? "",
 ];
 foreach ($files as $key => $file) {
 	if($file == '' || $file == NULL){
@@ -74,8 +74,8 @@ $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
 $this->pdf->Cell(70, 15, "Information", 1, 0, '', false);
 $this->pdf->Cell(20, 15, "", 0, 0, true);
 $this->pdf->Cell(70, 15, "Particulars", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2024", 1, 0, '', false);
-$this->pdf->Cell(35, 15, "FY 2023", 1, 1, '', false);
+$this->pdf->Cell(35, 15, "FY 2025", 1, 0, '', false);
+$this->pdf->Cell(35, 15, "FY 2024", 1, 1, '', false);
 
 $this->pdf->SetFont('Arial', '', 16);
 $this->pdf->Cell(70, 15, "Type of Business", 1, 0, '', false);
