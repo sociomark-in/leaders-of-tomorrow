@@ -76,57 +76,29 @@ class BaseController extends CI_Controller
 				'status' => 1,
 			],
 			[
+				'name' => 'Jaipur',
+				'image' => 'jaipur.png',
+				'date' => '2026-02-06',
+				'status' => 1,
+			],
+			[
 				'name' => 'Ghaziabad',
 				'image' => 'gaziabad.png',
-				'date' => '2026-11-16',
-				'theme' => [
-					'title' => "Ghaziabad: Forging NCR's Industrial Backbone",
-					'description' => '',
-					'embed' => '',
-				],
-				'status' => 0,
+				'date' => '2026-02-18',
+				'status' => 1,
 			],
 		
 			[
-				'name' => 'Vijaywada',
-				'image' => 'vijaywada.png',
-				'date' => '2026-12-19',
-				'theme' => [
-					'title' => "Vijaywada: Engine of Growth & Governance in the Heart of UP",
-					'description' => '',
-					'embed' => '',
-				],
-				'status' => 0,
-			],
-			
-			
-			[
 				'name' => 'Kolkata',
 				'image' => 'kolkata.png',
-				'date' => '2026-12-06',
-				'theme' => [
-					'title' => "Kolkata: Gateway to Eastern India’s economic growth",
-					'description' => '',
-					'embed' => '',
-				],
-				'partners' => [
-					[
-						'text' => 'Powered By',
-						'logo' => 'tata-tele.png'
-					]
-				],
-				'status' => 0,
+				'date' => '2026-03-18',
+				'status' => 1,
 			],
 			[
-				'name' => 'Jaipur',
-				'image' => 'jaipur.png',
-				'date' => '2026-03-27',
-				'theme' => [
-					'title' => "Jaipur: India's Crown Jewel In The Hospitality Sector",
-					'description' => '',
-					'embed' => '',
-				],
-				'status' => 0,
+				'name' => 'Vijaywada',
+				'image' => 'vijaywada.png',
+				'date' => '2026-03-25',
+				'status' => 1,
 			],
 			
 		];

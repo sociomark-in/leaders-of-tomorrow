@@ -23,24 +23,34 @@ $utm = $this->input->get();
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("awards#about") ?>">About</a>
 				</li>
-				<!--<li class="nav-item">-->
-				<!--	<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>-->
-				<!--</li>-->
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url("awards#agenda") ?>">Agenda</a>
-				</li> -->
-				<!--<li class="nav-item">-->
-				<!--	<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>-->
-				<!--</li>-->
-				<!--<li class="nav-item">-->
-				<!--	<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key&nbsp;Speakers</a>-->
-				<!--</li>-->
+				<?php if(isset($winners)): ?>
+    				<li class="nav-item">
+    					<a class="nav-link" href="<?= base_url("awards#winners") ?>">Winners</a>
+    				</li>
+				<?php endif ?>
+				<?php if(isset($agenda)): ?>
+    				 <li class="nav-item">
+    					<a class="nav-link" href="<?= base_url("awards#agenda") ?>">Agenda</a>
+    				</li>
+				<?php endif ?>
+				<?php if(isset($grand_juries)): ?>
+    				<li class="nav-item">
+    					<a class="nav-link" href="<?= base_url('awards#grand-juries') ?>">Grand&nbsp;Jury</a>
+    				</li>
+				<?php endif ?>
+				<?php if(isset($speakers)): ?>
+    				<li class="nav-item">
+    					<a class="nav-link" href="<?= base_url('awards#speakers') ?>">Key&nbsp;Speakers</a>
+    				</li>
+				<?php endif ?>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#categories') ?>">Categories</a>
 				</li>
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Gallery</a>
-				</li> -->
+				<?php if(isset($gallery)): ?>
+    				<li class="nav-item">
+    					<a class="nav-link" href="<?= base_url('awards/gallery') ?>">Gallery</a>
+    				</li>
+				<?php endif ?>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('awards#partners') ?>">Partners</a>
 				</li>

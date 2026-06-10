@@ -469,7 +469,7 @@ class CityController extends BaseController
 
 					],
 					'banner' => true,
-					'register' => "btn_159777224b9b",
+				// 	'register' => "btn_159777224b9b",
     				'partners' => [
     					[
     						'text' => 'Powered By',
@@ -580,7 +580,7 @@ class CityController extends BaseController
 							'description' => " Chairman, IamSMEofIndia & JaiRaj Group",
 						],
 					],
-					'register' => "btn_2e44bf98d9d3",
+				// 	'register' => "btn_2e44bf98d9d3",
 				];
 				break;
 			case 'ahmedabad':
@@ -593,11 +593,12 @@ class CityController extends BaseController
 					'venue' => 'Pride Plaza Hotel, Bodakdev',
 					'agenda' => true,
 				    'banner' => true,
-				    'register' => "btn_e97cf2f03143",
+				    'gallery' => true,
+				    // 'register' => "btn_e97cf2f03143",
 					'theme' => [
     					'title' => "Ahmedabad: Building India’s next financial nerve centre",
     					'description' => 'Ahmedabad is steadily evolving from a traditional industrial hub into an emerging financial & innovation centre. Through GIFT City, the region is positioning itself as a key node in India’s financial ecosystem - creating pathways for local startups in textiles, biotech & cleantech to access global capital. To explore the unparalleled opportunities offered by this powerful ecosystem join us at the <strong class="text-red">Ahmedabad Springboard</strong> – one pitstop on our pan India roadshow series, only on <strong class="text-red">ET NOW</strong>.',
-    // 					'embed' => '',
+    					'embed' => 'https://www.youtube.com/embed/krZLuvN8lQk',
     				],
 					'partners' => [
 						[
@@ -634,6 +635,193 @@ class CityController extends BaseController
 						],
 					],
 				];
+				break;
+			case 'jaipur':
+				$this->data['page'] = [
+					'title' => "Jaipur Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+					'name' => "Jaipur",
+					'date' => "2026-02-06 19:00:00",
+					'venue' => ' The Fern Habitat, Jaipur',
+					'agenda' => true,
+				    'banner' => true,
+				    'gallery' => true,
+				    // 'register' => "btn_683db315aa65",
+					'theme' => [
+    					'title' => "Jaipur: India's Crown Jewel In The Hospitality Sector",
+    					'description' => 'Jaipur is the crown jewel of India’s hospitality sector, seamlessly blending royal heritage with modern luxury, making it a premier destination for weddings and tourism. High demand and improved connectivity continue to drive significant investment in the city’s infrastructure. This thriving environment provides a robust foundation for startups and MSMEs to grow and succeed. To explore the unparalleled opportunities offered by this powerful ecosystem join us at the Jaipur Springboard – one pitstop on our pan India roadshow series, only on ET NOW.',
+    					'embed' => 'https://www.youtube.com/embed/QBWk1RR35aM',
+    				],
+    				'partners' => [
+    					[
+    						'text' => 'Powered By',
+    						'logo' => 'tata-tele.png'
+    					]
+    				],
+    				'speakers' => [
+    				    [
+                            'photo' => "Rohit_Saoji.png",
+                            'name' => "Rohit Saoji",
+                            'description' => "Head - Retail MSME Banking & Trade Solutions, IDFC FIRST Bank",
+                        ],
+                        [
+                            'photo' => "Aditya_Kinra.png",
+                            'name' => "Aditya Kinra",
+                            'description' => "Vice President - SME Business, North, Tata Teleservices",
+                        ],
+                        [
+                            'photo' => "Surendra_Shahpura.png",
+                            'name' => "Surendra Singh Shahpura",
+                            'description' => "Co-Chairman, FICCI Rajasthan State Council",
+                        ],
+                        [
+                            'photo' => "Tarun_Bansal.png",
+                            'name' => "Tarun Bansal",
+                            'description' => " President, Hotel & Restaurant Association of Rajasthan (HRAR)",
+                        ],
+                        [
+                            'photo' => "Kuldeep_Chandela.png",
+                            'name' => "Kuldeep Singh Chandela",
+                            'description' => "Immediate Past President, Federation of Hospitality & Tourism of Rajasthan (FHTR)",
+                        ],
+                        [
+                            'photo' => "NK_Jain.png",
+                            'name' => "NK Jain",
+                            'description' => "Chairman, FICCI Rajasthan State Council MSME Sub-Committee",
+                        ],
+    				]
+				];
+				break;
+			case 'ghaziabad':
+				$this->data['page'] = [
+					'title' => "Ghaziabad Springboard" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city'] = [
+				    'theme' => [
+    					'title' => "Ghaziabad: Forging NCR's Industrial Backbone",
+    					'description' => 'Ghaziabad, a key industrial powerhouse in the NCR, is emerging as a major hub for manufacturing, MSMEs, real estate and logistics. With its strategic location, expanding infrastructure and growing industrial clusters, Ghaziabad is strengthening NCR’s production and supply chain ecosystem. To explore how Ghaziabad is strenghthening NCR’s industrial backbone, join Leaders of Tomorrow Ghaziabad Springboard - one pitstop on our pan-India roadshow series, only on ET NOW.',
+    				// 	'embed' => '',
+    				],
+    				'name' => 'Ghaziabad',
+				    'date' => '2026-02-18 19:00:00',
+					'venue' => 'SK Premium Park, World Square Mall',
+					'agenda' => true,
+				    'banner' => true,
+				    'gallery' => true,
+				    'register' => "btn_2151198d80c1",
+				    'speakers' => [
+    				    [
+							'photo' => "Vishesh_Soni.png",
+							'name' => "Vishesh Soni",
+							'description' => "Zonal Head-North, IDFC FIRST Bank",
+						],
+						[
+							'photo' => "Pranay_Garg.png",
+							'name' => "Pranay Garg",
+							'description' => "Former Chairman, Confederation of Indian Industry (CII) Western UP Zone & MD, Advance Valves",
+						],
+						[
+							'photo' => "Kanishka_Pandey.png",
+							'name' => "Dr Kanishka Pandey",
+							'description' => "Chairman, Federation of Indian Chambers of Commerce & Industry (FICCI) Sports Sub-Committee Uttar Pradesh",
+						],
+						[
+							'photo' => "Prasoon_Tripathi.png",
+							'name' => "Dr Prasoon M Tripathi",
+							'description' => "Senior Member, ASSOCHAM & Director, Institute of Management Studies, Ghaziabad",
+						],
+						[
+							'photo' => "Aman_Agarwal.png",
+							'name' => "Dr Aman Agarwal",
+							'description' => "Director & Professor, Indian Institute of Finance (IIF) & Executive Director, Finance India",
+						],
+						[
+							'photo' => "Abhinav_Gopal.png",
+							'name' => "Abhinav Gopal (IAS)",
+							'description' => "Chief Development Officer (CDO), Ghaziabad",
+						],
+    				]
+				];
+				break;
+			case 'kolkata':
+			    $this->data['page'] = [
+			        'title' => "Kolkata Springboard" . " • " . APP_NAME . " " . date('Y'),
+			    ];
+			    $this->data['city'] = [
+			        'theme' => [
+    					'title' => "Kolkata: Gateway to Eastern India’s economic growth",
+    					'description' => "Where heritage meets hustle, and legacy fuels ambition, Kolkata is no longer just India's cultural capital, it's Eastern India's economic engine. With West Bengal's GSDP set to surge by 7.6% this year, the city's sprawling ecosystem from IT corridors and textile mills to leather craft, jute trade, and a booming tourism trail is writing a bold new chapter in India's growth story. To explore how this city is redefining Eastern India's urban landscape, join Leaders of Tomorrow Kolkata Springboard — one pitstop on our pan India roadshow series, only on ET NOW.",
+    					'embed' => 'https://www.youtube.com/embed/-n8q1DebPb4',
+    				],
+    				'name' => 'Kolkata',
+				    'date' => '2026-03-18 19:00:00',
+				    'agenda' => true,
+					'venue' => 'Fairfield by Marriott, New Town, Kolkata',
+					'banner' => true,
+				// 	'register' => "btn_dcc55e20e474",
+					'gallery' => true,
+    				'partners' => [
+    					[
+    						'text' => 'Powered By',
+    						'logo' => 'tata-tele.png'
+    					]
+    				],
+		        ];
+				break;
+			case 'vijaywada':
+			    $this->data['page'] = [
+			        'title' => "Vijaywada Springboard" . " • " . APP_NAME . " " . date('Y'),
+			    ];
+			    $this->data['city'] = [
+			        'theme' => [
+    					'title' => "Vijayawada: The Business Capital of New Andhra",
+    					'description' => "Once a thriving trade corridor on the banks of the Krishna River, Vijayawada is now one of Andhra Pradesh's most powerful growth engines. With the state clocking the second-highest economic growth rate in India at 8.21% for 2024-25, Vijayawada Urban Mandal is leading the charge powered by a booming hospitality industry, rising commercial tax revenues, and its strategic proximity to Amaravati. To explore how MSMEs can ride this wave of momentum, join us at the Vijayawada Springboard — one pitstop on our pan India roadshow series, only on ET NOW.",
+    					'embed' => 'https://www.youtube.com/embed/soucRAQ80Cg',
+    				
+    				],
+    				'name' => 'Vijaywada',
+				    'date' => '2026-03-25 19:00:00',
+				     'agenda' => true,
+				     'gallery' => true,
+					'venue' => 'Vivanta Vijayawada, MG Road',
+					'banner' => true,
+				// 	'register' => "btn_1226e7fe9097",
+					'speakers' => [
+					    [
+							'photo' => "prashant_shinde.png",
+							'name' => "Prashant Shinde",
+							'description' => "Zonal Head, South & East, IDFC FIRST Bank",
+						],
+                        [
+							'photo' => "avnesh_dasari.png",
+							'name' => "Anvesh Dasari",
+							'description' => "Vice Chairman, Director, CII Vijayawada & Efftronics Systems",
+						],
+					    [
+							'photo' => "dr_tarun_kakani.png",
+							'name' => "Dr Tarun Kakani",
+							'description' => "CEO,  ABC-Amaravati Boating Club & Glocal Technology Solutions",
+						],
+						[
+							'photo' => "supriya_mallineni.png",
+							'name' => "Supriya Mallineni",
+							'description' => "Director, Chairperson Elect, GV Estates & Hotels, FICCI FLO Vijaywada ",
+						],
+						[
+							'photo' => "winny_patro.png",
+							'name' => "Winny Patro",
+							'description' => "Co-Founder & CEO, Recordent",
+						],
+						
+                	],
+    				'partners' => [
+    					[
+    						'text' => 'Powered By',
+    						'logo' => 'tata-tele.png'
+    					]
+    				],
+		        ];
 				break;
 			default:
 				redirect('all-cities');
@@ -757,7 +945,62 @@ class CityController extends BaseController
 				$this->data['city']['name'] = "Coimbatore";
 				$this->load->city_view('gallery', $this->data);
 				break;
-
+			case 'ahmedabad':
+				$this->data['page'] = [
+					'title' => "Ahmedabad Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Ahmedabad";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'jaipur':
+				$this->data['page'] = [
+					'title' => "Jaipur Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Jaipur";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'ghaziabad':
+				$this->data['page'] = [
+					'title' => "Ghaziabad Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Ghaziabad";
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'kolkata':
+				$this->data['page'] = [
+					'title' => "Kolkata Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Kolkata";
+				$this->data['city']['partners'] = [
+					[
+						'text' => 'Powered By',
+						'logo' => 'tata-tele.png',
+						'url' => "https://www.tatatelebusiness.com/"
+					]
+				];
+				$this->load->city_view('gallery', $this->data);
+				break;
+			case 'vijaywada':
+				$this->data['page'] = [
+					'title' => "Vijaywada Springboard Gallery" . " • " . APP_NAME . " " . date('Y'),
+				];
+				$this->data['city']['name'] = "Vijaywada";
+				$this->load->city_view('gallery', $this->data);
+				break;
 			default:
 				redirect('city/' . $city);
 				break;

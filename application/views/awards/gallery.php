@@ -31,18 +31,18 @@
 			<div class="row g-3">
 				<div class="col-12">
 						<div class="gallery-masonry row justify-content-center g-3 g-md-0 gap-md-2 gap-lg-4" id="galleryMasonry">
-							<?php for ($i = 1; $i <= count($gallery); $i++) : ?>
-								<a class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 tile gallery-tile" data-aos="fade-left" data-aos-delay="<?= $i * 10 ?>" href="<?= base_url('assets/images/galleries/12/' . $i . '.jpg') ?>">
+							<?php foreach ($gallery as $key => $image) : ?>
+								<a class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 tile gallery-tile" data-aos="fade-left" data-aos-delay="<?= $key * 10 ?>" href="<?= base_url('assets/images/awards/gallery/' .$image) ?>">
 									<figure>
 										<picture>
 											<!-- <source srcset="https://placehold.co/250x167/webp" type="image/webp"> -->
-											<source srcset="<?= base_url('assets/images/galleries/12/thumbs/'  . $i . '.jpg') ?>" type="image/jpg">
-											<img class="w-100" src="<?= base_url('assets/images/galleries/12/'  . $i . '.jpg') ?>" alt="" loading="lazy">
+											<source srcset="<?= base_url('assets/images/awards/gallery/thumbs/'  .$image) ?>" type="image/jpg">
+											<img class="w-100" src="<?= base_url('assets/images/awards/gallery/'  .$image) ?>" alt="" loading="lazy">
 										</picture>
 										<figcaption></figcaption>
 									</figure>
 								</a>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</div>
 						<script>
 						var gallery = lightGallery(document.getElementById('galleryMasonry'), {

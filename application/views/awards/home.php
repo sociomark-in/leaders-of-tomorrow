@@ -52,7 +52,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pb-0 d-none">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12">
@@ -63,18 +63,18 @@
 						</ol>
 					</nav>
 				</div>
-				<div class="col-xl-auto col-lg-8 col-md-10 col-12">
-					<div class="page-title">
-						<div class="row align-items-center justify-content-center">
-							<div class="col-auto">
-								<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">
-							</div>
-							<div class="col-auto">
-								<h1>Awards</h1>
-							</div>
-						</div>
-					</div>
-				</div>
+				<!--<div class="col-xl-auto col-lg-8 col-md-10 col-12">-->
+				<!--	<div class="page-title">-->
+				<!--		<div class="row align-items-center justify-content-center">-->
+				<!--			<div class="col-auto">-->
+				<!--				<img src="<?= base_url("assets/images/") ?>favicon.png" alt="" class="mb-2" height="80">-->
+				<!--			</div>-->
+				<!--			<div class="col-auto">-->
+				<!--				<h1>Awards</h1>-->
+				<!--			</div>-->
+				<!--		</div>-->
+				<!--	</div>-->
+				<!--</div>-->
 			</div>
 		</div>
 	</section>
@@ -85,14 +85,14 @@
 				<div class="col-xl-10 col-12">
 					<div class="media-content springboard-banner">
 						<div class="wrap">
-							<a href="#">
-								<picture>
-									<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">
-									<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(max-width: 768px)">
-									<img class="w-100" src="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" alt="">
-								</picture>
-							</a>
-							<!-- <iframe class="w-100" src="https://www.youtube.com/embed/ou5PFIuEoQ0?si=elC6hWnQL92do0sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+							<!--<a href="#">-->
+							<!--	<picture>-->
+							<!--		<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(min-width: 768px)">-->
+							<!--		<source srcset="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" type="image/jpg" media="(max-width: 768px)">-->
+							<!--		<img class="w-100" src="<?= base_url('assets/images/banners/awards/banner_h.jpg') ?>" alt="">-->
+							<!--	</picture>-->
+							<!--</a>-->
+							 <iframe class="w-100" src="https://www.youtube.com/embed/Z96lsCN4ytc?si=Lh7qREWgwsZ4LeH7?modestbranding=1&rel=0&controls=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
 						</div>
 					</div>
 				</div>
@@ -103,14 +103,14 @@
 	<section class="pb-0" id="about">
 		<div class="container">
 			<div class="row align-items-center g-3">
-				<div class="col-xl-5 col-lg-6 col-md-6 col-12">
-					<div class="media-content" data-aos="fade-right">
-						<lite-youtube videoid="Zg3rD_XZOSY">
-							<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=Zg3rD_XZOSY">Leaders of Tomorrow Awards 2025</a>
-						</lite-youtube>
-					</div>
-				</div>
-				<div class="col-xl-7 col-lg-6 col-12">
+				<!--<div class="col-xl-5 col-lg-6 col-md-6 col-12">-->
+				<!--	<div class="media-content" data-aos="fade-right">-->
+				<!--		<lite-youtube videoid="udxV2O7uJ2k">-->
+				<!--			<a class="lite-youtube-fallback w-100" href="https://www.youtube.com/watch?v=udxV2O7uJ2k">Leaders of Tomorrow Awards 2026</a>-->
+				<!--		</lite-youtube>-->
+				<!--	</div>-->
+				<!--</div>-->
+				<div class="col-lg col-12">
 					<div class="section-title" data-aos="fade-left">
 						<h2><span>Leaders of Tomorrow Awards</span></h2>
 					</div>
@@ -286,7 +286,7 @@
 		</div>
 	</section>
 
-	<section id="grand-juries" class="pb-0 d-none">
+	<section id="grand-juries" class="pb-0">
 		<div class="container">
 			<div class="row g-3">
 				<div class="col-12">
@@ -299,9 +299,9 @@
 						<div class="swiper-wrapper">
 							<?php foreach ($grand_juries as $key => $person) : ?>
 								<div class="swiper-slide p-3">
-									<div class="speaker-tile speaker-tile-01 normal">
+									<div class="speaker-tile speaker-tile-02 normal mb-3">
 										<div class="photo">
-											<img src="<?= base_url('assets/images/grand-juries/12/') . $person['photo'] ?>" class="w-100" alt="">
+											<img src="<?= base_url('assets/images/awards/juries/') . $person['photo'] ?>" class="w-100" alt="">
 										</div>
 										<div class="desc text-center">
 											<h5><?= $person['name'] ?></h5>

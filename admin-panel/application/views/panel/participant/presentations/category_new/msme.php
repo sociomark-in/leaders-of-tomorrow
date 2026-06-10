@@ -267,18 +267,15 @@
 						<p>Brief description of the Business</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
-						<!-- <div class="col-xl-4 col-12">
+						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Who you are + organization size/segment (MSME/mid-size) + industry</li>
+									<li>The core products/services offered by the organisation and why is it unique</li>
 								</ul>
 							</div>
-						</div> -->
+						</div>
 						<div class="col-xl col-12">
 							<textarea required rows="15" maxlength="750" name="case_study_1" class="form-control editor" id=""></textarea>
 							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
@@ -288,18 +285,15 @@
 						<p>Core Products / Services Offered</p>
 					</div>
 					<div class="row g-2 g-md-3 mb-3 flex-row-reverse">
-						<!-- <div class="col-xl-4 col-12">
+						<div class="col-xl-4 col-12">
 							<div class="bg-light p-3">
 								<p><strong>Guidelines</strong></p>
 								<ul>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
-									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ipsam.</li>
+									<li>Who you are + organization size/segment (MSME/mid-size) + industry</li>
+									<li>The core products/services offered by the organisation and why is it unique</li>
 								</ul>
 							</div>
-						</div> -->
+						</div>
 						<div class="col-xl col-12">
 							<textarea required rows="15" maxlength="750" name="case_study_2" class="form-control editor" id=""></textarea>
 							<span class="form-text">(Character Limit: Minimum 300, Maximum 750)</span>
@@ -351,7 +345,6 @@
 									<li>Summarize your revenue growth & Key financial achievements over the last 2 years.</li>
 									<li>How have you managed financial challenges effectively?</li>
 									<li>Highlight new markets or customer segments you have entered.</li>
-									<li>How has your business positively impacted the local community?</li>
 								</ul>
 							</div>
 						</div>

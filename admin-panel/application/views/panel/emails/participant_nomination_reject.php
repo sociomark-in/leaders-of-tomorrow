@@ -32,7 +32,7 @@
 	bgcolor="#E9EAED" xml:lang="en">
 	<div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr"
 		style="font-size:medium; font-size:max(16px, 1rem)">
-		<table cellpadding="10" cellspacing="0" border="0" style="word-break:break-word;width:100%" bgcolor="#E9EAED">
+		<table cellpadding="10" cellspacing="0" border="0" style="word-break:break-word;width:100%">
 			<tbody>
 				<tr>
 					<td align="center">

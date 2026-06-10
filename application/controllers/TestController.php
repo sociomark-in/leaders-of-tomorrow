@@ -42,6 +42,7 @@ class TestController extends CI_Controller
 		$mail = new GlobalMail(true);
 
 		try {
+
 			$mail->_init_();
 			$mail->create_pool(['name' => 'LOT Awards', 'email' => 'noreply@leadersoftomorrow.co.in'], ['hemant@sociomark.in'], 'response@timesnetwork.in');
 			$mail->data('Custom Subject', 'panel/emails/mail', null, 'This is the body in plain text for non-HTML mail clients');
